@@ -1,0 +1,87 @@
+VIDEO SCRIPT
+Title: Why are there so many crypto coins?
+Topic: Crypto
+Target length: ~105 seconds (fits the 30s–3min window)
+Language of narration: English
+Format: Voiceover script. Spoken lines are plain text. [Bracketed lines] describe
+what is on screen AT THE SAME TIME as the narration next to them.
+
+==================================================================
+THE CORE IDEA
+==================================================================
+There are now millions of crypto coins because each wave fixed a limit of the last
+AND made minting new coins easier:
+1. Bitcoin — great money, but slow and can basically only do one thing.
+2. Ethereum — added "smart contracts," so blockchains could run apps; anyone could
+   create a token in a few lines of code.
+3. Rival chains (Solana, BNB, etc.) — launched to be faster/cheaper than a
+   congested Ethereum; each brings its own coin.
+4. Memecoin explosion — platforms like Pump.fun let anyone mint a token in seconds
+   for almost nothing → millions of joke/speculative coins.
+Punchline: crypto kept fixing its own limits, and each fix made it easier to spit
+out the next coin.
+
+NOTE (honesty): the vast majority of these coins have no real use and are highly
+speculative or outright scams — quantity isn't quality.
+
+KEY VISUALS:
+- A timeline/tree: 1 Bitcoin → Ethereum branching into many tokens → rival chains →
+  an explosion of memecoins flooding the screen.
+
+==================================================================
+SCRIPT
+==================================================================
+
+--- HOOK (0:00–0:12) — the payoff up front ---
+
+There are now millions of different cryptocurrencies. Not thousands — millions.
+[A counter spinning up into the millions; coins flooding the screen.]
+And it all started because the very first one, Bitcoin, was simply too slow.
+[A single Bitcoin, moving sluggishly.]
+
+--- WAVE 1: BITCOIN (≈0:12–0:32) ---
+
+Bitcoin was the original — brilliant as digital money. But it's limited. It's slow,
+and it can basically do just one thing: move bitcoin.
+[Bitcoin doing one job, a single rail.]
+You can't really build anything on top of it. So people wanted more.
+
+--- WAVE 2: ETHEREUM (≈0:32–0:55) ---
+
+That's where Ethereum came in. It added "smart contracts" — little programs that
+run on the blockchain itself.
+[Ethereum as a platform; small app-blocks running on it.]
+Suddenly a blockchain could host apps, not just payments. And crucially, anyone
+could create their own token on top of Ethereum with just a few lines of code.
+[A token minted from a snippet of code; then several; then many.]
+The floodgates cracked open.
+
+--- WAVE 3: THE RIVALS (≈0:55–1:18) ---
+
+Then Ethereum got so popular it became slow and expensive to use.
+[Ethereum congested, fees rising.]
+So a wave of rival blockchains launched, each promising to be faster or cheaper —
+Solana, BNB, and many more. And every single one comes with its own coin.
+[Competing chains light up, each with its own token.]
+
+--- WAVE 4: THE MEMECOIN FLOOD (≈1:18–1:40) ---
+
+And finally, it became trivial to make a coin at all. Platforms like Pump.fun let
+anyone launch a token in seconds, for almost nothing.
+[A "mint" button; tokens pouring out by the thousand.]
+The result: a flood of memecoins — coins based on jokes, dogs, celebrities — most
+with no purpose beyond speculation, and most worthless within days.
+[A tidal wave of joke coins; most fading to zero.]
+
+--- PUNCHLINE / OUTRO (≈1:40–1:54) ---
+
+So why are there millions of coins? Because crypto kept fixing its own
+limitations —
+[The tree: each fix branching into more.]
+and each fix made it easier for anyone to mint the next one. We went from one
+careful experiment... to a button that spits out a new currency in seconds. Just
+remember: almost none of them are worth anything.
+
+Want more of how crypto really works?
+[Stacktags logo animates in with a "Follow" prompt.]
+Follow Stacktags.

@@ -1,0 +1,89 @@
+VIDEO SCRIPT
+Title: Dumb smart money — why 90% of hedge funds lose to the market
+Topic: Investing
+Target length: ~110 seconds (fits the 30s–3min window)
+Language of narration: English
+Format: Voiceover script. Spoken lines are plain text. [Bracketed lines] describe
+what is on screen AT THE SAME TIME as the narration next to them.
+
+==================================================================
+THE CORE IDEA
+==================================================================
+"Smart money" hedge funds mostly trail a simple index over the long run (by some
+measures ~90%). Why: (1) they're built to HEDGE — they always hold shorts/insurance
+to survive crashes, which is dead weight in a long bull market where everything
+just rises; (2) high fees ("2 and 20") gut returns; (3) many aren't even trying to
+beat the index — they chase arbitrage, market-neutral, steady low-volatility
+returns. So in a roaring market, buy-and-hold usually wins.
+Punchline: the smartest money loses to the "dumbest" strategy — buy the market and
+wait — because it's paid to be cautious in a market that rewards the bold.
+
+NOTE (honesty): "by some measures ~90%" / "over the long run"; in a CRASH the good
+hedges shine — underperformance in a bull market is partly by design, not failure.
+
+KEY VISUALS:
+- A flat-ish hedge-fund line vs a climbing index line over a long bull market.
+- A "hedge" anchor (shorts/insurance) dragging the fund's line down as the market soars.
+
+==================================================================
+SCRIPT
+==================================================================
+
+--- HOOK (0:00–0:12) — the payoff up front ---
+
+They're called "smart money" — elite hedge funds run by the sharpest minds in
+finance.
+[Glossy hedge-fund towers; "SMART MONEY" in lights.]
+So why do most of them lose to a fund a total beginner could buy? Over the long
+run, by some measures around 90% of hedge funds trail a simple market index.
+[A hedge-fund line crawling below a climbing index line.]
+
+--- THE PARADOX (≈0:12–0:30) ---
+
+It's a paradox. They hire the best people, charge the most money, and have every
+tool in finance —
+[Brains, terminals, complex strategies.]
+yet the majority can't beat just buying the whole stock market and sitting still.
+There are three big reasons.
+
+--- REASON 1: BUILT TO HEDGE (≈0:30–1:00) ---
+
+First, the clue is in the name: hedge. These funds always hold bets AGAINST the
+market too — shorts, insurance — so they survive a crash.
+[The fund holding shorts as protection alongside its stocks.]
+But that protection isn't free. In a long boom — like the one markets have been on
+— when almost everything rises, those short positions and hedges become dead
+weight.
+[The market soaring; the "hedge" anchor dragging the fund's line down.]
+They're carrying an umbrella through a sunny decade — and it's slowing them down.
+
+--- REASON 2: THE FEES (≈1:00–1:22) ---
+
+Second, fees. The classic hedge-fund deal is "two and twenty" — 2% of your money a
+year, plus 20% of any profit.
+["2 / year + 20% of profit" taking bites out of the returns.]
+Even solid performance gets gutted once the manager takes that cut. Meanwhile, an
+index fund charges almost nothing. Over years, that gap compounds into a chasm.
+
+--- REASON 3: A DIFFERENT GAME (≈1:22–1:45) ---
+
+And third — many hedge funds aren't even trying to beat the stock market. Plenty
+chase completely different goals: arbitrage, pocketing tiny, low-risk price gaps;
+market-neutral strategies; steady returns with small swings.
+[Side bets: arbitrage, market-neutral, low-volatility income.]
+They're built for consistency, or for protection in a crisis — not for maximum
+growth. So next to a booming market, they look like they're "losing." But they're
+playing a different game. And remember — when the crash finally comes, that's when
+the good hedges actually shine.
+
+--- PUNCHLINE / OUTRO (≈1:45–1:58) ---
+
+So the smartest money in the world mostly loses to the "dumbest" strategy there is:
+buy the market, and wait.
+[The plain index line quietly finishing on top.]
+Not because the managers are dumb — but because they're paid to be cautious, in a
+market that's been rewarding the bold.
+
+Want more of how big money really works?
+[Stacktags logo animates in with a "Follow" prompt.]
+Follow Stacktags.

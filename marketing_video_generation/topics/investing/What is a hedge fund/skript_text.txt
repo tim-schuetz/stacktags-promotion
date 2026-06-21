@@ -1,0 +1,78 @@
+VIDEO SCRIPT
+Title: What is a hedge fund?
+Topic: Investing
+Target length: ~100 seconds (fits the 30s–3min window)
+Language of narration: English
+Format: Voiceover script. Spoken lines are plain text. [Bracketed lines] describe
+what is on screen AT THE SAME TIME as the narration next to them.
+
+==================================================================
+THE CORE IDEA
+==================================================================
+A hedge fund is a lightly-regulated investment fund for wealthy/institutional
+investors that can use aggressive tools normal funds can't — going long AND short,
+leverage, derivatives — to chase returns and "hedge" against losses. Named for
+"hedging." Classic fees: "2 and 20." Reality: most don't beat a simple index.
+Punchline: take away the rules, hand a manager other people's millions, let them
+bet in every direction — for a big cut of the winnings.
+
+KEY VISUALS:
+- An exclusive "members only" club door; inside, a dashboard with LONG and SHORT
+  bets, a leverage dial, derivatives.
+- A "2 and 20" fee stamp.
+
+==================================================================
+SCRIPT
+==================================================================
+
+--- HOOK (0:00–0:12) — the payoff up front ---
+
+A hedge fund is basically an exclusive investment club for the rich — one that's
+allowed to do things normal funds can't:
+[A velvet-rope "members only" door swings open.]
+bet against stocks, borrow huge amounts, and trade complex derivatives. And it
+charges a fortune for the privilege.
+[A glowing "2 and 20" fee tag.]
+
+--- THE NAME (≈0:12–0:32) ---
+
+Start with the word: hedge. The original idea was to hedge — to protect against
+losses — by betting both for AND against the market at the same time.
+[A scale: LONG bets on one side, SHORT bets on the other, balancing.]
+That way, in theory, the fund could make money whether stocks rose or fell.
+That's where the name comes from.
+
+--- WHO'S ALLOWED IN (≈0:32–0:52) ---
+
+But it's not for everyone. Regulators restrict hedge funds to wealthy individuals
+and big institutions — pensions, endowments.
+[The club door; only "accredited" guests waved through.]
+And because their clients are considered sophisticated, hedge funds face far less
+oversight than an everyday mutual fund. Less supervision means more freedom to
+take big risks.
+
+--- THE TOOLKIT (≈0:52–1:15) ---
+
+That freedom lets them do almost anything. Go long — betting prices up. Go short —
+betting prices down. Use leverage — borrowed money — to amplify the bets. Trade
+derivatives, currencies, even buy whole companies.
+[A control panel: LONG, SHORT, a leverage dial spinning up, derivatives icons.]
+And for all this, the classic fee is "two and twenty": 2% of your money every
+year, plus 20% of any profit they make. Expensive — win or lose.
+["2% / year" and "20% of profits" stamped on.]
+
+--- THE CATCH / PUNCHLINE (≈1:15–1:35) ---
+
+The pitch is market-beating returns, or protection when everything else falls.
+The reality? On average, mixed — most hedge funds don't actually beat a simple
+index fund over time. (We've got a whole video on why.)
+[A hedge-fund line lagging behind a plain index line.]
+So a hedge fund is what happens when you take away the rules, hand a manager other
+people's millions, and let them bet in every direction at once — for a hefty cut
+of the winnings.
+
+--- OUTRO / CTA (≈1:35–1:45) ---
+
+Want more of how big money really works?
+[Stacktags logo animates in with a "Follow" prompt.]
+Follow Stacktags.

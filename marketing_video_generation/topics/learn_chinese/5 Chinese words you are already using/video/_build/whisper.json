@@ -1,0 +1,2117 @@
+{
+ "duration": 126.87675,
+ "segments": [
+  {
+   "start": 0.0,
+   "end": 2.5,
+   "text": " You already speak a little Chinese, you just don't know it yet.",
+   "words": [
+    {
+     "word": " You",
+     "start": 0.0,
+     "end": 0.16
+    },
+    {
+     "word": " already",
+     "start": 0.16,
+     "end": 0.3
+    },
+    {
+     "word": " speak",
+     "start": 0.3,
+     "end": 0.68
+    },
+    {
+     "word": " a",
+     "start": 0.68,
+     "end": 0.84
+    },
+    {
+     "word": " little",
+     "start": 0.84,
+     "end": 0.96
+    },
+    {
+     "word": " Chinese,",
+     "start": 0.96,
+     "end": 1.18
+    },
+    {
+     "word": " you",
+     "start": 1.64,
+     "end": 1.72
+    },
+    {
+     "word": " just",
+     "start": 1.72,
+     "end": 1.88
+    },
+    {
+     "word": " don't",
+     "start": 1.88,
+     "end": 2.08
+    },
+    {
+     "word": " know",
+     "start": 2.08,
+     "end": 2.24
+    },
+    {
+     "word": " it",
+     "start": 2.24,
+     "end": 2.36
+    },
+    {
+     "word": " yet.",
+     "start": 2.36,
+     "end": 2.5
+    }
+   ]
+  },
+  {
+   "start": 2.92,
+   "end": 3.06,
+   "text": " Typhoon.",
+   "words": [
+    {
+     "word": " Typhoon.",
+     "start": 2.92,
+     "end": 3.06
+    }
+   ]
+  },
+  {
+   "start": 3.76,
+   "end": 4.2,
+   "text": " Tofu.",
+   "words": [
+    {
+     "word": " Tofu.",
+     "start": 3.76,
+     "end": 4.2
+    }
+   ]
+  },
+  {
+   "start": 4.5,
+   "end": 5.08,
+   "text": " Yin and Yang.",
+   "words": [
+    {
+     "word": " Yin",
+     "start": 4.5,
+     "end": 4.58
+    },
+    {
+     "word": " and",
+     "start": 4.58,
+     "end": 4.88
+    },
+    {
+     "word": " Yang.",
+     "start": 4.88,
+     "end": 5.08
+    }
+   ]
+  },
+  {
+   "start": 5.72,
+   "end": 6.16,
+   "text": " Taikonot.",
+   "words": [
+    {
+     "word": " Taikonot.",
+     "start": 5.72,
+     "end": 6.16
+    }
+   ]
+  },
+  {
+   "start": 6.44,
+   "end": 6.86,
+   "text": " Paper tiger.",
+   "words": [
+    {
+     "word": " Paper",
+     "start": 6.44,
+     "end": 6.5
+    },
+    {
+     "word": " tiger.",
+     "start": 6.5,
+     "end": 6.86
+    }
+   ]
+  },
+  {
+   "start": 7.74,
+   "end": 9.52,
+   "text": " Everyone is an English word that came straight out of Chinese.",
+   "words": [
+    {
+     "word": " Everyone",
+     "start": 7.74,
+     "end": 7.74
+    },
+    {
+     "word": " is",
+     "start": 7.74,
+     "end": 8.0
+    },
+    {
+     "word": " an",
+     "start": 8.0,
+     "end": 8.12
+    },
+    {
+     "word": " English",
+     "start": 8.12,
+     "end": 8.34
+    },
+    {
+     "word": " word",
+     "start": 8.34,
+     "end": 8.56
+    },
+    {
+     "word": " that",
+     "start": 8.56,
+     "end": 8.7
+    },
+    {
+     "word": " came",
+     "start": 8.7,
+     "end": 8.84
+    },
+    {
+     "word": " straight",
+     "start": 8.84,
+     "end": 9.06
+    },
+    {
+     "word": " out",
+     "start": 9.06,
+     "end": 9.28
+    },
+    {
+     "word": " of",
+     "start": 9.28,
+     "end": 9.34
+    },
+    {
+     "word": " Chinese.",
+     "start": 9.34,
+     "end": 9.52
+    }
+   ]
+  },
+  {
+   "start": 10.34,
+   "end": 14.02,
+   "text": " We all know English borrowed from Latin and French, but it quietly pocketed a few from",
+   "words": [
+    {
+     "word": " We",
+     "start": 10.34,
+     "end": 10.36
+    },
+    {
+     "word": " all",
+     "start": 10.36,
+     "end": 10.48
+    },
+    {
+     "word": " know",
+     "start": 10.48,
+     "end": 10.62
+    },
+    {
+     "word": " English",
+     "start": 10.62,
+     "end": 10.84
+    },
+    {
+     "word": " borrowed",
+     "start": 10.84,
+     "end": 11.08
+    },
+    {
+     "word": " from",
+     "start": 11.08,
+     "end": 11.36
+    },
+    {
+     "word": " Latin",
+     "start": 11.36,
+     "end": 11.54
+    },
+    {
+     "word": " and",
+     "start": 11.54,
+     "end": 11.8
+    },
+    {
+     "word": " French,",
+     "start": 11.8,
+     "end": 12.06
+    },
+    {
+     "word": " but",
+     "start": 12.52,
+     "end": 12.62
+    },
+    {
+     "word": " it",
+     "start": 12.62,
+     "end": 12.7
+    },
+    {
+     "word": " quietly",
+     "start": 12.7,
+     "end": 12.92
+    },
+    {
+     "word": " pocketed",
+     "start": 12.92,
+     "end": 13.62
+    },
+    {
+     "word": " a",
+     "start": 13.62,
+     "end": 13.68
+    },
+    {
+     "word": " few",
+     "start": 13.68,
+     "end": 13.86
+    },
+    {
+     "word": " from",
+     "start": 13.86,
+     "end": 14.02
+    }
+   ]
+  },
+  {
+   "start": 14.02,
+   "end": 16.28,
+   "text": " the other side of the world with some wild stories attached.",
+   "words": [
+    {
+     "word": " the",
+     "start": 14.02,
+     "end": 14.16
+    },
+    {
+     "word": " other",
+     "start": 14.16,
+     "end": 14.34
+    },
+    {
+     "word": " side",
+     "start": 14.34,
+     "end": 14.58
+    },
+    {
+     "word": " of",
+     "start": 14.58,
+     "end": 14.68
+    },
+    {
+     "word": " the",
+     "start": 14.68,
+     "end": 14.76
+    },
+    {
+     "word": " world",
+     "start": 14.76,
+     "end": 14.96
+    },
+    {
+     "word": " with",
+     "start": 14.96,
+     "end": 15.18
+    },
+    {
+     "word": " some",
+     "start": 15.18,
+     "end": 15.34
+    },
+    {
+     "word": " wild",
+     "start": 15.34,
+     "end": 15.56
+    },
+    {
+     "word": " stories",
+     "start": 15.56,
+     "end": 15.92
+    },
+    {
+     "word": " attached.",
+     "start": 15.92,
+     "end": 16.28
+    }
+   ]
+  },
+  {
+   "start": 17.04,
+   "end": 18.68,
+   "text": " Here are five Chinese words you're already using.",
+   "words": [
+    {
+     "word": " Here",
+     "start": 17.04,
+     "end": 17.04
+    },
+    {
+     "word": " are",
+     "start": 17.04,
+     "end": 17.12
+    },
+    {
+     "word": " five",
+     "start": 17.12,
+     "end": 17.4
+    },
+    {
+     "word": " Chinese",
+     "start": 17.4,
+     "end": 17.66
+    },
+    {
+     "word": " words",
+     "start": 17.66,
+     "end": 17.96
+    },
+    {
+     "word": " you're",
+     "start": 17.96,
+     "end": 18.14
+    },
+    {
+     "word": " already",
+     "start": 18.14,
+     "end": 18.42
+    },
+    {
+     "word": " using.",
+     "start": 18.42,
+     "end": 18.68
+    }
+   ]
+  },
+  {
+   "start": 19.54,
+   "end": 20.6,
+   "text": " First, the one nobody suspects.",
+   "words": [
+    {
+     "word": " First,",
+     "start": 19.54,
+     "end": 19.54
+    },
+    {
+     "word": " the",
+     "start": 19.76,
+     "end": 19.9
+    },
+    {
+     "word": " one",
+     "start": 19.9,
+     "end": 20.02
+    },
+    {
+     "word": " nobody",
+     "start": 20.02,
+     "end": 20.24
+    },
+    {
+     "word": " suspects.",
+     "start": 20.24,
+     "end": 20.6
+    }
+   ]
+  },
+  {
+   "start": 21.22,
+   "end": 21.36,
+   "text": " The weather.",
+   "words": [
+    {
+     "word": " The",
+     "start": 21.22,
+     "end": 21.22
+    },
+    {
+     "word": " weather.",
+     "start": 21.22,
+     "end": 21.36
+    }
+   ]
+  },
+  {
+   "start": 23.96,
+   "end": 24.4,
+   "text": " Taifung.",
+   "words": [
+    {
+     "word": " Taifung.",
+     "start": 23.96,
+     "end": 24.4
+    }
+   ]
+  },
+  {
+   "start": 25.06,
+   "end": 26.48,
+   "text": " That monster storm off the Pacific?",
+   "words": [
+    {
+     "word": " That",
+     "start": 25.06,
+     "end": 25.16
+    },
+    {
+     "word": " monster",
+     "start": 25.16,
+     "end": 25.42
+    },
+    {
+     "word": " storm",
+     "start": 25.42,
+     "end": 25.78
+    },
+    {
+     "word": " off",
+     "start": 25.78,
+     "end": 25.98
+    },
+    {
+     "word": " the",
+     "start": 25.98,
+     "end": 26.16
+    },
+    {
+     "word": " Pacific?",
+     "start": 26.16,
+     "end": 26.48
+    }
+   ]
+  },
+  {
+   "start": 27.12,
+   "end": 28.76,
+   "text": " The word comes from Chinese Taifung.",
+   "words": [
+    {
+     "word": " The",
+     "start": 27.12,
+     "end": 27.32
+    },
+    {
+     "word": " word",
+     "start": 27.32,
+     "end": 27.5
+    },
+    {
+     "word": " comes",
+     "start": 27.5,
+     "end": 27.7
+    },
+    {
+     "word": " from",
+     "start": 27.7,
+     "end": 27.9
+    },
+    {
+     "word": " Chinese",
+     "start": 27.9,
+     "end": 28.14
+    },
+    {
+     "word": " Taifung.",
+     "start": 28.14,
+     "end": 28.76
+    }
+   ]
+  },
+  {
+   "start": 28.76,
+   "end": 30.08,
+   "text": " Roughly, the great wind.",
+   "words": [
+    {
+     "word": " Roughly,",
+     "start": 28.76,
+     "end": 29.4
+    },
+    {
+     "word": " the",
+     "start": 29.48,
+     "end": 29.6
+    },
+    {
+     "word": " great",
+     "start": 29.6,
+     "end": 29.82
+    },
+    {
+     "word": " wind.",
+     "start": 29.82,
+     "end": 30.08
+    }
+   ]
+  },
+  {
+   "start": 30.58,
+   "end": 31.66,
+   "text": " From the weather to your lunch.",
+   "words": [
+    {
+     "word": " From",
+     "start": 30.58,
+     "end": 30.72
+    },
+    {
+     "word": " the",
+     "start": 30.72,
+     "end": 30.86
+    },
+    {
+     "word": " weather",
+     "start": 30.86,
+     "end": 31.04
+    },
+    {
+     "word": " to",
+     "start": 31.04,
+     "end": 31.3
+    },
+    {
+     "word": " your",
+     "start": 31.3,
+     "end": 31.42
+    },
+    {
+     "word": " lunch.",
+     "start": 31.42,
+     "end": 31.66
+    }
+   ]
+  },
+  {
+   "start": 32.16,
+   "end": 32.26,
+   "text": " Two.",
+   "words": [
+    {
+     "word": " Two.",
+     "start": 32.16,
+     "end": 32.26
+    }
+   ]
+  },
+  {
+   "start": 32.74,
+   "end": 33.22,
+   "text": " Tofu.",
+   "words": [
+    {
+     "word": " Tofu.",
+     "start": 32.74,
+     "end": 33.22
+    }
+   ]
+  },
+  {
+   "start": 33.56,
+   "end": 33.84,
+   "text": " Or in Chinese.",
+   "words": [
+    {
+     "word": " Or",
+     "start": 33.56,
+     "end": 33.56
+    },
+    {
+     "word": " in",
+     "start": 33.56,
+     "end": 33.68
+    },
+    {
+     "word": " Chinese.",
+     "start": 33.68,
+     "end": 33.84
+    }
+   ]
+  },
+  {
+   "start": 34.7,
+   "end": 35.1,
+   "text": " Dofu.",
+   "words": [
+    {
+     "word": " Dofu.",
+     "start": 34.7,
+     "end": 35.1
+    }
+   ]
+  },
+  {
+   "start": 35.54,
+   "end": 35.74,
+   "text": " Dofu.",
+   "words": [
+    {
+     "word": " Dofu.",
+     "start": 35.54,
+     "end": 35.74
+    }
+   ]
+  },
+  {
+   "start": 35.74,
+   "end": 36.22,
+   "text": " Dofu means bean.",
+   "words": [
+    {
+     "word": " Dofu",
+     "start": 35.74,
+     "end": 35.9
+    },
+    {
+     "word": " means",
+     "start": 35.9,
+     "end": 35.92
+    },
+    {
+     "word": " bean.",
+     "start": 35.92,
+     "end": 36.22
+    }
+   ]
+  },
+  {
+   "start": 36.66,
+   "end": 37.56,
+   "text": " And foo means curdled.",
+   "words": [
+    {
+     "word": " And",
+     "start": 36.66,
+     "end": 36.66
+    },
+    {
+     "word": " foo",
+     "start": 36.66,
+     "end": 36.86
+    },
+    {
+     "word": " means",
+     "start": 36.86,
+     "end": 37.08
+    },
+    {
+     "word": " curdled.",
+     "start": 37.08,
+     "end": 37.56
+    }
+   ]
+  },
+  {
+   "start": 38.12,
+   "end": 41.48,
+   "text": " So every time you order tofu, you're literally asking for curdled bean.",
+   "words": [
+    {
+     "word": " So",
+     "start": 38.12,
+     "end": 38.16
+    },
+    {
+     "word": " every",
+     "start": 38.16,
+     "end": 38.34
+    },
+    {
+     "word": " time",
+     "start": 38.34,
+     "end": 38.62
+    },
+    {
+     "word": " you",
+     "start": 38.62,
+     "end": 38.76
+    },
+    {
+     "word": " order",
+     "start": 38.76,
+     "end": 38.92
+    },
+    {
+     "word": " tofu,",
+     "start": 38.92,
+     "end": 39.2
+    },
+    {
+     "word": " you're",
+     "start": 39.6,
+     "end": 39.72
+    },
+    {
+     "word": " literally",
+     "start": 39.72,
+     "end": 39.92
+    },
+    {
+     "word": " asking",
+     "start": 39.92,
+     "end": 40.44
+    },
+    {
+     "word": " for",
+     "start": 40.44,
+     "end": 40.72
+    },
+    {
+     "word": " curdled",
+     "start": 40.72,
+     "end": 41.2
+    },
+    {
+     "word": " bean.",
+     "start": 41.2,
+     "end": 41.48
+    }
+   ]
+  },
+  {
+   "start": 42.2,
+   "end": 44.74,
+   "text": " A dish coined in China over 2,000 years ago.",
+   "words": [
+    {
+     "word": " A",
+     "start": 42.2,
+     "end": 42.3
+    },
+    {
+     "word": " dish",
+     "start": 42.3,
+     "end": 42.52
+    },
+    {
+     "word": " coined",
+     "start": 42.52,
+     "end": 42.8
+    },
+    {
+     "word": " in",
+     "start": 42.8,
+     "end": 43.02
+    },
+    {
+     "word": " China",
+     "start": 43.02,
+     "end": 43.26
+    },
+    {
+     "word": " over",
+     "start": 43.26,
+     "end": 43.66
+    },
+    {
+     "word": " 2",
+     "start": 43.66,
+     "end": 43.94
+    },
+    {
+     "word": ",000",
+     "start": 43.94,
+     "end": 44.34
+    },
+    {
+     "word": " years",
+     "start": 44.34,
+     "end": 44.5
+    },
+    {
+     "word": " ago.",
+     "start": 44.5,
+     "end": 44.74
+    }
+   ]
+  },
+  {
+   "start": 45.5,
+   "end": 47.14,
+   "text": " Next, an idea you've definitely seen.",
+   "words": [
+    {
+     "word": " Next,",
+     "start": 45.5,
+     "end": 45.64
+    },
+    {
+     "word": " an",
+     "start": 46.0,
+     "end": 46.06
+    },
+    {
+     "word": " idea",
+     "start": 46.06,
+     "end": 46.32
+    },
+    {
+     "word": " you've",
+     "start": 46.32,
+     "end": 46.56
+    },
+    {
+     "word": " definitely",
+     "start": 46.56,
+     "end": 46.82
+    },
+    {
+     "word": " seen.",
+     "start": 46.82,
+     "end": 47.14
+    }
+   ]
+  },
+  {
+   "start": 48.0,
+   "end": 48.14,
+   "text": " Three.",
+   "words": [
+    {
+     "word": " Three.",
+     "start": 48.0,
+     "end": 48.14
+    }
+   ]
+  },
+  {
+   "start": 48.92,
+   "end": 49.52,
+   "text": " Yin and Yang.",
+   "words": [
+    {
+     "word": " Yin",
+     "start": 48.92,
+     "end": 48.92
+    },
+    {
+     "word": " and",
+     "start": 48.92,
+     "end": 49.36
+    },
+    {
+     "word": " Yang.",
+     "start": 49.36,
+     "end": 49.52
+    }
+   ]
+  },
+  {
+   "start": 50.36,
+   "end": 52.08,
+   "text": " Yin is the shady side of a hill.",
+   "words": [
+    {
+     "word": " Yin",
+     "start": 50.36,
+     "end": 50.7
+    },
+    {
+     "word": " is",
+     "start": 50.7,
+     "end": 51.08
+    },
+    {
+     "word": " the",
+     "start": 51.08,
+     "end": 51.22
+    },
+    {
+     "word": " shady",
+     "start": 51.22,
+     "end": 51.42
+    },
+    {
+     "word": " side",
+     "start": 51.42,
+     "end": 51.74
+    },
+    {
+     "word": " of",
+     "start": 51.74,
+     "end": 51.86
+    },
+    {
+     "word": " a",
+     "start": 51.86,
+     "end": 51.94
+    },
+    {
+     "word": " hill.",
+     "start": 51.94,
+     "end": 52.08
+    }
+   ]
+  },
+  {
+   "start": 52.84,
+   "end": 52.94,
+   "text": " Yang.",
+   "words": [
+    {
+     "word": " Yang.",
+     "start": 52.84,
+     "end": 52.94
+    }
+   ]
+  },
+  {
+   "start": 53.58,
+   "end": 54.22,
+   "text": " The sunny side.",
+   "words": [
+    {
+     "word": " The",
+     "start": 53.58,
+     "end": 53.62
+    },
+    {
+     "word": " sunny",
+     "start": 53.62,
+     "end": 53.8
+    },
+    {
+     "word": " side.",
+     "start": 53.8,
+     "end": 54.22
+    }
+   ]
+  },
+  {
+   "start": 54.8,
+   "end": 55.94,
+   "text": " Opposites that need each other.",
+   "words": [
+    {
+     "word": " Opposites",
+     "start": 54.8,
+     "end": 55.16
+    },
+    {
+     "word": " that",
+     "start": 55.16,
+     "end": 55.32
+    },
+    {
+     "word": " need",
+     "start": 55.32,
+     "end": 55.52
+    },
+    {
+     "word": " each",
+     "start": 55.52,
+     "end": 55.72
+    },
+    {
+     "word": " other.",
+     "start": 55.72,
+     "end": 55.94
+    }
+   ]
+  },
+  {
+   "start": 56.3,
+   "end": 56.52,
+   "text": " And yes.",
+   "words": [
+    {
+     "word": " And",
+     "start": 56.3,
+     "end": 56.32
+    },
+    {
+     "word": " yes.",
+     "start": 56.32,
+     "end": 56.52
+    }
+   ]
+  },
+  {
+   "start": 56.52,
+   "end": 59.3,
+   "text": " That's the symbol in the middle of the South Korean flag.",
+   "words": [
+    {
+     "word": " That's",
+     "start": 56.52,
+     "end": 56.8
+    },
+    {
+     "word": " the",
+     "start": 56.8,
+     "end": 57.46
+    },
+    {
+     "word": " symbol",
+     "start": 57.46,
+     "end": 57.7
+    },
+    {
+     "word": " in",
+     "start": 57.7,
+     "end": 57.88
+    },
+    {
+     "word": " the",
+     "start": 57.88,
+     "end": 57.94
+    },
+    {
+     "word": " middle",
+     "start": 57.94,
+     "end": 58.18
+    },
+    {
+     "word": " of",
+     "start": 58.18,
+     "end": 58.3
+    },
+    {
+     "word": " the",
+     "start": 58.3,
+     "end": 58.4
+    },
+    {
+     "word": " South",
+     "start": 58.4,
+     "end": 58.6
+    },
+    {
+     "word": " Korean",
+     "start": 58.6,
+     "end": 58.9
+    },
+    {
+     "word": " flag.",
+     "start": 58.9,
+     "end": 59.3
+    }
+   ]
+  },
+  {
+   "start": 60.04,
+   "end": 61.58,
+   "text": " Which fuels a quiet tug of war.",
+   "words": [
+    {
+     "word": " Which",
+     "start": 60.04,
+     "end": 60.06
+    },
+    {
+     "word": " fuels",
+     "start": 60.06,
+     "end": 60.3
+    },
+    {
+     "word": " a",
+     "start": 60.3,
+     "end": 60.52
+    },
+    {
+     "word": " quiet",
+     "start": 60.52,
+     "end": 60.84
+    },
+    {
+     "word": " tug",
+     "start": 60.84,
+     "end": 61.14
+    },
+    {
+     "word": " of",
+     "start": 61.14,
+     "end": 61.32
+    },
+    {
+     "word": " war.",
+     "start": 61.32,
+     "end": 61.58
+    }
+   ]
+  },
+  {
+   "start": 62.32,
+   "end": 65.52,
+   "text": " An ancient Chinese concept that became a national emblem next door.",
+   "words": [
+    {
+     "word": " An",
+     "start": 62.32,
+     "end": 62.34
+    },
+    {
+     "word": " ancient",
+     "start": 62.34,
+     "end": 62.6
+    },
+    {
+     "word": " Chinese",
+     "start": 62.6,
+     "end": 62.96
+    },
+    {
+     "word": " concept",
+     "start": 62.96,
+     "end": 63.6
+    },
+    {
+     "word": " that",
+     "start": 63.6,
+     "end": 63.8
+    },
+    {
+     "word": " became",
+     "start": 63.8,
+     "end": 64.04
+    },
+    {
+     "word": " a",
+     "start": 64.04,
+     "end": 64.18
+    },
+    {
+     "word": " national",
+     "start": 64.18,
+     "end": 64.56
+    },
+    {
+     "word": " emblem",
+     "start": 64.56,
+     "end": 64.82
+    },
+    {
+     "word": " next",
+     "start": 64.82,
+     "end": 65.16
+    },
+    {
+     "word": " door.",
+     "start": 65.16,
+     "end": 65.52
+    }
+   ]
+  },
+  {
+   "start": 66.58,
+   "end": 67.22,
+   "text": " Four.",
+   "words": [
+    {
+     "word": " Four.",
+     "start": 66.58,
+     "end": 67.22
+    }
+   ]
+  },
+  {
+   "start": 67.84,
+   "end": 68.38,
+   "text": " Taikonot.",
+   "words": [
+    {
+     "word": " Taikonot.",
+     "start": 67.84,
+     "end": 68.38
+    }
+   ]
+  },
+  {
+   "start": 68.74,
+   "end": 69.3,
+   "text": " Taikon.",
+   "words": [
+    {
+     "word": " Taikon.",
+     "start": 68.74,
+     "end": 69.3
+    }
+   ]
+  },
+  {
+   "start": 69.56,
+   "end": 72.1,
+   "text": " Every space nation names its travelers for the heavens.",
+   "words": [
+    {
+     "word": " Every",
+     "start": 69.56,
+     "end": 69.94
+    },
+    {
+     "word": " space",
+     "start": 69.94,
+     "end": 70.26
+    },
+    {
+     "word": " nation",
+     "start": 70.26,
+     "end": 70.54
+    },
+    {
+     "word": " names",
+     "start": 70.54,
+     "end": 70.92
+    },
+    {
+     "word": " its",
+     "start": 70.92,
+     "end": 71.1
+    },
+    {
+     "word": " travelers",
+     "start": 71.1,
+     "end": 71.44
+    },
+    {
+     "word": " for",
+     "start": 71.44,
+     "end": 71.76
+    },
+    {
+     "word": " the",
+     "start": 71.76,
+     "end": 71.88
+    },
+    {
+     "word": " heavens.",
+     "start": 71.88,
+     "end": 72.1
+    }
+   ]
+  },
+  {
+   "start": 72.84,
+   "end": 73.76,
+   "text": " America has astronauts.",
+   "words": [
+    {
+     "word": " America",
+     "start": 72.84,
+     "end": 73.02
+    },
+    {
+     "word": " has",
+     "start": 73.02,
+     "end": 73.42
+    },
+    {
+     "word": " astronauts.",
+     "start": 73.42,
+     "end": 73.76
+    }
+   ]
+  },
+  {
+   "start": 74.54,
+   "end": 75.12,
+   "text": " Greek for star.",
+   "words": [
+    {
+     "word": " Greek",
+     "start": 74.54,
+     "end": 74.54
+    },
+    {
+     "word": " for",
+     "start": 74.54,
+     "end": 74.88
+    },
+    {
+     "word": " star.",
+     "start": 74.88,
+     "end": 75.12
+    }
+   ]
+  },
+  {
+   "start": 76.48,
+   "end": 77.08,
+   "text": " Cosmonauts.",
+   "words": [
+    {
+     "word": " Cosmonauts.",
+     "start": 76.48,
+     "end": 77.08
+    }
+   ]
+  },
+  {
+   "start": 77.26,
+   "end": 77.62,
+   "text": " Inamos.",
+   "words": [
+    {
+     "word": " Inamos.",
+     "start": 77.26,
+     "end": 77.62
+    }
+   ]
+  },
+  {
+   "start": 77.92,
+   "end": 78.48,
+   "text": " Inamos.",
+   "words": [
+    {
+     "word": " Inamos.",
+     "start": 77.92,
+     "end": 78.48
+    }
+   ]
+  },
+  {
+   "start": 79.58,
+   "end": 79.84,
+   "text": " And China.",
+   "words": [
+    {
+     "word": " And",
+     "start": 79.58,
+     "end": 79.64
+    },
+    {
+     "word": " China.",
+     "start": 79.64,
+     "end": 79.84
+    }
+   ]
+  },
+  {
+   "start": 80.6,
+   "end": 81.1,
+   "text": " Taikonots.",
+   "words": [
+    {
+     "word": " Taikonots.",
+     "start": 80.6,
+     "end": 81.1
+    }
+   ]
+  },
+  {
+   "start": 81.32,
+   "end": 82.24,
+   "text": " From Taikon.",
+   "words": [
+    {
+     "word": " From",
+     "start": 81.32,
+     "end": 81.6
+    },
+    {
+     "word": " Taikon.",
+     "start": 81.6,
+     "end": 82.24
+    }
+   ]
+  },
+  {
+   "start": 82.42,
+   "end": 83.96,
+   "text": " Literally the great emptiness.",
+   "words": [
+    {
+     "word": " Literally",
+     "start": 82.42,
+     "end": 82.86
+    },
+    {
+     "word": " the",
+     "start": 82.86,
+     "end": 83.34
+    },
+    {
+     "word": " great",
+     "start": 83.34,
+     "end": 83.6
+    },
+    {
+     "word": " emptiness.",
+     "start": 83.6,
+     "end": 83.96
+    }
+   ]
+  },
+  {
+   "start": 84.88,
+   "end": 85.32,
+   "text": " Outer space.",
+   "words": [
+    {
+     "word": " Outer",
+     "start": 84.88,
+     "end": 84.94
+    },
+    {
+     "word": " space.",
+     "start": 84.94,
+     "end": 85.32
+    }
+   ]
+  },
+  {
+   "start": 85.32,
+   "end": 86.8,
+   "text": " Named like a poem.",
+   "words": [
+    {
+     "word": " Named",
+     "start": 85.32,
+     "end": 86.12
+    },
+    {
+     "word": " like",
+     "start": 86.12,
+     "end": 86.42
+    },
+    {
+     "word": " a",
+     "start": 86.42,
+     "end": 86.54
+    },
+    {
+     "word": " poem.",
+     "start": 86.54,
+     "end": 86.8
+    }
+   ]
+  },
+  {
+   "start": 87.32,
+   "end": 88.44,
+   "text": " Our last one isn't a thing.",
+   "words": [
+    {
+     "word": " Our",
+     "start": 87.32,
+     "end": 87.4
+    },
+    {
+     "word": " last",
+     "start": 87.4,
+     "end": 87.6
+    },
+    {
+     "word": " one",
+     "start": 87.6,
+     "end": 87.84
+    },
+    {
+     "word": " isn't",
+     "start": 87.84,
+     "end": 88.16
+    },
+    {
+     "word": " a",
+     "start": 88.16,
+     "end": 88.24
+    },
+    {
+     "word": " thing.",
+     "start": 88.24,
+     "end": 88.44
+    }
+   ]
+  },
+  {
+   "start": 88.82,
+   "end": 90.04,
+   "text": " It's an insult that went global.",
+   "words": [
+    {
+     "word": " It's",
+     "start": 88.82,
+     "end": 88.96
+    },
+    {
+     "word": " an",
+     "start": 88.96,
+     "end": 89.04
+    },
+    {
+     "word": " insult",
+     "start": 89.04,
+     "end": 89.36
+    },
+    {
+     "word": " that",
+     "start": 89.36,
+     "end": 89.56
+    },
+    {
+     "word": " went",
+     "start": 89.56,
+     "end": 89.68
+    },
+    {
+     "word": " global.",
+     "start": 89.68,
+     "end": 90.04
+    }
+   ]
+  },
+  {
+   "start": 91.22,
+   "end": 91.86,
+   "text": " Five.",
+   "words": [
+    {
+     "word": " Five.",
+     "start": 91.22,
+     "end": 91.86
+    }
+   ]
+  },
+  {
+   "start": 92.3,
+   "end": 93.0,
+   "text": " Paper Tiger.",
+   "words": [
+    {
+     "word": " Paper",
+     "start": 92.3,
+     "end": 92.62
+    },
+    {
+     "word": " Tiger.",
+     "start": 92.62,
+     "end": 93.0
+    }
+   ]
+  },
+  {
+   "start": 93.56,
+   "end": 94.16,
+   "text": " Jilao Hu.",
+   "words": [
+    {
+     "word": " Jilao",
+     "start": 93.56,
+     "end": 93.92
+    },
+    {
+     "word": " Hu.",
+     "start": 93.92,
+     "end": 94.16
+    }
+   ]
+  },
+  {
+   "start": 94.72,
+   "end": 98.0,
+   "text": " A paper tiger looks terrifying until you see it can't bite.",
+   "words": [
+    {
+     "word": " A",
+     "start": 94.72,
+     "end": 94.78
+    },
+    {
+     "word": " paper",
+     "start": 94.78,
+     "end": 95.0
+    },
+    {
+     "word": " tiger",
+     "start": 95.0,
+     "end": 95.34
+    },
+    {
+     "word": " looks",
+     "start": 95.34,
+     "end": 95.64
+    },
+    {
+     "word": " terrifying",
+     "start": 95.64,
+     "end": 96.04
+    },
+    {
+     "word": " until",
+     "start": 96.04,
+     "end": 96.78
+    },
+    {
+     "word": " you",
+     "start": 96.78,
+     "end": 97.2
+    },
+    {
+     "word": " see",
+     "start": 97.2,
+     "end": 97.38
+    },
+    {
+     "word": " it",
+     "start": 97.38,
+     "end": 97.5
+    },
+    {
+     "word": " can't",
+     "start": 97.5,
+     "end": 97.8
+    },
+    {
+     "word": " bite.",
+     "start": 97.8,
+     "end": 98.0
+    }
+   ]
+  },
+  {
+   "start": 98.62,
+   "end": 100.56,
+   "text": " The phrase conquered English in 1946.",
+   "words": [
+    {
+     "word": " The",
+     "start": 98.62,
+     "end": 98.64
+    },
+    {
+     "word": " phrase",
+     "start": 98.64,
+     "end": 98.84
+    },
+    {
+     "word": " conquered",
+     "start": 98.84,
+     "end": 99.18
+    },
+    {
+     "word": " English",
+     "start": 99.18,
+     "end": 99.54
+    },
+    {
+     "word": " in",
+     "start": 99.54,
+     "end": 99.84
+    },
+    {
+     "word": " 1946.",
+     "start": 99.84,
+     "end": 100.56
+    }
+   ]
+  },
+  {
+   "start": 101.52,
+   "end": 104.66,
+   "text": " When Mao Zedong called US imperialism a paper tiger.",
+   "words": [
+    {
+     "word": " When",
+     "start": 101.52,
+     "end": 101.6
+    },
+    {
+     "word": " Mao",
+     "start": 101.6,
+     "end": 101.78
+    },
+    {
+     "word": " Zedong",
+     "start": 101.78,
+     "end": 102.24
+    },
+    {
+     "word": " called",
+     "start": 102.24,
+     "end": 102.5
+    },
+    {
+     "word": " US",
+     "start": 102.5,
+     "end": 102.78
+    },
+    {
+     "word": " imperialism",
+     "start": 102.78,
+     "end": 103.2
+    },
+    {
+     "word": " a",
+     "start": 103.2,
+     "end": 103.9
+    },
+    {
+     "word": " paper",
+     "start": 103.9,
+     "end": 104.16
+    },
+    {
+     "word": " tiger.",
+     "start": 104.16,
+     "end": 104.66
+    }
+   ]
+  },
+  {
+   "start": 105.38,
+   "end": 106.92,
+   "text": " It got translated word for word.",
+   "words": [
+    {
+     "word": " It",
+     "start": 105.38,
+     "end": 105.44
+    },
+    {
+     "word": " got",
+     "start": 105.44,
+     "end": 105.58
+    },
+    {
+     "word": " translated",
+     "start": 105.58,
+     "end": 106.04
+    },
+    {
+     "word": " word",
+     "start": 106.04,
+     "end": 106.42
+    },
+    {
+     "word": " for",
+     "start": 106.42,
+     "end": 106.66
+    },
+    {
+     "word": " word.",
+     "start": 106.66,
+     "end": 106.92
+    }
+   ]
+  },
+  {
+   "start": 107.36,
+   "end": 107.7,
+   "text": " And it stuck.",
+   "words": [
+    {
+     "word": " And",
+     "start": 107.36,
+     "end": 107.38
+    },
+    {
+     "word": " it",
+     "start": 107.38,
+     "end": 107.48
+    },
+    {
+     "word": " stuck.",
+     "start": 107.48,
+     "end": 107.7
+    }
+   ]
+  },
+  {
+   "start": 109.86,
+   "end": 110.2,
+   "text": " Tofu.",
+   "words": [
+    {
+     "word": " Tofu.",
+     "start": 109.86,
+     "end": 110.2
+    }
+   ]
+  },
+  {
+   "start": 110.72,
+   "end": 111.32,
+   "text": " Yin and Yang.",
+   "words": [
+    {
+     "word": " Yin",
+     "start": 110.72,
+     "end": 110.8
+    },
+    {
+     "word": " and",
+     "start": 110.8,
+     "end": 111.12
+    },
+    {
+     "word": " Yang.",
+     "start": 111.12,
+     "end": 111.32
+    }
+   ]
+  },
+  {
+   "start": 112.04,
+   "end": 112.46,
+   "text": " Taikonot.",
+   "words": [
+    {
+     "word": " Taikonot.",
+     "start": 112.04,
+     "end": 112.46
+    }
+   ]
+  },
+  {
+   "start": 112.82,
+   "end": 113.4,
+   "text": " Paper Tiger.",
+   "words": [
+    {
+     "word": " Paper",
+     "start": 112.82,
+     "end": 113.02
+    },
+    {
+     "word": " Tiger.",
+     "start": 113.02,
+     "end": 113.4
+    }
+   ]
+  },
+  {
+   "start": 114.12,
+   "end": 115.82,
+   "text": " Five words you've spoken your whole life.",
+   "words": [
+    {
+     "word": " Five",
+     "start": 113.96,
+     "end": 114.22
+    },
+    {
+     "word": " words",
+     "start": 114.22,
+     "end": 114.58
+    },
+    {
+     "word": " you've",
+     "start": 114.58,
+     "end": 114.78
+    },
+    {
+     "word": " spoken",
+     "start": 114.78,
+     "end": 115.06
+    },
+    {
+     "word": " your",
+     "start": 115.06,
+     "end": 115.28
+    },
+    {
+     "word": " whole",
+     "start": 115.28,
+     "end": 115.48
+    },
+    {
+     "word": " life.",
+     "start": 115.48,
+     "end": 115.82
+    }
+   ]
+  },
+  {
+   "start": 116.26,
+   "end": 117.46,
+   "text": " Without realizing they were Chinese.",
+   "words": [
+    {
+     "word": " Without",
+     "start": 116.26,
+     "end": 116.4
+    },
+    {
+     "word": " realizing",
+     "start": 116.4,
+     "end": 116.76
+    },
+    {
+     "word": " they",
+     "start": 116.76,
+     "end": 117.12
+    },
+    {
+     "word": " were",
+     "start": 117.12,
+     "end": 117.24
+    },
+    {
+     "word": " Chinese.",
+     "start": 117.24,
+     "end": 117.46
+    }
+   ]
+  },
+  {
+   "start": 118.24,
+   "end": 119.54,
+   "text": " The language is closer than it looks.",
+   "words": [
+    {
+     "word": " The",
+     "start": 118.24,
+     "end": 118.32
+    },
+    {
+     "word": " language",
+     "start": 118.32,
+     "end": 118.54
+    },
+    {
+     "word": " is",
+     "start": 118.54,
+     "end": 118.72
+    },
+    {
+     "word": " closer",
+     "start": 118.72,
+     "end": 118.92
+    },
+    {
+     "word": " than",
+     "start": 118.92,
+     "end": 119.26
+    },
+    {
+     "word": " it",
+     "start": 119.26,
+     "end": 119.36
+    },
+    {
+     "word": " looks.",
+     "start": 119.36,
+     "end": 119.54
+    }
+   ]
+  },
+  {
+   "start": 120.12,
+   "end": 121.3,
+   "text": " When I actually start learning Chinese.",
+   "words": [
+    {
+     "word": " When",
+     "start": 120.12,
+     "end": 120.22
+    },
+    {
+     "word": " I",
+     "start": 120.22,
+     "end": 120.3
+    },
+    {
+     "word": " actually",
+     "start": 120.3,
+     "end": 120.5
+    },
+    {
+     "word": " start",
+     "start": 120.5,
+     "end": 120.72
+    },
+    {
+     "word": " learning",
+     "start": 120.72,
+     "end": 121.0
+    },
+    {
+     "word": " Chinese.",
+     "start": 121.0,
+     "end": 121.3
+    }
+   ]
+  },
+  {
+   "start": 122.0,
+   "end": 126.36,
+   "text": " Discover thousands of free exercises and more learning content on stack tags.io.",
+   "words": [
+    {
+     "word": " Discover",
+     "start": 122.0,
+     "end": 122.24
+    },
+    {
+     "word": " thousands",
+     "start": 122.24,
+     "end": 122.58
+    },
+    {
+     "word": " of",
+     "start": 122.58,
+     "end": 122.98
+    },
+    {
+     "word": " free",
+     "start": 122.98,
+     "end": 123.16
+    },
+    {
+     "word": " exercises",
+     "start": 123.16,
+     "end": 123.58
+    },
+    {
+     "word": " and",
+     "start": 123.58,
+     "end": 124.02
+    },
+    {
+     "word": " more",
+     "start": 124.02,
+     "end": 124.2
+    },
+    {
+     "word": " learning",
+     "start": 124.2,
+     "end": 124.46
+    },
+    {
+     "word": " content",
+     "start": 124.46,
+     "end": 124.76
+    },
+    {
+     "word": " on",
+     "start": 124.76,
+     "end": 125.02
+    },
+    {
+     "word": " stack",
+     "start": 125.02,
+     "end": 125.26
+    },
+    {
+     "word": " tags",
+     "start": 125.26,
+     "end": 125.52
+    },
+    {
+     "word": ".io.",
+     "start": 125.52,
+     "end": 126.36
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Stacktags element — globe dive-out → dive-in (demo)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../_shared/theme.css">
+<style>
+  html,body{margin:0;height:100%;overflow:hidden;background:#0b0e0d;}
+  .wrap{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;}
+  .stage{position:relative;width:1080px;height:1920px;overflow:hidden;transform-origin:center;flex-shrink:0;}
+
+  .globe-host{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;}
+  .globe-host.gone{opacity:0;}
+  .globe-host canvas{display:block;}
+
+  /* a city photo plate. Shared geometry; .a starts full, .b starts collapsed. */
+  .photo{position:absolute;inset:0;z-index:6;background:#0a1521;
+    transform-origin:50% 47%;}
+  .photo img{width:100%;height:100%;object-fit:cover;display:block;}
+  .photo::after{content:'';position:absolute;inset:0;
+    background:linear-gradient(to top, rgba(6,32,24,.82) 0%, rgba(6,32,24,.05) 44%, transparent 68%);}
+  .photo-cap{position:absolute;left:0;right:0;bottom:120px;text-align:center;padding:0 70px;z-index:2;}
+  .photo-cap .zh{font-family:var(--stk-font);font-weight:800;font-size:96px;letter-spacing:-2px;color:#fff;}
+  .photo-cap .en{font-family:var(--stk-font);font-weight:700;font-size:42px;color:#6fe3c6;letter-spacing:2px;margin-top:8px;}
+
+  /* origin (A): visible at start, then SHRINKS back into the marker dot */
+  .photo.a{clip-path:circle(150% at 50% 50%);transform:scale(1);filter:blur(0);
+    transition:clip-path .72s cubic-bezier(.5,.1,.7,.4), transform .85s cubic-bezier(.6,.05,.7,.5), filter .5s ease;}
+  .photo.a.out{clip-path:circle(0% at 50% 50%);transform:scale(1.18);filter:blur(3px);}
+  .photo.a .photo-cap{transition:opacity .4s ease, transform .5s ease;}
+  .photo.a.out .photo-cap{opacity:0;transform:translateY(-16px);}
+
+  /* destination (B): collapsed at start, then BURSTS out of the dot */
+  .photo.b{clip-path:circle(0% at 50% 50%);transform:scale(1.16);filter:blur(3px);
+    transition:clip-path .8s cubic-bezier(.45,.55,.3,1), transform .9s cubic-bezier(.3,.7,.25,1), filter .55s ease;}
+  .photo.b.in{clip-path:circle(150% at 50% 50%);transform:scale(1);filter:blur(0);}
+  .photo.b .photo-cap{transform:translateY(22px);opacity:0;transition:transform .6s cubic-bezier(.2,.8,.2,1) .15s,opacity .5s ease .15s;}
+  .photo.b.in .photo-cap{transform:none;opacity:1;}
+
+  /* fallback shown when a city photo file is missing */
+  .ph-hint{position:absolute;inset:0;display:none;align-items:center;justify-content:center;flex-direction:column;gap:14px;z-index:1;
+    font-family:var(--stk-font);color:#7fb7a6;text-align:center;padding:0 80px;}
+  .photo.no-img .ph-hint{display:flex;}
+  .ph-hint .ic{font-size:60px;opacity:.5;}
+  .ph-hint .tx{font-weight:700;font-size:34px;letter-spacing:.5px;}
+</style>
+</head>
+<body>
+<div class="wrap"><div class="stage stk-grid-bg" id="stage">
+  <div class="globe-host" id="globe-host"></div>
+
+  <!-- B: destination photo (Hong Kong) — sits under A, bursts in at the end -->
+  <div class="photo b" id="photoB">
+    <img src="assets/hongkong.png" alt="Hong Kong" onerror="this.closest('.photo').classList.add('no-img');this.style.display='none'">
+    <div class="ph-hint"><div class="ic">⛰</div><div class="tx">Zielfoto hier einsetzen</div></div>
+    <div class="photo-cap"><div class="zh">Hongkong</div><div class="en">HONG KONG</div></div>
+  </div>
+
+  <!-- A: origin photo (Peking) — covers the screen at start, shrinks into the dot -->
+  <div class="photo a" id="photoA">
+    <img src="assets/peking.png" alt="Peking" onerror="this.closest('.photo').classList.add('no-img');this.style.display='none'">
+    <div class="ph-hint"><div class="ic">⛰</div><div class="tx">Peking-Foto hier einsetzen<br>(assets/peking.png)</div></div>
+    <div class="photo-cap"><div class="zh">Peking</div><div class="en">BEIJING</div></div>
+  </div>
+</div></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/earcut@2.2.4/dist/earcut.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/topojson-client@3.1.0/dist/topojson-client.min.js"></script>
+<script src="globe.js"></script>
+<script>
+  const stage = document.getElementById('stage');
+  function fit(){ const s=Math.min(innerWidth/1080, innerHeight/1920); stage.style.transform='scale('+s+')'; }
+  addEventListener('resize', fit); fit();
+
+  const PEKING   = { lat: 39.90, lon: 116.40 };
+  const HONGKONG = { lat: 22.30, lon: 114.17 };
+
+  let ctrl = null;
+  window.__demoReady = new Promise((resolve) => {
+    function tryMount(){
+      if (!(window.THREE && window.earcut && window.topojson)) { setTimeout(tryMount, 60); return; }
+      window.mountStacktagsGlobeV2(document.getElementById('globe-host'), {
+        highlight: 'China',
+        markers: [PEKING, HONGKONG],
+        closeCam: 1.02,
+        overviewCam: 2.55,     // pull back only moderately — China stays large in frame
+        onReady: (c) => { ctrl = c; resolve(); },
+      });
+    }
+    tryMount();
+  });
+
+  // SFX timings (seconds from play): swoosh out as we pull back, swoosh in as B bursts.
+  const T_START = 0.18;
+  const TOTAL = 2500;          // one continuous out→across→in arc (ms)
+  const T_BURST = T_START + TOTAL / 1000;
+  window.DEMO = {
+    duration: T_BURST + 0.6,
+    settleMs: 450,
+    sfx: [
+      { sound: 'swoosh', t: T_START + 0.05, vol: 0.8 },
+      { sound: 'swoosh', t: T_BURST - 0.18, vol: 0.9 },
+    ],
+  };
+
+  window.__demoPlay = function () {
+    if (!ctrl) return;
+    // origin photo shrinks back into the dot right away
+    document.getElementById('photoA').classList.add('out');
+    setTimeout(() => {
+      ctrl.outIn(
+        { total: TOTAL },
+        { onArrive: () => {
+            // The photo opens AS A CIRCLE right out of the grey dot, growing
+            // over the still-visible white globe (no hard white cut). Once the
+            // circle has covered the screen we drop the globe behind it.
+            document.getElementById('photoB').classList.add('in');
+            setTimeout(() => document.getElementById('globe-host').classList.add('gone'), 720);
+          } }
+      );
+    }, T_START * 1000);
+  };
+</script>
+<script src="../_shared/viewer.js"></script>
+</body>
+</html>

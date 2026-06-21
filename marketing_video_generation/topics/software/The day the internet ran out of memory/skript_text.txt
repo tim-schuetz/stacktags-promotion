@@ -1,0 +1,78 @@
+VIDEO SCRIPT
+Title: The day the internet ran out of memory
+Topic: Software
+Target length: ~110 seconds (fits the 30s–3min window)
+Language of narration: English
+Format: Voiceover script. Spoken lines are plain text. [Bracketed lines] describe
+what is on screen AT THE SAME TIME as the narration next to them.
+
+==================================================================
+THE CORE IDEA
+==================================================================
+"512K Day" (Aug 2014): the internet's global routing table (BGP) crossed 512,000
+routes. Many older routers had a hardwired memory limit (TCAM) of exactly 512K
+routes — so they dropped routes or crashed, causing outages. Operators reconfigured
+them. The table keeps growing ("768K Day" loomed next). Built-in explainer: how your
+request to google.com actually finds Google's servers — routers share giant tables
+(BGP) and hop your packet along them.
+Punchline: the internet feels infinite, but it runs on real machines with real
+memory — and every so often it outgrows its own map.
+
+KEY VISUALS:
+- A request hopping router to router, each holding a giant "map" of the internet.
+- A memory bar filling to "512,000" and overflowing; routers flashing red.
+
+==================================================================
+SCRIPT
+==================================================================
+
+--- HOOK (0:00–0:12) — the payoff up front ---
+
+In 2014, parts of the internet started crashing — and it wasn't an attack.
+[Routers flashing red across a world map; sites blinking offline.]
+The internet had simply grown too big for its own routers to remember. To get why,
+you first need to know how your data ever finds anything.
+
+--- HOW YOUR REQUEST FINDS GOOGLE (≈0:12–0:42) ---
+
+When you type google.com, your request doesn't magically know where Google is.
+[A little data packet, lost, asking "which way?"]
+It hops from router to router across the internet. And every one of those routers
+holds a giant map — a list of which chunks of the internet live in which direction.
+[Each router holding a glowing "routing table" — a map of everywhere.]
+That map is called the routing table, and it's how packets get passed along, hop by
+hop, until they reach Google's servers. Every router has to know a route to
+basically everywhere.
+
+--- THE 512,000 WALL (≈0:42–1:12) ---
+
+Here's the problem. Many older routers stored that map in a special kind of
+super-fast memory — with a fixed size. Room for exactly 512,000 routes.
+[A memory bar with a hard line at "512,000".]
+For years, fine. The internet's map was smaller than that. But the internet kept
+growing — more networks, more routes, every single day.
+[The route count creeping upward toward the line.]
+And in August 2014, it crossed 512,000. Routers that hadn't been updated hit their
+ceiling — and started dropping routes, or crashing outright.
+[The bar overflows; routers go red; chunks of the map go dark.]
+Pieces of the internet simply blinked out.
+
+--- IT KEEPS HAPPENING (≈1:12–1:32) ---
+
+The fix was almost mundane: operators reconfigured their routers to make room for
+more routes. Crisis handled.
+[Engineers bumping the limit up; the map relights.]
+But the table never stops growing. The next threshold — call it "768K Day" — came
+looming right behind it. Every few years, the internet quietly outgrows another
+limit, and someone has to raise the ceiling again.
+
+--- PUNCHLINE / OUTRO (≈1:32–1:45) ---
+
+The internet feels infinite.
+[Pull back to the whole glowing network.]
+But underneath, it's running on real machines, with real memory — and every so
+often, it grows too big for its own map.
+
+Want more stories of how the internet really works?
+[Stacktags logo animates in; "stacktags.io" shown on screen.]
+Discover thousands of free exercises and more learning content on stacktags.io.

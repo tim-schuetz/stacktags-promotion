@@ -1,0 +1,99 @@
+VIDEO SCRIPT
+Title: How a bureaucrats' dialect conquered China
+Topic: Learn Chinese
+Target length: ~2 minutes (fits the 30s–3min window)
+Language of narration: English
+Format: Voiceover script. Spoken lines are plain text. [Bracketed lines] describe
+what is on screen AT THE SAME TIME as the narration next to them.
+
+==================================================================
+THE CORE IDEA
+==================================================================
+"Mandarin" is a name FOREIGNERS gave it (via Portuguese "mandarim" = the imperial
+officials, 官话 = "officials' speech"). The Chinese name today is just 普通话,
+pǔtōnghuà = "common / ordinary speech." The arc: China had dynasties long before
+Rome → centuries of war between rival states → unification, and the Han dynasty
+becomes so dominant it names the people (Han) and the language (Hanyu) → writing
+was unified, but SPEECH wasn't, so officials adopted one shared spoken standard →
+the West named it "Mandarin" → modern China renamed it the humble "common speech."
+Punchline: the grand foreign name "Mandarin" just means "normal talk."
+
+NOTE (honesty): early dates are simplified. Qin unified China & standardized the
+SCRIPT in 221 BC; the HAN dynasty that followed gave its name to the people and
+language. "Mandarin" is a European exonym; 普通话 was standardized in the 20th c.
+
+KEY VISUALS:
+- A timeline that scrolls deep into the past (past "ROME").
+- A map of warring states collapsing into one empire.
+- Word reveal: 官话 → "MANDARIN" → 普通话 ("common speech").
+
+==================================================================
+SCRIPT
+==================================================================
+
+--- HOOK (0:00–0:10) — the payoff up front ---
+
+Over a billion people speak Mandarin — but almost none of them call it that.
+["MANDARIN" on screen; a red ✗ crosses the word out.]
+"Mandarin" is a name foreigners gave it. And the real story of how it took over
+China begins before Rome was ever an empire.
+[A timeline rockets backwards, past "ROME," into ancient China.]
+
+--- THE ANCIENT SPLIT (≈0:10–0:38) ---
+
+Because long before Rome ruled anything, China had already risen and fallen through
+dynasties going back more than three thousand years.
+[Ancient dynasty names flash by on a deep timeline: Shang, Zhou...]
+But "China" back then wasn't one country. It was a patchwork of rival states,
+locked in near-constant war —
+[A map of warring states, borders clashing.]
+dozens of kingdoms, with different rulers, different armies, and different spoken
+tongues.
+
+--- UNIFICATION & THE HAN (≈0:38–1:05) ---
+
+Then, in 221 BC, one state finally conquered the rest, forced them into a single
+empire — and standardized the writing, so everyone wrote the same characters.
+[The warring map collapses into one; mismatched characters snap into one uniform script.]
+That first empire didn't last long. But the dynasty after it did: the Han.
+[The character 汉 "Han" stamps across the map.]
+The Han ruled for four centuries, and became so foundational that, to this day,
+most Chinese call themselves "Han" — and their language "Hanyu," the language of
+Han.
+
+--- WRITING ISN'T SPEECH (≈1:05–1:32) ---
+
+But here's the catch: unifying the writing is not the same as unifying the
+speech.
+[Everyone writes identical characters — yet their speech bubbles all sound different.]
+For two thousand years, Chinese across the empire wrote alike but spoke languages
+they couldn't understand out loud. So to actually govern, the officials settled
+on one shared spoken standard, based on the northern, capital dialect.
+[Robed officials speaking a single tongue across the whole map.]
+They called it 官话 — "the speech of the officials."
+
+--- WHERE "MANDARIN" COMES FROM (≈1:32–1:52) ---
+
+And that's where our word is born. When Portuguese traders reached China in the
+1500s, they called those robed officials "mandarins" —
+[A Portuguese ship docks; the word "mandarim" appears.]
+so in Europe, the officials' language became "Mandarin." A foreign name for the
+language of power.
+[官话 flips into "MANDARIN".]
+
+--- MODERN "COMMON SPEECH" + PUNCHLINE (≈1:52–2:12) ---
+
+Then, last century, that same northern standard was formalized, taught in every
+school, and pushed through radio and TV — until it became the shared voice of
+1.4 billion people. And they gave it a new, surprisingly humble name: 普通话.
+["MANDARIN" flips into 普通话.]
+Which means, simply... "common speech." Everyday, ordinary talk.
+[The grand word "MANDARIN" shrinks beside the plain "普通话 — common speech".]
+So the exotic, powerful name the West knows — to a billion speakers back home,
+it's just normal language.
+
+--- OUTRO / CTA (≈2:12–2:22) ---
+
+Wanna actually start learning Chinese?
+[Stacktags logo animates in; "stacktags.io" shown on screen.]
+Discover thousands of free exercises and more learning content on stacktags.io.

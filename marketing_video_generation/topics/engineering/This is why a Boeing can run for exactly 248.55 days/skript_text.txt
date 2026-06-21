@@ -1,0 +1,95 @@
+VIDEO SCRIPT
+Title: This is why a Boeing can run for exactly 248.55 days
+Topic: Engineering
+Target length: ~2 minutes (fits the 30s–3min window)
+Language of narration: English
+Format: Voiceover script. Spoken lines are plain text. [Bracketed lines] describe
+what is on screen AT THE SAME TIME as the narration next to them.
+
+==================================================================
+THE CORE IDEA
+==================================================================
+A Boeing 787's electrical power runs through Generator Control Units (GCUs). Each
+GCU has an internal timer stored as a SIGNED 32-bit integer, counting in
+HUNDREDTHS OF A SECOND. A signed 32-bit int maxes out around 2.1 billion, so:
+  2^31 ÷ 100 ÷ 86,400 ≈ 248.55 days.
+At that point the counter overflows, the GCU drops into "failsafe" and shuts
+down. Because all four GCUs power up together, they overflow together → total
+loss of AC power. The FAA's fix: power-cycle (reboot) the aircraft regularly.
+Punchline: the world's most advanced airliner, fixed by "turn it off and on again."
+
+GUARDRAILS (do NOT violate):
+- Use the SIGNED 32-bit / hundredths-of-a-second framing. Do NOT say "unsigned"
+  or "ticks every 5 ms" (that explanation was debunked).
+- Source on screen: FAA Airworthiness Directive (2015).
+- Be honest: it was caught in TESTING, never crashed a plane; AD is precautionary.
+
+==================================================================
+SCRIPT
+==================================================================
+
+--- HOOK (0:00–0:12) — the payoff up front ---
+
+Leave a Boeing 787 switched on for 248 days straight, and something bizarre
+happens: all four of its generators shut down at the exact same instant —
+[A 787; a "days powered on" counter climbs toward 248, then every generator icon flips red at once.]
+and the plane loses all of its main electrical power. The official fix, straight
+from the FAA? Turn it off and on again.
+[A giant power button; a "REBOOT REQUIRED" stamp.]
+Here's the line of code behind it.
+
+--- THE ELECTRICAL SYSTEM (≈0:12–0:32) ---
+
+A 787's power comes from generators bolted to its engines, and each one is run by
+a small computer called a Generator Control Unit — a GCU.
+[Engines → generators → four GCU boxes light up.]
+Inside every GCU sits a timer, quietly counting how long the unit has been
+powered on. And it counts in hundredths of a second.
+[A counter ticking up fast: 0.01, 0.02, 0.03 ...]
+Which sounds completely harmless. Until you look at how that number is stored.
+
+--- THE OVERFLOW (≈0:32–1:02) ---
+
+The counter is a signed 32-bit integer — a number with a hard ceiling of about
+2.1 billion.
+[2,147,483,647 appears; a bar starts filling toward it.]
+So do the math. Tick that counter up every hundredth of a second, and it takes
+2.1 billion ticks to fill —
+[Math overlay: 2³¹ ÷ 100 ÷ 86,400 ≈ 248.55 days.]
+which works out to almost exactly 248.55 days.
+[The bar slams into the ceiling; the number flips to a glitchy negative.]
+The instant it hits that ceiling, the number overflows — it rolls over into
+nonsense the software was never built to handle. So the GCU does the only safe
+thing it knows: it shuts itself down. Failsafe.
+
+--- WHY ALL FOUR AT ONCE (≈1:02–1:25) ---
+
+And here's the part that turns a glitch into a nightmare. When you power up the
+plane, all four GCUs start their counters at basically the same moment.
+[Four counters starting in perfect sync.]
+So they don't fail one at a time. They reach 248.55 days together — and overflow
+together. Four generators, gone in the same instant. A total loss of AC power.
+[All four flip red simultaneously; the cabin lights flicker.]
+
+--- THE FIX (≈1:25–1:48) ---
+
+Now, to be clear: this never actually brought down a plane. Boeing caught it on
+the ground, in testing.
+[A lab test bench — not a crash.]
+But the risk was real enough that in 2015 the FAA issued an official airworthiness
+directive.
+[An FAA document: "AIRWORTHINESS DIRECTIVE (2015)" — shown as the source.]
+And the mandated fix, for the most advanced airliner ever built, was beautifully
+dumb: power the aircraft all the way off before that counter ever gets close.
+Reboot it. Boeing later patched the software for good.
+
+--- PUNCHLINE / OUTRO (≈1:48–2:02) ---
+
+So the most sophisticated machine humanity builds can be undone by the same thing
+as your home router: a number that simply got too big to count.
+[The 787, calm and steady in the sky.]
+It'll fly forever — as long as someone remembers to turn it off and on again.
+
+Want more disasters hiding in a single line of code?
+[Stacktags logo animates in with a "Follow" prompt.]
+Follow Stacktags.

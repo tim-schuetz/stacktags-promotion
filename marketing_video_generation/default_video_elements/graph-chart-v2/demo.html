@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Stacktags element — graph chart v2 (demo)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../_shared/theme.css">
+<link rel="stylesheet" href="graph-chart-v2.css">
+<style>
+  html,body{margin:0;height:100%;overflow:hidden;background:#0b0e0d;}
+  .wrap{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;}
+  .stage{position:relative;width:1080px;height:1920px;overflow:hidden;transform-origin:center;flex-shrink:0;}
+</style>
+</head>
+<body>
+<div class="wrap"><div class="stage stk-grid-bg" id="stage">
+  <div id="host"></div>
+</div></div>
+
+<script src="graph-chart-v2.js"></script>
+<script>
+  const stage = document.getElementById('stage');
+  function fit(){ const s=Math.min(innerWidth/1080, innerHeight/1920); stage.style.transform='scale('+s+')'; }
+  addEventListener('resize', fit); fit();
+
+  const chart = new StacktagsGraphChartV2('#host', {
+    data: [
+      { value: 120 }, { value: 180 }, { value: 240 }, { value: 360 }, { value: 520 },
+      { value: 690 }, { value: 880 }, { value: 1240 }, { value: 1610 }, { value: 2050 },
+      { value: 2680 }, { value: 3400 },
+    ],
+    sound: 'ticking',
+  });
+
+  window.DEMO = {
+    duration: 4.3,
+    settleMs: 500,
+    sfx: [{ sound: 'ticking', t: 0.1, vol: 0.8 }],   // ticking while the chart climbs
+  };
+  window.__demoReady = Promise.resolve();
+  window.__demoPlay = function () { chart.draw({ duration: 3600 }); };
+</script>
+<script src="../_shared/viewer.js"></script>
+</body>
+</html>

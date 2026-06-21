@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Learn Chinese from brand names — Stacktags</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Nunito:wght@700;800;900&family=Noto+Sans+SC:wght@500;700;900&family=Pacifico&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="elements/theme.css">
+<link rel="stylesheet" href="elements/depth.css">
+<link rel="stylesheet" href="elements/enum-detail.css">
+<link rel="stylesheet" href="elements/outro.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="viewport">
+    <div class="stage" id="stage">
+      <!-- dynamic camera + moving grid scenes -->
+      <div class="host" id="depth-host"></div>
+      <!-- enumeration roster (own static grid) -->
+      <div class="host grid-host" id="enum-host"></div>
+      <!-- closing brand card (own static grid) -->
+      <div class="host grid-host" id="outro-host"></div>
+
+      <!-- persistent subtitle strip (mirrors the spoken line) -->
+      <div class="stk-subs" id="subs"><span class="stk-subs-line" id="subs-line"></span></div>
+    </div>
+  </div>
+
+  <!-- dev HUD (hidden in clean/capture mode) -->
+  <div class="hud" id="hud">
+    <button id="play">▶ Play</button>
+    <button id="restart">⟲ Restart</button>
+    <button id="cleanbtn">Clean</button>
+    <span class="bar"><span id="vprogress"></span></span>
+    <span id="info">0.0s</span>
+  </div>
+
+  <audio id="vo" src="../script_audio.mp3" preload="auto"></audio>
+
+  <script src="elements/depth.js"></script>
+  <script src="elements/enum-detail.js"></script>
+  <script src="elements/outro.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

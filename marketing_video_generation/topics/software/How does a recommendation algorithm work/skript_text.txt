@@ -1,0 +1,85 @@
+VIDEO SCRIPT
+Title: How does a recommendation algorithm work?
+Topic: Software Development
+Target length: ~110 seconds (fits the 30s–3min window)
+Language of narration: English
+Format: Voiceover script. Spoken lines are plain text. [Bracketed lines] describe
+what is on screen AT THE SAME TIME as the narration next to them.
+
+==================================================================
+THE CORE IDEA
+==================================================================
+Recommendation systems predict what you'll like, mainly via (1) collaborative
+filtering ("people similar to you liked X") and (2) content-based filtering ("this
+item is like what you already liked"), trained on your behavior (clicks, watch
+time, skips). Modern versions turn users and items into numeric "embeddings" and
+match the closest ones at huge scale. Honest catch: they optimize for engagement,
+not your wellbeing.
+Punchline: the algorithm doesn't understand you — it knows your patterns, and the
+millions of people who share them.
+
+KEY VISUALS:
+- A grid of users; "taste twins" highlighted; an item one twin liked sliding to you.
+- Items turning into dots in a "similarity space," you matched to the nearest dots.
+
+==================================================================
+SCRIPT
+==================================================================
+
+--- HOOK (0:00–0:12) — the payoff up front ---
+
+Ever feel like the app knows you better than your friends do?
+[A feed scrolling, eerily perfect picks.]
+That's a recommendation algorithm. And its core trick is simpler than you think:
+it doesn't actually understand you at all. It just notices who you're similar to.
+[The viewer surrounded by look-alike "taste twin" profiles.]
+
+--- THE JOB (≈0:12–0:30) ---
+
+The problem it solves is overload. There are millions of videos, products, songs —
+and you'll only ever want a handful. The algorithm's only job is to guess which
+handful.
+[Millions of thumbnails; a spotlight narrowing to a few.]
+And it mostly does that in two ways.
+
+--- WAY 1: PEOPLE LIKE YOU (≈0:30–0:58) ---
+
+The big one is called collaborative filtering. The system finds users who behaved
+like you — same things watched, liked, skipped.
+[The viewer grouped with their "taste twins."]
+Then, if thousands of those taste-twins loved something you haven't seen yet — it
+shows it to you. "People like you liked this."
+[A video one twin loved slides over to the viewer.]
+Notice: it doesn't need to know what that video is about. It just needs to know
+who shares your taste.
+
+--- WAY 2: THINGS LIKE WHAT YOU LIKED (≈0:58–1:20) ---
+
+The second way looks at the items themselves. If you've watched a pile of cooking
+videos, it finds more with similar tags — same topic, creator, style.
+[Cooking videos clustering together; new similar ones pulled in.]
+"This is like what you already enjoyed." And every signal feeds it — what you
+click, how long you watch, what you skip, what you replay. Watch time most of all.
+Just by using it, you're constantly training it.
+[Each tap and watch-bar feeding back into the model.]
+
+--- UNDER THE HOOD + THE CATCH (≈1:20–1:45) ---
+
+Modern systems do this with machine learning — turning you and every item into a
+long list of numbers, and matching you to the closest items in that space, at
+massive scale, updating in real time.
+[Users and items become dots; the viewer snaps to the nearest cluster.]
+But here's the honest catch: it's optimizing for engagement — whatever keeps you
+watching — which isn't always what's good for you. That's why a feed can feel
+addictive, or pull you toward the extreme.
+
+--- PUNCHLINE / OUTRO (≈1:45–1:58) ---
+
+So the algorithm doesn't know you.
+[The viewer at the center of a web of look-alikes.]
+It knows your patterns — and the millions of people who share them. Predicting
+what you'll want next is, at heart, just very fast pattern-matching.
+
+Want more of how the tech you use really works?
+[Stacktags logo animates in with a "Follow" prompt.]
+Follow Stacktags.

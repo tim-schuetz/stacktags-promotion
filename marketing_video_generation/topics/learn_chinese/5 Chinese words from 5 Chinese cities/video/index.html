@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>5 Chinese words from 5 Chinese cities</title>
+<link rel="icon" href="data:," />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Nunito:wght@700;800;900&family=Noto+Sans+SC:wght@500;700;900&display=swap" rel="stylesheet">
+
+<!-- shared theme tokens + grid + subtitles (the design system) -->
+<link rel="stylesheet" href="elements/theme.css">
+<!-- the dynamic depth-grid look (we reuse its grid styling) -->
+<link rel="stylesheet" href="elements/depth-transitions.css">
+<!-- default elements used as components -->
+<link rel="stylesheet" href="elements/enumeration_with_in_detail_follow_up.css">
+<link rel="stylesheet" href="elements/text-popup.css">
+<!-- this video's own scene styling -->
+<link rel="stylesheet" href="styles.css?v=2">
+</head>
+<body>
+<div class="wrap">
+  <div class="stage stk-grid-bg" id="stage">
+
+    <!-- persistent dynamic grid: the camera (zoom/pan) lives here -->
+    <div class="stk-depth2-grid" id="grid"></div>
+
+    <!-- all scene layers stack here -->
+    <div class="scenes" id="scenes">
+
+      <!-- ===== HOOK: 5 rapid depth beats ===== -->
+      <div class="scene hook" id="sc-hook0"></div>
+      <div class="scene hook" id="sc-hook1"></div>
+      <div class="scene hook" id="sc-hook2"></div>
+      <div class="scene hook" id="sc-hook3"></div>
+      <div class="scene hook" id="sc-hook4"></div>
+
+      <!-- ===== PAYOFF: the China map with the 5 characters pinned ===== -->
+      <div class="scene" id="sc-payoff">
+        <div class="payoff-map" id="payoff-map"></div>
+      </div>
+
+      <!-- ===== ENUMERATION (default element host) ===== -->
+      <div class="scene" id="sc-enum"><div id="enum-host"></div></div>
+
+      <!-- ===== GLOBE -> Shanghai photo handoff (default element) ===== -->
+      <div class="scene" id="sc-globe">
+        <div class="globe-host" id="globe-host"></div>
+        <div class="photo" id="globe-photo">
+          <img src="assets/photos/shanghai.png" alt="Shanghai" onerror="this.style.display='none'">
+          <div class="photo-cap"><div class="zh">上海</div><div class="en">SHÀNGHǍI</div></div>
+        </div>
+      </div>
+
+      <!-- ===== GLOBE 2 (default element): Qingdao photo → zoom out → fly → dive into Hong Kong → photo ===== -->
+      <div class="scene" id="sc-globe2">
+        <div class="globe-host" id="globe-host2"></div>
+        <!-- B: destination (Hong Kong) — under A, bursts in at the end -->
+        <div class="gphoto b" id="gv2-photoB">
+          <img src="assets/photos/hongkong.png" alt="Hong Kong" onerror="this.style.display='none'">
+          <div class="photo-cap"><div class="zh cjk">香港</div><div class="en">XIĀNGGǍNG</div></div>
+        </div>
+        <!-- A: origin (Qingdao) — covers the screen, shrinks into the dot -->
+        <div class="gphoto a" id="gv2-photoA">
+          <img src="assets/photos/qingdao.png" alt="Qingdao" onerror="this.style.display='none'">
+          <div class="photo-cap"><div class="zh cjk">青岛</div><div class="en">QĪNGDǍO</div></div>
+        </div>
+      </div>
+
+      <!-- ===== 5 CITY BREAKDOWN CARDS (built by app.js) ===== -->
+      <div class="scene" id="sc-shanghai"></div>
+      <div class="scene" id="sc-beijing"></div>
+      <div class="scene" id="sc-nanjing"></div>
+      <div class="scene" id="sc-compass"></div>
+      <div class="scene" id="sc-qingdao"></div>
+      <div class="scene" id="sc-hongkong"></div>
+
+      <!-- ===== OUTRO ===== -->
+      <div class="scene" id="sc-recap"></div>
+      <div class="scene" id="sc-cta"><div id="cta-host"></div></div>
+      <div class="scene" id="sc-follow">
+        <div class="ec" id="outro-ec">
+          <div id="outro-logo"></div>
+          <div class="wm"><span class="s">stack</span><span class="t">tags</span></div>
+          <div class="url">stacktags.io</div>
+        </div>
+      </div>
+
+    </div><!-- /scenes -->
+
+    <!-- subtitles mirror the narration -->
+    <div class="stk-subs" id="subs"><span class="stk-subs-line" id="subs-line"></span></div>
+
+  </div><!-- /stage -->
+</div>
+
+<!-- HUD (hidden in clean/capture mode) -->
+<div id="hud">
+  <button id="btn-play">▶ Play</button>
+  <input id="seek" type="range" min="0" max="134.4" step="0.01" value="0" />
+  <span id="tcode">0.0</span>
+</div>
+
+<audio id="vo" src="../script_audio.mp3" preload="auto"></audio>
+
+<!-- libs for the globe + china map -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/earcut@2.2.4/dist/earcut.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/topojson-client@3.1.0/dist/topojson-client.min.js"></script>
+
+<!-- default elements (used as components) -->
+<script src="elements/globe.js"></script>
+<script src="elements/globe-v2.js"></script>
+<script src="elements/china-map.js"></script>
+<script src="elements/enumeration_with_in_detail_follow_up.js"></script>
+<script src="elements/text-popup.js"></script>
+<script src="elements/outro.js"></script>
+
+<!-- this video's choreography -->
+<script src="app.js?v=2"></script>
+</body>
+</html>

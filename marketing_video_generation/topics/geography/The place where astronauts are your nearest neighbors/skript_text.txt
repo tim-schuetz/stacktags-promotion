@@ -1,0 +1,69 @@
+VIDEO SCRIPT
+Title: The place where astronauts are your nearest neighbors
+Topic: Geography
+Target length: ~90 seconds (fits the 30s–3min window)
+Language of narration: English
+Format: Voiceover script. Spoken lines are plain text. [Bracketed lines] describe
+what is on screen AT THE SAME TIME as the narration next to them.
+
+==================================================================
+THE CORE IDEA
+==================================================================
+Point Nemo (South Pacific) is the spot in the ocean farthest from any land —
+~2,688 km from the nearest coast in every direction. That's so far that when the
+ISS passes overhead (~400 km up), the astronauts are the closest humans to you.
+It's also the "spacecraft cemetery," where agencies deorbit dead satellites and
+stations (including Mir).
+Punchline: the loneliest spot on Earth's surface is where we drop things falling
+out of the sky.
+
+KEY VISUALS (as requested):
+- A globe zooming onto empty ocean; the ISS orbit drawn passing overhead; a
+  seafloor scattered with old spacecraft.
+
+==================================================================
+SCRIPT
+==================================================================
+
+--- HOOK (0:00–0:12) — the payoff up front ---
+
+At the loneliest spot on Earth, your nearest neighbors aren't on the planet at
+all. They're in orbit.
+[Globe zooms to a blank patch of the South Pacific; an ISS orbit arcs overhead.]
+This is Point Nemo — and when the space station flies over, the astronauts on
+board are closer to you than any other human being alive.
+[A figure on the empty sea; the ISS overhead marked "closest humans."]
+
+--- HOW FAR IS FAR (≈0:12–0:40) ---
+
+Point Nemo is the point in the ocean farthest from any land. In every direction,
+the nearest coastline is about 2,688 kilometers away.
+[A ring expanding out to three distant specks of land, all ~2,688 km off.]
+That's so far that when the International Space Station passes over — orbiting just
+about 400 kilometers up —
+[A height comparison: 400 km up vs 2,688 km sideways.]
+the people directly above you are nearer than anyone on the ground. Your closest
+neighbors are in space.
+
+--- THE SPACECRAFT GRAVEYARD (≈0:40–1:05) ---
+
+And because it's so far from everyone, space agencies use it for something else: a
+graveyard.
+[Re-entry streaks falling toward the empty ocean.]
+When a satellite or a space station reaches the end of its life, they steer its
+fiery fall down to right here — including the old Russian station, Mir. Hundreds
+of dead spacecraft now rest on the seafloor below.
+[A seabed littered with the wrecks of old craft.]
+One day, the Space Station itself is meant to come down here too.
+
+--- PUNCHLINE / OUTRO (≈1:05–1:18) ---
+
+So the most isolated place on the surface of the Earth —
+[The lone figure, ISS above, wrecks below.]
+is also where we send the things falling out of the sky. Down here you're
+completely alone... except for the astronauts overhead, and a graveyard of
+spaceships beneath you.
+
+Want more places at the edge of the map?
+[Stacktags logo animates in with a "Follow" prompt.]
+Follow Stacktags.

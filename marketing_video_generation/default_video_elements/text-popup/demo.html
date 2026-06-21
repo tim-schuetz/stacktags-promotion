@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Stacktags element — text popup (demo)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../_shared/theme.css">
+<link rel="stylesheet" href="text-popup.css">
+<style>
+  html,body{margin:0;height:100%;overflow:hidden;background:#0b0e0d;}
+  .wrap{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;}
+  .stage{position:relative;width:1080px;height:1920px;overflow:hidden;transform-origin:center;flex-shrink:0;}
+  .demo-cap{position:absolute;left:0;right:0;top:150px;text-align:center;
+    font-family:'Noto Sans SC',var(--stk-font);font-weight:700;font-size:46px;letter-spacing:2px;color:var(--stk-ink);
+    opacity:0;transition:opacity .5s ease;}
+  .demo-cap.in{opacity:1;}
+</style>
+</head>
+<body>
+<div class="wrap"><div class="stage stk-grid-bg" id="stage">
+  <div id="host"></div>
+</div></div>
+
+<script src="text-popup.js"></script>
+<script>
+  const stage = document.getElementById('stage');
+  function fit(){ const s=Math.min(innerWidth/1080, innerHeight/1920); stage.style.transform='scale('+s+')'; }
+  addEventListener('resize', fit); fit();
+
+  // Chinese characters, no rotation
+  const pop = new StacktagsTextPopup('#host', {
+    sound: 'sound/pop.mp3',
+    volume: 0.18,
+    words: [
+      { text: '投资',   x: -220, y: -460, size: 150, keyD: true },
+      { text: '投机',   x:   60, y: -380, size: 120 },
+      { text: '期权',   x:  250, y: -300, size: 134, key: true },
+      { text: '债券',   x: -260, y: -250, size: 112 },
+      { text: '杠杆',   x:  -40, y: -170, size: 160, keyD: true },
+      { text: '风险',   x:  220, y: -120, size: 126 },
+      { text: '收益',   x: -200, y:  -40, size: 138, key: true },
+      { text: '市场',   x:  100, y:    0, size: 150 },
+      { text: '资本',   x:  280, y:   80, size: 118, keyD: true },
+      { text: '套利',   x: -240, y:  150, size: 130 },
+      { text: '对冲',   x:  -30, y:  220, size: 158, key: true },
+      { text: '流动性', x: 210, y:  300, size: 108 },
+      { text: '增长',   x: -190, y:  380, size: 142, keyD: true },
+      { text: '价值',   x:   80, y:  460, size: 150, key: true },
+    ],
+  });
+
+  const STAGGER = 0.17;  // seconds between pops (keep in sync with DEMO.sfx)
+  window.DEMO = {
+    duration: 4.0,
+    settleMs: 500,
+    sfx: [0,1,2,3,4,5,6,7,8,9,10,11,12,13].map(i => ({ src: 'sound/pop.mp3', t: 0.15 + i*STAGGER, vol: 0.18 })),
+  };
+  window.__demoReady = Promise.resolve();
+  window.__demoPlay = function () {
+    document.getElementById('host'); // no caption
+    pop.popAll({ stagger: STAGGER * 1000 });
+  };
+</script>
+<script src="../_shared/viewer.js"></script>
+</body>
+</html>

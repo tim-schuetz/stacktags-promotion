@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Stacktags element — enumeration → in-detail follow-up (demo)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../_shared/theme.css">
+<link rel="stylesheet" href="enumeration_with_in_detail_follow_up.css">
+<style>
+  html,body{margin:0;height:100%;overflow:hidden;background:#0b0e0d;}
+  .wrap{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;}
+  .stage{position:relative;width:1080px;height:1920px;overflow:hidden;transform-origin:center;flex-shrink:0;}
+</style>
+</head>
+<body>
+<div class="wrap"><div class="stage stk-grid-bg" id="stage">
+  <div id="host"></div>
+</div></div>
+
+<script src="enumeration_with_in_detail_follow_up.js"></script>
+<script>
+  const stage = document.getElementById('stage');
+  function fit(){ const s=Math.min(innerWidth/1080, innerHeight/1920); stage.style.transform='scale('+s+')'; }
+  addEventListener('resize', fit); fit();
+
+  const en = new StacktagsEnumerationDetail(document.getElementById('host'), {
+    items: [
+      { label: 'Anleihen',      sub: 'feste Verzinsung' },
+      { label: 'Put Optionen',  sub: 'Recht zu verkaufen' },
+      { label: 'Leerverkäufe',  sub: 'auf fallende Kurse' },
+      { label: 'XEON / XFFE',   sub: 'Geldmarkt-ETFs' },
+    ],
+  });
+
+  window.DEMO = { duration: 9.4, settleMs: 400, sfx: [{ sound: 'swoosh', t: 2.5, vol: 0.85 }] };
+  window.__demoReady = Promise.resolve();
+  window.__demoPlay = function () {
+    en.showTitle();
+    en.revealAll({ stagger: 340 });
+    // all four cards fold into the stack at once
+    setTimeout(() => en.collapseToLogo({ delay: 0 }), 2500);
+    setTimeout(() => en.dockToTop(), 4400);
+    // step the active (turquoise) layer down the stack — one at a time
+    [1, 2, 3].forEach((idx, k) => {
+      setTimeout(() => en.setActive(idx), 6000 + k * 1100);
+    });
+  };
+</script>
+<script src="../_shared/viewer.js"></script>
+</body>
+</html>

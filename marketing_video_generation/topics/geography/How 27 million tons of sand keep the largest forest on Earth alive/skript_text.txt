@@ -1,0 +1,79 @@
+VIDEO SCRIPT
+Title: How 27 million tons of sand keep the largest forest on Earth alive
+Topic: Geography
+Target length: ~100 seconds (fits the 30s–3min window)
+Language of narration: English
+Format: Voiceover script. Spoken lines are plain text. [Bracketed lines] describe
+what is on screen AT THE SAME TIME as the narration next to them.
+
+==================================================================
+THE CORE IDEA
+==================================================================
+The Amazon's soil constantly loses phosphorus to heavy rain. Every year, winds
+carry tens of millions of tons of Saharan dust across the Atlantic — and the
+PHOSPHORUS in it (~22,000 tons/year) almost exactly replaces what the rainforest
+loses. Most of that nutrient comes from ONE dried-up ancient lakebed, the Bodélé
+Depression in Chad. The biggest desert feeds the biggest jungle.
+Punchline: the planet's two most opposite places are linked by one invisible
+supply line of dust.
+
+⚠️ GUARDRAIL: "22,000 tons" = PHOSPHORUS (the nutrient), NOT total dust (~27–28
+MILLION tons). Always say "nutrient / phosphorus" for the 22,000 figure.
+
+KEY VISUALS:
+- A dust plume lifting off the Sahara and streaming across the Atlantic to the
+  Amazon; a glowing source point at the Bodélé Depression.
+
+==================================================================
+SCRIPT
+==================================================================
+
+--- HOOK (0:00–0:12) — the payoff up front ---
+
+Every year, a dried-up lakebed in the middle of the Sahara reaches clear across
+an ocean — and fertilizes the Amazon rainforest.
+[A dust plume rises from the desert, sweeps over the Atlantic, settles on the jungle.]
+The largest desert on Earth is quietly feeding the largest jungle on Earth. And
+they're nowhere near each other.
+[A globe: Sahara on one side, Amazon on the other, a dust trail linking them.]
+
+--- THE PROBLEM (≈0:12–0:38) ---
+
+Here's the strange part. The Amazon looks impossibly lush — but its soil is
+actually poor. The constant tropical rain keeps washing nutrients out of the
+ground and into the rivers. Especially one: phosphorus.
+[Rain hammering the forest floor; phosphorus draining away down the rivers.]
+The forest is slowly leaking the very fertilizer it needs to survive. So how does
+it keep going?
+
+--- THE DELIVERY (≈0:38–1:08) ---
+
+The answer blows in from thousands of kilometers away. Each year, winds lift tens
+of millions of tons of dust off the Sahara and carry it across the Atlantic.
+[Satellite-style view: a vast dust river crossing the ocean.]
+And hidden in that dust is phosphorus. The amount that settles onto the Amazon —
+around 22,000 tons of it a year — almost exactly replaces what the rainforest
+loses to the rain.
+[A balance scale: "phosphorus lost to rain" vs "phosphorus delivered by dust" — level.]
+The desert isn't just dumping sand. It's restocking the exact nutrient the jungle
+runs out of.
+
+--- ONE DEAD LAKE (≈1:08–1:30) ---
+
+And most of that phosphorus comes from a single spot: the Bodélé Depression, in
+Chad —
+[Zoom to one glowing point in the Sahara.]
+the bed of an ancient lake that dried up long ago, packed with the phosphorus-rich
+remains of microorganisms that died there. One dead lake, fertilizing an entire
+continent across the sea.
+
+--- PUNCHLINE / OUTRO (≈1:30–1:42) ---
+
+The Amazon doesn't stand on its own.
+[The forest breathing, the dust trail still glowing behind it.]
+It's quietly kept alive by dust from a desert half a world away — the two most
+opposite places on Earth, locked into one invisible supply line.
+
+Want more ways the planet is secretly connected?
+[Stacktags logo animates in with a "Follow" prompt.]
+Follow Stacktags.

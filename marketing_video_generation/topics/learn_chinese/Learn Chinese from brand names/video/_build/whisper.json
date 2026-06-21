@@ -1,0 +1,2767 @@
+{
+  "task": "transcribe",
+  "language": "english",
+  "duration": 114.05000305175781,
+  "text": "In China, BMW isn't BMW, it's bao ma, treasure horse. Mercedes is ben qi, galloping speed. And Coca-Cola, delicious happiness. None of those are accidents. When a brand enters China, it doesn't just copy the sound. It picks characters that sound right and mean something flattering. Here's how the biggest names did it and how Chinese brands now play the same game even harder. Start with the cars. BMW became bao ma. Bao means treasure. Ma means horse. It still sounds like BMW, but now it also promises you a prized, powerful steed. Mercedes-Benz became ben qi. It means to gallop, to speed. Sounds like Benz, means pure emotion. The name is the marketing and the all-time masterpiece. Coca-Cola, kei ko kei le. It copies the sound almost perfectly and it means tasty and enjoyable. A soda literally named delicious happiness. Plenty of brands pick a name for their image, but Chinese brands take it to another level, especially the new electric car makers. They're not translating a foreign sound at all. They just reach into the language and grab a word that is their mission. One brand is simply called li xiang. The whole name just means the ideal. Another you know in the West is Nio. In Chinese, it's wei lai, which sounds exactly like wei lai, the future. A car company named literally the future. And here's the kicker. They run the same play in English too. Take BYD. It actually stands for build your dreams. An entire aspiration baked right into the logo. Bold, a bit much? We'll let you be the judge. A treasure horse, a galloping star. Building your dreams? Every one of these names is a tiny Chinese lesson hiding in plain sight. That's branding as a free language lesson. Wanna actually start learning Chinese? Discover thousands of free exercises and more learning content on stacktags.io.",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0,
+      "end": 5.079999923706055,
+      "text": " In China, BMW isn't BMW, it's bao ma, treasure horse.",
+      "tokens": [
+        50364,
+        682,
+        3533,
+        11,
+        21355,
+        1943,
+        380,
+        21355,
+        11,
+        309,
+        311,
+        45296,
+        463,
+        11,
+        12985,
+        6832,
+        13,
+        50614
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.23711831867694855,
+      "compression_ratio": 1.606382966041565,
+      "no_speech_prob": 0.027914732694625854
+    },
+    {
+      "id": 1,
+      "seek": 0,
+      "start": 5.699999809265137,
+      "end": 8.260000228881836,
+      "text": " Mercedes is ben qi, galloping speed.",
+      "tokens": [
+        50640,
+        22899,
+        307,
+        3271,
+        9505,
+        72,
+        11,
+        8527,
+        26125,
+        3073,
+        13,
+        50786
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.23711831867694855,
+      "compression_ratio": 1.606382966041565,
+      "no_speech_prob": 0.027914732694625854
+    },
+    {
+      "id": 2,
+      "seek": 0,
+      "start": 8.680000305175781,
+      "end": 11.119999885559082,
+      "text": " And Coca-Cola, delicious happiness.",
+      "tokens": [
+        50786,
+        400,
+        32719,
+        12,
+        42441,
+        11,
+        4809,
+        8324,
+        13,
+        50940
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.23711831867694855,
+      "compression_ratio": 1.606382966041565,
+      "no_speech_prob": 0.027914732694625854
+    },
+    {
+      "id": 3,
+      "seek": 0,
+      "start": 11.680000305175781,
+      "end": 12.579999923706055,
+      "text": " None of those are accidents.",
+      "tokens": [
+        50940,
+        14492,
+        295,
+        729,
+        366,
+        23875,
+        13,
+        51012
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.23711831867694855,
+      "compression_ratio": 1.606382966041565,
+      "no_speech_prob": 0.027914732694625854
+    },
+    {
+      "id": 4,
+      "seek": 0,
+      "start": 13.039999961853027,
+      "end": 15.319999694824219,
+      "text": " When a brand enters China, it doesn't just copy the sound.",
+      "tokens": [
+        51012,
+        1133,
+        257,
+        3360,
+        18780,
+        3533,
+        11,
+        309,
+        1177,
+        380,
+        445,
+        5055,
+        264,
+        1626,
+        13,
+        51134
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.23711831867694855,
+      "compression_ratio": 1.606382966041565,
+      "no_speech_prob": 0.027914732694625854
+    },
+    {
+      "id": 5,
+      "seek": 0,
+      "start": 15.479999542236328,
+      "end": 16.979999542236328,
+      "text": " It picks characters that sound right",
+      "tokens": [
+        51134,
+        467,
+        16137,
+        4342,
+        300,
+        1626,
+        558,
+        51214
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.23711831867694855,
+      "compression_ratio": 1.606382966041565,
+      "no_speech_prob": 0.027914732694625854
+    },
+    {
+      "id": 6,
+      "seek": 0,
+      "start": 16.979999542236328,
+      "end": 18.139999389648438,
+      "text": " and mean something flattering.",
+      "tokens": [
+        51214,
+        293,
+        914,
+        746,
+        49722,
+        13,
+        51286
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.23711831867694855,
+      "compression_ratio": 1.606382966041565,
+      "no_speech_prob": 0.027914732694625854
+    },
+    {
+      "id": 7,
+      "seek": 0,
+      "start": 18.68000030517578,
+      "end": 20.020000457763672,
+      "text": " Here's how the biggest names did it",
+      "tokens": [
+        51286,
+        1692,
+        311,
+        577,
+        264,
+        3880,
+        5288,
+        630,
+        309,
+        51362
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.23711831867694855,
+      "compression_ratio": 1.606382966041565,
+      "no_speech_prob": 0.027914732694625854
+    },
+    {
+      "id": 8,
+      "seek": 0,
+      "start": 20.020000457763672,
+      "end": 22.3799991607666,
+      "text": " and how Chinese brands now play the same game even harder.",
+      "tokens": [
+        51362,
+        293,
+        577,
+        4649,
+        11324,
+        586,
+        862,
+        264,
+        912,
+        1216,
+        754,
+        6081,
+        13,
+        51504
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.23711831867694855,
+      "compression_ratio": 1.606382966041565,
+      "no_speech_prob": 0.027914732694625854
+    },
+    {
+      "id": 9,
+      "seek": 0,
+      "start": 22.940000534057617,
+      "end": 23.84000015258789,
+      "text": " Start with the cars.",
+      "tokens": [
+        51504,
+        6481,
+        365,
+        264,
+        5163,
+        13,
+        51576
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.23711831867694855,
+      "compression_ratio": 1.606382966041565,
+      "no_speech_prob": 0.027914732694625854
+    },
+    {
+      "id": 10,
+      "seek": 0,
+      "start": 24.579999923706055,
+      "end": 26.34000015258789,
+      "text": " BMW became bao ma.",
+      "tokens": [
+        51576,
+        21355,
+        3062,
+        45296,
+        463,
+        13,
+        51700
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.23711831867694855,
+      "compression_ratio": 1.606382966041565,
+      "no_speech_prob": 0.027914732694625854
+    },
+    {
+      "id": 11,
+      "seek": 0,
+      "start": 26.81999969482422,
+      "end": 27.860000610351562,
+      "text": " Bao means treasure.",
+      "tokens": [
+        51700,
+        42099,
+        1355,
+        12985,
+        13,
+        51776
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.23711831867694855,
+      "compression_ratio": 1.606382966041565,
+      "no_speech_prob": 0.027914732694625854
+    },
+    {
+      "id": 12,
+      "seek": 0,
+      "start": 28.360000610351562,
+      "end": 29.5,
+      "text": " Ma means horse.",
+      "tokens": [
+        51776,
+        4042,
+        1355,
+        6832,
+        13,
+        51856
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.23711831867694855,
+      "compression_ratio": 1.606382966041565,
+      "no_speech_prob": 0.027914732694625854
+    },
+    {
+      "id": 13,
+      "seek": 2950,
+      "start": 29.5,
+      "end": 31.3799991607666,
+      "text": " It still sounds like BMW,",
+      "tokens": [
+        50382,
+        467,
+        920,
+        3263,
+        411,
+        21355,
+        11,
+        50486
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.20967288315296173,
+      "compression_ratio": 1.564853549003601,
+      "no_speech_prob": 0.000043316427763784304
+    },
+    {
+      "id": 14,
+      "seek": 2950,
+      "start": 31.719999313354492,
+      "end": 35.29999923706055,
+      "text": " but now it also promises you a prized, powerful steed.",
+      "tokens": [
+        50486,
+        457,
+        586,
+        309,
+        611,
+        16403,
+        291,
+        257,
+        1790,
+        11312,
+        11,
+        4005,
+        2126,
+        292,
+        13,
+        50674
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.20967288315296173,
+      "compression_ratio": 1.564853549003601,
+      "no_speech_prob": 0.000043316427763784304
+    },
+    {
+      "id": 15,
+      "seek": 2950,
+      "start": 35.880001068115234,
+      "end": 37.459999084472656,
+      "text": " Mercedes-Benz became ben qi.",
+      "tokens": [
+        50674,
+        22899,
+        12,
+        33,
+        11368,
+        3062,
+        3271,
+        9505,
+        72,
+        13,
+        50784
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.20967288315296173,
+      "compression_ratio": 1.564853549003601,
+      "no_speech_prob": 0.000043316427763784304
+    },
+    {
+      "id": 16,
+      "seek": 2950,
+      "start": 37.900001525878906,
+      "end": 39.97999954223633,
+      "text": " It means to gallop, to speed.",
+      "tokens": [
+        50784,
+        467,
+        1355,
+        281,
+        8527,
+        404,
+        11,
+        281,
+        3073,
+        13,
+        50908
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.20967288315296173,
+      "compression_ratio": 1.564853549003601,
+      "no_speech_prob": 0.000043316427763784304
+    },
+    {
+      "id": 17,
+      "seek": 2950,
+      "start": 40.439998626708984,
+      "end": 42.599998474121094,
+      "text": " Sounds like Benz, means pure emotion.",
+      "tokens": [
+        50908,
+        14576,
+        411,
+        3964,
+        89,
+        11,
+        1355,
+        6075,
+        8913,
+        13,
+        51030
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.20967288315296173,
+      "compression_ratio": 1.564853549003601,
+      "no_speech_prob": 0.000043316427763784304
+    },
+    {
+      "id": 18,
+      "seek": 2950,
+      "start": 42.84000015258789,
+      "end": 46.040000915527344,
+      "text": " The name is the marketing and the all-time masterpiece.",
+      "tokens": [
+        51030,
+        440,
+        1315,
+        307,
+        264,
+        6370,
+        293,
+        264,
+        439,
+        12,
+        3766,
+        32208,
+        13,
+        51212
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.20967288315296173,
+      "compression_ratio": 1.564853549003601,
+      "no_speech_prob": 0.000043316427763784304
+    },
+    {
+      "id": 19,
+      "seek": 2950,
+      "start": 46.52000045776367,
+      "end": 48.36000061035156,
+      "text": " Coca-Cola, kei ko kei le.",
+      "tokens": [
+        51212,
+        32719,
+        12,
+        42441,
+        11,
+        803,
+        72,
+        8384,
+        803,
+        72,
+        476,
+        13,
+        51334
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.20967288315296173,
+      "compression_ratio": 1.564853549003601,
+      "no_speech_prob": 0.000043316427763784304
+    },
+    {
+      "id": 20,
+      "seek": 2950,
+      "start": 48.52000045776367,
+      "end": 50.880001068115234,
+      "text": " It copies the sound almost perfectly",
+      "tokens": [
+        51334,
+        467,
+        14341,
+        264,
+        1626,
+        1920,
+        6239,
+        51452
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.20967288315296173,
+      "compression_ratio": 1.564853549003601,
+      "no_speech_prob": 0.000043316427763784304
+    },
+    {
+      "id": 21,
+      "seek": 2950,
+      "start": 50.880001068115234,
+      "end": 53.560001373291016,
+      "text": " and it means tasty and enjoyable.",
+      "tokens": [
+        51452,
+        293,
+        309,
+        1355,
+        11535,
+        293,
+        20305,
+        13,
+        51594
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.20967288315296173,
+      "compression_ratio": 1.564853549003601,
+      "no_speech_prob": 0.000043316427763784304
+    },
+    {
+      "id": 22,
+      "seek": 2950,
+      "start": 53.91999816894531,
+      "end": 56.70000076293945,
+      "text": " A soda literally named delicious happiness.",
+      "tokens": [
+        51594,
+        316,
+        17192,
+        3736,
+        4926,
+        4809,
+        8324,
+        13,
+        51758
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.20967288315296173,
+      "compression_ratio": 1.564853549003601,
+      "no_speech_prob": 0.000043316427763784304
+    },
+    {
+      "id": 23,
+      "seek": 5670,
+      "start": 57.380001068115234,
+      "end": 59.099998474121094,
+      "text": " Plenty of brands pick a name for their image,",
+      "tokens": [
+        50398,
+        2149,
+        4179,
+        295,
+        11324,
+        1888,
+        257,
+        1315,
+        337,
+        641,
+        3256,
+        11,
+        50508
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.2115885466337204,
+      "compression_ratio": 1.6891891956329346,
+      "no_speech_prob": 0.42233532667160034
+    },
+    {
+      "id": 24,
+      "seek": 5670,
+      "start": 59.29999923706055,
+      "end": 61.439998626708984,
+      "text": " but Chinese brands take it to another level,",
+      "tokens": [
+        50508,
+        457,
+        4649,
+        11324,
+        747,
+        309,
+        281,
+        1071,
+        1496,
+        11,
+        50612
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.2115885466337204,
+      "compression_ratio": 1.6891891956329346,
+      "no_speech_prob": 0.42233532667160034
+    },
+    {
+      "id": 25,
+      "seek": 5670,
+      "start": 61.7400016784668,
+      "end": 63.41999816894531,
+      "text": " especially the new electric car makers.",
+      "tokens": [
+        50612,
+        2318,
+        264,
+        777,
+        5210,
+        1032,
+        19323,
+        13,
+        50728
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.2115885466337204,
+      "compression_ratio": 1.6891891956329346,
+      "no_speech_prob": 0.42233532667160034
+    },
+    {
+      "id": 26,
+      "seek": 5670,
+      "start": 63.65999984741211,
+      "end": 65.87999725341797,
+      "text": " They're not translating a foreign sound at all.",
+      "tokens": [
+        50728,
+        814,
+        434,
+        406,
+        35030,
+        257,
+        5329,
+        1626,
+        412,
+        439,
+        13,
+        50846
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.2115885466337204,
+      "compression_ratio": 1.6891891956329346,
+      "no_speech_prob": 0.42233532667160034
+    },
+    {
+      "id": 27,
+      "seek": 5670,
+      "start": 66.30000305175781,
+      "end": 67.58000183105469,
+      "text": " They just reach into the language",
+      "tokens": [
+        50846,
+        814,
+        445,
+        2524,
+        666,
+        264,
+        2856,
+        50912
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.2115885466337204,
+      "compression_ratio": 1.6891891956329346,
+      "no_speech_prob": 0.42233532667160034
+    },
+    {
+      "id": 28,
+      "seek": 5670,
+      "start": 67.58000183105469,
+      "end": 69.30000305175781,
+      "text": " and grab a word that is their mission.",
+      "tokens": [
+        50912,
+        293,
+        4444,
+        257,
+        1349,
+        300,
+        307,
+        641,
+        4447,
+        13,
+        51024
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.2115885466337204,
+      "compression_ratio": 1.6891891956329346,
+      "no_speech_prob": 0.42233532667160034
+    },
+    {
+      "id": 29,
+      "seek": 5670,
+      "start": 69.9800033569336,
+      "end": 71.94000244140625,
+      "text": " One brand is simply called li xiang.",
+      "tokens": [
+        51024,
+        1485,
+        3360,
+        307,
+        2935,
+        1219,
+        375,
+        36800,
+        656,
+        13,
+        51156
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.2115885466337204,
+      "compression_ratio": 1.6891891956329346,
+      "no_speech_prob": 0.42233532667160034
+    },
+    {
+      "id": 30,
+      "seek": 5670,
+      "start": 72.54000091552734,
+      "end": 74.41999816894531,
+      "text": " The whole name just means the ideal.",
+      "tokens": [
+        51156,
+        440,
+        1379,
+        1315,
+        445,
+        1355,
+        264,
+        7157,
+        13,
+        51278
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.2115885466337204,
+      "compression_ratio": 1.6891891956329346,
+      "no_speech_prob": 0.42233532667160034
+    },
+    {
+      "id": 31,
+      "seek": 5670,
+      "start": 75.13999938964844,
+      "end": 76.63999938964844,
+      "text": " Another you know in the West is Nio.",
+      "tokens": [
+        51278,
+        3996,
+        291,
+        458,
+        294,
+        264,
+        4055,
+        307,
+        426,
+        1004,
+        13,
+        51376
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.2115885466337204,
+      "compression_ratio": 1.6891891956329346,
+      "no_speech_prob": 0.42233532667160034
+    },
+    {
+      "id": 32,
+      "seek": 5670,
+      "start": 77,
+      "end": 78.05999755859375,
+      "text": " In Chinese, it's wei lai,",
+      "tokens": [
+        51376,
+        682,
+        4649,
+        11,
+        309,
+        311,
+        321,
+        72,
+        635,
+        72,
+        11,
+        51458
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.2115885466337204,
+      "compression_ratio": 1.6891891956329346,
+      "no_speech_prob": 0.42233532667160034
+    },
+    {
+      "id": 33,
+      "seek": 5670,
+      "start": 78.5999984741211,
+      "end": 81.0999984741211,
+      "text": " which sounds exactly like wei lai, the future.",
+      "tokens": [
+        51458,
+        597,
+        3263,
+        2293,
+        411,
+        321,
+        72,
+        635,
+        72,
+        11,
+        264,
+        2027,
+        13,
+        51614
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.2115885466337204,
+      "compression_ratio": 1.6891891956329346,
+      "no_speech_prob": 0.42233532667160034
+    },
+    {
+      "id": 34,
+      "seek": 5670,
+      "start": 81.5199966430664,
+      "end": 84.05999755859375,
+      "text": " A car company named literally the future.",
+      "tokens": [
+        51614,
+        316,
+        1032,
+        2237,
+        4926,
+        3736,
+        264,
+        2027,
+        13,
+        51770
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.2115885466337204,
+      "compression_ratio": 1.6891891956329346,
+      "no_speech_prob": 0.42233532667160034
+    },
+    {
+      "id": 35,
+      "seek": 5670,
+      "start": 84.76000213623047,
+      "end": 85.73999786376953,
+      "text": " And here's the kicker.",
+      "tokens": [
+        51770,
+        400,
+        510,
+        311,
+        264,
+        4437,
+        260,
+        13,
+        51824
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.2115885466337204,
+      "compression_ratio": 1.6891891956329346,
+      "no_speech_prob": 0.42233532667160034
+    },
+    {
+      "id": 36,
+      "seek": 8574,
+      "start": 85.73999786376953,
+      "end": 87.5999984741211,
+      "text": " They run the same play in English too.",
+      "tokens": [
+        50372,
+        814,
+        1190,
+        264,
+        912,
+        862,
+        294,
+        3669,
+        886,
+        13,
+        50474
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.21306931972503662,
+      "compression_ratio": 1.6224489212036133,
+      "no_speech_prob": 0.0026287853252142668
+    },
+    {
+      "id": 37,
+      "seek": 8574,
+      "start": 88.04000091552734,
+      "end": 88.76000213623047,
+      "text": " Take BYD.",
+      "tokens": [
+        50474,
+        3664,
+        26930,
+        35,
+        13,
+        50530
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.21306931972503662,
+      "compression_ratio": 1.6224489212036133,
+      "no_speech_prob": 0.0026287853252142668
+    },
+    {
+      "id": 38,
+      "seek": 8574,
+      "start": 89.08000183105469,
+      "end": 90.77999877929688,
+      "text": " It actually stands for build your dreams.",
+      "tokens": [
+        50530,
+        467,
+        767,
+        7382,
+        337,
+        1322,
+        428,
+        7505,
+        13,
+        50640
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.21306931972503662,
+      "compression_ratio": 1.6224489212036133,
+      "no_speech_prob": 0.0026287853252142668
+    },
+    {
+      "id": 39,
+      "seek": 8574,
+      "start": 91.27999877929688,
+      "end": 93.69999694824219,
+      "text": " An entire aspiration baked right into the logo.",
+      "tokens": [
+        50640,
+        1107,
+        2302,
+        44565,
+        19453,
+        558,
+        666,
+        264,
+        9699,
+        13,
+        50790
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.21306931972503662,
+      "compression_ratio": 1.6224489212036133,
+      "no_speech_prob": 0.0026287853252142668
+    },
+    {
+      "id": 40,
+      "seek": 8574,
+      "start": 94.58000183105469,
+      "end": 95.5199966430664,
+      "text": " Bold, a bit much?",
+      "tokens": [
+        50790,
+        48954,
+        11,
+        257,
+        857,
+        709,
+        30,
+        50872
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.21306931972503662,
+      "compression_ratio": 1.6224489212036133,
+      "no_speech_prob": 0.0026287853252142668
+    },
+    {
+      "id": 41,
+      "seek": 8574,
+      "start": 95.94000244140625,
+      "end": 96.91999816894531,
+      "text": " We'll let you be the judge.",
+      "tokens": [
+        50872,
+        492,
+        603,
+        718,
+        291,
+        312,
+        264,
+        6995,
+        13,
+        50942
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.21306931972503662,
+      "compression_ratio": 1.6224489212036133,
+      "no_speech_prob": 0.0026287853252142668
+    },
+    {
+      "id": 42,
+      "seek": 8574,
+      "start": 97.27999877929688,
+      "end": 99.22000122070312,
+      "text": " A treasure horse, a galloping star.",
+      "tokens": [
+        50942,
+        316,
+        12985,
+        6832,
+        11,
+        257,
+        8527,
+        26125,
+        3543,
+        13,
+        51058
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.21306931972503662,
+      "compression_ratio": 1.6224489212036133,
+      "no_speech_prob": 0.0026287853252142668
+    },
+    {
+      "id": 43,
+      "seek": 8574,
+      "start": 99.83999633789062,
+      "end": 100.4000015258789,
+      "text": " Building your dreams?",
+      "tokens": [
+        51058,
+        18974,
+        428,
+        7505,
+        30,
+        51122
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.21306931972503662,
+      "compression_ratio": 1.6224489212036133,
+      "no_speech_prob": 0.0026287853252142668
+    },
+    {
+      "id": 44,
+      "seek": 8574,
+      "start": 100.9800033569336,
+      "end": 103.23999786376953,
+      "text": " Every one of these names is a tiny Chinese lesson",
+      "tokens": [
+        51122,
+        2048,
+        472,
+        295,
+        613,
+        5288,
+        307,
+        257,
+        5870,
+        4649,
+        6898,
+        51242
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.21306931972503662,
+      "compression_ratio": 1.6224489212036133,
+      "no_speech_prob": 0.0026287853252142668
+    },
+    {
+      "id": 45,
+      "seek": 8574,
+      "start": 103.23999786376953,
+      "end": 104.45999908447266,
+      "text": " hiding in plain sight.",
+      "tokens": [
+        51242,
+        10596,
+        294,
+        11121,
+        7860,
+        13,
+        51320
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.21306931972503662,
+      "compression_ratio": 1.6224489212036133,
+      "no_speech_prob": 0.0026287853252142668
+    },
+    {
+      "id": 46,
+      "seek": 8574,
+      "start": 104.81999969482422,
+      "end": 106.72000122070312,
+      "text": " That's branding as a free language lesson.",
+      "tokens": [
+        51320,
+        663,
+        311,
+        27279,
+        382,
+        257,
+        1737,
+        2856,
+        6898,
+        13,
+        51434
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.21306931972503662,
+      "compression_ratio": 1.6224489212036133,
+      "no_speech_prob": 0.0026287853252142668
+    },
+    {
+      "id": 47,
+      "seek": 8574,
+      "start": 107.22000122070312,
+      "end": 108.62000274658203,
+      "text": " Wanna actually start learning Chinese?",
+      "tokens": [
+        51434,
+        24336,
+        767,
+        722,
+        2539,
+        4649,
+        30,
+        51532
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.21306931972503662,
+      "compression_ratio": 1.6224489212036133,
+      "no_speech_prob": 0.0026287853252142668
+    },
+    {
+      "id": 48,
+      "seek": 8574,
+      "start": 109.23999786376953,
+      "end": 110.91999816894531,
+      "text": " Discover thousands of free exercises",
+      "tokens": [
+        51532,
+        40386,
+        5383,
+        295,
+        1737,
+        11900,
+        51634
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.21306931972503662,
+      "compression_ratio": 1.6224489212036133,
+      "no_speech_prob": 0.0026287853252142668
+    },
+    {
+      "id": 49,
+      "seek": 8574,
+      "start": 110.91999816894531,
+      "end": 113.62000274658203,
+      "text": " and more learning content on stacktags.io.",
+      "tokens": [
+        51634,
+        293,
+        544,
+        2539,
+        2701,
+        322,
+        342,
+        326,
+        2320,
+        12109,
+        13,
+        1004,
+        13,
+        51774
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.21306931972503662,
+      "compression_ratio": 1.6224489212036133,
+      "no_speech_prob": 0.0026287853252142668
+    }
+  ],
+  "words": [
+    {
+      "word": "In",
+      "start": 0,
+      "end": 0.25999999046325684
+    },
+    {
+      "word": "China",
+      "start": 0.25999999046325684,
+      "end": 0.6200000047683716
+    },
+    {
+      "word": "BMW",
+      "start": 0.8600000143051147,
+      "end": 1.5800000429153442
+    },
+    {
+      "word": "isn't",
+      "start": 1.5800000429153442,
+      "end": 2.0199999809265137
+    },
+    {
+      "word": "BMW",
+      "start": 2.0199999809265137,
+      "end": 2.8399999141693115
+    },
+    {
+      "word": "it's",
+      "start": 3.2200000286102295,
+      "end": 3.4000000953674316
+    },
+    {
+      "word": "bao",
+      "start": 3.4000000953674316,
+      "end": 3.819999933242798
+    },
+    {
+      "word": "ma",
+      "start": 3.819999933242798,
+      "end": 4
+    },
+    {
+      "word": "treasure",
+      "start": 4.340000152587891,
+      "end": 4.679999828338623
+    },
+    {
+      "word": "horse",
+      "start": 4.679999828338623,
+      "end": 5.079999923706055
+    },
+    {
+      "word": "Mercedes",
+      "start": 5.699999809265137,
+      "end": 6
+    },
+    {
+      "word": "is",
+      "start": 6,
+      "end": 6.380000114440918
+    },
+    {
+      "word": "ben",
+      "start": 6.380000114440918,
+      "end": 6.699999809265137
+    },
+    {
+      "word": "qi",
+      "start": 6.699999809265137,
+      "end": 6.820000171661377
+    },
+    {
+      "word": "galloping",
+      "start": 7.420000076293945,
+      "end": 7.699999809265137
+    },
+    {
+      "word": "speed",
+      "start": 7.699999809265137,
+      "end": 8.260000228881836
+    },
+    {
+      "word": "And",
+      "start": 8.680000305175781,
+      "end": 9.020000457763672
+    },
+    {
+      "word": "Coca",
+      "start": 9.020000457763672,
+      "end": 9.180000305175781
+    },
+    {
+      "word": "Cola",
+      "start": 9.180000305175781,
+      "end": 9.460000038146973
+    },
+    {
+      "word": "delicious",
+      "start": 10.15999984741211,
+      "end": 10.619999885559082
+    },
+    {
+      "word": "happiness",
+      "start": 10.619999885559082,
+      "end": 11.119999885559082
+    },
+    {
+      "word": "None",
+      "start": 11.680000305175781,
+      "end": 11.739999771118164
+    },
+    {
+      "word": "of",
+      "start": 11.739999771118164,
+      "end": 11.899999618530273
+    },
+    {
+      "word": "those",
+      "start": 11.899999618530273,
+      "end": 12
+    },
+    {
+      "word": "are",
+      "start": 12,
+      "end": 12.579999923706055
+    },
+    {
+      "word": "accidents",
+      "start": 12.579999923706055,
+      "end": 12.579999923706055
+    },
+    {
+      "word": "When",
+      "start": 13.039999961853027,
+      "end": 13.119999885559082
+    },
+    {
+      "word": "a",
+      "start": 13.119999885559082,
+      "end": 13.5
+    },
+    {
+      "word": "brand",
+      "start": 13.5,
+      "end": 13.5
+    },
+    {
+      "word": "enters",
+      "start": 13.5,
+      "end": 13.720000267028809
+    },
+    {
+      "word": "China",
+      "start": 13.720000267028809,
+      "end": 13.979999542236328
+    },
+    {
+      "word": "it",
+      "start": 14.0600004196167,
+      "end": 14.180000305175781
+    },
+    {
+      "word": "doesn't",
+      "start": 14.180000305175781,
+      "end": 14.359999656677246
+    },
+    {
+      "word": "just",
+      "start": 14.359999656677246,
+      "end": 14.819999694824219
+    },
+    {
+      "word": "copy",
+      "start": 14.819999694824219,
+      "end": 14.880000114440918
+    },
+    {
+      "word": "the",
+      "start": 14.880000114440918,
+      "end": 15.260000228881836
+    },
+    {
+      "word": "sound",
+      "start": 15.260000228881836,
+      "end": 15.319999694824219
+    },
+    {
+      "word": "It",
+      "start": 15.479999542236328,
+      "end": 15.579999923706055
+    },
+    {
+      "word": "picks",
+      "start": 15.579999923706055,
+      "end": 15.779999732971191
+    },
+    {
+      "word": "characters",
+      "start": 15.779999732971191,
+      "end": 16.15999984741211
+    },
+    {
+      "word": "that",
+      "start": 16.15999984741211,
+      "end": 16.479999542236328
+    },
+    {
+      "word": "sound",
+      "start": 16.479999542236328,
+      "end": 16.639999389648438
+    },
+    {
+      "word": "right",
+      "start": 16.639999389648438,
+      "end": 16.979999542236328
+    },
+    {
+      "word": "and",
+      "start": 16.979999542236328,
+      "end": 17.260000228881836
+    },
+    {
+      "word": "mean",
+      "start": 17.260000228881836,
+      "end": 17.440000534057617
+    },
+    {
+      "word": "something",
+      "start": 17.440000534057617,
+      "end": 17.799999237060547
+    },
+    {
+      "word": "flattering",
+      "start": 17.799999237060547,
+      "end": 18.139999389648438
+    },
+    {
+      "word": "Here's",
+      "start": 18.68000030517578,
+      "end": 18.84000015258789
+    },
+    {
+      "word": "how",
+      "start": 18.84000015258789,
+      "end": 18.940000534057617
+    },
+    {
+      "word": "the",
+      "start": 18.940000534057617,
+      "end": 19.1200008392334
+    },
+    {
+      "word": "biggest",
+      "start": 19.1200008392334,
+      "end": 19.3799991607666
+    },
+    {
+      "word": "names",
+      "start": 19.3799991607666,
+      "end": 19.559999465942383
+    },
+    {
+      "word": "did",
+      "start": 19.559999465942383,
+      "end": 19.739999771118164
+    },
+    {
+      "word": "it",
+      "start": 19.739999771118164,
+      "end": 20.020000457763672
+    },
+    {
+      "word": "and",
+      "start": 20.020000457763672,
+      "end": 20.1200008392334
+    },
+    {
+      "word": "how",
+      "start": 20.1200008392334,
+      "end": 20.420000076293945
+    },
+    {
+      "word": "Chinese",
+      "start": 20.420000076293945,
+      "end": 20.68000030517578
+    },
+    {
+      "word": "brands",
+      "start": 20.68000030517578,
+      "end": 20.899999618530273
+    },
+    {
+      "word": "now",
+      "start": 20.899999618530273,
+      "end": 21.239999771118164
+    },
+    {
+      "word": "play",
+      "start": 21.239999771118164,
+      "end": 21.260000228881836
+    },
+    {
+      "word": "the",
+      "start": 21.260000228881836,
+      "end": 21.459999084472656
+    },
+    {
+      "word": "same",
+      "start": 21.459999084472656,
+      "end": 21.739999771118164
+    },
+    {
+      "word": "game",
+      "start": 21.739999771118164,
+      "end": 21.899999618530273
+    },
+    {
+      "word": "even",
+      "start": 21.899999618530273,
+      "end": 22.3799991607666
+    },
+    {
+      "word": "harder",
+      "start": 22.3799991607666,
+      "end": 22.3799991607666
+    },
+    {
+      "word": "Start",
+      "start": 22.940000534057617,
+      "end": 23.1200008392334
+    },
+    {
+      "word": "with",
+      "start": 23.1200008392334,
+      "end": 23.280000686645508
+    },
+    {
+      "word": "the",
+      "start": 23.280000686645508,
+      "end": 23.440000534057617
+    },
+    {
+      "word": "cars",
+      "start": 23.440000534057617,
+      "end": 23.84000015258789
+    },
+    {
+      "word": "BMW",
+      "start": 24.579999923706055,
+      "end": 25.18000030517578
+    },
+    {
+      "word": "became",
+      "start": 25.18000030517578,
+      "end": 25.780000686645508
+    },
+    {
+      "word": "bao",
+      "start": 25.780000686645508,
+      "end": 26.079999923706055
+    },
+    {
+      "word": "ma",
+      "start": 26.079999923706055,
+      "end": 26.34000015258789
+    },
+    {
+      "word": "Bao",
+      "start": 26.81999969482422,
+      "end": 26.959999084472656
+    },
+    {
+      "word": "means",
+      "start": 26.959999084472656,
+      "end": 27.34000015258789
+    },
+    {
+      "word": "treasure",
+      "start": 27.34000015258789,
+      "end": 27.860000610351562
+    },
+    {
+      "word": "Ma",
+      "start": 28.360000610351562,
+      "end": 28.579999923706055
+    },
+    {
+      "word": "means",
+      "start": 28.579999923706055,
+      "end": 28.940000534057617
+    },
+    {
+      "word": "horse",
+      "start": 28.940000534057617,
+      "end": 29.5
+    },
+    {
+      "word": "It",
+      "start": 29.5,
+      "end": 30
+    },
+    {
+      "word": "still",
+      "start": 30,
+      "end": 30.299999237060547
+    },
+    {
+      "word": "sounds",
+      "start": 30.299999237060547,
+      "end": 30.520000457763672
+    },
+    {
+      "word": "like",
+      "start": 30.520000457763672,
+      "end": 30.799999237060547
+    },
+    {
+      "word": "BMW",
+      "start": 30.799999237060547,
+      "end": 31.3799991607666
+    },
+    {
+      "word": "but",
+      "start": 31.719999313354492,
+      "end": 32.040000915527344
+    },
+    {
+      "word": "now",
+      "start": 32.040000915527344,
+      "end": 32.15999984741211
+    },
+    {
+      "word": "it",
+      "start": 32.15999984741211,
+      "end": 32.31999969482422
+    },
+    {
+      "word": "also",
+      "start": 32.31999969482422,
+      "end": 32.720001220703125
+    },
+    {
+      "word": "promises",
+      "start": 32.720001220703125,
+      "end": 33.02000045776367
+    },
+    {
+      "word": "you",
+      "start": 33.02000045776367,
+      "end": 33.279998779296875
+    },
+    {
+      "word": "a",
+      "start": 33.279998779296875,
+      "end": 33.439998626708984
+    },
+    {
+      "word": "prized",
+      "start": 33.439998626708984,
+      "end": 33.900001525878906
+    },
+    {
+      "word": "powerful",
+      "start": 34.79999923706055,
+      "end": 34.79999923706055
+    },
+    {
+      "word": "steed",
+      "start": 34.79999923706055,
+      "end": 35.29999923706055
+    },
+    {
+      "word": "Mercedes",
+      "start": 35.880001068115234,
+      "end": 36.18000030517578
+    },
+    {
+      "word": "Benz",
+      "start": 36.18000030517578,
+      "end": 36.439998626708984
+    },
+    {
+      "word": "became",
+      "start": 36.439998626708984,
+      "end": 36.880001068115234
+    },
+    {
+      "word": "ben",
+      "start": 36.880001068115234,
+      "end": 37.29999923706055
+    },
+    {
+      "word": "qi",
+      "start": 37.29999923706055,
+      "end": 37.459999084472656
+    },
+    {
+      "word": "It",
+      "start": 37.900001525878906,
+      "end": 38.040000915527344
+    },
+    {
+      "word": "means",
+      "start": 38.040000915527344,
+      "end": 38.2599983215332
+    },
+    {
+      "word": "to",
+      "start": 38.2599983215332,
+      "end": 38.7599983215332
+    },
+    {
+      "word": "gallop",
+      "start": 38.7599983215332,
+      "end": 39.099998474121094
+    },
+    {
+      "word": "to",
+      "start": 39.380001068115234,
+      "end": 39.63999938964844
+    },
+    {
+      "word": "speed",
+      "start": 39.63999938964844,
+      "end": 39.97999954223633
+    },
+    {
+      "word": "Sounds",
+      "start": 40.439998626708984,
+      "end": 40.65999984741211
+    },
+    {
+      "word": "like",
+      "start": 40.65999984741211,
+      "end": 40.97999954223633
+    },
+    {
+      "word": "Benz",
+      "start": 40.97999954223633,
+      "end": 41.439998626708984
+    },
+    {
+      "word": "means",
+      "start": 41.63999938964844,
+      "end": 41.91999816894531
+    },
+    {
+      "word": "pure",
+      "start": 41.91999816894531,
+      "end": 42.18000030517578
+    },
+    {
+      "word": "emotion",
+      "start": 42.18000030517578,
+      "end": 42.599998474121094
+    },
+    {
+      "word": "The",
+      "start": 42.84000015258789,
+      "end": 43
+    },
+    {
+      "word": "name",
+      "start": 43,
+      "end": 43.2599983215332
+    },
+    {
+      "word": "is",
+      "start": 43.2599983215332,
+      "end": 43.619998931884766
+    },
+    {
+      "word": "the",
+      "start": 43.619998931884766,
+      "end": 43.959999084472656
+    },
+    {
+      "word": "marketing",
+      "start": 43.959999084472656,
+      "end": 44.15999984741211
+    },
+    {
+      "word": "and",
+      "start": 44.15999984741211,
+      "end": 44.7400016784668
+    },
+    {
+      "word": "the",
+      "start": 44.7400016784668,
+      "end": 45
+    },
+    {
+      "word": "all",
+      "start": 45,
+      "end": 45.31999969482422
+    },
+    {
+      "word": "time",
+      "start": 45.31999969482422,
+      "end": 45.31999969482422
+    },
+    {
+      "word": "masterpiece",
+      "start": 45.31999969482422,
+      "end": 46.040000915527344
+    },
+    {
+      "word": "Coca",
+      "start": 46.52000045776367,
+      "end": 46.880001068115234
+    },
+    {
+      "word": "Cola",
+      "start": 46.880001068115234,
+      "end": 47.220001220703125
+    },
+    {
+      "word": "kei",
+      "start": 47.560001373291016,
+      "end": 47.79999923706055
+    },
+    {
+      "word": "ko",
+      "start": 47.79999923706055,
+      "end": 47.959999084472656
+    },
+    {
+      "word": "kei",
+      "start": 47.959999084472656,
+      "end": 48.279998779296875
+    },
+    {
+      "word": "le",
+      "start": 48.279998779296875,
+      "end": 48.36000061035156
+    },
+    {
+      "word": "It",
+      "start": 48.52000045776367,
+      "end": 49.15999984741211
+    },
+    {
+      "word": "copies",
+      "start": 49.15999984741211,
+      "end": 49.400001525878906
+    },
+    {
+      "word": "the",
+      "start": 49.400001525878906,
+      "end": 49.880001068115234
+    },
+    {
+      "word": "sound",
+      "start": 49.880001068115234,
+      "end": 49.97999954223633
+    },
+    {
+      "word": "almost",
+      "start": 49.97999954223633,
+      "end": 50.459999084472656
+    },
+    {
+      "word": "perfectly",
+      "start": 50.459999084472656,
+      "end": 50.880001068115234
+    },
+    {
+      "word": "and",
+      "start": 50.880001068115234,
+      "end": 51.5
+    },
+    {
+      "word": "it",
+      "start": 51.5,
+      "end": 51.84000015258789
+    },
+    {
+      "word": "means",
+      "start": 51.84000015258789,
+      "end": 51.97999954223633
+    },
+    {
+      "word": "tasty",
+      "start": 51.97999954223633,
+      "end": 52.619998931884766
+    },
+    {
+      "word": "and",
+      "start": 52.619998931884766,
+      "end": 53.13999938964844
+    },
+    {
+      "word": "enjoyable",
+      "start": 53.13999938964844,
+      "end": 53.560001373291016
+    },
+    {
+      "word": "A",
+      "start": 53.91999816894531,
+      "end": 54.52000045776367
+    },
+    {
+      "word": "soda",
+      "start": 54.52000045776367,
+      "end": 54.52000045776367
+    },
+    {
+      "word": "literally",
+      "start": 54.52000045776367,
+      "end": 54.959999084472656
+    },
+    {
+      "word": "named",
+      "start": 54.959999084472656,
+      "end": 55.31999969482422
+    },
+    {
+      "word": "delicious",
+      "start": 55.31999969482422,
+      "end": 56.15999984741211
+    },
+    {
+      "word": "happiness",
+      "start": 56.15999984741211,
+      "end": 56.70000076293945
+    },
+    {
+      "word": "Plenty",
+      "start": 57.31999969482422,
+      "end": 57.58000183105469
+    },
+    {
+      "word": "of",
+      "start": 57.58000183105469,
+      "end": 57.79999923706055
+    },
+    {
+      "word": "brands",
+      "start": 57.79999923706055,
+      "end": 58.02000045776367
+    },
+    {
+      "word": "pick",
+      "start": 58.02000045776367,
+      "end": 58.2400016784668
+    },
+    {
+      "word": "a",
+      "start": 58.2400016784668,
+      "end": 58.5
+    },
+    {
+      "word": "name",
+      "start": 58.5,
+      "end": 58.5
+    },
+    {
+      "word": "for",
+      "start": 58.5,
+      "end": 58.65999984741211
+    },
+    {
+      "word": "their",
+      "start": 58.65999984741211,
+      "end": 58.84000015258789
+    },
+    {
+      "word": "image",
+      "start": 58.84000015258789,
+      "end": 59.099998474121094
+    },
+    {
+      "word": "but",
+      "start": 59.29999923706055,
+      "end": 59.79999923706055
+    },
+    {
+      "word": "Chinese",
+      "start": 59.79999923706055,
+      "end": 60.099998474121094
+    },
+    {
+      "word": "brands",
+      "start": 60.099998474121094,
+      "end": 60.380001068115234
+    },
+    {
+      "word": "take",
+      "start": 60.380001068115234,
+      "end": 60.58000183105469
+    },
+    {
+      "word": "it",
+      "start": 60.58000183105469,
+      "end": 60.68000030517578
+    },
+    {
+      "word": "to",
+      "start": 60.68000030517578,
+      "end": 60.779998779296875
+    },
+    {
+      "word": "another",
+      "start": 60.779998779296875,
+      "end": 61.15999984741211
+    },
+    {
+      "word": "level",
+      "start": 61.15999984741211,
+      "end": 61.439998626708984
+    },
+    {
+      "word": "especially",
+      "start": 61.7400016784668,
+      "end": 62.15999984741211
+    },
+    {
+      "word": "the",
+      "start": 62.15999984741211,
+      "end": 62.41999816894531
+    },
+    {
+      "word": "new",
+      "start": 62.41999816894531,
+      "end": 62.63999938964844
+    },
+    {
+      "word": "electric",
+      "start": 62.63999938964844,
+      "end": 62.959999084472656
+    },
+    {
+      "word": "car",
+      "start": 62.959999084472656,
+      "end": 63.29999923706055
+    },
+    {
+      "word": "makers",
+      "start": 63.29999923706055,
+      "end": 63.41999816894531
+    },
+    {
+      "word": "They're",
+      "start": 63.65999984741211,
+      "end": 64.16000366210938
+    },
+    {
+      "word": "not",
+      "start": 64.16000366210938,
+      "end": 64.4000015258789
+    },
+    {
+      "word": "translating",
+      "start": 64.4000015258789,
+      "end": 64.69999694824219
+    },
+    {
+      "word": "a",
+      "start": 64.69999694824219,
+      "end": 65.08000183105469
+    },
+    {
+      "word": "foreign",
+      "start": 65.08000183105469,
+      "end": 65.16000366210938
+    },
+    {
+      "word": "sound",
+      "start": 65.16000366210938,
+      "end": 65.44000244140625
+    },
+    {
+      "word": "at",
+      "start": 65.44000244140625,
+      "end": 65.62000274658203
+    },
+    {
+      "word": "all",
+      "start": 65.62000274658203,
+      "end": 65.87999725341797
+    },
+    {
+      "word": "They",
+      "start": 66.30000305175781,
+      "end": 66.45999908447266
+    },
+    {
+      "word": "just",
+      "start": 66.45999908447266,
+      "end": 66.91999816894531
+    },
+    {
+      "word": "reach",
+      "start": 66.91999816894531,
+      "end": 66.94000244140625
+    },
+    {
+      "word": "into",
+      "start": 66.94000244140625,
+      "end": 67.16000366210938
+    },
+    {
+      "word": "the",
+      "start": 67.16000366210938,
+      "end": 67.45999908447266
+    },
+    {
+      "word": "language",
+      "start": 67.45999908447266,
+      "end": 67.58000183105469
+    },
+    {
+      "word": "and",
+      "start": 67.58000183105469,
+      "end": 67.87999725341797
+    },
+    {
+      "word": "grab",
+      "start": 67.87999725341797,
+      "end": 67.95999908447266
+    },
+    {
+      "word": "a",
+      "start": 67.95999908447266,
+      "end": 68.31999969482422
+    },
+    {
+      "word": "word",
+      "start": 68.31999969482422,
+      "end": 68.31999969482422
+    },
+    {
+      "word": "that",
+      "start": 68.31999969482422,
+      "end": 68.58000183105469
+    },
+    {
+      "word": "is",
+      "start": 68.58000183105469,
+      "end": 68.77999877929688
+    },
+    {
+      "word": "their",
+      "start": 68.77999877929688,
+      "end": 69
+    },
+    {
+      "word": "mission",
+      "start": 69,
+      "end": 69.30000305175781
+    },
+    {
+      "word": "One",
+      "start": 69.9800033569336,
+      "end": 70.16000366210938
+    },
+    {
+      "word": "brand",
+      "start": 70.16000366210938,
+      "end": 70.33999633789062
+    },
+    {
+      "word": "is",
+      "start": 70.33999633789062,
+      "end": 70.5199966430664
+    },
+    {
+      "word": "simply",
+      "start": 70.5199966430664,
+      "end": 70.83999633789062
+    },
+    {
+      "word": "called",
+      "start": 70.83999633789062,
+      "end": 71.26000213623047
+    },
+    {
+      "word": "li",
+      "start": 71.26000213623047,
+      "end": 71.68000030517578
+    },
+    {
+      "word": "xiang",
+      "start": 71.68000030517578,
+      "end": 71.94000244140625
+    },
+    {
+      "word": "The",
+      "start": 72.54000091552734,
+      "end": 72.68000030517578
+    },
+    {
+      "word": "whole",
+      "start": 72.68000030517578,
+      "end": 72.94000244140625
+    },
+    {
+      "word": "name",
+      "start": 72.94000244140625,
+      "end": 73.08000183105469
+    },
+    {
+      "word": "just",
+      "start": 73.08000183105469,
+      "end": 73.41999816894531
+    },
+    {
+      "word": "means",
+      "start": 73.41999816894531,
+      "end": 73.58000183105469
+    },
+    {
+      "word": "the",
+      "start": 73.58000183105469,
+      "end": 73.9800033569336
+    },
+    {
+      "word": "ideal",
+      "start": 73.9800033569336,
+      "end": 74.41999816894531
+    },
+    {
+      "word": "Another",
+      "start": 75.13999938964844,
+      "end": 75.36000061035156
+    },
+    {
+      "word": "you",
+      "start": 75.36000061035156,
+      "end": 75.58000183105469
+    },
+    {
+      "word": "know",
+      "start": 75.58000183105469,
+      "end": 75.68000030517578
+    },
+    {
+      "word": "in",
+      "start": 75.68000030517578,
+      "end": 75.77999877929688
+    },
+    {
+      "word": "the",
+      "start": 75.77999877929688,
+      "end": 76.13999938964844
+    },
+    {
+      "word": "West",
+      "start": 76.13999938964844,
+      "end": 76.13999938964844
+    },
+    {
+      "word": "is",
+      "start": 76.13999938964844,
+      "end": 76.4000015258789
+    },
+    {
+      "word": "Nio",
+      "start": 76.4000015258789,
+      "end": 76.63999938964844
+    },
+    {
+      "word": "In",
+      "start": 77,
+      "end": 77.16000366210938
+    },
+    {
+      "word": "Chinese",
+      "start": 77.16000366210938,
+      "end": 77.41999816894531
+    },
+    {
+      "word": "it's",
+      "start": 77.55999755859375,
+      "end": 77.77999877929688
+    },
+    {
+      "word": "wei",
+      "start": 77.77999877929688,
+      "end": 77.86000061035156
+    },
+    {
+      "word": "lai",
+      "start": 77.86000061035156,
+      "end": 78.05999755859375
+    },
+    {
+      "word": "which",
+      "start": 78.5999984741211,
+      "end": 78.73999786376953
+    },
+    {
+      "word": "sounds",
+      "start": 78.73999786376953,
+      "end": 78.94000244140625
+    },
+    {
+      "word": "exactly",
+      "start": 78.94000244140625,
+      "end": 79.44000244140625
+    },
+    {
+      "word": "like",
+      "start": 79.44000244140625,
+      "end": 79.69999694824219
+    },
+    {
+      "word": "wei",
+      "start": 79.69999694824219,
+      "end": 79.9000015258789
+    },
+    {
+      "word": "lai",
+      "start": 79.9000015258789,
+      "end": 80.18000030517578
+    },
+    {
+      "word": "the",
+      "start": 80.5999984741211,
+      "end": 80.76000213623047
+    },
+    {
+      "word": "future",
+      "start": 80.76000213623047,
+      "end": 81.0999984741211
+    },
+    {
+      "word": "A",
+      "start": 81.5199966430664,
+      "end": 81.87999725341797
+    },
+    {
+      "word": "car",
+      "start": 81.87999725341797,
+      "end": 82.0999984741211
+    },
+    {
+      "word": "company",
+      "start": 82.0999984741211,
+      "end": 82.4000015258789
+    },
+    {
+      "word": "named",
+      "start": 82.4000015258789,
+      "end": 82.73999786376953
+    },
+    {
+      "word": "literally",
+      "start": 82.73999786376953,
+      "end": 83.23999786376953
+    },
+    {
+      "word": "the",
+      "start": 83.23999786376953,
+      "end": 83.68000030517578
+    },
+    {
+      "word": "future",
+      "start": 83.68000030517578,
+      "end": 84.05999755859375
+    },
+    {
+      "word": "And",
+      "start": 84.76000213623047,
+      "end": 85.05999755859375
+    },
+    {
+      "word": "here's",
+      "start": 85.05999755859375,
+      "end": 85.23999786376953
+    },
+    {
+      "word": "the",
+      "start": 85.23999786376953,
+      "end": 85.55999755859375
+    },
+    {
+      "word": "kicker",
+      "start": 85.55999755859375,
+      "end": 85.73999786376953
+    },
+    {
+      "word": "They",
+      "start": 85.73999786376953,
+      "end": 86.05999755859375
+    },
+    {
+      "word": "run",
+      "start": 86.05999755859375,
+      "end": 86.19999694824219
+    },
+    {
+      "word": "the",
+      "start": 86.19999694824219,
+      "end": 86.37999725341797
+    },
+    {
+      "word": "same",
+      "start": 86.37999725341797,
+      "end": 86.68000030517578
+    },
+    {
+      "word": "play",
+      "start": 86.68000030517578,
+      "end": 86.86000061035156
+    },
+    {
+      "word": "in",
+      "start": 86.86000061035156,
+      "end": 86.94000244140625
+    },
+    {
+      "word": "English",
+      "start": 86.94000244140625,
+      "end": 87.19999694824219
+    },
+    {
+      "word": "too",
+      "start": 87.19999694824219,
+      "end": 87.5999984741211
+    },
+    {
+      "word": "Take",
+      "start": 88.04000091552734,
+      "end": 88.18000030517578
+    },
+    {
+      "word": "BYD",
+      "start": 88.18000030517578,
+      "end": 88.76000213623047
+    },
+    {
+      "word": "It",
+      "start": 89.08000183105469,
+      "end": 89.16000366210938
+    },
+    {
+      "word": "actually",
+      "start": 89.16000366210938,
+      "end": 89.55999755859375
+    },
+    {
+      "word": "stands",
+      "start": 89.55999755859375,
+      "end": 89.76000213623047
+    },
+    {
+      "word": "for",
+      "start": 89.76000213623047,
+      "end": 90
+    },
+    {
+      "word": "build",
+      "start": 90,
+      "end": 90.22000122070312
+    },
+    {
+      "word": "your",
+      "start": 90.22000122070312,
+      "end": 90.45999908447266
+    },
+    {
+      "word": "dreams",
+      "start": 90.45999908447266,
+      "end": 90.77999877929688
+    },
+    {
+      "word": "An",
+      "start": 91.27999877929688,
+      "end": 91.44000244140625
+    },
+    {
+      "word": "entire",
+      "start": 91.44000244140625,
+      "end": 91.83999633789062
+    },
+    {
+      "word": "aspiration",
+      "start": 91.83999633789062,
+      "end": 92.4000015258789
+    },
+    {
+      "word": "baked",
+      "start": 92.4000015258789,
+      "end": 92.77999877929688
+    },
+    {
+      "word": "right",
+      "start": 92.77999877929688,
+      "end": 93.0999984741211
+    },
+    {
+      "word": "into",
+      "start": 93.0999984741211,
+      "end": 93.19999694824219
+    },
+    {
+      "word": "the",
+      "start": 93.19999694824219,
+      "end": 93.41999816894531
+    },
+    {
+      "word": "logo",
+      "start": 93.41999816894531,
+      "end": 93.69999694824219
+    },
+    {
+      "word": "Bold",
+      "start": 94.58000183105469,
+      "end": 94.5999984741211
+    },
+    {
+      "word": "a",
+      "start": 94.9000015258789,
+      "end": 95.04000091552734
+    },
+    {
+      "word": "bit",
+      "start": 95.04000091552734,
+      "end": 95.16000366210938
+    },
+    {
+      "word": "much",
+      "start": 95.16000366210938,
+      "end": 95.5199966430664
+    },
+    {
+      "word": "We'll",
+      "start": 95.94000244140625,
+      "end": 96.04000091552734
+    },
+    {
+      "word": "let",
+      "start": 96.04000091552734,
+      "end": 96.16000366210938
+    },
+    {
+      "word": "you",
+      "start": 96.16000366210938,
+      "end": 96.31999969482422
+    },
+    {
+      "word": "be",
+      "start": 96.31999969482422,
+      "end": 96.41999816894531
+    },
+    {
+      "word": "the",
+      "start": 96.41999816894531,
+      "end": 96.91999816894531
+    },
+    {
+      "word": "judge",
+      "start": 96.91999816894531,
+      "end": 96.91999816894531
+    },
+    {
+      "word": "A",
+      "start": 97.27999877929688,
+      "end": 97.45999908447266
+    },
+    {
+      "word": "treasure",
+      "start": 97.45999908447266,
+      "end": 97.69999694824219
+    },
+    {
+      "word": "horse",
+      "start": 97.69999694824219,
+      "end": 98.0199966430664
+    },
+    {
+      "word": "a",
+      "start": 98.30000305175781,
+      "end": 98.62000274658203
+    },
+    {
+      "word": "galloping",
+      "start": 98.62000274658203,
+      "end": 98.76000213623047
+    },
+    {
+      "word": "star",
+      "start": 98.76000213623047,
+      "end": 99.22000122070312
+    },
+    {
+      "word": "Building",
+      "start": 99.83999633789062,
+      "end": 99.87999725341797
+    },
+    {
+      "word": "your",
+      "start": 99.87999725341797,
+      "end": 100.13999938964844
+    },
+    {
+      "word": "dreams",
+      "start": 100.13999938964844,
+      "end": 100.4000015258789
+    },
+    {
+      "word": "Every",
+      "start": 100.9800033569336,
+      "end": 101.19999694824219
+    },
+    {
+      "word": "one",
+      "start": 101.19999694824219,
+      "end": 101.33999633789062
+    },
+    {
+      "word": "of",
+      "start": 101.33999633789062,
+      "end": 101.45999908447266
+    },
+    {
+      "word": "these",
+      "start": 101.45999908447266,
+      "end": 101.66000366210938
+    },
+    {
+      "word": "names",
+      "start": 101.66000366210938,
+      "end": 101.83999633789062
+    },
+    {
+      "word": "is",
+      "start": 101.83999633789062,
+      "end": 102.0199966430664
+    },
+    {
+      "word": "a",
+      "start": 102.0199966430664,
+      "end": 102.16000366210938
+    },
+    {
+      "word": "tiny",
+      "start": 102.16000366210938,
+      "end": 102.58000183105469
+    },
+    {
+      "word": "Chinese",
+      "start": 102.58000183105469,
+      "end": 102.94000244140625
+    },
+    {
+      "word": "lesson",
+      "start": 102.94000244140625,
+      "end": 103.23999786376953
+    },
+    {
+      "word": "hiding",
+      "start": 103.23999786376953,
+      "end": 103.62000274658203
+    },
+    {
+      "word": "in",
+      "start": 103.62000274658203,
+      "end": 103.94000244140625
+    },
+    {
+      "word": "plain",
+      "start": 103.94000244140625,
+      "end": 104.13999938964844
+    },
+    {
+      "word": "sight",
+      "start": 104.13999938964844,
+      "end": 104.45999908447266
+    },
+    {
+      "word": "That's",
+      "start": 104.81999969482422,
+      "end": 105.19999694824219
+    },
+    {
+      "word": "branding",
+      "start": 105.19999694824219,
+      "end": 105.4000015258789
+    },
+    {
+      "word": "as",
+      "start": 105.4000015258789,
+      "end": 105.68000030517578
+    },
+    {
+      "word": "a",
+      "start": 105.68000030517578,
+      "end": 105.87999725341797
+    },
+    {
+      "word": "free",
+      "start": 105.87999725341797,
+      "end": 106.0999984741211
+    },
+    {
+      "word": "language",
+      "start": 106.0999984741211,
+      "end": 106.4000015258789
+    },
+    {
+      "word": "lesson",
+      "start": 106.4000015258789,
+      "end": 106.72000122070312
+    },
+    {
+      "word": "Wanna",
+      "start": 107.22000122070312,
+      "end": 107.31999969482422
+    },
+    {
+      "word": "actually",
+      "start": 107.31999969482422,
+      "end": 107.66000366210938
+    },
+    {
+      "word": "start",
+      "start": 107.66000366210938,
+      "end": 107.94000244140625
+    },
+    {
+      "word": "learning",
+      "start": 107.94000244140625,
+      "end": 108.16000366210938
+    },
+    {
+      "word": "Chinese",
+      "start": 108.16000366210938,
+      "end": 108.62000274658203
+    },
+    {
+      "word": "Discover",
+      "start": 109.23999786376953,
+      "end": 109.45999908447266
+    },
+    {
+      "word": "thousands",
+      "start": 109.45999908447266,
+      "end": 109.95999908447266
+    },
+    {
+      "word": "of",
+      "start": 109.95999908447266,
+      "end": 110.19999694824219
+    },
+    {
+      "word": "free",
+      "start": 110.19999694824219,
+      "end": 110.45999908447266
+    },
+    {
+      "word": "exercises",
+      "start": 110.45999908447266,
+      "end": 110.91999816894531
+    },
+    {
+      "word": "and",
+      "start": 110.91999816894531,
+      "end": 111.30000305175781
+    },
+    {
+      "word": "more",
+      "start": 111.30000305175781,
+      "end": 111.5199966430664
+    },
+    {
+      "word": "learning",
+      "start": 111.5199966430664,
+      "end": 111.80000305175781
+    },
+    {
+      "word": "content",
+      "start": 111.80000305175781,
+      "end": 112.12000274658203
+    },
+    {
+      "word": "on",
+      "start": 112.12000274658203,
+      "end": 112.36000061035156
+    },
+    {
+      "word": "stacktags",
+      "start": 112.36000061035156,
+      "end": 112.83999633789062
+    },
+    {
+      "word": "io",
+      "start": 112.83999633789062,
+      "end": 113.62000274658203
+    }
+  ],
+  "usage": {
+    "type": "duration",
+    "seconds": 115
+  }
+}

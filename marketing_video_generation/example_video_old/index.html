@@ -1,0 +1,994 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Stacktags Promo Video</title>
+<link rel="stylesheet" href="styles.css?v=46" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="root">
+  <div class="stage" id="stage">
+
+    <!-- ==================== SCENE 1 — Opening + logo formation (merged) ==================== -->
+    <!-- The 3 opening panels (TikTok/YouTube/Stadium) themselves morph into
+         the Stacktags stack layers. No scene cut — the same DOM elements
+         shrink, lose their chrome, take on the rhombus top-face shape, and
+         slot into layer 1/2/3 positions. The cap drops in from above, the
+         chevrons swoop in, and the caption changes. -->
+    <div class="scene s-1" data-scene="1" id="scene-1">
+
+      <!-- Intro overlay (lives inside scene 1): plain "What is stacktags?"
+           caption that fades in at the very start, holds, then fades out
+           before the morph-panes fly in. Controlled by the .intro-on
+           class on the scene element. -->
+      <div class="s1-intro" id="s1-intro">
+        <span class="s1-intro-text">What is <span class="s1-intro-brand"><span class="wm-stack">stack</span><span class="wm-tags">tags</span></span>?</span>
+      </div>
+
+      <div class="s1-stage" id="s1-stage">
+
+        <!-- Side faces for the morphing video layers. Each layer's sides
+             render as a separate SVG so they can have layer-specific
+             z-indexing — upper layers cover lower ones in the stack. -->
+        <svg class="logo-sides logo-sides-3" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+          <polygon points="705,666 960,793.5 960,838.5 705,711"  fill="#FFFFFF" stroke="#262A2E" stroke-width="2.5" stroke-linejoin="round"/>
+          <polygon points="960,793.5 1215,666 1215,711 960,838.5" fill="#3EAE93" stroke="#262A2E" stroke-width="2.5" stroke-linejoin="round"/>
+        </svg>
+        <svg class="logo-sides logo-sides-2" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+          <polygon points="705,582 960,709.5 960,754.5 705,627"  fill="#3EAE93" stroke="#262A2E" stroke-width="2.5" stroke-linejoin="round"/>
+          <polygon points="960,709.5 1215,582 1215,627 960,754.5" fill="#FFFFFF" stroke="#262A2E" stroke-width="2.5" stroke-linejoin="round"/>
+        </svg>
+        <svg class="logo-sides logo-sides-1" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+          <polygon points="705,498 960,625.5 960,670.5 705,543"  fill="#FFFFFF" stroke="#262A2E" stroke-width="2.5" stroke-linejoin="round"/>
+          <polygon points="960,625.5 1215,498 1215,543 960,670.5" fill="#3EAE93" stroke="#262A2E" stroke-width="2.5" stroke-linejoin="round"/>
+        </svg>
+
+        <!-- Cap layer (i=0): full 3D layer with top rhombus + sides.
+             Drops in from above during morph. -->
+        <svg class="logo-cap" id="logo-cap" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+          <g>
+            <polygon class="logo-cap-side-l" points="705,414 960,541.5 960,586.5 705,459" fill="#3EAE93" stroke="#262A2E" stroke-width="2.5" stroke-linejoin="round"/>
+            <polygon class="logo-cap-side-r" points="960,541.5 1215,414 1215,459 960,586.5" fill="#3EAE93" stroke="#262A2E" stroke-width="2.5" stroke-linejoin="round"/>
+            <polygon class="logo-cap-top" points="960,286.5 1215,414 960,541.5 705,414" fill="#3EAE93" stroke="#262A2E" stroke-width="2.5" stroke-linejoin="round"/>
+          </g>
+        </svg>
+
+        <!-- Chevrons (swoop in from sides) -->
+        <svg class="logo-chev logo-chev-l" viewBox="0 0 100 200" aria-hidden="true">
+          <path d="M 70 20 L 20 100 L 70 180" fill="none" stroke="#3EAE93" stroke-width="22" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <svg class="logo-chev logo-chev-r" viewBox="0 0 100 200" aria-hidden="true">
+          <path d="M 30 20 L 80 100 L 30 180" fill="none" stroke="#3EAE93" stroke-width="22" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+
+        <!-- Halo (pulses when logo settles) -->
+        <div class="logo-halo" id="logo-halo"></div>
+
+        <!-- TikTok panel — morphs into layer 1 (top of the 3 video layers) -->
+        <div class="morph-pane morph-tt" id="morph-1">
+          <div class="morph-shell">
+            <!-- ===== REVERSIBLE EDIT (left / "algorithm" panel) =====
+                 The TikTok mock was replaced with a Stacktags game-feed card
+                 (same style as the financing/fundraising card later in the
+                 video, different task). The ORIGINAL markup is preserved
+                 intact & disabled inside the <template> below. To revert:
+                 delete the .op1 block + this template wrapper, and restore
+                 the template's contents directly into .morph-shell. -->
+            <template data-reversible="original-left-panel-tiktok">
+            <div class="tt-phone">
+              <div class="morph-chrome">
+                <div class="tt-notch"></div>
+                <div class="tt-tabs"><span>Following</span><span class="tt-tab-active">For You</span></div>
+                <div class="tt-text">
+                  <div class="tt-user">@dancing.cat</div>
+                  <div class="tt-cap">life hack you didn't know about ✨ #fyp</div>
+                </div>
+                <div class="tt-actions">
+                  <div class="tt-avatar"></div>
+                  <div class="tt-act"><div class="tt-act-ic">❤</div><div class="tt-act-n">2.4M</div></div>
+                  <div class="tt-act"><div class="tt-act-ic">💬</div><div class="tt-act-n">18K</div></div>
+                </div>
+                <div class="tt-tabbar"><span>Home</span><span>Friends</span><span class="tt-plus">+</span><span>Inbox</span><span>Profile</span></div>
+              </div>
+              <div class="tt-screen">
+                <svg class="tt-bg-anim" viewBox="0 0 100 200" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+                  <defs>
+                    <radialGradient id="ttBlobA"><stop offset="0%" stop-color="#3EAE94" stop-opacity=".7"/><stop offset="100%" stop-color="#3EAE94" stop-opacity="0"/></radialGradient>
+                    <radialGradient id="ttBlobB"><stop offset="0%" stop-color="#15694F" stop-opacity=".85"/><stop offset="100%" stop-color="#15694F" stop-opacity="0"/></radialGradient>
+                    <radialGradient id="ttBlobC"><stop offset="0%" stop-color="#0a3a30" stop-opacity=".9"/><stop offset="100%" stop-color="#0a3a30" stop-opacity="0"/></radialGradient>
+                  </defs>
+                  <rect width="100" height="200" fill="#031a14"/>
+                  <circle cx="30" cy="60" r="55" fill="url(#ttBlobA)">
+                    <animate attributeName="cx" values="30;65;25;30" dur="22s" repeatCount="indefinite"/>
+                    <animate attributeName="cy" values="60;120;90;60" dur="22s" repeatCount="indefinite"/>
+                  </circle>
+                  <circle cx="70" cy="140" r="48" fill="url(#ttBlobB)">
+                    <animate attributeName="cx" values="70;35;75;70" dur="18s" repeatCount="indefinite"/>
+                    <animate attributeName="cy" values="140;160;100;140" dur="18s" repeatCount="indefinite"/>
+                  </circle>
+                  <circle cx="50" cy="40" r="38" fill="url(#ttBlobC)">
+                    <animate attributeName="cx" values="50;20;70;50" dur="26s" repeatCount="indefinite"/>
+                    <animate attributeName="cy" values="40;180;30;40" dur="26s" repeatCount="indefinite"/>
+                  </circle>
+                </svg>
+                <div class="morph-tint"></div>
+              </div>
+            </div>
+            </template>
+            <!-- NEW: game-feed vocab card (REVERSIBLE EDIT v8: now a 2-page
+                 pager that slides up to a 2nd card, like the feed phone later) -->
+            <div class="op1">
+             <div class="op1-pager" id="op1-pager">
+              <div class="op1-page">
+              <div class="op1-chip">
+                <div class="op1-chip-av">C</div>
+                <span class="op1-chip-name">Chinese HSK 3 – Travel</span>
+              </div>
+              <div class="op1-body">
+                <div class="op1-label">TRANSLATION</div>
+                <div class="op1-prompt-row">
+                  <button class="op1-speaker"><svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M14 3v18l-7-5H3V8h4l7-5z"/></svg></button>
+                  <div class="op1-prompt">to travel</div>
+                </div>
+                <div class="op1-img"><img src="assets/content/seed-de-zh-hsk3-reisen-cover_travel.jpg" alt="travel"></div>
+                <div class="op1-opts">
+                  <button class="op1-opt op1-correct">旅行 (lǚ xíng)</button>
+                  <button class="op1-opt">护照 (hù zhào)</button>
+                  <button class="op1-opt">机场 (jī chǎng)</button>
+                  <button class="op1-opt">旅馆 (lǚ guǎn)</button>
+                </div>
+              </div>
+              </div>
+              <div class="op1-page">
+              <div class="op1-chip">
+                <div class="op1-chip-av">C</div>
+                <span class="op1-chip-name">Chinese HSK 3 – Travel</span>
+              </div>
+              <div class="op1-body">
+                <div class="op1-label">TRANSLATION</div>
+                <div class="op1-prompt-row">
+                  <button class="op1-speaker"><svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M14 3v18l-7-5H3V8h4l7-5z"/></svg></button>
+                  <div class="op1-prompt">the airplane</div>
+                </div>
+                <div class="op1-img"><img src="assets/content/seed-de-aircraft-quiz-cover_runway.jpg" alt="airplane"></div>
+                <div class="op1-opts">
+                  <button class="op1-opt op1-correct">飞机 (fēi jī)</button>
+                  <button class="op1-opt">火车 (huǒ chē)</button>
+                  <button class="op1-opt">轮船 (lún chuán)</button>
+                  <button class="op1-opt">汽车 (qì chē)</button>
+                </div>
+              </div>
+              </div>
+             </div>
+            </div>
+            <div class="morph-tint"></div>
+          </div>
+        </div>
+
+        <!-- YouTube panel — morphs into layer 2 -->
+        <div class="morph-pane morph-yt" id="morph-2">
+          <div class="morph-shell">
+            <!-- ===== REVERSIBLE EDIT (middle / "content" panel) =====
+                 The YouTube mock was replaced with a preview of the Discover
+                 (Entdecken) tab cards. ORIGINAL markup preserved & disabled in
+                 the <template> below. To revert: delete the .op2 block + this
+                 template and restore the template's contents into .morph-shell. -->
+            <template data-reversible="original-middle-panel-youtube">
+            <div class="yt-frame">
+              <div class="morph-chrome">
+                <div class="yt-bar">
+                  <span class="yt-logo">▶ YouTube</span>
+                  <div class="yt-search"><span>Search</span></div>
+                  <div class="yt-avatar"></div>
+                </div>
+              </div>
+              <div class="yt-grid">
+                <div class="yt-card"><div class="yt-thumb" style="background-image:url(assets/yt-thumb-1.png)"><span class="yt-dur">12:34</span></div><div class="yt-meta morph-chrome"><div class="yt-channel-av"></div><div><div class="yt-title">How TikTok's algorithm really works</div><div class="yt-sub">Veritasium · 4.2M</div></div></div></div>
+                <div class="yt-card"><div class="yt-thumb" style="background-image:url(assets/yt-thumb-2.png)"><span class="yt-dur">3:21</span></div><div class="yt-meta morph-chrome"><div class="yt-channel-av"></div><div><div class="yt-title">Why we forget what we learn</div><div class="yt-sub">Kurzgesagt · 12M</div></div></div></div>
+                <div class="yt-card"><div class="yt-thumb" style="background-image:url(assets/yt-thumb-3.png)"><span class="yt-dur">8:55</span></div><div class="yt-meta morph-chrome"><div class="yt-channel-av"></div><div><div class="yt-title">5 fastest ways to learn ANY language</div><div class="yt-sub">Lex Fridman · 890K</div></div></div></div>
+                <div class="yt-card"><div class="yt-thumb" style="background-image:url(assets/yt-thumb-4.png)"><span class="yt-dur">15:02</span></div><div class="yt-meta morph-chrome"><div class="yt-channel-av"></div><div><div class="yt-title">The science of memory and recall</div><div class="yt-sub">MIT · 3.1M</div></div></div></div>
+                <div class="yt-card"><div class="yt-thumb" style="background-image:url(assets/yt-thumb-5.png)"><span class="yt-dur">5:48</span></div><div class="yt-meta morph-chrome"><div class="yt-channel-av"></div><div><div class="yt-title">One trick to study smarter</div><div class="yt-sub">Ali Abdaal · 2.7M</div></div></div></div>
+                <div class="yt-card"><div class="yt-thumb" style="background-image:url(assets/yt-thumb-6.png)"><span class="yt-dur">22:10</span></div><div class="yt-meta morph-chrome"><div class="yt-channel-av"></div><div><div class="yt-title">Inside a champion's training</div><div class="yt-sub">Athletic · 450K</div></div></div></div>
+              </div>
+              <div class="morph-tint"></div>
+            </div>
+            </template>
+            <!-- NEW: Discover (Entdecken) cards preview -->
+            <div class="op2">
+              <div class="op2-top">
+                <div class="op2-search">
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                  <span>Search folders…</span>
+                </div>
+                <div class="op2-chip"><svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor"><polygon points="6 4 20 12 6 20 6 4"/></svg><span>Feed</span></div>
+              </div>
+              <div class="op2-grid">
+               <div class="op2-grid-inner" id="op2-grid-inner">
+                <div class="op2-card"><div class="op2-card-accent"></div><div class="op2-head"><div class="op2-card-title">Astronomy &amp; Constellations</div><div class="op2-thumb" style="background-image:url(assets/content/seed-de-astronomy-quiz-cover_starfield.jpg)"></div></div><div class="op2-tags"><span>astronomy</span><span>science</span></div><div class="op2-meta"><span>4 Sections</span><span>120 Entries</span></div></div>
+                <div class="op2-card"><div class="op2-card-accent"></div><div class="op2-head"><div class="op2-card-title">Marine Animals Quiz</div><div class="op2-thumb" style="background-image:url(assets/content/seed-de-sealife-quiz-cover_sealife.jpg)"></div></div><div class="op2-tags"><span>ocean</span><span>marine</span></div><div class="op2-meta"><span>3 Sections</span><span>86 Entries</span></div></div>
+                <div class="op2-card"><div class="op2-card-accent"></div><div class="op2-head"><div class="op2-card-title">Ancient Rome Quiz</div><div class="op2-thumb" style="background-image:url(assets/content/seed-de-ancient-rome-quiz-cover_rome.jpg)"></div></div><div class="op2-tags"><span>rome</span><span>history</span></div><div class="op2-meta"><span>5 Sections</span><span>142 Entries</span></div></div>
+                <div class="op2-card"><div class="op2-card-accent"></div><div class="op2-head"><div class="op2-card-title">Flags of the World</div><div class="op2-thumb" style="background-image:url(assets/content/seed-de-flaggen-quiz-papua_new_guinea.png)"></div></div><div class="op2-tags"><span>flags</span><span>geography</span></div><div class="op2-meta"><span>2 Sections</span><span>198 Entries</span></div></div>
+                <div class="op2-card"><div class="op2-card-accent"></div><div class="op2-head"><div class="op2-card-title">Chinese HSK 2 – Shopping</div><div class="op2-thumb" style="background-image:url(assets/content/seed-de-zh-hsk2-einkaufen-cover_shopping.jpg)"></div></div><div class="op2-tags"><span>chinese</span><span>vocab</span></div><div class="op2-meta"><span>6 Sections</span><span>74 Entries</span></div></div>
+                <div class="op2-card"><div class="op2-card-accent"></div><div class="op2-head"><div class="op2-card-title">Cocktails Quiz</div><div class="op2-thumb" style="background-image:url(assets/content/seed-de-cocktails-quiz-cover_cocktails.jpg)"></div></div><div class="op2-tags"><span>drinks</span><span>food</span></div><div class="op2-meta"><span>3 Sections</span><span>61 Entries</span></div></div>
+                <div class="op2-card"><div class="op2-card-accent"></div><div class="op2-head"><div class="op2-card-title">Coffee &amp; Espresso Quiz</div><div class="op2-thumb" style="background-image:url(assets/content/seed-de-coffee-quiz-cover_coffee.jpg)"></div></div><div class="op2-tags"><span>coffee</span><span>food</span></div><div class="op2-meta"><span>4 Sections</span><span>52 Entries</span></div></div>
+                <div class="op2-card"><div class="op2-card-accent"></div><div class="op2-head"><div class="op2-card-title">Periodic Table Quiz</div><div class="op2-thumb" style="background-image:url(assets/content/seed-de-elements-quiz-cover_elements.jpg)"></div></div><div class="op2-tags"><span>chemistry</span><span>science</span></div><div class="op2-meta"><span>5 Sections</span><span>118 Entries</span></div></div>
+                <div class="op2-card"><div class="op2-card-accent"></div><div class="op2-head"><div class="op2-card-title">World Mythology Quiz</div><div class="op2-thumb" style="background-image:url(assets/content/seed-de-mythology-quiz-cover_mythology.jpg)"></div></div><div class="op2-tags"><span>mythology</span><span>history</span></div><div class="op2-meta"><span>4 Sections</span><span>97 Entries</span></div></div>
+                <div class="op2-card"><div class="op2-card-accent"></div><div class="op2-head"><div class="op2-card-title">K-Pop Quiz</div><div class="op2-thumb" style="background-image:url(assets/content/seed-de-kpop-quiz-cover_kpop.jpg)"></div></div><div class="op2-tags"><span>kpop</span><span>music</span></div><div class="op2-meta"><span>3 Sections</span><span>64 Entries</span></div></div>
+                <div class="op2-card"><div class="op2-card-accent"></div><div class="op2-head"><div class="op2-card-title">Mushrooms: Edible vs Poisonous</div><div class="op2-thumb" style="background-image:url(assets/content/seed-de-mushrooms-quiz-cover_mushrooms.jpg)"></div></div><div class="op2-tags"><span>mushrooms</span><span>nature</span></div><div class="op2-meta"><span>2 Sections</span><span>48 Entries</span></div></div>
+                <div class="op2-card"><div class="op2-card-accent"></div><div class="op2-head"><div class="op2-card-title">World Capitals – Hard</div><div class="op2-thumb" style="background-image:url(assets/content/seed-de-capitals-quiz-astana.jpg)"></div></div><div class="op2-tags"><span>capitals</span><span>geography</span></div><div class="op2-meta"><span>3 Sections</span><span>176 Entries</span></div></div>
+                <div class="op2-card"><div class="op2-card-accent"></div><div class="op2-head"><div class="op2-card-title">Wine Quiz</div><div class="op2-thumb" style="background-image:url(assets/content/seed-de-wine-quiz-cover_wine.jpg)"></div></div><div class="op2-tags"><span>wine</span><span>food</span></div><div class="op2-meta"><span>4 Sections</span><span>69 Entries</span></div></div>
+                <div class="op2-card"><div class="op2-card-accent"></div><div class="op2-head"><div class="op2-card-title">Programming Languages</div><div class="op2-thumb" style="background-image:url(assets/content/seed-de-proglang-quiz-cover_proglang.png)"></div></div><div class="op2-tags"><span>code</span><span>tech</span></div><div class="op2-meta"><span>5 Sections</span><span>132 Entries</span></div></div>
+                <div class="op2-card"><div class="op2-card-accent"></div><div class="op2-head"><div class="op2-card-title">Insects &amp; Butterflies</div><div class="op2-thumb" style="background-image:url(assets/content/seed-de-insects-quiz-cover_insects.jpg)"></div></div><div class="op2-tags"><span>insects</span><span>nature</span></div><div class="op2-meta"><span>3 Sections</span><span>58 Entries</span></div></div>
+                <div class="op2-card"><div class="op2-card-accent"></div><div class="op2-head"><div class="op2-card-title">Famous Inventions</div><div class="op2-thumb" style="background-image:url(assets/content/seed-de-inventions-quiz-cover_inventions.jpg)"></div></div><div class="op2-tags"><span>inventions</span><span>history</span></div><div class="op2-meta"><span>4 Sections</span><span>103 Entries</span></div></div>
+                <div class="op2-card"><div class="op2-card-accent"></div><div class="op2-head"><div class="op2-card-title">Cheese Quiz</div><div class="op2-thumb" style="background-image:url(assets/content/seed-de-cheese-quiz-cover_cheese.jpg)"></div></div><div class="op2-tags"><span>cheese</span><span>food</span></div><div class="op2-meta"><span>3 Sections</span><span>57 Entries</span></div></div>
+                <div class="op2-card"><div class="op2-card-accent"></div><div class="op2-head"><div class="op2-card-title">Birds of the World</div><div class="op2-thumb" style="background-image:url(assets/content/seed-de-birds-quiz-cover_birds.jpg)"></div></div><div class="op2-tags"><span>birds</span><span>nature</span></div><div class="op2-meta"><span>4 Sections</span><span>91 Entries</span></div></div>
+                <div class="op2-card"><div class="op2-card-accent"></div><div class="op2-head"><div class="op2-card-title">Movie Quiz</div><div class="op2-thumb" style="background-image:url(assets/content/seed-de-movies-quiz-cover_movies.jpg)"></div></div><div class="op2-tags"><span>film</span><span>culture</span></div><div class="op2-meta"><span>5 Sections</span><span>134 Entries</span></div></div>
+                <div class="op2-card"><div class="op2-card-accent"></div><div class="op2-head"><div class="op2-card-title">Reptiles Quiz</div><div class="op2-thumb" style="background-image:url(assets/content/seed-de-reptiles-quiz-cover_reptiles.jpg)"></div></div><div class="op2-tags"><span>reptiles</span><span>nature</span></div><div class="op2-meta"><span>2 Sections</span><span>49 Entries</span></div></div>
+                <div class="op2-card"><div class="op2-card-accent"></div><div class="op2-head"><div class="op2-card-title">Whisky Quiz</div><div class="op2-thumb" style="background-image:url(assets/content/seed-de-whisky-quiz-cover_whisky.jpg)"></div></div><div class="op2-tags"><span>whisky</span><span>food</span></div><div class="op2-meta"><span>3 Sections</span><span>66 Entries</span></div></div>
+                <div class="op2-card"><div class="op2-card-accent"></div><div class="op2-head"><div class="op2-card-title">Retro Consoles</div><div class="op2-thumb" style="background-image:url(assets/content/seed-de-retro-consoles-quiz-cover_retro.jpg)"></div></div><div class="op2-tags"><span>games</span><span>retro</span></div><div class="op2-meta"><span>4 Sections</span><span>78 Entries</span></div></div>
+               </div>
+              </div>
+            </div>
+            <div class="morph-tint"></div>
+          </div>
+        </div>
+
+        <!-- Stadium — morphs into layer 3 (bottom video layer) -->
+        <div class="morph-pane morph-stadium" id="morph-3">
+          <div class="morph-shell">
+            <!-- ===== REVERSIBLE EDIT (right / "competition" panel) =====
+                 The stadium video was replaced with a Progress view: a turquoise
+                 chart (you vs. community average) + a player ranking — based on
+                 the Fortschritt view later in the video. ORIGINAL markup preserved
+                 & disabled in the <template> below. To revert: delete the .op3
+                 block + this template and restore the template's contents. -->
+            <template data-reversible="original-right-panel-stadium">
+            <video src="assets/stadium-vid.mp4" muted loop playsinline preload="none" data-scene="1"></video>
+            </template>
+            <!-- NEW: progress + ranking -->
+            <div class="op3">
+              <div class="op3-header">
+                <div class="op3-title">Progress</div>
+                <div class="op3-week"><span id="op3-range">1W</span> <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></div>
+              </div>
+              <div class="op3-xp">
+                <div class="op3-ring">
+                  <svg viewBox="0 0 50 50"><circle cx="25" cy="25" r="22" fill="none" stroke="#e9efed" stroke-width="4"/><circle cx="25" cy="25" r="22" fill="none" stroke="#46AC94" stroke-width="4" stroke-dasharray="138.2" stroke-dashoffset="32" stroke-linecap="round" transform="rotate(-90 25 25)"/></svg>
+                  <div class="op3-ring-lvl">7</div>
+                </div>
+                <div class="op3-xp-info">
+                  <div class="op3-xp-head">Level 7</div>
+                  <div class="op3-xp-bar"><div class="op3-xp-bar-fill"></div></div>
+                  <div class="op3-xp-num">2,480 / 3,000 XP</div>
+                </div>
+              </div>
+              <div class="op3-chart-wrap">
+                <div class="op3-chart">
+                  <svg viewBox="0 0 280 130" preserveAspectRatio="none">
+                    <path id="op3-fill" d="M0,118 L47,110 L93,92 L140,72 L187,55 L234,42 L280,28 L280,130 L0,130 Z" fill="#46AC94" opacity="0.15"/>
+                    <polyline id="op3-comm" points="0,70 47,66 93,68 140,61 187,63 234,57 280,59" fill="none" stroke="#b9c4c0" stroke-width="2" stroke-dasharray="5,5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <polyline id="op3-line" points="0,118 47,110 93,92 140,72 187,55 234,42 280,28" fill="none" stroke="#46AC94" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </div>
+                <div class="op3-axis" id="op3-axis"><span>Mo</span><span>Tu</span><span>We</span><span>Th</span><span>Fr</span><span>Sa</span><span>Su</span></div>
+              </div>
+              <div class="op3-rank">
+                <div class="op3-rank-head">Leaderboard</div>
+                <!-- Rows built + animated by buildOp3Board()/animateOp3() in video.js.
+                     "you" starts last and slides up over the others. -->
+                <div class="op3-board"><div class="op3-board-inner" id="op3-board-inner"></div></div>
+              </div>
+            </div>
+            <div class="morph-tint"></div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="s1-caption s1-caption-top" id="s1-caption-top">
+        <span class="s1-cap-text" id="s1-cap-top"></span>
+        <!-- REVERSIBLE EDIT v8: teal progress-style bar that runs under the
+             top caption as it wipes in. -->
+        <div class="s1-cap-bar" id="s1-cap-bar"><div class="s1-cap-bar-fill" id="s1-cap-bar-fill"></div></div>
+      </div>
+
+      <!-- Word labels that fly in WITH each panel (instead of a typewriter
+           caption). Each label sits below its panel in scene-1 position
+           and fades away as the panels morph into the logo. -->
+      <div class="s1-word-labels" id="s1-word-labels">
+        <!-- === REVERSIBLE EDIT: word-label text changed. Originals kept below. ===
+        <div class="s1-word" id="s1-word-1"><span>TikTok's algorithm</span></div>
+        <div class="s1-word" id="s1-word-2"><span>YouTube's content</span></div>
+        <div class="s1-word" id="s1-word-3"><span>and world-class competition</span></div>
+        === END ORIGINAL === -->
+        <div class="s1-word" id="s1-word-1"><span><span class="wl-ink">A personalized</span> <span class="wl-teal">algorithm</span></span></div>
+        <div class="s1-word" id="s1-word-2"><span><span class="wl-ink">unlimited</span> <span class="wl-teal">content</span> <span class="wl-ink">and</span></span></div>
+        <div class="s1-word" id="s1-word-3"><span><span class="wl-ink">world class</span> <span class="wl-teal">competition</span></span></div>
+      </div>
+
+      <!-- Brand wordmark that slides DOWN above the logo at the end of
+           scene 1. Replaces the leading "This is stacktags" phrase. -->
+      <div class="s1-brand" id="s1-brand">
+        <span class="s1-brand-stack">stack</span><span class="s1-brand-tags">tags</span>
+      </div>
+
+      <div class="s1-caption s1-caption-bot">
+        <span class="s1-cap-text" id="s1-cap"></span>
+      </div>
+    </div>
+
+    <!-- ==================== SCENE 2 — (removed; folded into Scene 1) ==================== -->
+
+    <!-- ==================== SCENE 3 — Discover backdrop (picker is now top-level) ==================== -->
+    <!-- The TopicPicker overlay used to live INSIDE scene-3. Problem: when
+         scene 1 (logo) ended and scene 3 became active, the cross-fade
+         hid scene-1 BEFORE the picker could read as "emerging from the
+         logo". Now the picker is a top-level child of .stage and animates
+         independently of scene transitions — so it can zoom in OVER scene-1
+         (logo still visible) and then we can switch the backdrop scene
+         underneath without breaking the picker animation. -->
+    <div class="scene s-3" data-scene="3" id="scene-3">
+      <div class="s3-backdrop" id="s3-backdrop"></div>
+    </div>
+
+    <!-- ==================== SCENE 4 — Discover (Entdecken) ==================== -->
+    <div class="scene s-4" data-scene="4" id="scene-4">
+      <div class="s4-caption"><span id="s4-cap"></span></div>
+      <div class="new-ui s4-frame">
+        <!-- Sidebar (exact order + items from real app) -->
+        <aside class="new-sidebar">
+          <a class="new-sidebar-logo" href="#">
+            <div id="s4-logo-host"></div>
+            <span class="new-sidebar-wordmark"><span class="wm-stack">stack</span><span class="wm-tags">tags</span></span>
+          </a>
+          <nav class="new-sidebar-nav" id="s4-nav"></nav>
+          <div class="new-sidebar-footer">
+            <div class="new-nav-item">
+              <div class="new-nav-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M 11.223 5.849 L 11.022 4.262 A 7.800 7.800 0 0 1 12.978 4.262 L 12.777 5.849 A 6.200 6.200 0 0 1 15.800 7.101 L 16.781 5.837 A 7.800 7.800 0 0 1 18.163 7.219 L 16.899 8.200 A 6.200 6.200 0 0 1 18.151 11.223 L 19.738 11.022 A 7.800 7.800 0 0 1 19.738 12.978 L 18.151 12.777 A 6.200 6.200 0 0 1 16.899 15.800 L 18.163 16.781 A 7.800 7.800 0 0 1 16.781 18.163 L 15.800 16.899 A 6.200 6.200 0 0 1 12.777 18.151 L 12.978 19.738 A 7.800 7.800 0 0 1 11.022 19.738 L 11.223 18.151 A 6.200 6.200 0 0 1 8.200 16.899 L 7.219 18.163 A 7.800 7.800 0 0 1 5.837 16.781 L 7.101 15.800 A 6.200 6.200 0 0 1 5.849 12.777 L 4.262 12.978 A 7.800 7.800 0 0 1 4.262 11.022 L 5.849 11.223 A 6.200 6.200 0 0 1 7.101 8.200 L 5.837 7.219 A 7.800 7.800 0 0 1 7.219 5.837 L 8.200 7.101 A 6.200 6.200 0 0 1 11.223 5.849 Z"/><circle cx="12" cy="12" r="4.2"/><circle cx="12" cy="9.3" r=".55" fill="currentColor" stroke="none"/><circle cx="14.4" cy="12" r=".55" fill="currentColor" stroke="none"/><circle cx="12" cy="14.7" r=".55" fill="currentColor" stroke="none"/><circle cx="9.6" cy="12" r=".55" fill="currentColor" stroke="none"/><circle cx="12" cy="12" r=".9" fill="currentColor" stroke="none"/></svg></div>
+              <span class="new-nav-text">Settings</span>
+            </div>
+            <div class="new-nav-item">
+              <div class="new-nav-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 16c.8-.9 1.5-2.1 1.5-4v-2.2c0-2.6 2-4.8 4.5-4.8s4.5 2.2 4.5 4.8V12c0 1.9.7 3.1 1.5 4H6z"/><path d="M12 3.2 V4.8"/><path d="M10.5 18.5 a1.5 1.5 0 0 0 3 0"/></svg></div>
+              <span class="new-nav-text">Notifications</span>
+            </div>
+            <div class="new-sidebar-profile">
+              <div class="new-profile-avatar"><div class="initials">T</div><div class="new-profile-online-dot"></div></div>
+              <div class="new-profile-name">tim</div>
+            </div>
+          </div>
+        </aside>
+        <!-- Main content -->
+        <div class="new-main-content">
+          <div class="new-page">
+            <!-- Toolbar: search + sort buttons + entdecken chip on top row -->
+            <div class="entdecken-grid-toolbar">
+              <div class="ds-toolbar-row">
+                <div class="ds-search">
+                  <input type="text" placeholder="Search folders…" />
+                </div>
+                <div class="ds-sort-group">
+                  <button class="ds-sort active">Popular</button>
+                  <button class="ds-sort">Newest</button>
+                  <button class="ds-sort">A-Z</button>
+                </div>
+                <div class="ds-flex-spacer"></div>
+                <button class="entdecken-feed-chip">
+                  <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><polygon points="6 4 20 12 6 20 6 4"/></svg>
+                  <span>Discover</span>
+                </button>
+              </div>
+              <!-- Category tabs -->
+              <div class="ds-cat-tabs">
+                <button class="ds-cat active">All</button>
+                <button class="ds-cat">Vocabulary</button>
+                <button class="ds-cat">General</button>
+              </div>
+            </div>
+            <div class="new-card-grid" id="s4-grid"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== SCENE 5 — Trio mega-scene (Feed/Game/Progress) ==================== -->
+    <div class="scene s-5" data-scene="5" id="scene-5">
+      <div class="trio-row" id="trio-row">
+
+        <!-- ─── Phone 1: Feed (Chinese HSK shopping vocabulary) ─── -->
+        <div class="trio-col" id="trio-col-1">
+          <div class="trio-frame">
+            <div class="trio-notch"></div>
+            <div class="trio-screen">
+              <div class="mob-screen feed-mob">
+                <div class="feed-pager" id="feed-pager">
+                <div class="feed-page feed-page-1">
+                <!-- Folder chip (top-left): C avatar + folder name -->
+                <div class="feed-folder-chip">
+                  <div class="feed-folder-avatar">C</div>
+                  <span class="feed-folder-name">Chinese HSK 2 – Shoppin…</span>
+                </div>
+                <div class="feed-hud-top-right">
+                  <button class="feed-icon-btn"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg></button>
+                </div>
+
+                <!-- Center content -->
+                <div class="feed-card-inner">
+                  <div class="feed-vocab-lang-label">TRANSLATION</div>
+                  <div class="feed-card-prompt-row">
+                    <button class="feed-card-speaker"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M14 3v18l-7-5H3V8h4l7-5z M16 8.5a4 4 0 0 1 0 7"/></svg></button>
+                    <div class="feed-card-prompt-big">shirt / blouse</div>
+                  </div>
+                  <div class="feed-card-image-frame">
+                    <img class="feed-card-image" src="assets/q-shirt.png" alt="shirt" />
+                  </div>
+                  <div class="feed-mc-options">
+                    <button class="feed-mc-opt" data-correct="true">衬衫 (chèn shān)</button>
+                    <button class="feed-mc-opt">裙子 (qún zi)</button>
+                    <button class="feed-mc-opt">外套 (wài tào)</button>
+                    <button class="feed-mc-opt">T恤 (T xù)</button>
+                  </div>
+                </div>
+
+                <!-- Right floating: 3-dot + bookmark -->
+                <div class="feed-menu-wrap">
+                  <button class="feed-menu-btn"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><circle cx="12" cy="5" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="12" cy="19" r="2"/></svg></button>
+                </div>
+                <button class="feed-bookmark-btn"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg></button>
+                </div>
+
+                <!-- Page 2: next post (scrolled to) — financing / fundraising -->
+                <div class="feed-page feed-page-2">
+                  <div class="feed-folder-chip">
+                    <div class="feed-folder-avatar">C</div>
+                    <span class="feed-folder-name">Chinese HSK 9 – Economy &amp; F…</span>
+                  </div>
+                  <div class="feed-hud-top-right">
+                    <button class="feed-icon-btn"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg></button>
+                  </div>
+                  <div class="feed-card-inner">
+                    <div class="feed-vocab-lang-label">TRANSLATION</div>
+                    <div class="feed-card-prompt-row">
+                      <button class="feed-card-speaker"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M14 3v18l-7-5H3V8h4l7-5z M16 8.5a4 4 0 0 1 0 7"/></svg></button>
+                      <div class="feed-card-prompt-big">financing / fundraising</div>
+                    </div>
+                    <div class="feed-card-image-frame">
+                      <img class="feed-card-image" src="assets/content/money-plant.png" alt="money plant" />
+                    </div>
+                    <div class="feed-mc-options">
+                      <button class="feed-mc-opt">贷款 (dài kuǎn)</button>
+                      <button class="feed-mc-opt" data-correct="true">融资 (róng zī)</button>
+                      <button class="feed-mc-opt">筹款 (chóu kuǎn)</button>
+                      <button class="feed-mc-opt">投资 (tóu zī)</button>
+                    </div>
+                  </div>
+                  <div class="feed-menu-wrap">
+                    <button class="feed-menu-btn"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><circle cx="12" cy="5" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="12" cy="19" r="2"/></svg></button>
+                  </div>
+                  <button class="feed-bookmark-btn"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg></button>
+                </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Label is now AFTER (BELOW) the phone frame -->
+          <!-- Keyword that flies in from BELOW and nudges this phone UP -->
+          <div class="trio-kw trio-kw-below">Remembers your <b>strengths</b></div>
+        </div>
+
+        <!-- ─── Phone 2: Game (QuizGame mobile — competition view with Wahrzeichen task) ─── -->
+        <div class="trio-col" id="trio-col-2">
+          <div class="trio-frame">
+            <div class="trio-notch"></div>
+            <div class="trio-screen">
+              <div class="mob-screen game-mob">
+                <!-- Black portrait header with player avatars + round counter -->
+                <div class="qg-header">
+                  <div class="qg-avatars">
+                    <div class="qg-av qg-av-bot" id="qg-av-1"><img src="assets/chars/professor.png" alt=""></div>
+                    <div class="qg-av qg-av-me">T</div>
+                    <div class="qg-av qg-av-bot" id="qg-av-2"><img src="assets/chars/anxious_cook.png" alt=""></div>
+                    <div class="qg-av qg-av-bot" id="qg-av-3"><img src="assets/chars/bald_suit.png" alt=""></div>
+                  </div>
+                  <div class="qg-round">3/10</div>
+                </div>
+                <!-- Thin progress bar -->
+                <div class="qg-progress"><div class="qg-progress-fill"></div></div>
+
+                <!-- Wahrzeichen task: image + question -->
+                <div class="qg-q-image" style="background-image:url(assets/q-potala.png)"></div>
+                <div class="qg-q-label">Which landmark?</div>
+
+                <!-- Answer pill (revealed) — "Potala Palast" -->
+                <div class="qg-answer">
+                  <div class="qg-answer-letter">B</div>
+                  <div class="qg-answer-text">Potala Palace</div>
+                  <div class="qg-answer-trail">
+                    <div class="qg-av qg-av-mini qg-av-me">T</div>
+                    <div class="qg-av qg-av-mini qg-av-bot"></div>
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+                  </div>
+                </div>
+
+                <!-- Leaderboard -->
+                <div class="qg-leaderboard">
+                  <div class="qg-lb-row">
+                    <div class="qg-lb-rank"><span class="qg-rank-arrow">↑</span><span class="qg-rank-n">1</span></div>
+                    <div class="qg-av qg-av-mini qg-av-bot"><img src="assets/chars/professor.png" alt=""></div>
+                    <div class="qg-lb-name">Pondering Profes...</div>
+                    <div class="qg-lb-delta">+15</div>
+                    <div class="qg-lb-total">42</div>
+                  </div>
+                  <div class="qg-lb-row qg-lb-me">
+                    <div class="qg-lb-rank"><span class="qg-rank-n">2</span></div>
+                    <div class="qg-av qg-av-mini qg-av-me">T</div>
+                    <div class="qg-lb-name">tim (You)</div>
+                    <div class="qg-lb-delta">+13</div>
+                    <div class="qg-lb-total">38</div>
+                  </div>
+                  <div class="qg-lb-row">
+                    <div class="qg-lb-rank"><span class="qg-rank-n">3</span></div>
+                    <div class="qg-av qg-av-mini qg-av-bot"><img src="assets/chars/anxious_cook.png" alt=""></div>
+                    <div class="qg-lb-name">Clumsy Croissant</div>
+                    <div class="qg-lb-delta">+8</div>
+                    <div class="qg-lb-total">22</div>
+                  </div>
+                  <div class="qg-lb-row">
+                    <div class="qg-lb-rank"><span class="qg-rank-n">4</span></div>
+                    <div class="qg-av qg-av-mini qg-av-bot"><img src="assets/chars/bald_suit.png" alt=""></div>
+                    <div class="qg-lb-name">Bald Banker</div>
+                    <div class="qg-lb-delta"></div>
+                    <div class="qg-lb-total">12</div>
+                  </div>
+                </div>
+
+                <!-- Next question button -->
+                <div class="qg-next-wrap">
+                  <button class="qg-next">Next question <span>›</span></button>
+                </div>
+
+                <!-- Next question slides in from the RIGHT: capital of Egypt -->
+                <div class="qg-nextq" id="qg-nextq">
+                  <div class="qg-nextq-image" style="background-image:url(assets/content/cairo-skyline.png)"></div>
+                  <div class="qg-nextq-label">What is the capital of Egypt?</div>
+                  <div class="qg-nextq-mc">
+                    <button class="qg-nextq-opt" data-correct="true">Cairo</button>
+                    <button class="qg-nextq-opt">Luxor</button>
+                    <button class="qg-nextq-opt">Alexandria</button>
+                    <button class="qg-nextq-opt">Giza</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Keyword that flies in from ABOVE and nudges this phone DOWN -->
+          <div class="trio-kw trio-kw-above">Spots your <b>weaknesses</b></div>
+        </div>
+
+        <!-- ─── Phone 3: Progress (FortschrittNew mobile) ─── -->
+        <div class="trio-col" id="trio-col-3">
+          <div class="trio-frame">
+            <div class="trio-notch"></div>
+            <div class="trio-screen">
+              <div class="mob-screen prog-mob">
+                <!-- Header -->
+                <div class="fs-m-header">
+                  <button class="fs-m-back"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button>
+                  <h2 class="fs-m-title">Progress</h2>
+                  <div class="fs-m-toggle">
+                    <button class="fs-m-toggle-btn active"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></button>
+                    <button class="fs-m-toggle-btn"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></button>
+                  </div>
+                </div>
+                <!-- REVERSIBLE EDIT v11: chart view wrapped so it can slide
+                     out to the LEFT while the calendar slides in from the right. -->
+                <div class="pc-chartview">
+                <!-- XP card -->
+                <div class="fs-m-xp">
+                  <div class="fs-m-xp-ring">
+                    <svg viewBox="0 0 50 50">
+                      <circle cx="25" cy="25" r="22" fill="none" stroke="#e9efed" stroke-width="3"/>
+                      <circle cx="25" cy="25" r="22" fill="none" stroke="#46AC94" stroke-width="3" stroke-dasharray="138.2" stroke-dashoffset="120" stroke-linecap="round" transform="rotate(-90 25 25)" id="prog-ring-fill"/>
+                    </svg>
+                    <div class="fs-m-xp-level">1</div>
+                  </div>
+                  <div class="fs-m-xp-info">
+                    <div class="fs-m-xp-headline">Level 1</div>
+                    <div class="fs-m-xp-bar"><div class="fs-m-xp-bar-fill" id="prog-bar"></div></div>
+                    <div class="fs-m-xp-num">111 / 1000 XP</div>
+                  </div>
+                </div>
+
+                <!-- Chart -->
+                <div class="fs-chart-wrap">
+                  <div class="fs-chart-toolbar">
+                    <div class="fs-chart-select">1W <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></div>
+                    <button class="fs-chart-community active"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></button>
+                  </div>
+                <!-- Chart: solid teal line crosses above the dashed
+                     community average. Both animate via stroke-dashoffset. -->
+                <div class="fs-chart">
+                  <svg viewBox="0 0 280 130" preserveAspectRatio="none">
+                    <defs>
+                      <clipPath id="prog-reveal"><rect id="prog-reveal-rect" x="0" y="0" width="0" height="130"/></clipPath>
+                    </defs>
+                    <g clip-path="url(#prog-reveal)">
+                      <!-- Teal area fill under the user line -->
+                      <path id="prog-fill-path" d="M0,118 L47,110 L93,92 L140,72 L187,55 L234,42 L280,28 L280,130 L0,130 Z" fill="#46AC94" opacity="0.15"/>
+                      <!-- Community average — dashed grey, fairly steady -->
+                      <polyline id="prog-line-comm" points="0,70 47,66 93,68 140,61 187,63 234,57 280,59" fill="none" stroke="#b9c4c0" stroke-width="2" stroke-dasharray="5,5" stroke-linecap="round" stroke-linejoin="round"/>
+                      <!-- User line — solid teal, climbs from bottom and crosses ABOVE the grey -->
+                      <polyline id="prog-line" points="0,118 47,110 93,92 140,72 187,55 234,42 280,28" fill="none" stroke="#46AC94" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                    </g>
+                  </svg>
+                </div>
+                  <div class="fs-chart-axis">
+                    <span>Mi</span><span>Do</span><span>Fr</span><span>Sa</span><span>So</span><span>Mo</span><span>Di</span>
+                  </div>
+                </div>
+
+                <!-- Zielmarken (Rewards) -->
+                <div class="fs-rewards">
+                  <div class="fs-rewards-toolbar">
+                    <input type="text" class="fs-rewards-search" placeholder="Search badges…">
+                    <div class="fs-rewards-filter">
+                      <button class="fs-rewards-filter-btn active">All</button>
+                      <button class="fs-rewards-filter-btn">Mine</button>
+                    </div>
+                  </div>
+                  <button class="fs-reward-card">
+                    <div class="fs-reward-thumb">
+                      <img src="assets/chars/astronaut.png" alt="Spicy Spaceman">
+                      <div class="fs-reward-lock"><svg viewBox="0 0 24 24" width="10" height="10" fill="currentColor"><rect x="6" y="11" width="12" height="9" rx="1"/><path d="M9 11V7a3 3 0 0 1 6 0v4" fill="none" stroke="currentColor" stroke-width="2"/></svg></div>
+                    </div>
+                    <div class="fs-reward-text">
+                      <div class="fs-reward-name">Spicy Spaceman</div>
+                      <div class="fs-reward-desc">Explore the vastness of the cosmos to unlock Spicy Spaceman</div>
+                    </div>
+                    <div class="fs-reward-arrow"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></div>
+                  </button>
+                </div>
+                </div><!-- /pc-chartview -->
+
+                <!-- REVERSIBLE EDIT v8: calendar + donut overlay, revealed when
+                     the calendar toggle is "pressed" (animateProgressCalendar). -->
+                <div class="prog-cal">
+                  <div class="prog-cal-inner">
+                    <div class="pc-month"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg><span>March 2026</span><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></div>
+                    <div class="pc-grid">
+                      <div class="pc-dow">M</div><div class="pc-dow">T</div><div class="pc-dow">W</div><div class="pc-dow">T</div><div class="pc-dow">F</div><div class="pc-dow">S</div><div class="pc-dow">S</div>
+                      <div class="pc-day"></div><div class="pc-day"></div><div class="pc-day"></div><div class="pc-day">1</div><div class="pc-day pc-on">2</div><div class="pc-day pc-on">3</div><div class="pc-day">4</div>
+                      <div class="pc-day pc-on">5</div><div class="pc-day pc-on">6</div><div class="pc-day">7</div><div class="pc-day pc-on">8</div><div class="pc-day pc-on">9</div><div class="pc-day pc-on">10</div><div class="pc-day pc-on">11</div>
+                      <div class="pc-day pc-on">12</div><div class="pc-day">13</div><div class="pc-day pc-on">14</div><div class="pc-day pc-on">15</div><div class="pc-day pc-on">16</div><div class="pc-day pc-on">17</div><div class="pc-day pc-on">18</div>
+                      <div class="pc-day pc-on">19</div><div class="pc-day pc-on">20</div><div class="pc-day pc-on">21</div><div class="pc-day">22</div><div class="pc-day pc-on">23</div><div class="pc-day pc-on">24</div><div class="pc-day pc-on">25</div>
+                      <div class="pc-day pc-on">26</div><div class="pc-day pc-on">27</div><div class="pc-day pc-today">28</div><div class="pc-day">29</div><div class="pc-day">30</div><div class="pc-day">31</div><div class="pc-day"></div>
+                    </div>
+                    <div class="pc-donut-card">
+                      <div class="pc-donut-title">This month's activity</div>
+                      <div class="pc-donut-row">
+                        <div class="pc-donut">
+                          <svg viewBox="0 0 100 100">
+                            <circle cx="50" cy="50" r="40" fill="none" stroke="#eef4f1" stroke-width="14" stroke-dasharray="0 251.3" stroke-dashoffset="-201.0" id="pc-seg-games"/>
+                            <circle cx="50" cy="50" r="40" fill="none" stroke="#c7d3cf" stroke-width="14" stroke-dasharray="0 251.3" stroke-dashoffset="-120.6" id="pc-seg-quiz"/>
+                            <circle cx="50" cy="50" r="40" fill="none" stroke="#46AC94" stroke-width="14" stroke-dasharray="0 251.3" stroke-dashoffset="0" id="pc-seg-vocab"/>
+                          </svg>
+                          <div class="pc-donut-center"><span id="pc-donut-days">0</span>d</div>
+                        </div>
+                        <div class="pc-legend">
+                          <div class="pc-leg"><span class="pc-leg-dot" style="background:#46AC94"></span>Vocabulary · <span class="pc-leg-pct" id="pc-pct-vocab">0</span>%</div>
+                          <div class="pc-leg"><span class="pc-leg-dot" style="background:#c7d3cf"></span>Quizzes · <span class="pc-leg-pct" id="pc-pct-quiz">0</span>%</div>
+                          <div class="pc-leg"><span class="pc-leg-dot" style="background:#eef4f1;box-shadow:inset 0 0 0 1px #d8e2de"></span>Games · <span class="pc-leg-pct" id="pc-pct-games">0</span>%</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="pc-graph-card">
+                      <div class="pc-graph-head">
+                        <div class="pc-donut-title">Minutes learned</div>
+                        <div class="pc-graph-total"><span id="pc-graph-total">0</span> min</div>
+                      </div>
+                      <div class="pc-graph">
+                        <svg viewBox="0 0 280 110" preserveAspectRatio="none">
+                          <path id="pc-graph-area" d="" fill="#46AC94" opacity="0.12"/>
+                          <polyline id="pc-graph-line" points="" fill="none" stroke="#46AC94" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                      </div>
+                      <div class="pc-graph-axis"><span>W1</span><span>W2</span><span>W3</span><span>W4</span></div>
+                    </div>
+                    <div class="pc-bars-card">
+                      <div class="pc-donut-title">Top topics</div>
+                      <div class="pc-bars">
+                        <div class="pc-bar-row"><span class="pc-bar-label">Mandarin</span><div class="pc-bar-track"><div class="pc-bar-fill" id="pc-bar-1"></div></div><span class="pc-bar-val" id="pc-bval-1">0%</span></div>
+                        <div class="pc-bar-row"><span class="pc-bar-label">Geography</span><div class="pc-bar-track"><div class="pc-bar-fill" id="pc-bar-2"></div></div><span class="pc-bar-val" id="pc-bval-2">0%</span></div>
+                        <div class="pc-bar-row"><span class="pc-bar-label">History</span><div class="pc-bar-track"><div class="pc-bar-fill" id="pc-bar-3"></div></div><span class="pc-bar-val" id="pc-bval-3">0%</span></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Mobile tab bar -->
+                <div class="mob-tabbar">
+                  <button class="active"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></button>
+                  <button><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></button>
+                  <button><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></button>
+                  <button><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></button>
+                  <button><div class="mob-tabbar-av">T</div></button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Keyword that flies in from BELOW and nudges this phone UP -->
+          <div class="trio-kw trio-kw-below">Pushes your <b>limits</b></div>
+        </div>
+      </div>
+
+      <div class="trio-algo">
+        <span id="s5-algo"></span>
+      </div>
+    </div>
+
+    <!-- ==================== SCENE 9 — 9-tile grid ==================== -->
+    <div class="scene s-9" data-scene="9" id="scene-9">
+      <div class="s9-grid" id="s9-grid">
+
+        <!-- ── Cell 1 — Vocab present (Chinese) ── -->
+        <div class="s9-cell s9-vocab">
+          <div class="bv-pager" id="bv-pager">
+            <div class="bv-page">
+              <div class="bv-card">
+                <button class="bv-speak bv-speak-top">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg>
+                </button>
+                <div class="bv-word">龙</div>
+                <div class="bv-pinyin">lóng</div>
+                <div class="bv-translation">dragon</div>
+              </div>
+              <div class="bv-example">
+                <button class="bv-speak bv-speak-sm bv-speak-top">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+                </button>
+                <div class="bv-example-label">Example</div>
+                <div class="bv-example-text">中国人是龙的传人。</div>
+                <div class="bv-example-tr">The Chinese are the descendants of the dragon.</div>
+              </div>
+            </div>
+            <div class="bv-page">
+              <div class="bv-card">
+                <button class="bv-speak bv-speak-top">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg>
+                </button>
+                <div class="bv-word">茶</div>
+                <div class="bv-pinyin">chá</div>
+                <div class="bv-translation">tea</div>
+              </div>
+              <div class="bv-example">
+                <button class="bv-speak bv-speak-sm bv-speak-top">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+                </button>
+                <div class="bv-example-label">Example</div>
+                <div class="bv-example-text">我喜欢喝乌龙茶。</div>
+                <div class="bv-example-tr">I like to drink oolong tea.</div>
+              </div>
+            </div>
+            <!-- REVERSIBLE EDIT v8: 3rd vocab card (山 mountain) -->
+            <div class="bv-page">
+              <div class="bv-card">
+                <button class="bv-speak bv-speak-top">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg>
+                </button>
+                <div class="bv-word">山</div>
+                <div class="bv-pinyin">shān</div>
+                <div class="bv-translation">mountain</div>
+              </div>
+              <div class="bv-example">
+                <button class="bv-speak bv-speak-sm bv-speak-top">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+                </button>
+                <div class="bv-example-label">Example</div>
+                <div class="bv-example-text">我们周末去爬山。</div>
+                <div class="bv-example-tr">We go hiking in the mountains on the weekend.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── Cell 2 — Multiple choice → "Become smarter" ── -->
+        <div class="s9-cell s9-value s9-flip" id="s9-val-smarter">
+          <div class="s9-flip-inner">
+            <div class="s9-ui">
+              <div class="mc-question">Which of these animals has NO brain?</div>
+              <div class="mc-options">
+                <div class="mc-opt"><span class="mc-letter">A</span><span class="mc-text">Squid</span></div>
+                <div class="mc-opt" data-correct="true"><span class="mc-letter">B</span><span class="mc-text">Jellyfish</span></div>
+                <div class="mc-opt"><span class="mc-letter">C</span><span class="mc-text">Woodpecker</span></div>
+                <div class="mc-opt"><span class="mc-letter">D</span><span class="mc-text">Dolphin</span></div>
+              </div>
+            </div>
+            <div class="s9-face"><span class="s9-face-text"><span class="b">Become</span> <span class="t">smarter.</span></span></div>
+          </div>
+        </div>
+
+        <!-- ── Cell 3 — Map (real 3D globe, mounted by JS) ── -->
+        <div class="s9-cell s9-pad s9-map2">
+          <div class="mb-track">
+            <div class="mb-line"><div class="mb-line-fill"></div></div>
+            <div class="mb-dots">
+              <div class="mb-dot-wrap is-active"><div class="mb-dot"></div></div>
+              <div class="mb-dot-wrap"><div class="mb-dot"></div></div>
+              <div class="mb-dot-wrap"><div class="mb-dot"></div></div>
+            </div>
+          </div>
+          <div class="mb-task-num" id="mb-task-num">Question 1 / 3</div>
+          <div class="mb-task-question" id="mb-task-q">Find the country with the most castles.</div>
+          <div class="mb-globe" id="s9-map-globe"></div>
+        </div>
+
+        <!-- ── Cell 4 — Sentence build (Chinese translation) ── -->
+        <div class="s9-cell s9-pad s9-sb">
+          <div class="sb-instruction">Build the Chinese translation of: <span class="sb-source">“I want to buy a shirt.”</span></div>
+          <div class="sb-dropzone" id="sb-drop"><span class="sb-placeholder">Tap the words to build the sentence…</span></div>
+          <div class="sb-bank" id="sb-bank">
+            <button class="sb-chip sb-chip-bank" data-pos="3">买</button>
+            <button class="sb-chip sb-chip-bank" data-pos="1">我</button>
+            <button class="sb-chip sb-chip-bank" data-pos="5">。</button>
+            <button class="sb-chip sb-chip-bank" data-pos="2">想</button>
+            <button class="sb-chip sb-chip-bank" data-pos="4">衬衫</button>
+          </div>
+          <button class="sb-btn" id="sb-btn">Check</button>
+        </div>
+
+        <!-- ── Cell 5 — Type/fill → LOGO ── -->
+        <div class="s9-cell s9-value s9-flip" id="s9-val-logo">
+          <div class="s9-flip-inner">
+            <div class="s9-ui">
+              <div class="mc-question">True or made up? Fill the gap.</div>
+              <div class="fb-line">Honey <span class="fb-blank" data-answer="never"></span> goes bad.</div>
+              <div class="fb-line">An octopus has <span class="fb-blank" data-answer="3"></span> hearts.</div>
+              <div class="fb-line">Bananas are botanically <span class="fb-blank" data-answer="berries"></span>.</div>
+            </div>
+            <div class="s9-face s9-face-logo">
+              <span class="s9-face-logo-icon" id="s9-logo-tile-host"></span>
+              <span class="s9-face-wm"><span class="wm-stack">stack</span><span class="wm-tags">tags</span></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── Cell 6 — Categorize ── -->
+        <div class="s9-cell s9-pad s9-cat2">
+          <div class="cat-instruction">Mammal, bird or fish? Most people get it wrong.</div>
+          <div class="cat-pool" id="cat-pool">
+            <div class="cat-chip" data-cat="mammal"><span>Whale</span><div class="cat-chip-actions"><button class="cat-mini-btn" data-correct="true">Mammal</button><button class="cat-mini-btn">Bird</button><button class="cat-mini-btn">Fish</button></div></div>
+            <div class="cat-chip" data-cat="bird"><span>Penguin</span><div class="cat-chip-actions"><button class="cat-mini-btn">Mammal</button><button class="cat-mini-btn" data-correct="true">Bird</button><button class="cat-mini-btn">Fish</button></div></div>
+            <div class="cat-chip" data-cat="mammal"><span>Bat</span><div class="cat-chip-actions"><button class="cat-mini-btn" data-correct="true">Mammal</button><button class="cat-mini-btn">Bird</button><button class="cat-mini-btn">Fish</button></div></div>
+          </div>
+          <div class="cat-buckets">
+            <div class="cat-bucket" data-bucket="mammal"><div class="cat-bucket-label">Mammal</div><div class="cat-bucket-items"><div class="cat-bucket-empty">Empty</div></div></div>
+            <div class="cat-bucket" data-bucket="bird"><div class="cat-bucket-label">Bird</div><div class="cat-bucket-items"><div class="cat-bucket-empty">Empty</div></div></div>
+            <div class="cat-bucket" data-bucket="fish"><div class="cat-bucket-label">Fish</div><div class="cat-bucket-items"><div class="cat-bucket-empty">Empty</div></div></div>
+          </div>
+        </div>
+
+        <!-- ── Cell 7 — Matching ── -->
+        <div class="s9-cell s9-pad s9-match2">
+          <div class="match-instruction">Match each country to its REAL capital.</div>
+          <div class="match-grid">
+            <div class="match-col">
+              <button class="match-item" data-pair="1">Australia</button>
+              <button class="match-item" data-pair="2">Turkey</button>
+              <button class="match-item" data-pair="3">Kazakhstan</button>
+              <button class="match-item" data-pair="4">Brazil</button>
+            </div>
+            <div class="match-col">
+              <button class="match-item" data-pair="2">Ankara</button>
+              <button class="match-item" data-pair="1">Canberra</button>
+              <button class="match-item" data-pair="4">Brasília</button>
+              <button class="match-item" data-pair="3">Astana</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── Cell 8 — Sort → "Become sharper" ── -->
+        <div class="s9-cell s9-value s9-flip" id="s9-val-sharper">
+          <div class="s9-flip-inner">
+            <div class="s9-ui">
+              <div class="mc-question">What came first? Sort (oldest first).</div>
+              <div class="srt-rows">
+                <div class="srt-row"><span>Sharks</span><span class="srt-n"></span></div>
+                <div class="srt-row"><span>Trees</span><span class="srt-n"></span></div>
+                <div class="srt-row"><span>Dinosaurs</span><span class="srt-n"></span></div>
+                <div class="srt-row"><span>Mount Everest</span><span class="srt-n"></span></div>
+              </div>
+            </div>
+            <div class="s9-face"><span class="s9-face-text"><span class="b">Become</span> <span class="t">sharper.</span></span></div>
+          </div>
+        </div>
+
+        <!-- ── Cell 9 — Image guess ── -->
+        <div class="s9-cell s9-pad s9-ig">
+          <div class="ig-question">Few can name this palace.</div>
+          <div class="ig-photo"><img src="assets/content/potala-palace.png" alt=""/></div>
+          <div class="ig-options">
+            <div class="ig-opt">Forbidden City</div>
+            <div class="ig-opt" data-correct="true">Potala Palace</div>
+            <div class="ig-opt">Taj Mahal</div>
+            <div class="ig-opt">Tiger's Nest</div>
+          </div>
+          <div class="ig-pager"><span class="ig-arrow">‹</span><span class="ig-count">1 / 15</span><span class="ig-arrow ig-arrow-on">›</span></div>
+
+          <!-- 2nd question slides in from the right -->
+          <div class="ig-next" id="ig-next">
+            <div class="ig-question">Few can name this wonder.</div>
+            <div class="ig-photo"><img src="assets/q-greatwall.png" alt=""/></div>
+            <div class="ig-options">
+              <div class="ig-opt">Hadrian's Wall</div>
+              <div class="ig-opt">Western Wall</div>
+              <div class="ig-opt" data-correct="true">Great Wall of China</div>
+              <div class="ig-opt">Berlin Wall</div>
+            </div>
+            <div class="ig-pager"><span class="ig-arrow">‹</span><span class="ig-count">2 / 15</span><span class="ig-arrow ig-arrow-on">›</span></div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Closing logo (zooms out of the centre logo tile) -->
+      <div class="s9-finale" id="s9-finale">
+        <div class="s9-finale-logo" id="s9-finale-logo"></div>
+        <div class="s9-finale-wm"><span class="wm-stack">stack</span><span class="wm-tags">tags</span></div>
+        <div class="s9-finale-url">stacktags.io</div>
+      </div>
+    </div>
+
+    <!-- REVERSIBLE EDIT v9: the lifting top layer of the stack (flies up,
+         enlarges, teal→white, rhombus→rounded rect) → becomes the picker. -->
+    <div class="picker-morph" id="picker-morph"></div>
+
+    <!-- ==================== Top-level TopicPicker (lives outside scene system) ==================== -->
+    <!-- This overlay sits above the scenes and animates independently. Its
+         visibility + zoom is driven by .picker-in / .picker-out classes on
+         the .stage element (so any scene can be active underneath). -->
+    <div class="tp-overlay" id="tp-overlay">
+      <div class="tp-shell" role="dialog" aria-modal="true">
+        <header class="tp-header">
+          <div class="tp-header-row">
+            <h1 class="tp-title">Choose your interests</h1>
+            <button class="tp-search-toggle" type="button" aria-label="Suchen">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="7"/>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+              </svg>
+            </button>
+          </div>
+        </header>
+        <main class="tp-grid-wrap" id="tp-grid-wrap">
+          <div class="tp-grid" id="tp-grid"></div>
+        </main>
+        <footer class="tp-footer">
+          <button class="tp-btn tp-btn-primary" id="tp-fertig" type="button">Done</button>
+        </footer>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="hud">
+    <button id="play">▶ Play</button>
+    <button id="record">● Record</button>
+    <button id="reset">↻ Reset</button>
+    <button id="prev">‹ Prev</button>
+    <button id="next">Next ›</button>
+    <span class="info" id="info">Scene 0 / 10</span>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/earcut@2.2.4/dist/earcut.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/topojson-client@3.1.0/dist/topojson-client.min.js"></script>
+<script src="map_globe.js?v=46"></script>
+<script src="discover_data.js?v=46"></script>
+<script src="video.js?v=46"></script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+VIDEO SCRIPT
+Title: What is short selling?
+Topic: Investing
+Target length: ~95 seconds (fits the 30s–3min window)
+Language of narration: English
+Format: Voiceover script. Spoken lines are plain text. [Bracketed lines] describe
+what is on screen AT THE SAME TIME as the narration next to them.
+
+==================================================================
+THE CORE IDEA
+==================================================================
+Short selling = borrow shares, sell them now at a high price, buy them back later
+(hopefully cheaper) to return them, and keep the difference. It profits when a
+stock FALLS. Critical risk: a stock can rise without limit, so a short's losses
+are theoretically unlimited — and a "short squeeze" can amplify that fast.
+Punchline: sell high, buy low — in that order. The upside is capped; the downside
+isn't.
+
+NOTE (responsibility): educational, NOT advice. The unlimited-loss point is the
+key honest message — make it land.
+
+KEY VISUALS:
+- Four steps: BORROW → SELL ($100) → wait → BUY BACK ($60) → return + keep $40.
+- A risk graphic: normal stock floors at $0; a short's loss line shooting up
+  with no ceiling.
+
+==================================================================
+SCRIPT
+==================================================================
+
+--- HOOK (0:00–0:12) — the payoff up front ---
+
+Short selling is how you make money when a stock goes down.
+[A red chart falling; a profit line rising with it.]
+And the trick sounds completely backwards: you sell the stock first... and buy it
+later. Here's how you sell something you don't even own.
+[A share being borrowed, then sold — before it's owned.]
+
+--- THE STEPS (≈0:12–0:42) ---
+
+It's four steps. One: you borrow shares from someone who owns them — your broker
+arranges it. Two: you immediately sell those borrowed shares at today's price.
+[BORROW → SELL at $100.]
+Three: you wait. Four: if the price drops, you buy the same shares back, cheaper,
+return them to the lender — and keep the difference.
+[Stock falls to $60 → BUY BACK → return → "+$40" pocketed.]
+Sell at a hundred, buy back at sixty, walk away with forty. You profited from the
+fall.
+
+--- WHY IT EXISTS (≈0:42–1:00) ---
+
+It lets traders bet against companies they think are overpriced or in trouble —
+and it's a core way hedge funds protect, or "hedge," their other bets.
+[A short position offsetting a portfolio's losses.]
+But it comes with a danger most beginners underestimate.
+
+--- THE DANGER (≈1:00–1:28) ---
+
+When you buy a stock, the worst case is it goes to zero — you lose 100%, and
+that's the floor.
+[A bought stock bottoming out at $0.]
+But when you short, the stock can rise with no ceiling. If it doubles, triples,
+ten-x's, your losses just keep growing — theoretically, without limit.
+[The short's loss line rocketing upward, no cap.]
+And if lots of shorts panic and buy back at once, they push the price even higher
+— a "short squeeze." That's exactly what blew up traders during the GameStop
+frenzy.
+
+--- PUNCHLINE / OUTRO (≈1:28–1:40) ---
+
+So short selling flips investing on its head: sell high, buy low, in that order.
+[The four steps glowing.]
+The upside is capped — but the downside isn't. Which is why it's very much a
+professional's game.
+
+Want to understand the trades the pros use?
+[Stacktags logo animates in with a "Follow" prompt.]
+Follow Stacktags.

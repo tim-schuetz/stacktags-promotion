@@ -1,0 +1,319 @@
+/* ============================================================
+   "Mandarin is broken" — depth fly-through build (v2).
+   Dynamic grid + camera moves live in elements/depth.*.
+   The on-screen content is DEVICES / FIGURES, never the spoken
+   line; the bottom subtitles carry the narration verbatim.
+   White + turquoise, Inter only. 9:16, 1080×1920.
+   ============================================================ */
+:root { --teal: var(--stk-teal); --teal-d: var(--stk-teal-d); --ink: var(--stk-ink);
+        --muted: var(--stk-muted); --soft: var(--stk-teal-soft); }
+
+* { box-sizing: border-box; }
+html, body { margin: 0; height: 100%; overflow: hidden; background: #0b0e0d; }
+.wrap { position: fixed; inset: 0; display: flex; align-items: center; justify-content: center; }
+.stage {
+  position: relative; width: 1080px; height: 1920px; flex-shrink: 0;
+  transform-origin: center center; overflow: hidden;
+  background: #fff; font-family: var(--stk-font);
+}
+#depth-host { position: absolute; inset: 0; }
+
+/* ============================================================
+   HUD — syllable counter
+   ============================================================ */
+.syl {
+  position: absolute; top: 138px; left: 50%; transform: translateX(-50%);
+  z-index: 40; text-align: center; pointer-events: none;
+  opacity: 0; transition: opacity .5s ease, top .7s cubic-bezier(.2,.8,.2,1);
+}
+.syl.in { opacity: 1; }
+.syl-val { font-weight: 900; font-size: 104px; letter-spacing: -3px; line-height: .9; color: var(--teal-d); }
+.syl-sub { font-weight: 600; font-size: 27px; letter-spacing: -.2px; color: var(--muted); margin-top: 8px; }
+.syl-ghost {
+  position: absolute; left: 50%; top: 0; transform: translateX(-50%);
+  font-weight: 900; font-size: 104px; letter-spacing: -3px; line-height: .9;
+  color: rgba(35,43,51,.10); opacity: 0; transition: opacity .8s ease;
+}
+.syl.big .syl-val { font-size: 132px; transition: font-size .6s cubic-bezier(.34,1.56,.64,1); }
+/* hero (lower-centre for the punchline, alongside the China map) */
+.syl.hero { top: 50%; transform: translate(-50%, -50%); }
+.syl.hero .syl-val { font-size: 300px; letter-spacing: -10px; transition: font-size .7s cubic-bezier(.34,1.56,.64,1); }
+.syl.hero .syl-ghost { font-size: 300px; letter-spacing: -10px; top: -6px; }
+.syl.hero.hero-low { top: 65%; }
+.syl.hero.hero-low .syl-val { font-size: 226px; }
+.syl.hero.hero-low .syl-ghost { font-size: 226px; }
+.syl.hero .syl-sub { font-size: 32px; margin-top: 16px; }
+.syl.ghost-on .syl-ghost { opacity: 1; }
+
+/* ============================================================
+   HUD — subtitles (verbatim) + brand watermark + progress
+   ============================================================ */
+.stk-subs { bottom: 150px; z-index: 45; transition: opacity .35s ease; }
+.stk-subs-line { font-size: 46px; font-weight: 700; max-width: 920px; transition: opacity .28s ease, transform .28s cubic-bezier(.2,.8,.2,1), background .3s ease, color .3s ease; }
+.stk-subs.subs-hidden { opacity: 0; }
+/* readable over the Hong Kong photo */
+.stk-subs.on-photo .stk-subs-line { background: rgba(255,255,255,.94); color: var(--ink); padding: 10px 28px; border-radius: 18px; box-shadow: 0 8px 24px rgba(0,0,0,.18); }
+.stk-subs.on-photo .stk-subs-line b, .stk-subs.on-photo .stk-subs-line .key { color: var(--teal-d); }
+
+.brand-wm { position: absolute; top: 64px; left: 64px; z-index: 38; display: flex; align-items: center; gap: 14px; opacity: 0; transition: opacity .5s ease; }
+.brand-wm.show { opacity: .5; }
+.bw-cube { width: 26px; height: 26px; border-radius: 6px; background: var(--teal); box-shadow: 6px 6px 0 -2px var(--teal-d); }
+.bw-name { font-weight: 800; font-size: 30px; letter-spacing: -.8px; color: var(--ink); }
+.progress { position: absolute; left: 0; bottom: 0; width: 100%; height: 6px; background: rgba(35,43,51,.06); z-index: 60; }
+.progress-fill { height: 100%; width: 0; background: var(--teal); }
+
+/* float idle for cut-out figures (flex-positioned only) */
+@keyframes floatBob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-18px); } }
+
+/* ============================================================
+   HOOK beat
+   ============================================================ */
+.hook-beat { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 120px 80px; text-align: center; }
+.hook-beat .hk-kicker { font-weight: 700; font-size: 32px; letter-spacing: 4px; text-transform: uppercase; color: var(--teal); margin-bottom: 26px; }
+.hook-beat .hk-title { font-weight: 900; font-size: 118px; line-height: 1.02; letter-spacing: -4px; color: var(--ink); }
+/* "broken" splits bro|ken — the halves drift apart, each outer edge dipping down */
+.hook-beat .hk-title .brk { display: inline-flex; white-space: nowrap; }
+.hook-beat .hk-title .brk-l, .hook-beat .hk-title .brk-r {
+  display: inline-block; color: var(--teal-d);
+  transition: transform .65s cubic-bezier(.34,1.25,.5,1);
+}
+.hook-beat.break .hk-title .brk-l { transform: translate(-20px, 16px) rotate(8deg); transform-origin: 100% 60%; }
+.hook-beat.break .hk-title .brk-r { transform: translate(20px, 16px) rotate(-8deg); transform-origin: 0% 60%; }
+.hook-beat .hk-sub { font-weight: 600; font-size: 46px; letter-spacing: -.5px; color: var(--muted); margin-top: 40px; }
+.hook-beat .hk-sub b { color: var(--teal-d); font-weight: 800; }
+
+/* ============================================================
+   TANG beat — timeline rewinds to a TEMPLE + COINS composition;
+   then the poet rises from below (the temple/coins stay).
+   ============================================================ */
+.tang-beat { position: absolute; inset: 0; }
+.tl-host { position: absolute; inset: 0; }
+.tang-poet {
+  position: absolute; left: 50%; bottom: 0; width: 560px; height: auto; z-index: 10;
+  transform: translate(-50%, 115%); opacity: 0;
+  filter: drop-shadow(0 28px 48px rgba(20,40,33,.24));
+  transition: transform .95s cubic-bezier(.2,.85,.25,1), opacity .5s ease;
+}
+.tang-beat.poet-in .tang-poet { transform: translate(-50%, 6%); opacity: 1; }
+
+/* ============================================================
+   RESULT beat — turquoise dots flow UP the screen (it pans up) and a
+   framed "~400 syllables" box lands at the top.
+   ============================================================ */
+.result-beat { position: absolute; inset: 0; overflow: hidden; }
+.rb-view { position: absolute; inset: 0; overflow: hidden; }
+/* a tall field of dots, bottom-anchored; JS translates it up to scroll (must
+   match RB_COLS / RB_DOT / RB_GAP in app.js) */
+.rb-field {
+  position: absolute; left: 50%; bottom: 0; transform: translateX(-50%) translateY(0);
+  display: flex; flex-direction: column; gap: 16px; will-change: transform;
+}
+.rb-row { display: grid; grid-template-columns: repeat(22, 22px); column-gap: 16px; justify-content: center; }
+.rb-row .dot { width: 22px; height: 22px; border-radius: 50%; background: var(--teal); opacity: 0; transform: scale(0); }
+.rb-row.on .dot { animation: rbPop .22s cubic-bezier(.34,1.56,.64,1) both; animation-delay: calc(var(--c, 0) * 7ms); }
+@keyframes rbPop { from { opacity: 0; transform: scale(0); } to { opacity: .92; transform: scale(1); } }
+.rb-box {
+  position: absolute; left: 50%; top: 150px; z-index: 6; transform: translate(-50%, -36px);
+  display: flex; flex-direction: column; align-items: center; gap: 2px;
+  padding: 30px 66px; border: 5px solid var(--teal); border-radius: 30px; background: #fff;
+  box-shadow: 0 20px 46px rgba(20,40,33,.18);
+  opacity: 0; transition: opacity .5s ease, transform .6s cubic-bezier(.34,1.4,.5,1);
+}
+.result-beat.box-in .rb-box { opacity: 1; transform: translate(-50%, 0); }
+.rb-num { font-weight: 900; font-size: 130px; letter-spacing: -5px; line-height: 1; color: var(--teal-d); }
+.rb-lbl { font-weight: 700; font-size: 44px; letter-spacing: -.5px; color: var(--ink); }
+
+/* ============================================================
+   MOON 月 beat — NGWAT → YUÈ
+   ============================================================ */
+.moon-beat { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 40px; }
+.moon-char { font-family: 'Noto Sans SC', sans-serif; font-weight: 900; font-size: 460px; line-height: .9; color: var(--ink); text-shadow: 0 30px 60px rgba(20,40,33,.14); }
+.moon-row { display: flex; align-items: center; gap: 36px; height: 170px; }
+.moon-old, .moon-new { font-weight: 900; letter-spacing: -2px; }
+.moon-old { font-size: 132px; color: var(--ink); opacity: 0; transform: translateY(26px) scale(.9);
+            transition: opacity .45s ease, transform .55s cubic-bezier(.34,1.56,.64,1), font-size .6s ease, color .4s ease; }
+.moon-old .tt { color: var(--teal-d); position: relative; }
+.moon-beat.old-in .moon-old { opacity: 1; transform: none; }
+.moon-beat.stop-in .moon-old .tt::after {
+  content: ''; position: absolute; left: -2px; right: -2px; bottom: -10px; height: 8px;
+  background: var(--teal); border-radius: 5px; transform-origin: center; animation: ttSnap .4s cubic-bezier(.34,1.56,.64,1) forwards;
+}
+@keyframes ttSnap { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+.moon-tag { font-weight: 700; font-size: 40px; color: var(--muted); opacity: 0; transform: translateY(14px); transition: opacity .45s ease, transform .45s ease; }
+.moon-tag b { color: var(--teal-d); }
+.moon-beat.stop-in .moon-tag { opacity: 1; transform: none; }
+.moon-arrow, .moon-new { opacity: 0; }
+.moon-arrow { font-size: 90px; color: var(--muted); transform: scale(.5); transition: opacity .4s ease, transform .5s ease; }
+.moon-new { font-size: 150px; color: var(--teal); transform: translateX(40px) scale(.7); transition: opacity .5s ease, transform .6s cubic-bezier(.34,1.56,.64,1); }
+.moon-beat.morph .moon-old { font-size: 96px; color: var(--muted); }
+.moon-beat.morph .moon-old .tt { color: var(--muted); }
+.moon-beat.morph .moon-old .tt::after { opacity: 0; }
+.moon-beat.morph .moon-arrow { opacity: 1; transform: none; }
+.moon-beat.morph .moon-new { opacity: 1; transform: none; }
+.moon-beat.morph .moon-tag { opacity: 0; }
+
+/* ============================================================
+   TRIO beat — SAP→SHÍ · LUK→LIÙ · SAM→XĪN  +  struck p t k m
+   ============================================================ */
+.trio-beat { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 30px; padding: 0 70px; }
+.trio-head { font-weight: 800; font-size: 58px; letter-spacing: -1.6px; color: var(--ink); margin-bottom: 8px; text-align: center; }
+.trio-head b { color: var(--teal-d); }
+.trio-rows { display: flex; flex-direction: column; gap: 26px; }
+.trio-row { display: grid; grid-template-columns: 300px 220px 64px 230px; align-items: center; gap: 12px;
+            opacity: 0; transform: translateY(26px); transition: opacity .45s ease, transform .55s cubic-bezier(.2,.8,.2,1); }
+.trio-row.show { opacity: 1; transform: none; }
+.t-gloss { font-family: 'Noto Sans SC', sans-serif; font-weight: 700; font-size: 44px; color: var(--ink); text-align: right; }
+.t-old { font-weight: 900; font-size: 62px; letter-spacing: -1px; color: var(--ink); text-align: center; transition: color .4s ease; }
+.t-arr { font-size: 44px; color: var(--muted); opacity: 0; transition: opacity .4s ease; text-align: center; }
+.t-new { font-weight: 900; font-size: 62px; letter-spacing: -1px; color: var(--teal); text-align: center; opacity: 0; transform: translateX(20px); transition: opacity .45s ease, transform .5s cubic-bezier(.34,1.56,.64,1); }
+.trio-row.morph .t-arr { opacity: 1; }
+.trio-row.morph .t-new { opacity: 1; transform: none; }
+.trio-row.morph .t-old { color: var(--muted); }
+.trio-row.morph .t-old .drop { text-decoration: line-through; text-decoration-color: var(--teal); }
+.trio-ptkm { margin-top: 22px; display: flex; align-items: center; gap: 30px; justify-content: center; opacity: 0; transform: translateY(20px); transition: opacity .5s ease, transform .5s ease; }
+.trio-beat.ptkm-in .trio-ptkm { opacity: 1; transform: none; }
+.trio-beat.ptkm-in .trio-rows { opacity: .3; transition: opacity .5s ease; }
+.trio-beat.ptkm-in .trio-head { opacity: .3; transition: opacity .5s ease; }
+.pk { position: relative; font-weight: 900; font-size: 108px; letter-spacing: -2px; color: var(--teal-d); transition: color .3s ease; }
+.pk::after { content: ''; position: absolute; left: -6px; right: -6px; top: 52%; height: 11px; background: var(--teal); border-radius: 6px; transform: scaleX(0); transform-origin: center; transition: transform .3s cubic-bezier(.34,1.56,.64,1); }
+.pk.struck { color: var(--muted); }
+.pk.struck::after { transform: scaleX(1); }
+
+/* ============================================================
+   SINGER beat — pop singer cut-out + flying vowel pills
+   ============================================================ */
+.singer-beat { position: absolute; inset: 0; }
+.illus.singer { position: absolute; left: 49%; top: 53%; transform: translate(-50%, -50%); height: 1100px; width: auto; filter: drop-shadow(0 32px 55px rgba(20,40,33,.22)); }
+.singer-beat .vw {
+  position: absolute; font-weight: 900; font-size: 86px; letter-spacing: -2px; color: var(--teal);
+  padding: 8px 32px; border-radius: 26px; background: var(--soft);
+  opacity: 0; transform: translateY(22px) scale(.7);
+  transition: opacity .4s ease, transform .55s cubic-bezier(.34,1.56,.64,1);
+}
+.singer-beat .vw.in { opacity: 1; transform: none; }
+.singer-beat .vw1 { left: 60%; top: 30%; }
+.singer-beat .vw2 { left: 72%; top: 20%; }
+.singer-beat .vw3 { left: 66%; top: 42%; }
+.singer-beat .vw4 { left: 78%; top: 33%; }
+
+/* ============================================================
+   SOUTH beat — globe → Hong Kong photo → kept-card (top)
+   ============================================================ */
+.south-beat { position: absolute; inset: 0; overflow: hidden; }
+.globe-wrap { position: absolute; inset: 0; }
+.south-photo { position: absolute; inset: 0; width: 1080px; height: 1920px; object-fit: cover; opacity: 0; transform: scale(1.08); transition: opacity .7s ease, transform 1.6s ease; }
+.south-beat.photo-in .south-photo { opacity: 1; transform: scale(1); }
+.south-cap { position: absolute; left: 60px; bottom: 240px; z-index: 3; font-weight: 800; font-size: 38px; letter-spacing: -.5px; color: #fff; text-shadow: 0 4px 22px rgba(0,0,0,.55); opacity: 0; transform: translateY(14px); transition: opacity .5s ease, transform .5s ease; }
+.south-beat.photo-in .south-cap { opacity: 1; transform: none; }
+.keep-card {
+  position: absolute; left: 60px; right: 60px; top: 96px; z-index: 4;
+  background: rgba(255,255,255,.96); border-radius: 30px; padding: 42px 50px 46px; text-align: center;
+  box-shadow: 0 22px 54px rgba(20,40,33,.20);
+  opacity: 0; transform: translateY(-30px); transition: opacity .6s ease, transform .6s cubic-bezier(.2,.8,.2,1);
+}
+.south-beat.keep-in .keep-card { opacity: 1; transform: none; }
+.kp-head { font-weight: 800; font-size: 58px; letter-spacing: -1.4px; color: var(--ink); }
+.kp-head b { color: var(--teal-d); }
+.kp-sub { font-weight: 600; font-size: 30px; color: var(--muted); margin-top: 8px; }
+.kp-lets { display: flex; justify-content: center; gap: 20px; margin-top: 26px; }
+.kp-let { font-weight: 900; font-size: 70px; letter-spacing: -2px; color: var(--teal-d); width: 104px; height: 104px; line-height: 104px; border-radius: 24px; background: var(--soft); opacity: 0; transform: scale(.6); transition: opacity .35s ease, transform .45s cubic-bezier(.34,1.56,.64,1); }
+.kp-let.in { opacity: 1; transform: none; }
+.kp-snaps { display: flex; justify-content: center; gap: 22px; margin-top: 22px; }
+.kp-snap { font-weight: 800; font-size: 42px; color: var(--teal); opacity: 0; transform: translateY(14px); transition: opacity .35s ease, transform .4s ease; }
+.kp-snap.in { opacity: 1; transform: none; }
+
+/* ============================================================
+   POEM beat — 江雪 rhyme demo (✗ Mandarin / ✓ Cantonese)
+   ============================================================ */
+.poem-beat { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: flex-start; gap: 14px; padding: 110px 60px 0; }
+.poem-title { font-weight: 700; font-size: 44px; letter-spacing: 1px; color: var(--teal); margin-bottom: 14px; }
+.poem-lines { display: flex; flex-direction: column; gap: 14px; }
+.pl { font-family: 'Noto Sans SC', sans-serif; font-weight: 700; font-size: 98px; letter-spacing: 6px; color: var(--ink); opacity: 0; transform: translateX(-30px); transition: opacity .5s ease, transform .6s cubic-bezier(.2,.8,.2,1); }
+.poem-beat.lines-in .pl { opacity: 1; transform: none; }
+.poem-beat.lines-in .pl:nth-child(2) { transition-delay: .18s; }
+.poem-beat.lines-in .pl:nth-child(3) { transition-delay: .36s; }
+.pl .rhyme { color: var(--teal-d); }
+
+/* two speakers slide in below the poem — Mandarin (left, garbled) vs Cantonese (right, real) */
+.poem-figs { position: absolute; left: 0; right: 0; bottom: 12px; height: 780px; pointer-events: none; }
+.pf { position: absolute; bottom: 0; width: 480px; opacity: 0; }
+.pf-left  { left: 18px;  transform: translateX(-135%); }
+.pf-right { right: 18px; transform: translateX(135%); }
+.poem-beat.man-in .pf-left,
+.poem-beat.can-in .pf-right { opacity: 1; transform: none; transition: opacity .5s ease, transform .8s cubic-bezier(.2,.85,.25,1); }
+.pf-img { width: 100%; height: auto; display: block; filter: drop-shadow(0 16px 30px rgba(20,40,33,.20)); }
+/* comic speech bubble — white, thick ink border + bordered tail, springy pop
+   (matches the "5 Chinese words you already use" video) */
+.bubble {
+  position: absolute; left: 50%; top: -96px; transform: translateX(-50%) scale(.5);
+  padding: 22px 40px; background: #fff; border: 7px solid var(--ink); border-radius: 48px;
+  box-shadow: 0 16px 38px rgba(20,40,33,.16);
+  font-weight: 900; white-space: nowrap; z-index: 3; opacity: 0; transform-origin: 30% 130%;
+  transition: opacity .35s ease, transform .55s cubic-bezier(.34,1.56,.64,1);
+}
+.bubble::before { content: ''; position: absolute; left: 46px; bottom: -42px; width: 0; height: 0; border-top: 46px solid var(--ink); border-right: 36px solid transparent; }
+.bubble::after  { content: ''; position: absolute; left: 54px; bottom: -24px; width: 0; height: 0; border-top: 30px solid #fff; border-right: 23px solid transparent; }
+/* the old man (poem, right side) — flip his bubble's tail to the BOTTOM-RIGHT */
+.pf-right .bubble::before { left: auto; right: 46px; border-right: 0; border-left: 36px solid transparent; }
+.pf-right .bubble::after  { left: auto; right: 54px; border-right: 0; border-left: 23px solid transparent; }
+.bubble-bad  { color: var(--ink); font-size: 64px; letter-spacing: 3px; }
+.bubble-good { color: var(--teal-d); font-family: 'Noto Sans SC', sans-serif; font-size: 58px; letter-spacing: 4px; }
+.poem-beat.can-in .pf-right .bubble,
+.lead-fig.in .bubble { opacity: 1; transform: translateX(-50%) scale(1); }
+
+/* ============================================================
+   PUNCH beat — the lead figure (a persistent stage overlay carried over from
+   the poem) slides up; a crowd of OTHER character cut-outs spawns; they all
+   share the lead figure's garbled #!/&%* bubble.
+   ============================================================ */
+.punch-beat { position: absolute; inset: 0; overflow: hidden; }
+.punch-crowd { position: absolute; inset: 0; }
+.punch-crowd .cc {
+  position: absolute; height: auto; transform: translate(-50%, -50%) scale(.2); opacity: 0;
+  filter: drop-shadow(0 10px 20px rgba(20,40,33,.18));
+  transition: opacity .4s ease, transform .55s cubic-bezier(.34,1.56,.64,1); transition-delay: var(--d, 0ms);
+}
+.punch-beat.crowd-in .punch-crowd .cc { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+
+/* the PERSISTENT lead figure overlay (Mandarin speaker + #!/&%* bubble) —
+   slides in from the left under the poem, then slides UP for the punch and
+   never disappears in between. */
+.lead-fig {
+  position: absolute; left: 48px; bottom: 16px; width: 460px; z-index: 42; opacity: 0;
+  transform: translateX(-135%);
+  transition: transform .8s cubic-bezier(.2,.85,.25,1), bottom 1.05s cubic-bezier(.2,.85,.25,1), opacity .5s ease;
+}
+.lead-fig.in { opacity: 1; transform: translateX(0); }
+.lead-fig.up { bottom: 1060px; }   /* slides high up the screen, not stopping mid-screen */
+.lead-fig .pf-img { width: 100%; height: auto; display: block; filter: drop-shadow(0 22px 40px rgba(20,40,33,.22)); }
+
+/* in the punchline the bubble SLIDES out to the RIGHT of the figure and SCALES
+   up (font-size drives the growth; nowrap keeps it hugging the text) — it never
+   disappears/reappears. The tail flips to point left, toward the head. */
+.lead-fig.up .bubble {
+  left: 100%; right: auto; top: 40px;
+  transform: translateX(0) scale(1); transform-origin: 0% 50%;
+  padding: 30px 44px; border-radius: 56px; font-size: 108px; letter-spacing: 5px;
+  transition: left .95s cubic-bezier(.2,.85,.25,1), top .95s cubic-bezier(.2,.85,.25,1),
+              padding .95s cubic-bezier(.2,.85,.25,1), font-size .95s cubic-bezier(.2,.85,.25,1),
+              border-radius .95s ease, letter-spacing .95s ease,
+              transform .95s cubic-bezier(.2,.85,.25,1), opacity .3s ease;
+}
+.lead-fig.up .bubble::before {
+  left: -52px; bottom: 56px; top: auto;
+  border-top: 38px solid transparent; border-bottom: 38px solid transparent; border-right: 52px solid var(--ink);
+}
+.lead-fig.up .bubble::after {
+  left: -34px; bottom: 64px; top: auto;
+  border-top: 26px solid transparent; border-bottom: 26px solid transparent; border-right: 34px solid #fff;
+}
+
+/* ============================================================
+   text-popup CJK + dev controls
+   ============================================================ */
+.stk-pop-word { font-family: 'Noto Sans SC', 'Inter', sans-serif; }
+.controls { position: fixed; left: 50%; bottom: 26px; transform: translateX(-50%); z-index: 99999; display: flex; gap: 12px; align-items: center; }
+.controls button { border: 0; cursor: pointer; background: var(--teal); color: #fff; font-family: 'Inter', sans-serif; font-weight: 700; font-size: 17px; padding: 12px 26px; border-radius: 999px; box-shadow: 0 10px 22px rgba(53,162,146,.4); }
+.controls #info { color: #fff; font-family: ui-monospace, monospace; font-size: 15px; opacity: .8; }
+body.clean .controls { display: none; }
+body.clean { background: #fff; }

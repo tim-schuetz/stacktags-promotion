@@ -1,0 +1,80 @@
+VIDEO SCRIPT
+Title: How 11 lines of code broke the internet
+Topic: Software
+Target length: ~100 seconds (fits the 30s–3min window)
+Language of narration: English
+Format: Voiceover script. Spoken lines are plain text. [Bracketed lines] describe
+what is on screen AT THE SAME TIME as the narration next to them.
+
+==================================================================
+THE CORE IDEA
+==================================================================
+In March 2016, a developer (angry over a name dispute) deleted his tiny npm
+package "left-pad" — 11 lines that just pad text with spaces on the left. Because
+countless tools depended on it (often without knowing), builds broke across the
+industry — React, Babel, and projects at huge companies suddenly wouldn't build.
+The lesson: the modern software supply chain is a tower of tiny dependencies; pull
+one block and the tower wobbles.
+Punchline: the internet runs on millions of tiny pieces written by strangers — and
+any one of them can pull theirs out.
+
+NOTE (honesty): the dramatic "Netflix/Spotify/PayPal went down" framing → say it
+broke BUILDS for countless projects "from tiny apps to huge companies." npm later
+banned un-publishing popular packages.
+
+KEY VISUALS:
+- A single domino labeled "left-pad" toppling a row of giant corporate logos.
+- 11 trivial lines of code on screen.
+
+==================================================================
+SCRIPT
+==================================================================
+
+--- HOOK (0:00–0:14) — the payoff up front ---
+
+In 2016, one developer deleted eleven lines of code — and broke software for half
+the industry overnight.
+[A domino labeled "left-pad" tips over a row of huge company logos.]
+Not a virus. Not a hack. Just one guy, deleting one tiny file out of anger. Here's
+how something this small caused chaos this big.
+
+--- WHAT LEFT-PAD WAS (≈0:14–0:38) ---
+
+The package was called "left-pad." And its entire job was almost laughably simple:
+take some text, and add spaces on the left to make it a certain length.
+[Eleven trivial lines of code; "hi" → "   hi".]
+That's it. Eleven lines. The kind of thing a beginner could write in a minute. But
+that little package had quietly become a building block —
+
+--- THE TOWER OF DEPENDENCIES (≈0:38–1:05) ---
+
+— because modern software is built out of thousands of tiny shared pieces, stacked
+on top of each other. You install one tool, and it quietly pulls in dozens of
+smaller ones, which pull in dozens more.
+[A tower of stacked blocks, each labeled with a package name.]
+And buried somewhere deep in that tower, holding up giants like React and Babel,
+was little left-pad.
+[Zoom into the base of the tower: one block reads "left-pad".]
+Most developers using it had no idea it was even there.
+
+--- THE COLLAPSE (≈1:05–1:25) ---
+
+Then the developer who made it got into a dispute, and in protest, deleted all his
+packages — including left-pad.
+[The "left-pad" block is yanked out of the tower.]
+Instantly, that block was gone. And across the world, builds that secretly depended
+on it just... stopped working — from hobby projects to massive companies. All
+because eleven lines vanished.
+[The whole tower wobbling; "BUILD FAILED" flashing everywhere.]
+
+--- PUNCHLINE / OUTRO (≈1:25–1:42) ---
+
+That's the unsettling truth about modern software. The internet runs on millions of
+tiny pieces, written and given away for free by strangers —
+[The tower, every block a different anonymous author.]
+and the whole tower is only standing because, usually, nobody pulls their block
+out. One person, eleven lines, and a moment of anger — that's all it took.
+
+Want more stories of how technology really works — and really breaks?
+[Stacktags logo animates in; "stacktags.io" shown on screen.]
+Discover thousands of free exercises and more learning content on stacktags.io.

@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Stacktags element — globe (demo)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../_shared/theme.css">
+<style>
+  html,body{margin:0;height:100%;overflow:hidden;background:#0b0e0d;}
+  .wrap{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;}
+  .stage{position:relative;width:1080px;height:1920px;overflow:hidden;transform-origin:center;flex-shrink:0;}
+  .demo-cap{position:absolute;left:0;right:0;top:150px;text-align:center;z-index:8;
+    font-family:var(--stk-font);font-weight:800;font-size:50px;letter-spacing:-1.2px;color:var(--stk-ink);}
+  .demo-cap b{color:var(--stk-teal-d);}
+  /* the globe is hidden instantly at handoff so no zoomed-in teal coastline
+     lingers behind the photo */
+  .globe-host{position:absolute;inset:0;
+    display:flex;align-items:center;justify-content:center;}
+  .globe-host.gone{opacity:0;}
+  .globe-host canvas{display:block;}
+  /* the photo BURSTS out of the grey dot: a circular reveal that grows from
+     the marker point to fill the screen (plus a small push-in) */
+  .photo{position:absolute;inset:0;opacity:1;z-index:6;
+    clip-path:circle(0% at 50% 47%);
+    transform:scale(1.16);transform-origin:50% 47%;filter:blur(3px);
+    transition:clip-path 0.72s cubic-bezier(.45,.65,.28,1), transform 0.85s cubic-bezier(.3,.7,.25,1), filter .5s ease;}
+  .photo.in{clip-path:circle(150% at 50% 47%);transform:scale(1);filter:blur(0);}
+  .photo img{width:100%;height:100%;object-fit:cover;display:block;}
+  .photo::after{content:'';position:absolute;inset:0;
+    background:linear-gradient(to top, rgba(6,32,24,.8) 0%, rgba(6,32,24,.05) 44%, transparent 68%);}
+  .photo-cap{position:absolute;left:0;right:0;bottom:120px;text-align:center;padding:0 70px;z-index:2;
+    transform:translateY(22px);opacity:0;transition:transform .6s cubic-bezier(.2,.8,.2,1) .15s,opacity .5s ease .15s;}
+  .photo.in .photo-cap{transform:none;opacity:1;}
+  .photo-cap .zh{font-family:var(--stk-font);font-weight:800;font-size:96px;letter-spacing:-2px;color:#fff;}
+  .photo-cap .en{font-family:var(--stk-font);font-weight:700;font-size:42px;color:#6fe3c6;letter-spacing:2px;margin-top:8px;}
+</style>
+</head>
+<body>
+<div class="wrap"><div class="stage stk-grid-bg" id="stage">
+  <div class="globe-host" id="globe-host"></div>
+  <div class="photo" id="photo">
+    <img src="assets/hongkong.png" alt="Hong Kong" onerror="this.style.display='none'">
+  </div>
+</div></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/earcut@2.2.4/dist/earcut.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/topojson-client@3.1.0/dist/topojson-client.min.js"></script>
+<script src="globe.js"></script>
+<script>
+  const stage = document.getElementById('stage');
+  function fit(){ const s=Math.min(innerWidth/1080, innerHeight/1920); stage.style.transform='scale('+s+')'; }
+  addEventListener('resize', fit); fit();
+
+  let ctrl = null;
+  // Preload: mount the globe and wait until the world atlas is ready.
+  window.__demoReady = new Promise((resolve) => {
+    function tryMount(){
+      if (!(window.THREE && window.earcut && window.topojson)) { setTimeout(tryMount, 60); return; }
+      window.mountStacktagsGlobe(document.getElementById('globe-host'), {
+        focus: { lat: 23.5, lon: 112.5, cam: 3.9 },
+        startCam: 4.4,
+        highlight: 'China',
+        marker: { lat: 22.3, lon: 114.17 },   // Hong Kong
+        autoReveal: false,                      // reveal on cue, inside the recording
+        onReady: (c) => { ctrl = c; resolve(); },
+      });
+    }
+    tryMount();
+  });
+
+  // SFX timings (seconds from play). Reveal + dive begin together.
+  const T_ZOOM   = 0.15;    // colour-in, target ping, and dive all start here
+  const ZOOM_DUR = 1450;    // ms — a real, frame-rich dive all the way in (quick)
+  window.DEMO = {
+    duration: 3.4,
+    settleMs: 400,
+    sfx: [{ sound: 'swoosh', t: 1.45, vol: 0.9 }],   // at the end of the dive (photo bursts)
+  };
+
+  window.__demoPlay = function () {
+    if (!ctrl) return;
+    setTimeout(() => {
+      ctrl.reveal();   // China fills + target ping begin together with the dive
+      ctrl.zoomToMarker(
+        { lat: 22.3, lon: 114.17, cam: 1.02, duration: ZOOM_DUR },
+        { onArrive: () => {
+            document.getElementById('globe-host').classList.add('gone');
+            document.getElementById('photo').classList.add('in');
+          } }
+      );
+    }, T_ZOOM * 1000);
+  };
+</script>
+<script src="../_shared/viewer.js"></script>
+</body>
+</html>

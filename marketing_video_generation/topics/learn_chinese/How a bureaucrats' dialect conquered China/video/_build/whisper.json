@@ -1,0 +1,2601 @@
+{
+  "task": "transcribe",
+  "language": "english",
+  "duration": 118.72000122070312,
+  "text": "Over a billion people speak Mandarin, but almost none of them call it that. Mandarin is a name foreigners gave it, and the real story of how it took over China begins before Rome was ever an empire. Because long before Rome ruled anything, China had already risen and fallen through dynasties going back more than 3,000 years. But China back then wasn't one country, it was a patchwork of rival states, locked in near constant war, dozens of kingdoms, with different rulers, different armies, and different spoken tongues. Then, in 221 BC, one state finally conquered the rest, forced them into a single empire, and standardized the writing so everyone wrote the same characters. That first empire didn't last long, but the dynasty after it did, the Han. The Han ruled for four centuries and became so foundational that, to this day, most Chinese call themselves Han, and their language Hanyu, the language of Han. But here's the catch, unifying the writing is not the same as unifying the speech. For 2,000 years, Chinese across the empire wrote alike but spoke languages they couldn't understand out loud. So to actually govern, the officials settled on one shared spoken standard, based on the northern capital dialect. They called it Guan Hua, the speech of the officials. And that's where our word is born. When Portuguese traders reached China in the 1500s, they called those robed officials Mandarins. So in Europe, the officials' language became Mandarin, a foreign name for the language of power. Then, last century, that same northern standard was formalized, taught in every school, and pushed through radio and TV until it became the shared voice of 1.4 billion people. And they gave it a new, surprisingly humble name, Putonghua, which means simply, common speech, everyday, ordinary talk. So the exotic, powerful name the West knows, to a billion speakers back home, it's just normal language. Want to actually start learning Chinese? Discover thousands of free exercises and more learning content on StackTags.io.",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0,
+      "end": 3.700000047683716,
+      "text": " Over a billion people speak Mandarin, but almost none of them call it that.",
+      "tokens": [
+        50364,
+        4886,
+        257,
+        5218,
+        561,
+        1710,
+        42292,
+        11,
+        457,
+        1920,
+        6022,
+        295,
+        552,
+        818,
+        309,
+        300,
+        13,
+        50586
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.22048398852348328,
+      "compression_ratio": 1.673076868057251,
+      "no_speech_prob": 0.0013244871515780687
+    },
+    {
+      "id": 1,
+      "seek": 0,
+      "start": 4.440000057220459,
+      "end": 8.0600004196167,
+      "text": " Mandarin is a name foreigners gave it, and the real story of how it took over China begins",
+      "tokens": [
+        50586,
+        42292,
+        307,
+        257,
+        1315,
+        28201,
+        2729,
+        309,
+        11,
+        293,
+        264,
+        957,
+        1657,
+        295,
+        577,
+        309,
+        1890,
+        670,
+        3533,
+        7338,
+        50765
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.22048398852348328,
+      "compression_ratio": 1.673076868057251,
+      "no_speech_prob": 0.0013244871515780687
+    },
+    {
+      "id": 2,
+      "seek": 0,
+      "start": 8.0600004196167,
+      "end": 9.699999809265137,
+      "text": " before Rome was ever an empire.",
+      "tokens": [
+        50765,
+        949,
+        12043,
+        390,
+        1562,
+        364,
+        17506,
+        13,
+        50883
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.22048398852348328,
+      "compression_ratio": 1.673076868057251,
+      "no_speech_prob": 0.0013244871515780687
+    },
+    {
+      "id": 3,
+      "seek": 0,
+      "start": 10.079999923706055,
+      "end": 14.539999961853027,
+      "text": " Because long before Rome ruled anything, China had already risen and fallen through dynasties",
+      "tokens": [
+        50883,
+        1436,
+        938,
+        949,
+        12043,
+        20077,
+        1340,
+        11,
+        3533,
+        632,
+        1217,
+        28614,
+        293,
+        11547,
+        807,
+        274,
+        2534,
+        525,
+        530,
+        51091
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.22048398852348328,
+      "compression_ratio": 1.673076868057251,
+      "no_speech_prob": 0.0013244871515780687
+    },
+    {
+      "id": 4,
+      "seek": 0,
+      "start": 14.539999961853027,
+      "end": 16.579999923706055,
+      "text": " going back more than 3,000 years.",
+      "tokens": [
+        51091,
+        516,
+        646,
+        544,
+        813,
+        805,
+        11,
+        1360,
+        924,
+        13,
+        51221
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.22048398852348328,
+      "compression_ratio": 1.673076868057251,
+      "no_speech_prob": 0.0013244871515780687
+    },
+    {
+      "id": 5,
+      "seek": 0,
+      "start": 16.780000686645508,
+      "end": 21.579999923706055,
+      "text": " But China back then wasn't one country, it was a patchwork of rival states, locked in",
+      "tokens": [
+        51221,
+        583,
+        3533,
+        646,
+        550,
+        2067,
+        380,
+        472,
+        1941,
+        11,
+        309,
+        390,
+        257,
+        9972,
+        1902,
+        295,
+        16286,
+        4368,
+        11,
+        9376,
+        294,
+        51433
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.22048398852348328,
+      "compression_ratio": 1.673076868057251,
+      "no_speech_prob": 0.0013244871515780687
+    },
+    {
+      "id": 6,
+      "seek": 0,
+      "start": 21.579999923706055,
+      "end": 26.18000030517578,
+      "text": " near constant war, dozens of kingdoms, with different rulers, different armies, and different",
+      "tokens": [
+        51433,
+        2651,
+        5754,
+        1516,
+        11,
+        18431,
+        295,
+        44171,
+        11,
+        365,
+        819,
+        35009,
+        11,
+        819,
+        28217,
+        11,
+        293,
+        819,
+        51667
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.22048398852348328,
+      "compression_ratio": 1.673076868057251,
+      "no_speech_prob": 0.0013244871515780687
+    },
+    {
+      "id": 7,
+      "seek": 0,
+      "start": 26.18000030517578,
+      "end": 26.780000686645508,
+      "text": " spoken tongues.",
+      "tokens": [
+        51667,
+        10759,
+        37490,
+        13,
+        51717
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.22048398852348328,
+      "compression_ratio": 1.673076868057251,
+      "no_speech_prob": 0.0013244871515780687
+    },
+    {
+      "id": 8,
+      "seek": 2678,
+      "start": 27.34000015258789,
+      "end": 33.08000183105469,
+      "text": " Then, in 221 BC, one state finally conquered the rest, forced them into a single empire,",
+      "tokens": [
+        50392,
+        1396,
+        11,
+        294,
+        568,
+        4436,
+        14359,
+        11,
+        472,
+        1785,
+        2721,
+        32695,
+        264,
+        1472,
+        11,
+        7579,
+        552,
+        666,
+        257,
+        2167,
+        17506,
+        11,
+        50706
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.23279015719890594,
+      "compression_ratio": 1.6868327856063843,
+      "no_speech_prob": 0.15199241042137146
+    },
+    {
+      "id": 9,
+      "seek": 2678,
+      "start": 33.47999954223633,
+      "end": 36.439998626708984,
+      "text": " and standardized the writing so everyone wrote the same characters.",
+      "tokens": [
+        50706,
+        293,
+        31677,
+        264,
+        3579,
+        370,
+        1518,
+        4114,
+        264,
+        912,
+        4342,
+        13,
+        50866
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.23279015719890594,
+      "compression_ratio": 1.6868327856063843,
+      "no_speech_prob": 0.15199241042137146
+    },
+    {
+      "id": 10,
+      "seek": 2678,
+      "start": 36.79999923706055,
+      "end": 40.84000015258789,
+      "text": " That first empire didn't last long, but the dynasty after it did, the Han.",
+      "tokens": [
+        50866,
+        663,
+        700,
+        17506,
+        994,
+        380,
+        1036,
+        938,
+        11,
+        457,
+        264,
+        32841,
+        934,
+        309,
+        630,
+        11,
+        264,
+        7820,
+        13,
+        51096
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.23279015719890594,
+      "compression_ratio": 1.6868327856063843,
+      "no_speech_prob": 0.15199241042137146
+    },
+    {
+      "id": 11,
+      "seek": 2678,
+      "start": 41.279998779296875,
+      "end": 46.459999084472656,
+      "text": " The Han ruled for four centuries and became so foundational that, to this day, most Chinese",
+      "tokens": [
+        51096,
+        440,
+        7820,
+        20077,
+        337,
+        1451,
+        13926,
+        293,
+        3062,
+        370,
+        32195,
+        300,
+        11,
+        281,
+        341,
+        786,
+        11,
+        881,
+        4649,
+        51346
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.23279015719890594,
+      "compression_ratio": 1.6868327856063843,
+      "no_speech_prob": 0.15199241042137146
+    },
+    {
+      "id": 12,
+      "seek": 2678,
+      "start": 46.459999084472656,
+      "end": 51.119998931884766,
+      "text": " call themselves Han, and their language Hanyu, the language of Han.",
+      "tokens": [
+        51346,
+        818,
+        2969,
+        7820,
+        11,
+        293,
+        641,
+        2856,
+        389,
+        1325,
+        84,
+        11,
+        264,
+        2856,
+        295,
+        7820,
+        13,
+        51599
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.23279015719890594,
+      "compression_ratio": 1.6868327856063843,
+      "no_speech_prob": 0.15199241042137146
+    },
+    {
+      "id": 13,
+      "seek": 2678,
+      "start": 51.220001220703125,
+      "end": 55.459999084472656,
+      "text": " But here's the catch, unifying the writing is not the same as unifying the speech.",
+      "tokens": [
+        51599,
+        583,
+        510,
+        311,
+        264,
+        3745,
+        11,
+        517,
+        5489,
+        264,
+        3579,
+        307,
+        406,
+        264,
+        912,
+        382,
+        517,
+        5489,
+        264,
+        6218,
+        13,
+        51821
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.23279015719890594,
+      "compression_ratio": 1.6868327856063843,
+      "no_speech_prob": 0.15199241042137146
+    },
+    {
+      "id": 14,
+      "seek": 5546,
+      "start": 55.459999084472656,
+      "end": 60.400001525878906,
+      "text": " For 2,000 years, Chinese across the empire wrote alike but spoke languages they couldn't",
+      "tokens": [
+        50386,
+        1171,
+        568,
+        11,
+        1360,
+        924,
+        11,
+        4649,
+        2108,
+        264,
+        17506,
+        4114,
+        20025,
+        457,
+        7179,
+        8650,
+        436,
+        2809,
+        380,
+        50608
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.26510292291641235,
+      "compression_ratio": 1.6847457885742188,
+      "no_speech_prob": 0.057482730597257614
+    },
+    {
+      "id": 15,
+      "seek": 5546,
+      "start": 60.400001525878906,
+      "end": 61.29999923706055,
+      "text": " understand out loud.",
+      "tokens": [
+        50608,
+        1223,
+        484,
+        6588,
+        13,
+        50678
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.26510292291641235,
+      "compression_ratio": 1.6847457885742188,
+      "no_speech_prob": 0.057482730597257614
+    },
+    {
+      "id": 16,
+      "seek": 5546,
+      "start": 61.7400016784668,
+      "end": 66.54000091552734,
+      "text": " So to actually govern, the officials settled on one shared spoken standard, based on the",
+      "tokens": [
+        50678,
+        407,
+        281,
+        767,
+        1980,
+        11,
+        264,
+        9798,
+        14819,
+        322,
+        472,
+        5507,
+        10759,
+        3832,
+        11,
+        2361,
+        322,
+        264,
+        50908
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.26510292291641235,
+      "compression_ratio": 1.6847457885742188,
+      "no_speech_prob": 0.057482730597257614
+    },
+    {
+      "id": 17,
+      "seek": 5546,
+      "start": 66.54000091552734,
+      "end": 67.76000213623047,
+      "text": " northern capital dialect.",
+      "tokens": [
+        50908,
+        14197,
+        4238,
+        24652,
+        13,
+        51002
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.26510292291641235,
+      "compression_ratio": 1.6847457885742188,
+      "no_speech_prob": 0.057482730597257614
+    },
+    {
+      "id": 18,
+      "seek": 5546,
+      "start": 68.27999877929688,
+      "end": 71.22000122070312,
+      "text": " They called it Guan Hua, the speech of the officials.",
+      "tokens": [
+        51002,
+        814,
+        1219,
+        309,
+        41431,
+        19094,
+        11,
+        264,
+        6218,
+        295,
+        264,
+        9798,
+        13,
+        51200
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.26510292291641235,
+      "compression_ratio": 1.6847457885742188,
+      "no_speech_prob": 0.057482730597257614
+    },
+    {
+      "id": 19,
+      "seek": 5546,
+      "start": 71.91999816894531,
+      "end": 73.4800033569336,
+      "text": " And that's where our word is born.",
+      "tokens": [
+        51200,
+        400,
+        300,
+        311,
+        689,
+        527,
+        1349,
+        307,
+        4232,
+        13,
+        51294
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.26510292291641235,
+      "compression_ratio": 1.6847457885742188,
+      "no_speech_prob": 0.057482730597257614
+    },
+    {
+      "id": 20,
+      "seek": 5546,
+      "start": 74.0199966430664,
+      "end": 79.16000366210938,
+      "text": " When Portuguese traders reached China in the 1500s, they called those robed officials Mandarins.",
+      "tokens": [
+        51294,
+        1133,
+        22759,
+        26014,
+        6488,
+        3533,
+        294,
+        264,
+        22671,
+        82,
+        11,
+        436,
+        1219,
+        729,
+        744,
+        2883,
+        9798,
+        15458,
+        289,
+        1292,
+        13,
+        51581
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.26510292291641235,
+      "compression_ratio": 1.6847457885742188,
+      "no_speech_prob": 0.057482730597257614
+    },
+    {
+      "id": 21,
+      "seek": 5546,
+      "start": 79.62000274658203,
+      "end": 84.44000244140625,
+      "text": " So in Europe, the officials' language became Mandarin, a foreign name for the language",
+      "tokens": [
+        51581,
+        407,
+        294,
+        3315,
+        11,
+        264,
+        9798,
+        6,
+        2856,
+        3062,
+        42292,
+        11,
+        257,
+        5329,
+        1315,
+        337,
+        264,
+        2856,
+        51810
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.26510292291641235,
+      "compression_ratio": 1.6847457885742188,
+      "no_speech_prob": 0.057482730597257614
+    },
+    {
+      "id": 22,
+      "seek": 8444,
+      "start": 84.44000244140625,
+      "end": 84.9000015258789,
+      "text": " of power.",
+      "tokens": [
+        50364,
+        295,
+        1347,
+        13,
+        50414
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.2588832676410675,
+      "compression_ratio": 1.5110293626785278,
+      "no_speech_prob": 0.44141823053359985
+    },
+    {
+      "id": 23,
+      "seek": 8444,
+      "start": 85.36000061035156,
+      "end": 90.9800033569336,
+      "text": " Then, last century, that same northern standard was formalized, taught in every school, and",
+      "tokens": [
+        50414,
+        1396,
+        11,
+        1036,
+        4901,
+        11,
+        300,
+        912,
+        14197,
+        3832,
+        390,
+        9860,
+        1602,
+        11,
+        5928,
+        294,
+        633,
+        1395,
+        11,
+        293,
+        50674
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.2588832676410675,
+      "compression_ratio": 1.5110293626785278,
+      "no_speech_prob": 0.44141823053359985
+    },
+    {
+      "id": 24,
+      "seek": 8444,
+      "start": 90.9800033569336,
+      "end": 96.04000091552734,
+      "text": " pushed through radio and TV until it became the shared voice of 1.4 billion people.",
+      "tokens": [
+        50674,
+        9152,
+        807,
+        6477,
+        293,
+        3558,
+        1826,
+        309,
+        3062,
+        264,
+        5507,
+        3177,
+        295,
+        502,
+        13,
+        19,
+        5218,
+        561,
+        13,
+        50978
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.2588832676410675,
+      "compression_ratio": 1.5110293626785278,
+      "no_speech_prob": 0.44141823053359985
+    },
+    {
+      "id": 25,
+      "seek": 8444,
+      "start": 96.72000122070312,
+      "end": 103.5199966430664,
+      "text": " And they gave it a new, surprisingly humble name, Putonghua, which means simply, common",
+      "tokens": [
+        50978,
+        400,
+        436,
+        2729,
+        309,
+        257,
+        777,
+        11,
+        17600,
+        16735,
+        1315,
+        11,
+        4935,
+        556,
+        30107,
+        11,
+        597,
+        1355,
+        2935,
+        11,
+        2689,
+        51314
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.2588832676410675,
+      "compression_ratio": 1.5110293626785278,
+      "no_speech_prob": 0.44141823053359985
+    },
+    {
+      "id": 26,
+      "seek": 8444,
+      "start": 103.27999877929688,
+      "end": 106.19999694824219,
+      "text": " speech, everyday, ordinary talk.",
+      "tokens": [
+        51314,
+        6218,
+        11,
+        7429,
+        11,
+        10547,
+        751,
+        13,
+        51476
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.2588832676410675,
+      "compression_ratio": 1.5110293626785278,
+      "no_speech_prob": 0.44141823053359985
+    },
+    {
+      "id": 27,
+      "seek": 8444,
+      "start": 106.30000305175781,
+      "end": 111.19999694824219,
+      "text": " So the exotic, powerful name the West knows, to a billion speakers back home, it's just",
+      "tokens": [
+        51476,
+        407,
+        264,
+        27063,
+        11,
+        4005,
+        1315,
+        264,
+        4055,
+        3255,
+        11,
+        281,
+        257,
+        5218,
+        9518,
+        646,
+        1280,
+        11,
+        309,
+        311,
+        445,
+        51694
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.2588832676410675,
+      "compression_ratio": 1.5110293626785278,
+      "no_speech_prob": 0.44141823053359985
+    },
+    {
+      "id": 28,
+      "seek": 8444,
+      "start": 111.19999694824219,
+      "end": 111.76000213623047,
+      "text": " normal language.",
+      "tokens": [
+        51694,
+        2710,
+        2856,
+        13,
+        51744
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.2588832676410675,
+      "compression_ratio": 1.5110293626785278,
+      "no_speech_prob": 0.44141823053359985
+    },
+    {
+      "id": 29,
+      "seek": 11176,
+      "start": 111.76000213623047,
+      "end": 113.5999984741211,
+      "text": " Want to actually start learning Chinese?",
+      "tokens": [
+        50382,
+        11773,
+        281,
+        767,
+        722,
+        2539,
+        4649,
+        30,
+        50482
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.46521005034446716,
+      "compression_ratio": 1.1764706373214722,
+      "no_speech_prob": 0.9935113787651062
+    },
+    {
+      "id": 30,
+      "seek": 11176,
+      "start": 114.44000244140625,
+      "end": 118.23999786376953,
+      "text": " Discover thousands of free exercises and more learning content on StackTags.io.",
+      "tokens": [
+        50482,
+        40386,
+        5383,
+        295,
+        1737,
+        11900,
+        293,
+        544,
+        2539,
+        2701,
+        322,
+        37649,
+        51,
+        12109,
+        13,
+        1004,
+        13,
+        50692
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.46521005034446716,
+      "compression_ratio": 1.1764706373214722,
+      "no_speech_prob": 0.9935113787651062
+    }
+  ],
+  "words": [
+    {
+      "word": "Over",
+      "start": 0,
+      "end": 0.30000001192092896
+    },
+    {
+      "word": "a",
+      "start": 0.30000001192092896,
+      "end": 0.5600000023841858
+    },
+    {
+      "word": "billion",
+      "start": 0.5600000023841858,
+      "end": 0.699999988079071
+    },
+    {
+      "word": "people",
+      "start": 0.699999988079071,
+      "end": 1.0800000429153442
+    },
+    {
+      "word": "speak",
+      "start": 1.0800000429153442,
+      "end": 1.3200000524520874
+    },
+    {
+      "word": "Mandarin",
+      "start": 1.3200000524520874,
+      "end": 1.600000023841858
+    },
+    {
+      "word": "but",
+      "start": 1.8799999952316284,
+      "end": 2.0199999809265137
+    },
+    {
+      "word": "almost",
+      "start": 2.0199999809265137,
+      "end": 2.5
+    },
+    {
+      "word": "none",
+      "start": 2.5,
+      "end": 2.700000047683716
+    },
+    {
+      "word": "of",
+      "start": 2.700000047683716,
+      "end": 3.140000104904175
+    },
+    {
+      "word": "them",
+      "start": 3.140000104904175,
+      "end": 3.140000104904175
+    },
+    {
+      "word": "call",
+      "start": 3.140000104904175,
+      "end": 3.319999933242798
+    },
+    {
+      "word": "it",
+      "start": 3.319999933242798,
+      "end": 3.4800000190734863
+    },
+    {
+      "word": "that",
+      "start": 3.4800000190734863,
+      "end": 3.700000047683716
+    },
+    {
+      "word": "Mandarin",
+      "start": 4.440000057220459,
+      "end": 4.440000057220459
+    },
+    {
+      "word": "is",
+      "start": 4.440000057220459,
+      "end": 4.679999828338623
+    },
+    {
+      "word": "a",
+      "start": 4.679999828338623,
+      "end": 5
+    },
+    {
+      "word": "name",
+      "start": 5,
+      "end": 5
+    },
+    {
+      "word": "foreigners",
+      "start": 5,
+      "end": 5.380000114440918
+    },
+    {
+      "word": "gave",
+      "start": 5.380000114440918,
+      "end": 5.619999885559082
+    },
+    {
+      "word": "it",
+      "start": 5.619999885559082,
+      "end": 5.860000133514404
+    },
+    {
+      "word": "and",
+      "start": 6,
+      "end": 6.059999942779541
+    },
+    {
+      "word": "the",
+      "start": 6.059999942779541,
+      "end": 6.21999979019165
+    },
+    {
+      "word": "real",
+      "start": 6.21999979019165,
+      "end": 6.579999923706055
+    },
+    {
+      "word": "story",
+      "start": 6.579999923706055,
+      "end": 6.679999828338623
+    },
+    {
+      "word": "of",
+      "start": 6.679999828338623,
+      "end": 6.820000171661377
+    },
+    {
+      "word": "how",
+      "start": 6.820000171661377,
+      "end": 6.980000019073486
+    },
+    {
+      "word": "it",
+      "start": 6.980000019073486,
+      "end": 7.019999980926514
+    },
+    {
+      "word": "took",
+      "start": 7.019999980926514,
+      "end": 7.199999809265137
+    },
+    {
+      "word": "over",
+      "start": 7.199999809265137,
+      "end": 7.480000019073486
+    },
+    {
+      "word": "China",
+      "start": 7.480000019073486,
+      "end": 7.71999979019165
+    },
+    {
+      "word": "begins",
+      "start": 7.71999979019165,
+      "end": 8.0600004196167
+    },
+    {
+      "word": "before",
+      "start": 8.0600004196167,
+      "end": 8.399999618530273
+    },
+    {
+      "word": "Rome",
+      "start": 8.399999618530273,
+      "end": 8.680000305175781
+    },
+    {
+      "word": "was",
+      "start": 8.680000305175781,
+      "end": 8.899999618530273
+    },
+    {
+      "word": "ever",
+      "start": 8.899999618530273,
+      "end": 9.220000267028809
+    },
+    {
+      "word": "an",
+      "start": 9.220000267028809,
+      "end": 9.699999809265137
+    },
+    {
+      "word": "empire",
+      "start": 9.699999809265137,
+      "end": 9.699999809265137
+    },
+    {
+      "word": "Because",
+      "start": 10.079999923706055,
+      "end": 10.600000381469727
+    },
+    {
+      "word": "long",
+      "start": 10.600000381469727,
+      "end": 10.800000190734863
+    },
+    {
+      "word": "before",
+      "start": 10.800000190734863,
+      "end": 11.100000381469727
+    },
+    {
+      "word": "Rome",
+      "start": 11.100000381469727,
+      "end": 11.34000015258789
+    },
+    {
+      "word": "ruled",
+      "start": 11.34000015258789,
+      "end": 11.5600004196167
+    },
+    {
+      "word": "anything",
+      "start": 11.5600004196167,
+      "end": 11.979999542236328
+    },
+    {
+      "word": "China",
+      "start": 12.359999656677246,
+      "end": 12.359999656677246
+    },
+    {
+      "word": "had",
+      "start": 12.359999656677246,
+      "end": 12.520000457763672
+    },
+    {
+      "word": "already",
+      "start": 12.520000457763672,
+      "end": 13.199999809265137
+    },
+    {
+      "word": "risen",
+      "start": 13.199999809265137,
+      "end": 13.279999732971191
+    },
+    {
+      "word": "and",
+      "start": 13.279999732971191,
+      "end": 13.680000305175781
+    },
+    {
+      "word": "fallen",
+      "start": 13.680000305175781,
+      "end": 13.880000114440918
+    },
+    {
+      "word": "through",
+      "start": 13.880000114440918,
+      "end": 14.199999809265137
+    },
+    {
+      "word": "dynasties",
+      "start": 14.199999809265137,
+      "end": 14.539999961853027
+    },
+    {
+      "word": "going",
+      "start": 14.539999961853027,
+      "end": 14.880000114440918
+    },
+    {
+      "word": "back",
+      "start": 14.880000114440918,
+      "end": 15.180000305175781
+    },
+    {
+      "word": "more",
+      "start": 15.180000305175781,
+      "end": 15.380000114440918
+    },
+    {
+      "word": "than",
+      "start": 15.380000114440918,
+      "end": 15.5600004196167
+    },
+    {
+      "word": "3",
+      "start": 15.5600004196167,
+      "end": 15.960000038146973
+    },
+    {
+      "word": "000",
+      "start": 15.960000038146973,
+      "end": 16.15999984741211
+    },
+    {
+      "word": "years",
+      "start": 16.15999984741211,
+      "end": 16.579999923706055
+    },
+    {
+      "word": "But",
+      "start": 16.780000686645508,
+      "end": 17.299999237060547
+    },
+    {
+      "word": "China",
+      "start": 17.299999237060547,
+      "end": 17.520000457763672
+    },
+    {
+      "word": "back",
+      "start": 17.520000457763672,
+      "end": 17.81999969482422
+    },
+    {
+      "word": "then",
+      "start": 17.81999969482422,
+      "end": 18.059999465942383
+    },
+    {
+      "word": "wasn't",
+      "start": 18.059999465942383,
+      "end": 18.360000610351562
+    },
+    {
+      "word": "one",
+      "start": 18.360000610351562,
+      "end": 18.700000762939453
+    },
+    {
+      "word": "country",
+      "start": 18.700000762939453,
+      "end": 18.959999084472656
+    },
+    {
+      "word": "it",
+      "start": 19.059999465942383,
+      "end": 19.31999969482422
+    },
+    {
+      "word": "was",
+      "start": 19.31999969482422,
+      "end": 19.5
+    },
+    {
+      "word": "a",
+      "start": 19.5,
+      "end": 19.639999389648438
+    },
+    {
+      "word": "patchwork",
+      "start": 19.639999389648438,
+      "end": 19.959999084472656
+    },
+    {
+      "word": "of",
+      "start": 19.959999084472656,
+      "end": 20.34000015258789
+    },
+    {
+      "word": "rival",
+      "start": 20.34000015258789,
+      "end": 20.600000381469727
+    },
+    {
+      "word": "states",
+      "start": 20.600000381469727,
+      "end": 20.899999618530273
+    },
+    {
+      "word": "locked",
+      "start": 21.200000762939453,
+      "end": 21.31999969482422
+    },
+    {
+      "word": "in",
+      "start": 21.31999969482422,
+      "end": 21.579999923706055
+    },
+    {
+      "word": "near",
+      "start": 21.579999923706055,
+      "end": 21.84000015258789
+    },
+    {
+      "word": "constant",
+      "start": 21.84000015258789,
+      "end": 22.15999984741211
+    },
+    {
+      "word": "war",
+      "start": 22.15999984741211,
+      "end": 22.520000457763672
+    },
+    {
+      "word": "dozens",
+      "start": 23.239999771118164,
+      "end": 23.239999771118164
+    },
+    {
+      "word": "of",
+      "start": 23.239999771118164,
+      "end": 23.780000686645508
+    },
+    {
+      "word": "kingdoms",
+      "start": 23.780000686645508,
+      "end": 23.780000686645508
+    },
+    {
+      "word": "with",
+      "start": 23.940000534057617,
+      "end": 24.18000030517578
+    },
+    {
+      "word": "different",
+      "start": 24.18000030517578,
+      "end": 24.440000534057617
+    },
+    {
+      "word": "rulers",
+      "start": 24.440000534057617,
+      "end": 24.719999313354492
+    },
+    {
+      "word": "different",
+      "start": 25.079999923706055,
+      "end": 25.420000076293945
+    },
+    {
+      "word": "armies",
+      "start": 25.420000076293945,
+      "end": 25.559999465942383
+    },
+    {
+      "word": "and",
+      "start": 25.739999771118164,
+      "end": 25.920000076293945
+    },
+    {
+      "word": "different",
+      "start": 25.920000076293945,
+      "end": 26.18000030517578
+    },
+    {
+      "word": "spoken",
+      "start": 26.18000030517578,
+      "end": 26.520000457763672
+    },
+    {
+      "word": "tongues",
+      "start": 26.520000457763672,
+      "end": 26.780000686645508
+    },
+    {
+      "word": "Then",
+      "start": 27.219999313354492,
+      "end": 27.5
+    },
+    {
+      "word": "in",
+      "start": 27.700000762939453,
+      "end": 27.84000015258789
+    },
+    {
+      "word": "221",
+      "start": 27.84000015258789,
+      "end": 28.520000457763672
+    },
+    {
+      "word": "BC",
+      "start": 28.520000457763672,
+      "end": 29.020000457763672
+    },
+    {
+      "word": "one",
+      "start": 29.579999923706055,
+      "end": 29.739999771118164
+    },
+    {
+      "word": "state",
+      "start": 29.739999771118164,
+      "end": 29.899999618530273
+    },
+    {
+      "word": "finally",
+      "start": 29.899999618530273,
+      "end": 30.360000610351562
+    },
+    {
+      "word": "conquered",
+      "start": 30.360000610351562,
+      "end": 30.639999389648438
+    },
+    {
+      "word": "the",
+      "start": 30.639999389648438,
+      "end": 30.8799991607666
+    },
+    {
+      "word": "rest",
+      "start": 30.8799991607666,
+      "end": 31.18000030517578
+    },
+    {
+      "word": "forced",
+      "start": 31.84000015258789,
+      "end": 31.84000015258789
+    },
+    {
+      "word": "them",
+      "start": 31.84000015258789,
+      "end": 32.02000045776367
+    },
+    {
+      "word": "into",
+      "start": 32.02000045776367,
+      "end": 32.2400016784668
+    },
+    {
+      "word": "a",
+      "start": 32.2400016784668,
+      "end": 32.41999816894531
+    },
+    {
+      "word": "single",
+      "start": 32.41999816894531,
+      "end": 32.81999969482422
+    },
+    {
+      "word": "empire",
+      "start": 32.81999969482422,
+      "end": 33.08000183105469
+    },
+    {
+      "word": "and",
+      "start": 33.47999954223633,
+      "end": 33.81999969482422
+    },
+    {
+      "word": "standardized",
+      "start": 33.81999969482422,
+      "end": 34.20000076293945
+    },
+    {
+      "word": "the",
+      "start": 34.20000076293945,
+      "end": 34.459999084472656
+    },
+    {
+      "word": "writing",
+      "start": 34.459999084472656,
+      "end": 34.65999984741211
+    },
+    {
+      "word": "so",
+      "start": 34.65999984741211,
+      "end": 35
+    },
+    {
+      "word": "everyone",
+      "start": 35,
+      "end": 35.380001068115234
+    },
+    {
+      "word": "wrote",
+      "start": 35.380001068115234,
+      "end": 35.560001373291016
+    },
+    {
+      "word": "the",
+      "start": 35.560001373291016,
+      "end": 35.7599983215332
+    },
+    {
+      "word": "same",
+      "start": 35.7599983215332,
+      "end": 36.060001373291016
+    },
+    {
+      "word": "characters",
+      "start": 36.060001373291016,
+      "end": 36.439998626708984
+    },
+    {
+      "word": "That",
+      "start": 36.79999923706055,
+      "end": 36.939998626708984
+    },
+    {
+      "word": "first",
+      "start": 36.939998626708984,
+      "end": 37.29999923706055
+    },
+    {
+      "word": "empire",
+      "start": 37.29999923706055,
+      "end": 37.41999816894531
+    },
+    {
+      "word": "didn't",
+      "start": 37.41999816894531,
+      "end": 37.68000030517578
+    },
+    {
+      "word": "last",
+      "start": 37.68000030517578,
+      "end": 37.959999084472656
+    },
+    {
+      "word": "long",
+      "start": 37.959999084472656,
+      "end": 38.2599983215332
+    },
+    {
+      "word": "but",
+      "start": 38.31999969482422,
+      "end": 38.880001068115234
+    },
+    {
+      "word": "the",
+      "start": 38.880001068115234,
+      "end": 39.099998474121094
+    },
+    {
+      "word": "dynasty",
+      "start": 39.099998474121094,
+      "end": 39.400001525878906
+    },
+    {
+      "word": "after",
+      "start": 39.400001525878906,
+      "end": 39.7400016784668
+    },
+    {
+      "word": "it",
+      "start": 39.7400016784668,
+      "end": 39.939998626708984
+    },
+    {
+      "word": "did",
+      "start": 39.939998626708984,
+      "end": 40.15999984741211
+    },
+    {
+      "word": "the",
+      "start": 40.41999816894531,
+      "end": 40.84000015258789
+    },
+    {
+      "word": "Han",
+      "start": 40.84000015258789,
+      "end": 40.84000015258789
+    },
+    {
+      "word": "The",
+      "start": 41.279998779296875,
+      "end": 41.58000183105469
+    },
+    {
+      "word": "Han",
+      "start": 41.58000183105469,
+      "end": 41.70000076293945
+    },
+    {
+      "word": "ruled",
+      "start": 41.70000076293945,
+      "end": 41.900001525878906
+    },
+    {
+      "word": "for",
+      "start": 41.900001525878906,
+      "end": 42.15999984741211
+    },
+    {
+      "word": "four",
+      "start": 42.15999984741211,
+      "end": 42.5
+    },
+    {
+      "word": "centuries",
+      "start": 42.5,
+      "end": 42.779998779296875
+    },
+    {
+      "word": "and",
+      "start": 42.779998779296875,
+      "end": 43.040000915527344
+    },
+    {
+      "word": "became",
+      "start": 43.040000915527344,
+      "end": 43.279998779296875
+    },
+    {
+      "word": "so",
+      "start": 43.279998779296875,
+      "end": 43.7599983215332
+    },
+    {
+      "word": "foundational",
+      "start": 43.7599983215332,
+      "end": 44.13999938964844
+    },
+    {
+      "word": "that",
+      "start": 44.13999938964844,
+      "end": 44.540000915527344
+    },
+    {
+      "word": "to",
+      "start": 44.880001068115234,
+      "end": 44.939998626708984
+    },
+    {
+      "word": "this",
+      "start": 44.939998626708984,
+      "end": 45.15999984741211
+    },
+    {
+      "word": "day",
+      "start": 45.15999984741211,
+      "end": 45.47999954223633
+    },
+    {
+      "word": "most",
+      "start": 45.959999084472656,
+      "end": 46.18000030517578
+    },
+    {
+      "word": "Chinese",
+      "start": 46.18000030517578,
+      "end": 46.459999084472656
+    },
+    {
+      "word": "call",
+      "start": 46.459999084472656,
+      "end": 46.7400016784668
+    },
+    {
+      "word": "themselves",
+      "start": 46.7400016784668,
+      "end": 47.20000076293945
+    },
+    {
+      "word": "Han",
+      "start": 47.20000076293945,
+      "end": 47.81999969482422
+    },
+    {
+      "word": "and",
+      "start": 48.08000183105469,
+      "end": 48.47999954223633
+    },
+    {
+      "word": "their",
+      "start": 48.47999954223633,
+      "end": 48.65999984741211
+    },
+    {
+      "word": "language",
+      "start": 48.65999984741211,
+      "end": 49.040000915527344
+    },
+    {
+      "word": "Hanyu",
+      "start": 49.040000915527344,
+      "end": 49.65999984741211
+    },
+    {
+      "word": "the",
+      "start": 50,
+      "end": 50.31999969482422
+    },
+    {
+      "word": "language",
+      "start": 50.31999969482422,
+      "end": 50.58000183105469
+    },
+    {
+      "word": "of",
+      "start": 50.58000183105469,
+      "end": 50.86000061035156
+    },
+    {
+      "word": "Han",
+      "start": 50.86000061035156,
+      "end": 51.119998931884766
+    },
+    {
+      "word": "But",
+      "start": 51.220001220703125,
+      "end": 51.58000183105469
+    },
+    {
+      "word": "here's",
+      "start": 51.58000183105469,
+      "end": 51.7599983215332
+    },
+    {
+      "word": "the",
+      "start": 51.7599983215332,
+      "end": 51.97999954223633
+    },
+    {
+      "word": "catch",
+      "start": 51.97999954223633,
+      "end": 52.2599983215332
+    },
+    {
+      "word": "unifying",
+      "start": 53.119998931884766,
+      "end": 53.119998931884766
+    },
+    {
+      "word": "the",
+      "start": 53.119998931884766,
+      "end": 53.540000915527344
+    },
+    {
+      "word": "writing",
+      "start": 53.540000915527344,
+      "end": 53.540000915527344
+    },
+    {
+      "word": "is",
+      "start": 53.540000915527344,
+      "end": 53.86000061035156
+    },
+    {
+      "word": "not",
+      "start": 53.86000061035156,
+      "end": 54.08000183105469
+    },
+    {
+      "word": "the",
+      "start": 54.08000183105469,
+      "end": 54.31999969482422
+    },
+    {
+      "word": "same",
+      "start": 54.31999969482422,
+      "end": 54.459999084472656
+    },
+    {
+      "word": "as",
+      "start": 54.459999084472656,
+      "end": 54.70000076293945
+    },
+    {
+      "word": "unifying",
+      "start": 54.70000076293945,
+      "end": 54.900001525878906
+    },
+    {
+      "word": "the",
+      "start": 54.900001525878906,
+      "end": 55.439998626708984
+    },
+    {
+      "word": "speech",
+      "start": 55.439998626708984,
+      "end": 55.459999084472656
+    },
+    {
+      "word": "For",
+      "start": 55.459999084472656,
+      "end": 55.959999084472656
+    },
+    {
+      "word": "2",
+      "start": 55.959999084472656,
+      "end": 56.400001525878906
+    },
+    {
+      "word": "000",
+      "start": 56.400001525878906,
+      "end": 56.65999984741211
+    },
+    {
+      "word": "years",
+      "start": 56.65999984741211,
+      "end": 57.02000045776367
+    },
+    {
+      "word": "Chinese",
+      "start": 57.560001373291016,
+      "end": 57.7400016784668
+    },
+    {
+      "word": "across",
+      "start": 57.7400016784668,
+      "end": 58.060001373291016
+    },
+    {
+      "word": "the",
+      "start": 58.060001373291016,
+      "end": 58.5
+    },
+    {
+      "word": "empire",
+      "start": 58.5,
+      "end": 58.5
+    },
+    {
+      "word": "wrote",
+      "start": 58.5,
+      "end": 58.779998779296875
+    },
+    {
+      "word": "alike",
+      "start": 58.779998779296875,
+      "end": 59.060001373291016
+    },
+    {
+      "word": "but",
+      "start": 59.060001373291016,
+      "end": 59.34000015258789
+    },
+    {
+      "word": "spoke",
+      "start": 59.34000015258789,
+      "end": 59.52000045776367
+    },
+    {
+      "word": "languages",
+      "start": 59.52000045776367,
+      "end": 59.81999969482422
+    },
+    {
+      "word": "they",
+      "start": 59.81999969482422,
+      "end": 60.15999984741211
+    },
+    {
+      "word": "couldn't",
+      "start": 60.15999984741211,
+      "end": 60.400001525878906
+    },
+    {
+      "word": "understand",
+      "start": 60.400001525878906,
+      "end": 60.79999923706055
+    },
+    {
+      "word": "out",
+      "start": 60.79999923706055,
+      "end": 61.29999923706055
+    },
+    {
+      "word": "loud",
+      "start": 61.29999923706055,
+      "end": 61.29999923706055
+    },
+    {
+      "word": "So",
+      "start": 61.7400016784668,
+      "end": 61.81999969482422
+    },
+    {
+      "word": "to",
+      "start": 61.81999969482422,
+      "end": 61.97999954223633
+    },
+    {
+      "word": "actually",
+      "start": 61.97999954223633,
+      "end": 62.47999954223633
+    },
+    {
+      "word": "govern",
+      "start": 62.47999954223633,
+      "end": 62.7599983215332
+    },
+    {
+      "word": "the",
+      "start": 63.099998474121094,
+      "end": 63.2599983215332
+    },
+    {
+      "word": "officials",
+      "start": 63.2599983215332,
+      "end": 63.5
+    },
+    {
+      "word": "settled",
+      "start": 63.5,
+      "end": 63.779998779296875
+    },
+    {
+      "word": "on",
+      "start": 63.779998779296875,
+      "end": 64.04000091552734
+    },
+    {
+      "word": "one",
+      "start": 64.04000091552734,
+      "end": 64.4000015258789
+    },
+    {
+      "word": "shared",
+      "start": 64.4000015258789,
+      "end": 64.72000122070312
+    },
+    {
+      "word": "spoken",
+      "start": 64.72000122070312,
+      "end": 65.13999938964844
+    },
+    {
+      "word": "standard",
+      "start": 65.13999938964844,
+      "end": 65.54000091552734
+    },
+    {
+      "word": "based",
+      "start": 66.0199966430664,
+      "end": 66.19999694824219
+    },
+    {
+      "word": "on",
+      "start": 66.19999694824219,
+      "end": 66.33999633789062
+    },
+    {
+      "word": "the",
+      "start": 66.33999633789062,
+      "end": 66.54000091552734
+    },
+    {
+      "word": "northern",
+      "start": 66.54000091552734,
+      "end": 66.80000305175781
+    },
+    {
+      "word": "capital",
+      "start": 66.80000305175781,
+      "end": 67.33999633789062
+    },
+    {
+      "word": "dialect",
+      "start": 67.33999633789062,
+      "end": 67.76000213623047
+    },
+    {
+      "word": "They",
+      "start": 68.27999877929688,
+      "end": 68.37999725341797
+    },
+    {
+      "word": "called",
+      "start": 68.37999725341797,
+      "end": 68.55999755859375
+    },
+    {
+      "word": "it",
+      "start": 68.55999755859375,
+      "end": 68.83999633789062
+    },
+    {
+      "word": "Guan",
+      "start": 68.83999633789062,
+      "end": 69.12000274658203
+    },
+    {
+      "word": "Hua",
+      "start": 69.12000274658203,
+      "end": 69.37999725341797
+    },
+    {
+      "word": "the",
+      "start": 70.04000091552734,
+      "end": 70.23999786376953
+    },
+    {
+      "word": "speech",
+      "start": 70.23999786376953,
+      "end": 70.4800033569336
+    },
+    {
+      "word": "of",
+      "start": 70.4800033569336,
+      "end": 70.63999938964844
+    },
+    {
+      "word": "the",
+      "start": 70.63999938964844,
+      "end": 70.87999725341797
+    },
+    {
+      "word": "officials",
+      "start": 70.87999725341797,
+      "end": 71.22000122070312
+    },
+    {
+      "word": "And",
+      "start": 71.91999816894531,
+      "end": 72.27999877929688
+    },
+    {
+      "word": "that's",
+      "start": 72.27999877929688,
+      "end": 72.5
+    },
+    {
+      "word": "where",
+      "start": 72.5,
+      "end": 72.63999938964844
+    },
+    {
+      "word": "our",
+      "start": 72.63999938964844,
+      "end": 72.86000061035156
+    },
+    {
+      "word": "word",
+      "start": 72.86000061035156,
+      "end": 73.04000091552734
+    },
+    {
+      "word": "is",
+      "start": 73.04000091552734,
+      "end": 73.4800033569336
+    },
+    {
+      "word": "born",
+      "start": 73.4800033569336,
+      "end": 73.4800033569336
+    },
+    {
+      "word": "When",
+      "start": 74.0199966430664,
+      "end": 74.18000030517578
+    },
+    {
+      "word": "Portuguese",
+      "start": 74.18000030517578,
+      "end": 74.63999938964844
+    },
+    {
+      "word": "traders",
+      "start": 74.63999938964844,
+      "end": 75.04000091552734
+    },
+    {
+      "word": "reached",
+      "start": 75.04000091552734,
+      "end": 75.33999633789062
+    },
+    {
+      "word": "China",
+      "start": 75.33999633789062,
+      "end": 75.5999984741211
+    },
+    {
+      "word": "in",
+      "start": 75.5999984741211,
+      "end": 75.77999877929688
+    },
+    {
+      "word": "the",
+      "start": 75.77999877929688,
+      "end": 76
+    },
+    {
+      "word": "1500s",
+      "start": 76,
+      "end": 76.72000122070312
+    },
+    {
+      "word": "they",
+      "start": 76.76000213623047,
+      "end": 77.22000122070312
+    },
+    {
+      "word": "called",
+      "start": 77.22000122070312,
+      "end": 77.37999725341797
+    },
+    {
+      "word": "those",
+      "start": 77.37999725341797,
+      "end": 77.77999877929688
+    },
+    {
+      "word": "robed",
+      "start": 77.77999877929688,
+      "end": 77.91999816894531
+    },
+    {
+      "word": "officials",
+      "start": 77.91999816894531,
+      "end": 78.4000015258789
+    },
+    {
+      "word": "Mandarins",
+      "start": 78.4000015258789,
+      "end": 79.16000366210938
+    },
+    {
+      "word": "So",
+      "start": 79.62000274658203,
+      "end": 79.9000015258789
+    },
+    {
+      "word": "in",
+      "start": 79.9000015258789,
+      "end": 80.12000274658203
+    },
+    {
+      "word": "Europe",
+      "start": 80.12000274658203,
+      "end": 80.31999969482422
+    },
+    {
+      "word": "the",
+      "start": 80.5,
+      "end": 80.69999694824219
+    },
+    {
+      "word": "officials",
+      "start": 80.69999694824219,
+      "end": 80.91999816894531
+    },
+    {
+      "word": "language",
+      "start": 81.31999969482422,
+      "end": 81.31999969482422
+    },
+    {
+      "word": "became",
+      "start": 81.31999969482422,
+      "end": 81.76000213623047
+    },
+    {
+      "word": "Mandarin",
+      "start": 81.76000213623047,
+      "end": 82.58000183105469
+    },
+    {
+      "word": "a",
+      "start": 83.08000183105469,
+      "end": 83.5
+    },
+    {
+      "word": "foreign",
+      "start": 83.5,
+      "end": 83.66000366210938
+    },
+    {
+      "word": "name",
+      "start": 83.66000366210938,
+      "end": 83.86000061035156
+    },
+    {
+      "word": "for",
+      "start": 83.86000061035156,
+      "end": 84.04000091552734
+    },
+    {
+      "word": "the",
+      "start": 84.04000091552734,
+      "end": 84.26000213623047
+    },
+    {
+      "word": "language",
+      "start": 84.26000213623047,
+      "end": 84.44000244140625
+    },
+    {
+      "word": "of",
+      "start": 84.44000244140625,
+      "end": 84.55999755859375
+    },
+    {
+      "word": "power",
+      "start": 84.55999755859375,
+      "end": 84.9000015258789
+    },
+    {
+      "word": "Then",
+      "start": 85.36000061035156,
+      "end": 85.80000305175781
+    },
+    {
+      "word": "last",
+      "start": 86.04000091552734,
+      "end": 86.36000061035156
+    },
+    {
+      "word": "century",
+      "start": 86.36000061035156,
+      "end": 86.66000366210938
+    },
+    {
+      "word": "that",
+      "start": 86.91999816894531,
+      "end": 87
+    },
+    {
+      "word": "same",
+      "start": 87,
+      "end": 87.36000061035156
+    },
+    {
+      "word": "northern",
+      "start": 87.36000061035156,
+      "end": 87.68000030517578
+    },
+    {
+      "word": "standard",
+      "start": 87.68000030517578,
+      "end": 87.94000244140625
+    },
+    {
+      "word": "was",
+      "start": 87.94000244140625,
+      "end": 88.16000366210938
+    },
+    {
+      "word": "formalized",
+      "start": 88.16000366210938,
+      "end": 88.68000030517578
+    },
+    {
+      "word": "taught",
+      "start": 89,
+      "end": 89
+    },
+    {
+      "word": "in",
+      "start": 89,
+      "end": 89.18000030517578
+    },
+    {
+      "word": "every",
+      "start": 89.18000030517578,
+      "end": 89.62000274658203
+    },
+    {
+      "word": "school",
+      "start": 89.62000274658203,
+      "end": 89.9000015258789
+    },
+    {
+      "word": "and",
+      "start": 90.36000061035156,
+      "end": 90.9800033569336
+    },
+    {
+      "word": "pushed",
+      "start": 90.9800033569336,
+      "end": 90.9800033569336
+    },
+    {
+      "word": "through",
+      "start": 90.9800033569336,
+      "end": 91.22000122070312
+    },
+    {
+      "word": "radio",
+      "start": 91.22000122070312,
+      "end": 91.63999938964844
+    },
+    {
+      "word": "and",
+      "start": 91.63999938964844,
+      "end": 91.9800033569336
+    },
+    {
+      "word": "TV",
+      "start": 91.9800033569336,
+      "end": 92.41999816894531
+    },
+    {
+      "word": "until",
+      "start": 92.41999816894531,
+      "end": 92.9000015258789
+    },
+    {
+      "word": "it",
+      "start": 92.9000015258789,
+      "end": 93.12000274658203
+    },
+    {
+      "word": "became",
+      "start": 93.12000274658203,
+      "end": 93.33999633789062
+    },
+    {
+      "word": "the",
+      "start": 93.33999633789062,
+      "end": 93.55999755859375
+    },
+    {
+      "word": "shared",
+      "start": 93.55999755859375,
+      "end": 93.86000061035156
+    },
+    {
+      "word": "voice",
+      "start": 93.86000061035156,
+      "end": 94.0999984741211
+    },
+    {
+      "word": "of",
+      "start": 94.0999984741211,
+      "end": 94.4000015258789
+    },
+    {
+      "word": "1",
+      "start": 94.4000015258789,
+      "end": 94.5999984741211
+    },
+    {
+      "word": "4",
+      "start": 94.5999984741211,
+      "end": 95.26000213623047
+    },
+    {
+      "word": "billion",
+      "start": 95.26000213623047,
+      "end": 95.55999755859375
+    },
+    {
+      "word": "people",
+      "start": 95.55999755859375,
+      "end": 96.04000091552734
+    },
+    {
+      "word": "And",
+      "start": 96.4800033569336,
+      "end": 96.80000305175781
+    },
+    {
+      "word": "they",
+      "start": 96.80000305175781,
+      "end": 96.95999908447266
+    },
+    {
+      "word": "gave",
+      "start": 96.95999908447266,
+      "end": 97.05999755859375
+    },
+    {
+      "word": "it",
+      "start": 97.05999755859375,
+      "end": 97.16000366210938
+    },
+    {
+      "word": "a",
+      "start": 97.16000366210938,
+      "end": 97.27999877929688
+    },
+    {
+      "word": "new",
+      "start": 97.27999877929688,
+      "end": 97.94000244140625
+    },
+    {
+      "word": "surprisingly",
+      "start": 98.08000183105469,
+      "end": 98.68000030517578
+    },
+    {
+      "word": "humble",
+      "start": 98.68000030517578,
+      "end": 98.95999908447266
+    },
+    {
+      "word": "name",
+      "start": 98.95999908447266,
+      "end": 99.31999969482422
+    },
+    {
+      "word": "Putonghua",
+      "start": 99.95999908447266,
+      "end": 100.4800033569336
+    },
+    {
+      "word": "which",
+      "start": 101.0999984741211,
+      "end": 101.27999877929688
+    },
+    {
+      "word": "means",
+      "start": 101.27999877929688,
+      "end": 101.66000366210938
+    },
+    {
+      "word": "simply",
+      "start": 101.66000366210938,
+      "end": 102.5
+    },
+    {
+      "word": "common",
+      "start": 103.13999938964844,
+      "end": 103.5199966430664
+    },
+    {
+      "word": "speech",
+      "start": 103.27999877929688,
+      "end": 103.91999816894531
+    },
+    {
+      "word": "everyday",
+      "start": 104.5,
+      "end": 104.9800033569336
+    },
+    {
+      "word": "ordinary",
+      "start": 105.83999633789062,
+      "end": 105.83999633789062
+    },
+    {
+      "word": "talk",
+      "start": 105.83999633789062,
+      "end": 106.19999694824219
+    },
+    {
+      "word": "So",
+      "start": 106.30000305175781,
+      "end": 106.69999694824219
+    },
+    {
+      "word": "the",
+      "start": 106.69999694824219,
+      "end": 106.87999725341797
+    },
+    {
+      "word": "exotic",
+      "start": 106.87999725341797,
+      "end": 107.30000305175781
+    },
+    {
+      "word": "powerful",
+      "start": 107.87999725341797,
+      "end": 107.87999725341797
+    },
+    {
+      "word": "name",
+      "start": 107.87999725341797,
+      "end": 108.05999755859375
+    },
+    {
+      "word": "the",
+      "start": 108.05999755859375,
+      "end": 108.4000015258789
+    },
+    {
+      "word": "West",
+      "start": 108.4000015258789,
+      "end": 108.4000015258789
+    },
+    {
+      "word": "knows",
+      "start": 108.4000015258789,
+      "end": 108.66000366210938
+    },
+    {
+      "word": "to",
+      "start": 109.08000183105469,
+      "end": 109.16000366210938
+    },
+    {
+      "word": "a",
+      "start": 109.16000366210938,
+      "end": 109.5999984741211
+    },
+    {
+      "word": "billion",
+      "start": 109.5999984741211,
+      "end": 109.5999984741211
+    },
+    {
+      "word": "speakers",
+      "start": 109.5999984741211,
+      "end": 109.91999816894531
+    },
+    {
+      "word": "back",
+      "start": 109.91999816894531,
+      "end": 110.31999969482422
+    },
+    {
+      "word": "home",
+      "start": 110.31999969482422,
+      "end": 110.4000015258789
+    },
+    {
+      "word": "it's",
+      "start": 110.54000091552734,
+      "end": 110.86000061035156
+    },
+    {
+      "word": "just",
+      "start": 110.86000061035156,
+      "end": 111.19999694824219
+    },
+    {
+      "word": "normal",
+      "start": 111.19999694824219,
+      "end": 111.37999725341797
+    },
+    {
+      "word": "language",
+      "start": 111.37999725341797,
+      "end": 111.76000213623047
+    },
+    {
+      "word": "Want",
+      "start": 111.76000213623047,
+      "end": 112.26000213623047
+    },
+    {
+      "word": "to",
+      "start": 112.26000213623047,
+      "end": 112.37999725341797
+    },
+    {
+      "word": "actually",
+      "start": 112.37999725341797,
+      "end": 112.66000366210938
+    },
+    {
+      "word": "start",
+      "start": 112.66000366210938,
+      "end": 112.9000015258789
+    },
+    {
+      "word": "learning",
+      "start": 112.9000015258789,
+      "end": 113.0999984741211
+    },
+    {
+      "word": "Chinese",
+      "start": 113.0999984741211,
+      "end": 113.5999984741211
+    },
+    {
+      "word": "Discover",
+      "start": 114.44000244140625,
+      "end": 114.44000244140625
+    },
+    {
+      "word": "thousands",
+      "start": 114.44000244140625,
+      "end": 114.87999725341797
+    },
+    {
+      "word": "of",
+      "start": 114.87999725341797,
+      "end": 115.13999938964844
+    },
+    {
+      "word": "free",
+      "start": 115.13999938964844,
+      "end": 115.33999633789062
+    },
+    {
+      "word": "exercises",
+      "start": 115.33999633789062,
+      "end": 115.81999969482422
+    },
+    {
+      "word": "and",
+      "start": 115.81999969482422,
+      "end": 116.08000183105469
+    },
+    {
+      "word": "more",
+      "start": 116.08000183105469,
+      "end": 116.30000305175781
+    },
+    {
+      "word": "learning",
+      "start": 116.30000305175781,
+      "end": 116.5199966430664
+    },
+    {
+      "word": "content",
+      "start": 116.5199966430664,
+      "end": 116.87999725341797
+    },
+    {
+      "word": "on",
+      "start": 116.87999725341797,
+      "end": 117.12000274658203
+    },
+    {
+      "word": "StackTags",
+      "start": 117.12000274658203,
+      "end": 117.63999938964844
+    },
+    {
+      "word": "io",
+      "start": 117.63999938964844,
+      "end": 118.23999786376953
+    }
+  ],
+  "usage": {
+    "type": "duration",
+    "seconds": 119
+  }
+}

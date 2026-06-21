@@ -1,0 +1,76 @@
+VIDEO SCRIPT
+Title: How a wall of lava lamps protects the internet
+Topic: Software
+Target length: ~100 seconds (fits the 30s–3min window)
+Language of narration: English
+Format: Voiceover script. Spoken lines are plain text. [Bracketed lines] describe
+what is on screen AT THE SAME TIME as the narration next to them.
+
+==================================================================
+THE CORE IDEA
+==================================================================
+Computers are deterministic — they can't produce TRUE randomness, only predictable
+"pseudo-random" numbers. But strong encryption needs unpredictable randomness, or
+keys become guessable. So Cloudflare films a wall of ~100 lava lamps in its lobby;
+the chaotic, unpredictable wax (plus light, shadows, passersby) is turned into real
+random data that helps seed cryptographic keys protecting a huge share of HTTPS
+traffic.
+Punchline: a piece of 1970s décor is real, serious security infrastructure.
+
+NOTE (honesty): it's ONE entropy source among several (Cloudflare also uses a
+pendulum, a radioactive source elsewhere) and it "helps seed" randomness — say
+"helps." Keep the "half the web" claim vivid but fair (Cloudflare serves a big
+slice of web traffic).
+
+KEY VISUALS:
+- A camera panning a glowing wall of lava lamps → the image becoming a stream of
+  numbers → a padlock / encryption key.
+
+==================================================================
+SCRIPT
+==================================================================
+
+--- HOOK (0:00–0:14) — the payoff up front ---
+
+A big chunk of the secure, encrypted internet is protected by... a wall of lava
+lamps.
+[A camera pans across a glowing wall of ~100 lava lamps in an office lobby.]
+This isn't decoration. It's one of the strangest, and most serious, pieces of
+security infrastructure in the world. Here's why.
+
+--- THE PROBLEM: COMPUTERS CAN'T BE RANDOM (≈0:14–0:42) ---
+
+Encryption depends on randomness. To lock your data, a computer needs to generate
+keys that nobody could ever guess.
+[A padlock built from a long random key.]
+But here's the catch: computers are terrible at being random. They're machines that
+follow exact rules — so anything they "make up" actually follows a hidden pattern.
+[A "random" number generator quietly repeating a pattern.]
+And if an attacker can figure out that pattern, they can predict your keys — and
+your encryption falls apart. So you need randomness from the real, messy, physical
+world.
+
+--- THE LAVA LAMP SOLUTION (≈0:42–1:10) ---
+
+Which is where the company Cloudflare got creative. In their lobby sits a wall of
+around a hundred lava lamps.
+[The wax blobs drifting, splitting, merging — never the same twice.]
+A camera films them constantly. And that slow, chaotic churn of wax — plus the
+light, the shadows, even people walking past — is impossible to predict.
+[The video feed turning into a torrent of unpredictable pixels.]
+They turn that footage into a stream of genuinely random numbers, and feed it into
+how their cryptographic keys are made — keys that help secure a huge slice of the
+world's web traffic.
+[Pixels → numbers → a freshly minted encryption key, padlock snapping shut.]
+
+--- PUNCHLINE / OUTRO (≈1:10–1:30) ---
+
+So a slab of 1970s decor became real security infrastructure.
+[The lamp wall, glowing, with a tiny "SECURE" padlock pulsing over it.]
+Because the safest randomness isn't something a computer can invent — it has to be
+borrowed from the chaos of the physical world. And it turns out, nothing is more
+beautifully unpredictable than melting wax.
+
+Want more stories of how technology really works?
+[Stacktags logo animates in; "stacktags.io" shown on screen.]
+Discover thousands of free exercises and more learning content on stacktags.io.

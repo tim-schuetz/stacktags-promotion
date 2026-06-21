@@ -1,0 +1,207 @@
+[
+  {
+    "i": 0,
+    "text": "HOOK — BMW logo appears (\"In China, BMW isn't BMW\")",
+    "start": 0
+  },
+  {
+    "i": 1,
+    "text": "HOOK — BMW flips → 宝马 \"treasure horse\"",
+    "start": 3.46
+  },
+  {
+    "i": 2,
+    "text": "HOOK — Mercedes flips → 奔驰 \"galloping speed\"",
+    "start": 5.24
+  },
+  {
+    "i": 3,
+    "text": "HOOK — Coca-Cola card appears",
+    "start": 7.96
+  },
+  {
+    "i": 4,
+    "text": "HOOK — Coca-Cola flips → 可口可乐 \"delicious happiness\"",
+    "start": 9.2
+  },
+  {
+    "i": 5,
+    "text": "HOOK — \"None of those are accidents\" (three line up, glow)",
+    "start": 10.58
+  },
+  {
+    "i": 6,
+    "text": "HOOK — caption: doesn't just copy the sound",
+    "start": 11.92
+  },
+  {
+    "i": 7,
+    "text": "HOOK — caption: picks characters that sound right + mean",
+    "start": 14.96
+  },
+  {
+    "i": 8,
+    "text": "ENUM — \"Here's how the biggest names did it\" (6 roster)",
+    "start": 18.62
+  },
+  {
+    "i": 9,
+    "text": "ENUM — \"Start with the cars\" (zoom into BMW)",
+    "start": 23.54
+  },
+  {
+    "i": 10,
+    "text": "CARD BMW — flip → 宝马 bǎomǎ",
+    "start": 24.96
+  },
+  {
+    "i": 11,
+    "text": "CARD BMW — highlight 宝 treasure · 马 horse",
+    "start": 27.08
+  },
+  {
+    "i": 12,
+    "text": "CARD BMW — note \"a prized, powerful steed\"",
+    "start": 31.44
+  },
+  {
+    "i": 13,
+    "text": "CARD Mercedes — flip → 奔驰 bēnchí",
+    "start": 34.76
+  },
+  {
+    "i": 14,
+    "text": "CARD Mercedes — meaning: to gallop, to speed",
+    "start": 36.44
+  },
+  {
+    "i": 15,
+    "text": "CARD Mercedes — note: sounds like Benz, pure motion",
+    "start": 38.44
+  },
+  {
+    "i": 16,
+    "text": "CARD Mercedes — tagline: the name is the marketing",
+    "start": 41.06
+  },
+  {
+    "i": 17,
+    "text": "CARD Coca-Cola — enter (\"all-time masterpiece\")",
+    "start": 43.24
+  },
+  {
+    "i": 18,
+    "text": "CARD Coca-Cola — flip → 可口可乐 kěkǒu kělè",
+    "start": 46
+  },
+  {
+    "i": 19,
+    "text": "CARD Coca-Cola — meaning: tasty + enjoyable",
+    "start": 47.48
+  },
+  {
+    "i": 20,
+    "text": "CARD Coca-Cola — gloss: \"delicious happiness\"",
+    "start": 52.12
+  },
+  {
+    "i": 21,
+    "text": "TWIST — \"Chinese brands take it to another level\"",
+    "start": 54.98
+  },
+  {
+    "i": 22,
+    "text": "TWIST — \"especially the new electric-car makers\"",
+    "start": 59.66
+  },
+  {
+    "i": 23,
+    "text": "TWIST — \"reach into the language, grab a word = mission\"",
+    "start": 64.94
+  },
+  {
+    "i": 24,
+    "text": "CARD Li Auto — enter (\"One brand is simply called…\")",
+    "start": 67.92
+  },
+  {
+    "i": 25,
+    "text": "CARD Li Auto — flip 理想 → \"THE IDEAL\"",
+    "start": 70.24
+  },
+  {
+    "i": 26,
+    "text": "CARD Nio — enter (\"you know it in the West as Nio\")",
+    "start": 72.7
+  },
+  {
+    "i": 27,
+    "text": "CARD Nio — reveal 蔚来 wèilái",
+    "start": 75.46
+  },
+  {
+    "i": 28,
+    "text": "CARD Nio — morph 蔚来 → 未来 (homophone)",
+    "start": 76.68
+  },
+  {
+    "i": 29,
+    "text": "CARD Nio — resolve \"THE FUTURE\"",
+    "start": 79.8
+  },
+  {
+    "i": 30,
+    "text": "CARD BYD — enter (\"Take BYD\")",
+    "start": 86.32
+  },
+  {
+    "i": 31,
+    "text": "CARD BYD — expand B·Y·D → BUILD YOUR DREAMS",
+    "start": 87.46
+  },
+  {
+    "i": 32,
+    "text": "CARD BYD — \"an entire aspiration, baked into the logo\"",
+    "start": 89.74
+  },
+  {
+    "i": 33,
+    "text": "CARD BYD — \"Bold? A bit much? You be the judge\"",
+    "start": 92.94
+  },
+  {
+    "i": 34,
+    "text": "OUTRO — recap montage (treasure horse, galloping star…)",
+    "start": 95.64
+  },
+  {
+    "i": 35,
+    "text": "OUTRO — caption: a tiny Chinese lesson in plain sight",
+    "start": 99.32
+  },
+  {
+    "i": 36,
+    "text": "OUTRO — \"branding as a free language lesson\"",
+    "start": 103.44
+  },
+  {
+    "i": 37,
+    "text": "OUTRO — brand card assembles (\"want to actually learn it\")",
+    "start": 105.46
+  },
+  {
+    "i": 38,
+    "text": "OUTRO — Practice CTA + folder (\"Click here to practice\")",
+    "start": 107.38
+  },
+  {
+    "i": 39,
+    "text": "OUTRO — \"Want more like this?\"",
+    "start": 108.76
+  },
+  {
+    "i": 40,
+    "text": "OUTRO — Follow Stacktags (pulse)",
+    "start": 109.52
+  }
+]

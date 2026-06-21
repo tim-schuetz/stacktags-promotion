@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>stacktags — Thumbnail Export</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
+<style>
+  html, body { margin: 0; padding: 0; background: #fff; }
+  /* exact 1280×720 export frame, top-left anchored for a clean capture */
+  #export { width: 1280px; height: 720px; overflow: hidden; }
+  .thumb { position: relative; width: 1280px; height: 720px; overflow: hidden;
+    font-family: 'Inter', system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+  .wm { font-family: 'Nunito', system-ui, sans-serif; font-weight: 900; line-height: 1;
+    letter-spacing: -0.04em; white-space: nowrap; }
+  .wm .s { color: #141a1e; } .wm .t { color: #3EAE93; }
+  .wm.on-dark .s { color: #ffffff; }
+  .glow { position: absolute; border-radius: 50%; filter: blur(2px); pointer-events: none; }
+  .hl { font-weight: 900; letter-spacing: -0.03em; line-height: 0.98; margin: 0; }
+  .accent { color: #3EAE93; }
+</style>
+</head>
+<body>
+<div id="export"></div>
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script type="text/babel" src="app-screens.jsx"></script>
+<script src="https://cdn.jsdelivr.net/npm/topojson-client@3.1.0/dist/topojson-client.min.js"></script>
+<script src="svg_globe.js"></script>
+<script type="text/babel" src="thumbnails.jsx"></script>
+
+<script type="text/babel">
+  // pick design via ?t=A|E|F|G  (default G)
+  const which = (new URLSearchParams(location.search).get('t') || 'G').toUpperCase();
+  const map = { A: ThumbA, E: ThumbE, F: ThumbF, G: ThumbG, H: ThumbH };
+  const Comp = map[which] || ThumbG;
+  ReactDOM.createRoot(document.getElementById('export')).render(<Comp />);
+</script>
+</body>
+</html>

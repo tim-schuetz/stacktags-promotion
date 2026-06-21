@@ -1,0 +1,80 @@
+VIDEO SCRIPT
+Title: How to profit from falling stocks
+Topic: Investing
+Target length: ~100 seconds (fits the 30s–3min window)
+Language of narration: English
+Format: Voiceover script. Spoken lines are plain text. [Bracketed lines] describe
+what is on screen AT THE SAME TIME as the narration next to them.
+
+==================================================================
+THE CORE IDEA
+==================================================================
+You can profit when stocks fall, not just when they rise. Three main tools:
+(1) short selling (borrow + sell high, buy back low — unlimited risk),
+(2) put options (right to sell at a fixed price — defined risk, like insurance),
+(3) inverse ETFs (go up when an index goes down — simple, but decay over time).
+Punchline: up isn't the only direction you can bet on.
+
+NOTE (responsibility): educational, NOT financial advice. Flag the real risks —
+shorting's unlimited downside, inverse-ETF decay, and that markets rise more often
+than they fall over time. Keep an on-screen "educational only" tag.
+
+KEY VISUALS:
+- A red, falling stock chart — and a portfolio line going UP as it drops.
+- Three labeled paths: "Short selling," "Put options," "Inverse ETF."
+
+==================================================================
+SCRIPT
+==================================================================
+
+--- HOOK (0:00–0:12) — the payoff up front ---
+
+Most people only make money when stocks go up. But professionals have ways to
+profit when they crash. There are three main ones:
+[A red chart dives; a second line climbs as it falls.]
+short selling, put options, and inverse ETFs.
+[Three labels drop in. Small tag: "educational — not financial advice."]
+Here's how each one turns a falling market into a winning trade.
+
+--- THE MINDSET (≈0:12–0:28) ---
+
+Normally, investing is "buy low, sell high." To profit from a fall, you just flip
+the order — you arrange to sell high, then buy low.
+[The two steps swap places: SELL first, BUY second.]
+The question is how you sell something before you own it. Three answers.
+
+--- 1: SHORT SELLING (≈0:28–0:50) ---
+
+First, short selling. You borrow shares you don't own, sell them now at the high
+price, and aim to buy them back later, cheaper — keeping the difference.
+[Borrow → sell at $100 → buy back at $60 → pocket $40.]
+If the stock drops, you win. But fair warning: if it rises instead, your losses
+can balloon — far more than with normal buying. (We break that down in our
+short-selling video.)
+
+--- 2: PUT OPTIONS (≈0:50–1:12) ---
+
+Second, put options. A put is the right to sell a stock at a fixed price. So if
+the stock crashes below that price, your put becomes valuable.
+[A put "strike" line; the stock plunges under it, the put lights up green.]
+It works like insurance that pays out when the stock falls — and the most you can
+lose is the small premium you paid for it. Defined, limited risk.
+
+--- 3: INVERSE ETFs (≈1:12–1:30) ---
+
+Third, inverse ETFs. These are funds built to go up when an index goes down. You
+just buy them like a normal share — no borrowing, no options.
+[An inverse ETF ticking up as the index ticks down.]
+Simple — but they're designed for short-term moves and slowly decay over time, so
+they're not something you hold for years.
+
+--- PUNCHLINE / OUTRO (≈1:30–1:42) ---
+
+So up isn't the only direction you can bet on.
+[The falling market, with a green line riding it down.]
+With the right tool, a crash isn't only a danger — for some, it's the trade. Just
+remember: betting against the market is harder than it looks.
+
+Want to actually understand how markets work?
+[Stacktags logo animates in with a "Follow" prompt.]
+Follow Stacktags.

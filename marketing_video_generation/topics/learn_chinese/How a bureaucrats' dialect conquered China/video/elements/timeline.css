@@ -1,0 +1,118 @@
+/* ============================================================
+   Stacktags default element — TIMELINE
+   A measuring-tape ruler of thin ticks scrolling past a fixed
+   centre playhead (in reverse, left→right), revealing year/event
+   labels as they cross it, then the end photo slides in from the
+   left while scaling up.
+   White + turquoise, Inter only, thin lines, no borders.
+   Drive with timeline.js (StacktagsTimeline).
+   ============================================================ */
+.stk-tl {
+  position: absolute; inset: 0;
+  overflow: hidden;
+  font-family: var(--stk-font, 'Inter', sans-serif);
+}
+
+/* the long scrolling track (translated on X by JS) */
+.stk-tl-track {
+  position: absolute;
+  top: 50%; left: 0;
+  height: 0;
+  will-change: transform;
+}
+
+/* the dense ruler of thin grey ticks */
+.stk-tl-ruler { position: absolute; top: 0; left: 0; height: 0; }
+.stk-tl-tick {
+  position: absolute; top: 0;
+  width: 3px; height: 26px; margin: -13px 0 0 -1.5px;
+  border-radius: 2px;
+  background: rgba(35,43,51,0.20);
+}
+.stk-tl-tick.major {
+  height: 58px; margin-top: -29px;
+  background: rgba(35,43,51,0.30);
+}
+
+/* fixed centre playhead — a turquoise marker line + dot */
+.stk-tl-head {
+  position: absolute; top: 50%; left: 0;
+  width: 4px; height: 150px; margin: -75px 0 0 -2px;
+  border-radius: 3px;
+  background: var(--stk-teal, #35A292);
+  z-index: 4;
+}
+.stk-tl-head::before {
+  content: ''; position: absolute; left: 50%; top: -16px;
+  width: 22px; height: 22px; margin-left: -11px; border-radius: 50%;
+  background: var(--stk-teal-d, #119271);
+  box-shadow: 0 0 0 9px rgba(53,162,146,0.16);
+}
+
+/* an event label sits on the ruler at its position */
+.stk-tl-ev {
+  position: absolute; top: 0;
+  transform: translate(-50%, 0) scale(.92);
+  opacity: 0;
+  transition: opacity .45s ease, transform .45s cubic-bezier(.2,.8,.2,1);
+}
+.stk-tl-ev.in { opacity: 1; transform: translate(-50%, 0) scale(1); }
+.stk-tl-evtick {
+  position: absolute; left: 50%; top: -46px;
+  width: 5px; height: 92px; margin-left: -2.5px; border-radius: 3px;
+  background: rgba(35,43,51,0.34);
+}
+.stk-tl-ev.passed .stk-tl-evtick { background: var(--stk-teal, #35A292); }
+.stk-tl-year {
+  position: absolute; left: 50%; top: 60px; transform: translateX(-50%);
+  font-weight: 900; font-size: 66px; letter-spacing: -2px; color: var(--stk-ink, #232B33);
+  white-space: nowrap;
+}
+.stk-tl-ev.passed .stk-tl-year { color: var(--stk-teal-d, #119271); }
+.stk-tl-label {
+  position: absolute; left: 50%; top: 144px; transform: translateX(-50%);
+  font-weight: 600; font-size: 34px; color: var(--stk-muted, #8a949d);
+  white-space: nowrap; max-width: 460px; text-align: center;
+}
+
+/* end composition (cut-out images + text) — slides in from the left, scaling up */
+.stk-tl-end {
+  position: absolute; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0; pointer-events: none; z-index: 6;
+  transition: opacity .5s ease;
+}
+.stk-tl.end-in .stk-tl-end { opacity: 1; }
+/* the ruler/ticks/playhead vanish at the end — only the final composition stays */
+.stk-tl-track, .stk-tl-head { transition: opacity .45s ease; }
+.stk-tl.end-in .stk-tl-track, .stk-tl.end-in .stk-tl-head { opacity: 0; }
+.stk-tl-final {
+  position: relative; width: 1080px; height: 1920px;
+  transform: translateX(-680px) scale(.55); opacity: 0;
+  transform-origin: center center;
+  transition: transform .9s cubic-bezier(.2,.82,.24,1), opacity .55s ease;
+}
+.stk-tl.end-in .stk-tl-final { transform: translateX(0) scale(1); opacity: 1; }
+.stk-tl-cut {
+  position: absolute; transform: translate(-50%, -50%);
+  height: auto; display: block;
+  filter: drop-shadow(0 26px 44px rgba(20,40,33,.26));
+}
+.stk-tl-cap {
+  position: absolute; left: 0; right: 0; top: 6%; padding: 0 70px;
+  text-align: center; z-index: 2;
+  transform: translateY(-40px); opacity: 0;
+  transition: transform .6s cubic-bezier(.2,.8,.2,1) .45s, opacity .5s ease .45s;
+}
+.stk-tl.end-in .stk-tl-cap { transform: translateY(0); opacity: 1; }
+.stk-tl-cap .t {
+  font-weight: 800; font-size: 84px; letter-spacing: -2px; line-height: 1.04; color: var(--stk-ink, #232B33);
+}
+.stk-tl-cap .t b { color: var(--stk-teal-d, #119271); }
+.stk-tl-cap .y {
+  font-weight: 900; font-size: 96px; letter-spacing: -3px; line-height: 1; margin-top: 10px;
+  color: var(--stk-teal-d, #119271);
+}
+.stk-tl-cap .s {
+  font-weight: 600; font-size: 36px; color: var(--stk-muted, #8a949d); margin-top: 16px;
+}

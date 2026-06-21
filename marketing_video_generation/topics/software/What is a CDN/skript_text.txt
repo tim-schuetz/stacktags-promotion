@@ -1,0 +1,67 @@
+VIDEO SCRIPT
+Title: What is a CDN?
+Topic: Software Development
+Target length: ~90 seconds (fits the 30s–3min window)
+Language of narration: English
+Format: Voiceover script. Spoken lines are plain text. [Bracketed lines] describe
+what is on screen AT THE SAME TIME as the narration next to them.
+
+==================================================================
+THE CORE IDEA
+==================================================================
+A CDN (Content Delivery Network) is a global network of servers that store cached
+copies of a site's content close to users, so data travels a short distance →
+faster loads, less strain on the origin server, more resilience, and protection
+against traffic floods.
+Punchline: the web feels instant not because data got faster, but because the
+content moved closer to you.
+
+KEY VISUALS:
+- A globe: one distant "origin" server, then dozens of CDN nodes lighting up near
+  users; a request hopping to the NEAREST node instead of across the world.
+
+==================================================================
+SCRIPT
+==================================================================
+
+--- HOOK (0:00–0:10) — the payoff up front ---
+
+Ever wonder how a video loads instantly, even though the website's main server
+might be on the other side of the planet?
+[A user in one country; the origin server glowing far away across the globe.]
+The answer is a CDN — and the trick is simple: it keeps a copy of the content
+right next to you.
+[Copies of the content pop up in cities all around the user.]
+
+--- THE PROBLEM (≈0:10–0:32) ---
+
+Data doesn't travel instantly — it has a speed limit. So if the server is in the
+US and you're in Australia, every click has to race across the planet and back.
+That delay adds up.
+[A request crawling the long way around the globe and back.]
+And if millions of people hit that one server at once, it chokes.
+[The lone server overheating under a flood of requests.]
+
+--- THE FIX (≈0:32–1:05) ---
+
+That's what a CDN solves — a Content Delivery Network. It's a huge web of servers
+spread across hundreds of cities worldwide.
+[CDN nodes light up across every continent.]
+Copies of a site's heavy, rarely-changing content — images, videos, scripts —
+get cached on all of them. So when you visit, you're served from the nearest one,
+maybe right in your own city, instead of the faraway origin.
+[The user's request hops to the closest node and snaps back instantly.]
+Shorter distance, faster load. The main server is offloaded — it no longer
+answers every request. And if one location gets swamped or goes down, the others
+pick up the slack — which also helps absorb attacks that try to flood a site.
+
+--- PUNCHLINE / OUTRO (≈1:05–1:18) ---
+
+So the internet feels instant not because the data got faster —
+[The globe, content mirrored everywhere.]
+but because the content moved closer. A CDN is really just thousands of little
+copies of the web, scattered around the world, so one is always near you.
+
+Want more of how the internet actually works?
+[Stacktags logo animates in with a "Follow" prompt.]
+Follow Stacktags.

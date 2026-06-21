@@ -1,0 +1,228 @@
+/* ============================================================
+   Stacktags — "Learn 10 Chinese words in 100 seconds"
+   New depth-transition style: a dynamic grid background and a
+   faux-3D camera (elements/depth.js) carry the whole video.
+   White + turquoise (#35A292), Inter only (CJK uses a sans face),
+   no borders — per ../../../designguide.md.
+   ============================================================ */
+
+* { box-sizing: border-box; }
+html, body {
+  margin: 0; height: 100%;
+  background: #0b0e0d;              /* letterbox around the 9:16 stage */
+  overflow: hidden;
+  font-family: var(--stk-font);
+  -webkit-font-smoothing: antialiased;
+}
+.root { position: fixed; inset: 0; display: flex; align-items: center; justify-content: center; }
+
+/* the 1080×1920 design stage, scaled to fit by app.js */
+.stage {
+  position: relative;
+  width: 1080px; height: 1920px;
+  flex-shrink: 0;
+  transform-origin: center center;
+  background: var(--stk-bg);
+  overflow: hidden;
+}
+
+/* CJK glyphs use a sans CJK face (designguide §4 exception) */
+.cjk { font-family: 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', 'Hiragino Sans GB', sans-serif; }
+
+/* depth flow fills the stage */
+#depth-host { position: absolute; inset: 0; transition: opacity .6s ease; }
+
+/* ============================================================
+   OPENING POP-FIELD — characters spawn at random spots all over the
+   screen, flashing in BIG + SHARP then scaling DOWN and blurring into
+   the background. The hero 人 spawns centred and STAYS big + sharp.
+   ============================================================ */
+.popfield { position: relative; width: 1080px; height: 1920px; }
+.pf-char {
+  position: absolute; left: 50%; top: 50%;
+  line-height: 1; white-space: nowrap; pointer-events: none;
+  opacity: 0;
+  transform: translate(-50%, -50%) translate(var(--x, 0px), var(--y, 0px)) scale(1);
+  will-change: transform, opacity, filter;
+}
+/* scribbles: pop in BIG + SHARP (≈ as big as 人), then recede ~30% smaller + a soft blur */
+.pf-char.scribble { color: rgba(35, 43, 51, .82); }
+.pf-char.scribble.in { animation: pfScribble 1.15s cubic-bezier(.2,.65,.3,1) forwards; }
+@keyframes pfScribble {
+  0%   { opacity: 0;   filter: blur(0px); transform: translate(-50%,-50%) translate(var(--x),var(--y)) scale(.6); }
+  20%  { opacity: 1;   filter: blur(0px); transform: translate(-50%,-50%) translate(var(--x),var(--y)) scale(1); }
+  55%  {               filter: blur(0px); }
+  100% { opacity: .62; filter: blur(2px); transform: translate(-50%,-50%) translate(var(--x),var(--y)) scale(.7); }
+}
+/* hero 人: same spawn, centred, NO shrink, NO blur — stays big + sharp (biggest) */
+.pf-char.hero { z-index: 5; color: var(--stk-teal-d); font-size: 320px; }
+.pf-char.hero.in { animation: pfHero .55s cubic-bezier(.34,1.56,.64,1) forwards; }
+@keyframes pfHero {
+  0%   { opacity: 0; filter: blur(0); transform: translate(-50%,-50%) scale(.5); }
+  100% { opacity: 1; filter: blur(0); transform: translate(-50%,-50%) scale(1); }
+}
+
+/* ---- top progress + corner watermark (chrome, hidden when clean) ---- */
+.vprogress { position: absolute; top: 0; left: 0; right: 0; height: 7px; background: rgba(35,43,51,.06); z-index: 80; }
+.vprogress-fill { height: 100%; width: 0; background: var(--stk-teal); transition: width .12s linear; }
+.brand-wm {
+  position: absolute; top: 40px; right: 52px; z-index: 80;
+  font-weight: 900; font-size: 34px; letter-spacing: -1px; opacity: .9;
+}
+.brand-wm .wm-stack { color: var(--stk-ink); }
+.brand-wm .wm-tags  { color: var(--stk-teal); }
+
+/* ============================================================
+   SUBTITLES — mirror the narration (theme .stk-subs); tuned a touch
+   ============================================================ */
+.stk-subs { bottom: 150px; z-index: 90; }   /* above the outro layer so the closing CTA stays captioned */
+.stk-subs-line { font-size: 46px; font-weight: 700; color: var(--stk-muted); }
+.stk-subs-line b, .stk-subs-line .key { color: var(--stk-teal-d); font-weight: 800; }
+
+/* ============================================================
+   WORD DETAIL CARD (a depth beat) — photo morphs into the character,
+   drawn stroke-by-stroke in turquoise (HanziWriter) over the fading photo.
+   ============================================================ */
+.card { width: 1000px; display: flex; flex-direction: column; align-items: center; }
+.morph { position: relative; width: 540px; height: 540px; }
+.morph-photo {
+  position: absolute; inset: 30px; z-index: 1;       /* photo reveals BEHIND the character */
+  width: 480px; height: 480px;
+  object-fit: cover; border-radius: 42px;
+  box-shadow: 0 30px 64px rgba(20,40,33,.26);
+  opacity: 0; transform: scale(.92); filter: blur(6px);
+  transition: opacity .7s ease, transform .7s cubic-bezier(.2,.8,.2,1), filter .7s ease;
+}
+.morph-hanzi { position: absolute; inset: 0; z-index: 2; display: flex; align-items: center; justify-content: center; transition: opacity .55s ease; }
+.morph-hanzi svg { overflow: visible; }
+/* the character is drawn FIRST; THEN the photo reveals while the character lingers
+   on top for ~1s (.faded), then the character fades to leave the photo. */
+.morph.revealed .morph-photo { opacity: 1; transform: none; filter: none; }
+.morph.faded .morph-hanzi { opacity: 0; }
+
+.card-py   { margin-top: 30px; font-weight: 800; font-size: 104px; letter-spacing: -2px; color: var(--stk-teal-d); line-height: 1; }
+.card-mean { margin-top: 12px; font-weight: 700; font-size: 50px; letter-spacing: -1px; color: var(--stk-ink); }
+
+/* ============================================================
+   SCRIBBLE WALL (a depth beat) — "thousands of look-alike scribbles"
+   ============================================================ */
+.scribble {
+  width: 980px; height: 1180px; overflow: hidden;
+  display: flex; align-items: center; justify-content: center;
+  -webkit-mask-image: radial-gradient(120% 88% at 50% 50%, #000 60%, transparent 100%);
+          mask-image: radial-gradient(120% 88% at 50% 50%, #000 60%, transparent 100%);
+}
+.scribble-inner {
+  font-size: 84px; line-height: 1.18; letter-spacing: 6px;
+  color: rgba(35,43,51,.20); text-align: center; word-break: break-all;
+  transition: opacity .6s ease, filter .6s ease;
+}
+
+/* ============================================================
+   ENUMERATION GRID (a depth beat) — the 10 characters lined up 1–10
+   ============================================================ */
+.enumgrid {
+  display: grid; grid-template-columns: repeat(2, 380px);
+  gap: 26px 36px; width: 800px;
+}
+.cell {
+  position: relative;
+  background: #fff; border-radius: 26px; padding: 22px 28px;
+  display: flex; align-items: center; gap: 24px;
+  box-shadow: 0 14px 32px rgba(30,72,60,.10);
+  opacity: 0; transform: translateY(22px);
+  transition: opacity .4s ease, transform .5s cubic-bezier(.34,1.56,.64,1), box-shadow .4s ease, background .4s ease;
+}
+.cell.in { opacity: 1; transform: none; }
+.cell-n {
+  flex-shrink: 0; width: 56px; height: 56px; border-radius: 999px;
+  background: var(--stk-teal-soft); color: var(--stk-teal-d);
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 900; font-size: 30px;
+}
+.cell-char { font-size: 92px; line-height: 1; color: var(--stk-ink); }
+.cell-meta { display: flex; flex-direction: column; min-width: 0; }
+.cell-py   { font-weight: 800; font-size: 32px; color: var(--stk-teal-d); letter-spacing: -.5px; }
+.cell-mean { font-weight: 600; font-size: 24px; color: var(--stk-muted); }
+.cell.active {
+  background: var(--stk-teal-soft);
+  box-shadow: 0 22px 44px rgba(53,162,146,.26);
+  transform: scale(1.06);
+}
+.cell.active .cell-char { color: var(--stk-teal-d); }
+
+/* ============================================================
+   TWIST (a depth beat) — equations STACK UP one below another;
+   each new row appears below and earlier rows stay (accumulate).
+   ============================================================ */
+.twiststack { display: flex; flex-direction: column; align-items: center; gap: 18px; }
+.crow {
+  display: flex; align-items: center; justify-content: center; gap: 22px;
+  height: 156px;
+  opacity: 0; transform: translateY(20px);
+  transition: opacity .4s ease, transform .55s cubic-bezier(.34,1.56,.64,1);
+}
+.crow.in { opacity: 1; transform: none; }
+/* each token = big character with its PINYIN below (pinyin is absolutely placed
+   so the + / = operators stay aligned to the character height, not the column) */
+.ct { position: relative; display: inline-block; }
+.cglyph { display: block; font-size: 104px; line-height: 1; color: var(--stk-ink); }
+.cpy {
+  position: absolute; left: 50%; top: 100%; transform: translateX(-50%);
+  margin-top: 4px; white-space: nowrap;
+  font-weight: 700; font-size: 28px; letter-spacing: -.3px; color: var(--stk-muted);
+}
+.cop { font-size: 64px; font-weight: 700; color: var(--stk-muted); }
+.cres .cglyph, .cres .cpy { color: var(--stk-teal-d); }
+.clbl {
+  margin-left: 16px; font-weight: 800; font-size: 40px; letter-spacing: -.5px; color: var(--stk-ink);
+}
+
+/* ============================================================
+   RECAP GRID (a depth beat) — the 10 characters back in one clean grid
+   ============================================================ */
+.recap { display: flex; flex-direction: column; align-items: center; gap: 56px; }
+.recap-head { font-weight: 800; font-size: 70px; letter-spacing: -1.6px; color: var(--stk-ink); text-align: center; }
+.recap-head b { color: var(--stk-teal-d); }
+.recap-grid { display: grid; grid-template-columns: repeat(5, 150px); gap: 22px; }
+.recap-cell {
+  width: 150px; height: 150px; border-radius: 24px;
+  background: var(--stk-teal-soft);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 96px; line-height: 1; color: var(--stk-teal-d);
+  box-shadow: 0 12px 26px rgba(53,162,146,.14);
+  opacity: 0; transform: scale(.5);
+  transition: opacity .3s ease, transform .5s cubic-bezier(.34,1.56,.64,1);
+}
+.recap-cell.in { opacity: 1; transform: none; }
+
+/* ============================================================
+   OUTRO LAYER — closing brand card on the same grid background
+   ============================================================ */
+.outro-layer { position: absolute; inset: 0; z-index: 70; opacity: 0; pointer-events: none; transition: opacity .6s ease; }
+.outro-layer.in { opacity: 1; }
+.outro-grid { position: absolute; inset: 0; }
+#outro-host { position: absolute; inset: 0; }
+/* let the dynamic grid show through the closing card (grid-everywhere style) */
+.outro-layer .stk-outro { background: transparent; }
+
+/* ============================================================
+   HUD + clean mode
+   ============================================================ */
+.hud {
+  position: fixed; left: 50%; bottom: 26px; transform: translateX(-50%);
+  display: flex; align-items: center; gap: 14px; z-index: 9999;
+  background: rgba(255,255,255,.92); padding: 12px 18px; border-radius: 999px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.25);
+}
+.hud button {
+  border: 0; cursor: pointer; background: var(--stk-teal); color: #fff;
+  font-family: var(--stk-font); font-weight: 700; font-size: 17px;
+  padding: 11px 22px; border-radius: 999px;
+}
+.hud .info { font-weight: 700; color: #4a5560; min-width: 52px; text-align: center; }
+
+body.clean .hud,
+body.clean .vprogress,
+body.clean .brand-wm { display: none !important; }
+body.clean { background: #000; }

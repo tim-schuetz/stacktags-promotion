@@ -1,0 +1,92 @@
+VIDEO SCRIPT
+Title: 5 Chinese words you are already using
+Topic: Learn Chinese
+Target length: ~90 seconds (fits the 30s–3min window)
+Language of narration: English
+Format: Voiceover script. Spoken lines are plain text. [Bracketed lines] describe
+what is on screen AT THE SAME TIME as the narration next to them.
+
+==================================================================
+THE 5 WORDS (loanwords English quietly took from Chinese)
+==================================================================
+1. Typhoon      — 台风  táifēng    — "great wind"
+2. Tofu         — 豆腐  dòufu      — "curdled bean" (bean curd)
+3. Yin & Yang   — 阴阳  yīn yáng   — "shady side & sunny side"
+4. Taikonaut    — 太空  tàikōng    — "the great emptiness" (outer space)
+5. Paper Tiger  — 纸老虎 zhǐ lǎohǔ  — "paper tiger" (all show, no bite)
+
+Recurring visual device — "the reveal":
+The familiar English word sits on screen, then flips away to reveal the Chinese
+characters and pinyin hiding underneath it.
+
+==================================================================
+SCRIPT
+==================================================================
+
+--- HOOK (0:00–0:10) — the payoff lands in the first 5 seconds ---
+
+You already speak a little Chinese — you just don't know it yet.
+[Five English words slam onto the screen one per beat as they're named:]
+Typhoon. Tofu. Yin and yang. Taikonaut. Paper tiger.
+[Each one flickers to show the Chinese characters behind it.]
+Every one is an English word that came straight out of Chinese.
+
+We all know English borrowed from Latin and French —
+[Word-origin tags fly in: Latin, French, German...]
+but it quietly pocketed a few from the other side of the world, with some wild
+stories attached.
+[The European tags get swept aside; a red Chinese tag drops in.]
+Here are 5 Chinese words you're already using.
+
+[ENUMERATION ANIMATION: the 5 words stack into a list 1–5, camera zooms into number 1.]
+
+--- THE 5 (≈0:10–1:25) ---
+
+First, the one nobody suspects — the weather.
+1) Typhoon — 台风.
+[REVEAL: a swirling storm → "TYPHOON" → flips to 台风 / táifēng.]
+That monster storm off the Pacific? The word comes from Chinese 台风 — roughly
+"the great wind."
+
+From the weather to your lunch.
+2) Tofu, or in Chinese: 豆腐.
+[REVEAL: a block of tofu → "TOFU" → flips to 豆腐; 豆 and 腐 highlight separately.]
+豆 means "bean," and 腐 means "curdled." So every time you order tofu, you're
+literally asking for "curdled bean" — a dish coined in China over two thousand
+years ago.
+
+Next, an idea you've definitely seen.
+3) Yin and Yang.
+[REVEAL: the black-and-white swirl spins in → "YIN & YANG" → flips to 阴阳; 阴 darkens, 阳 brightens.]
+阴, is the shady side of a hill; 阳, the sunny side — opposites that
+need each other.
+[Cut to the South Korean flag; the centre symbol zooms in.]
+And yes — that's the symbol in the middle of the South Korean flag, which fuels
+a quiet tug-of-war: an ancient Chinese concept that became a national emblem
+next door.
+
+4) Taikonaut — 太空.
+[Three spacesuits line up with their flags: USA, Russia, China.]
+Every space nation names its travelers for the heavens. America has astronauts —
+Greek for "star." Russia, cosmonauts - "cosmos." And China?
+[REVEAL: the Chinese suit steps forward → "TAIKONAUT" → flips to 太空 / tàikōng.]
+Taikonauts — from 太空, literally "the great emptiness." Outer space,
+named like a poem.
+
+Our last one isn't a thing — it's an insult that went global.
+5) Paper Tiger — 纸老虎.
+[REVEAL: a roaring tiger crumples into origami paper → "PAPER TIGER" → flips to 纸老虎.]
+A paper tiger looks terrifying — until you see it can't bite. The phrase
+conquered English in 1946, when Mao Zedong called US imperialism "a paper
+tiger." It got translated word-for-word, and it stuck.
+
+--- OUTRO / CTA (≈1:25–1:35) ---
+
+So — typhoon, tofu, yin and yang, taikonaut, paper tiger.
+[The five words line back up, each showing its Chinese characters underneath.]
+Five words you've spoken your whole life, without realizing they were Chinese.
+The language is closer than it looks.
+
+Wanna actually start learning Chinese?
+[Stacktags logo animates in; "stacktags.io" shown on screen.]
+Discover thousands of free exercises and more learning content on stacktags.io.

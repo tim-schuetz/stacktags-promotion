@@ -1,0 +1,95 @@
+VIDEO SCRIPT
+Title: Mandarin is broken — and you hear it in every pop song
+(working title, DE: "Mandarin ist sprachlich kaputt – und du hörst es in jedem Pop-Song")
+Topic: Learn Chinese
+Target length: ~105 seconds (fits the 30s–3min window)
+Language of narration: English
+Format: Voiceover script. Spoken lines are plain text. [Bracketed lines] describe
+what is on screen AT THE SAME TIME as the narration next to them.
+
+==================================================================
+THE CORE IDEA
+==================================================================
+Over ~1,000 years, Mandarin shed most of its sounds: the hard final consonants
+-p, -t, -k, -m all disappeared, and the syllable count collapsed (counter:
+~1200 → ~400). Fewer sounds → rhyme pool collapses → you hear it in pop music.
+Cantonese kept the old endings + tones, so Tang-dynasty poems still rhyme there.
+Punchline: Mandarin won the country — but lost the sound.
+
+NOTE (honesty): "broken" is the provocative hook, not a literal verdict — the
+real story is erosion / simplification, resolved by the punchline (a trade-off,
+not a defect). Syllable numbers are rounded for the on-screen counter.
+
+KEY VISUALS (as requested):
+- A live syllable counter that ticks DOWN: 1200 → 400.
+- Before/after example words shown in BIG CAPITALS (e.g., 月: NGWAT → YUÈ).
+- GLOBE SVG spins and zooms onto Hong Kong / Guangdong.
+
+==================================================================
+SCRIPT
+==================================================================
+
+--- HOOK (0:00–0:06) — just state the title ---
+
+Mandarin is a broken language — and you can hear it in every pop song.
+[Title card; underneath, a Mandarin pop track plays, its waveform all long, open vowels.]
+
+--- THE TANG GOLDEN AGE (≈0:06–0:35) ---
+
+It wasn't always this way. Rewind to the Tang dynasty — China's golden age of
+poetry. Back then the language had roughly three to four times as many distinct
+syllables as Mandarin does now.
+[A syllable counter appears, glowing at ~1200.]
+And words ended in crisp, hard consonants — p, t, k, and m. Take the word for
+"moon," 月.
+[Hero card: the character 月.]
+In Tang Chinese, it sounded like this —
+[Big capitals slam on: NGWAT]
+"ngwat." A hard stop, right on that -t.
+
+--- THE COLLAPSE (≈0:38–1:05) ---
+
+Now fast-forward to Mandarin. That same word?
+[The capitals morph: NGWAT → YUÈ.]
+"Yuè." The hard ending — gone. And it isn't just this one word.
+[Rapid trio, old sound → Mandarin, each ending dropping off:]
+Ten: "sap" became "shí". Six: "luk" became "liù". Heart: "sam" became xin.
+Every one of those final consonants — p, t, k, m — vanished from Mandarin
+completely.
+[The counter now ticks DOWN live: 1200 ... 800 ... 400.]
+The result: a language of 1.4 billion people, running on only about 400 syllables.
+
+--- WHY YOU HEAR IT IN POP (≈1:05–1:25) ---
+
+And when you cram that many words into so few sounds, the rhyme pool collapses.
+Everything starts to sound the same.
+[A web of different words all sliding onto identical syllables.]
+That's why so much Mandarin pop leans on long, open vowels — ahh, eyy, ohh,
+wayy. There are no crisp endings left to snap a line shut.
+[Pop waveform again: long, held, open vowels.]
+
+--- THE SOUTHERN TIME CAPSULE (≈1:25–1:50) ---
+
+But head south — to Hong Kong and Guangdong —
+[GLOBE SVG spins and zooms down onto Hong Kong / Guangdong.]
+and you hit the language that kept everything. Cantonese still has six tones, and
+every one of those old endings — p, t, k, m — fully intact.
+[Cantonese syllables snapping shut on hard consonants: "yut," "sap," "luk."]
+Which leads to something wild: thousand-year-old Tang poems, the ones that sound
+slightly off in Mandarin —
+[A classical poem; in Mandarin, some line-endings don't rhyme — red ✗.]
+still rhyme perfectly in Cantonese.
+[Same poem read in Cantonese; the line-endings click into rhyme — green ✓.]
+The southern dialect is basically a time capsule of how this poetry was meant to
+sound.
+
+--- PUNCHLINE / OUTRO (≈1:50–2:02) ---
+
+So here's the irony. Mandarin won —
+[Map of China fills in with Mandarin; the counter rests at 400.]
+it became the voice of a nation. But while the language won, the sound was lost.
+[The ghost of "1200" fades behind the lonely "400."]
+
+Wanna actually start learning Chinese?
+[Stacktags logo animates in; "stacktags.io" shown on screen.]
+Discover thousands of free exercises and more learning content on stacktags.io.

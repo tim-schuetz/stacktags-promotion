@@ -1,0 +1,79 @@
+VIDEO SCRIPT
+Title: What is caching?
+Topic: Software Development
+Target length: ~100 seconds (fits the 30s–3min window)
+Language of narration: English
+Format: Voiceover script. Spoken lines are plain text. [Bracketed lines] describe
+what is on screen AT THE SAME TIME as the narration next to them.
+
+==================================================================
+THE CORE IDEA
+==================================================================
+Caching = storing a copy of a result or data somewhere fast and close, so you
+never have to fetch or compute it twice. It trades a little memory + the risk of
+"stale" data for a huge speed gain. It's everywhere (CPU, browser, CDN, database).
+The famous hard part: cache invalidation — knowing when the saved copy is out of
+date.
+Punchline: almost everything that feels "fast" on a computer is just work that was
+done once, and remembered.
+
+KEY VISUALS:
+- First load: a slow trip to a distant database. Second load: pulled instantly
+  from a nearby "cache" box.
+- The "stale copy" problem: the original changes, the cached copy still shows the
+  old value.
+
+==================================================================
+SCRIPT
+==================================================================
+
+--- HOOK (0:00–0:10) — the payoff up front ---
+
+Why does a website load slowly the first time, then instantly the second?
+[A page crawling in, then snapping in instantly on reload.]
+One trick sits behind almost all computer speed: caching. It's basically the art
+of being lazy — never doing the same work twice.
+[A "cache" box catching a result and handing back the saved copy.]
+
+--- THE IDEA (≈0:10–0:35) ---
+
+Some things are slow to get: reading from a faraway database, rendering a page,
+loading a big image.
+[A long trip out to a distant database and back.]
+So the first time you do it, you save a copy somewhere fast and nearby — a cache.
+The next time, you grab the saved copy instead of redoing all that work.
+[Second request stops at the nearby cache box — instant.]
+You did the hard work once, and just... remembered the answer.
+
+--- IT'S EVERYWHERE (≈0:35–0:58) ---
+
+And this happens at every layer of computing. Your browser caches a site's images
+so your second visit doesn't re-download them.
+[Browser pulling images from local storage.]
+Your processor keeps tiny caches of data it's about to reuse. Apps cache expensive
+calculations. CDNs cache web content near you. Databases cache common queries.
+[Cache boxes lighting up at CPU, app, CDN, and database levels.]
+Speed, almost everywhere, is really just caching.
+
+--- THE HARD PART (≈0:58–1:25) ---
+
+But there's a catch — and it's famous. There's an old joke that there are only two
+hard things in computer science: naming things... and cache invalidation.
+["Two hard things: naming, and cache invalidation."]
+Here's why. When the original data changes, your saved copy is suddenly wrong —
+stale.
+[The real value updates; the cached copy still shows the old number.]
+Knowing exactly when to throw the old copy away is genuinely tricky. Serve a stale
+price, or a stale account balance, and you've got a real bug.
+
+--- PUNCHLINE / OUTRO (≈1:25–1:38) ---
+
+So caching is a trade: a little memory, and the risk of staleness, in exchange for
+a huge jump in speed.
+[The fast cached path glowing next to the slow original path.]
+Almost everything that feels instant on a computer is just something that was done
+once — and remembered.
+
+Want more of how computers actually work?
+[Stacktags logo animates in with a "Follow" prompt.]
+Follow Stacktags.

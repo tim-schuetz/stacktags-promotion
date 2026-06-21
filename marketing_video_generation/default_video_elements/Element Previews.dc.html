@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<div style="min-height:100vh;box-sizing:border-box;background:#10201b;background-image:radial-gradient(120% 70% at 50% 0%, #163127 0%, #0d1a16 60%);padding:60px 48px 90px;font-family:'Inter',system-ui,sans-serif;color:#e7f4ef;">
+  <div style="max-width:1080px;margin:0 auto 46px;text-align:center;">
+    <div style="font-size:13px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#6fe3c6;">Stacktags · video elements</div>
+    <div style="font-size:34px;font-weight:800;letter-spacing:-1px;margin-top:10px;color:#ffffff;">Elemente — Einzelansichten</div>
+    <div style="font-size:15px;font-weight:500;color:#9fc3b6;margin-top:8px;">Jede Ansicht öffnet in einem eigenen Fenster. Dort startest du die Animation per <b style="color:#6fe3c6;">▶ Play</b>.</div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px;max-width:1080px;margin:0 auto;">
+    <sc-for list="{{ items }}" as="it" hint-placeholder-count="11">
+      <a href="{{ it.href }}" style="display:flex;flex-direction:column;gap:6px;text-decoration:none;background:rgba(255,255,255,.04);border:1px solid rgba(111,227,198,.16);border-radius:18px;padding:24px 26px;transition:background .15s,border-color .15s;" style-hover="background:rgba(111,227,198,.10);border-color:rgba(111,227,198,.4)">
+        <div style="display:flex;align-items:center;gap:10px;">
+          <span style="font-size:13px;font-weight:800;color:#0d1a16;background:#6fe3c6;border-radius:7px;padding:3px 9px;">▶</span>
+          <span style="font-size:19px;font-weight:800;color:#ffffff;letter-spacing:-.3px;">{{ it.title }}</span>
+        </div>
+        <span style="font-size:14px;font-weight:500;color:#9fc3b6;padding-left:2px;">{{ it.sub }}</span>
+      </a>
+    </sc-for>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      items: [
+        { title: 'Globe — Dive-in', sub: 'Zoom auf den Punkt · Swoosh am Ende', href: 'globe/demo.html' },
+        { title: 'Globe — mit Route', sub: 'Schiff fährt die gestrichelte Linie über den Globus · Gebäude am Ziel', href: 'globe-with-track/demo.html' },
+        { title: 'Figuren mit Sprechblasen', sub: 'Zwei Figuren + Official danach · Comic-Sprechblasen', href: 'figure/demo.html' },
+        { title: 'Enumeration', sub: 'In-Detail Follow-up · Swoosh beim Stapeln', href: 'enumeration_with_in_detail_follow_up/demo.html' },
+        { title: 'Text Depth (optimiert)', sub: 'Kamerafahrten · Cut-outs · Swoosh', href: 'text-depth-transitions-example-optimized/demo.html' },
+        { title: 'Text Popup', sub: 'Chinesisch · überlagernd', href: 'text-popup/demo.html' },
+        { title: 'Timeline', sub: 'Lineal-Ticks · Ticking + Swoosh', href: 'timeline/demo.html' },
+        { title: 'Graph Chart', sub: 'Linie + Endpunkt', href: 'graph-chart/demo.html' },
+        { title: 'Graph Chart v2', sub: 'Kamera-Zoom-out · vertikale Skala · Ticking', href: 'graph-chart-v2/demo.html' },
+        { title: 'Bar Chart', sub: 'Balkendiagramm', href: 'charts/bar-chart/demo.html' },
+        { title: 'Bar Chart v2', sub: 'Breitere Säulen · links→rechts', href: 'charts/bar-chart-v2/demo.html' },
+        { title: 'Donut Chart', sub: 'Bogen-Legende · Swoosh', href: 'charts/donut-chart/demo.html' },
+        { title: 'Pie Chart', sub: 'Segment-Labels · Swoosh', href: 'charts/pie-chart/demo.html' },
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>

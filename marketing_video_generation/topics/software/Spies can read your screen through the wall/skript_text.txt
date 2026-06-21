@@ -1,0 +1,79 @@
+VIDEO SCRIPT
+Title: Spies can read your screen through the wall
+Topic: Software
+Target length: ~95 seconds (fits the 30s–3min window)
+Language of narration: English
+Format: Voiceover script. Spoken lines are plain text. [Bracketed lines] describe
+what is on screen AT THE SAME TIME as the narration next to them.
+
+==================================================================
+THE CORE IDEA
+==================================================================
+Screens (and most electronics) leak faint electromagnetic emissions as they work.
+With the right equipment, an eavesdropper can pick up those stray signals from a
+distance — even through a wall — and reconstruct what's on your screen, with no
+cable, malware, or network access. This is "Van Eck phreaking" (Wim van Eck, 1985);
+the defense standard is TEMPEST, used for shielded government equipment.
+Punchline: your devices quietly broadcast their secrets into the air — and someone
+might be listening.
+
+NOTE (honesty): it needs specialized equipment + relative proximity; modern displays
+leak less than old CRTs but the threat is real — that's why shielding exists.
+
+KEY VISUALS:
+- A monitor emitting faint radio waves; a receiver in the next room rebuilding the
+  same image, ghostly, through the wall.
+- A "TEMPEST-shielded" PC in a metal-lined room.
+
+==================================================================
+SCRIPT
+==================================================================
+
+--- HOOK (0:00–0:12) — the payoff up front ---
+
+Your screen is secretly broadcasting everything on it — like a tiny radio station.
+[A monitor with faint waves rippling off it into the air.]
+And with the right equipment, someone in the next room could rebuild your screen —
+through the wall — without ever touching your computer. Here's how.
+[A receiver next door; a ghostly copy of the screen forming on it.]
+
+--- THE LEAK (≈0:12–0:40) ---
+
+Every electronic device gives off faint electromagnetic waves as it runs —
+unintentional, invisible radio signals. And your monitor, as it draws each image,
+leaks a signal that echoes exactly what it's showing.
+[The screen's content rippling outward as waves.]
+You can't see it. You can't feel it. But that signal is escaping into the air around
+you, all the time.
+
+--- THE ATTACK (≈0:40–1:05) ---
+
+In the 1980s, a researcher named Wim van Eck proved you could catch those emissions
+from a distance — with surprisingly simple gear — and reconstruct the picture on the
+screen.
+[A receiver tuning in; a fuzzy image sharpening into the victim's screen.]
+No cable. No malware. No network connection at all. Just listening to the leak.
+It's called Van Eck phreaking. And because radio waves pass through walls, the
+eavesdropper doesn't even need to be in the room. The next office, or a van outside,
+is enough.
+[A van on the street; the target's screen mirrored inside.]
+
+--- THE DEFENSE (≈1:05–1:25) ---
+
+This threat is taken so seriously that governments shield their sensitive computers
+and entire rooms against it — a set of standards known as TEMPEST.
+[A metal-lined room; a shielded PC; the waves hitting the walls and dying.]
+Special shielded machines, shielded walls, so the emissions simply can't escape.
+That's how real this is: there are computers built specifically so they can't be
+read through the wall.
+
+--- PUNCHLINE / OUTRO (≈1:25–1:38) ---
+
+You think your screen is private because nobody's looking over your shoulder.
+[A person alone at their desk, feeling safe.]
+But your devices are quietly shouting their secrets into the air — and sometimes,
+someone is listening.
+
+Want more stories of how technology really works?
+[Stacktags logo animates in; "stacktags.io" shown on screen.]
+Discover thousands of free exercises and more learning content on stacktags.io.

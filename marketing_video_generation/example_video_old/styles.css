@@ -1,0 +1,2684 @@
+/* ============================================================
+   Stacktags Promo Video — complete styles
+   Stage: 1920×1080, auto-scaled to viewport
+   ============================================================ */
+:root {
+  --teal: #3EAE93;
+  --teal-d: #119271;
+  --teal-dd: #063A2C;
+  --teal-light: #e7f4ef;
+  --ink: #232B33;
+  --ink-2: #4a5560;
+  --muted: #6b7680;
+  --border: #e5e7eb;
+  --border-l: #f0f2f4;
+  --bg-2: #f8fafa;
+  --bg-3: #eef2f1;
+  --bg-dark: #0a1814;
+}
+
+* { box-sizing: border-box; }
+html, body {
+  margin: 0; padding: 0; height: 100%; overflow: hidden;
+  background: #000;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  color: var(--ink);
+}
+
+.root {
+  position: fixed; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+}
+
+/* 1920×1080 fixed stage scaled to fit viewport */
+.stage {
+  position: relative;
+  width: 1920px; height: 1080px;
+  background: #fff;
+  overflow: hidden;
+  transform-origin: center center;
+  flex-shrink: 0;
+}
+
+.scene {
+  position: absolute; inset: 0;
+  background: #fff;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .45s ease;
+}
+.scene.active { opacity: 1; pointer-events: auto; }
+.scene.leaving { opacity: 0; pointer-events: none; }
+
+/* Typewriter cursor */
+.cursor {
+  display: inline-block;
+  width: 3px; height: 1em;
+  background: currentColor;
+  margin-left: 4px;
+  vertical-align: -0.15em;
+  animation: blink .85s steps(1) infinite;
+}
+@keyframes blink { 50% { opacity: 0; } }
+
+/* ============================================================
+   HUD
+   ============================================================ */
+.hud {
+  position: fixed; bottom: 18px; left: 50%;
+  transform: translateX(-50%);
+  display: flex; gap: 10px; z-index: 9999;
+  background: rgba(15, 20, 23, .9);
+  border: 1px solid #232a2e;
+  padding: 8px 12px; border-radius: 10px;
+  backdrop-filter: blur(8px);
+}
+.hud button {
+  background: #1a2024; color: #fff; border: none;
+  padding: 10px 18px; font-size: 13px; font-weight: 700;
+  border-radius: 6px; cursor: pointer;
+  font-family: inherit; letter-spacing: .2px;
+  transition: background .15s ease, transform .12s ease;
+}
+.hud button:hover:not(:disabled) { background: #2a3338; }
+.hud button:active:not(:disabled) { transform: translateY(1px); }
+.hud button:disabled { opacity: .45; cursor: not-allowed; }
+/* Clean / recording mode: hide the control bar entirely (toggle with "C").
+   The stage then uses the FULL viewport (see fit() in video.js), perfectly
+   centered on black — ideal for a screen recording with no chrome. */
+body.clean .hud { display: none; }
+body.clean { cursor: none; }
+.hud button#play { background: var(--teal); }
+.hud button#play:hover:not(:disabled) { background: #4cc4a8; }
+.hud button#record { background: #c0392b; }
+.hud .info { color: #aaa; font-size: 12px; align-self: center; padding: 0 8px; min-width: 130px; text-align: center; }
+
+/* ============================================================
+   SCENE 1 — Opening + Logo formation (MERGED)
+   The 3 panels start at full size, then shrink/morph IN-PLACE into the
+   rhombus top-face of Stacktags stack layers (i=1,2,3). The cap drops in
+   from above and the chevrons swoop in to complete the logo. No scene cut.
+   Coordinate system: 1920×1080 stage, logo center (960, 540), scale 1.5×.
+     HALF_W=255, HALF_H=127.5, SIDE_H=45, STEP=84.
+     Layer center Y: cap=414, L1=498, L2=582, L3=666.
+   ============================================================ */
+.s-1 {
+  background: #ffffff;
+  color: #0a0a0a;
+}
+/* Dark teal gradient lives on a pseudo-element so we can crossfade it
+   to white smoothly when .bg-white is toggled (gradient backgrounds
+   themselves don't transition, but opacity does). ::before paints
+   BEFORE the scene's normal children, so it sits as the back layer. */
+.s-1::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 50% 60%, #0a2e26 0%, #050a08 60%, #000 100%);
+  /* REVERSIBLE EDIT: scene-1 is now WHITE from the very start (was dark teal).
+     Original value: opacity: 1; */
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 1.2s ease;
+}
+/* When the brand wordmark slides in, fade the dark layer out to reveal
+   the white scene background underneath. */
+.s-1.bg-white::before { opacity: 0; }
+
+/* Default text color inside scene 1 stays white until the bg flips. */
+/* REVERSIBLE EDIT: default scene-1 text is now dark (was #fff) because the
+   background is white from the start. Original value: color: #fff; */
+.s-1 .s1-stage,
+.s-1 .s1-caption,
+.s-1 .s1-word { color: #0a0a0a; transition: color 1.2s ease; }
+.s-1.bg-white .s1-stage,
+.s-1.bg-white .s1-caption,
+.s-1.bg-white .s1-word { color: #0a0a0a; }
+
+.s-1.bg-white .s1-brand-stack { color: #0a0a0a; }
+.s-1.bg-white .s1-brand-tags  { color: #3EAE93; }
+.s-1.bg-white .s1-caption-bot,
+.s-1.bg-white .s1-caption-bot .s1-cap-text { color: #0a0a0a; }
+.s-1.bg-white .s1-caption-bot .cursor { background: #0a0a0a; }
+.s-1.bg-white .logo-halo { display: none; }
+/* Accent words in the bottom caption ("competitive", "in the world"). */
+.s1-accent { color: var(--teal) !important; }
+
+/* ---------- Intro overlay: "What is stacktags?" ---------- */
+.s1-intro {
+  position: absolute; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  z-index: 20;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .5s ease;
+}
+.s-1.intro-on .s1-intro { opacity: 1; }
+.s1-intro-text {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-weight: 800;
+  font-size: 96px;
+  letter-spacing: -1.6px;
+  /* REVERSIBLE EDIT: intro "What is stacktags?" is now black-on-white
+     (was white). Original value: color: #fff; */
+  color: #0a0a0a;
+  text-align: center;
+  white-space: nowrap;
+}
+.s1-intro-brand {
+  font-family: 'Nunito', system-ui, sans-serif;
+  font-weight: 900;
+}
+/* REVERSIBLE EDIT: intro "stack" is now black (was #ffffff), "tags" stays teal
+   → black-turquoise wordmark on the white background. */
+.s1-intro-brand .wm-stack { color: #0a0a0a; }
+.s1-intro-brand .wm-tags  { color: #3EAE93; }
+
+/* During the intro, the morph stage + word labels stay hidden so nothing
+   peeks behind the caption. */
+.s-1.intro-on .s1-stage,
+.s-1.intro-on .s1-caption,
+.s-1.intro-on .s1-word-labels,
+.s-1.intro-on .s1-brand { opacity: 0 !important; }
+.s-1 {
+  /* Override .scene default flex centering so children use stage coords. */
+  display: block;
+}
+.s1-stage {
+  position: absolute; inset: 0;
+  overflow: hidden;
+}
+
+/* ─── Morphing panels ─── */
+.morph-pane {
+  position: absolute;
+  transform-origin: center center;
+  transition:
+    left 1.2s cubic-bezier(.65,0,.35,1),
+    top 1.2s cubic-bezier(.65,0,.35,1),
+    width 1.2s cubic-bezier(.65,0,.35,1),
+    height 1.2s cubic-bezier(.65,0,.35,1),
+    opacity .8s ease;
+  opacity: 0;
+  z-index: 3;
+}
+.morph-pane::before {
+  content: ''; position: absolute; inset: -40px;
+  border-radius: 60px;
+  background: radial-gradient(ellipse at center, rgba(70,172,148,.18), transparent 70%);
+  z-index: -1; pointer-events: none;
+  opacity: 1;
+  transition: opacity .55s ease;
+}
+.s1-stage.morph .morph-pane::before { opacity: 0; }
+.morph-pane.rise { opacity: 1; }
+
+/* Pane positions — scene 1 (full size, in row) */
+/* REVERSIBLE EDIT v8: side panels a tick wider again.
+   (v4 was: tt left170 w450 · stadium left1320 w430) */
+.morph-tt       { left: 150px;  top: 110px; width: 480px; height: 780px; }
+.morph-yt       { left: 640px;  top: 110px; width: 640px; height: 780px; }
+.morph-stadium  { left: 1300px; top: 110px; width: 470px; height: 780px; }
+
+/* Pane positions — morph state (rhombus top of logo layer).
+   All centered horizontally at x=705 (= 960 - 255 = (1920-510)/2). */
+.s1-stage.morph .morph-tt       { left: 705px; top: 370.5px; width: 510px; height: 255px; }
+.s1-stage.morph .morph-yt       { left: 705px; top: 454.5px; width: 510px; height: 255px; }
+.s1-stage.morph .morph-stadium  { left: 705px; top: 538.5px; width: 510px; height: 255px; }
+
+.morph-shell {
+  position: absolute; inset: 0;
+  border-radius: 20px;
+  overflow: hidden;
+  /* REVERSIBLE EDIT v6: even, all-around soft shadow (was a single downward
+     glow). Prev: 0 18px 44px rgba(35,80,68,.14); */
+  box-shadow: 0 8px 30px rgba(30,72,60,.17), 0 2px 8px rgba(0,0,0,.06);
+  transition: border-radius .9s ease, box-shadow .9s ease, clip-path .9s cubic-bezier(.65,0,.35,1);
+  /* REVERSIBLE EDIT v6: resting clip-path is now OVERSIZED (was the exact box
+     0/100%) so it no longer clips the drop-shadow in real browsers — the
+     shadow now shows around the rounded edge, and the corner is clean. It
+     still collapses to the rhombus during morph. */
+  clip-path: polygon(-40% -18%, 140% -18%, 140% 118%, -40% 118%);
+}
+.s1-stage.morph .morph-shell {
+  border-radius: 0;
+  box-shadow: none;
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+}
+/* REVERSIBLE EDIT v6: per-panel corner rounding — outer panels LESS round,
+   middle panel MORE round, so they read consistently. */
+.morph-tt .morph-shell,
+.morph-stadium .morph-shell { border-radius: 13px; }
+.morph-yt .morph-shell      { border-radius: 22px; }
+
+/* TikTok phone — chrome is the rounded black bezel + tabs/actions/tabbar */
+.morph-tt .tt-phone {
+  position: absolute; inset: 0;
+  background: #000;
+  border-radius: 42px;
+  padding: 10px;
+  border: 2px solid #1b1b1b;
+  transition: border-radius .9s ease, padding .9s ease, border-width .9s ease, background .9s ease;
+}
+.s1-stage.morph .morph-tt .tt-phone {
+  border-radius: 0; padding: 0; border-width: 0; background: transparent;
+}
+.morph-tt .tt-screen {
+  width: 100%; height: 100%;
+  background: linear-gradient(180deg, #000, #1a0a14);
+  border-radius: 32px;
+  overflow: hidden;
+  position: relative;
+  transition: border-radius .9s ease;
+}
+.s1-stage.morph .morph-tt .tt-screen { border-radius: 0; }
+.tt-bg-video {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  z-index: 1;
+  filter: saturate(.55) brightness(.7) contrast(1.05);
+}
+/* Animated abstract Teal background (replacement for distracting TT video).
+   Three soft, slow-moving radial blobs in dark-teal tones. Fills the same
+   slot as the old video. */
+.tt-bg-anim {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  z-index: 1;
+}
+
+/* Universal teal-tint overlay sitting on every panel's content. Unifies
+   TikTok / YouTube / Stadium into one teal-dark mood. */
+.morph-tint {
+  position: absolute; inset: 0;
+  pointer-events: none;
+  z-index: 6;
+  background:
+    linear-gradient(180deg,
+      rgba(15, 60, 50, .35) 0%,
+      rgba(15, 60, 50, .15) 35%,
+      rgba(10, 46, 38, .45) 75%,
+      rgba(10, 46, 38, .8) 100%);
+  /* REVERSIBLE EDIT: the dark teal tint is now hidden while the panels are at
+     full size (they're light app-UI previews on a white bg). It fades back IN
+     only as they collapse into the logo, to unify the rhombus faces.
+     To revert: delete the two lines below + the .s1-stage.morph rule. */
+  opacity: 0;
+  transition: opacity .55s ease;
+}
+.s1-stage.morph .morph-tint { opacity: 1; }
+
+/* Chrome (notch, tabs, text, actions, tabbar, YT bar + meta) fades on morph */
+.morph-chrome { opacity: 1; transition: opacity .55s ease; }
+.s1-stage.morph .morph-chrome { opacity: 0; }
+
+/* TikTok chrome positioning */
+.morph-tt .tt-notch { position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 130px; height: 28px; background: #000; border-radius: 0 0 14px 14px; z-index: 5; }
+.morph-tt .tt-tabs { position: absolute; top: 36px; left: 0; right: 0; z-index: 4; display: flex; justify-content: center; gap: 24px; color: rgba(255,255,255,.78); font-size: 14px; font-weight: 600; }
+.morph-tt .tt-tab-active { color: #fff; border-bottom: 2px solid #fff; padding-bottom: 4px; }
+.morph-tt .tt-text { position: absolute; left: 14px; right: 90px; bottom: 80px; color: #fff; z-index: 4; text-shadow: 0 1px 3px rgba(0,0,0,.7); }
+.morph-tt .tt-user { font-weight: 800; font-size: 18px; margin-bottom: 6px; }
+.morph-tt .tt-cap { font-size: 13px; font-weight: 500; line-height: 1.35; }
+.morph-tt .tt-actions { position: absolute; right: 10px; bottom: 90px; display: flex; flex-direction: column; align-items: center; gap: 18px; z-index: 4; }
+.morph-tt .tt-avatar { width: 48px; height: 48px; border-radius: 50%; background: linear-gradient(135deg, #fe2c55, #ff7066); border: 2px solid #fff; }
+.morph-tt .tt-act { display: flex; flex-direction: column; align-items: center; gap: 2px; color: #fff; }
+.morph-tt .tt-act-ic { width: 36px; height: 36px; border-radius: 50%; background: rgba(255,255,255,.18); display: flex; align-items: center; justify-content: center; font-size: 18px; }
+.morph-tt .tt-act-n { font-size: 11px; font-weight: 700; }
+.morph-tt .tt-tabbar { position: absolute; left: 0; right: 0; bottom: 0; height: 56px; background: #000; display: flex; justify-content: space-around; align-items: center; color: #fff; font-size: 11px; font-weight: 600; padding: 0 12px; z-index: 5; }
+.morph-tt .tt-plus { background: linear-gradient(90deg, #25f4ee, #fff, #fe2c55); color: #000; font-size: 18px; width: 38px; height: 24px; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-weight: 800; }
+
+/* YouTube panel */
+.morph-yt .yt-frame {
+  position: absolute; inset: 0;
+  background: #0f0f0f;
+  border-radius: 20px;
+  border: 1px solid #1f1f1f;
+  display: flex; flex-direction: column;
+  overflow: hidden;
+  transition: border-radius .9s ease, border-width .9s ease;
+}
+.s1-stage.morph .morph-yt .yt-frame { border-radius: 0; border-width: 0; }
+.yt-bar { height: 56px; background: #0f0f0f; display: flex; align-items: center; padding: 0 18px; gap: 14px; border-bottom: 1px solid #272727; }
+.yt-logo { color: #fff; font-weight: 700; font-size: 18px; }
+.yt-logo::first-letter { color: #ff0000; font-size: 24px; margin-right: 2px; }
+.yt-search { flex: 1; max-width: 280px; height: 30px; background: #121212; border: 1px solid #303030; border-radius: 24px; padding: 0 14px; display: flex; align-items: center; color: #888; font-size: 13px; margin-left: 24px; }
+.yt-avatar { width: 32px; height: 32px; border-radius: 50%; background: linear-gradient(135deg, #7209b7, #ff7066); margin-left: auto; }
+.yt-grid {
+  flex: 1; display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px; padding: 18px;
+  overflow: hidden;
+  transition: padding .9s ease, gap .9s ease, grid-template-columns .9s ease;
+}
+.s1-stage.morph .morph-yt .yt-grid {
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+  padding: 8px;
+}
+.yt-card { display: flex; flex-direction: column; gap: 8px; }
+.yt-thumb {
+  aspect-ratio: 16/9; border-radius: 10px;
+  background-size: cover; background-position: center;
+  position: relative;
+  /* Tint thumbs toward teal so they harmonize with stadium */
+  filter: saturate(.55) hue-rotate(-20deg) brightness(.75);
+}
+.yt-dur { position: absolute; right: 6px; bottom: 6px; background: rgba(0,0,0,.8); color: #fff; font-size: 11px; padding: 2px 5px; border-radius: 3px; font-weight: 600; }
+.yt-meta { display: flex; gap: 8px; align-items: flex-start; }
+.yt-channel-av { width: 26px; height: 26px; border-radius: 50%; background: linear-gradient(135deg, #46AC94, #063A2C); flex-shrink: 0; margin-top: 2px; }
+.yt-title { color: #fff; font-size: 13px; font-weight: 600; line-height: 1.3; margin-bottom: 3px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.yt-sub { color: #aaa; font-size: 11px; }
+
+/* Stadium video (no chrome — just video + tint) */
+.morph-stadium .morph-shell { background: #1a3c2f; }
+.morph-stadium video { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+/* ─── Logo elements: cap + side faces + chevrons + halo ─── */
+
+/* Z-order: upper stack layers cover lower ones.
+   L3 (back) → L3 sides → L2 → L2 sides → L1 → L1 sides → Cap (front).
+   Both each layer's morph-pane (top rhombus) and its sides SVG get the
+   same z so the layer renders as a unit, then the layer above covers it. */
+.morph-stadium  { z-index: 3; }   /* L3 (bottom of stack) */
+.logo-sides-3   { z-index: 3; }
+.morph-yt       { z-index: 4; }   /* L2 */
+.logo-sides-2   { z-index: 4; }
+.morph-tt       { z-index: 5; }   /* L1 (top of the 3 video layers) */
+.logo-sides-1   { z-index: 5; }
+.logo-cap       { z-index: 6; }   /* Cap (front) */
+.logo-chev      { z-index: 7; }
+
+/* Side faces for L1/L2/L3 — visible after morph. */
+.logo-sides {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  opacity: 0;
+  transition: opacity .55s ease .55s;
+  pointer-events: none;
+}
+.s1-stage.morph .logo-sides { opacity: 1; }
+
+/* Cap (layer 0): drops in from above */
+.logo-cap {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  opacity: 0;
+  transform: translateY(-280px);
+  transition: opacity .55s ease, transform .75s cubic-bezier(.34,1.56,.64,1);
+  pointer-events: none;
+  /* z-index set in the consolidated z-order block above (z=6) */
+}
+.s1-stage.cap-in .logo-cap { opacity: 1; transform: translateY(0); }
+
+/* Chevrons */
+.logo-chev {
+  position: absolute;
+  top: 50%;
+  width: 80px; height: 200px;
+  opacity: 0;
+  transition: opacity .5s ease, transform .65s cubic-bezier(.22,1,.36,1);
+  /* z-index set in the consolidated z-order block above (z=7) */
+}
+.logo-chev-l { left: 480px;  transform: translate(-220px, -50%); }
+.logo-chev-r { left: 1360px; transform: translate(220px, -50%); }
+.s1-stage.chev-in .logo-chev { opacity: 1; }
+.s1-stage.chev-in .logo-chev-l { transform: translate(0, -50%); }
+.s1-stage.chev-in .logo-chev-r { transform: translate(0, -50%); }
+
+/* Halo pulse */
+.logo-halo {
+  position: absolute; left: 50%; top: 50%;
+  width: 720px; height: 720px;
+  margin-left: -360px; margin-top: -360px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(70,172,148,.28), transparent 60%);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+.s1-stage.settled .logo-halo { opacity: 1; animation: s1HaloPulse 2.4s ease-out; }
+@keyframes s1HaloPulse {
+  0%   { transform: scale(.6); opacity: 0; }
+  40%  { transform: scale(1.05); opacity: 1; }
+  100% { transform: scale(1.25); opacity: .4; }
+}
+
+/* Word labels under each panel — fly in synced with the panel.
+   Panels: TT left=240 (cw=380, center 430), YT left=670 (cw=560, center 950),
+   Stadium left=1280 (cw=430, center 1495). Each word is 600px wide and
+   centered horizontally on its panel via left = center - 300. */
+.s1-word-labels {
+  position: absolute; inset: 0;
+  pointer-events: none;
+  z-index: 10;
+  transition: opacity .55s ease;
+}
+/* .s1-word-labels is a SIBLING of .s1-stage (both inside .scene.s-1), so we
+   use the general-sibling combinator ~ to react to .morph on the stage. */
+.s1-stage.morph ~ .s1-word-labels { opacity: 0; }
+
+.s1-word {
+  position: absolute;
+  text-align: center;
+  width: 600px;
+  font-size: 38px; font-weight: 800;
+  letter-spacing: -.6px; line-height: 1.15;
+  color: #fff;
+  opacity: 0;
+  transition: opacity .6s ease, transform 1s cubic-bezier(.22,1,.36,1);
+}
+.s1-word.show { opacity: 1; transform: translate(0, 0) !important; }
+/* Word 1 — centered under left panel (center x=395), enters from left */
+#s1-word-1 { left: 90px;   top: 920px; transform: translate(-1200px, 0); }
+/* Word 2 — centered under middle panel (center x=960), enters from above */
+#s1-word-2 { left: 660px;  top: 920px; transform: translate(0, -120px); }
+/* Word 3 — centered under right panel (center x=1535), enters from right */
+#s1-word-3 { left: 1235px; top: 920px; transform: translate(1200px, 0); }
+.s1-word span {
+  /* REVERSIBLE EDIT v5: labels are now two-tone türkis/black (key word teal,
+     rest black) instead of the all-teal gradient. Prior gradient kept here:
+     background: linear-gradient(90deg, #119271 0%, #3EAE93 50%, #119271 100%);
+     background-clip:text; -webkit-background-clip:text;
+     -webkit-text-fill-color:transparent; color:transparent; */
+  white-space: nowrap;
+}
+.s1-word .wl-ink  { color: #0a0a0a; }
+.s1-word .wl-teal { color: var(--teal-d); }
+
+/* REVERSIBLE EDIT v8: teal progress-style bar under the top caption,
+   running in sync with the left-to-right wipe reveal. */
+.s1-cap-bar {
+  display: block; margin: 22px auto 0;
+  width: 340px; height: 8px; border-radius: 999px;
+  background: rgba(70,172,148,.20);
+  opacity: 0; transition: opacity .3s ease;
+  overflow: hidden;
+}
+.s1-cap-bar-fill { height: 100%; width: 0; background: var(--teal); border-radius: 999px; }
+.s1-caption {
+  position: absolute; left: 0; right: 0;
+  text-align: center; color: #fff;
+  font-size: 44px; font-weight: 800;
+  letter-spacing: -1px;
+  line-height: 1.2;
+  padding: 0 120px;
+  z-index: 10;
+  transition: opacity .6s ease, transform .7s cubic-bezier(.65,0,.35,1);
+}
+/* TOP caption position. "but for learning" sits above the logo cap during
+   the morph; later replaced by the brand wordmark via brand-in.
+   Default: hidden above the stage; .morph slides it down. */
+.s1-caption.s1-caption-top {
+  top: 80px;
+  opacity: 0;
+  transform: translateY(-100px);
+  font-size: 56px;
+  letter-spacing: -1.4px;
+  text-transform: uppercase;
+  transition: opacity .6s ease, transform .7s cubic-bezier(.65,0,.35,1);
+}
+/* .s1-caption-top is a sibling of .s1-stage — use general-sibling combinator. */
+.s1-stage.morph ~ .s1-caption-top {
+  opacity: 1;
+  transform: translateY(0);
+}
+.s1-caption-bot {
+  bottom: 92px;
+  opacity: 0;
+  transform: translateY(60px);
+}
+.s1-caption-bot.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+.s1-caption-bot.fade {
+  opacity: 0;
+  transform: translateY(-20px);
+}
+/* Brand wordmark that slides down above the logo at the end of scene 1.
+   Replaces the lead-in "This is stacktags" line. Positioned just above the
+   logo top (cap at y≈286). */
+.s1-brand {
+  position: absolute;
+  left: 50%; top: 100px;
+  transform: translate(-50%, -260px);
+  font-family: 'Nunito', system-ui, sans-serif;
+  font-weight: 900;
+  font-size: 130px;
+  letter-spacing: -3px;
+  line-height: 1;
+  opacity: 0;
+  transition: opacity .6s ease, transform .9s cubic-bezier(.34,1.56,.64,1);
+  z-index: 11;
+  white-space: nowrap;
+}
+.s1-stage.brand-in ~ .s1-brand {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+.s1-brand-stack { color: #ffffff; }
+.s1-brand-tags  { color: #46AC94; }
+
+/* When the brand slides in, the previous "but for learning" caption fades.
+   Both occupy top:~80-100px so they cannot coexist. The .s1-caption-top is
+   a sibling of .s1-stage, so use the general-sibling combinator. */
+.s1-stage.brand-in ~ .s1-caption-top {
+  opacity: 0;
+  transform: translateY(0);
+  /* Disappear instantly — no fade, no upward slide. */
+  transition: none;
+}
+
+/* Pane entry directions: TT from left, YT from above, Stadium from right.
+   The .rise class snaps them to their stable scene-1 positions. */
+.morph-tt      { transform: translateX(-1200px); }
+.morph-yt      { transform: translateY(-1200px); }
+.morph-stadium { transform: translateX(1200px); }
+.morph-tt.rise,
+.morph-yt.rise,
+.morph-stadium.rise { transform: translate(0); }
+.morph-pane.rise { opacity: 1; }
+.morph-pane {
+  transition:
+    left 1.2s cubic-bezier(.65,0,.35,1),
+    top 1.2s cubic-bezier(.65,0,.35,1),
+    width 1.2s cubic-bezier(.65,0,.35,1),
+    height 1.2s cubic-bezier(.65,0,.35,1),
+    transform 1s cubic-bezier(.22,1,.36,1),
+    opacity .8s ease;
+}
+/* Once morph fires, the panes return to translate(0) at their new logo
+   coordinates (which override left/top) — transform must stay neutral. */
+.s1-stage.morph .morph-tt,
+.s1-stage.morph .morph-yt,
+.s1-stage.morph .morph-stadium { transform: translate(0); }
+
+/* ============================================================
+   SCENE 3 — TopicPicker overlay on Discover backdrop
+   The Discover view (sidebar + cards) is cloned into .s3-backdrop at
+   init time and sits behind the picker. Slightly dimmed by the picker's
+   own black overlay. Picker fades out at the end → reveals discover.
+   ============================================================ */
+.s-3 { background: var(--bg-3); }
+.s3-backdrop {
+  position: absolute; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  /* The cloned .s4-frame fills this box. It's a real Discover view but
+     non-interactive (the picker captures all attention). */
+}
+.s3-backdrop .s4-frame {
+  /* Inherits scene 4's framed app styling */
+  width: 1800px; height: 980px;
+}
+
+/* Picker open/close animation — emerges from layer 1 of the Stacktags
+   stack (the top video layer in scene 1). Logo geometry: layer 1 center
+   sits at (960, 498) of the 1920×1080 stage = (50%, 46.1%). We pin
+   transform-origin there so the scale(0.05) starting state visually
+   pinches the picker to that exact layer, and scale(1) expands outward
+   from it. A subtle rotation at the start adds a "spring out" feel. */
+/* Picker open/close animation — REVERSIBLE EDIT v8: now emerges from the
+   TOPMOST layer of the Stacktags logo (the cap rhombus), centred at
+   (960, 414) of the 1920×1080 stage = (50%, 38.3%). transform-origin is
+   pinned there so scale(~0) pinches the picker onto the top layer and it
+   forms/expands out of it. */
+/* Picker open/close — REVERSIBLE EDIT v9: the TOP LAYER of the stack lifts
+   off, flies toward the viewer enlarging, morphs teal→white and rhombus→
+   rounded-rectangle (.picker-morph below). The real picker window then forms
+   out of that white rectangle: the dark backdrop fades in and the white shell
+   appears in place (no more pinch-zoom on the overlay itself). */
+.stage > .tp-overlay {
+  position: absolute; inset: 0;
+  z-index: 200;
+  background: rgba(15, 23, 42, 0.55);
+  display: flex; align-items: stretch; justify-content: center;
+  overflow: hidden;
+  opacity: 0;
+  transform: none;
+  pointer-events: none;
+  transition: opacity .55s ease;
+}
+.stage.picker-in > .tp-overlay {
+  opacity: 1;
+  pointer-events: auto;
+}
+.stage.picker-out > .tp-overlay {
+  opacity: 0;
+  transition: opacity .5s ease;
+  pointer-events: none;
+}
+/* The shell "forms" — gently scales up from the white rectangle. */
+.stage > .tp-overlay .tp-shell {
+  transform: scale(.955);
+  opacity: 0;
+  transition: transform .6s cubic-bezier(.2, .8, .2, 1), opacity .4s ease;
+}
+.stage.picker-in > .tp-overlay .tp-shell { transform: scale(1); opacity: 1; }
+
+/* ---- The lifting top layer: a teal rhombus that flies up + forward,
+   enlarges, turns white and becomes a rounded rectangle (the future
+   picker window). Sits just under the picker overlay. ---- */
+.picker-morph {
+  position: absolute;
+  left: 705px; top: 286.5px; width: 510px; height: 255px;
+  background: #3EAE93;
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  border-radius: 0;
+  z-index: 195;
+  opacity: 0;
+  pointer-events: none;
+  box-shadow: 0 0 0 rgba(0,0,0,0);
+  transition:
+    left .9s cubic-bezier(.5, 0, .15, 1),
+    top .9s cubic-bezier(.5, 0, .15, 1),
+    width .9s cubic-bezier(.5, 0, .15, 1),
+    height .9s cubic-bezier(.5, 0, .15, 1),
+    clip-path .9s cubic-bezier(.5, 0, .15, 1),
+    border-radius .9s cubic-bezier(.5, 0, .15, 1),
+    background .7s ease .12s,
+    box-shadow .9s ease,
+    opacity .2s ease;
+}
+.stage.morph-lift .picker-morph {
+  opacity: 1;
+  left: 480px; top: 70px; width: 960px; height: 940px;
+  background: #ffffff;
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+  border-radius: 28px;
+  box-shadow: 0 50px 130px rgba(0,0,0,.5);
+}
+/* Once the real picker is in, the white rect fades out behind it. */
+.stage.picker-in .picker-morph { opacity: 0; transition: opacity .45s ease; }
+
+/* Native scroll for the picker grid — the scrollbar stays in sync with the
+   actual scroll position. JS does the smooth easing via scrollTop updates,
+   so do NOT also set scroll-behavior: smooth (it fights the JS animation
+   and creates jank). */
+.tp-grid { transition: none; }
+.tp-grid.scrolled { transform: none; }
+
+/* When the s3-backdrop hosts the cloned discover frame, we need the s-4
+   selectors to actually apply. Add .s-4 to the backdrop wrapper. */
+.s3-backdrop.s-4 { background: transparent; transform: none; opacity: 1; }
+.s3-backdrop .new-card,
+.s3-backdrop .new-sidebar,
+.s3-backdrop .ds-search,
+.s3-backdrop .ds-sort,
+.s3-backdrop .ds-cat,
+.s3-backdrop .entdecken-feed-chip { pointer-events: none; }
+
+/* Highlight the Fertig button when it gets "clicked" by play() */
+.tp-btn-primary.clicked {
+  background: var(--teal-d) !important;
+  transform: scale(.96);
+  transition: transform .12s ease, background .12s ease;
+}
+
+/* The picker overlay — copied verbatim from the production CSS so the
+   modal looks exactly like the real onboarding picker. The position/z-index/
+   background-overlay properties are set on .stage > .tp-overlay in the picker
+   animation block above; only its inner layout (.tp-shell etc.) lives here. */
+.tp-overlay {
+  display: flex; align-items: stretch; justify-content: center;
+  overflow: hidden;
+}
+.tp-shell {
+  position: relative;
+  width: min(960px, 100%);
+  margin: 24px;
+  max-height: calc(100% - 48px);
+  display: flex; flex-direction: column;
+  background: #ffffff;
+  color: #1f2937;
+  overflow: hidden;
+  border-radius: 3px;
+  box-shadow: 0 30px 80px rgba(15, 23, 42, 0.25);
+}
+.tp-header {
+  flex: 0 0 auto;
+  padding: 18px 20px 12px;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(14px) saturate(140%);
+  position: relative;
+  z-index: 2;
+}
+.tp-header::after {
+  content: ''; position: absolute;
+  left: 0; right: 0; bottom: -24px; height: 24px;
+  pointer-events: none;
+  background: linear-gradient(to bottom, rgba(255,255,255,.92), rgba(255,255,255,0));
+}
+.tp-header-row {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 12px;
+}
+.tp-title {
+  margin: 0;
+  font-size: 17px; font-weight: 700; line-height: 1.2;
+  color: #46AC94;
+  letter-spacing: -0.005em;
+}
+.tp-search-toggle {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 34px; height: 34px;
+  flex-shrink: 0; padding: 0;
+  border: 1px solid #d1d5db;
+  border-radius: 3px;
+  background: #ffffff;
+  color: #4b5563;
+  cursor: pointer;
+}
+
+.tp-grid-wrap {
+  flex: 1 1 auto;
+  overflow-y: auto;
+  padding: 14px 20px 28px;
+  background: #ffffff;
+  position: relative;
+}
+.tp-grid {
+  display: grid;
+  /* Larger tiles, exactly 4 per row */
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  transition: transform 1.1s cubic-bezier(.65,0,.35,1);
+}
+.tp-grid.scrolled { transform: translateY(-260px); }
+
+.tp-tile {
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: flex-end;
+  gap: 10px;
+  padding: 16px 12px 14px;
+  min-height: 170px;
+  border: 1px solid #e5e7eb;
+  border-radius: 4px;
+  background: #ffffff;
+  color: inherit; font-family: inherit;
+  cursor: pointer; text-align: center;
+  box-shadow: 0 1px 2px rgba(15,23,42,.05), 0 2px 4px rgba(15,23,42,.04);
+  transition: border-color .15s, background .15s, box-shadow .15s;
+  overflow: hidden;
+}
+.tp-tile.tp-tile-with-image {
+  min-height: 170px;
+  padding-top: 16px;
+}
+.tp-tile-img {
+  /* Bigger images for the larger 4-up grid */
+  max-width: 70%;
+  max-height: 100%;
+}
+.tp-tile-label {
+  font-size: 15px; font-weight: 700;
+}
+
+/* Pulse on click (one-shot) */
+.tp-tile.tp-tile-pulsed .tp-tile-img {
+  animation: tp-tile-pulse .32s cubic-bezier(.34, 1.56, .64, 1);
+}
+@keyframes tp-tile-pulse {
+  0%   { transform: scale(1); }
+  50%  { transform: scale(1.16); }
+  100% { transform: scale(1); }
+}
+
+/* Selected */
+.tp-tile.tp-selected {
+  border-color: #46AC94;
+  box-shadow: 0 2px 8px rgba(70,172,148,.28),
+              0 0 0 1px rgba(70,172,148,.35);
+}
+
+.tp-footer {
+  flex: 0 0 auto;
+  display: flex;
+  padding: 14px 20px;
+  background: rgba(255,255,255,.92);
+  backdrop-filter: blur(14px) saturate(140%);
+  position: relative; z-index: 2;
+}
+.tp-footer::before {
+  content: ''; position: absolute;
+  left: 0; right: 0; top: -24px; height: 24px;
+  pointer-events: none;
+  background: linear-gradient(to top, rgba(255,255,255,.92), rgba(255,255,255,0));
+}
+.tp-btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  padding: 13px 22px;
+  border: none; border-radius: 3px;
+  font-size: 15px; font-weight: 600;
+  font-family: inherit; cursor: pointer;
+}
+.tp-btn-primary {
+  background: #46AC94; color: #fff;
+  width: 100%;
+}
+
+/* Caption overlay above the modal */
+.s3-caption {
+  position: absolute; top: 32px; left: 50%; transform: translate(-50%, 0);
+  font-size: 36px; font-weight: 800; color: var(--ink);
+  letter-spacing: -.6px;
+  background: rgba(255,255,255,.96);
+  padding: 10px 26px; border-radius: 10px;
+  box-shadow: 0 6px 20px rgba(0,0,0,.15);
+  z-index: 200;
+}
+.s3-caption .cursor { background: var(--teal-d); }
+
+/* ============================================================
+   SCENE 4 — Discover (Entdecken) — mirrors live app screenshot
+   Sidebar: Archiv, Entdecken (active), Erstellen, Wettkampf, Teams, …
+   Toolbar: search + Beliebt/Neueste/A-Z buttons + Entdecken chip
+   Cards: 4px teal left bar ALWAYS visible, big title, thumb on right,
+          tags below, footer with section/entry counts.
+   ============================================================ */
+.s-4 {
+  background: var(--bg-3);
+  display: flex; align-items: center; justify-content: center;
+  transition: transform .55s cubic-bezier(.65,0,.35,1), opacity .55s ease;
+}
+.s-4.zoom-out { transform: scale(1.15) translateY(220px); opacity: 0; }
+
+.s-4 .s4-frame {
+  width: 1800px; height: 980px;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 30px 80px rgba(0,0,0,.18);
+  overflow: hidden;
+  display: flex;
+  border: 1px solid var(--border);
+  position: relative;
+}
+
+/* Sidebar */
+.s-4 .new-sidebar {
+  position: relative;
+  width: 240px;
+  flex-shrink: 0;
+  height: 100%;
+  background: #fff;
+  border-right: 1px solid var(--border);
+  display: flex; flex-direction: column;
+  overflow: hidden;
+}
+.s-4 .new-sidebar-logo {
+  display: flex; align-items: center; gap: 10px;
+  padding: 22px 18px;
+  border-bottom: 1px solid var(--border-l);
+  text-decoration: none;
+}
+.s-4 .new-sidebar-logo > div:first-child { display: flex; align-items: center; }
+.s-4 .new-sidebar-wordmark {
+  font-family: 'Nunito', system-ui, sans-serif;
+  font-weight: 800; font-size: 22px; letter-spacing: -.6px; line-height: 1;
+  display: inline-flex; align-items: baseline;
+}
+.s-4 .new-sidebar-wordmark .wm-stack { color: #232B33; }
+.s-4 .new-sidebar-wordmark .wm-tags  { color: #2FA68C; }
+.s-4 .new-sidebar-nav {
+  flex: 1;
+  display: flex; flex-direction: column;
+  padding: 14px 10px; gap: 2px;
+  overflow-y: auto;
+}
+.s-4 .new-nav-item {
+  display: flex; align-items: center; gap: 12px;
+  padding: 10px 14px;
+  border-radius: 3px;
+  color: var(--ink-2);
+  font-size: 14px; font-weight: 500;
+  cursor: pointer;
+  transition: background .2s ease, color .2s ease;
+  text-decoration: none;
+  position: relative;
+}
+.s-4 .new-nav-item .nav-chevron {
+  margin-left: auto;
+  opacity: .55;
+}
+.s-4 .new-nav-item:hover { background: var(--bg-3); color: var(--ink); }
+.s-4 .new-nav-item.active {
+  background: var(--teal-light);
+  color: var(--teal-dd);
+  font-weight: 600;
+}
+.s-4 .new-nav-icon {
+  display: flex; align-items: center; justify-content: center;
+  width: 22px; height: 22px; flex-shrink: 0;
+}
+.s-4 .new-nav-icon svg { width: 20px; height: 20px; stroke: currentColor; fill: none; stroke-width: 1.8; }
+.s-4 .new-nav-item.active .new-nav-icon svg { stroke: var(--teal-dd); }
+
+.s-4 .new-sidebar-footer {
+  border-top: 1px solid var(--border);
+  padding: 8px;
+  display: flex; flex-direction: column; gap: 2px;
+}
+.s-4 .new-sidebar-profile {
+  display: flex; align-items: center; gap: 12px;
+  padding: 10px 14px; border-radius: 4px;
+  cursor: pointer;
+}
+.s-4 .new-sidebar-profile:hover { background: var(--bg-3); }
+.s-4 .new-profile-avatar { position: relative; width: 32px; height: 32px; flex-shrink: 0; }
+.s-4 .new-profile-avatar .initials { width: 32px; height: 32px; border-radius: 50%; background: var(--teal); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 600; }
+.s-4 .new-profile-online-dot { position: absolute; bottom: 1px; right: 1px; width: 9px; height: 9px; border-radius: 50%; background: #22c55e; box-shadow: 0 0 0 1.5px #fff; }
+.s-4 .new-profile-name { font-size: 13px; font-weight: 500; color: var(--ink); }
+
+/* Main content */
+.s-4 .new-main-content {
+  flex: 1;
+  background: #fff;
+  overflow-y: auto;
+}
+.s-4 .new-page {
+  padding: 22px 28px 32px;
+  max-width: none;
+}
+
+/* Toolbar — single row with search, sort buttons, Entdecken chip */
+.s-4 .ds-toolbar-row {
+  display: flex; align-items: center; gap: 12px;
+  margin-bottom: 14px;
+}
+.s-4 .ds-flex-spacer { flex: 1; }
+.s-4 .ds-search {
+  flex: 1; max-width: 520px;
+  height: 44px;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 0 16px;
+  display: flex; align-items: center;
+}
+.s-4 .ds-search input {
+  border: 0; background: transparent; outline: 0; flex: 1;
+  font-size: 14px; color: var(--ink); font-family: inherit;
+}
+.s-4 .ds-search input::placeholder { color: var(--muted); font-size: 14px; }
+
+.s-4 .ds-sort-group {
+  display: flex; gap: 6px;
+}
+.s-4 .ds-sort {
+  padding: 10px 18px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background: #fff;
+  font-size: 13px; font-weight: 500;
+  color: var(--ink-2);
+  cursor: pointer;
+  font-family: inherit;
+  transition: all .2s ease;
+}
+.s-4 .ds-sort:hover { background: var(--bg-2); border-color: var(--muted); }
+.s-4 .ds-sort.active {
+  background: var(--teal);
+  color: #fff;
+  border-color: var(--teal);
+  font-weight: 700;
+}
+.s-4 .entdecken-feed-chip {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 10px 18px;
+  background: linear-gradient(90deg, var(--teal) 0%, var(--teal-d) 100%);
+  border: 1px solid var(--teal);
+  color: #fff;
+  border-radius: 4px;
+  font-size: 14px; font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+}
+.s-4 .entdecken-feed-chip svg { flex-shrink: 0; }
+
+/* Category tabs (Alle / Vokabeln / Allgemein) */
+.s-4 .ds-cat-tabs {
+  display: flex; gap: 4px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 22px;
+}
+.s-4 .ds-cat {
+  padding: 12px 22px;
+  background: none; border: none;
+  font-size: 14px; font-weight: 500;
+  color: var(--muted);
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+  font-family: inherit;
+}
+.s-4 .ds-cat.active {
+  color: var(--teal-d);
+  border-bottom-color: var(--teal);
+  font-weight: 600;
+}
+
+/* Card grid — 3 columns, big cards with persistent teal accent strip */
+.s-4 .new-card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+.s-4 .new-card {
+  position: relative;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 24px 26px 18px 30px;
+  min-height: 220px;
+  display: flex; flex-direction: column; justify-content: space-between;
+  box-shadow: 0 1px 3px rgba(0,0,0,.06);
+  cursor: pointer;
+  transition: box-shadow .2s ease, transform .2s ease;
+  overflow: hidden;
+}
+.s-4 .new-card:hover {
+  box-shadow: 0 8px 28px rgba(0,0,0,.16);
+  transform: translateY(-2px);
+}
+/* Persistent left strip — ALWAYS visible (not hover) */
+.s-4 .new-card .new-card-accent {
+  position: absolute; top: 0; left: 0;
+  width: 4px; height: 100%;
+  background: var(--teal);
+  opacity: 1;
+}
+.s-4 .new-card.is-session .new-card-accent { background: #dc2626; }
+
+.s-4 .new-card-head {
+  display: flex; gap: 12px; align-items: flex-start; justify-content: space-between;
+  margin-bottom: 12px;
+}
+.s-4 .new-card-head-text { flex: 1; min-width: 0; }
+.s-4 .new-card-title {
+  font-size: 20px; font-weight: 700; color: var(--ink);
+  margin: 0 0 8px;
+  line-height: 1.25;
+  letter-spacing: -.2px;
+}
+.s-4 .new-card-desc {
+  font-size: 14px; color: var(--ink-2);
+  line-height: 1.45;
+  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+  margin-bottom: 12px;
+}
+.s-4 .new-card-thumb {
+  width: 64px; height: 64px;
+  border-radius: 8px;
+  background: var(--bg-3);
+  background-size: cover; background-position: center;
+  flex-shrink: 0;
+  box-shadow: inset 0 0 0 1px rgba(0,0,0,.06);
+}
+.s-4 .new-card-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 12px; }
+.s-4 .new-card-tags span {
+  font-size: 12px; font-weight: 500;
+  background: var(--bg-2); color: var(--ink-2);
+  padding: 4px 10px; border-radius: 4px;
+  letter-spacing: 0;
+}
+.s-4 .new-card-meta {
+  font-size: 13px; color: var(--muted);
+  display: flex; align-items: center; gap: 18px;
+  font-weight: 500;
+  padding-top: 12px;
+  border-top: 1px solid var(--border-l);
+}
+.s-4 .new-card-meta span { display: inline-flex; align-items: center; gap: 6px; }
+.s-4 .new-card-meta svg { width: 14px; height: 14px; stroke: currentColor; fill: none; stroke-width: 1.8; flex-shrink: 0; }
+
+.s4-caption {
+  position: absolute; top: 32px; left: 50%; transform: translate(-50%, 0);
+  font-size: 36px; font-weight: 800; color: var(--ink); letter-spacing: -.6px;
+  background: rgba(255,255,255,.96);
+  padding: 10px 26px; border-radius: 10px;
+  box-shadow: 0 6px 20px rgba(0,0,0,.15);
+  z-index: 30;
+}
+.s4-caption .cursor { background: var(--teal-d); }
+/* Hide the empty caption bubble (it would otherwise show as a blank rounded
+   pill at the top of the Discover view, since play() never types into it). */
+.s4-caption:has(#s4-cap:empty) { opacity: 0; }
+
+/* ============================================================
+   SCENE 5 — TRIO: Feed / Game / Progress
+   Mega-scene: fullscreen panels → phones → algo text
+   ============================================================ */
+.s-5 {
+  background: #ffffff;
+  overflow: hidden;
+  display: flex; flex-direction: column;
+  transition: background 1.2s ease;
+}
+.s-5::before {
+  content: ''; position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse at 50% 80%, rgba(70,172,148,.18), transparent 60%),
+    linear-gradient(180deg, #031412 0%, #082823 60%, #0a1814 100%);
+  pointer-events: none;
+  /* Background behind the phones is now WHITE — the dark stage gradient is
+     hidden. REVERSIBLE: set opacity back to 1. */
+  opacity: 0;
+  transition: opacity .6s ease;
+}
+/* Overlay mode — used during the scene-4 → scene-5 transition so the
+   trio columns can rise over the still-visible Discover view. The dark
+   stage background is hidden while overlay-mode is active. */
+.s-5.overlay-mode { background: transparent; }
+.s-5.overlay-mode::before { opacity: 0; }
+
+/* Stage 1 — phones at full screen, no bezel/notch yet. Each column's
+   trio-frame expands to fill its column so the 3 views cover the whole
+   stage side-by-side. */
+/* Stage-1 (initial): bezel transparent, columns flex:1 — each phone fills
+   its full 640×1080 column. mob-screen --ms defaults to 2.2 so the content
+   reads as fullscreen. */
+/* Stage 1 — phones fill their column (full 640×1080) for the
+   fullscreen-trio opening. */
+.s-5.stage-1 .trio-frame {
+  width: 640px; height: 1080px;
+}
+.s-5.stage-1 .trio-col { width: auto; max-width: none; }
+
+.trio-row {
+  position: relative; z-index: 2;
+  display: flex; align-items: stretch;
+  width: 100%; height: 100%;
+  gap: 0; padding: 0;
+  transition: gap 1s cubic-bezier(.65,0,.35,1),
+              height 1s cubic-bezier(.65,0,.35,1),
+              padding 1s cubic-bezier(.65,0,.35,1);
+}
+
+.trio-col {
+  flex: 1; position: relative;
+  display: flex; align-items: center; justify-content: center;
+  transform: translateY(110%);
+  opacity: 0;
+  transition: transform 1.05s cubic-bezier(.16,1,.3,1),
+              opacity .6s ease,
+              flex .9s cubic-bezier(.65,0,.35,1),
+              max-width .9s cubic-bezier(.65,0,.35,1);
+}
+.trio-col.in { transform: translateY(0); opacity: 1; }
+
+.trio-label {
+  /* Removed in this revision — labels ("Start scrolling" etc) are hidden
+     so each phone view fills the full column height. */
+  display: none;
+}
+.trio-col {
+  /* Columns stack their frame + label vertically and stay centered. */
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+}
+
+/* Phone bezel ring — columns STAY in their column positions (flex:1).
+   The frame fills its column at stage-1 (no bezel), then shrinks IN-PLACE
+   to phone dimensions at stage-3 while the bezel builds up around it. The
+   mob-screen content scales separately via --ms so it looks right at both
+   sizes.
+
+   NOTE: at stage-1 the border-width is 0 (no transparent 12px border
+   taking up space). Border-color/width/radius all animate from 0/transparent
+   to 12px/#0a0a0a/38px as the scene transitions to stage-3. */
+.trio-frame {
+  position: relative; display: flex; flex-direction: column;
+  box-sizing: border-box;
+  /* Width/height in px (matching the column dimensions at stage-1) so
+     the transition to the stage-3/4 phone-size (480×1040 px) can
+     actually interpolate. Browsers can't transition between %-units
+     and px-units \u2014 the transition silently fails and the element
+     stays at the start value, which was the original bug. */
+  width: 640px; height: 1080px;
+  background: transparent;
+  border: 0 solid #0a0a0a;
+  border-radius: 0;
+  padding: 0;
+  box-shadow: none;
+  overflow: hidden;
+  /* Phone-morph animation restored: the frame animates its size + bezel
+     look from the fullscreen column (640×1080) down to a phone bezel. */
+  transition:
+    width 1.2s cubic-bezier(.65,0,.35,1),
+    height 1.2s cubic-bezier(.65,0,.35,1),
+    border-width 1.2s ease,
+    background 1.2s ease,
+    border-radius 1.2s cubic-bezier(.65,0,.35,1),
+    padding 1.2s cubic-bezier(.65,0,.35,1),
+    box-shadow 1.2s ease,
+    transform .8s cubic-bezier(.34,1.4,.64,1);
+}
+.trio-screen {
+  width: 100%; flex: 1;
+  background: #fff;
+  border-radius: 0;
+  overflow: hidden;
+  position: relative;
+  transition: border-radius 1.2s cubic-bezier(.65,0,.35,1), background 1.2s ease;
+}
+/* At phone-bezel stage, the trio-screen sits inside a dark bezel — give
+   it a dark background so any residual sub-pixel gap reads as bezel, not
+   as a white halo. !important to beat the base .trio-screen white. */
+.s-5.stage-3 .trio-screen,
+.s-5.stage-4 .trio-screen { background: #0a0a0a; }
+.trio-notch {
+  position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+  width: 0; height: 0; background: #000; border-radius: 0 0 14px 14px; z-index: 5;
+  transition: width 1.2s ease, height 1.2s ease, opacity .6s ease;
+  opacity: 0;
+}
+.s-5.stage-3 .trio-notch,
+.s-5.stage-4 .trio-notch { width: 130px; height: 26px; opacity: 1; }
+
+/* Inner mob-screen is rendered at a fixed phone-reference size (280×600).
+   It's centered in the trio-screen and scales via --ms to either fill the
+   column (stage-1) or sit at phone size (stage-3). Scale chosen so the
+   visual fits the 640×1080 column at stage-1 with room to breathe (no
+   overflow that would clip top/bottom or sides). */
+.mob-screen {
+  position: absolute;
+  left: 50%; top: 50%;
+  width: 280px; height: 600px;
+  margin-left: -140px; margin-top: -300px;
+  /* Explicit per-stage scale (NOT via var(): a custom-property inside a
+     transitioned transform resolves unreliably across class changes and
+     stuck on the fallback). Default = fullscreen-column cover scale. */
+  transform: scale(2.29);
+  transform-origin: center center;
+  /* Scale animates together with the frame morph. */
+  transition: transform 1.2s cubic-bezier(.65,0,.35,1);
+}
+/* Content fills the FULL column height (600×1.8 = 1080) with no crop.
+   Width becomes 280×1.8 = 504, centered in the 640 frame, leaving a
+   ~68px dark bezel strip on each side (reads as phone bezel, not white).
+   Three frames tile the full 1920×1080 stage → no white anywhere. */
+/* Stage-1 (fullscreen): the app content COVERS its full 640×1080 column
+   (scale = max(640/280, 1080/600) = 2.286) so the three views tile the
+   whole stage edge-to-edge with ZERO white around them. Horizontal fits
+   exactly; vertical overflow is clipped by the frame's overflow:hidden.
+   As the scene transitions to stage-3 the scale animates down to phone
+   size, pulling back to reveal the full screen + the emerging bezel. */
+.s-5.stage-1 .mob-screen { transform: scale(2.1); }
+
+/* Stage-1: zoom the phone content OUT a touch so the UI elements look
+   less bulky/clunky (reduced from the 2.286 cover-scale). This leaves
+   ~26px side margins, so we paint each column's trio-screen with that
+   phone's own backdrop (feed = dark teal, game/progress = white) to keep
+   the gap invisible. Does NOT affect the phone-bezel stage (stage-3/4),
+   which keeps its own scale.
+   REVERSIBLE: restore scale(2.29) above and delete the two rules below. */
+.s-5.stage-1 .trio-screen { background: #fff; }
+.s-5.stage-1 #trio-col-1 .trio-screen { background: linear-gradient(180deg, #0f4f42 0%, #16695a 60%, #1a7d6c 100%); }
+
+/* Each phone's top HEADER is hidden during the fullscreen stage-1 (where the
+   zoomed content overflows the top edge and the headers would otherwise peek
+   in as ugly strips). They fade in only once the phone bezels form
+   (stage-3/4). Opacity-only so layout never shifts.
+   REVERSIBLE: delete this whole block to restore always-visible headers. */
+.s-5 .feed-mob .feed-folder-chip,
+.s-5 .feed-mob .feed-hud-top-right,
+.s-5 .game-mob .qg-header,
+.s-5 .prog-mob .fs-m-header {
+  opacity: 0;
+  transition: opacity .6s ease .25s;
+}
+.s-5.stage-3 .feed-mob .feed-folder-chip,
+.s-5.stage-3 .feed-mob .feed-hud-top-right,
+.s-5.stage-3 .game-mob .qg-header,
+.s-5.stage-3 .prog-mob .fs-m-header,
+.s-5.stage-4 .feed-mob .feed-folder-chip,
+.s-5.stage-4 .feed-mob .feed-hud-top-right,
+.s-5.stage-4 .game-mob .qg-header,
+.s-5.stage-4 .prog-mob .fs-m-header {
+  opacity: 1;
+}
+
+/* Phone-bezel stage: content COVERS the inner phone screen
+   (inner ≈ 432×992; scale = max(432/280, 992/600) = 1.653) so there is
+   no white margin inside the bezel either. */
+.s-5.stage-3 .mob-screen,
+.s-5.stage-4 .mob-screen { transform: scale(1.65); }
+
+/* Trio-row + algo positioning at stage-4: don't shift the row, just let
+   algo text overlay below the centered phones. Phones stay vertically
+   centered in their columns. */
+.s-5.stage-3 .trio-row,
+.s-5.stage-4 .trio-row {
+  /* No height/padding/gap changes — row stays full-stage. Phones are
+     centered within each column via the column's flex centering. */
+}
+/* Columns STAY at flex:1 in all stages so phones don't shift horizontally. */
+.s-5.stage-3 .trio-col,
+.s-5.stage-4 .trio-col { flex: 1; width: auto; max-width: none; }
+.s-5.stage-3 .trio-label,
+.s-5.stage-4 .trio-label {
+  /* When shrunk into phone form, label shrinks to match. Still below phone. */
+  font-size: 18px; padding: 6px 16px;
+  margin-top: 14px;
+}
+/* Phone-bezel stage: the frame FILLS its entire 640×1080 column so the
+   three views tile the whole stage edge-to-edge with ZERO white gaps
+   around or between them. The frame background is dark, so the side
+   strips left/right of the (portrait) content read as a phone bezel
+   rather than a white margin. Content scales to fill the full height. */
+.s-5.stage-3 .trio-frame,
+.s-5.stage-4 .trio-frame {
+  width: 480px;
+  height: 1040px;
+  background: #0a0a0a;
+  border-width: 14px;
+  border-radius: 60px;
+  padding: 10px;
+  box-shadow: 0 30px 80px rgba(0,0,0,.25), 0 6px 18px rgba(70,172,148,.18);
+}
+.trio-col {
+  transition:
+    flex 1.1s cubic-bezier(.65,0,.35,1),
+    width 1.1s cubic-bezier(.65,0,.35,1),
+    max-width 1.1s cubic-bezier(.65,0,.35,1),
+    transform 1.05s cubic-bezier(.16,1,.3,1),
+    opacity .6s ease;
+}
+.s-5.stage-3 .trio-screen,
+.s-5.stage-4 .trio-screen { border-radius: 38px; }
+
+/* algo text at stage-4 stays at the bottom; phones are centered above it
+   in their columns. No row shift needed. */
+
+/* Phones fill the full stage height; the algo text overlays at the
+   bottom (position:absolute) so the column needs no padding that would
+   leave a white strip above the frames. */
+.s-5.stage-4 .trio-col {
+  justify-content: center;
+  padding-top: 0;
+}
+
+.trio-algo {
+  position: absolute; left: 50%; bottom: 50px; transform: translate(-50%, 30px);
+  width: 1600px; max-width: 90%;
+  font-size: 42px; font-weight: 800; color: #0a0a0a;
+  text-align: center; line-height: 1.25; letter-spacing: -.4px;
+  z-index: 10;
+  opacity: 0;
+  transition: opacity .6s ease, transform .6s ease;
+}
+.s-5.stage-4 .trio-algo { opacity: 1; transform: translate(-50%, 0); }
+.trio-algo span {
+  /* Solid dark text on the new white scene background. */
+  color: #0a0a0a;
+  background: none;
+  background-clip: initial; -webkit-background-clip: initial;
+  -webkit-text-fill-color: currentColor;
+}
+.trio-algo .cursor { background: var(--teal); }
+
+/* ============================================================
+   Trio keyword reveal (stage-4): keywords fly in and nudge the phones
+   ============================================================ */
+.trio-kw {
+  position: absolute; left: 50%;
+  width: 92%; text-align: center;
+  font-size: 42px; font-weight: 800; letter-spacing: -.6px; line-height: 1.12;
+  color: var(--ink);
+  opacity: 0; pointer-events: none; z-index: 6;
+  transition: opacity .55s ease, transform .7s cubic-bezier(.34,1.45,.64,1);
+}
+.trio-kw b { color: var(--teal); font-weight: 800; }
+.trio-kw-below { bottom: 70px; transform: translate(-50%, 120px); }
+.trio-kw-above { top: 70px; transform: translate(-50%, -120px); }
+/* Promote the keyword + phone layers as soon as stage-4 begins (≈900ms
+   before kw-in) so col-1's delay-0 transition doesn't jank on its first
+   frame — the compositor layer already exists when it animates. */
+.s-5.stage-4 .trio-kw,
+.s-5.stage-4 .trio-frame { will-change: transform, opacity; }
+/* keywords are hidden unless the keyword reveal is active */
+.s-5.stage-4.kw-in .trio-kw-below,
+.s-5.stage-4.kw-in .trio-kw-above { opacity: 1; transform: translate(-50%, 0); }
+
+/* Phones get nudged to make room: left & right UP, middle DOWN.
+   Kept modest so the phones never touch the top/bottom edge. */
+.s-5.stage-4.kw-in #trio-col-1 .trio-frame,
+.s-5.stage-4.kw-in #trio-col-3 .trio-frame { transform: translateY(-65px) scale(.85); }
+.s-5.stage-4.kw-in #trio-col-2 .trio-frame { transform: translateY(65px) scale(.85); }
+/* Each column's phone AND its keyword now share one transition-delay so the
+   text slides in TOGETHER with the phone nudge as a single block. The
+   per-column offset is a little larger so each line lands noticeably after
+   the previous one. */
+.s-5.stage-4.kw-in #trio-col-1 .trio-frame,
+.s-5.stage-4.kw-in #trio-col-1 .trio-kw { transition-delay: 0s; }
+.s-5.stage-4.kw-in #trio-col-2 .trio-frame,
+.s-5.stage-4.kw-in #trio-col-2 .trio-kw { transition-delay: .9s; }
+.s-5.stage-4.kw-in #trio-col-3 .trio-frame,
+.s-5.stage-4.kw-in #trio-col-3 .trio-kw { transition-delay: 1.8s; }
+
+/* Exit: each block (phone + its keyword) flies off — left & right UP,
+   middle DOWN. The whole column translates so phone and text move as one. */
+.s-5.kw-out #trio-col-1,
+.s-5.kw-out #trio-col-2,
+.s-5.kw-out #trio-col-3 {
+  transition: transform 1.2s cubic-bezier(.6,0,.75,0), opacity 1.2s ease;
+}
+.s-5.kw-out #trio-col-1,
+.s-5.kw-out #trio-col-3 { transform: translateY(-1300px); opacity: 0; }
+.s-5.kw-out #trio-col-2 { transform: translateY(1300px); opacity: 0; }
+
+/* Feed (phone 1): tap feedback on the correct option before it turns teal. */
+@keyframes feedTap {
+  0% { transform: scale(1); }
+  35% { transform: scale(.9); }
+  100% { transform: scale(1); }
+}
+.feed-mob .feed-mc-opt.tap,
+.qg-nextq-opt.tap { animation: feedTap .3s cubic-bezier(.34,1.5,.64,1); }
+
+/* ============================================================
+   SCENE 5 — Mobile screens (FEED / GAME / PROGRESS)
+   Reproduces the live DiscoverScrollFeed, QuizGame mobile and
+   FortschrittNew mobile screens from the user's screenshots.
+   ============================================================ */
+.mob-screen {
+  /* Position/size handled by the earlier .mob-screen rule (centered via
+     left/top:50% + negative margins + --ms scale). Do NOT redeclare
+     position/inset here — `inset:0` would override the centering and
+     leave the negative margins applied, shifting content off-screen. */
+  display: flex; flex-direction: column;
+  overflow: hidden;
+  background: #fff;
+}
+
+/* Shared mobile bottom tab bar (5 icons) */
+.mob-tabbar {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  height: 60px;
+  background: #fff;
+  border-top: 1px solid var(--border-l);
+  display: flex; align-items: center; justify-content: space-around;
+  padding: 0 4px;
+  z-index: 5;
+}
+.mob-tabbar > button {
+  flex: 1;
+  height: 100%;
+  border: 0; background: transparent;
+  display: flex; align-items: center; justify-content: center;
+  color: #c9ced3;
+  cursor: pointer;
+  font-family: inherit;
+}
+.mob-tabbar > button.active { color: var(--teal); }
+.mob-tabbar > button.active svg { stroke-width: 2.5; }
+.mob-tabbar-av {
+  width: 28px; height: 28px; border-radius: 50%;
+  background: var(--teal);
+  color: #fff; font-weight: 700; font-size: 13px;
+  display: flex; align-items: center; justify-content: center;
+}
+
+/* ===== PHONE 1 — FEED (dark teal gradient) ===== */
+.feed-mob {
+  background: linear-gradient(180deg, #0f4f42 0%, #16695a 60%, #1a7d6c 100%);
+  color: #fff;
+}
+.feed-mob .feed-folder-chip {
+  position: absolute; top: 16px; left: 12px;
+  display: inline-flex; align-items: center; gap: 8px;
+  max-width: 60%;
+  padding: 4px 14px 4px 4px;
+  border-radius: 999px;
+  background: rgba(0,0,0,0.4);
+  color: #fff;
+  font-size: 12px; font-weight: 600;
+  backdrop-filter: blur(8px);
+  z-index: 22;
+}
+.feed-mob .feed-folder-img {
+  width: 30px; height: 30px;
+  border-radius: 50%; flex-shrink: 0;
+  background-size: cover; background-position: center;
+  background-color: rgba(255,255,255,0.1);
+}
+/* Letter-circle avatar (e.g. "C" for Chinese, "W" for Wahrzeichen) */
+.feed-mob .feed-folder-avatar {
+  width: 30px; height: 30px;
+  border-radius: 50%; flex-shrink: 0;
+  background: var(--teal-d);
+  color: #fff;
+  display: grid; place-items: center;
+  font-size: 12px; font-weight: 700;
+}
+.feed-mob .feed-folder-name {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.feed-mob .feed-hud-top-right {
+  position: absolute; top: 16px; right: 12px;
+  display: flex; gap: 6px; z-index: 22;
+}
+.feed-mob .feed-icon-btn {
+  width: 38px; height: 38px;
+  border-radius: 50%;
+  border: 0;
+  background: rgba(0,0,0,0.4);
+  color: #fff;
+  display: grid; place-items: center;
+  backdrop-filter: blur(8px);
+  cursor: pointer;
+}
+/* Center content */
+.feed-mob .feed-card-inner {
+  flex: 1;
+  display: flex; flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  padding: 70px 22px 80px;
+  max-width: 100%;
+  overflow: hidden;
+}
+.feed-mob .feed-vocab-lang-label {
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.75);
+  margin-bottom: 0;
+}
+.feed-mob .feed-card-prompt-row {
+  display: flex; align-items: center; justify-content: center;
+  gap: 12px; width: 100%;
+}
+.feed-mob .feed-card-speaker {
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(255,255,255,0.6);
+  background: transparent;
+  color: #fff;
+  display: grid; place-items: center;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+.feed-mob .feed-card-speaker svg { width: 18px; height: 18px; }
+.feed-mob .feed-card-prompt-big {
+  font-size: 36px; font-weight: 700;
+  color: #fff;
+  line-height: 1;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.25);
+}
+.feed-mob .feed-card-image {
+  max-width: 100%;
+  max-height: 32%;
+  width: 100%;
+  border-radius: 12px;
+  object-fit: contain;
+}
+/* Wrapper that gives the question image a white card behind it.
+   In the live app the image card has padding + white bg so the image
+   reads cleanly against the dark teal feed bg. */
+.feed-mob .feed-card-image-frame {
+  width: 100%;
+  max-height: 32%;
+  background: #fff;
+  border-radius: 12px;
+  padding: 10px;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+  overflow: hidden;
+}
+.feed-mob .feed-card-image-frame .feed-card-image {
+  width: 100%; height: 100%;
+  max-height: none;
+  object-fit: contain;
+  border-radius: 0;
+}
+/* Multi-line prompt (used by Wahrzeichen view) */
+.feed-mob .feed-card-prompt-multiline {
+  font-size: 28px;
+  line-height: 1.15;
+  letter-spacing: -.4px;
+  text-align: center;
+  white-space: normal;
+  width: 100%;
+  padding: 0 8px;
+}
+/* Revealed answer pill (teal-filled, single) */
+.feed-mob .feed-answer-pill {
+  background: var(--teal);
+  color: #fff;
+  font-size: 13px; font-weight: 700;
+  text-align: center;
+  padding: 11px 16px;
+  border-radius: 999px;
+  width: 70%;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.18);
+}
+/* Info reveal card (description / fun fact under answer) */
+.feed-mob .feed-info-card {
+  background: rgba(255,255,255,0.16);
+  color: #fff;
+  font-size: 11px;
+  line-height: 1.45;
+  text-align: center;
+  padding: 10px 14px;
+  border-radius: 10px;
+  width: 100%;
+  backdrop-filter: blur(6px);
+}
+.feed-mob .feed-mc-options {
+  display: flex; flex-direction: column;
+  gap: 9px;
+  width: 100%;
+  margin-top: 4px;
+}
+.feed-mob .feed-mc-opt {
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding: 11px 16px;
+  border-radius: 999px;
+  border: 0;
+  background: rgba(255,255,255,0.96);
+  color: #111;
+  font-size: 13px; font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.18);
+  font-family: inherit;
+  transition: background .25s ease, color .25s ease;
+}
+.feed-mob .feed-mc-opt.correct { background: var(--teal); color: #fff; }
+.feed-mob .feed-page-2 .feed-mc-opt { will-change: transform; }
+.feed-mob .feed-mc-opt.wrong { background: rgba(220,38,38,0.95); color: #fff; opacity: .85; }
+
+.feed-mob .feed-menu-wrap {
+  position: absolute; right: 14px;
+  bottom: calc(60px + 18px + 56px);
+  z-index: 22;
+}
+.feed-mob .feed-menu-btn {
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  border: 0;
+  background: rgba(0,0,0,0.4);
+  color: #fff;
+  display: grid; place-items: center;
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+}
+.feed-mob .feed-bookmark-btn {
+  position: absolute; right: 14px;
+  bottom: calc(60px + 18px);
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  border: 0;
+  background: rgba(0,0,0,0.4);
+  color: #fff;
+  display: grid; place-items: center;
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+  z-index: 22;
+}
+
+/* ===== PHONE 1 — vertical pager (scroll to next post, TikTok-style) ===== */
+.feed-pager {
+  position: absolute; inset: 0;
+  display: flex; flex-direction: column;
+  transition: transform .62s cubic-bezier(.6,0,.25,1);
+  will-change: transform;
+}
+.feed-page {
+  position: relative;
+  width: 100%; height: 100%;
+  flex: 0 0 100%;
+  display: flex; flex-direction: column;
+  background: linear-gradient(180deg, #0f4f42 0%, #16695a 60%, #1a7d6c 100%);
+  overflow: hidden;
+}
+/* Slide up by exactly one screen to reveal the next post. */
+.feed-mob.feed-paged .feed-pager { transform: translateY(-100%); }
+
+/* ===== PHONE 2 — next question slides in from the RIGHT ===== */
+.qg-nextq {
+  position: absolute; left: 0; right: 0; top: 78px; bottom: 0;
+  background: #fff;
+  z-index: 14;
+  display: flex; flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 16px 18px;
+  transform: translateX(112%);
+  transition: transform .55s cubic-bezier(.5,0,.2,1);
+  will-change: transform;
+}
+.game-mob.qg-next-in .qg-nextq { transform: translateX(0); }
+.qg-nextq-image {
+  width: 100%; height: 132px;
+  border-radius: 14px;
+  background-size: cover; background-position: center;
+  flex-shrink: 0;
+}
+.qg-nextq-label {
+  font-size: 19px; font-weight: 800; color: #0f1c2e;
+  text-align: center; line-height: 1.2;
+  margin: 2px 0 2px;
+}
+.qg-nextq-mc {
+  display: flex; flex-direction: column;
+  gap: 9px; width: 100%;
+}
+.qg-nextq-opt {
+  display: block; width: 100%;
+  padding: 13px 14px;
+  border-radius: 13px;
+  border: 1.5px solid var(--border-l, #e2e8f0);
+  background: #fff;
+  color: #0f1c2e;
+  font-size: 15px; font-weight: 700;
+  font-family: inherit;
+  text-align: center;
+  cursor: pointer;
+  will-change: transform;
+  transition: background .25s ease, color .25s ease, border-color .25s ease;
+}
+.qg-nextq-opt.tap { animation: feedTap .3s cubic-bezier(.34,1.5,.64,1); }
+.qg-nextq-opt.correct { background: var(--teal); border-color: var(--teal); color: #fff; }
+
+/* ===== PHONE 2 — GAME (Quiz with leaderboard) ===== */
+.game-mob {
+  background: #fff;
+  display: flex; flex-direction: column;
+  padding: 0;
+}
+/* Black portrait header */
+.qg-header {
+  height: 70px;
+  background: #0a0a0a;
+  padding: 12px 14px;
+  display: flex; align-items: center; justify-content: space-between;
+  flex-shrink: 0;
+}
+.qg-avatars { display: flex; align-items: center; gap: 4px; }
+.qg-av {
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  background: #3a3a3a;
+  border: 2px solid #555;
+  overflow: hidden;
+  display: grid; place-items: center;
+  color: #fff;
+  font-size: 13px; font-weight: 700;
+  position: relative;
+  flex-shrink: 0;
+}
+.qg-av-me {
+  background: var(--teal);
+  border-color: #2a8e78;
+}
+.qg-av-bot {
+  background: #4b4b4b;
+  background-size: cover; background-position: center;
+}
+.qg-av img { width: 100%; height: 100%; object-fit: cover; }
+.qg-av-mini { width: 24px; height: 24px; font-size: 10px; border-width: 1.5px; }
+.qg-round {
+  background: #1e3a32;
+  color: #46AC94;
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-size: 13px; font-weight: 700;
+  border: 1px solid #2a5045;
+  font-variant-numeric: tabular-nums;
+}
+.qg-progress {
+  height: 3px;
+  background: var(--border-l);
+}
+.qg-progress-fill {
+  height: 100%;
+  width: 10%;
+  background: var(--teal);
+}
+
+.qg-q-image {
+  width: 140px; height: 140px;
+  border-radius: 12px;
+  background-size: cover; background-position: center;
+  background-color: var(--bg-3);
+  margin: 20px auto 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.qg-q-label {
+  text-align: center;
+  font-size: 16px; font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 12px;
+}
+.qg-answer {
+  margin: 0 14px 14px;
+  background: var(--teal-light);
+  border: 1px solid rgba(70,172,148,0.5);
+  border-radius: 999px;
+  padding: 6px 12px 6px 8px;
+  display: flex; align-items: center; gap: 10px;
+}
+.qg-answer-letter {
+  width: 22px; height: 22px;
+  border-radius: 50%;
+  background: var(--teal);
+  color: #fff;
+  font-size: 11px; font-weight: 700;
+  display: grid; place-items: center;
+  flex-shrink: 0;
+}
+.qg-answer-text {
+  flex: 1;
+  font-size: 13px; font-weight: 600;
+  color: var(--ink-2);
+}
+.qg-answer-trail { display: flex; align-items: center; gap: 6px; color: var(--ink-2); }
+
+.qg-leaderboard {
+  padding: 0 14px;
+  display: flex; flex-direction: column; gap: 4px;
+  flex: 1;
+  overflow: hidden;
+}
+.qg-lb-row {
+  display: grid;
+  grid-template-columns: 30px 24px 1fr auto auto;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 8px;
+  border-radius: 8px;
+  background: transparent;
+}
+.qg-lb-row.qg-lb-me { background: var(--teal-light); border: 1px solid rgba(70,172,148,0.3); }
+.qg-lb-rank {
+  font-size: 14px; font-weight: 700;
+  color: var(--ink-2);
+  display: flex; align-items: center; justify-content: center;
+  gap: 2px;
+}
+.qg-lb-rank .qg-rank-arrow { color: var(--teal-d); font-size: 11px; margin-right: 1px; }
+.qg-lb-name {
+  font-size: 13px; font-weight: 600;
+  color: var(--ink);
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.qg-lb-delta {
+  color: var(--teal-d);
+  font-size: 12px; font-weight: 700;
+  min-width: 28px; text-align: right;
+}
+.qg-lb-total {
+  font-size: 14px; font-weight: 800;
+  color: var(--ink);
+  min-width: 26px; text-align: right;
+}
+
+.qg-next-wrap {
+  padding: 8px 24px 18px;
+  display: flex; justify-content: center;
+}
+.qg-next {
+  padding: 12px 32px;
+  border-radius: 999px;
+  background: var(--teal-light);
+  color: var(--teal-d);
+  border: 1px solid rgba(70,172,148,0.4);
+  font-size: 14px; font-weight: 700;
+  cursor: pointer;
+  font-family: inherit;
+}
+.qg-next span { margin-left: 4px; }
+
+/* ===== PHONE 3 — PROGRESS (FortschrittNew mobile) ===== */
+.prog-mob {
+  background: #fff;
+  display: flex; flex-direction: column;
+  position: relative;   /* REVERSIBLE EDIT v8: positioning ctx for .prog-cal */
+}
+/* ---- Calendar + donut overlay (revealed on the calendar toggle) ----
+   REVERSIBLE EDIT v11: the chart view slides OUT to the left while the
+   calendar slides IN from the right (a push transition), instead of a fade.
+   To revert: restore the opacity transition below + drop .pc-chartview. */
+.pc-chartview {
+  transition: transform .55s cubic-bezier(.5, 0, .15, 1);
+  will-change: transform;
+}
+.prog-mob.prog-cal-on .pc-chartview { transform: translateX(-100%); }
+.prog-cal {
+  position: absolute; left: 0; right: 0; top: 56px; bottom: 56px;
+  background: #fff; overflow: hidden; z-index: 6;
+  transform: translateX(100%);
+  pointer-events: none;
+  transition: transform .55s cubic-bezier(.5, 0, .15, 1);
+  will-change: transform;
+}
+.prog-mob.prog-cal-on .prog-cal { transform: translateX(0); }
+.prog-cal-inner { position: absolute; left: 0; right: 0; top: 0; padding: 12px 14px; transition: transform 0.8s cubic-bezier(.4, 0, .25, 1); }
+.prog-mob.prog-cal-scrolled .prog-cal-inner { transform: translateY(-250px); }
+.pc-month { display: flex; align-items: center; justify-content: space-between; font-size: 14px; font-weight: 700; color: var(--ink); margin-bottom: 12px; }
+.pc-month svg { color: var(--muted); }
+.pc-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 5px; }
+.pc-dow { font-size: 10px; font-weight: 700; color: var(--muted); text-align: center; padding-bottom: 2px; }
+.pc-day { aspect-ratio: 1; display: grid; place-items: center; font-size: 11px; color: var(--ink-2); border-radius: 8px; }
+.pc-day.pc-on { background: var(--teal-light); color: var(--teal-d); font-weight: 700; }
+.pc-day.pc-today { background: var(--teal); color: #fff; font-weight: 800; box-shadow: 0 2px 8px rgba(70,172,148,.4); }
+.pc-donut-card { margin-top: 14px; background: var(--bg-2); border: 1px solid var(--border); border-radius: 14px; padding: 11px 14px; }
+.pc-donut-title { font-size: 13px; font-weight: 700; color: var(--ink); margin-bottom: 9px; }
+.pc-donut-row { display: flex; align-items: center; gap: 16px; }
+.pc-donut { width: 78px; height: 78px; flex-shrink: 0; position: relative; }
+.pc-donut svg { width: 100%; height: 100%; transform: rotate(-90deg); }
+.pc-donut-center { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; gap: 1px; font-size: 17px; font-weight: 800; color: var(--ink); white-space: nowrap; line-height: 1; }
+.pc-legend { display: flex; flex-direction: column; gap: 8px; }
+.pc-leg { display: flex; align-items: center; gap: 8px; font-size: 12px; color: var(--ink-2); font-weight: 500; }
+.pc-leg-dot { width: 11px; height: 11px; border-radius: 3px; flex-shrink: 0; }
+.pc-leg-pct { font-variant-numeric: tabular-nums; }
+/* REVERSIBLE EDIT v16: line chart below the donut */
+.pc-graph-card { margin-top: 10px; background: var(--bg-2); border: 1px solid var(--border); border-radius: 14px; padding: 11px 14px; }
+.pc-graph-head { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 8px; }
+.pc-graph-total { font-size: 14px; font-weight: 800; color: var(--teal-d); font-variant-numeric: tabular-nums; }
+.pc-graph { height: 62px; }
+.pc-graph svg { width: 100%; height: 100%; overflow: visible; }
+.pc-graph-axis { display: flex; justify-content: space-between; font-size: 11px; color: var(--muted); font-weight: 600; padding: 5px 2px 0; }
+/* REVERSIBLE EDIT v17: third chart — horizontal "Top topics" bars */
+.pc-bars-card { margin-top: 10px; background: var(--bg-2); border: 1px solid var(--border); border-radius: 14px; padding: 11px 14px; }
+.pc-bars { display: flex; flex-direction: column; gap: 9px; margin-top: 9px; }
+.pc-bar-row { display: grid; grid-template-columns: 74px 1fr 38px; align-items: center; gap: 10px; }
+.pc-bar-label { font-size: 12px; font-weight: 600; color: var(--ink-2); white-space: nowrap; }
+.pc-bar-track { height: 8px; background: #e6edea; border-radius: 4px; overflow: hidden; }
+.pc-bar-fill { height: 100%; width: 0; background: var(--teal); border-radius: 4px; }
+.pc-bar-val { font-size: 12px; font-weight: 800; color: var(--teal-d); text-align: right; font-variant-numeric: tabular-nums; }
+/* tap pulse on the calendar toggle button */
+.fs-m-toggle-btn.prog-cal-tap { animation: pcTap .34s cubic-bezier(.34,1.5,.64,1); }
+@keyframes pcTap { 0% { transform: scale(1); } 42% { transform: scale(.86); } 100% { transform: scale(1); } }
+.prog-mob .fs-m-header {
+  display: flex; align-items: center; gap: 10px;
+  padding: 14px 14px;
+  border-bottom: 1px solid var(--border-l);
+  flex-shrink: 0;
+}
+.prog-mob .fs-m-back { border: 0; background: transparent; color: var(--ink); padding: 4px; cursor: pointer; display: flex; align-items: center; }
+.prog-mob .fs-m-title { flex: 1; margin: 0; font-size: 17px; font-weight: 700; color: var(--ink); }
+.prog-mob .fs-m-toggle {
+  position: relative;
+  display: flex; gap: 4px;
+  padding: 3px;
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+}
+.prog-mob .fs-m-toggle-btn {
+  width: 34px; height: 28px;
+  border: 0; background: transparent;
+  border-radius: 50%;
+  color: var(--muted);
+  cursor: pointer;
+  display: grid; place-items: center;
+}
+.prog-mob .fs-m-toggle-btn.active {
+  background: var(--teal-light);
+  color: var(--teal-d);
+  border: 1.5px solid var(--teal);
+}
+.prog-mob .fs-m-xp {
+  display: flex; align-items: center; gap: 14px;
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--border-l);
+}
+.prog-mob .fs-m-xp-ring { position: relative; width: 42px; height: 42px; flex-shrink: 0; }
+.prog-mob .fs-m-xp-ring svg { width: 100%; height: 100%; }
+.prog-mob .fs-m-xp-level {
+  position: absolute; inset: 0;
+  display: grid; place-items: center;
+  font-size: 13px; font-weight: 800; color: var(--ink);
+}
+.prog-mob .fs-m-xp-info { flex: 1; min-width: 0; }
+.prog-mob .fs-m-xp-headline { font-size: 14px; font-weight: 700; color: var(--ink); margin-bottom: 4px; }
+.prog-mob .fs-m-xp-bar { width: 100%; height: 4px; background: var(--bg-3); border-radius: 2px; overflow: hidden; }
+.prog-mob .fs-m-xp-bar-fill { height: 100%; background: var(--teal); width: 0; transition: width 1.4s ease; }
+.prog-mob .fs-m-xp-num { font-size: 11px; color: var(--muted); margin-top: 4px; }
+
+.prog-mob .fs-chart-wrap { padding: 12px 16px 0; }
+.prog-mob .fs-chart-toolbar { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+.prog-mob .fs-chart-select {
+  padding: 6px 12px;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 13px; color: var(--ink-2);
+  display: inline-flex; align-items: center; gap: 6px;
+  cursor: pointer;
+}
+.prog-mob .fs-chart-community {
+  width: 32px; height: 32px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: #fff;
+  display: grid; place-items: center;
+  color: var(--muted);
+  cursor: pointer;
+}
+.prog-mob .fs-chart-community.active {
+  background: var(--teal-light);
+  border-color: var(--teal);
+  color: var(--teal-d);
+}
+.prog-mob .fs-chart {
+  height: 150px;
+  margin: 12px 0 8px;
+}
+.prog-mob .fs-chart svg { width: 100%; height: 100%; overflow: visible; }
+/* (Progress chart lines are revealed via a left-to-right clip rect now,
+   not stroke-dashoffset — see #prog-reveal-rect / animateProgress.) */
+.prog-mob .fs-chart-axis {
+  display: flex; justify-content: space-between;
+  font-size: 11px;
+  color: var(--muted);
+  padding: 0 2px;
+  margin-bottom: 4px;
+}
+
+.prog-mob .fs-rewards { padding: 12px 16px 76px; flex: 1; }
+.prog-mob .fs-rewards-toolbar { display: flex; gap: 8px; margin-bottom: 12px; }
+.prog-mob .fs-rewards-search {
+  flex: 1;
+  padding: 9px 14px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background: #fff;
+  font-size: 13px;
+  outline: none;
+  font-family: inherit;
+}
+.prog-mob .fs-rewards-filter {
+  display: inline-flex;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  overflow: hidden;
+}
+.prog-mob .fs-rewards-filter-btn {
+  border: 0; background: #fff;
+  color: var(--ink-2);
+  font-size: 12px; font-weight: 700;
+  padding: 0 14px;
+  cursor: pointer;
+  font-family: inherit;
+}
+.prog-mob .fs-rewards-filter-btn + .fs-rewards-filter-btn { border-left: 1px solid var(--border); }
+.prog-mob .fs-rewards-filter-btn.active {
+  background: var(--teal);
+  color: #fff;
+}
+
+.prog-mob .fs-reward-card {
+  display: flex; align-items: center; gap: 14px;
+  width: 100%;
+  padding: 12px;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  cursor: pointer;
+  text-align: left;
+  font-family: inherit;
+  color: inherit;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+}
+.prog-mob .fs-reward-thumb {
+  position: relative;
+  width: 48px; height: 48px;
+  border-radius: 14px;
+  background: var(--teal-light);
+  display: grid; place-items: center;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+.prog-mob .fs-reward-thumb img {
+  width: 80%; height: 80%; object-fit: contain;
+  filter: grayscale(0.55) brightness(0.9);
+}
+.prog-mob .fs-reward-lock {
+  position: absolute; bottom: -2px; right: -2px;
+  width: 16px; height: 16px;
+  background: var(--muted);
+  color: #fff;
+  border-radius: 50%;
+  display: grid; place-items: center;
+  border: 1.5px solid #fff;
+}
+.prog-mob .fs-reward-text { flex: 1; min-width: 0; }
+.prog-mob .fs-reward-name { font-size: 13.5px; font-weight: 700; color: var(--ink); margin-bottom: 2px; }
+.prog-mob .fs-reward-desc {
+  font-size: 11.5px; color: var(--muted);
+  line-height: 1.4;
+  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+}
+.prog-mob .fs-reward-arrow { color: var(--muted); flex-shrink: 0; }
+
+/* ============================================================
+   SCENE 9 — 9-tile parallel grid + winner
+   ============================================================ */
+/* ============================================================
+   SCENE 9 — Parallel task grid → value tiles → closing logo
+   ============================================================ */
+.s-9 {
+  background: #ffffff;
+  display: flex; flex-direction: column;
+}
+.s9-grid {
+  position: absolute; inset: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 20px;
+  padding: 56px;
+  transition: opacity 1.2s ease;
+}
+.s-9.finale .s9-grid { opacity: 0; pointer-events: none; }
+
+.s9-cell {
+  position: relative;
+  background: #fff;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  box-shadow: 0 10px 26px rgba(0,0,0,.10);
+  overflow: hidden;
+  display: flex; flex-direction: column;
+  opacity: 0; transform: scale(.9);
+  animation: s9CellIn .55s cubic-bezier(.34,1.56,.64,1) forwards;
+}
+.s9-cell:nth-child(1) { animation-delay: .05s; }
+.s9-cell:nth-child(2) { animation-delay: .12s; }
+.s9-cell:nth-child(3) { animation-delay: .19s; }
+.s9-cell:nth-child(4) { animation-delay: .26s; }
+.s9-cell:nth-child(5) { animation-delay: .33s; }
+.s9-cell:nth-child(6) { animation-delay: .40s; }
+.s9-cell:nth-child(7) { animation-delay: .47s; }
+.s9-cell:nth-child(8) { animation-delay: .54s; }
+.s9-cell:nth-child(9) { animation-delay: .61s; }
+@keyframes s9CellIn { to { opacity: 1; transform: scale(1); } }
+
+.s9-pad { padding: 20px 22px; gap: 11px; }
+
+/* ── Vocab tile ───────────────────────────────────────────── */
+.s9-vocab { padding: 0; overflow: hidden; position: relative; }
+/* Horizontal pager: slides left to reveal 2nd / 3rd vocab cards.
+   REVERSIBLE EDIT v8: extended from 2 to 3 pages. */
+.bv-pager {
+  display: flex; width: 300%; height: 100%;
+  transition: transform .6s cubic-bezier(.6,0,.25,1);
+  will-change: transform;
+}
+.bv-pager.bv-paged   { transform: translateX(-33.3333%); }
+.bv-pager.bv-paged-2 { transform: translateX(-66.6667%); }
+.bv-page {
+  flex: 0 0 33.3333%; width: 33.3333%; height: 100%;
+  display: flex; flex-direction: column; justify-content: center;
+  gap: 14px; padding: 18px; box-sizing: border-box;
+}
+.bv-card {
+  background: var(--bg-2); border: 1px solid var(--border);
+  border-radius: 8px; padding: 18px 16px; text-align: center; position: relative;
+}
+.bv-speak {
+  background: none; border: 1px solid var(--border); border-radius: 50%;
+  width: 30px; height: 30px; display: flex; align-items: center; justify-content: center;
+  color: var(--muted);
+}
+.bv-speak svg { width: 15px; height: 15px; }
+.bv-speak-top { position: absolute; top: 10px; right: 10px; }
+.bv-speak-sm { width: 24px; height: 24px; }
+.bv-speak-sm svg { width: 12px; height: 12px; }
+.bv-word { font-size: 46px; font-weight: 700; color: var(--ink); line-height: 1; }
+.bv-pinyin { font-size: 16px; color: var(--muted); font-style: italic; margin-top: 8px; }
+.bv-translation { font-size: 20px; color: var(--teal-d); font-weight: 600; margin-top: 10px; }
+.bv-example {
+  background: var(--bg-2); border-left: 3px solid var(--teal);
+  padding: 12px 16px; border-radius: 0 6px 6px 0; position: relative;
+}
+.bv-example-label { font-size: 10px; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); margin-bottom: 5px; }
+.bv-example-text { font-size: 15px; color: var(--ink); }
+.bv-example-tr { font-size: 13px; color: var(--ink-2); margin-top: 3px; }
+
+/* ── Multiple-choice tile ─────────────────────────────────── */
+.mc-question { font-size: 18px; font-weight: 600; line-height: 1.35; color: var(--ink); }
+.mc-options { display: flex; flex-direction: column; gap: 8px; }
+.mc-opt {
+  display: flex; align-items: center; gap: 12px;
+  padding: 11px 14px; background: #fff; border: 1.5px solid var(--border);
+  border-radius: 8px; color: var(--ink); font-size: 14px;
+}
+.mc-letter {
+  width: 24px; height: 24px; border-radius: 6px; background: var(--bg-3);
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 700; font-size: 12px; color: var(--ink-2); flex-shrink: 0;
+}
+.mc-text { flex: 1; }
+.mc-icon { font-size: 16px; font-weight: 700; color: var(--teal); }
+.mc-correct { border-color: var(--teal); background: var(--teal-light); }
+.mc-correct .mc-letter { background: var(--teal); color: #fff; }
+
+/* ── Fill-blank tile (logo tile UI) ───────────────────────── */
+.fb-line { font-size: 16px; line-height: 1.9; color: var(--ink); }
+.fb-blank {
+  display: inline-block; min-width: 54px; padding: 0 10px;
+  border-bottom: 2px solid var(--teal); color: var(--teal-d);
+  font-weight: 800; text-align: center;
+}
+
+/* ── Sort tile ────────────────────────────────────────────── */
+.srt-rows { display: flex; flex-direction: column; gap: 8px; }
+.srt-row {
+  padding: 11px 14px; border: 1.5px solid var(--border); border-radius: 8px;
+  font-size: 14px; font-weight: 600; color: var(--ink);
+  display: flex; justify-content: space-between; align-items: center;
+}
+.srt-n { color: var(--teal); font-weight: 800; }
+
+/* ── Map / globe tile ─────────────────────────────────────── */
+.s9-map2 { padding: 16px 18px; gap: 8px; }
+.mb-track { display: flex; flex-direction: column; gap: 6px; }
+.mb-line { height: 3px; background: var(--border-l); border-radius: 2px; }
+.mb-line-fill { height: 100%; width: 0; background: var(--teal); border-radius: 2px; }
+.mb-dots { display: flex; justify-content: space-between; }
+.mb-dot { width: 14px; height: 14px; border-radius: 50%; background: #fff; border: 2px solid var(--border); }
+.mb-dot-wrap.is-active .mb-dot { border-color: var(--teal); background: var(--teal); }
+.mb-task-num { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--muted); text-align: center; }
+.mb-task-question { font-size: 17px; font-weight: 700; color: var(--ink); text-align: center; }
+.mb-globe { flex: 1; display: flex; align-items: center; justify-content: center; min-height: 150px; }
+.mb-globe svg { height: 100%; max-height: 180px; width: auto; }
+#s9-map-globe { position: relative; height: 100%; aspect-ratio: 1 / 1; max-height: 190px; align-self: center; flex: 0 0 auto; }
+#s9-map-globe canvas { display: block; width: 100% !important; height: 100% !important; }
+
+/* ── Sentence-build tile ──────────────────────────────────── */
+.s9-sb { padding: 18px 20px; gap: 12px; }
+.sb-instruction { font-size: 15px; font-weight: 600; color: var(--ink); line-height: 1.4; text-align: center; }
+.sb-source { color: var(--teal-d); }
+.sb-dropzone {
+  min-height: 46px; background: var(--bg-2); border: 2px dashed var(--border);
+  border-radius: 8px; padding: 10px; display: flex; align-items: center;
+}
+.sb-placeholder { color: var(--muted); font-size: 13px; }
+.sb-bank { display: flex; flex-wrap: wrap; gap: 7px; justify-content: center; }
+.sb-chip { padding: 7px 14px; border-radius: 18px; font-size: 14px; font-weight: 500; border: none; }
+.sb-chip-bank { background: #fff; color: var(--ink); border: 1.5px solid var(--border); }
+.sb-btn {
+  align-self: center; padding: 11px 56px; background: var(--teal); color: #fff;
+  border: none; border-radius: 8px; font-weight: 600; font-size: 14px; opacity: .55;
+  min-width: 60%;
+}
+
+/* ── Categorize tile ──────────────────────────────────────── */
+.s9-cat2 { padding: 16px 18px; gap: 10px; }
+.cat-instruction { font-size: 15px; font-weight: 600; color: var(--ink); text-align: center; }
+.cat-pool { display: flex; flex-direction: column; gap: 7px; }
+.cat-chip {
+  display: flex; align-items: center; justify-content: space-between; gap: 10px;
+  padding: 8px 12px; background: #fff; border: 1px solid var(--border);
+  border-radius: 8px; font-size: 14px; color: var(--ink);
+}
+.cat-chip-actions { display: flex; gap: 5px; }
+.cat-mini-btn {
+  padding: 3px 10px; border-radius: 5px; border: 1px solid var(--border);
+  background: var(--bg-2); color: var(--ink-2); font-size: 11px;
+}
+.cat-buckets { display: flex; gap: 10px; }
+.cat-bucket { flex: 1; border: 1.5px solid var(--border); border-radius: 8px; overflow: hidden; }
+.cat-bucket-label {
+  padding: 7px; background: var(--bg-3); font-size: 11px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: .5px; color: var(--teal-d); text-align: center;
+}
+.cat-bucket-items { padding: 7px; display: flex; flex-direction: column; gap: 5px; min-height: 40px; }
+.cat-bucket-item { padding: 6px 10px; background: var(--bg-2); border-radius: 5px; font-size: 13px; text-align: center; color: var(--ink); }
+.cat-bucket-empty { text-align: center; font-size: 12px; color: var(--muted); padding: 12px 0; }
+
+/* ── Matching tile ────────────────────────────────────────── */
+.s9-match2 { padding: 18px 20px; gap: 14px; justify-content: center; }
+.match-instruction { font-size: 16px; font-weight: 600; color: var(--ink); text-align: center; }
+.match-grid { display: flex; gap: 14px; flex: 0 0 auto; align-items: center; }
+.match-col { flex: 1; display: flex; flex-direction: column; gap: 8px; }
+.match-item {
+  padding: 11px 12px; background: #fff; border: 1.5px solid var(--border);
+  border-radius: 8px; color: var(--ink); font-size: 14px; text-align: center;
+}
+.match-done { border-color: #9bd6c4; background: #f1f8f2; color: var(--teal-d); }
+
+/* ── Image-guess tile ─────────────────────────────────────── */
+.s9-ig { padding: 16px 18px; gap: 10px; position: relative; overflow: hidden; }
+/* 2nd question slides in from the right, covering the first. */
+.ig-next {
+  position: absolute; inset: 0;
+  background: var(--bg-1, #fff);
+  display: flex; flex-direction: column; gap: 10px;
+  padding: 16px 18px; box-sizing: border-box;
+  transform: translateX(104%);
+  transition: transform .55s cubic-bezier(.5,0,.2,1);
+  will-change: transform;
+}
+.s9-ig.ig-advanced .ig-next { transform: translateX(0); }
+.ig-opt { transition: background .3s ease, border-color .3s ease, color .3s ease, transform .2s ease; will-change: transform; }
+.ig-opt.tap { animation: feedTap .3s cubic-bezier(.34,1.5,.64,1); }
+.ig-question { font-size: 17px; font-weight: 700; color: var(--ink); text-align: center; }
+.ig-photo { flex: 1; display: flex; align-items: center; justify-content: center; min-height: 0; }
+.ig-photo img { max-height: 120px; max-width: 150px; object-fit: cover; border-radius: 8px; }
+.ig-options { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.ig-opt {
+  padding: 9px; background: #fff; border: 1.5px solid var(--border);
+  border-radius: 8px; font-size: 13px; font-weight: 500; text-align: center; color: var(--ink);
+}
+.ig-correct { border-color: var(--teal); background: var(--teal-light); color: var(--teal-d); }
+.ig-pager {
+  display: flex; align-items: center; justify-content: center; gap: 18px;
+  padding-top: 8px; border-top: 1px solid var(--border-l); font-size: 14px; color: var(--muted);
+}
+.ig-arrow { width: 34px; height: 30px; border: 1px solid var(--border); border-radius: 8px; display: flex; align-items: center; justify-content: center; }
+.ig-arrow-on { color: var(--ink); }
+.ig-count { font-weight: 600; color: var(--ink-2); }
+
+/* ── Value tiles: 3D FLIP card — task UI on the front, value face on the
+   back. The whole inner card rotates 180° on .switched, so the message
+   literally appears "on the back" of the previously-shown tile. ── */
+.s9-flip {
+  background: transparent; border: 0; box-shadow: none;
+  overflow: visible;            /* allow 3D (overflow!=visible forces flat) */
+  perspective: 1600px;
+}
+.s9-flip-inner {
+  position: absolute; inset: 0;
+  transform-style: preserve-3d;
+  transition: transform 1s cubic-bezier(.45,0,.15,1);
+}
+.s9-flip.switched .s9-flip-inner { transform: rotateY(180deg); }
+/* Both faces fill the card, are double-sided-hidden, and carry the card
+   chrome (border, shadow, radius) themselves. */
+.s9-value .s9-ui,
+.s9-value .s9-face {
+  position: absolute; inset: 0;
+  backface-visibility: hidden; -webkit-backface-visibility: hidden;
+  background: #fff; border: 1px solid var(--border);
+  border-radius: 12px; box-shadow: 0 10px 26px rgba(0,0,0,.10);
+  overflow: hidden;
+  display: flex; flex-direction: column; gap: 11px;
+  padding: 20px 22px;
+}
+/* Front (task UI): question centred + content vertically centred. */
+.s9-value .s9-ui { justify-content: center; }
+.s9-value .s9-ui .mc-question { text-align: center; }
+/* Back (value message / logo): rotated to sit on the reverse side. */
+.s9-value .s9-face {
+  transform: rotateY(180deg);
+  align-items: center; justify-content: center;
+}
+.s9-face-text { font-size: 46px; font-weight: 800; letter-spacing: -1.4px; line-height: 1.08; text-align: center; }
+.s9-face-text .b { color: var(--ink); }
+.s9-face-text .t { color: var(--teal); }
+.s9-face-logo { flex-direction: row; gap: 16px; }
+.s9-face-logo-icon { display: flex; }
+.s9-face-logo-icon svg { height: 80px; width: auto; display: block; }
+.s9-face-wm { font-family: 'Nunito', system-ui, sans-serif; font-weight: 900; font-size: 44px; letter-spacing: -1.5px; line-height: 1; }
+.s9-face-wm .wm-stack { color: var(--ink); }
+.s9-face-wm .wm-tags { color: var(--teal); }
+
+/* ── Closing logo (zooms out of centre logo tile) ─────────── */
+.s9-finale {
+  position: absolute; inset: 0;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 18px;
+  opacity: 0; pointer-events: none;
+  transform: scale(.4);
+  transition: opacity 1.1s ease, transform 1.3s cubic-bezier(.22,1,.36,1);
+}
+.s-9.finale .s9-finale { opacity: 1; transform: scale(1); }
+.s9-finale-logo { display: flex; }
+.s9-finale-logo svg { height: 300px; width: auto; display: block; }
+.s9-finale-wm {
+  font-family: 'Nunito', system-ui, sans-serif; font-weight: 900;
+  font-size: 120px; letter-spacing: -2px; line-height: 1;
+  opacity: 0; transition: opacity .8s ease .5s;
+}
+.s9-finale-wm .wm-stack { color: var(--ink); }
+.s9-finale-wm .wm-tags { color: var(--teal); }
+.s9-finale-url {
+  font-size: 34px; font-weight: 700; color: var(--muted); letter-spacing: 3px;
+  opacity: 0; transition: opacity .8s ease .9s;
+}
+.s-9.finale .s9-finale-wm,
+.s-9.finale .s9-finale-url { opacity: 1; }
+
+/* ============================================================
+   SCENE 9 — dynamic tile interaction animations
+   ============================================================ */
+/* Generic "tap" pulse used across the tiles when an answer is chosen. */
+@keyframes s9Tap { 0% { transform: scale(1); } 45% { transform: scale(.93); } 100% { transform: scale(1); } }
+.s9-tap { animation: s9Tap .26s ease; }
+
+/* Multiple-choice / image-guess reveal of the correct answer. */
+.mc-opt, .ig-opt, .match-item, .cat-mini-btn { transition: background .35s ease, border-color .35s ease, color .35s ease, transform .2s ease; }
+.mc-opt .mc-icon { opacity: 0; transform: scale(.4); transition: opacity .3s ease, transform .3s cubic-bezier(.34,1.6,.64,1); }
+.mc-opt.mc-correct .mc-icon { opacity: 1; transform: scale(1); }
+
+/* Sentence-build: chips placed into the dropzone. */
+.sb-dropzone { flex-wrap: wrap; gap: 7px; transition: border-color .4s ease, background .4s ease; }
+.sb-dropzone.sb-filled { border-style: solid; border-color: #9bd6c4; background: #f1f8f2; justify-content: center; }
+.sb-chip-placed {
+  padding: 7px 13px; border-radius: 18px; font-size: 14px; font-weight: 600;
+  background: var(--teal); color: #fff; border: none;
+  animation: sbPlace .34s cubic-bezier(.34,1.56,.64,1);
+}
+@keyframes sbPlace { 0% { transform: scale(.5) translateY(8px); opacity: 0; } 100% { transform: scale(1) translateY(0); opacity: 1; } }
+.sb-chip-bank { transition: opacity .25s ease, transform .25s ease; }
+.sb-chip-bank.sb-used { opacity: .25; transform: scale(.9); pointer-events: none; }
+.sb-btn { transition: opacity .4s ease, background .3s ease; }
+.sb-btn.sb-ready { opacity: 1; }
+.sb-btn.sb-correct { background: #2e9e7f; }
+
+/* Sort: number badges pop in as the order is confirmed. */
+.srt-n { display: inline-flex; min-width: 18px; justify-content: center; }
+.srt-n.srt-pop { animation: s9Pop .34s cubic-bezier(.34,1.6,.64,1); }
+.srt-row.srt-lit { border-color: #9bd6c4; background: #f1f8f2; }
+@keyframes s9Pop { 0% { transform: scale(0); opacity: 0; } 100% { transform: scale(1); opacity: 1; } }
+
+/* Fill-blank: answers reveal one by one. */
+.fb-blank { transition: color .3s ease; }
+.fb-blank.fb-show { animation: s9Pop .34s cubic-bezier(.34,1.6,.64,1); }
+
+/* Categorize: a placed item drops into its bucket; pool chip fades out. */
+.cat-chip { transition: opacity .3s ease, transform .3s ease; }
+.cat-chip.cat-gone { opacity: 0; transform: translateX(14px) scale(.9); }
+.cat-mini-btn.cat-picked { background: var(--teal); border-color: var(--teal); color: #fff; }
+.cat-bucket-item.cat-drop { animation: catDrop .36s cubic-bezier(.34,1.56,.64,1); }
+@keyframes catDrop { 0% { transform: translateY(-10px) scale(.7); opacity: 0; } 100% { transform: translateY(0) scale(1); opacity: 1; } }
+
+/* Matching: the connecting pulse on each pair. */
+.match-item.match-pick { border-color: var(--teal); background: #eaf6f1; transform: scale(1.03); }
+
+/* ============================================================
+   REVERSIBLE EDIT — Scene 1 opening-panel previews (op1/op2/op3)
+   These replace the old TikTok / YouTube / Stadium panel content with
+   in-app Stacktags previews. They live inside the existing .morph-shell
+   wrappers, so the morph-into-logo animation is unchanged. To revert the
+   whole scene-1 redesign, remove this block + restore the <template>
+   contents in index.html.
+   ============================================================ */
+
+/* ---- op1: left panel — game feed vocab card (financing/fundraising style) ---- */
+.op1 {
+  position: absolute; inset: 0;
+  border-radius: 13px;
+  background: linear-gradient(180deg, #0f4f42 0%, #16695a 60%, #1a7d6c 100%);
+  color: #fff;
+  overflow: hidden;
+  font-family: 'Inter', system-ui, sans-serif;
+}
+/* REVERSIBLE EDIT v8: 2-page pager that slides up to the 2nd card. */
+.op1-pager { display: flex; flex-direction: column; height: 100%; transition: transform .7s cubic-bezier(.5, 0, .2, 1); }
+.op1.op1-paged .op1-pager { transform: translateY(-100%); }
+.op1-page { flex: 0 0 100%; height: 100%; display: flex; flex-direction: column; padding: 30px 24px; box-sizing: border-box; }
+.op1-chip {
+  align-self: flex-start;
+  display: inline-flex; align-items: center; gap: 10px;
+  background: rgba(255,255,255,.16);
+  padding: 7px 16px 7px 7px;
+  border-radius: 12px;
+  backdrop-filter: blur(6px);
+  max-width: 100%;
+}
+.op1-chip-av {
+  width: 34px; height: 34px; border-radius: 50%;
+  background: var(--teal);
+  display: grid; place-items: center;
+  font-weight: 700; font-size: 15px; flex-shrink: 0;
+}
+.op1-chip-name { font-size: 15px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.op1-body { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 20px; }
+.op1-label { font-size: 13px; letter-spacing: .18em; font-weight: 700; opacity: .72; }
+.op1-prompt-row { display: flex; align-items: center; gap: 14px; }
+.op1-speaker {
+  width: 44px; height: 44px; border-radius: 50%;
+  background: rgba(255,255,255,.18);
+  border: 0; color: #fff; cursor: pointer;
+  display: grid; place-items: center; flex-shrink: 0;
+}
+.op1-prompt { font-size: 40px; font-weight: 700; letter-spacing: -.5px; text-shadow: 0 2px 12px rgba(0,0,0,.25); }
+.op1-img {
+  width: 100%; height: 188px;
+  border-radius: 12px; overflow: hidden;
+  background: rgba(255,255,255,.1);
+  box-shadow: 0 8px 24px rgba(0,0,0,.22);
+}
+.op1-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.op1-opts { display: flex; flex-direction: column; gap: 12px; width: 100%; }
+.op1-opt {
+  width: 100%; padding: 16px; border-radius: 10px;
+  background: rgba(255,255,255,.16);
+  color: #fff; border: 0; cursor: pointer;
+  font-family: inherit; font-size: 19px; font-weight: 600;
+  text-align: center;
+}
+.op1-opt.op1-correct { /* marker only — highlight applied on "click" via .op1-picked (REVERSIBLE EDIT v4) */ }
+.op1-opt.op1-picked { background: var(--teal); }
+.op1-opt.op1-tap { animation: op1Tap .34s cubic-bezier(.34,1.5,.64,1); }
+@keyframes op1Tap { 0% { transform: scale(1); } 42% { transform: scale(.955); } 100% { transform: scale(1); } }
+
+/* ---- op2: middle panel — Discover (Entdecken) cards preview ---- */
+.op2 {
+  position: absolute; inset: 0;
+  border-radius: 22px;
+  background: #f8fafa;
+  display: flex; flex-direction: column;
+  padding: 22px 22px;
+  font-family: 'Inter', system-ui, sans-serif;
+}
+.op2-top { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+.op2-title { font-size: 28px; font-weight: 800; color: var(--ink); letter-spacing: -.5px; }
+/* REVERSIBLE EDIT v3: "Discover" title replaced by a search bar. */
+.op2-search {
+  flex: 1; display: flex; align-items: center; gap: 10px;
+  background: #fff; border: 1px solid var(--border); border-radius: 6px;
+  padding: 12px 16px; color: var(--muted); font-size: 15px; font-weight: 500;
+  min-width: 0;
+}
+.op2-search svg { flex-shrink: 0; }
+/* REVERSIBLE EDIT v3: Feed button much less rounded (was border-radius: 999px). */
+.op2-chip {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--teal); color: #fff;
+  padding: 11px 16px; border-radius: 6px;
+  font-size: 15px; font-weight: 700; flex-shrink: 0;
+}
+/* REVERSIBLE EDIT v3/v4: grid now holds more cards over several rows; an inner
+   wrapper is gently auto-scrolled by animateOp2() after a short delay. */
+.op2-grid { flex: 1; overflow: hidden; }
+.op2-grid-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; align-content: start; will-change: transform; }
+.op2-card {
+  position: relative; background: #fff;
+  border: 1px solid var(--border); border-radius: 8px;
+  padding: 13px 14px 11px 20px;
+  box-shadow: 0 1px 3px rgba(0,0,0,.05);
+  display: flex; flex-direction: column; gap: 9px;
+  overflow: hidden;
+}
+.op2-card-accent { position: absolute; top: 0; left: 0; width: 4px; height: 100%; background: var(--teal); }
+.op2-head { display: flex; gap: 11px; align-items: flex-start; justify-content: space-between; }
+.op2-card-title {
+  font-size: 15px; font-weight: 700; color: var(--ink);
+  line-height: 1.22; letter-spacing: -.2px;
+  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+}
+.op2-thumb {
+  width: 44px; height: 44px; border-radius: 6px;
+  background: var(--bg-3); background-size: cover; background-position: center;
+  flex-shrink: 0; box-shadow: inset 0 0 0 1px rgba(0,0,0,.06);
+}
+.op2-tags { display: flex; gap: 5px; flex-wrap: wrap; }
+.op2-tags span {
+  font-size: 10.5px; font-weight: 500;
+  background: var(--bg-2); color: var(--ink-2);
+  padding: 3px 8px; border-radius: 4px;
+}
+.op2-meta {
+  font-size: 11px; color: var(--muted); font-weight: 500;
+  display: flex; gap: 14px;
+  padding-top: 8px; border-top: 1px solid var(--border-l);
+}
+
+/* ---- op3: right panel — Progress chart + player ranking ---- */
+.op3 {
+  position: absolute; inset: 0;
+  border-radius: 13px;
+  background: #fff;
+  display: flex; flex-direction: column;
+  font-family: 'Inter', system-ui, sans-serif;
+  color: var(--ink);
+}
+.op3-header {
+  display: flex; align-items: center; gap: 10px;
+  padding: 20px 22px 16px;
+  border-bottom: 1px solid var(--border-l);
+}
+.op3-title { flex: 1; font-size: 24px; font-weight: 800; letter-spacing: -.4px; }
+.op3-week {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 7px 14px; border: 1px solid var(--border); border-radius: 8px;
+  font-size: 14px; color: var(--ink-2);
+}
+.op3-xp { display: flex; align-items: center; gap: 16px; padding: 18px 22px; border-bottom: 1px solid var(--border-l); }
+.op3-ring { position: relative; width: 52px; height: 52px; flex-shrink: 0; }
+.op3-ring svg { width: 100%; height: 100%; }
+.op3-ring-lvl { position: absolute; inset: 0; display: grid; place-items: center; font-size: 16px; font-weight: 800; }
+.op3-xp-info { flex: 1; min-width: 0; }
+.op3-xp-head { font-size: 16px; font-weight: 700; margin-bottom: 6px; }
+.op3-xp-bar { width: 100%; height: 6px; background: var(--bg-3); border-radius: 3px; overflow: hidden; }
+.op3-xp-bar-fill { height: 100%; width: 82%; background: var(--teal); border-radius: 3px; }
+.op3-xp-num { font-size: 12px; color: var(--muted); margin-top: 6px; }
+.op3-chart-wrap { padding: 16px 22px 8px; }
+.op3-chart { height: 150px; }
+.op3-chart svg { width: 100%; height: 100%; overflow: visible; }
+.op3-axis { display: flex; justify-content: space-between; font-size: 12px; color: var(--muted); padding: 6px 2px 0; }
+/* REVERSIBLE EDIT v3: leaderboard is now a scrolling board of absolutely
+   positioned rows so "you" can slide up from last place over the others.
+   Rows are built + animated by buildOp3Board()/animateOp3() in video.js. */
+.op3-rank { padding: 8px 16px 0; display: flex; flex-direction: column; }
+.op3-rank-head {
+  font-size: 12px; font-weight: 700; color: var(--muted);
+  letter-spacing: .06em; text-transform: uppercase;
+  padding: 4px 6px 8px;
+}
+.op3-board { position: relative; height: 326px; overflow: hidden; }
+.op3-board-inner { position: absolute; left: 0; right: 0; top: 0; transition: transform .55s cubic-bezier(.4,0,.2,1); }
+.op3-row {
+  position: absolute; left: 0; right: 0; height: 42px;
+  display: grid; grid-template-columns: 30px 38px 1fr auto; align-items: center; gap: 12px;
+  padding: 0 10px; border-radius: 10px;
+  transition: transform .55s cubic-bezier(.4,0,.2,1), background .4s ease, box-shadow .4s ease;
+  will-change: transform;
+}
+.op3-row.op3-me { background: var(--teal-light); border: 1px solid rgba(70,172,148,.35); box-shadow: 0 2px 12px rgba(70,172,148,.28); }
+.op3-rank-n { font-size: 16px; font-weight: 700; color: var(--ink-2); display: flex; align-items: center; justify-content: center; gap: 1px; font-variant-numeric: tabular-nums; }
+.op3-arrow { color: var(--teal-d); font-size: 11px; }
+.op3-av { width: 34px; height: 34px; border-radius: 50%; overflow: hidden; background: var(--teal-light); display: grid; place-items: center; font-weight: 700; font-size: 14px; flex-shrink: 0; }
+.op3-av img { width: 100%; height: 100%; object-fit: cover; }
+.op3-av-me { background: var(--teal); color: #fff; }
+.op3-name { font-size: 14px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.op3-xp-pts { font-size: 15px; font-weight: 800; color: var(--ink); font-variant-numeric: tabular-nums; }

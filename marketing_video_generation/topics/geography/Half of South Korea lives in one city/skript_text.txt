@@ -1,0 +1,77 @@
+VIDEO SCRIPT
+Title: Half of South Korea lives in one city
+Topic: Demographics
+Target length: ~100 seconds (fits the 30s–3min window)
+Language of narration: English
+Format: Voiceover script. Spoken lines are plain text. [Bracketed lines] describe
+what is on screen AT THE SAME TIME as the narration next to them.
+
+==================================================================
+THE CORE IDEA
+==================================================================
+The Greater Seoul area (Seoul + Incheon + Gyeonggi) covers only ~12% of South
+Korea's land but holds OVER HALF its population (~26 million) and the lion's share
+of its economy/exports (~70%). It's an even more extreme concentration than
+Japan's Greater Tokyo (~1/3 of Japan). Driven by decades of centralized growth.
+Punchline: South Korea is almost a city-state with a country attached.
+
+NOTE (honesty): figures rounded — population "more than half," land "about 12%,"
+exports "around 70%." Compare to Tokyo qualitatively.
+
+KEY VISUALS:
+- Map of South Korea: the Greater Seoul region (small) glowing, with a counter
+  "50%+ of people / ~12% of land."
+- Side-by-side with Japan's Tokyo share to show Korea is more extreme.
+
+==================================================================
+SCRIPT
+==================================================================
+
+--- HOOK (0:00–0:12) — the payoff up front ---
+
+More than half of South Korea's entire population lives in and around a single
+city.
+[Map of South Korea; the Greater Seoul area lights up small and bright.]
+On just about a tenth of the country's land, you'll find over 50% of its people —
+and the overwhelming majority of its economy. It's one of the most extreme
+concentrations of a nation anywhere on Earth.
+[A counter: "~12% of the land — 50%+ of the people."]
+
+--- THE NUMBERS (≈0:12–0:40) ---
+
+The city is Seoul, together with its surrounding capital region — Incheon and
+Gyeonggi province.
+[The three areas merge into one glowing "Greater Seoul" blob.]
+Together they cover only around 12% of South Korea's land. But they hold over half
+its population — roughly 26 million people — and produce a huge share of the
+country's output and exports, on the order of 70%.
+[Bars fill: land ~12%, people 50%+, exports ~70%.]
+Half the country, packed into a corner of the map.
+
+--- EVEN BEYOND TOKYO (≈0:40–1:05) ---
+
+And to put that in perspective: even Japan, famous for Tokyo swallowing the
+country, isn't this lopsided.
+[Greater Tokyo highlighted on Japan: "~1/3 of Japan."]
+Greater Tokyo holds about a third of Japan's people. South Korea crams in a full
+half. It's Tokyo's pull — taken even further.
+[The two shares side by side; Korea's bar clearly taller.]
+
+--- WHY, AND THE COST (≈1:05–1:30) ---
+
+It happened by design. Decades of fast, centralized growth pulled the jobs, the
+universities, the big companies all into the capital — and everyone followed. The
+rest of the country quietly emptied out as the young moved to Seoul.
+[Arrows of people streaming from the regions into Seoul; small towns dimming.]
+It's efficient — and fragile. Brutal housing costs, fierce competition, and a
+capital so dominant that one shock there shakes the whole nation.
+
+--- PUNCHLINE / OUTRO (≈1:30–1:42) ---
+
+Some countries have a capital city.
+[Pull back to the whole peninsula, glowing at one point.]
+South Korea is, more or less, a capital city — with a country attached.
+
+Want more numbers that change how you see the world?
+[Stacktags logo animates in with a "Follow" prompt.]
+Follow Stacktags.

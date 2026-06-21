@@ -1,0 +1,403 @@
+/* ============================================================
+   Stacktags — "One poem with only one word — possible in Chinese" (9:16)
+   NEW STYLE: dynamic depth-transition fly-through on a moving grid.
+   Tokens / grid / subtitles come from elements/theme.css; the depth and
+   outro elements bring their own CSS. This file does stage layout, scene
+   crossfades and the bespoke look of each depth beat (the conceptual
+   visuals — waveform, tone chips, character fan, sound-collapse, the
+   read-vs-heard split). The story figures are transparent cut-out images.
+   White + turquoise (#35A292), Inter only, CJK in a SANS face, no borders.
+   ============================================================ */
+* { box-sizing: border-box; }
+html, body { margin: 0; height: 100%; background: #0b0e0d; overflow: hidden; }
+
+.root { position: fixed; inset: 0; display: flex; align-items: center; justify-content: center; }
+
+/* 1080×1920 design stage, scaled to fit the viewport (JS sets --scale).
+   White background; the moving grid is the depth element's own grid plane. */
+.stage {
+  position: relative;
+  width: 1080px; height: 1920px;
+  flex-shrink: 0;
+  transform-origin: center center;
+  transform: scale(var(--scale, 1));
+  overflow: hidden;
+  background: #fff;
+  font-family: var(--stk-font);
+  color: var(--stk-ink);
+}
+
+/* ---- scenes: absolutely stacked, crossfaded by .active ---- */
+.scene {
+  position: absolute; inset: 0;
+  opacity: 0; visibility: hidden;
+  transition: opacity .5s ease, visibility 0s linear .5s;
+}
+.scene.active {
+  opacity: 1; visibility: visible;
+  transition: opacity .5s ease, visibility 0s;
+}
+
+/* CJK glyphs use a SANS face (design guide §4) */
+.cjk { font-family: 'Noto Sans SC', var(--stk-font); font-weight: 900; }
+
+/* ============ progress bar + watermark ============ */
+.vprogress {
+  position: absolute; top: 0; left: 0; right: 0; height: 7px;
+  background: rgba(35,43,51,0.06); z-index: 60;
+}
+.vprogress-fill {
+  height: 100%; width: 0%;
+  background: linear-gradient(90deg, var(--stk-teal), var(--stk-teal-d));
+}
+.brand-wm {
+  position: absolute; top: 30px; right: 40px; z-index: 60;
+  font-weight: 900; font-size: 30px; letter-spacing: -0.5px; opacity: .9;
+}
+.brand-wm .wm-stack { color: var(--stk-ink); }
+.brand-wm .wm-tags  { color: var(--stk-teal); }
+
+/* ============ depth + outro hosts ============ */
+.depth-host { position: absolute; inset: 0; }
+#outro-host { position: absolute; inset: 0; }
+
+/* transparent cut-out figures float on the grid; the depth element frames them */
+.stk-depth2-img { width: 860px; }
+.stk-depth2-img img { filter: drop-shadow(0 30px 48px rgba(20,40,33,.22)); }
+
+/* ============ subtitles ============ */
+.stk-subs { bottom: 150px; }
+.stk-subs-line { font-size: 46px; }
+
+/* ============================================================
+   DEPTH BEATS — bespoke conceptual visuals. Each lives inside
+   .stk-depth2-text (centred, 880px). Roots reset their own sizing.
+   ============================================================ */
+.stk-depth2-text { letter-spacing: -1px; }
+.b-cap { font-size: 38px; font-weight: 600; color: var(--stk-muted); margin-top: 26px; letter-spacing: -.3px; }
+.b-cap b, .b-cap .key { color: var(--stk-teal-d); font-weight: 800; }
+
+/* 0 — the full poem FILLS the screen as a wall of characters (every one a "shi") */
+.b-wall { display: flex; flex-direction: column; align-items: center; gap: 24px; }
+.b-wall .bw-chars {
+  font-family: 'Noto Sans SC', sans-serif; font-weight: 700;
+  font-size: 78px; line-height: 1.26; letter-spacing: 4px;
+  color: #cfe6dd; width: 880px; text-align: center; word-break: break-all;
+}
+.b-wall .bw-dots {
+  font-size: 150px; font-weight: 900; line-height: .42;
+  letter-spacing: 8px; color: var(--stk-teal);
+}
+
+/* 1 — cluster: six different characters, every pinyin reads shi */
+.b-allshi { display: flex; flex-direction: column; align-items: center; }
+.b-allshi .bas-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px 38px; max-width: 860px; }
+.b-allshi .bas-cell { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+.b-allshi .bas-han { font-family: 'Noto Sans SC', sans-serif; font-weight: 900; font-size: 126px; color: var(--stk-ink); line-height: 1; }
+.b-allshi .bas-py  { font-size: 38px; font-weight: 800; color: var(--stk-teal); }
+
+/* 2 — the sound payoff: one giant "shī" with the four tone marks */
+.b-hero { display: flex; flex-direction: column; align-items: center; }
+.b-hero .bh-word {
+  font-weight: 900; font-size: 360px; letter-spacing: -10px; line-height: .9;
+  color: var(--stk-teal-d);
+  animation: heroBob 3.4s ease-in-out infinite;
+}
+.b-hero .bh-tones { display: flex; gap: 52px; margin-top: 48px; }
+.b-hero .bh-tones i { font-style: normal; font-size: 90px; line-height: 1; font-weight: 800; color: var(--stk-muted); }
+@keyframes heroBob { 0%,100%{ transform: translateY(0); } 50%{ transform: translateY(-14px); } }
+
+/* 3 — title card */
+.b-title .bt-zh { font-family: 'Noto Sans SC', sans-serif; font-weight: 900; font-size: 150px; letter-spacing: 2px; color: var(--stk-ink); line-height: 1.04; white-space: nowrap; }
+.b-title .bt-py { font-size: 52px; font-weight: 800; color: var(--stk-teal-d); margin-top: 20px; letter-spacing: -.5px; }
+.b-title .bt-en { font-size: 38px; font-weight: 600; color: var(--stk-muted); margin-top: 14px; letter-spacing: -.3px; }
+
+/* 5 — the four tones, as chips with a tone-contour line */
+.b-tones .bt-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+.b-tones .tone {
+  display: flex; flex-direction: column; align-items: center; gap: 14px;
+  background: var(--stk-teal-soft); border-radius: 28px; padding: 36px 30px 30px;
+}
+.b-tones .tone .tw { font-size: 92px; font-weight: 900; color: var(--stk-ink); letter-spacing: -1px; line-height: 1; }
+.b-tones .tone .tc { width: 120px; height: 40px; }
+.b-tones .tone .tc path { fill: none; stroke: var(--stk-teal); stroke-width: 7; stroke-linecap: round; }
+
+/* 6 — read-aloud waveform: busy teal bars + the shi-blur label */
+.b-wave { display: flex; flex-direction: column; align-items: center; gap: 30px; }
+.b-wave .wv { display: flex; align-items: center; gap: 9px; height: 300px; }
+.b-wave .wv i { display: block; width: 16px; height: 100%; border-radius: 8px; transform-origin: center; background: linear-gradient(180deg, var(--stk-teal), var(--stk-teal-d)); animation: barPulse 1s ease-in-out infinite; }
+.b-wave .blur { font-size: 56px; font-weight: 800; color: var(--stk-muted); letter-spacing: 4px; }
+@keyframes barPulse { 0%,100%{ transform: scaleY(.24); } 50%{ transform: scaleY(1); } }
+
+/* 8 — a literal wall of the same sound */
+/* pushed down so it rises in front of the kept speaker's lower body, head + bubble stay above (#3) */
+.b-soundwall { display: flex; flex-direction: column; align-items: center; gap: 26px; transform: translateY(150px); }
+.b-soundwall .brick { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+.b-soundwall .brick span {
+  font-size: 60px; font-weight: 800; color: #aeb8c0;
+  background: #eef2f4; border-radius: 14px; padding: 18px 30px; letter-spacing: 2px;
+}
+
+/* 9 — on paper: a page where every character lights up with a meaning */
+.b-paper { background: #fff; box-shadow: 0 30px 70px rgba(20,40,33,.16); border-radius: 28px; padding: 56px 50px; }
+.b-paper .pg { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px 40px; }
+.b-paper .pg .cell { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+.b-paper .pg .han { font-family: 'Noto Sans SC', sans-serif; font-weight: 900; font-size: 100px; color: var(--stk-teal-d); line-height: 1; }
+.b-paper .pg .gl  { font-size: 32px; font-weight: 700; color: var(--stk-ink); }
+
+/* 12 — "vows to eat ten" tally */
+.b-ten { display: flex; flex-direction: column; align-items: center; gap: 18px; }
+.b-ten .tens { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px 18px; }
+.b-ten .tens img { width: 118px; height: 118px; object-fit: contain; }
+.b-ten .num { font-size: 120px; font-weight: 900; color: var(--stk-teal-d); letter-spacing: -4px; line-height: 1; }
+.b-ten .num small { font-size: 56px; font-weight: 800; color: var(--stk-ink); }
+
+/* 15 — one "shì" fans out into clearly different characters */
+.b-fan { position: relative; width: 820px; height: 760px; }
+.b-fan .core {
+  position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%);
+  font-size: 132px; font-weight: 900; color: var(--stk-muted); letter-spacing: -2px;
+}
+.b-fan .fi {
+  position: absolute; left: 50%; top: 50%;
+  display: flex; flex-direction: column; align-items: center; gap: 6px;
+  transform: translate(-50%, -50%) translate(var(--fx), var(--fy));
+}
+.b-fan .fi .han { font-family: 'Noto Sans SC', sans-serif; font-weight: 900; font-size: 118px; color: var(--stk-ink); line-height: 1; }
+.b-fan .fi .gl  { font-size: 30px; font-weight: 700; color: var(--stk-teal-d); }
+
+/* 16 — on paper, zero confusion: a clean check */
+.b-ok { display: flex; flex-direction: column; align-items: center; gap: 26px; }
+.b-ok .ck {
+  width: 240px; height: 240px; border-radius: 50%; background: var(--stk-teal-soft);
+  display: flex; align-items: center; justify-content: center;
+}
+.b-ok .ck svg { width: 150px; height: 150px; fill: none; stroke: var(--stk-teal); stroke-width: 16; stroke-linecap: round; stroke-linejoin: round; }
+.b-ok .ttl { font-size: 76px; font-weight: 900; color: var(--stk-ink); letter-spacing: -1.5px; }
+
+/* 17 — meaning lives in the shape, not the sound */
+.b-shape { display: flex; align-items: center; gap: 56px; }
+.b-shape .glyph { font-family: 'Noto Sans SC', sans-serif; font-weight: 900; font-size: 260px; color: var(--stk-teal-d); line-height: 1; }
+.b-shape .vs { display: flex; flex-direction: column; align-items: center; gap: 18px; }
+.b-shape .spk { position: relative; width: 150px; height: 150px; color: #b9c2c9; }
+.b-shape .spk svg { width: 100%; height: 100%; fill: currentColor; }
+.b-shape .spk .strike { position: absolute; left: -8%; top: 46%; width: 116%; height: 12px; background: var(--stk-ink); border-radius: 8px; transform: rotate(-18deg); }
+.b-shape .lbl { font-size: 34px; font-weight: 700; }
+.b-shape .lbl.on { color: var(--stk-teal-d); }
+.b-shape .lbl.off { color: var(--stk-muted); }
+
+/* 18 — tones help but can't do it alone (four tone arrows, crossed) */
+.b-tonesx { display: flex; flex-direction: column; align-items: center; gap: 30px; }
+.b-tonesx .arr { display: flex; gap: 30px; position: relative; }
+.b-tonesx .arr svg { width: 150px; height: 96px; }
+.b-tonesx .arr svg path { fill: none; stroke: var(--stk-teal); stroke-width: 9; stroke-linecap: round; }
+.b-tonesx .arr .strike { position: absolute; left: -3%; top: 48%; width: 106%; height: 12px; background: var(--stk-red); border-radius: 8px; transform: rotate(-9deg); opacity: .92; }
+
+/* 19 — the writing does the heavy lifting (a written stroke + brush nib) */
+.b-brush { display: flex; flex-direction: column; align-items: center; gap: 18px; }
+.b-brush .ch { font-family: 'Noto Sans SC', sans-serif; font-weight: 900; font-size: 300px; color: var(--stk-ink); line-height: 1; position: relative; }
+.b-brush .ch::after {
+  content: ''; position: absolute; right: -36px; top: -30px; width: 0; height: 0;
+  border-left: 18px solid transparent; border-right: 18px solid transparent; border-top: 90px solid var(--stk-teal-d);
+  transform: rotate(28deg);
+}
+
+/* 20 — older sounds melt into one shī (chips converge, looping) */
+.b-collapse { position: relative; width: 820px; height: 720px; }
+.b-collapse .res {
+  position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%);
+  font-size: 200px; font-weight: 900; color: var(--stk-teal-d); letter-spacing: -6px;
+  z-index: 3;
+}
+.b-collapse .chip {
+  position: absolute; left: 50%; top: 50%; z-index: 1;
+  font-size: 46px; font-weight: 800; color: var(--stk-muted);
+  background: #eef2f4; padding: 12px 24px; border-radius: 999px; white-space: nowrap;
+  transform: translate(-50%,-50%) translate(var(--cx), var(--cy));
+  animation: chipMelt 3.4s ease-in-out infinite;
+}
+@keyframes chipMelt {
+  0% { transform: translate(-50%,-50%) translate(var(--cx), var(--cy)); opacity: 1; }
+  70% { transform: translate(-50%,-50%) translate(calc(var(--cx) * .12), calc(var(--cy) * .12)); opacity: .22; }
+  100% { transform: translate(-50%,-50%) translate(var(--cx), var(--cy)); opacity: 1; }
+}
+
+/* 21 — the honest disclaimer card */
+.b-honest { display: flex; flex-direction: column; align-items: center; gap: 26px; max-width: 820px; }
+.b-honest .mk {
+  width: 130px; height: 130px; border-radius: 50%; background: var(--stk-teal-soft);
+  color: var(--stk-teal-d); font-size: 96px; font-weight: 900;
+  display: flex; align-items: center; justify-content: center;
+}
+.b-honest .ht { font-size: 60px; font-weight: 800; color: var(--stk-ink); letter-spacing: -1px; line-height: 1.12; }
+.b-honest .hs { font-size: 38px; font-weight: 600; color: var(--stk-muted); }
+.b-honest .hs b { color: var(--stk-teal-d); font-weight: 800; }
+
+/* 22 — the punchline: READ ✓ vs HEARD ✗ */
+.b-punch { display: flex; gap: 40px; align-items: stretch; }
+.b-punch .card { width: 360px; border-radius: 30px; padding: 44px 30px; display: flex; flex-direction: column; align-items: center; gap: 22px; }
+.b-punch .card.read { background: var(--stk-teal-soft); }
+.b-punch .card.heard { background: #eef2f4; }
+.b-punch .card .key { font-size: 48px; font-weight: 900; letter-spacing: 1px; }
+.b-punch .card.read .key { color: var(--stk-teal-d); }
+.b-punch .card.heard .key { color: var(--stk-muted); }
+.b-punch .card .page {
+  width: 200px; height: 230px; border-radius: 14px; background: #fff; box-shadow: 0 14px 30px rgba(20,40,33,.14);
+  display: flex; flex-direction: column; align-items: stretch; justify-content: center; gap: 18px; padding: 32px 26px;
+}
+.b-punch .card .page .ln { width: 100%; height: 16px; border-radius: 8px; background: var(--stk-teal); }
+.b-punch .card .page .ln:nth-child(2){ width: 70%; } .b-punch .card .page .ln:nth-child(4){ width: 84%; }
+.b-punch .card .flatwave { width: 200px; height: 230px; display: flex; align-items: center; justify-content: center; gap: 8px; }
+.b-punch .card .flatwave i { width: 13px; height: 26px; border-radius: 8px; background: #c2cad0; }
+.b-punch .card .mk { font-size: 84px; font-weight: 900; line-height: 1; }
+.b-punch .card.read .mk { color: var(--stk-teal); }
+.b-punch .card.heard .mk { color: #b9c2c9; }
+
+/* ============================================================
+   OPENING SCENE (bespoke) — scrolling poem, character morphs, portrait
+   ============================================================ */
+#scene-open { overflow: hidden; }
+
+/* a manuscript SCROLL: wooden rods top + bottom (black outline), black side
+   lines, parchment interior. The poem is typed inside it letter by letter, then
+   scrolls. Fades to the white grid at the cluster morph. */
+.op-scroll {
+  position: absolute; left: 50%; top: 150px; transform: translateX(-50%);
+  width: 900px; z-index: 5; opacity: 1; transition: opacity .55s ease;
+}
+.op-scroll.gone { opacity: 0; }
+.op-roller {
+  position: relative; z-index: 2; width: 980px; left: -40px; height: 60px; border-radius: 32px;
+  background: linear-gradient(180deg, #cb9d66 0%, #a26c37 50%, #6f471f 100%);
+  border: 5px solid #1b1712;
+  box-shadow: inset 0 7px 0 rgba(255,255,255,.22), inset 0 -10px 14px rgba(0,0,0,.30), 0 10px 22px rgba(20,20,14,.22);
+}
+.op-roller::before, .op-roller::after {           /* rod end knobs */
+  content: ''; position: absolute; top: 50%; width: 28px; height: 80px; transform: translateY(-50%);
+  background: linear-gradient(180deg, #b78a55, #6a431d); border: 5px solid #1b1712; border-radius: 12px;
+}
+.op-roller::before { left: -14px; } .op-roller::after { right: -14px; }
+.op-roller-top { margin-bottom: -5px; } .op-roller-bot { margin-top: -5px; }
+.op-scroll-body {
+  position: relative; z-index: 1; width: 900px; height: 1380px; overflow: hidden;
+  background: url('assets/parchment.png') center / cover no-repeat, #f1e6cd;
+  border-left: 6px solid #1b1712; border-right: 6px solid #1b1712;
+  box-shadow: inset 0 0 70px rgba(120,90,40,.22);
+}
+.op-poem {
+  width: 820px; margin: 0 auto; padding: 6px 10px 0; text-align: left;
+  font-family: 'Noto Sans SC', sans-serif; font-weight: 800;
+  font-size: 92px; line-height: 1.34; letter-spacing: 3px;
+  color: #1a1712; will-change: transform;
+}
+.op-poem .ln { display: block; }
+.op-poem .ch { opacity: 0; }
+.op-poem .ch.shown { opacity: 1; transition: opacity .11s ease; }
+.op-poem.gone { opacity: 0; transition: opacity .45s ease; }
+
+/* flying characters */
+.op-fly { position: absolute; inset: 0; pointer-events: none; }
+.op-fly .fc {
+  position: absolute; left: 0; top: 0;
+  font-family: 'Noto Sans SC', sans-serif; font-weight: 900; font-size: 150px; line-height: 1;
+  color: var(--stk-ink); opacity: 0;
+  transform: translate(540px, 960px) translate(-50%, -50%);
+  transition: transform .72s cubic-bezier(.2,.8,.2,1), opacity .4s ease;
+}
+
+/* cluster: pinyin labels under each flown char + caption */
+.op-cluster { position: absolute; inset: 0; pointer-events: none; opacity: 0; transition: opacity .4s ease; }
+.op-cluster.in { opacity: 1; }
+.op-cluster .cl { position: absolute; transform: translate(-50%, -50%); font-weight: 800; font-size: 42px; color: var(--stk-teal); }
+.op-cluster .cap { position: absolute; left: 50%; transform: translateX(-50%); font-weight: 600; font-size: 42px; color: var(--stk-muted); white-space: nowrap; }
+.op-cluster .cap b { color: var(--stk-teal-d); font-weight: 800; }
+
+/* title pinyin + english (the hanzi are the flown chars) */
+.op-title { position: absolute; inset: 0; pointer-events: none; opacity: 0; transition: opacity .5s ease; }
+.op-title.in { opacity: 1; }
+.op-title-py { position: absolute; left: 50%; top: 858px; transform: translateX(-50%); font-weight: 800; font-size: 54px; color: var(--stk-teal-d); letter-spacing: -.5px; white-space: nowrap; }
+.op-title-en { position: absolute; left: 50%; top: 936px; transform: translateX(-50%); font-weight: 600; font-size: 38px; color: var(--stk-muted); letter-spacing: -.3px; white-space: nowrap; }
+
+/* the linguist portrait (dashed silhouette baked in), slides up from below, title stays */
+.op-portrait {
+  position: absolute; left: 50%; top: 1340px; width: 560px;
+  transform: translate(-50%, calc(-50% + 920px)); opacity: 0;
+  transition: transform .8s cubic-bezier(.2,.8,.2,1), opacity .5s ease;
+}
+.op-portrait.in { opacity: 1; transform: translate(-50%, -50%); }
+.op-portrait img { width: 100%; height: auto; display: block; filter: drop-shadow(0 26px 44px rgba(20,40,33,.20)); }
+
+/* #5 — lions rising from below (staggered), filling the lower band under the poet */
+.b-lions { position: relative; width: 880px; height: 980px; }
+.b-lions img { position: absolute; width: 136px; height: 136px; object-fit: contain; transform: translateY(150%); opacity: 0; animation: lionRise .6s cubic-bezier(.2,.8,.2,1) forwards; }
+@keyframes lionRise { to { transform: translateY(0); opacity: 1; } }
+
+/* #6 — the poet rises up from below to MEET the market */
+.b-market { position: relative; width: 760px; height: 900px; }
+.b-market .mk-market { position: absolute; left: 50%; top: 50px; width: 560px; transform: translateX(-50%); filter: drop-shadow(0 24px 40px rgba(20,40,33,.18)); }
+.b-market .mk-poet { position: absolute; left: 50%; top: 470px; width: 300px; transform: translate(-50%, 380px); opacity: 0; animation: poetMeet .9s cubic-bezier(.2,.8,.2,1) .2s forwards; filter: drop-shadow(0 18px 30px rgba(20,40,33,.18)); }
+@keyframes poetMeet { to { transform: translate(-50%, 0); opacity: 1; } }
+
+/* #8 — the legible poem shown again */
+.b-poemback { display: flex; flex-direction: column; align-items: center; gap: 26px; }
+.b-poemback .pb {
+  font-family: 'Noto Sans SC', sans-serif; font-weight: 700;
+  font-size: 60px; line-height: 1.32; letter-spacing: 3px; width: 800px; text-align: center;
+  color: var(--stk-ink);
+}
+.b-poemback .pbcap { font-size: 42px; font-weight: 600; color: var(--stk-muted); }
+.b-poemback .pbcap b { color: var(--stk-teal-d); font-weight: 800; }
+
+/* the baffled listener — the Mandarin speaker + a garbled #!/&%* bubble
+   (carried over from the "Mandarin is broken" video) */
+.b-nonsense { position: relative; width: 700px; height: 860px; }
+.b-nonsense .nf {
+  position: absolute; left: 50%; bottom: 0; width: 360px; transform: translateX(-50%);
+  filter: drop-shadow(0 22px 38px rgba(20,40,33,.22));
+}
+.b-nonsense .nbubble {
+  position: absolute; left: 70%; top: 70px;
+  padding: 24px 46px; background: #fff; border: 7px solid var(--stk-ink); border-radius: 50px;
+  box-shadow: 0 16px 38px rgba(20,40,33,.16);
+  font-weight: 900; font-size: 76px; letter-spacing: 3px; color: var(--stk-ink); white-space: nowrap;
+}
+.b-nonsense .nbubble::before { content: ''; position: absolute; left: 30px; bottom: -42px; width: 0; height: 0; border-top: 46px solid var(--stk-ink); border-right: 36px solid transparent; }
+.b-nonsense .nbubble::after  { content: ''; position: absolute; left: 38px; bottom: -24px; width: 0; height: 0; border-top: 30px solid #fff; border-right: 23px solid transparent; }
+
+/* the poem with a turquoise "shi" pinyin row that slides in under each line; the
+   line spacing grows as the pinyin appears (#2) */
+.b-poempy { display: flex; flex-direction: column; align-items: center; gap: 24px; }
+.b-poempy .pp { display: flex; flex-direction: column; gap: 6px; transition: gap .5s ease; }
+.b-poempy.py-in .pp { gap: 20px; }                  /* line spacing grows a touch */
+.b-poempy .ppl { display: flex; flex-direction: column; align-items: flex-start; }
+.b-poempy .ppl-han { font-family: 'Noto Sans SC', sans-serif; font-weight: 800; font-size: 68px; letter-spacing: 4px; color: var(--stk-ink); line-height: 1.04; }
+.b-poempy .ppl-py {                                  /* collapsed until revealed → growing it spreads the lines */
+  display: flex; max-height: 0; overflow: hidden; opacity: 0; transform: translateX(-26px);
+}
+.b-poempy.py-in .ppl-py {
+  max-height: 50px; opacity: 1; transform: none;
+  transition: max-height .5s ease, opacity .4s ease, transform .46s cubic-bezier(.2,.8,.2,1);
+}
+.b-poempy .ppl-py i { display: inline-block; width: 72px; text-align: center; font-style: normal; font-weight: 700; font-size: 30px; color: var(--stk-teal); letter-spacing: 0; }
+.b-poempy .pbcap { font-size: 40px; font-weight: 600; color: var(--stk-muted); margin-top: 6px; }
+.b-poempy .pbcap b { color: var(--stk-teal-d); font-weight: 800; }
+
+/* ============ sync flash ============ */
+#syncflash { position: absolute; inset: 0; background: #000; z-index: 9000; display: none; }
+#syncflash.on { display: block; }
+
+/* ============ HUD (hidden in clean render mode) ============ */
+.hud {
+  position: fixed; left: 50%; bottom: 22px; transform: translateX(-50%);
+  display: flex; gap: 12px; align-items: center; z-index: 999;
+  background: rgba(255,255,255,.92); padding: 10px 14px; border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.18);
+}
+.hud button {
+  border: 0; cursor: pointer; background: var(--stk-teal); color: #fff;
+  font-family: var(--stk-font); font-weight: 700; font-size: 15px;
+  padding: 9px 16px; border-radius: 999px;
+}
+.hud .info { font-family: ui-monospace, Consolas, monospace; font-size: 13px; color: #444; min-width: 52px; text-align: center; }
+body.clean .hud { display: none; }
+body.clean { background: #fff; }

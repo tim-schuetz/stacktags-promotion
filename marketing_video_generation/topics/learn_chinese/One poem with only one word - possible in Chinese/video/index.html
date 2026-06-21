@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Stacktags — One poem, one word</title>
+<link rel="icon" href="data:," />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- Inter only (design guide); CJK uses a SANS face (Noto Sans SC), never serif. Nunito only for the outro wordmark. -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Nunito:wght@800;900&family=Noto+Sans+SC:wght@500;700;900&display=swap" rel="stylesheet">
+<!-- shared theme FIRST (tokens, grid, subtitle styles), then elements, then this video -->
+<link rel="stylesheet" href="elements/theme.css" />
+<link rel="stylesheet" href="elements/depth.css" />
+<link rel="stylesheet" href="elements/outro.css" />
+<link rel="stylesheet" href="styles.css?v=1" />
+</head>
+<body>
+<div class="root">
+  <div class="stage" id="stage">
+
+    <!-- sync flash: a single black frame burned in at audio t=0 so the build can
+         find the exact trim point in the recording (blackdetect), independent of
+         how long the headless page took to start. Trimmed back out in the mux. -->
+    <div id="syncflash"></div>
+
+    <!-- top progress bar -->
+    <div class="vprogress"><div class="vprogress-fill" id="vprogress"></div></div>
+
+    <!-- brand watermark (corner) -->
+    <div class="brand-wm"><span class="wm-stack">stack</span><span class="wm-tags">tags</span></div>
+
+    <!-- ============ SCENE: OPENING (bespoke) — scrolling poem → char-morph to cluster → morph to title → portrait slide ============ -->
+    <section class="scene scene-open active stk-grid-bg" id="scene-open">
+      <!-- a manuscript scroll (rods top + bottom, black side lines); the poem is
+           typed inside it letter by letter, then scrolls. Fades to the white grid
+           at the cluster morph. -->
+      <div class="op-scroll" id="op-scroll">
+        <div class="op-roller op-roller-top"></div>
+        <div class="op-scroll-body"><div class="op-poem cjk" id="op-poem"></div></div>
+        <div class="op-roller op-roller-bot"></div>
+      </div>
+      <!-- flying characters (built by JS) -->
+      <div class="op-fly" id="op-fly"></div>
+      <!-- cluster: pinyin labels under each flown char + caption -->
+      <div class="op-cluster" id="op-cluster"></div>
+      <!-- title pinyin + english (the hanzi are the flown chars) -->
+      <div class="op-title" id="op-title">
+        <div class="op-title-py">Shī Shì shí shī shǐ</div>
+        <div class="op-title-en">“The Lion-Eating Poet in the Stone Den”</div>
+      </div>
+      <!-- the linguist portrait (dashed silhouette baked in), slides up from below -->
+      <div class="op-portrait" id="op-portrait"><img src="assets/cutouts/chao_dotted.png" alt=""></div>
+    </section>
+
+    <!-- ============ SCENE: DEPTH-TRANSITION SPINE (the moving-grid fly-through, from the tones beat on) ============ -->
+    <section class="scene scene-depth" id="scene-depth">
+      <div class="depth-host" id="depth-host"></div>
+    </section>
+
+    <!-- ============ SCENE: OUTRO (default endcard element) ============ -->
+    <section class="scene scene-outro" id="scene-outro">
+      <div id="outro-host" class="stk-grid-bg">
+        <div class="ec">
+          <div id="logo"></div>
+          <div class="wm"><span class="s">stack</span><span class="t">tags</span></div>
+          <div class="url">stacktags.io</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- subtitles: mirror exactly what is being said, one line at a time -->
+    <div class="stk-subs"><div class="stk-subs-line" id="sub"></div></div>
+
+  </div>
+
+  <audio id="vo" src="../script_audio_combined.mp3" preload="auto"></audio>
+
+  <!-- control bar (hidden in clean mode with "C") -->
+  <div class="hud" id="hud">
+    <button id="play">▶ Play</button>
+    <button id="restart">↺ Restart</button>
+    <span class="info" id="info">0.0s</span>
+    <button id="cleanbtn">Clean (C)</button>
+  </div>
+</div>
+
+<!-- default elements -->
+<script src="elements/depth.js"></script>
+<script src="elements/outro.js"></script>
+<script src="app.js?v=1"></script>
+</body>
+</html>

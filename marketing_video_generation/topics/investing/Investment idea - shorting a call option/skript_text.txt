@@ -1,0 +1,100 @@
+VIDEO SCRIPT
+Title: Investment idea — shorting a call option
+Topic: Investing
+Target length: ~120 seconds (fits the 30s–3min window)
+Language of narration: English
+Format: Voiceover script. Spoken lines are plain text. [Bracketed lines] describe
+what is on screen AT THE SAME TIME as the narration next to them.
+
+==================================================================
+THE CORE IDEA
+==================================================================
+Strategy: SELL (short) an out-of-the-money call on a freshly-IPO'd, high-hype tech
+stock to harvest its inflated option premium. Three profit drivers:
+1. Volatility crush — sky-high IPO implied volatility collapses → the option you
+   sold gets cheaper to buy back.
+2. Time decay (theta) — the option loses time value every day, in your favor.
+3. You don't need it to fall — with an OTM strike you keep the premium if the stock
+   falls, stays flat, OR rises moderately (3 of 4 outcomes).
+RISK (the key honest point): a naked short call has THEORETICALLY UNLIMITED loss —
+a hyped IPO can double/triple. The fix: cap it with a call credit spread (buy a
+further-out call), or only do it covered. Advanced. Educational, NOT advice.
+Punchline: you get paid by time, by collapsing volatility, and by the hype simply
+not coming true — but if you're naked and wrong, the loss has no ceiling.
+
+KEY VISUALS:
+- A post-IPO stock with a huge "IV" gauge that then collapses.
+- A profit zone below the strike (green) and an open-ended red loss zone above it.
+
+==================================================================
+SCRIPT
+==================================================================
+
+--- HOOK (0:00–0:14) — the payoff up front ---
+
+Here's an advanced options trade: short selling a call option on a stock that just
+went public.
+[A freshly-IPO'd tech stock; a "SELL CALL" ticket.]
+Done right, you can profit three different ways at once — even if the stock keeps
+rising. Done wrong, your losses have no limit.
+[A green profit zone, and a red loss zone with no top edge. Tag: "educational — not advice."]
+Let me show you both sides.
+
+--- THE SETUP (≈0:14–0:38) ---
+
+A tech company just IPO'd. The hype is enormous — and so is its options' "implied
+volatility," which is just a measure of how big a move the market is pricing in.
+[An "IV" gauge pinned to the max.]
+High implied volatility means the options are expensive. And if you're the one
+SELLING an option, expensive is exactly what you want.
+[Pricey option premiums glowing.]
+So you sell — short — a call with a strike well above today's price, and you
+collect that fat premium up front.
+
+--- PROFIT DRIVER 1: VOLATILITY CRUSH (≈0:38–0:58) ---
+
+Now the first way you win: the volatility crush. Once the IPO frenzy cools, that
+sky-high implied volatility collapses.
+[The IV gauge plunging from max toward normal.]
+And falling volatility makes the option you sold cheaper to buy back — which is
+pure profit for the seller. The air comes out of the hype, and you pocket it.
+
+--- PROFIT DRIVER 2: TIME DECAY (≈0:58–1:15) ---
+
+The second way: time decay. Every single day, an option loses a slice of its time
+value — and as the seller, that decay flows straight to you.
+[A clock ticking; the option's value melting downward into your account.]
+Even if the stock doesn't move at all, time alone is paying you.
+
+--- PROFIT DRIVER 3: YOU DON'T NEED A CRASH (≈1:15–1:35) ---
+
+And the third way is the clever one: you don't even need the stock to fall. Because
+you sold a call above the current price, you keep the entire premium as long as the
+stock stays below your strike.
+[A green zone under the strike: stock falls, flat, OR rises a little — all win.]
+So you profit if it drops, if it goes nowhere, OR if it rises just moderately.
+Three out of four directions go your way.
+
+--- THE RISK (≈1:35–1:58) ---
+
+But here's the catch that can wipe you out. A call you've sold has no upside cap.
+[The red zone above the strike — stretching up with no ceiling.]
+If that hyped IPO rockets — and these absolutely can double or triple in weeks —
+your losses grow without limit. A "naked" short call is one of the riskiest
+positions in all of trading.
+[A stock blasting through the strike; the loss line shooting up off-screen.]
+The standard fix: turn it into a defined-risk trade by also BUYING a further-out
+call — a "call credit spread" — which caps your worst case. Never do this uncovered
+unless you fully understand, and can afford, the worst outcome.
+
+--- PUNCHLINE / OUTRO (≈1:58–2:12) ---
+
+So selling a call is a bet that the hype is overdone. You get paid by time, by
+collapsing volatility, and by the stock simply not mooning.
+[The three profit drivers lined up.]
+The reward is steady — but if you're naked and wrong, the risk is brutal. Reward,
+and risk, are always two sides of the same trade.
+
+Want to actually understand strategies like this?
+[Stacktags logo animates in with a "Follow" prompt.]
+Follow Stacktags.

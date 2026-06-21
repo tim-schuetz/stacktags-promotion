@@ -1,0 +1,63 @@
+VIDEO SCRIPT
+Title: The Spanish town stranded inside France
+Topic: Geography
+Target length: ~85 seconds (fits the 30s–3min window)
+Language of narration: English
+Format: Voiceover script. Spoken lines are plain text. [Bracketed lines] describe
+what is on screen AT THE SAME TIME as the narration next to them.
+
+==================================================================
+THE CORE IDEA
+==================================================================
+Llívia: a Spanish town that's an exclave entirely surrounded by France (~1.5 km
+past the border, in the Pyrenees). In the 1659 Treaty of the Pyrenees, Spain
+ceded 33 "villages" to France — but Llívia was legally a "town," not a village,
+so it was exempt and stayed Spanish while everything around it became French.
+Punchline: a whole town kept its country over one word — "village" vs "town."
+
+KEY VISUALS:
+- A map: a small Spanish dot floating inside French territory, linked to Spain by
+  a thin road across foreign soil.
+
+==================================================================
+SCRIPT
+==================================================================
+
+--- HOOK (0:00–0:10) — the payoff up front ---
+
+This town is part of Spain — but it's completely surrounded by France.
+[A map: a lone Spanish-flagged dot, ringed entirely by French territory.]
+To drive from here to the rest of your own country, you have to cross through
+another one. And the reason it's Spanish at all comes down to a single word in a
+360-year-old treaty.
+[An old treaty document; one word glows.]
+
+--- THE HISTORY (≈0:10–0:38) ---
+
+This is Llívia, high in the Pyrenees. In 1659, after a long war, Spain and France
+signed the Treaty of the Pyrenees, and Spain agreed to hand over thirty-three
+villages in this border region to France.
+[Thirty-three little dots flip from Spanish to French across the map.]
+One by one, the villages around Llívia became French. But Llívia... didn't.
+[Every dot turns French — except one, which stays red-and-yellow.]
+
+--- THE LOOPHOLE (≈0:38–1:05) ---
+
+Because the treaty said villages. And Llívia, by an old royal status, wasn't
+classed as a village. It was officially a town.
+["VILLAGE" stamped on the others; "TOWN" stamped on Llívia, exempting it.]
+So it slipped through the wording — and stayed Spanish, even as France closed in
+on every side. Ever since, it's been a piece of Spain marooned a kilometer inside
+France, reached only by a road across French land.
+[The thin connecting road traced from Llívia back to the Spanish border.]
+
+--- PUNCHLINE / OUTRO (≈1:05–1:18) ---
+
+Borders are usually decided by armies.
+[Soldiers fade out; a quill signing the treaty fades in.]
+This one was decided by grammar. An entire town kept its country because of one
+word: not "village"... but "town."
+
+Want more places that break the map?
+[Stacktags logo animates in with a "Follow" prompt.]
+Follow Stacktags.

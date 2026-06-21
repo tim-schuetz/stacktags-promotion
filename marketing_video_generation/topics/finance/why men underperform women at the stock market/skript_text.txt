@@ -1,0 +1,91 @@
+VIDEO SCRIPT
+Title: why men underperform women at the stock market
+Topic: Investing / behavioral finance
+Target length: ~95 seconds (fits the 30s–3min window)
+Language of narration: English
+Format: Voiceover script. Spoken lines are plain text. [Bracketed lines] describe
+what is on screen AT THE SAME TIME as the narration next to them.
+
+==================================================================
+THE CORE FACTS (source: Barber & Odean, landmark studies of US
+individual investors in the 1990s — present as a classic, NOT as fresh data)
+==================================================================
+- Disposition effect: investors realize GAINS ~50% more often than LOSSES
+  → tax-wise exactly backwards (selling winners triggers tax; harvesting
+  losses would save it).
+- Not a rookie thing: even professional funds do it ~21% more often.
+- The most active 20% of traders earned ~11.4%/yr NET vs ~18.5% for buy-and-hold.
+- Men's turnover ~80%/yr vs women's ~50% → men trade ~45% more → underperform.
+- KEY HONESTY POINT: the gap is COST-driven (net returns). Their stock PICKS
+  weren't worse — the trading costs were.
+
+Recurring visual device — "the two lines":
+A busy "Trader" portfolio line vs a calm "Buy-and-Hold" line. Every trade takes
+a tiny fee-bite out of the Trader's line; the calm line just keeps climbing.
+
+==================================================================
+SCRIPT
+==================================================================
+
+--- HOOK (0:00–0:12) — the payoff lands in the first 5 seconds ---
+
+Men underperform women at the stock market — and it's not because they pick
+worse stocks. It's because they trade too much.
+[Split screen: a "Men" line and a "Women" line; the women's line finishes higher.]
+The more you trade, the more you quietly bleed to costs — every single time.
+[Each trade on the men's line takes a tiny fee-bite out of it.]
+In one of the most famous studies in finance, the investors who traded the most
+badly lost to the ones who did almost nothing.
+[A busy line and a calm line; the calm one pulls ahead.]
+And no — this isn't a rookie mistake. Even professional fund managers fall for
+it. Here's the psychology.
+
+--- WHY #1: THE DISPOSITION EFFECT (≈0:12–0:42) ---
+
+It starts with one deeply human glitch: we love selling our winners, and we
+can't let go of our losers.
+[A portfolio: green "winner" stocks get sold fast; red "loser" stocks get clutched.]
+Across tens of thousands of US investors, people cashed in their gains about
+50% more often than their losses — locking in what's working, babysitting what
+isn't.
+
+And here's the kicker: tax-wise, that's exactly backwards.
+[A "TAX BILL" stamp hits the sold winner; the held loser glows "missed deduction".]
+Selling a winner hands you a tax bill; selling a loser would actually save you
+money. We do the opposite — on pure instinct.
+
+Think the pros are above this? They're not.
+[A "PROFESSIONAL FUNDS" badge appears over the same behavior.]
+Even professional funds realize their gains about 21% more often than their
+losses. It's wired in.
+
+--- WHY #2: OVERTRADING & COST (≈0:42–1:08) ---
+
+Now stack the second mistake on top: overtrading.
+[Back to the two lines.]
+Every trade costs — fees, spreads, taxes — and those tiny leaks compound. In
+that 1990s US data, the most active 20% of investors earned just 11.4% a year.
+[11.4% drops onto the busy line.]
+Buy-and-hold investors? Over 18%.
+[18.5% drops onto the calm line, far above.]
+Same market. The difference wasn't worse stock-picking — their picks were about
+as good. It was the cost of all that activity.
+[Source line appears small: "Barber & Odean."]
+
+--- WHY #3: THE MEN-VS-WOMEN GAP (≈1:08–1:28) ---
+
+Which brings us back to the title.
+[Two turnover gauges fill up: Men ~80%, Women ~50%.]
+Men churned their portfolios around 80% a year; women, around 50%. Men traded
+roughly 45% more — fueled by overconfidence — and that extra activity is exactly
+what dragged their net returns below women's. Less trading, more keeping.
+
+--- OUTRO / CTA (≈1:28–1:40) ---
+
+So the uncomfortable secret of the market: doing less beats doing more.
+[The calm buy-and-hold line quietly overtakes the busy one for good.]
+The best investors aren't the busiest — they're the most patient.
+
+Want more counterintuitive truths like this?
+[Stacktags logo animates in with a "Follow" prompt.]
+Follow Stacktags.

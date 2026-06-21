@@ -1,0 +1,79 @@
+VIDEO SCRIPT
+Title: One poem with only one word — possible in Chinese
+Topic: Learn Chinese
+Target length: ~95 seconds (fits the 30s–3min window)
+Language of narration: English
+Format: Voiceover script. Spoken lines are plain text. [Bracketed lines] describe
+what is on screen AT THE SAME TIME as the narration next to them.
+
+==================================================================
+THE CORE IDEA
+==================================================================
+The "Lion-Eating Poet in the Stone Den," by linguist Yuen Ren Chao: ninety-odd
+Classical-Chinese characters, every single one pronounced "shi" (only the tone
+differs — shī / shí / shǐ / shì). Read aloud, it's an unintelligible wall of
+"shi." Written down, it's a perfectly clear story.
+Punchline: in Chinese, the WRITING — not the sound — carries the meaning.
+
+GUARDRAILS (do NOT violate):
+- Do NOT claim specific "distinct syllable" counts per language (e.g. the
+  debunked "18 Cantonese / 15 Hokkien / 4 Mandarin"). Show homophony QUALITATIVELY only.
+- Be honest: this is a deliberate, extreme stunt in Classical (literary) Chinese
+  — NOT how everyday spoken Chinese works. Say so.
+
+KEY VISUALS:
+- The poem as a tall column of characters, every pinyin label reading shī/shí/shǐ/shì.
+- A toggle between "READ ALOUD" (audio: a shi-shi-shi blur) and
+  "ON PAPER" (the same text resolving into a clear illustrated story).
+
+==================================================================
+SCRIPT
+==================================================================
+
+--- HOOK (0:00–0:08) — the payoff up front ---
+
+What you see here is a poem. It's more than ninety characters long. And every
+single one of them is pronounced exactly the same way: "shi."
+[The full poem fills the screen as a wall of Chinese characters, every pinyin label reading shī / shí / shǐ / shì; below it, just an ellipsis "…".]
+In Chinese, somehow, that actually works.
+
+--- THE POEM (≈0:08–0:30) ---
+
+It's called "The Lion-Eating Poet in the Stone Den," written by the linguist
+Yuen Ren Chao.
+[Title card of the poem beside a portrait of Chao.]
+Ninety-something characters — and the only thing separating them is their tone.
+Now, I am not going to read it aloud, but I got some help from google translate:
+shī, shí, shǐ, shì. 
+Four flavors of a single syllable.
+[The four tone marks animate one by one over the word "shi".]
+
+--- READ IT ALOUD (≈0:30–0:50) ---
+
+[Switch to "READ ALOUD" mode; audio: "Shíshì shīshì Shī shì, shì shī, shì shí shí shī..." a rapid blur.]
+Shi shi shi shi shi. To your ears — to anyone's ears — it's pure nonsense. A wall
+of the exact same sound. Nobody could follow it.
+[A baffled listener; the subtitles just read "shi shi shi shi…?"]
+
+--- NOW READ IT ON PAPER (≈0:50–1:18) ---
+
+But now look at it written down.
+[Switch to "ON PAPER" mode; the characters light up one by one with their meanings.]
+Suddenly it's a crisp little story: a poet named Shi, who's obsessed with eating
+lions, vows to eat ten of them. He goes to the market, finds ten lions, kills
+them, hauls them home — and discovers they were actually ten stone lions.
+[The story plays out as quick illustrations beside the characters.]
+Every "shi" is a different character, with a different meaning. On paper, there's
+zero confusion.
+
+--- WHY IT WORKS (≈1:18–1:30) ---
+
+And that's the whole trick: Chinese characters carry meaning by their shape, not
+their sound.
+[The poem from the very beginning is shown again — now read as meaning, not sound.]
+
+--- OUTRO (≈1:30–1:42) ---
+
+Wanna actually start learning Chinese?
+[Stacktags logo animates in; "stacktags.io" shown on screen.]
+Discover thousands of free exercises and more learning content on stacktags.io.

@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Stacktags element — text depth transitions optimized (demo)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../_shared/theme.css">
+<link rel="stylesheet" href="text-depth-transitions-example-optimized.css">
+<style>
+  html,body{margin:0;height:100%;overflow:hidden;background:#0b0e0d;}
+  .wrap{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;}
+  .stage{position:relative;width:1080px;height:1920px;overflow:hidden;transform-origin:center;flex-shrink:0;background:#fff;}
+</style>
+</head>
+<body>
+<div class="wrap"><div class="stage" id="stage">
+  <div id="host"></div>
+</div></div>
+
+<script src="text-depth-transitions-example-optimized.js"></script>
+<script>
+  const stage = document.getElementById('stage');
+  function fit(){ const s=Math.min(innerWidth/1080, innerHeight/1920); stage.style.transform='scale('+s+')'; }
+  addEventListener('resize', fit); fit();
+
+  // Text beats + a cut-out (transparent) image beat. Drop transparent PNGs
+  // into assets/ and reference them with `image: 'assets/your.png'`.
+  const depth = new StacktagsDepthTransitionsOptimized('#host', {
+    steps: [
+      { text: 'Lorem ipsum<br><b>dolor sit amet</b>' },
+      // elephants stand on grass → anchored at the BOTTOM; text stays behind
+      { image: 'assets/elephant.png', via: 'rise', atY: 600, atScale: 1.2 },
+      // lift: elephants + old text slide down out; new text glides in from the top
+      { text: 'Consectetur<br><b>adipiscing elit</b>', via: 'lift' },
+      // temple fills the width (left↔right to the edges) and sits on its base
+      { image: 'assets/temple.png', via: 'rise', atY: 660, atScale: 1.16 },
+      // push in to the next line
+      { text: 'Sed do<br><span class="key">eiusmod tempor</span>', via: 'zoom-in' },
+      // lantern drops in from the TOP and floats in the upper area (before the coin)
+      { image: 'assets/chinese_lantern.png', via: 'drop', atY: -430, atScale: 0.72 },
+      // coin floats UP from below to a lower-right spot, clear of the text (text stays)
+      { image: 'assets/chinese_coin.png', via: 'rise', atX: 300, atY: 330, atScale: 0.42 },
+      // pan sideways to the closing line
+      { text: 'Ut labore<br><b>et dolore magna</b>', via: 'pan-left' },
+    ],
+  });
+
+  window.DEMO = { duration: 14.5, settleMs: 500, sfx: [{ sound: 'swoosh', t: 1.2, vol: 0.6 }, { sound: 'swoosh', t: 5.2, vol: 0.6 }] };
+  window.__demoReady = Promise.resolve();
+  window.__demoPlay = function () { depth.start({ firstHold: 650, hold: 850, duration: 1150 }); };
+</script>
+<script src="../_shared/viewer.js"></script>
+</body>
+</html>

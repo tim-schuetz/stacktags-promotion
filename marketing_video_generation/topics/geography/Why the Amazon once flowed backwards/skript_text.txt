@@ -1,0 +1,98 @@
+VIDEO SCRIPT
+Title: Why the Amazon once flowed backwards
+(working title fix: "flew" → "flowed" — a river flows/flowed)
+Topic: Geography
+Target length: ~105 seconds (fits the 30s–3min window)
+Language of narration: English
+Format: Voiceover script. Spoken lines are plain text. [Bracketed lines] describe
+what is on screen AT THE SAME TIME as the narration next to them.
+
+==================================================================
+THE CORE IDEA
+==================================================================
+Today the Amazon flows WEST → EAST into the Atlantic. But before the Andes rose,
+South America's drainage ran the other way — WEST, toward the Pacific. As South
+America drifted west, the Nazca plate subducted beneath it and pushed up the
+Andes, walling off the western exit. The trapped water pooled into a vast inland
+wetland/mega-lake (the Pebas system), then broke through eastward, reversing the
+river. The modern east-flowing, transcontinental Amazon dates to roughly ~10
+million years ago.
+Punchline: the mightiest river on Earth flows east because a continent drifted,
+an ocean floor dove under it, and a mountain range shoved it the other way.
+
+NOTE (honesty): timescales are deep and approximate, reconstructed by geologists
+("over a hundred million years," "around 10 million years ago"). Keep "roughly."
+
+KEY VISUALS:
+- A map of South America with a flow ARROW that flips: Pacific ← then → Atlantic.
+- A tectonic cross-section: the Nazca plate subducting, the Andes rising as a wall.
+- A giant inland lake/wetland filling the basin, then bursting east.
+
+==================================================================
+SCRIPT
+==================================================================
+
+--- HOOK (0:00–0:10) — the payoff up front ---
+
+The Amazon — the largest river on Earth — once flowed backwards.
+[A map of South America; the river arrow snaps into reverse.]
+Today it runs west to east, into the Atlantic. But for most of its history, it
+flowed the opposite way — west, into the Pacific. And what turned a river this
+enormous completely around was an entire continent.
+[The whole continent shifts; a mountain range erupts along its edge.]
+Here's the story.
+
+--- THE AMAZON TODAY (≈0:10–0:30) ---
+
+Right now, the Amazon is born high in the Andes, on the western side of South
+America, and runs almost the entire width of the continent — thousands of
+kilometers east — before pouring into the Atlantic.
+[Map: source in the Andes → a fat arrow sweeping east to the Atlantic.]
+It's the biggest river on the planet by far. So you'd assume it always flowed
+this way. It didn't.
+
+--- BEFORE THE ANDES (≈0:30–0:52) ---
+
+Rewind far enough — well over a hundred million years — and there were no Andes
+at all.
+[The Andes flatten away; the western coast goes low and smooth.]
+Back then, the land tilted the other way. So the early Amazon drained westward —
+toward the Pacific.
+[The arrow reverses: water flowing west, off the continent into the Pacific.]
+A giant river, running the exact opposite direction. Until the ground itself
+started to move.
+
+--- THE WALL RISES (≈0:52–1:18) ---
+
+Because South America was drifting west — and off its western coast, the floor of
+the Pacific was diving down underneath it.
+[Tectonic cross-section: the Nazca plate sliding beneath South America.]
+That collision crumpled the edge of the continent upward, slowly raising the
+Andes — the longest mountain range on land.
+[The Andes push up into a towering wall.]
+And that wall sealed the river's exit. The westward water suddenly had nowhere
+left to go.
+[The west-flowing arrow slams into the new mountains and stops.]
+
+--- THE GREAT REVERSAL (≈1:18–1:42) ---
+
+So it pooled. For millions of years, the heart of the continent became a vast
+inland world of swamps and lakes.
+[A huge inland lake/wetland floods the basin behind the mountains.]
+Until, finally, all that trapped water found a new way out — to the east —
+carving a path toward the Atlantic.
+[The water bursts east; the arrow flips for good, racing to the Atlantic.]
+The river had reversed. And roughly 10 million years ago, the Amazon we know
+today — flowing west to east — was born.
+
+--- PUNCHLINE / OUTRO (≈1:42–1:55) ---
+
+So the mightiest river on Earth doesn't flow east because it always did. It flows
+east because a continent drifted, an ocean floor dove under it, and a mountain
+range rose up and turned it around.
+[Pull back to the whole continent, the Andes on one side, the Amazon sweeping to the other.]
+The Andes didn't just block the Amazon. They reversed it.
+
+Want more ways the planet rewrote itself?
+[Stacktags logo animates in with a "Follow" prompt.]
+Follow Stacktags.

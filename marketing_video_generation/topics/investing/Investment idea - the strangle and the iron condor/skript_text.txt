@@ -1,0 +1,91 @@
+VIDEO SCRIPT
+Title: Investment idea — the strangle and the iron condor
+Topic: Investing
+Target length: ~115 seconds (fits the 30s–3min window)
+Language of narration: English
+Format: Voiceover script. Spoken lines are plain text. [Bracketed lines] describe
+what is on screen AT THE SAME TIME as the narration next to them.
+
+==================================================================
+THE CORE IDEA
+==================================================================
+Two neutral, premium-selling strategies that profit when a stock goes NOWHERE —
+ideal for calm, low-volatility stocks/indices you expect to stay in a range:
+- SHORT STRANGLE: sell an OTM call AND an OTM put → collect both premiums; profit
+  if the stock stays between the strikes; but risk is large/undefined if it makes
+  a big move (unlimited on the call side).
+- IRON CONDOR: the same range bet, but you BUY a further-out call and put as
+  "wings" → caps the max loss (defined risk), for a bit less premium.
+Both profit from time decay + the stock staying still.
+Punchline: most traders bet on where a stock is going; these bet on where it isn't.
+
+NOTE (responsibility): educational, NOT advice. Honest shape — wins are small and
+frequent, losses are rare but can be big (especially the naked strangle); an
+earnings shock can erase months of gains.
+
+KEY VISUALS:
+- A "profit tent" between two strikes; stock inside = win, breaking out the sides = loss.
+- The iron condor adding guardrails (wings) that cap each side.
+
+==================================================================
+SCRIPT
+==================================================================
+
+--- HOOK (0:00–0:12) — the payoff up front ---
+
+Here's how traders make money when a stock does... absolutely nothing.
+[A flat, sideways chart — and a profit counter ticking up.]
+Two strategies — the strangle and the iron condor — pay you to bet that a stock
+stays boring and goes nowhere.
+[Two labels appear. Tag: "educational — not advice."]
+
+--- THE PREMISE (≈0:12–0:30) ---
+
+Most trades need the stock to move. These do the opposite — they profit when it
+sits still.
+[A stock pinned between two lines, barely wiggling.]
+Which makes them a fit for calm, low-volatility stocks or whole indices that tend
+to stay in a range. You're betting on stillness.
+
+--- THE STRANGLE (≈0:30–0:58) ---
+
+First, the short strangle. You sell two options at once: an out-of-the-money call
+above the price, and an out-of-the-money put below it — and you collect both
+premiums up front.
+[A call sold above, a put sold below; double premium collected.]
+As long as the stock stays between your two strikes, both expire worthless and you
+keep everything — helped along by time decay, every single day.
+[A green "tent" between the strikes; the stock drifting harmlessly inside.]
+The catch: if the stock makes a big move either way, losses can grow large — and
+on the upside, with no limit. The risk is wide open on both ends.
+
+--- THE IRON CONDOR (≈0:58–1:28) ---
+
+So here's the safer cousin: the iron condor. Same range bet — but you add "wings."
+[The same tent, now with two outer options added.]
+You also BUY a further-out call and a further-out put, as insurance. Those wings
+cap your maximum loss on each side. You collect a little less premium, but now your
+worst case is fixed and known.
+[Guardrails snap onto both edges of the tent; the open-ended risk gets a ceiling.]
+It's the defined-risk version of the same idea: still betting the stock stays put,
+but with a seatbelt on.
+
+--- THE SHAPE OF THE BET (≈1:28–1:48) ---
+
+Picture a profit tent. You win if the stock stays under it — between your strikes.
+You lose if it breaks out the sides.
+[The tent: inside = green, outside = red; condor caps how red it gets.]
+Be honest about the trade-off: these win often, but in small amounts — and lose
+rarely, but can lose big, especially the naked strangle. One surprise earnings move
+can wipe out months of quiet gains.
+
+--- PUNCHLINE / OUTRO (≈1:48–2:00) ---
+
+Most traders bet on where a stock is going.
+[Arrows pointing up and down, crossed out.]
+These two bet on where it isn't — that it'll simply sit still. For once, boring is
+the entire point.
+
+Want to actually understand strategies like this?
+[Stacktags logo animates in with a "Follow" prompt.]
+Follow Stacktags.

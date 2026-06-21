@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Stacktags element — globe with track (demo)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../_shared/theme.css">
+<style>
+  html,body{margin:0;height:100%;overflow:hidden;background:#0b0e0d;}
+  .wrap{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;}
+  .stage{position:relative;width:1080px;height:1920px;overflow:hidden;transform-origin:center;flex-shrink:0;background:#fff;}
+
+  /* the globe + the ship + the building all share one stage so they move together */
+  .track-stage{position:absolute;inset:0;}
+  /* live 3D globe is mounted here; the dashed turquoise route is drawn ON its
+     surface (globe.js setRoute/revealRoute) so it rotates with the globe */
+  .globe-host{position:absolute;left:0;top:280px;width:1080px;height:1080px;
+    opacity:0;transition:opacity .7s ease;}
+  .track-stage.in .globe-host{opacity:1;}
+
+  /* the ship is driven by the globe (globe.js attachShip → sets left/top each
+     frame) so it rides exactly on the route's leading tip */
+  .ship-img{position:absolute;left:540px;top:840px;width:230px;height:auto;
+    transform:translate(-50%,-50%);transform-origin:center center;
+    opacity:0;filter:drop-shadow(0 18px 28px rgba(20,40,33,.22));transition:opacity .45s ease;}
+  .track-stage.in .ship-img{opacity:1;}
+  /* on arrival (already on land) the ship stays visible while it shrinks, then
+     only fades right at the end */
+  .track-stage.arrived .ship-img{transform:translate(-50%,-50%) scale(.1);opacity:0;
+    transition:transform 1.15s cubic-bezier(.45,0,.7,.35), opacity .4s ease .85s;}
+
+  /* a building rises at the destination once the ship has shrunk away */
+  .track-building{position:absolute;left:540px;top:760px;width:120px;height:auto;
+    transform:translate(-50%,-50%) scale(.2);transform-origin:center bottom;
+    opacity:0;filter:drop-shadow(0 16px 26px rgba(20,40,33,.26));}
+  .track-stage.arrived .track-building{opacity:1;transform:translate(-50%,-50%) scale(1);
+    transition:transform .6s cubic-bezier(.34,1.5,.5,1) 1.3s, opacity .45s ease 1.3s;}
+
+  .demo-cap{position:absolute;left:0;right:0;top:120px;text-align:center;z-index:8;
+    font-family:var(--stk-font);font-weight:800;font-size:46px;letter-spacing:-1px;color:var(--stk-ink);
+    opacity:0;transition:opacity .5s ease;}
+  .track-stage.in .demo-cap{opacity:1;}
+  .demo-cap b{color:var(--stk-teal-d);}
+</style>
+</head>
+<body>
+<div class="wrap"><div class="stage stk-grid-bg" id="stage">
+  <div class="track-stage" id="scene">
+    <div class="demo-cap">a route across the <b>globe</b></div>
+    <div class="globe-host" id="globe-host"></div>
+    <img class="ship-img" id="ship" src="assets/caravel_cut.png" alt="" onerror="this.style.display='none'">
+    <img class="track-building" id="building" src="assets/building_cut.png" alt="" onerror="this.style.display='none'">
+  </div>
+</div></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/earcut@2.2.4/dist/earcut.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/topojson-client@3.1.0/dist/topojson-client.min.js"></script>
+<script src="globe.js"></script>
+<script>
+  const stage = document.getElementById('stage');
+  function fit(){ const s=Math.min(innerWidth/1080, innerHeight/1920); stage.style.transform='scale('+s+')'; }
+  addEventListener('resize', fit); fit();
+
+  // a sea route across the globe: Arabian Sea → south of Sri Lanka → Bay of
+  // Bengal → Strait of Malacca → South China Sea → South China coast
+  const ROUTE = [[10,64],[8,71],[5,77],[3.5,82],[5,89],[5,95],[3.5,98],[2.3,100.5],[5,104],[9,108],[14,111],[19,113],[23.5,113.2]];
+
+  let ctrl = null;
+  window.__GLOBE_RS = 1;
+  window.__demoReady = new Promise((resolve) => {
+    (function tryMount(){
+      if (!(window.THREE && window.earcut && window.topojson)) { setTimeout(tryMount, 60); return; }
+      window.mountStacktagsGlobe(document.getElementById('globe-host'), {
+        focus: { lat: 20, lon: 78, cam: 2.5 },   // India faces the viewer first
+        startCam: 2.5,
+        highlight: 'China',
+        autoReveal: false,
+        onReady: (c) => {
+          ctrl = c;
+          c.setRoute(ROUTE);                                       // dashed route, hidden until revealed
+          c.attachShip(document.getElementById('ship'));           // ship rides the route's tip
+          resolve();
+        },
+      });
+    })();
+  });
+
+  window.DEMO = {
+    duration: 6.2,
+    settleMs: 400,
+    sfx: [{ sound: 'swoosh', t: 0.7, vol: 0.8 }, { sound: 'swoosh', t: 4.0, vol: 0.85 }],
+  };
+
+  window.__demoPlay = function () {
+    if (!ctrl) return;
+    const scene = document.getElementById('scene');
+    scene.classList.add('in');          // globe + ship fade in
+    ctrl.reveal();                      // China fills turquoise
+    setTimeout(() => {                  // set sail: rotate India→China + draw the route; the ship rides its tip
+      ctrl.setFocus(24, 113);
+      ctrl.revealRoute(3100);
+    }, 700);
+    setTimeout(() => { scene.classList.add('arrived'); }, 4000);   // ship shrinks away → building rises
+  };
+</script>
+<script src="../_shared/viewer.js"></script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+/* ============================================================
+   Stacktags video — SHARED THEME TOKENS & PRIMITIVES
+   The single source of truth for the look every default element
+   and every video should share. Import this first, then the
+   element's own stylesheet.
+
+     <link rel="stylesheet" href="../_shared/theme.css">
+
+   See ../../designguide.md for the rules these tokens encode.
+   White + turquoise, Inter only, thin grey checkered background,
+   never a border on list items.
+   ============================================================ */
+:root {
+  /* --- brand palette --- */
+  --stk-teal:    #35A292;   /* primary turquoise (brand) */
+  --stk-teal-d:  #119271;   /* deep turquoise — active / emphasis */
+  --stk-teal-dd: #063A2C;   /* darkest accent */
+  --stk-teal-soft:#e7f4ef;  /* tinted fill (no border needed) */
+
+  --stk-ink:    #232B33;    /* primary text */
+  --stk-ink-2:  #4a5560;    /* secondary text */
+  --stk-muted:  #8a949d;    /* captions / subtitles grey */
+  --stk-red:    #d8443b;    /* sparing marker accent (e.g. map pin) */
+
+  --stk-bg:     #ffffff;
+
+  /* --- background grid (thin grey lines, wide spacing) --- */
+  --stk-grid-line: rgba(35, 43, 51, 0.09);
+  --stk-grid-size: 120px;
+
+  /* --- type --- */
+  --stk-font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+/* The checkered backdrop every scene sits on. Put it on the stage/scene. */
+.stk-grid-bg {
+  background-color: var(--stk-bg);
+  background-image:
+    linear-gradient(to right,  var(--stk-grid-line) 4px, transparent 4px),
+    linear-gradient(to bottom, var(--stk-grid-line) 4px, transparent 4px);
+  background-size: var(--stk-grid-size) var(--stk-grid-size);
+  background-position: center center;
+}
+
+/* ============================================================
+   SUBTITLES — caption strip near the bottom that mirrors the
+   spoken line. Grey by default; key words may go turquoise.
+   Drive with _shared/subtitles.js (StacktagsSubtitles).
+   ============================================================ */
+.stk-subs {
+  position: absolute;
+  left: 0; right: 0; bottom: 168px;
+  padding: 0 90px;
+  text-align: center;
+  z-index: 50;
+  pointer-events: none;
+}
+.stk-subs-line {
+  display: inline-block;
+  font-family: var(--stk-font);
+  font-weight: 700;
+  font-size: 44px;
+  line-height: 1.25;
+  letter-spacing: -0.5px;
+  color: var(--stk-muted);
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity .28s ease, transform .28s cubic-bezier(.2,.8,.2,1);
+}
+.stk-subs-line.in { opacity: 1; transform: none; }
+.stk-subs-line b,
+.stk-subs-line .key { color: var(--stk-teal-d); font-weight: 800; }

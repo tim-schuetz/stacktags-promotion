@@ -1,0 +1,79 @@
+VIDEO SCRIPT
+Title: How to hack a computer with pure physics
+Topic: Software
+Target length: ~95 seconds (fits the 30s–3min window)
+Language of narration: English
+Format: Voiceover script. Spoken lines are plain text. [Bracketed lines] describe
+what is on screen AT THE SAME TIME as the narration next to them.
+
+==================================================================
+THE CORE IDEA
+==================================================================
+Rowhammer: a hardware attack. DRAM cells are packed so tightly that reading one row
+extremely fast and repeatedly ("hammering" it) leaks electrical charge into
+neighboring rows and FLIPS their bits — without ever accessing that data. Attackers
+flip the right bits to grab privileges they shouldn't have. It's a physics effect,
+not a code bug, so software patches can't fully fix it.
+Punchline: most hacks exploit mistakes in code; Rowhammer exploits the laws of
+physics — even perfect software can be broken by the hardware beneath it.
+
+NOTE (responsibility): conceptual / awareness only — explain the principle, not a
+working exploit.
+
+KEY VISUALS:
+- Rows of memory cells; one row hammered fast; a neighboring 0 flickering to 1.
+- "No code needed" stamp; electricity leaking between rows.
+
+==================================================================
+SCRIPT
+==================================================================
+
+--- HOOK (0:00–0:12) — the payoff up front ---
+
+Here's a way to hack a computer without writing a single line of malicious code.
+[A clean terminal — no virus, no exploit script.]
+You just read its memory really, really fast — and let physics flip the bits for
+you. It's called Rowhammer.
+[Rows of memory cells; one starts pulsing rapidly.]
+
+--- HOW MEMORY WORKS (≈0:12–0:38) ---
+
+First, how your RAM stores data. It's billions of microscopic cells, each holding a
+tiny electric charge — charged is a 1, empty is a 0.
+[A grid of cells, some glowing (1), some dark (0).]
+And to fit billions of them on a chip, they're packed unbelievably close together —
+row, after row, after row, almost touching.
+[Zoom in: dense rows crammed side by side.]
+That tight packing is exactly the weakness.
+
+--- THE HAMMER (≈0:38–1:05) ---
+
+Because if you read one row over and over — thousands of times a second, hammering
+it —
+[One row flickering furiously; faint sparks jumping to its neighbors.]
+the tiny electrical pulses start leaking into the rows right next to it. Do it
+enough, and a bit in the neighboring row flips — a 0 quietly becomes a 1.
+[A neighboring cell: 0 → 1, all on its own.]
+And here's the wild part: you never touched that data. You're not even allowed to.
+But by hammering next to it, you changed it anyway — purely through physics.
+
+--- WHY IT'S DANGEROUS (≈1:05–1:25) ---
+
+Attackers use those flips with surgical precision. Flip exactly the right bit, and
+you can hand yourself permissions you should never have — breaking straight out of a
+program's locked sandbox.
+[A "permission: denied" flag; one flipped bit turns it to "granted".]
+And because it's not a software mistake, you can't just patch it away. It's baked
+into how densely modern memory is built. The tighter we pack the chips, the worse
+it gets.
+
+--- PUNCHLINE / OUTRO (≈1:25–1:38) ---
+
+Most hacks exploit a mistake someone made in code.
+[A bug in code, crossed out.]
+Rowhammer exploits the laws of physics — proving that even flawless software can be
+broken by the hardware it runs on.
+
+Want more stories of how technology really works?
+[Stacktags logo animates in; "stacktags.io" shown on screen.]
+Discover thousands of free exercises and more learning content on stacktags.io.

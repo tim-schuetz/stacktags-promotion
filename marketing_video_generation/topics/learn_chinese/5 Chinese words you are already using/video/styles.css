@@ -1,0 +1,313 @@
+/* ============================================================
+   Stacktags — "5 Chinese words you are already using" (v2, depth style)
+   White + turquoise (#35A292). Inter + Noto Sans SC (hanzi).
+   Beats are .stk-depth2-text wrappers flying through the moving grid;
+   each carries a .beat-* class set in app.js.
+   ============================================================ */
+* { box-sizing: border-box; }
+html, body { margin: 0; height: 100%; background: #0b0e0d; overflow: hidden; }
+
+.root { position: fixed; inset: 0; display: flex; align-items: center; justify-content: center; }
+.stage {
+  position: relative; width: 1080px; height: 1920px; flex-shrink: 0;
+  transform-origin: center; overflow: hidden;
+  background: #fff;
+  font-family: var(--stk-font);
+}
+
+.layer { position: absolute; inset: 0; }
+#depth-host { z-index: 1; opacity: 1; transition: opacity .45s ease; }
+#depth-host.hide { opacity: 0; }
+#enum-host { z-index: 2; opacity: 0; transition: opacity .5s ease; pointer-events: none; }
+#enum-host.show { opacity: 1; }
+#enum-host.grid {
+  background-color: #fff;
+  background-image:
+    linear-gradient(to right,  var(--stk-grid-line) 4px, transparent 4px),
+    linear-gradient(to bottom, var(--stk-grid-line) 4px, transparent 4px);
+  background-size: var(--stk-grid-size) var(--stk-grid-size);
+  background-position: center center;
+}
+
+/* progress bar */
+.vprogress { position: absolute; top: 0; left: 0; right: 0; height: 6px; background: rgba(35,43,51,.06); z-index: 60; }
+.vprogress-fill { height: 100%; width: 0; background: var(--stk-teal); }
+
+/* ---- HUD ---- */
+.hud {
+  position: fixed; left: 50%; bottom: 18px; transform: translateX(-50%);
+  display: flex; gap: 10px; align-items: center; z-index: 999;
+  background: rgba(20,28,26,.78); padding: 8px 12px; border-radius: 12px;
+  font-family: var(--stk-font); color: #fff;
+}
+.hud button { font: inherit; font-weight: 700; border: 0; border-radius: 8px; padding: 8px 14px; background: var(--stk-teal); color: #fff; cursor: pointer; }
+.hud .info { font-variant-numeric: tabular-nums; opacity: .85; min-width: 54px; text-align: center; }
+body.clean .hud { display: none; }
+body.clean .vprogress { display: none; }
+
+/* ============================================================
+   Generic beat text reset — let each beat set its own scale
+   ============================================================ */
+.depth-layer .stk-depth2-text {
+  width: 940px; font-weight: 800; font-size: 56px; letter-spacing: normal;
+  line-height: 1.1; color: var(--stk-ink);
+}
+
+b { color: var(--stk-teal-d); }
+.key { color: var(--stk-teal); }
+
+/* ---------------- HOOK 1 ---------------- */
+.hk1 { text-align: center; }
+.hk1 .l1 { font-size: 96px; font-weight: 800; letter-spacing: -3px; line-height: 1.06; color: var(--stk-ink); }
+.hk1 .l2 { margin-top: 30px; font-size: 44px; font-weight: 600; color: var(--stk-muted);
+  opacity: 0; transform: translateY(14px); transition: opacity .5s ease, transform .5s cubic-bezier(.2,.8,.2,1); }
+.beat-hook1.s2 .l2 { opacity: 1; transform: none; }
+
+/* ---------------- NAMES — 5 big cut-outs, tightly clustered (dashed stickers) ---------------- */
+.beat-names .stk-depth2-text { width: 1000px; }
+.names { position: relative; width: 1000px; height: 1480px; margin: 0 auto; }
+.nimg { position: absolute; opacity: 0; transform: scale(.4);
+  transition: opacity .4s ease, transform .55s cubic-bezier(.34,1.56,.64,1);
+  filter: drop-shadow(0 22px 36px rgba(20,40,33,.24)); }
+.nimg.in { opacity: 1; transform: none; }
+.nimg img { display: block; width: 100%; height: auto; }
+/* circular photos / svg get a dashed turquoise sticker ring offset outward */
+.nimg.ring::after { content: ''; position: absolute; inset: -16px; border-radius: 50%;
+  border: 5px dashed var(--stk-teal-d); }
+.n-typhoon { top: 30px; right: 50px; width: 400px; height: 400px; z-index: 2; }
+.n-typhoon img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
+.n-tofu  { top: 60px; left: -10px; width: 470px; z-index: 1; }
+.n-yy    { top: 560px; left: 10px; width: 360px; height: 360px; z-index: 3; }
+.n-yy .yy-swirl { width: 360px; height: 360px; animation: spin 16s linear infinite; }
+.n-astro { top: 450px; right: 40px; width: 380px; z-index: 2; }
+.n-tiger { bottom: 0; left: 250px; width: 540px; z-index: 4; }
+
+/* ---------------- BORROWED-FROM GAG (no on-screen text) ---------------- */
+.beat-gag .stk-depth2-text { width: 760px; }
+.gag { position: relative; width: 720px; height: 1040px; margin: 0 auto; }
+.gag-person { position: absolute; left: 50%; bottom: 150px; transform: translateX(-50%);
+  height: 700px; width: auto; object-fit: contain; filter: drop-shadow(0 26px 40px rgba(20,40,33,.20)); z-index: 2; }
+/* SPLIT Roman helmet: golden shell IN FRONT of the face, dark interior BEHIND the head,
+   so his face shows in the opening. Both halves slide down onto the head together (Latin). */
+.gag-helmet-back, .gag-helmet-front { position: absolute; left: 50%; top: 94px; width: 212px;
+  transform: translate(-50%, -700px); opacity: 0;
+  transition: transform .62s cubic-bezier(.5,.08,.2,1), opacity .25s ease; }
+.gag-helmet-back  { z-index: 1; }
+.gag-helmet-front { z-index: 3; filter: drop-shadow(0 14px 20px rgba(20,40,33,.22)); }
+.beat-gag.helmet-in .gag-helmet-back,
+.beat-gag.helmet-in .gag-helmet-front { transform: translate(-50%, 0); opacity: 1; }
+/* baguette flies up into the open (viewer-right) hand (French) — smaller, to the right */
+.gag-baguette { position: absolute; left: 429px; top: 379px; width: 222px;
+  transform: translateY(660px) rotate(-30deg); opacity: 0;
+  transition: transform .55s cubic-bezier(.34,1.4,.5,1), opacity .25s ease;
+  filter: drop-shadow(0 16px 22px rgba(20,40,33,.2)); z-index: 4; }
+.beat-gag.baguette-in .gag-baguette { transform: translateY(0) rotate(-30deg); opacity: 1; }
+/* a small table (top + legs) with a bowl of rice slides up from below (the other side of the world) */
+.gag-table { position: absolute; left: 50%; bottom: 240px; transform: translate(-50%, 470px); opacity: 0;
+  display: flex; flex-direction: column; align-items: center;
+  transition: transform .6s cubic-bezier(.4,1.15,.4,1), opacity .3s ease; z-index: 5; }
+.beat-gag.rice-in .gag-table { transform: translate(-50%, 0); opacity: 1; }
+.gag-rice { width: 204px; margin-bottom: -26px; position: relative; z-index: 1; filter: drop-shadow(0 10px 14px rgba(20,40,33,.16)); }
+.gag-table-top { position: relative; width: 388px; height: 23px; border-radius: 8px;
+  background: linear-gradient(#d8af77, #bb8553); box-shadow: 0 16px 28px rgba(20,40,33,.20); }
+.gag-table-top .leg { position: absolute; top: 100%; width: 20px; height: 120px;
+  background: linear-gradient(#bb8553, #8a5f38); border-radius: 0 0 6px 6px; }
+.gag-table-top .leg-l { left: 36px; }
+.gag-table-top .leg-r { right: 36px; }
+
+/* ---------------- PHOTO / ART INTRO (.ph) ---------------- */
+.ph { text-align: center; display: flex; flex-direction: column; align-items: center; gap: 34px; }
+.ph .ph-art { width: 360px; height: 360px; display: flex; align-items: center; justify-content: center; }
+.art-svg { width: 100%; height: 100%; }
+@keyframes spin { to { transform: rotate(360deg); } }
+/* real photo presented as a clean circle (typhoon) */
+.ph-photo { border-radius: 50%; overflow: hidden; box-shadow: 0 30px 58px rgba(20,40,33,.26); }
+.ph-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.ty-photo { width: 470px; height: 470px; }
+.yy-art { width: 300px; height: 300px; }
+.yy-art .yy-swirl { width: 300px; height: 300px; animation: spin 14s linear infinite; }
+.ph-img { max-width: 600px; max-height: 720px; width: auto; height: auto; object-fit: contain;
+  filter: drop-shadow(0 36px 60px rgba(20,40,33,.26)); }
+.ph-en { font-size: 88px; font-weight: 800; letter-spacing: -2.6px; color: var(--stk-ink); }
+
+/* paper-tiger intro: the tiger "crumples" (paper) on cue */
+.beat-pt-intro .ph-img { transition: transform .9s cubic-bezier(.5,0,.2,1), filter .9s ease; }
+.beat-pt-intro.crumple .ph-img { transform: scale(.82) rotate(-7deg); filter: drop-shadow(0 20px 30px rgba(20,40,33,.2)) grayscale(.35) brightness(1.05); }
+
+/* ---------------- REVEAL (.rv) ---------------- */
+.rv { text-align: center; display: flex; flex-direction: column; align-items: center; gap: 18px; }
+.rv-han { font-family: 'Noto Sans SC', var(--stk-font); font-size: 210px; font-weight: 900;
+  letter-spacing: 6px; line-height: 1; color: var(--stk-ink); }
+.rv-han .hz { transition: color .4s ease; }
+.beat-pt .rv-han { font-size: 150px; letter-spacing: 4px; }
+.rv-py { font-size: 56px; font-weight: 700; color: var(--stk-teal); letter-spacing: 1px; }
+.rv-gloss { font-size: 46px; font-weight: 600; color: var(--stk-muted); }
+.rv-chars { display: flex; gap: 40px; justify-content: center; font-size: 34px; font-weight: 600; color: var(--stk-muted); }
+.rv-chars .ch b { font-family: 'Noto Sans SC', var(--stk-font); font-size: 1.5em; color: var(--stk-ink-2); margin-right: 8px; transition: color .35s ease; }
+
+/* per-char highlights */
+.beat-tofu.hl-dou .rv-han .hz:nth-child(1) { color: var(--stk-teal-d); }
+.beat-tofu.hl-dou .rv-chars .ch-dou b { color: var(--stk-teal-d); }
+.beat-tofu.hl-fu  .rv-han .hz:nth-child(2) { color: var(--stk-teal-d); }
+.beat-tofu.hl-fu  .rv-chars .ch-fu b { color: var(--stk-teal-d); }
+.beat-yy.hl-yin .rv-han .hz:nth-child(1) { color: var(--stk-teal-d); }
+.beat-yy.hl-yin .rv-chars .ch-yin b { color: var(--stk-teal-d); }
+.beat-yy.hl-yang .rv-han .hz:nth-child(2) { color: var(--stk-teal-d); }
+.beat-yy.hl-yang .rv-chars .ch-yang b { color: var(--stk-teal-d); }
+
+/* YIN & YANG — one continuous beat. The SAME swirl is shown big (intro), then on
+   `.reveal` it shifts DOWN + scales while the hanzi flies in, then on `.flag-in`
+   it shrinks onto the flag's taegeuk (the swirl never disappears/reappears). */
+.beat-yy .stk-depth2-text { width: 900px; }
+.yy { position: relative; width: 820px; height: 1040px; margin: 0 auto; }
+.yy-head { position: absolute; left: 0; right: 0; top: 30px;
+  display: flex; flex-direction: column; align-items: center; gap: 16px;
+  opacity: 0; transform: translateY(-36px);
+  transition: opacity .5s ease, transform .6s cubic-bezier(.2,.8,.2,1); }
+.beat-yy.reveal .yy-head { opacity: 1; transform: none; }
+.yy-stage { position: absolute; inset: 0; }
+.yy-symbol { position: absolute; left: 50%; top: 0; width: 380px; height: 380px;
+  transform: translate(-50%, 250px) scale(1.12);                 /* intro: big, upper-centre */
+  transition: transform .75s cubic-bezier(.45,.05,.2,1), opacity .45s ease; }
+.yy-symbol .yy-swirl { width: 380px; height: 380px; animation: spin 16s linear infinite;
+  filter: drop-shadow(0 16px 26px rgba(20,40,33,.16)); }
+.beat-yy.reveal  .yy-symbol { transform: translate(-50%, 470px) scale(.62); }   /* shift down + shrink */
+.beat-yy.flag-in .yy-symbol { transform: translate(-50%, 470px) scale(.28); opacity: 0; } /* onto the taegeuk */
+.yy-flag { position: absolute; left: 50%; top: 0; width: 360px; height: 240px;
+  transform: translate(-50%, 540px); border-radius: 6px; overflow: hidden;
+  opacity: 0; transition: opacity .55s ease;
+  filter: drop-shadow(0 16px 28px rgba(20,40,33,.18)); }
+.yy-flag .sk-flag { width: 360px; height: 240px; display: block; }
+.beat-yy.flag-in .yy-flag { opacity: 1; }
+.yy-label { position: absolute; left: 0; right: 0; top: 700px; text-align: center;
+  font-size: 84px; font-weight: 800; letter-spacing: -2.4px; color: var(--stk-ink);
+  transition: opacity .4s ease, transform .5s ease; }
+.beat-yy.reveal .yy-label { opacity: 0; transform: translateY(18px); }
+
+/* ---------------- TAIKONAUT INTRO (astronaut centred, 3 words fly in) ---------------- */
+.beat-tk-intro .stk-depth2-text { width: 1000px; }
+.tk { position: relative; width: 1000px; height: 1400px; margin: 0 auto; }
+.tk-astro { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -52%);
+  width: 430px; max-height: 620px; object-fit: contain; z-index: 2;
+  filter: drop-shadow(0 30px 50px rgba(20,40,33,.22)); }
+.tk-word { position: absolute; z-index: 3; display: flex; flex-direction: column; gap: 6px;
+  opacity: 0; transition: opacity .5s ease, transform .62s cubic-bezier(.4,0,.18,1); }
+.tk-word b { font-size: 62px; font-weight: 800; letter-spacing: -1.5px; color: var(--stk-ink); line-height: 1; }
+.tk-word .tk-g { font-size: 30px; font-weight: 600; color: var(--stk-muted); }
+.tk-word.chn b { color: var(--stk-teal-d); }
+.tk-word.chn .tk-g { font-family: 'Noto Sans SC', var(--stk-font); color: var(--stk-teal); }
+/* three anchors, three entry directions (left / right / below) */
+.w-astro { left: 0;    top: 300px;   transform: translateX(-520px); }
+.w-cosmo { right: 0;   top: 690px;   transform: translateX(520px); }
+.w-taiko { left: 50%;  bottom: 70px; transform: translate(-50%, 400px); }
+.beat-tk-intro .w-astro.in { transform: translateX(0); opacity: 1; }
+.beat-tk-intro .w-cosmo.in { transform: translateX(0); opacity: 1; }
+.beat-tk-intro .w-taiko.in { transform: translate(-50%, 0); opacity: 1; }
+
+/* ---------------- MAO (1946 quote) — portrait + speech bubble holding a paper-cutout tiger ---------------- */
+.beat-mao .stk-depth2-text { width: 1000px; }
+.mao { position: relative; width: 1000px; height: 1240px; margin: 0 auto; }
+.mao-img { position: absolute; left: 20px; bottom: 0; width: 540px;
+  filter: drop-shadow(0 26px 44px rgba(20,40,33,.22)); }
+.mao-bubble { position: absolute; right: 10px; top: 200px; width: 470px; height: 420px;
+  background: #fff; border: 6px solid var(--stk-ink); border-radius: 42px;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 20px 44px rgba(20,40,33,.16);
+  opacity: 0; transform: scale(.55); transform-origin: 12% 100%;
+  transition: opacity .4s ease, transform .58s cubic-bezier(.34,1.56,.64,1); }
+/* comic tail pointing down-left toward Mao */
+.mao-bubble::before { content: ''; position: absolute; left: 34px; bottom: -44px; width: 0; height: 0;
+  border-top: 50px solid var(--stk-ink); border-right: 42px solid transparent; }
+.mao-bubble::after { content: ''; position: absolute; left: 41px; bottom: -27px; width: 0; height: 0;
+  border-top: 35px solid #fff; border-right: 29px solid transparent; }
+.mao-tiger { width: 360px; height: auto; }
+.beat-mao.mao-pop .mao-bubble { opacity: 1; transform: none; }
+
+/* ---------------- RECAP ---------------- */
+.beat-recap .stk-depth2-text { width: 820px; }
+.recap { text-align: center; }
+.recap-rows { display: flex; flex-direction: column; gap: 16px; }
+.recap-row { display: flex; align-items: center; gap: 28px; padding: 12px 30px; background: #fff;
+  box-shadow: 0 12px 28px rgba(30,72,60,.10); border-radius: 16px;
+  opacity: 0; transform: translateY(26px); transition: opacity .45s ease, transform .55s cubic-bezier(.34,1.56,.64,1); }
+.recap-row.in { opacity: 1; transform: none; }
+.rr-han { font-family: 'Noto Sans SC', var(--stk-font); font-size: 70px; font-weight: 900; color: var(--stk-ink);
+  width: 240px; text-align: left; }
+.rr-txt { display: flex; flex-direction: column; align-items: flex-start; }
+.rr-txt b { font-size: 42px; font-weight: 800; color: var(--stk-ink); }
+.rr-txt span { font-size: 30px; font-weight: 600; color: var(--stk-teal); }
+
+/* ---------------- HANZI WALL (vocab closer) ---------------- */
+.hwall { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 28px 50px; width: 900px; margin: 0 auto; }
+.hw { font-family: 'Noto Sans SC', var(--stk-font); font-size: 158px; font-weight: 900; letter-spacing: 4px; line-height: 1; color: var(--stk-ink); }
+.hw:nth-child(even) { color: var(--stk-teal-d); }
+
+/* ---------------- OUTRO endcard (default `outro` element) ---------------- */
+.outro-layer { z-index: 3; opacity: 0; transition: opacity .5s ease; pointer-events: none; }
+.outro-layer.show { opacity: 1; }
+.ec { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 30px; }
+#ec-logo { display: flex; }
+#ec-logo svg { width: 560px; height: auto; display: block; }
+.ec .lyr { opacity: 0; transform: translateY(-52px) scale(.78); transform-box: fill-box; transform-origin: 50% 50%;
+  transition: transform .58s cubic-bezier(.34,1.56,.5,1) var(--d), opacity .42s ease var(--d); }
+.outro-layer.play .lyr { opacity: 1; transform: none; }
+.ec .chev path { stroke-dasharray: 300; stroke-dashoffset: 300; transition: stroke-dashoffset .55s ease .40s; }
+.outro-layer.play .chev path { stroke-dashoffset: 0; }
+.ec .wm { font-family: 'Nunito', var(--stk-font); font-weight: 900; font-size: 152px; letter-spacing: -3px; line-height: 1;
+  opacity: 0; transform: translateY(30px); transition: opacity .5s ease .52s, transform .62s cubic-bezier(.2,.8,.2,1) .52s; }
+.outro-layer.play .wm { opacity: 1; transform: none; }
+.ec .wm .s { color: var(--stk-ink); }
+.ec .wm .t { color: var(--stk-teal); }
+.ec .url { font-family: 'Nunito', var(--stk-font); font-weight: 700; font-size: 44px; letter-spacing: 7px; color: var(--stk-muted);
+  opacity: 0; transform: translateY(16px); transition: opacity .5s ease .74s, transform .5s ease .74s, letter-spacing .7s ease .74s; }
+.outro-layer.play .url { opacity: 1; transform: none; letter-spacing: 4px; }
+.ec-folder { margin-top: 8px; font-size: 32px; font-weight: 600; color: var(--stk-muted);
+  opacity: 0; transform: translateY(12px); transition: opacity .5s ease, transform .5s ease; }
+.ec-folder b { color: var(--stk-teal-d); font-weight: 800; }
+.outro-layer.folder-in .ec-folder { opacity: 1; transform: none; }
+
+/* ============================================================
+   ENUMERATION docked logo (corner progress badge)
+   ============================================================ */
+.enum-layer .se2-toptext { display: none; }
+/* white lower layers, turquoise active layer, crisp black outline on EVERY layer */
+.enum-layer .se2-tile {
+  filter: drop-shadow(0 8px 8px rgba(16,50,40,.14))
+          drop-shadow(2px 0 0 #1b2024) drop-shadow(-2px 0 0 #1b2024)
+          drop-shadow(0 2px 0 #1b2024) drop-shadow(0 -2px 0 #1b2024); }
+.enum-layer .se2-tile:not(.active) .se2-tile-top  { background: #ffffff; }
+.enum-layer .se2-tile:not(.active) .se2-tile-side { background: #e8edeb; }
+.enum-layer .se2-tile.active .se2-tile-side { background: #247c68; }
+.enum-layer .se2-tile-top span.glyph {
+  font-family: 'Noto Sans SC', var(--stk-font); font-size: 76px; font-weight: 700; letter-spacing: 2px;
+  color: var(--stk-ink); background: none; padding: 0; border-radius: 0;
+}
+.enum-layer .se2-tile.active .se2-tile-top span.glyph { color: #fff; }
+
+/* ============================================================
+   VOCAB TALLY — introduced hanzi accumulate top-left, beside the stack
+   ============================================================ */
+.vocab-tally { position: absolute; left: 290px; top: 74px; z-index: 6;
+  display: flex; flex-direction: column; gap: 16px;
+  opacity: 0; transition: opacity .5s ease; pointer-events: none; }
+.vocab-tally.show { opacity: 1; }
+.vocab-tally .vt { display: flex; align-items: baseline; gap: 14px;
+  opacity: 0; transform: translateX(-18px);
+  transition: opacity .45s ease, transform .5s cubic-bezier(.2,.8,.2,1); }
+.vocab-tally .vt.in { opacity: 1; transform: none; }
+.vocab-tally .vt-han { font-family: 'Noto Sans SC', var(--stk-font); font-size: 52px; font-weight: 900;
+  line-height: 1; color: var(--stk-ink-2); transition: color .4s ease; }
+.vocab-tally .vt-py { font-size: 27px; font-weight: 700; color: var(--stk-muted); transition: color .4s ease; }
+.vocab-tally .vt.active .vt-han { color: var(--stk-teal-d); }
+.vocab-tally .vt.active .vt-py  { color: var(--stk-teal); }
+
+/* ============================================================
+   SUBTITLES (theme .stk-subs base; small tweaks)
+   ============================================================ */
+.stk-subs { bottom: 150px; }
+.stk-subs-line {
+  font-size: 46px; font-weight: 700; color: var(--stk-muted);
+  background: rgba(255,255,255,.72); padding: 8px 22px; border-radius: 14px;
+  -webkit-backdrop-filter: blur(2px); backdrop-filter: blur(2px);
+}
+.stk-subs-line b { color: var(--stk-teal-d); font-weight: 800; }

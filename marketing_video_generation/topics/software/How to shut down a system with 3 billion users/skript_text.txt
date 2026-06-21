@@ -1,0 +1,80 @@
+VIDEO SCRIPT
+Title: How to shut down a system with 3 billion users
+Topic: Software
+Target length: ~100 seconds (fits the 30s–3min window)
+Language of narration: English
+Format: Voiceover script. Spoken lines are plain text. [Bracketed lines] describe
+what is on screen AT THE SAME TIME as the narration next to them.
+
+==================================================================
+THE CORE IDEA
+==================================================================
+On Oct 4, 2021, a faulty BGP routing update erased Facebook, Instagram and
+WhatsApp from the internet for ~6 hours. The twist: the same network ran their
+internal tools AND the building's electronic access — so engineers were locked out
+of their own data centers and reportedly had to cut into the server cages to fix
+it. The deeper lesson: don't let your recovery systems depend on the very thing
+that's down (circular dependency).
+Punchline: the company didn't get hacked — it locked itself out of its own servers.
+
+NOTE (honesty): the "angle-grinder / cut the cages" detail is the popular retelling
+— say "reportedly." Core facts (BGP withdrawal, locked-out engineers, ~6h, billions
+of users) are solid.
+
+KEY VISUALS:
+- A technician with an angle grinder at a high-security server-room door; outside,
+  3 billion users hammering refresh.
+- A routing command wiping Facebook off a map of the internet.
+
+==================================================================
+SCRIPT
+==================================================================
+
+--- HOOK (0:00–0:14) — the payoff up front ---
+
+In 2021, Facebook didn't get hacked. It locked itself out of its own servers — and
+took Instagram and WhatsApp down with it, for billions of people.
+[A map of the internet; "Facebook" blinks out. Outside, a sea of users hitting refresh.]
+For six hours, the company couldn't even get into the building to fix it. Here's
+how you accidentally delete yourself from the internet.
+
+--- HOW IT VANISHED (≈0:14–0:42) ---
+
+It started with routine maintenance. An engineer pushed a single faulty update to
+Facebook's routing — the system that tells the rest of the internet "this is where
+to find us."
+[A routing table; one bad command ripples outward.]
+The update was wrong. In an instant, it withdrew the directions to Facebook's
+servers worldwide.
+[The signposts pointing to Facebook all vanish.]
+So when 3 billion people typed in the address, the internet shrugged: it no longer
+had any idea where Facebook was. The company had, essentially, erased its own home
+address.
+
+--- THE TRAP (≈0:42–1:12) ---
+
+Now here's where it went from outage to nightmare. Facebook's internal tools —
+the ones engineers would use to fix the problem — ran on that same network. So
+they went down too.
+[Engineers reaching for their tools; everything greyed out.]
+Even the badge readers and electronic door locks at the data centers were tied to
+it. So the people who could fix the servers... couldn't get to the servers.
+[A locked high-security door; engineers stuck outside.]
+Reportedly, a team had to physically cut their way into the server cages with power
+tools just to reach the machines.
+[A technician with an angle grinder at the cage; sparks flying.]
+
+--- THE LESSON / PUNCHLINE (≈1:12–1:30) ---
+
+And that's the real lesson hiding in here. They built a system where the tools to
+fix a crash depended on the very thing that had crashed.
+[A loop diagram: "to fix the network, you need the network."]
+It's a circular trap — and the biggest companies fall into it. The most powerful
+social network on Earth wasn't taken down by hackers, or a war, or a disaster. It
+was one bad line of config — and a door that wouldn't open.
+
+--- OUTRO / CTA (≈1:30–1:42) ---
+
+Want more stories of how technology really works — and really breaks?
+[Stacktags logo animates in; "stacktags.io" shown on screen.]
+Discover thousands of free exercises and more learning content on stacktags.io.

@@ -1,0 +1,82 @@
+/* ============================================================
+   Stacktags default element — FIGURE(S) with speech bubbles
+   Cut-out character figures that speak via comic speech bubbles
+   (white, thick ink border + bordered tail). Shows a two-figure
+   "they speak differently" scene, then an authority figure (official)
+   that drops in from the top with its own bubble.
+   White + turquoise, Inter, CJK in a sans face, no borders on art.
+   Pairs with demo.html.
+   ============================================================ */
+
+.fig-scene { position: absolute; inset: 0; }
+.fig-stage {
+  position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+  width: 880px; height: 780px;
+}
+
+/* a parchment with a shared written character (the thing they all WROTE) */
+.fig-parch {
+  position: absolute; left: 50%; top: 120px; transform: translateX(-50%);
+  width: 250px; height: auto; filter: drop-shadow(0 18px 30px rgba(20,40,33,.18));
+  opacity: 0; transition: opacity .5s ease;
+}
+.fig-scene.speak .fig-parch { opacity: 1; }
+
+/* cut-out figures — slide/fade up into place */
+.fig {
+  position: absolute; bottom: 10px; height: 430px; width: auto;
+  opacity: 0; transform: translateY(40px);
+  filter: drop-shadow(0 18px 30px rgba(20,40,33,.20));
+  transition: opacity .5s ease, transform .6s cubic-bezier(.2,.8,.2,1);
+}
+.fig-scene.speak .fig { opacity: 1; transform: translateY(0); }
+.fig-a { left: -20px; }
+.fig-b { right: -20px; height: 400px; bottom: 14px; }
+/* dim the chatting figures a touch when the authority figure takes over */
+.fig-scene.official .fig { opacity: .5; filter: drop-shadow(0 12px 22px rgba(20,40,33,.14)); }
+.fig-scene.official .fig-parch { opacity: 0; }
+
+/* comic speech bubble — white, thick ink border + a bordered tail, springy pop */
+.fig-bub {
+  position: absolute; z-index: 4;
+  font-family: 'Inter', 'Noto Sans SC', sans-serif; font-weight: 900; font-size: 54px;
+  color: var(--stk-ink); background: #fff; border: 7px solid var(--stk-ink); border-radius: 40px;
+  padding: 14px 30px; letter-spacing: 2px; white-space: nowrap; box-shadow: 0 14px 32px rgba(20,40,33,.16);
+  opacity: 0; transform: scale(.4); transform-origin: 50% 130%;
+  transition: opacity .35s ease, transform .5s cubic-bezier(.34,1.56,.64,1);
+}
+.fig-bub::before { content: ''; position: absolute; bottom: -40px; width: 0; height: 0; border-top: 40px solid var(--stk-ink); border-right: 30px solid transparent; }
+.fig-bub::after  { content: ''; position: absolute; bottom: -24px; width: 0; height: 0; border-top: 28px solid #fff; border-right: 20px solid transparent; }
+.fig-bub-l { left: 70px; top: 18px; }
+.fig-bub-l::before { left: 38px; } .fig-bub-l::after { left: 45px; }
+.fig-bub-r { right: 64px; top: 92px; }
+.fig-bub-r::before { right: 38px; border-right: 0; border-left: 30px solid transparent; }
+.fig-bub-r::after  { right: 45px; border-right: 0; border-left: 20px solid transparent; }
+.fig-scene.speak .fig-bub { opacity: 1; transform: scale(1); }
+.fig-scene.official .fig-bub { opacity: 0; transform: scale(.4); }   /* the chatter bubbles clear */
+
+/* the authority figure (official) drops in from the top, over the others */
+.fig-official-wrap {
+  position: absolute; left: 50%; top: 50%; z-index: 5;
+  transform: translate(-50%, -50%); display: inline-block;
+}
+.fig-official {
+  width: 460px; height: auto; display: block;
+  transform: translateY(-1140px); opacity: 0;
+  filter: drop-shadow(0 24px 40px rgba(20,40,33,.28));
+  transition: transform .72s cubic-bezier(.3,.85,.3,1), opacity .3s ease;
+}
+.fig-scene.official .fig-official { transform: translateY(0); opacity: 1; }
+
+/* the official's bubble — same comic style, rides in with it */
+.fig-official-wrap .off-bub {
+  position: absolute; top: -16px; left: 56%; z-index: 6; white-space: nowrap;
+  font-family: 'Inter', 'Noto Sans SC', sans-serif; font-weight: 900; font-size: 54px; letter-spacing: 2px;
+  color: var(--stk-ink); background: #fff; border: 7px solid var(--stk-ink); border-radius: 40px;
+  padding: 14px 32px; box-shadow: 0 14px 32px rgba(20,40,33,.16);
+  opacity: 0; transform: translateY(-1140px);
+  transition: transform .72s cubic-bezier(.3,.85,.3,1), opacity .3s ease .25s;
+}
+.fig-official-wrap .off-bub::before { content: ''; position: absolute; bottom: -40px; left: 30px; width: 0; height: 0; border-top: 40px solid var(--stk-ink); border-right: 30px solid transparent; }
+.fig-official-wrap .off-bub::after  { content: ''; position: absolute; bottom: -24px; left: 37px; width: 0; height: 0; border-top: 28px solid #fff; border-right: 20px solid transparent; }
+.fig-scene.official .off-bub { transform: translateY(0); opacity: 1; }

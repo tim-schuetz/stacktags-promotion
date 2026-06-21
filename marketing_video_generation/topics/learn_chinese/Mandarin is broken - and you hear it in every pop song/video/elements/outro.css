@@ -1,0 +1,44 @@
+/* ============================================================
+   Stacktags OUTRO endcard (new default element look).
+   Mirrors default_video_elements/outro/demo.html: logo layers
+   stagger in, chevrons draw, `stacktags` wordmark + grey
+   `stacktags.io` fade up. Assembled by toggling `.play`.
+   ============================================================ */
+.stk-outro2 { position: absolute; inset: 0; }
+.stk-outro2 .ec {
+  position: absolute; inset: 0;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 34px;
+}
+
+/* logo — built layer by layer (groups emitted by makeStacktagsLogo) */
+.stk-outro2 .ec-logo { display: flex; }
+.stk-outro2 .ec-logo svg { width: 620px; height: auto; display: block; }
+.stk-outro2 .lyr {
+  opacity: 0;
+  transform: translateY(-52px) scale(.78);
+  transform-box: fill-box; transform-origin: 50% 50%;
+  transition: transform .58s cubic-bezier(.34,1.56,.5,1) var(--d), opacity .42s ease var(--d);
+}
+.stk-outro2.play .lyr { opacity: 1; transform: none; }
+.stk-outro2 .chev path { stroke-dasharray: 300; stroke-dashoffset: 300; transition: stroke-dashoffset .55s ease .40s; }
+.stk-outro2.play .chev path { stroke-dashoffset: 0; }
+
+/* wordmark — stack(ink) + tags(teal) */
+.stk-outro2 .wm {
+  font-family: 'Nunito', system-ui, sans-serif; font-weight: 900; font-size: 158px;
+  letter-spacing: -3px; line-height: 1;
+  opacity: 0; transform: translateY(30px);
+  transition: opacity .5s ease .52s, transform .62s cubic-bezier(.2,.8,.2,1) .52s;
+}
+.stk-outro2.play .wm { opacity: 1; transform: none; }
+.stk-outro2 .wm .s { color: #232B33; }
+.stk-outro2 .wm .t { color: #3EAE93; }
+
+/* url */
+.stk-outro2 .url {
+  font-family: 'Nunito', system-ui, sans-serif; font-weight: 700; font-size: 44px;
+  letter-spacing: 7px; color: #8a949d;
+  opacity: 0; transform: translateY(16px);
+  transition: opacity .5s ease .74s, transform .5s ease .74s, letter-spacing .7s ease .74s;
+}
+.stk-outro2.play .url { opacity: 1; transform: none; letter-spacing: 4px; }

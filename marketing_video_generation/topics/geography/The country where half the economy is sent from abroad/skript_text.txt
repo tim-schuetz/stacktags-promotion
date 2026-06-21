@@ -1,0 +1,68 @@
+VIDEO SCRIPT
+Title: The country where half the economy is sent from abroad
+Topic: Economics
+Target length: ~90 seconds (fits the 30s–3min window)
+Language of narration: English
+Format: Voiceover script. Spoken lines are plain text. [Bracketed lines] describe
+what is on screen AT THE SAME TIME as the narration next to them.
+
+==================================================================
+THE CORE IDEA
+==================================================================
+Tajikistan: in some years, remittances — money sent home by labor migrants
+working abroad (mostly in Russia) — have equalled around HALF of the country's
+GDP, one of the highest ratios on Earth. The money mostly funds everyday living,
+not investment, so the country is deeply exposed to events far away.
+Punchline: most nations' wealth is made within their borders; half of
+Tajikistan's is made in someone else's.
+
+NOTE (honesty): the share swings year to year (it has peaked near ~50%, lower
+since) — say "in some years, around half." Most migrants work in Russia.
+
+KEY VISUALS:
+- A map: money arrows flying from Russia into Tajikistan; a GDP bar that's ~half
+  made of "sent from abroad."
+
+==================================================================
+SCRIPT
+==================================================================
+
+--- HOOK (0:00–0:10) — the payoff up front ---
+
+Imagine a country where half the entire economy isn't earned at home — it's wired
+in from people working in another country.
+[A GDP bar fills: half labeled "earned at home," half "sent from abroad."]
+That's Tajikistan. In some years, the money its citizens send back from working
+overseas has added up to around half of the nation's whole economy.
+[Money arrows streaming across a border into the country.]
+
+--- WHERE IT COMES FROM (≈0:10–0:38) ---
+
+Most of those workers are in Russia — on construction sites, in factories, in
+shops — sending their wages home to families in Tajikistan.
+[A worker in Russia → cash → a household back home lighting up.]
+And this money isn't building factories or railways. It's buying food, paying
+rent, covering school. It keeps millions of households afloat, day to day.
+[Groceries, rent, schoolbooks paid for by the incoming cash.]
+The economy at home is small. The wages earned abroad are what actually feed the
+country.
+
+--- THE FRAGILITY (≈0:38–1:05) ---
+
+Which leaves Tajikistan tied to things happening far away.
+[A thread connecting Russia's economy to a Tajik dinner table.]
+When Russia's economy dips, or its currency drops, or migration rules tighten,
+that flow of money slows — and a recession a thousand kilometers away suddenly
+lands on the kitchen table at home.
+[The money arrows thin out; the household lights dim.]
+Half your economy, riding on someone else's.
+
+--- PUNCHLINE / OUTRO (≈1:05–1:18) ---
+
+Most countries' wealth is made inside their own borders.
+[A normal country: GDP bar all one color.]
+Half of Tajikistan's is made in someone else's — and mailed home.
+
+Want more numbers that change how you see the world?
+[Stacktags logo animates in with a "Follow" prompt.]
+Follow Stacktags.

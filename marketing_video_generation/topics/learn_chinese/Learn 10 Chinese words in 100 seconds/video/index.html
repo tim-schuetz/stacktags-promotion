@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Stacktags — Learn 10 Chinese words in 100 seconds</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Nunito:wght@700;900&family=Noto+Sans+SC:wght@500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="elements/theme.css" />
+<link rel="stylesheet" href="elements/depth.css" />
+<link rel="stylesheet" href="elements/outro.css" />
+<link rel="stylesheet" href="styles.css?v=14" />
+</head>
+<body>
+<div class="root">
+  <div class="stage" id="stage">
+
+    <!-- top progress bar (hidden in clean mode) -->
+    <div class="vprogress"><div class="vprogress-fill" id="vprogress"></div></div>
+
+    <!-- corner brand watermark (hidden in clean mode) -->
+    <div class="brand-wm"><span class="wm-stack">stack</span><span class="wm-tags">tags</span></div>
+
+    <!-- the depth-transition flow (dynamic grid + camera) mounts here -->
+    <div id="depth-host"></div>
+
+    <!-- subtitle strip that mirrors the narration, near the bottom -->
+    <div class="stk-subs" id="subs"><div class="stk-subs-line" id="subline"></div></div>
+
+    <!-- closing brand card — sits on the same grid, revealed at the end -->
+    <div class="outro-layer" id="outro-layer">
+      <div class="outro-grid stk-grid-bg"></div>
+      <div id="outro-host"></div>
+    </div>
+
+  </div>
+
+  <audio id="vo" src="../script_audio.mp3" preload="auto"></audio>
+
+  <!-- control bar (hidden in clean mode with "C") -->
+  <div class="hud" id="hud">
+    <button id="play">▶ Play</button>
+    <button id="restart">↺ Restart</button>
+    <span class="info" id="info">0.0s</span>
+    <button id="cleanbtn">Clean (C)</button>
+  </div>
+</div>
+
+<script src="elements/hanzi-data.js"></script>
+<script src="elements/hanzi-writer.min.js"></script>
+<script src="elements/depth.js"></script>
+<script src="elements/outro.js"></script>
+<script src="app.js?v=14"></script>
+</body>
+</html>

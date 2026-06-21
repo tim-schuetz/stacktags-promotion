@@ -1,0 +1,85 @@
+VIDEO SCRIPT
+Title: 20 billion devices run on one man's code
+Topic: Software
+Target length: ~105 seconds (fits the 30s–3min window)
+Language of narration: English
+Format: Voiceover script. Spoken lines are plain text. [Bracketed lines] describe
+what is on screen AT THE SAME TIME as the narration next to them.
+
+==================================================================
+THE CORE IDEA
+==================================================================
+curl — a tiny tool that moves data over the internet — runs on ~20 billion devices
+(phones, cars, TVs, servers). It's been led/maintained largely by ONE developer,
+Daniel Stenberg, for 25+ years, often as a volunteer. In 2026 he shut down the
+project's bug-bounty reporting because a flood of AI-generated FAKE vulnerability
+reports buried him in fake work. The twist: critical infrastructure rests on a few
+volunteers — now strained by AI slop.
+Punchline: the internet runs on a handful of exhausted volunteers — and now they're
+fighting an endless tide of fake bugs written by machines.
+
+NOTE (accuracy/honesty): curl ≈ "20 billion installations" is Stenberg's own
+figure. The 2026 bug-bounty shutdown over AI-generated report spam is per the user's
+brief and recent reporting — VERIFY the exact 2026 detail before publishing; the
+AI-slop problem itself is well documented.
+
+KEY VISUALS:
+- A vast wall of devices (phones, cars, TVs, servers) all tagged "curl."
+- One tired developer at a desk; an avalanche of "AI-generated bug report" emails.
+
+==================================================================
+SCRIPT
+==================================================================
+
+--- HOOK (0:00–0:14) — the payoff up front ---
+
+About 20 billion devices run a piece of software called curl — your phone, your car,
+your TV, the servers behind your favorite apps.
+[A wall of countless devices, each quietly stamped "curl".]
+And for decades, it's been kept alive mostly by one man. In 2026, artificial
+intelligence nearly buried him in fake work. Here's the story.
+
+--- WHAT CURL IS (≈0:14–0:38) ---
+
+curl is a tiny, invisible tool whose job is simply to move data between a device and
+the internet — fetching, sending, downloading.
+[A little pipe shuttling data in and out of a device.]
+It's so basic and so reliable that it got baked into roughly twenty billion devices
+worldwide. You've never seen it, never clicked it — but you rely on it constantly,
+every single day.
+
+--- THE ONE MAN (≈0:38–1:02) ---
+
+And for over 25 years, this backbone of the digital world has been led and
+maintained largely by one developer: Daniel Stenberg. Often in his spare time. Often
+for free.
+[One person at a desk; the entire wall of devices balanced above him.]
+It's the dirty secret of modern tech: enormous amounts of it stand on tiny,
+unpaid, open-source projects — sometimes held up by a single volunteer. And in 2026,
+that fragile setup met a brand-new threat.
+
+--- THE AI FLOOD (≈1:02–1:32) ---
+
+To keep curl safe, the project rewarded people for reporting real security bugs — a
+"bug bounty." But it started drowning in AI-generated reports: confident,
+official-looking write-ups of bugs that simply... didn't exist.
+[An inbox flooding with slick "AI-generated vulnerability report" emails.]
+Each fake looked plausible enough that a human had to stop and investigate it —
+burning the exact time that keeps the software secure. Buried under the slop,
+Stenberg shut the bug-bounty reporting down.
+[The developer, exhausted, switching off the program.]
+The tool securing billions of devices wasn't threatened by hackers. It was nearly
+drowned by AI-generated noise.
+
+--- PUNCHLINE / OUTRO (≈1:32–1:48) ---
+
+It's a preview of a strange new problem. AI can now produce endless, plausible
+nonsense — faster than humans can ever debunk it.
+[A tide of fake reports rising against a few tired volunteers.]
+And it's landing right on the small group of people quietly holding up the internet.
+They used to just fight bugs. Now they fight an ocean of fake ones, written by
+machines.
+
+Want more stories of how technology really works?
+[Stacktags logo animates in; "stacktags.io" shown on screen.]
+Discover thousands of free exercises and more learning content on stacktags.io.

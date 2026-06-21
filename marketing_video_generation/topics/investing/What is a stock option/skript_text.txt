@@ -1,0 +1,84 @@
+VIDEO SCRIPT
+Title: What is a stock option?
+Topic: Investing
+Target length: ~100 seconds (fits the 30s–3min window)
+Language of narration: English
+Format: Voiceover script. Spoken lines are plain text. [Bracketed lines] describe
+what is on screen AT THE SAME TIME as the narration next to them.
+
+==================================================================
+THE CORE IDEA
+==================================================================
+A stock option is the RIGHT (not obligation) to buy (a "call") or sell (a "put") a
+stock at a fixed "strike" price by a deadline, for a small fee (the premium). It
+gives leveraged upside with capped downside (you can only lose the premium). The
+twist (teaser): options can also be SOLD/shorted like a stock — opening up bets on
+volatility and stranger strategies (→ links to the short-a-call video).
+Punchline: a small bet on what a stock will do — capped loss, leveraged upside;
+and once you can buy AND sell them, you can bet on up, down, or how wild it gets.
+
+NOTE (responsibility): educational, NOT advice. Keep the example simple/illustrative.
+
+KEY VISUALS:
+- A "$110 strike" line; the stock crossing it; a small $2 premium ballooning into $20.
+- CALL = right to BUY; PUT = right to SELL.
+
+==================================================================
+SCRIPT
+==================================================================
+
+--- HOOK (0:00–0:12) — the payoff up front ---
+
+A stock option is the right to buy or sell a stock at a fixed price — no matter
+what the real price does.
+[A locked "$110" price tag on a stock that's moving around it.]
+It can let you control a 10,000-dollar position for a couple hundred bucks. Here's
+how it works.
+[A tiny premium controlling a big block of shares.]
+
+--- THE DEFINITION (≈0:12–0:35) ---
+
+An option gives you the right — but not the obligation — to buy or sell a stock at
+a set price, called the strike, before a deadline. For that right, you pay a small
+fee: the premium.
+[Right (not obligation) → strike price → expiry date → premium.]
+There are two kinds. A call is the right to BUY at the strike — you're betting the
+stock goes up. A put is the right to SELL at the strike — you're betting it goes
+down.
+[CALL ↑ buy | PUT ↓ sell.]
+
+--- A CONCRETE EXAMPLE (≈0:35–1:05) ---
+
+Let's make it real. A stock trades at 100 dollars. You buy a call with a 110
+strike, expiring in a month, for a 2-dollar premium.
+[Stock $100 · strike $110 · premium $2.]
+If the stock jumps to 130, you still have the right to buy at 110 — so your option
+is now worth about 20 dollars. Your 2-dollar bet turned into twenty.
+[The stock rockets to $130; the $2 premium balloons to ~$20.]
+And if the stock never reaches 110? The option simply expires worthless, and you
+lose only the 2 dollars you paid. Capped downside, leveraged upside.
+[Stock stays low; the $2 premium fades to zero — and stops there.]
+
+--- THE TWIST / TEASER (≈1:05–1:28) ---
+
+Now here's the interesting part. Options aren't just something you buy. You can
+also short-sell them — just like a stock — and take the other side of the bet.
+[An option being sold short, the trade flipping sides.]
+That unlocks strange strategies, where you stop betting on direction and start
+betting on a stock's volatility — and a lot of other unusual wagers.
+[A bet not on "up or down" but on "how wild?"]
+We break one of those down in full here: "Investment idea — shorting a call
+option."
+[A card points to the next video.]
+
+--- PUNCHLINE / OUTRO (≈1:28–1:40) ---
+
+So an option is a small bet on what a stock will do — limited loss, leveraged
+upside.
+[The example, capped on one side, open on the other.]
+And once you can both buy and sell them, you can bet on almost anything: up, down,
+or just how wild the ride gets.
+
+Want to actually understand the tools the pros use?
+[Stacktags logo animates in with a "Follow" prompt.]
+Follow Stacktags.

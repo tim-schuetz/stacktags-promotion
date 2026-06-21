@@ -1,0 +1,98 @@
+/* ============================================================
+   Stacktags default element — ENUMERATION
+   A numbered line-up of items (number · glyph · label) that
+   cascades in, then "the camera" zooms into a single item to
+   hand off into its detail view.
+   White + turquoise Stacktags styling. Namespaced .stk-enum.
+   Drive it from JS (enumeration.js) — see that file's API.
+   ============================================================ */
+.stk-enum {
+  --enum-teal: #3EAE93;
+  --enum-teal-d: #119271;
+  --enum-ink: #232B33;
+  --enum-muted: #8a949d;
+  --enum-line: #e9efed;
+  position: absolute; inset: 0;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  gap: 38px;
+  padding: 90px 70px;
+}
+
+.stk-enum-title {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-weight: 800;
+  font-size: 54px;
+  letter-spacing: -1.2px;
+  color: var(--enum-ink);
+  text-align: center;
+  opacity: 0;
+  transform: translateY(-24px);
+  transition: opacity .5s ease, transform .5s cubic-bezier(.2,.8,.2,1);
+}
+.stk-enum-title b { color: var(--enum-teal-d); }
+.stk-enum.title-in .stk-enum-title { opacity: 1; transform: none; }
+
+/* The list itself — this is what gets zoomed. */
+.stk-enum-list {
+  display: flex; flex-direction: column;
+  gap: 14px;
+  width: 100%;
+  max-width: 820px;
+  transform-origin: center center;
+  transition: transform 1s cubic-bezier(.7,0,.25,1), opacity .6s ease;
+  will-change: transform;
+}
+
+.stk-enum-row {
+  display: flex; align-items: center; gap: 30px;
+  padding: 16px 28px;
+  border-radius: 22px;
+  background: #fff;
+  box-shadow: 0 2px 0 var(--enum-line), 0 10px 30px rgba(30,72,60,.06);
+  border: 1.5px solid var(--enum-line);
+  opacity: 0;
+  transform: translateX(-60px) scale(.96);
+  transition: opacity .5s ease, transform .6s cubic-bezier(.2,.85,.25,1),
+              box-shadow .4s ease, border-color .4s ease;
+}
+.stk-enum-row.in { opacity: 1; transform: none; }
+
+.stk-enum-num {
+  flex-shrink: 0;
+  width: 64px; height: 64px;
+  border-radius: 50%;
+  background: var(--enum-teal);
+  color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-weight: 800; font-size: 30px;
+  box-shadow: 0 6px 16px rgba(62,174,147,.35);
+}
+.stk-enum-glyph {
+  flex-shrink: 0;
+  width: 92px;
+  text-align: center;
+  font-family: 'Noto Serif SC', 'Songti SC', serif;
+  font-weight: 700; font-size: 70px; line-height: 1;
+  color: var(--enum-ink);
+}
+.stk-enum-labels { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.stk-enum-label {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-weight: 700; font-size: 30px; color: var(--enum-ink);
+  letter-spacing: -.3px;
+}
+.stk-enum-sub {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-weight: 500; font-size: 22px; color: var(--enum-muted);
+}
+
+/* highlight state for the row being zoomed into */
+.stk-enum-row.target {
+  border-color: var(--enum-teal);
+  box-shadow: 0 0 0 3px rgba(62,174,147,.25), 0 16px 40px rgba(62,174,147,.22);
+}
+
+/* whole element fade-out after the zoom hands off */
+.stk-enum.handoff { opacity: 0; transition: opacity .45s ease; pointer-events: none; }

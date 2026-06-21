@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Stacktags element — timeline (demo)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../_shared/theme.css">
+<link rel="stylesheet" href="timeline.css">
+<style>
+  html,body{margin:0;height:100%;overflow:hidden;background:#0b0e0d;}
+  .wrap{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;}
+  .stage{position:relative;width:1080px;height:1920px;overflow:hidden;transform-origin:center;flex-shrink:0;}
+  .demo-cap{position:absolute;left:0;right:0;top:150px;text-align:center;z-index:8;
+    font-family:var(--stk-font);font-weight:800;font-size:46px;letter-spacing:-1px;color:var(--stk-ink);}
+</style>
+</head>
+<body>
+<div class="wrap"><div class="stage stk-grid-bg" id="stage">
+  <div id="host"></div>
+</div></div>
+
+<script src="timeline.js"></script>
+<script>
+  const stage = document.getElementById('stage');
+  function fit(){ const s=Math.min(innerWidth/1080, innerHeight/1920); stage.style.transform='scale('+s+')'; }
+  addEventListener('resize', fit); fit();
+
+  const tl = new StacktagsTimeline('#host', {
+    spacing: 600,
+    sound: 'sound/timeline.mp3',     // placeholder — drop a file here
+    events: [
+      { year: '618',  label: 'Tang dynasty' },
+      { year: '960',  label: 'Song dynasty' },
+      { year: '1271', label: 'Yuan dynasty' },
+      { year: '1368', label: 'Ming dynasty' },
+      { year: '1644', label: 'Qing dynasty' },
+      { year: '1912', label: 'Republic of China' },
+    ],
+    endImages: [
+      { src: 'assets/chinese_lantern.png', x: -300, y: -120, w: 360 },
+      { src: 'assets/chinese_coin.png',    x:  290, y:  150, w: 340 },
+    ],
+    endPhoto: { title: 'Modern <b>China</b>', year: '2024', sub: 'Lorem ipsum dolor sit amet' },
+  });
+
+  window.DEMO = {
+    duration: 5.2,
+    settleMs: 500,
+    sfx: [{ sound: 'ticking', t: 0.55, vol: 0.8 }, { sound: 'swoosh', t: 4.2, vol: 0.9 }],
+  };
+  window.__demoReady = Promise.resolve();
+  window.__demoPlay = function () { tl.run({ duration: 4200 }); };
+</script>
+<script src="../_shared/viewer.js"></script>
+</body>
+</html>

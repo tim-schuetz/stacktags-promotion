@@ -1,0 +1,132 @@
+/* ============================================================
+   Stacktags default element — ENUMERATION → IN-DETAIL FOLLOW-UP
+   A line-up of tall cards (text left, image right) cascades in,
+   then each card's IMAGE morphs: rectangle → diamond (Raute) →
+   gains 3D height → becomes one layer of the stacked Stacktags
+   logo. The stack slides to the top-left; only then does the top
+   layer turn turquoise, in parallel with the first item's label.
+   White + turquoise Stacktags styling. Namespaced .se2.
+   ============================================================ */
+.se2 {
+  --teal: #35A292;
+  --teal-d: #119271;
+  --ink: #232B33;
+  --muted: #8a949d;
+  position: absolute; inset: 0;
+  font-family: 'Inter', system-ui, sans-serif;
+  overflow: hidden;
+}
+
+/* centered stage: title + the card line-up */
+.se2-stage {
+  position: absolute; inset: 0;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  gap: 46px; padding: 96px 70px;
+}
+
+.se2-title {
+  font-weight: 800; font-size: 56px; letter-spacing: -1.4px;
+  color: var(--ink); text-align: center;
+  opacity: 0; transform: translateY(-24px);
+  transition: opacity .5s ease, transform .5s cubic-bezier(.2,.8,.2,1);
+}
+.se2-title b { color: var(--teal-d); }
+.se2.title-in .se2-title { opacity: 1; transform: none; }
+.se2.collapsing .se2-title { opacity: 0; transform: translateY(-24px); }
+
+.se2-list {
+  display: flex; flex-direction: column; gap: 22px;
+  width: 100%; max-width: 840px;
+}
+
+/* ---- tall cards: text on the left, image on the right ---- */
+.se2-row {
+  display: flex; align-items: center; gap: 34px;
+  height: 192px; padding: 0 38px; background: #fff;
+  box-shadow: 0 14px 36px rgba(30,72,60,.10);
+  opacity: 0; transform: translateX(-50px);
+  transition: opacity .5s ease,
+              transform .8s cubic-bezier(.55,0,.18,1),
+              background .5s ease,
+              box-shadow .5s ease;
+}
+.se2-row.in { opacity: 1; transform: none; }
+/* folded: the card chrome dissolves, leaving only the morphing image-tile */
+.se2-row.fold { background: transparent; box-shadow: none; }
+.se2-row.fold .se2-text { opacity: 0; transition: opacity .3s ease; }
+
+.se2-text { flex: 1; display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+.se2-label { font-weight: 800; font-size: 48px; letter-spacing: -1.2px; color: var(--ink); }
+.se2-sub   { font-weight: 500; font-size: 25px; color: var(--muted); }
+
+/* ============================================================
+   The image-tile — starts as a rounded rectangle, morphs into a
+   diamond, then grows a 3D side to become a stack layer.
+   ============================================================ */
+.se2-tile {
+  position: relative; flex-shrink: 0;
+  width: 300px; height: 148px;
+  transform-origin: center center;
+  filter: drop-shadow(0 10px 9px rgba(16,50,40,.16));
+  transition: transform .8s cubic-bezier(.5,0,.16,1);
+}
+/* the top face (the image) */
+.se2-tile-top {
+  position: absolute; inset: 0;
+  background: repeating-linear-gradient(45deg, #eef2f1 0 11px, #e3eae7 11px 22px);
+  display: flex; align-items: center; justify-content: center;
+  clip-path: inset(0 round 14px);
+  transition: clip-path .55s cubic-bezier(.62,0,.2,1), background .5s ease;
+}
+.se2-tile.diamond .se2-tile-top {
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+}
+.se2-tile-top span {
+  font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+  font-size: 19px; letter-spacing: 1.5px; color: #8a949d;
+  background: rgba(255,255,255,.72); padding: 5px 12px; border-radius: 7px;
+  transition: opacity .3s ease;
+}
+.se2-tile.diamond .se2-tile-top span { opacity: 0; }
+
+/* the 3D side wall — a downward chevron band that grows in height */
+.se2-tile-side {
+  position: absolute; left: 0; top: 74px;
+  width: 300px; height: 114px;
+  background: #d2e0db;
+  clip-path: polygon(0% 0%, 50% 64.9%, 100% 0%, 100% 35.1%, 50% 100%, 0% 35.1%);
+  transform: scaleY(0); transform-origin: top center;
+  transition: transform .5s cubic-bezier(.3,.7,.25,1), background .5s ease;
+  z-index: -1;
+}
+.se2-tile.height .se2-tile-side { transform: scaleY(1); }
+
+/* active (top) layer turns turquoise — set on docking */
+.se2-tile.active .se2-tile-top  { background: var(--teal); }
+.se2-tile.active .se2-tile-side { background: #247c68; }
+
+/* ---- the running title beside the docked stack ---- */
+.se2-toptext {
+  position: absolute; left: 300px; top: 156px; width: 640px;
+  font-weight: 800; font-size: 62px; letter-spacing: -1.4px;
+  color: var(--teal-d);
+  opacity: 0; transform: translateX(-18px);
+  transition: opacity .5s ease, transform .6s cubic-bezier(.2,.8,.2,1);
+}
+.se2-toptext.in { opacity: 1; transform: none; }
+
+/* ---- glyph tiles (e.g. the final consonants ‑p ‑t ‑k ‑m) — a clean tinted
+   face carrying a big turquoise letter instead of a placeholder image ---- */
+.se2-tile.glyphtile { width: 200px; height: 148px; }
+.se2-tile.glyphtile .se2-tile-top { background: var(--teal-soft); }
+.se2-tile-top span.glyph {
+  font-family: 'Inter', system-ui, sans-serif; background: transparent; padding: 0;
+  font-weight: 800; font-size: 92px; letter-spacing: -2px; color: var(--teal-d);
+}
+.se2-tile.glyphtile.active .se2-tile-top span.glyph { color: #fff; }
+/* singled-out highlight (spotlight) — the chosen card pops, the rest recede */
+.se2-row.in.dim { opacity: .34; filter: saturate(.55); }
+.se2-row { transition: opacity .5s ease, transform .8s cubic-bezier(.55,0,.18,1),
+           background .5s ease, box-shadow .5s ease, filter .5s ease; }
+.se2-tile.active.glyphtile { transform: scale(1.06); }

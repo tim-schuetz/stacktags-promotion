@@ -1,0 +1,65 @@
+VIDEO SCRIPT
+Title: More than half of humanity lives inside this circle
+Topic: Geography
+Target length: ~85 seconds (fits the 30s–3min window)
+Language of narration: English
+Format: Voiceover script. Spoken lines are plain text. [Bracketed lines] describe
+what is on screen AT THE SAME TIME as the narration next to them.
+
+==================================================================
+THE CORE IDEA
+==================================================================
+The "Valeriepieris circle": center it near Guiyang in southern China with a radius
+of ~4,100 km, and it covers only ~10% of Earth's surface — yet inside live over
+4.2 billion people, MORE than in the entire rest of the world combined (all of
+Europe, Africa, both Americas, etc.). Humanity is clumped, not spread.
+Punchline: half of everyone alive fits inside one circle; the other half gets the
+whole rest of the planet.
+
+KEY VISUALS (fits the existing globe assets):
+- A red circle laid over Asia on the globe; a live counter "inside vs outside";
+  the highlighted countries inside lighting up.
+
+==================================================================
+SCRIPT
+==================================================================
+
+--- HOOK (0:00–0:10) — the payoff up front ---
+
+More than half of every human being alive lives inside this one circle.
+[A red circle drops onto the globe over Asia; a counter starts: "inside vs outside".]
+Draw it on the map, and there are more people in here than in the entire rest of
+the world — combined.
+[The "inside" counter races past the "outside" one.]
+
+--- THE CIRCLE (≈0:10–0:35) ---
+
+Center it near Guiyang, in southern China, with a radius of about 4,100
+kilometers.
+[A dot near Guiyang; the circle expands out to ~4,100 km.]
+That circle covers only around a tenth of the Earth's surface. But inside it live
+over 4.2 billion people.
+[Counter inside: 4,200,000,000+.]
+Outside it — and that's everywhere else: all of Europe, all of Africa, both
+Americas, the whole rest of the planet — there are fewer.
+[The entire outside world dimmed, its counter clearly lower.]
+
+--- WHY (≈0:35–1:00) ---
+
+It works because the circle scoops up nearly all of humanity's great population
+centers at once —
+[Inside the circle, countries light up one by one.]
+China, India, Indonesia, Pakistan, Bangladesh, Japan, almost all of Southeast
+Asia. Half the human race, packed into one corner of the globe.
+[The circle glowing dense and bright against a sparse world.]
+
+--- PUNCHLINE / OUTRO (≈1:00–1:12) ---
+
+We picture people spread evenly across the world.
+[A globe with dots scattered everywhere — then they rush together into the circle.]
+They're not. They're clumped, hard, into this one ring — more than half of
+everyone alive, with the entire rest of Earth left over for the other half.
+
+Want more numbers that change how you see the world?
+[Stacktags logo animates in with a "Follow" prompt.]
+Follow Stacktags.

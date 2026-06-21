@@ -1,0 +1,87 @@
+VIDEO SCRIPT
+Title: 5 Chinese words from 5 Chinese cities
+Topic: Learn Chinese
+Target length: ~90 seconds (fits the 30s–3min window)
+Language of narration: English
+Format: Voiceover script. Spoken lines are plain text. [Bracketed lines] describe
+what is on screen AT THE SAME TIME as the narration next to them.
+
+==================================================================
+THE 5 CITIES → THE 5 WORDS
+==================================================================
+1. 上海 Shànghǎi  → 海 hǎi  = sea       ("on the sea")
+2. 北京 Běijīng   → 北 běi  = north     ("northern capital", 京 = capital)
+3. 南京 Nánjīng   → 南 nán  = south     ("southern capital")
+4. 青岛 Qīngdǎo   → 岛 dǎo  = island    ("green island")
+5. 香港 Xiānggǎng → 港 gǎng = harbor    ("fragrant harbor", 香 = fragrant)
+
+BONUS — completing the compass:
+   西安 Xī'ān     → 西 xī   = west      ("western peace")
+   广东 Guǎngdōng → 东 dōng = east      ("the broad east")
+
+Recurring visual device — "the breakdown":
+For each city: a pin drops on the map of China + a skyline photo, then the city
+name splits into its two characters, and the character we're learning lights up.
+
+==================================================================
+SCRIPT
+==================================================================
+
+--- HOOK (0:00–0:10) — the payoff lands in the first 5 seconds ---
+
+Shanghai means "on the sea." Beijing, "northern capital." Nanjing, "southern
+capital." Qingdao, "green island." And Hong Kong? "Fragrant harbor."
+[Map of China; as each city is named, a pin drops and its meaning floats up.]
+
+Because Chinese city names aren't random sounds — every one is a tiny
+description. A map you can actually read.
+[The map fills with pins, each label flipping from sound to meaning.]
+Learn five characters from five cities, and you'll never read a map the same
+way again. Let's go.
+
+[ENUMERATION ANIMATION: the 5 cities stack into a list 1–5, camera zooms into number 1.]
+
+--- THE 5 (≈0:10–1:25) ---
+
+We start on the coast. At Shànghǎi.
+[BREAKDOWN: Shanghai waterfront → 上海 splits → 海 lights up = "sea".]
+上 means "on," and 海 means "sea." Shanghai is literally "on the sea" — exactly
+where it sits, at the edge of the Pacific. First character: 海, sea.
+
+Now head north, to the capital. Běijīng.
+[BREAKDOWN: the Forbidden City → 北京 splits → 北 lights up = "north".]
+京 means "capital," and 北 means "north." Beijing is the "northern capital" —
+which almost asks its own question...
+
+...because if there's a northern capital, there has to be a southern capital — Nánjīng.
+[BREAKDOWN: Nanjing city wall → 南京 splits → 南 lights up = "south".]
+南 means "south" and "jing" is the same word as in beijing, meaning "capital": Nanjing, the "southern capital." Two cities,
+one character apart.
+
+North and south — let's finish the compass.
+[The four directions arrange around a compass rose.]
+West sits 西安 — 西 means "west." And in the east is the region of Guangdong, "guang" means "wide" and "dong"
+means "east." 北, 南, 西, 东: all four directions, straight off the map.
+
+Now let`s get back to the coast — to Qingdao.
+[BREAKDOWN: Qingdao's red-roofed old town + a Tsingtao beer → 青岛 splits → 岛 lights up = "island".]
+青 means "green," and 岛 means "island" — the "green island." A century ago it
+was a German colony — which is why China's most famous beer, Tsingtao, was
+founded right here by German brewers.
+
+Down the coast to the last one.
+香港.
+[BREAKDOWN: Hong Kong harbor at night → 香港 splits → 港 lights up = "harbor".]
+You know it by its English name - Hong Kong — However, it`s Chinese name is 香港, and that is no coincedence. Because 香 means "fragrant," and 港 means "harbor." The
+"fragrant harbor," named for the scented wood once shipped through its docks.
+
+--- OUTRO / CTA (≈1:25–1:35) ---
+
+So in five cities: sea, north, south, island, harbor — plus west and east for free.
+[The map redraws, each city now labeled with its character + meaning.]
+That's the trick with Chinese: the names you half-know are already teaching you
+the language. A map isn't just a map. It's a vocabulary list...
+
+Wanna actually start learning Chinese?
+[Stacktags logo animates in; "stacktags.io" shown on screen.]
+Discover thousands of free exercises and more learning content on stacktags io.

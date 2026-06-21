@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Stacktags — One poem, one word</title>
+<link rel="icon" href="data:," />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Nunito:wght@700;800;900&family=Noto+Serif+SC:wght@500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="elements/enumeration.css" />
+<link rel="stylesheet" href="elements/outro.css" />
+<link rel="stylesheet" href="styles.css?v=1" />
+</head>
+<body>
+<div class="root">
+  <div class="stage" id="stage">
+
+    <!-- top progress bar -->
+    <div class="vprogress"><div class="vprogress-fill" id="vprogress"></div></div>
+
+    <!-- brand watermark (corner) -->
+    <div class="brand-wm"><span class="wm-stack">stack</span><span class="wm-tags">tags</span></div>
+
+    <!-- persistent SOUND-vs-WRITING toggle (appears in the aloud / paper beats) -->
+    <div class="mode-toggle" id="mode-toggle">
+      <div class="mt-opt mt-aloud">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 5V4L8 9H4z" fill="currentColor"/><path d="M16 8.5a4 4 0 0 1 0 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <span>READ ALOUD</span>
+      </div>
+      <div class="mt-opt mt-paper">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h8l4 4v14H6z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M14 3v4h4M9 12h6M9 16h6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <span>ON PAPER</span>
+      </div>
+    </div>
+
+    <!-- ============ SCENE: HOOK ============ -->
+    <section class="scene scene-hook" id="scene-hook">
+      <div class="hook-column" id="hook-column"><div class="hc-track" id="hc-track"></div></div>
+      <div class="hook-scrim"></div>
+      <div class="hook-card" id="hook-card">
+        <div class="hk-eyebrow" id="hk-eyebrow">ONE POEM</div>
+        <div class="hk-main" id="hk-main"><span>90+ characters.</span><span>And <b>one</b> sound.</span></div>
+        <div class="hk-shi" id="hk-shi">
+          <span class="hk-shi-lab">every single one is</span>
+          <span class="hk-shi-word">“shī”</span>
+          <span class="hk-shi-tones"><i>shī</i><i>shí</i><i>shǐ</i><i>shì</i></span>
+        </div>
+      </div>
+      <div class="hook-foot" id="hook-foot">In Chinese, somehow… <b>that works.</b></div>
+    </section>
+
+    <!-- ============ SCENE: THE POEM (title + author + 4 tones) ============ -->
+    <section class="scene scene-poem" id="scene-poem">
+      <div class="poem-titlecard" id="poem-titlecard">
+        <div class="pt-zh">施氏食獅史</div>
+        <div class="pt-py">Shī Shì shí shī shǐ</div>
+        <div class="pt-en">“The Lion-Eating Poet in the Stone Den”</div>
+      </div>
+      <div class="poem-author" id="poem-author">
+        <div class="pa-portrait" aria-hidden="true">
+          <svg viewBox="0 0 120 120">
+            <circle cx="60" cy="60" r="58" fill="#eef7f3" stroke="#3EAE93" stroke-width="3"/>
+            <circle cx="60" cy="48" r="22" fill="#3EAE93"/>
+            <path d="M18 108 a42 38 0 0 1 84 0 z" fill="#3EAE93"/>
+            <circle cx="60" cy="60" r="58" fill="none" stroke="#fff" stroke-width="6" opacity=".0"/>
+          </svg>
+        </div>
+        <div class="pa-meta">
+          <div class="pa-name">趙元任 · Yuen&nbsp;Ren&nbsp;Chao</div>
+          <div class="pa-role">linguist · 1892–1982</div>
+        </div>
+      </div>
+      <div class="poem-tonehead" id="poem-tonehead">The only thing separating them: <b>tone</b></div>
+      <div class="poem-tones" id="poem-tones"></div>
+      <div class="poem-tonecap" id="poem-tonecap">Four flavors of a single syllable</div>
+    </section>
+
+    <!-- ============ SCENE: READ IT ALOUD ============ -->
+    <section class="scene scene-aloud" id="scene-aloud">
+      <div class="aloud-head" id="aloud-head">Here's what it <b>sounds</b> like</div>
+      <div class="aloud-wave" id="aloud-wave"></div>
+      <div class="aloud-subs" id="aloud-subs">
+        <span class="as-line">shī shì shī shì, shì shī,</span>
+        <span class="as-line">shì shí shí shī. shì shíshí…</span>
+        <span class="as-blur">shi · shi · shi · shi · shi · shi · shi …</span>
+      </div>
+      <div class="aloud-listener" id="aloud-listener">
+        <svg class="al-face" viewBox="0 0 120 120" aria-hidden="true">
+          <circle cx="60" cy="60" r="50" fill="#fff" stroke="#232B33" stroke-width="4"/>
+          <circle cx="44" cy="52" r="6" fill="#232B33"/>
+          <circle cx="76" cy="52" r="6" fill="#232B33"/>
+          <path d="M44 84 q16 -12 32 0" fill="none" stroke="#232B33" stroke-width="4" stroke-linecap="round"/>
+        </svg>
+        <div class="al-marks"><span>?</span><span>?</span><span>?</span></div>
+        <div class="al-quote">“shi shi shi shi …?”</div>
+      </div>
+      <div class="aloud-verdict" id="aloud-verdict"><b>Pure nonsense.</b><span>Nobody could follow it.</span></div>
+    </section>
+
+    <!-- ============ SCENE: NOW READ IT ON PAPER ============ -->
+    <section class="scene scene-paper" id="scene-paper">
+      <div class="paper-head" id="paper-head">But on paper… a crisp little <b>story</b></div>
+      <div class="story-strip" id="story-strip">
+        <div class="story-beat" data-b="0">
+          <span class="sb-han">詩士</span>
+          <span class="sb-txt"><b>A poet</b> named Shī</span>
+        </div>
+        <div class="story-beat" data-b="1">
+          <span class="sb-han">嗜獅</span>
+          <span class="sb-txt">…obsessed with eating <b>lions</b></span>
+        </div>
+        <div class="story-beat" data-b="2">
+          <span class="sb-han">誓食十</span>
+          <span class="sb-txt">vows to eat <b>ten</b> of them</span>
+        </div>
+        <div class="story-beat" data-b="3">
+          <span class="sb-han">適市</span>
+          <span class="sb-txt">goes to the <b>market</b>, finds ten lions</span>
+        </div>
+        <div class="story-beat" data-b="4">
+          <span class="sb-han">使&hairsp;逝</span>
+          <span class="sb-txt"><b>kills</b> them, hauls them <b>home</b></span>
+        </div>
+        <div class="story-beat story-twist" data-b="5">
+          <span class="sb-han">石獅</span>
+          <span class="sb-txt">…and they were ten <b>STONE</b> lions</span>
+        </div>
+      </div>
+      <div class="paper-verdict" id="paper-verdict">
+        <span class="pv-1">Every “shi” is a <b>different character</b></span>
+        <span class="pv-2">On paper — <b>zero confusion.</b></span>
+      </div>
+    </section>
+
+    <!-- ============ SCENE: WHY IT WORKS ============ -->
+    <section class="scene scene-why" id="scene-why">
+
+      <!-- stage A — meaning lives in the shape -->
+      <div class="why-a" id="why-a">
+        <div class="why-head" id="why-head">Meaning lives in the <b>shape</b> — not the sound</div>
+        <div class="fan" id="fan">
+          <div class="fan-core">shì</div>
+          <div class="fan-item" data-i="0"><span class="fi-han">詩</span><span class="fi-en">poem</span></div>
+          <div class="fan-item" data-i="1"><span class="fi-han">獅</span><span class="fi-en">lion</span></div>
+          <div class="fan-item" data-i="2"><span class="fi-han">石</span><span class="fi-en">stone</span></div>
+          <div class="fan-item" data-i="3"><span class="fi-han">史</span><span class="fi-en">story</span></div>
+          <div class="fan-item" data-i="4"><span class="fi-han">是</span><span class="fi-en">this</span></div>
+          <div class="fan-item" data-i="5"><span class="fi-han">食</span><span class="fi-en">eat</span></div>
+        </div>
+        <div class="why-line" id="why-line">
+          <span class="wl-tones">Tones help a little — but alone, they <b>can't</b> do it</span>
+          <span class="wl-lift">The <b>writing</b> does the heavy lifting</span>
+        </div>
+      </div>
+
+      <!-- stage B — older sounds melt into one -->
+      <div class="why-b" id="why-b">
+        <div class="wc-host" id="wc-host"></div>
+        <div class="wc-cap" id="wc-cap">Centuries ago these weren't even the same sound…</div>
+        <div class="wc-chips" id="wc-chips">
+          <span class="chip" data-i="0">*srij</span>
+          <span class="chip" data-i="1">*syi</span>
+          <span class="chip" data-i="2">*zyip</span>
+          <span class="chip" data-i="3">*dzyek</span>
+          <span class="chip" data-i="4">*dzye</span>
+        </div>
+        <div class="wc-result" id="wc-result"><span>melted into one</span><b>shī</b></div>
+        <div class="wc-note">reconstructed older pronunciations</div>
+      </div>
+
+      <!-- stage C — the honest disclaimer -->
+      <div class="why-c" id="why-c">
+        <div class="honest-mark">!</div>
+        <div class="honest-1">Nobody actually talks like this.</div>
+        <div class="honest-2">A deliberate stunt in <b>classical written Chinese</b> —</div>
+        <div class="honest-3">one idea, pushed to its <b>breaking point.</b></div>
+      </div>
+
+    </section>
+
+    <!-- ============ SCENE: PUNCHLINE / OUTRO ============ -->
+    <section class="scene scene-outro" id="scene-outro">
+      <div class="punch" id="punch">
+        <div class="punch-lead" id="punch-lead">It's the <b>writing</b> — not the speech</div>
+        <div class="punch-split" id="punch-split">
+          <div class="ps-card ps-read">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h8l4 4v14H6z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M14 3v4h4M9 12h6M9 16h6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            <div class="ps-key">READ</div>
+            <div class="ps-mark v">✓</div>
+            <div class="ps-sub">perfect on paper</div>
+          </div>
+          <div class="ps-card ps-heard">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 5V4L8 9H4z" fill="currentColor"/><path d="M16 8.5a4 4 0 0 1 0 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            <div class="ps-key">HEARD</div>
+            <div class="ps-mark x">✗</div>
+            <div class="ps-sub">one flat blur of “shi”</div>
+            <div class="ps-wave" id="ps-wave"></div>
+          </div>
+        </div>
+        <div class="punch-tag" id="punch-tag">A poem you can <b>read</b> perfectly… and <b>can't hear at all.</b></div>
+      </div>
+      <div id="outro-host"></div>
+    </section>
+
+  </div>
+
+  <audio id="vo" src="../script_audio.mp3" preload="auto"></audio>
+
+  <!-- control bar (hidden in clean mode with "C") -->
+  <div class="hud" id="hud">
+    <button id="play">▶ Play</button>
+    <button id="restart">↺ Restart</button>
+    <span class="info" id="info">0.0s</span>
+    <button id="cleanbtn">Clean (C)</button>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="elements/enumeration.js"></script>
+<script src="elements/outro.js"></script>
+<script src="elements/waveform.js"></script>
+<script src="elements/collapse.js"></script>
+<script src="app.js?v=1"></script>
+</body>
+</html>

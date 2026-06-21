@@ -1,0 +1,70 @@
+VIDEO SCRIPT
+Title: A new ocean is forming in Russia
+Topic: Geography
+Target length: ~95 seconds (fits the 30s–3min window)
+Language of narration: English
+Format: Voiceover script. Spoken lines are plain text. [Bracketed lines] describe
+what is on screen AT THE SAME TIME as the narration next to them.
+
+==================================================================
+THE CORE IDEA
+==================================================================
+Lake Baikal (Siberia) is the deepest lake on Earth (~1,640 m). It's so deep its
+floor lies more than a kilometer below sea level — the lowest point of the
+continental crust. It sits on an active rift where the crust is pulling apart
+(~2 cm/year). That's exactly how oceans are born, so in tens of millions of years
+Baikal could widen into a sea, then an ocean.
+Punchline: give this Siberian lake enough time, and it might become the next ocean.
+
+NOTE (honesty): "could / might / over tens of millions of years" — it's a deep-
+time possibility, not a forecast. Depth ~1,640 m; floor ~1.2 km below sea level.
+
+KEY VISUALS:
+- A cross-section of Baikal plunging below a sea-level line; the crust pulling
+  apart with arrows; a time-lapse widening it into a sea.
+
+==================================================================
+SCRIPT
+==================================================================
+
+--- HOOK (0:00–0:12) — the payoff up front ---
+
+At the bottom of this lake in Siberia is the lowest point of the Earth's
+continental crust.
+[Cross-section: Baikal's floor dropping far below a "sea level" line.]
+And it's sitting on a crack that, millions of years from now, could tear open into
+a brand-new ocean.
+[The crust splits with outward arrows; the lake begins to widen.]
+This is Lake Baikal — possibly an ocean in its infancy.
+
+--- THE DEEPEST LAKE (≈0:12–0:38) ---
+
+Baikal is the deepest lake on the planet — over 1,600 meters from surface to
+floor.
+[A depth gauge plunging past 1,000... 1,600 meters.]
+It sits high up in the mountains, but it's so deep that its bed lies more than a
+kilometer below sea level — the lowest point of any continent's crust on Earth.
+[The floor marker glowing far beneath the sea-level line.]
+So why is there a gash this deep in the middle of a continent?
+
+--- THE CRACK (≈0:38–1:08) ---
+
+Because Baikal sits on a rift — a place where the Earth's crust is literally
+pulling apart, a couple of centimeters every year.
+[Two plates drifting away from each other; the gap filling with water.]
+The lake is the flooded scar of that widening gap. And that's exactly how oceans
+begin: a continent tears along a rift, the crack gets wider and deeper, water
+pours in —
+[Time-lapse: the rift stretches, deepens, floods into a sea.]
+and over tens of millions of years, it can grow into a sea, and then an ocean.
+It's the same process slowly splitting East Africa apart right now.
+
+--- PUNCHLINE / OUTRO (≈1:08–1:22) ---
+
+We think of oceans as permanent and lakes as small and temporary.
+[The serene lake, then a ghostly future ocean overlaid on it.]
+But give this Siberian lake enough time — and it just might become the next one.
+
+Want more ways the planet rewrites itself?
+[Stacktags logo animates in with a "Follow" prompt.]
+Follow Stacktags.

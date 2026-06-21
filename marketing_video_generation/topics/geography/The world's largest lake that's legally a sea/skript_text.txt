@@ -1,0 +1,76 @@
+VIDEO SCRIPT
+Title: The world's largest lake that's legally a sea
+Topic: Geography
+Target length: ~100 seconds (fits the 30s–3min window)
+Language of narration: English
+Format: Voiceover script. Spoken lines are plain text. [Bracketed lines] describe
+what is on screen AT THE SAME TIME as the narration next to them.
+
+==================================================================
+THE CORE IDEA
+==================================================================
+The Caspian is the largest enclosed body of water on Earth — called a "sea," but
+with no link to the ocean, it's technically the world's largest LAKE. Whether it
+counts as a sea or a lake decided how its huge oil/gas reserves are split among 5
+bordering countries, and they argued for almost 30 years. The 2018 deal: treat
+the SURFACE like a sea, divide the SEABED like a lake.
+Punchline: a billion-dollar, decades-long fight — over which noun to use.
+
+KEY VISUALS:
+- The Caspian ringed by 5 flags; oil rigs; a toggle "SEA?" / "LAKE?" redrawing the
+  borders each way.
+
+==================================================================
+SCRIPT
+==================================================================
+
+--- HOOK (0:00–0:12) — the payoff up front ---
+
+Is this a sea, or a lake? It's the biggest lake on Earth — but everyone calls it a
+sea.
+[The Caspian on a map; a label flickers between "SEA" and "LAKE".]
+And that one word — sea or lake — was worth so much money it took five countries
+nearly thirty years to settle.
+[Five national flags around the shoreline; oil rigs dotting the water.]
+
+--- THE DEFINITION (≈0:12–0:35) ---
+
+The Caspian is the largest enclosed body of water in the world. We call it a sea —
+but it has no connection to the ocean. And by definition, water locked inside the
+land is a lake.
+[The Caspian highlighted, sealed off from all oceans.]
+So it's the world's largest lake... wearing the name of a sea. Which sounds like
+a harmless technicality — until you look underneath it.
+
+--- WHY IT WAS WORTH A FORTUNE (≈0:35–1:08) ---
+
+Because beneath the Caspian sit enormous reserves of oil and gas. And how you
+divide that wealth depends entirely on the label.
+[Oil and gas glowing under the seabed.]
+If it's a sea, the international law of the sea applies — each country gets zones
+measured from its coastline. If it's a lake, the usual approach is to split the
+whole thing more evenly between the bordering states.
+[Toggle: "SEA" draws coastal wedges; "LAKE" draws equal slices — very different maps.]
+Same water, two completely different maps — and very different shares of the oil.
+So for almost three decades after the Soviet Union broke up, five countries fought
+over that single definition.
+
+--- THE CLEVER FIX (≈1:08–1:30) ---
+
+Then, in 2018, they signed a compromise that split the difference — literally.
+[A horizontal line slices the water from the seabed.]
+Treat the surface like a sea: shared, open for everyone's ships and fishing. But
+divide the seabed like a lake: carved into national sectors, each country keeping
+the resources under its own patch.
+[Top half glows "SEA"; bottom half divided into flagged "LAKE" sectors.]
+Half sea, half lake.
+
+--- PUNCHLINE / OUTRO (≈1:30–1:42) ---
+
+A thirty-year, billion-dollar standoff —
+[The five flags finally shaking hands over the water.]
+not over land, not over borders, but over which noun to use: sea... or lake.
+
+Want more places that break the map?
+[Stacktags logo animates in with a "Follow" prompt.]
+Follow Stacktags.

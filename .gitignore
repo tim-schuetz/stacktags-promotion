@@ -1,0 +1,8 @@
+# regenerable / throwaway — never in git
+node_modules/
+*.webm
+*.mp4
+_build/capture/
+_build/final_frames/
+*.bak
+*.tmp

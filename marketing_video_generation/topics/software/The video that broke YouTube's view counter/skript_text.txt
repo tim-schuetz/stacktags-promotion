@@ -1,0 +1,71 @@
+VIDEO SCRIPT
+Title: The video that broke YouTube's view counter
+Topic: Software
+Target length: ~90 seconds (fits the 30s–3min window)
+Language of narration: English
+Format: Voiceover script. Spoken lines are plain text. [Bracketed lines] describe
+what is on screen AT THE SAME TIME as the narration next to them.
+
+==================================================================
+THE CORE IDEA
+==================================================================
+In 2014, PSY's "Gangnam Style" passed 2,147,483,647 views — exactly the max of a
+signed 32-bit integer (2³¹−1, ~2.147 billion). YouTube's counter couldn't go
+higher, so Google rebuilt it as 64-bit (max ~9.2 quintillion). Same bug family as
+the Boeing 248-day overflow: a counter that ran out of room.
+Punchline: a pop song got too popular for the math — every counter has a ceiling,
+and someday something hits it.
+
+KEY VISUALS:
+- A view counter racing up, then jamming at 2,147,483,647.
+- A "32-bit → 64-bit" upgrade: the ceiling rocketing far out of reach.
+
+==================================================================
+SCRIPT
+==================================================================
+
+--- HOOK (0:00–0:12) — the payoff up front ---
+
+In 2014, a song got so popular it broke YouTube.
+[A view counter spinning wildly, then slamming to a dead stop.]
+Gangnam Style hit a number the site literally could not count past — and Google
+had to rebuild the view counter from scratch. Here's the limit a music video
+crashed into.
+[The counter frozen at 2,147,483,647.]
+
+--- THE HIDDEN CEILING (≈0:12–0:38) ---
+
+For years, YouTube stored each video's view count as a 32-bit number. And a number
+like that has a hard ceiling — about 2.1 billion.
+[A bar labeled "2,147,483,647" — the wall.]
+Computers store numbers in a fixed amount of space. A 32-bit counter simply can't
+go higher than two-point-one billion — there's no room for a bigger number. And for
+a long time, that was fine. No video on Earth had ever come close. Two billion
+views felt impossibly far away.
+
+--- THE SONG THAT BLEW PAST IT (≈0:38–1:00) ---
+
+Then Gangnam Style went supernova.
+[The video exploding in popularity worldwide.]
+It blew straight past 2.1 billion views — and the counter hit its ceiling. There
+was simply no bigger number for it to show.
+[The counter stuck, glitching at the max.]
+A pop song had become too popular for the math.
+
+--- THE FIX (≈1:00–1:18) ---
+
+So Google upgraded the counter to 64 bits. The new ceiling? Around 9.2 quintillion.
+[The ceiling rocketing upward, off the screen.]
+That's over a billion times bigger — enough for every person alive to watch a single
+video a billion times each. Problem solved... for a very, very long time.
+
+--- PUNCHLINE / OUTRO (≈1:18–1:30) ---
+
+It's a funny story, but it's a real lesson: every counter has a ceiling.
+[A row of counters, each with a limit line.]
+Build something popular enough, run it long enough, and eventually — something
+always hits the wall.
+
+Want more stories of how technology really works?
+[Stacktags logo animates in; "stacktags.io" shown on screen.]
+Discover thousands of free exercises and more learning content on stacktags.io.

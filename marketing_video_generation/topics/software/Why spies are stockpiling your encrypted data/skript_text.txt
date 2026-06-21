@@ -1,0 +1,86 @@
+VIDEO SCRIPT
+Title: Why spies are stockpiling your encrypted data
+Topic: Software
+Target length: ~110 seconds (fits the 30s–3min window)
+Language of narration: English
+Format: Voiceover script. Spoken lines are plain text. [Bracketed lines] describe
+what is on screen AT THE SAME TIME as the narration next to them.
+
+==================================================================
+THE CORE IDEA
+==================================================================
+"Harvest now, decrypt later": agencies record your encrypted traffic today —
+unreadable now — betting that a future quantum computer will crack it. Today's
+encryption relies on math that's brutally hard for normal computers (e.g. factoring
+huge numbers). A quantum computer, using Shor's algorithm, could solve it fast.
+Big-enough quantum machines don't exist yet, but data can wait — so the world is
+racing to roll out "post-quantum" encryption.
+Punchline: your encrypted data isn't safe just because no one can read it today —
+some of it is being saved for a future that can.
+
+NOTE (honesty): quantum computers powerful enough to break RSA do NOT exist yet;
+timeline is uncertain (years, possibly a decade+). Say so. Keep quantum explanation
+intuitive, not literal "tries all answers at once."
+
+KEY VISUALS:
+- An archive vault filling with locked, scrambled data labeled "can't read… yet."
+- A quantum computer powering on; a giant padlock springing open.
+
+==================================================================
+SCRIPT
+==================================================================
+
+--- HOOK (0:00–0:14) — the payoff up front ---
+
+Right now, intelligence agencies are stockpiling your encrypted data — even though
+they can't read a single word of it.
+[A vault filling with scrambled, locked files: "ENCRYPTED — unreadable."]
+They're betting that in a few years, a quantum computer will crack it wide open.
+It's a strategy with a chilling name: "harvest now, decrypt later."
+
+--- TODAY'S LOCK (≈0:14–0:42) ---
+
+Almost everything private online — your messages, your bank details — is protected
+by encryption built on a math problem that's brutally hard for normal computers.
+[A padlock made of a huge number splitting into two prime factors.]
+Think of taking an enormous number and finding the two prime numbers that multiply
+to make it. For a regular computer, cracking one strong key by brute force could
+take longer than the age of the universe.
+[A normal computer grinding away, a "billions of years" timer.]
+That impossibility is the whole reason your data is safe.
+
+--- THE QUANTUM THREAT (≈0:42–1:15) ---
+
+But a quantum computer doesn't work like a normal one. A normal computer checks
+possibilities essentially one after another. A quantum computer uses the strange
+rules of quantum physics to evaluate an enormous number of paths together —
+[A maze: a normal computer trying one route at a time; a quantum one lighting up many at once.]
+and there's a known method, called Shor's algorithm, that lets a powerful enough
+quantum machine solve that prime-factoring problem fast. The lock that would take a
+normal computer eons could fall in hours.
+[The giant padlock springing open in seconds.]
+Now, the honest part: quantum computers big enough to do this don't exist yet. They
+may be years — even a decade or more — away.
+
+--- WHY HARVEST IT NOW (≈1:15–1:38) ---
+
+So why steal data you can't read? Because data can wait.
+[The vault of scrambled files, sealed, labeled "open later."]
+Agencies record your encrypted traffic today — pure gibberish to them now — and
+just... store it. And the day a capable quantum computer finally switches on, they
+unlock the entire archive at once. Your secrets from today, opened years in the
+future.
+[A future date; the whole vault clicking open.]
+That's why the world is already racing to roll out "post-quantum" encryption — new
+locks designed to survive even a quantum attack — before that day arrives.
+
+--- PUNCHLINE / OUTRO (≈1:38–1:52) ---
+
+So here's the unsettling truth: your encrypted data isn't necessarily safe just
+because nobody can read it today.
+[The vault, quietly filling.]
+Some of it is being saved... for a future that can.
+
+Want more stories of how technology really works?
+[Stacktags logo animates in; "stacktags.io" shown on screen.]
+Discover thousands of free exercises and more learning content on stacktags.io.

@@ -1,0 +1,124 @@
+VIDEO SCRIPT
+Title: Learn 10 Chinese words in 100 seconds
+Topic: Learn Chinese
+Target length: ~100 seconds (fits the 30s–3min window)
+Language of narration: English
+Format: Voiceover script. Spoken lines are plain text. [Bracketed lines] describe
+what is on screen AT THE SAME TIME as the narration next to them.
+
+==================================================================
+THE 10 CHARACTERS (all are pictographs — the drawing IS the meaning)
+==================================================================
+1. 人  rén   — person
+2. 火  huǒ   — fire
+3. 水  shuǐ  — water
+4. 山  shān  — mountain
+5. 木  mù    — tree / wood
+6. 日  rì    — sun / day
+7. 月  yuè   — moon / month
+8. 口  kǒu   — mouth
+9. 雨  yǔ    — rain
+10. 田 tián  — field
+
+Recurring visual device — "the morph":
+A real photo of the thing morphs into its Chinese character, and the matching
+strokes light up. Used for every word.
+
+==================================================================
+SCRIPT
+==================================================================
+
+--- HOOK (0:00–0:10) — the payoff lands in the first 5 seconds ---
+
+In the next 100 seconds you'll learn 10 Chinese characters —
+[The 10 characters pop into a quick grid.] without memorizing a single one.
+
+Most people think Chinese is impossible:
+[Screen floods with a wall of complicated characters scrolling past.]
+thousands of characters that look like random scribbles. But the oldest, most
+common ones aren't random —
+[The wall fades to just a few simple characters.]
+they're tiny drawings of what they mean.
+[MORPH: a real flame → 火, a real mountain → 山.]
+See it once, and you can't unsee it. Watch.
+
+[ENUMERATION ANIMATION: the 10 characters line up 1–10, camera zooms into number 1.]
+
+--- THE 10 (≈0:10–1:15, about 5 seconds each) ---
+
+Start with you.
+1) 人 — "person."
+[MORPH: a walking person → 人; the two legs light up.]
+A body and two legs, mid-stride. One human, two strokes.
+
+Give them a fire to gather around.
+2) 火 — "fire."
+[MORPH: a campfire → 火; flame first, then the two sparks.]
+A flame in the middle, two sparks flying off the sides. A campfire.
+
+3) 水 — "water."
+[MORPH: a stream → 水; current first, then droplets each side.]
+A stream down the middle, droplets splashing off both sides. A river in three strokes.
+
+4) 山 — "mountain."
+[MORPH: a mountain range → 山; tall peak, then the two shorter ones.]
+Three peaks — one tall, two short. The mountain a kid would draw...
+
+5) 木 — "tree" or "wood."
+[MORPH: a tree → 木; trunk, branches up, roots down.]
+Trunk, branches reaching up, roots spreading down...
+
+6) 日 — "sun," and also "day."
+[MORPH: the sun's disc → a circle with a dot → 日.]
+A circle with a dot, later squared off to write it faster. The sun marks a day —
+so it also means "day."
+
+Next is
+7) 月 — "moon," and also "month."
+[MORPH: a crescent moon → 月.]
+A crescent on its side. One moon cycle is a month — so it means "month" too.
+
+8) 口 — "mouth."
+[MORPH: an open mouth → 口.]
+An open mouth — just a square opening. The hole you eat and talk with.
+
+9) 雨 — "rain."
+[MORPH: a cloud raining → 雨; sky line, cloud box, four drops inside.]
+Sky on top, a cloud, four raindrops falling inside. Rain, drawn out.
+
+And it has to land somewhere.
+10) 田 — "field."
+[MORPH: farmland from above → 田; square, then the cross splitting it in four.]
+Farmland from above, split into four plots. A rice field — exactly like one.
+
+--- THE TWIST / BONUS PAYOFF (≈1:15–1:38) ---
+
+Now the part that makes Chinese click: stack the pictures and they build new words.
+[The 10 characters slide to the edges, ready to combine in the center.]
+
+Two trees —
+[木 + 木 → 林, then a third → 森.]
+木 plus 木 makes 林, a wood. Add a third and 森 is a dense forest.
+
+Sun plus moon —
+[日 + 月 → 明, glowing.]
+日 plus 月 makes 明, "bright." The two brightest things in the sky.
+
+A person by a tree —
+[人 + 木 → 休.]
+人 plus 木 makes 休, "rest."
+
+And one extra for free: 力 means "strength."
+[田 + 力 → 男.]
+Strength in a field — 田 plus 力 — makes 男, "man," the one who works the field.
+
+--- OUTRO / CTA (≈1:38–1:48) ---
+
+That's the secret: Chinese isn't random symbols — it's a small set of pictures,
+combined in ways that make sense.
+[The characters swirl back into one clean grid.]
+
+You just read 10 pictures. No memorizing...
+Wanna actually start learning Chinese?
+[Stacktags logo animates in; "stacktags.io" shown on screen.]
+Discover thousands of free exercises and more learning content on stacktags.io.

@@ -1,0 +1,78 @@
+VIDEO SCRIPT
+Title: The 46-cent chip that almost started a nuclear war
+Topic: Software
+Target length: ~100 seconds (fits the 30s–3min window)
+Language of narration: English
+Format: Voiceover script. Spoken lines are plain text. [Bracketed lines] describe
+what is on screen AT THE SAME TIME as the narration next to them.
+
+==================================================================
+THE CORE IDEA
+==================================================================
+In 1980, NORAD's computers showed a full-scale Soviet nuclear attack — thousands of
+incoming missiles. The cause: a single faulty 46-cent computer chip that was
+randomly inserting wrong numbers into the "number of missiles" field, flickering
+between 2, 200, 2,000. The developer lesson: never blindly trust an input — validate
+that it's even plausible.
+Punchline: a half-dollar part nearly triggered the apocalypse, because no system was
+asking "wait, is this number even possible?"
+
+NOTE (honesty): the 46-cent faulty chip is the well-documented cause of the 1980
+false alarms; humans caught it because the data didn't match other sensors. Keep
+that — it's the whole "validate plausibility" point.
+
+KEY VISUALS:
+- A dark war room at 3 AM; a screen flashing "2,000 INCOMING."
+- A tiny chip glowing red; the missile count glitching 2 → 200 → 2,000.
+
+==================================================================
+SCRIPT
+==================================================================
+
+--- HOOK (0:00–0:14) — the payoff up front ---
+
+In 1980, a computer told the United States that two thousand Soviet missiles were
+in the air, headed straight for it.
+[A dark war room; a red screen: "2,000 INCOMING."]
+The cause wasn't a war, or a launch, or a hacker. It was a single broken chip worth
+forty-six cents. Here's how a half-dollar part nearly ended the world.
+
+--- THE ALARM (≈0:14–0:42) ---
+
+Deep in NORAD's command center, the early-warning system suddenly lit up with a
+full-scale nuclear attack. Every screen said the same thing: missiles inbound,
+launched by the Soviet Union.
+[Officers snapping to attention; klaxons; bombers being readied.]
+This is the scenario the entire Cold War was terrified of — minutes to decide
+whether to launch back. And the clock was running.
+
+--- THE 46-CENT CULPRIT (≈0:42–1:08) ---
+
+But something was off. The number of missiles kept... changing. One moment two.
+Then two hundred. Then two thousand. Flickering, nonsensical.
+[The missile count glitching wildly: 2 → 200 → 2,000 → 0.]
+The whole thing was traced back to one tiny, failing computer chip — a part that
+cost about forty-six cents.
+[A circuit board; a single chip glowing red.]
+It had started spitting out random numbers, and dumping them straight into the
+field for "number of incoming missiles." The system simply printed whatever the
+broken chip said — as gospel.
+
+--- THE LESSON / PUNCHLINE (≈1:08–1:30) ---
+
+And here's the part every engineer should burn into memory. The computer never
+once asked the obvious question: "Is this number even plausible?"
+[A validation gate appearing: "Does this make sense?" — that was missing.]
+It trusted a single broken input, completely. What saved the world that day was
+humans — noticing the data didn't match any other sensor, and refusing to believe
+one impossible screen.
+[Officers cross-checking other systems; standing down.]
+The lesson outlives the Cold War: never blindly trust an input. Always check that
+it's even possible. Because sometimes, the difference between a normal night and the
+apocalypse is one cheap part — and whether anyone bothered to sanity-check it.
+
+--- OUTRO / CTA (≈1:30–1:42) ---
+
+Want more stories of how technology really works — and really breaks?
+[Stacktags logo animates in; "stacktags.io" shown on screen.]
+Discover thousands of free exercises and more learning content on stacktags.io.

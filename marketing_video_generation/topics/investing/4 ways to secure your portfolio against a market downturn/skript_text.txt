@@ -1,0 +1,88 @@
+VIDEO SCRIPT
+Title: 4 ways to secure your portfolio against a market downturn
+Topic: Investing
+Target length: ~100 seconds (fits the 30s–3min window)
+Language of narration: English
+Format: Voiceover script. Spoken lines are plain text. [Bracketed lines] describe
+what is on screen AT THE SAME TIME as the narration next to them.
+
+==================================================================
+THE CORE IDEA
+==================================================================
+Four ways professionals hedge a portfolio against a crash:
+1. Short-term bonds (cushion in a sell-off — but only if interest rates aren't rising)
+2. Banking-liquidity / money-market ETFs (e.g. XEON, XFFE — "smart cash" earning the overnight rate)
+3. Short options as a hedge (sell premium to offset losses — what hedge funds do)
+4. Short selling as a hedge (bets that profit when the market falls)
+Framing mirrors the channel's signature: front-load all 4, then push back on the
+usual "just diversify" advice (useless when stocks, real estate AND crypto are all
+near highs together), then explain each.
+
+NOTE (responsibility): educational, NOT advice. Flag the catch on each (bonds vs
+rates; ETFs low-risk not zero-risk; shorting/short-options carry big risk).
+
+KEY VISUALS:
+- A red crashing market; a portfolio that barely dips thanks to 4 "shields."
+- Four labeled shields snapping into place one by one.
+
+==================================================================
+SCRIPT
+==================================================================
+
+--- HOOK (0:00–0:16) — all four up front, then the twist ---
+
+Here are 4 ways to protect your portfolio from a market crash: short-term bonds,
+money-market ETFs, short options, and short selling.
+[Four shields snap up around a portfolio as they're named. Tag: "educational — not advice."]
+Now, this is not what most advisors will tell you. Ask a random adviser how to
+protect your money, and the answer is always the same word: diversify.
+[A wheel of "diversified" assets.]
+But when stocks, real estate, AND crypto are all near record highs at the same
+time, spreading across them stops protecting you — they can all fall together. So
+here's what professionals actually do instead.
+
+--- 1: SHORT-TERM BONDS (≈0:16–0:40) ---
+
+First, bonds. When stocks tumble, money often rushes into safer government bonds,
+which can rise and cushion your fall.
+[Money flowing from red stocks into green bonds.]
+The catch: bonds lose value when interest rates go up. So they really only protect
+you if rates aren't climbing — and sticking to short-term bonds keeps that risk
+small.
+
+--- 2: BANKING-LIQUIDITY ETFs (≈0:40–1:00) ---
+
+Second, money-market or "banking-liquidity" ETFs — like XEON or XFFE.
+[Tickers shown as examples, not recommendations.]
+These quietly park your cash at the central bank's overnight rate. Almost no price
+risk, and they actually earn interest while you wait out the storm. Think of it as
+smart cash — somewhere to hide that still pays you.
+
+--- 3: SHORT OPTIONS AS A HEDGE (≈1:00–1:22) ---
+
+Third, using options as a hedge — specifically, selling them. By shorting options
+against your holdings, you collect premium income that softens the blow when prices
+drop. It's a core hedge-fund move.
+[A portfolio dipping; option premium income filling part of the gap.]
+Powerful — but selling options carries its own serious risks, so it's an advanced
+tool, not a beginner's.
+
+--- 4: SHORT SELLING AS A HEDGE (≈1:22–1:42) ---
+
+Fourth, short selling. You place bets that profit when the market falls — so if
+your stocks drop, those gains help offset the loss.
+[A short position turning green as the market turns red.]
+Used as a hedge, it's like an insurance policy against your own portfolio. Just
+remember: a short's losses can run high if the market climbs instead.
+
+--- PUNCHLINE / OUTRO (≈1:42–1:54) ---
+
+You can't stop a crash from coming.
+[The red market, but the portfolio barely dented behind its shields.]
+But you don't have to just sit there and take it. The pros don't only diversify —
+they build in real protection. Even one or two of these can turn a brutal drop
+into one you can survive.
+
+Want to actually understand how the pros invest?
+[Stacktags logo animates in with a "Follow" prompt.]
+Follow Stacktags.

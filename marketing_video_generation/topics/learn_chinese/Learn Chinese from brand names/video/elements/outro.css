@@ -1,0 +1,41 @@
+/* ============================================================
+   Endcard styles for the default OUTRO element (outro.js →
+   window.makeStacktagsLogo). Scoped to #outro-host. The stack
+   layers fly in (staggered), chevrons draw, wordmark + url rise —
+   all driven by adding `.play` to #outro-host.
+   ============================================================ */
+#outro-host .ec {
+  position: absolute; inset: 0;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 34px;
+}
+#outro-host .ec-logo { display: flex; }
+#outro-host .ec-logo svg { width: 640px; height: auto; display: block; }
+
+.ec-logo .lyr {
+  opacity: 0; transform: translateY(-52px) scale(.78);
+  transform-box: fill-box; transform-origin: 50% 50%;
+  transition: transform .58s cubic-bezier(.34,1.56,.5,1) var(--d), opacity .42s ease var(--d);
+}
+#outro-host.play .ec-logo .lyr { opacity: 1; transform: none; }
+
+.ec-logo .chev path { stroke-dasharray: 300; stroke-dashoffset: 300; transition: stroke-dashoffset .55s ease .40s; }
+#outro-host.play .ec-logo .chev path { stroke-dashoffset: 0; }
+
+#outro-host .wm {
+  font-family: 'Nunito', system-ui, sans-serif; font-weight: 900;
+  font-size: 158px; letter-spacing: -3px; line-height: 1;
+  opacity: 0; transform: translateY(30px);
+  transition: opacity .5s ease .52s, transform .62s cubic-bezier(.2,.8,.2,1) .52s;
+}
+#outro-host.play .wm { opacity: 1; transform: none; }
+#outro-host .wm .s { color: #232B33; }
+#outro-host .wm .t { color: #3EAE93; }
+
+#outro-host .url {
+  font-family: 'Nunito', system-ui, sans-serif; font-weight: 700;
+  font-size: 44px; letter-spacing: 7px; color: #8a949d;
+  opacity: 0; transform: translateY(16px);
+  transition: opacity .5s ease .74s, transform .5s ease .74s, letter-spacing .7s ease .74s;
+}
+#outro-host.play .url { opacity: 1; transform: none; letter-spacing: 4px; }

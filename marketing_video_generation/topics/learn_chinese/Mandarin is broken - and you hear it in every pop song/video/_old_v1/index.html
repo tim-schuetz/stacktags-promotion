@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Stacktags — Mandarin is broken</title>
+<link rel="icon" href="data:," />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Nunito:wght@700;800;900&family=Noto+Serif+SC:wght@500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="elements/enumeration.css" />
+<link rel="stylesheet" href="elements/outro.css" />
+<link rel="stylesheet" href="styles.css?v=1" />
+</head>
+<body>
+<div class="root">
+  <div class="stage" id="stage">
+
+    <!-- top progress bar -->
+    <div class="vprogress"><div class="vprogress-fill" id="vprogress"></div></div>
+
+    <!-- brand watermark (corner) -->
+    <div class="brand-wm"><span class="wm-stack">stack</span><span class="wm-tags">tags</span></div>
+
+    <!-- persistent syllable counter (appears Tang, ticks DOWN through the collapse) -->
+    <div class="syl-counter" id="syl-counter">
+      <div class="syl-cap">distinct syllables</div>
+      <div class="syl-numwrap">
+        <span class="syl-ghost" id="syl-ghost">1200</span>
+        <span class="syl-val" id="syl-val">1200</span>
+      </div>
+      <div class="syl-sub" id="syl-sub">Tang-era Chinese</div>
+    </div>
+
+    <!-- ============ SCENE: HOOK ============ -->
+    <section class="scene scene-hook" id="scene-hook">
+      <div class="hook-title" id="hook-title">
+        <span class="ht-1">Mandarin is a <b class="broken">broken</b> language.</span>
+        <span class="ht-2">And you hear it in every <b>pop song.</b></span>
+      </div>
+      <div class="hook-wave" id="hook-wave"></div>
+      <div class="hook-foot" id="hook-foot">It wasn't always this way.</div>
+    </section>
+
+    <!-- ============ SCENE: TANG GOLDEN AGE ============ -->
+    <section class="scene scene-tang" id="scene-tang">
+      <div class="tang-poem-bg" aria-hidden="true">
+        <span>春</span><span>眠</span><span>不</span><span>覺</span><span>曉</span>
+        <span>處</span><span>處</span><span>聞</span><span>啼</span><span>鳥</span>
+      </div>
+      <div class="tang-head" id="tang-head">
+        <div class="tang-era">唐 · Tang dynasty</div>
+        <div class="tang-lead">China's golden age of <b>poetry</b></div>
+        <div class="tang-note">3–4× as many distinct sounds as Mandarin today</div>
+      </div>
+      <div class="tang-endhead" id="tang-endhead">Words ended in <b>hard consonants</b></div>
+      <div class="tang-enum" id="tang-enum"></div>
+    </section>
+
+    <!-- ============ SCENE: THE MOON WORD (月 ngwat → yuè) ============ -->
+    <section class="scene scene-moon" id="scene-moon">
+      <div class="moon-glyphwrap">
+        <div class="moon-glyph">月</div>
+        <div class="moon-gloss">“moon”</div>
+      </div>
+      <div class="moon-soundlab" id="moon-soundlab">In Tang Chinese it sounded like:</div>
+      <div class="moon-sound" id="moon-sound">
+        <span class="ms-old" id="ms-old">NGWA<span class="ms-stop">T</span></span>
+        <span class="ms-arrow" id="ms-arrow">→</span>
+        <span class="ms-new" id="ms-new">YUÈ</span>
+      </div>
+      <div class="moon-tag" id="moon-tag-tang">a hard stop — right on that <b>‑t</b></div>
+      <div class="moon-tag moon-tag-now" id="moon-tag-now">Modern Mandarin — the hard ending <b>gone</b></div>
+    </section>
+
+    <!-- ============ SCENE: THE COLLAPSE (trio + counter down + result) ============ -->
+    <section class="scene scene-collapse" id="scene-collapse">
+      <div class="col-head" id="col-head">And it isn't just one word…</div>
+      <div class="col-trio" id="col-trio">
+        <div class="trio-row" data-k="ten">
+          <span class="trio-han">十</span>
+          <span class="trio-en">ten</span>
+          <span class="trio-old">SA<span class="trio-drop">P</span></span>
+          <span class="trio-arr">→</span>
+          <span class="trio-new">SHÍ</span>
+        </div>
+        <div class="trio-row" data-k="six">
+          <span class="trio-han">六</span>
+          <span class="trio-en">six</span>
+          <span class="trio-old">LU<span class="trio-drop">K</span></span>
+          <span class="trio-arr">→</span>
+          <span class="trio-new">LIÙ</span>
+        </div>
+        <div class="trio-row" data-k="heart">
+          <span class="trio-han">心</span>
+          <span class="trio-en">heart</span>
+          <span class="trio-old">SA<span class="trio-drop">M</span></span>
+          <span class="trio-arr">→</span>
+          <span class="trio-new">XĪN</span>
+        </div>
+      </div>
+      <div class="col-vanish" id="col-vanish">
+        <div class="cv-lead">Every final consonant —</div>
+        <div class="cv-letters">
+          <span class="cv-let" data-i="0">p</span>
+          <span class="cv-let" data-i="1">t</span>
+          <span class="cv-let" data-i="2">k</span>
+          <span class="cv-let" data-i="3">m</span>
+        </div>
+        <div class="cv-gone">vanished from Mandarin</div>
+      </div>
+      <div class="col-result" id="col-result">
+        <div class="cr-big"><span class="cr-num">1.4B</span> people</div>
+        <div class="cr-small">running on only about <b>400 syllables</b></div>
+      </div>
+    </section>
+
+    <!-- ============ SCENE: WHY YOU HEAR IT IN POP ============ -->
+    <section class="scene scene-pop" id="scene-pop">
+      <div class="pop-head" id="pop-head">Few sounds → the <b>rhyme pool collapses</b></div>
+      <div class="pop-pile" id="pop-pile">
+        <div class="pile-words" id="pile-words">
+          <span class="pw" data-i="0">是</span><span class="pw" data-i="1">市</span>
+          <span class="pw" data-i="2">事</span><span class="pw" data-i="3">室</span>
+          <span class="pw" data-i="4">视</span><span class="pw" data-i="5">试</span>
+          <span class="pw" data-i="6">势</span><span class="pw" data-i="7">士</span>
+        </div>
+        <div class="pile-target" id="pile-target">shì</div>
+      </div>
+      <div class="pop-same" id="pop-same">Everything starts to <b>sound the same.</b></div>
+      <div class="pop-vowels" id="pop-vowels">
+        <div class="pv-lead">So Mandarin pop leans on long, open vowels</div>
+        <div class="pv-set">
+          <span class="pv" data-i="0">ahh</span><span class="pv" data-i="1">eyy</span>
+          <span class="pv" data-i="2">ohh</span><span class="pv" data-i="3">wayy</span>
+        </div>
+      </div>
+      <div class="pop-wave" id="pop-wave"></div>
+    </section>
+
+    <!-- ============ SCENE: THE SOUTHERN TIME CAPSULE ============ -->
+    <section class="scene scene-south" id="scene-south">
+      <div class="south-head" id="south-head">Head south…</div>
+      <div class="globe-host" id="globe-host"></div>
+      <div class="south-photo" id="south-photo">
+        <img src="assets/photos/hongkong.png" alt="Hong Kong / Guangdong" onerror="this.style.opacity=0">
+        <div class="sp-label"><span class="sp-zh">香港 · 廣東</span><span class="sp-en">Hong Kong · Guangdong</span></div>
+      </div>
+
+      <!-- Cantonese kept everything -->
+      <div class="south-keep" id="south-keep">
+        <div class="sk-title">Cantonese kept <b>everything</b></div>
+        <div class="sk-tones">6 tones</div>
+        <div class="sk-letters">
+          <span class="sk-let" data-i="0">p</span>
+          <span class="sk-let" data-i="1">t</span>
+          <span class="sk-let" data-i="2">k</span>
+          <span class="sk-let" data-i="3">m</span>
+        </div>
+        <div class="sk-snap" id="sk-snap">
+          <span class="snap" data-i="0">yu<b>t</b></span>
+          <span class="snap" data-i="1">sa<b>p</b></span>
+          <span class="snap" data-i="2">lu<b>k</b></span>
+        </div>
+      </div>
+
+      <!-- Tang poem: rhymes break in Mandarin, click shut in Cantonese -->
+      <div class="south-poem" id="south-poem">
+        <div class="poem-title">江雪 · “River Snow”</div>
+        <div class="poem-lines">
+          <div class="pl-row"><span class="pl-zh">千山鳥飛<b>絕</b></span><span class="pl-man">jué</span><span class="pl-can">zyut</span></div>
+          <div class="pl-row"><span class="pl-zh">萬徑人蹤<b>滅</b></span><span class="pl-man">miè</span><span class="pl-can">mit</span></div>
+          <div class="pl-row pl-nornh"><span class="pl-zh">孤舟蓑笠翁</span><span class="pl-man"></span><span class="pl-can"></span></div>
+          <div class="pl-row"><span class="pl-zh">獨釣寒江<b>雪</b></span><span class="pl-man">xuě</span><span class="pl-can">syut</span></div>
+        </div>
+        <div class="poem-verdict">
+          <div class="pv-man" id="pv-man"><span class="x">✗</span> Mandarin — the snap is gone</div>
+          <div class="pv-can" id="pv-can"><span class="v">✓</span> Cantonese — endings click shut</div>
+        </div>
+        <div class="poem-cap" id="poem-cap">A time capsule of how Tang poetry was <b>meant to sound.</b></div>
+      </div>
+    </section>
+
+    <!-- ============ SCENE: PUNCHLINE / OUTRO ============ -->
+    <section class="scene scene-outro" id="scene-outro">
+      <div class="punch" id="punch">
+        <div class="punch-won">Mandarin <b>won.</b></div>
+        <div class="punch-sub">the voice of a nation — 1.4 billion strong</div>
+        <div class="punch-lost">…but the <b>sound</b> was lost.</div>
+      </div>
+      <div id="outro-host"></div>
+    </section>
+
+  </div>
+
+  <audio id="vo" src="../script_audio.mp3" preload="auto"></audio>
+
+  <!-- control bar (hidden in clean mode with "C") -->
+  <div class="hud" id="hud">
+    <button id="play">▶ Play</button>
+    <button id="restart">↺ Restart</button>
+    <span class="info" id="info">0.0s</span>
+    <button id="cleanbtn">Clean (C)</button>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/earcut@2.2.4/dist/earcut.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/topojson-client@3.1.0/dist/topojson-client.min.js"></script>
+<script src="elements/enumeration.js"></script>
+<script src="elements/outro.js"></script>
+<script src="elements/globe.js"></script>
+<script src="elements/waveform.js"></script>
+<script src="app.js?v=1"></script>
+</body>
+</html>

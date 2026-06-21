@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Mandarin is broken — Stacktags (depth fly-through)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Nunito:wght@700;800;900&family=Noto+Sans+SC:wght@500;700;900&display=swap" rel="stylesheet">
+
+<!-- shared design tokens + grid + subtitles first, then each element, then this video's styles -->
+<link rel="stylesheet" href="elements/theme.css">
+<link rel="stylesheet" href="elements/depth.css">
+<link rel="stylesheet" href="elements/enumeration-detail.css">
+<link rel="stylesheet" href="elements/text-popup.css">
+<link rel="stylesheet" href="elements/timeline.css">
+<link rel="stylesheet" href="elements/outro.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="wrap">
+  <div class="stage" id="stage">
+
+    <!-- the depth fly-through: a persistent dynamic grid (camera) + the beats -->
+    <div id="depth-host"></div>
+
+    <!-- persistent LEAD figure (Mandarin speaker) — carried from the poem into
+         the punch so it slides up without disappearing -->
+    <div class="lead-fig" id="lead-fig">
+      <div class="bubble bubble-bad">#!/&amp;%*</div>
+      <img class="pf-img" src="assets/cutouts/speaker_mandarin_v2.png" alt="">
+    </div>
+
+    <!-- ===== persistent HUD overlays (float above the moving grid) ===== -->
+
+    <!-- syllable counter through-line -->
+    <div id="syl" class="syl">
+      <div class="syl-ghost"><span id="syl-ghost-val">1200</span></div>
+      <div class="syl-val"><span id="syl-val">1200</span></div>
+      <div class="syl-sub" id="syl-sub">distinct syllables</div>
+    </div>
+
+    <!-- subtitle strip (mirrors the spoken line) -->
+    <div class="stk-subs" id="subs"><span class="stk-subs-line" id="subs-line"></span></div>
+
+    <!-- brand watermark -->
+    <div class="brand-wm" id="brand-wm">
+      <span class="bw-cube"></span><span class="bw-name">stacktags</span>
+    </div>
+
+    <!-- progress -->
+    <div class="progress"><div class="progress-fill" id="vprogress"></div></div>
+  </div>
+</div>
+
+<!-- dev controls (hidden by clean mode / capture) -->
+<div class="controls" id="controls">
+  <button id="play">▶ Play</button>
+  <button id="restart">↻ Restart</button>
+  <button id="cleanbtn">Clean (C)</button>
+  <span id="info">0.0s</span>
+</div>
+
+<audio id="vo" src="../script_audio.mp3" preload="auto"></audio>
+
+<!-- 3D globe deps (CDN) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/earcut@2.2.4/dist/earcut.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/topojson-client@3.1.0/dist/topojson-client.min.js"></script>
+
+<!-- reusable elements -->
+<script src="elements/depth.js"></script>
+<script src="elements/enumeration-detail.js"></script>
+<script src="elements/globe.js"></script>
+<script src="elements/region-fill.js"></script>
+<script src="elements/timeline.js"></script>
+<script src="elements/text-popup.js"></script>
+<script src="elements/outro.js"></script>
+<script src="elements/waveform.js"></script>
+
+<!-- the cue engine / choreography -->
+<script src="app.js"></script>
+</body>
+</html>

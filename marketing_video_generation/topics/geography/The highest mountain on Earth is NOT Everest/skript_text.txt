@@ -1,0 +1,95 @@
+VIDEO SCRIPT
+Title: The highest mountain on Earth is NOT Everest
+Topic: Geography
+Target length: ~100 seconds (fits the 30s–3min window)
+Language of narration: English
+Format: Voiceover script. Spoken lines are plain text. [Bracketed lines] describe
+what is on screen AT THE SAME TIME as the narration next to them.
+
+==================================================================
+THE CORE IDEA
+==================================================================
+Everest is the highest ABOVE SEA LEVEL (~8,849 m). But Earth isn't a perfect
+sphere — it bulges ~21 km at the equator (spin / centrifugal effect). Measured
+from Earth's CENTER, the winner is Chimborazo in Ecuador (~6,263 m above sea
+level, but sitting almost on the equatorial bulge). Its summit is ~6,384 km from
+the core vs Everest's ~6,382 km → Chimborazo's peak reaches ~2,168 m FARTHER into
+space, making it the point on Earth's surface closest to outer space.
+Punchline: "highest" depends where you measure from — from the center, the real
+summit is in Ecuador.
+
+NOTE (honesty): keep it fair — Everest is still highest above sea level; Mauna
+Kea is tallest base-to-summit. Chimborazo wins ONE specific title (farthest from
+Earth's center). Say so.
+
+KEY VISUALS (as requested):
+- A globe with an exaggerated EQUATORIAL BULGE.
+- A vector drawn from Earth's CORE to each summit; Chimborazo's vector is longer
+  and "beats" Everest's.
+
+==================================================================
+SCRIPT
+==================================================================
+
+--- HOOK (0:00–0:10) — the payoff up front ---
+
+The highest mountain on Earth is not Mount Everest.
+[A bold title; Everest with a red ✗.]
+Measure it the right way, and the winner is a volcano in Ecuador most people have
+never heard of: Chimborazo. Its peak juts more than two kilometers farther into
+space than Everest's.
+[Chimborazo rises; a "winner" tag pops over it.]
+Here's how that's even possible.
+
+--- THE CATCH WITH EVEREST (≈0:10–0:32) ---
+
+Everest really is the tallest mountain — above sea level. Nothing on the planet
+rises higher above the ocean's surface: about 8,849 meters.
+[Everest with a ruler measuring up from sea level.]
+But "above sea level" quietly assumes the Earth is a perfect sphere.
+[A clean sphere... that then starts to squash.]
+And it isn't.
+
+--- WHY THE EARTH IS FAT (≈0:32–0:55) ---
+
+The Earth spins — and that spin flings it outward around the middle. So the whole
+planet bulges at the equator.
+[GLOBE with an exaggerated equatorial bulge; arrows pushing outward at the middle.]
+It's about 21 kilometers fatter at the equator than from pole to pole. The
+equator literally sticks out farther from the center of the Earth.
+[A "+21 km" marker on the bulge.]
+So let's measure mountains a fairer way — not from the sea, but from the very
+center of the planet.
+[A vector is drawn from Earth's core outward.]
+
+--- CHIMBORAZO WINS (≈0:55–1:25) ---
+
+And this is where Chimborazo wins. It sits almost exactly on the equator — right
+on top of that bulge — while Everest is far to the north.
+[Two pins: Chimborazo on the equator, Everest up at ~28° north.]
+So even though Chimborazo is "only" 6,263 meters above sea level — over two and a
+half kilometers shorter than Everest — it's standing on a platform that's already
+pushed kilometers farther out into space.
+[Chimborazo's base perched high on the bulge; Everest's on the thinner part.]
+Run the measurement from the core, and Chimborazo's summit sits about 6,384
+kilometers out — Everest's, about 6,382.
+[Two vectors from the core; Chimborazo's clearly longer, overtaking Everest's.]
+Chimborazo wins by roughly 2,168 meters. Which makes its peak the single closest
+point on the Earth's surface to outer space.
+[The summit glows, reaching toward the stars.]
+
+--- THE HONEST FOOTNOTE + PUNCHLINE (≈1:25–1:45) ---
+
+Now, to be fair: Everest is still the highest above sea level, and a Hawaiian
+volcano, Mauna Kea, is actually the tallest from base to peak.
+[Three mountains, three labels: "above sea level," "base to summit," "from Earth's center."]
+"Highest" just depends on where you start your ruler.
+So next time someone calls Everest the top of the world —
+[Everest, then the camera pulls back to the whole spinning globe.]
+remember: from the center of the Earth, the real summit is in Ecuador.
+
+--- OUTRO / CTA (≈1:45–1:55) ---
+
+Want more places that aren't where you think they are?
+[Stacktags logo animates in with a "Follow" prompt.]
+Follow Stacktags.

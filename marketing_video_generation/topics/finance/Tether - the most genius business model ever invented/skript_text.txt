@@ -1,0 +1,97 @@
+VIDEO SCRIPT
+Title: Tether — the most genius business model ever invented
+Topic: Investing / finance
+Target length: ~2 minutes (fits the 30s–3min window)
+Language of narration: English
+Format: Voiceover script. Spoken lines are plain text. [Bracketed lines] describe
+what is on screen AT THE SAME TIME as the narration next to them.
+
+==================================================================
+THE CORE IDEA
+==================================================================
+Tether issues USDT, a "stablecoin" pegged 1:1 to the US dollar. You give them a
+real dollar, they mint you a token, and they KEEP the dollar — which they invest
+(mostly in US Treasury bills, ~4-5% yield) while paying token holders 0%. With
+100B+ dollars of USDT out there, that's an interest-free, ever-growing pile of
+other people's money, and Tether keeps 100% of the return. It's "float" — the
+holy grail of finance.
+Punchline: if you get to issue the dollar, you get to keep the interest.
+
+NOTE (honesty — keep one short "catch" beat):
+- Figures are as REPORTED by Tether (attestations, not full independent audits).
+- Reserves are MOSTLY T-bills + other assets — say "mostly."
+- Tether has been FINED before (CFTC/NYAG) for overstating reserves.
+- The model depends on TRUST: a mass redemption / bank-run is the failure mode.
+- "Infinite leverage" is hyperbole → frame as free, growing, interest-free float.
+
+==================================================================
+SCRIPT
+==================================================================
+
+--- HOOK (0:00–0:12) — the payoff up front ---
+
+There's a company that makes more money per employee than almost anyone on Earth.
+[A tiny office; an enormous pile of cash stacked behind it.]
+Around a hundred staff. Billions in annual profit. And the entire business model
+is this: you give them a dollar, they hand you a token — and they keep the dollar.
+[$1 slides in → a "USDT" token slides out → the dollar drops into Tether's vault.]
+That's Tether. And it's completely legal. Here's why it might be the most genius
+business model ever invented.
+
+--- WHAT IT ACTUALLY IS (≈0:12–0:35) ---
+
+Tether runs USDT — a "stablecoin." One USDT is always meant to equal one US dollar.
+[1 USDT ⇄ $1, locked together.]
+Crypto traders love it: it's a dollar that lives on the blockchain, so they can
+jump in and out of trades instantly. To get one, you hand Tether a real dollar,
+and they mint you a token.
+[A trader swaps $1 for 1 USDT.]
+Simple. But the magic isn't the token — it's what happens to your dollar.
+
+--- THE TRICK (≈0:35–1:00) ---
+
+Because Tether doesn't just let your dollar sit in a drawer. It takes all those
+billions and parks them mostly in US Treasury bills — basically the safest loan
+on the planet — earning around 4 to 5% a year.
+[The vault of dollars flows into "US T-BILLS"; a yield meter ticks up to ~5%.]
+And how much of that interest do they pass back to you, the token holder?
+[A big fat 0% stamps onto the screen.]
+Zero. You're holding a dollar that pays you nothing — and Tether keeps every cent
+of the yield.
+
+--- THE SCALE: FREE MONEY (≈1:00–1:25) ---
+
+Now multiply it. There's well over a hundred billion dollars of USDT out there —
+which means well over a hundred billion of other people's money, working for
+Tether, for free.
+[A counter spins past $100,000,000,000.]
+And normally, getting capital is expensive: a bank pays interest to its
+depositors, a company pays interest on its bonds. Everyone pays for money.
+[Banks and companies handing out interest payments.]
+Tether's cost? Nothing. It's an interest-free loan from millions of users — and
+it keeps 100% of the return. In 2024, the company reported around 13 billion
+dollars in profit, with a team you could fit in a single room.
+
+--- THE CATCH (≈1:25–1:48) ---
+
+So what's the catch? Trust.
+[The token balanced on the very top of the vault.]
+The whole thing holds up only as long as people believe every token is really
+backed by a real dollar — and don't all rush to cash out at once. Tether has been
+fined before for overstating what was actually in its reserves, and it publishes
+"attestations," not full independent audits.
+[A magnifying glass moves over a reserve report; a "?" hovers.]
+The model is brilliant. But it runs entirely on confidence.
+
+--- PUNCHLINE / OUTRO (≈1:48–2:02) ---
+
+Still — it cracked something most people never even see. The most profitable
+trade in finance wasn't picking the right stock, or the right coin.
+[Stock charts and coin logos fade away.]
+It was realizing that if you get to issue the dollar... you get to keep the
+interest.
+[The USDT token glows on a throne built of T-bills.]
+
+Want more business models that sound illegal but aren't?
+[Stacktags logo animates in with a "Follow" prompt.]
+Follow Stacktags.

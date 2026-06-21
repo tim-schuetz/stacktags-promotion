@@ -1,0 +1,87 @@
+VIDEO SCRIPT
+Title: How modern hacking works — 3 ways into a system
+Topic: Software Development / security awareness
+Target length: ~110 seconds (fits the 30s–3min window)
+Language of narration: English
+Format: Voiceover script. Spoken lines are plain text. [Bracketed lines] describe
+what is on screen AT THE SAME TIME as the narration next to them.
+
+==================================================================
+THE CORE IDEA
+==================================================================
+Real breaches rarely look like the movies. Most use three reliable doors:
+(1) Social engineering / phishing — trick a human; (2) Unpatched vulnerabilities —
+exploit software people forgot to update; (3) Stolen / reused credentials — leaked
+passwords tried everywhere. Frame: AWARENESS & DEFENSE — explain how attacks
+happen and how to shut each door. NOT an operational how-to.
+Punchline: hackers rarely "break in" — they log in. And the same three doors are
+the ones you can lock.
+
+NOTE (responsibility): keep it conceptual + defensive. No step-by-step exploit
+instructions — focus on the pattern and the fix for each.
+
+KEY VISUALS:
+- A house with three doors labeled "Phishing," "Unpatched," "Reused passwords";
+  each one being shut with a lock as the defense is named.
+
+==================================================================
+SCRIPT
+==================================================================
+
+--- HOOK (0:00–0:12) — the payoff up front ---
+
+Most hacking looks nothing like the movies — no glowing green code, no genius
+typing furiously in a hoodie.
+[A "Hollywood hacker" image gets crossed out.]
+Real attackers almost always get in the same three boring ways. And the number one
+way isn't even technical — it's tricking a person.
+[Three doors appear on a building: "Phishing," "Unpatched," "Reused passwords."]
+
+--- WAY 1: TRICK A HUMAN (≈0:12–0:42) ---
+
+The most common door is social engineering — phishing. Instead of breaking the
+lock, you get someone to open it for you.
+[A fake "urgent" email; a hand reaching for the link.]
+A message that looks completely legit — from your bank, your boss, your IT team —
+nudging an employee to click a link, type their password, or approve a login they
+shouldn't. The weakest point in almost any system isn't the software. It's the
+human.
+[Door 1 swings open... then a lock snaps shut on it.]
+The defense: slow down, verify who's really asking, and turn on multi-factor
+login so one stolen password isn't enough.
+
+--- WAY 2: THE UNLOCKED WINDOW (≈0:42–1:08) ---
+
+The second door: unpatched software. Every program has bugs, and some are security
+holes. When a fix — a patch — gets released, it basically announces the hole to the
+world.
+[A software "update available" notice ignored; a crack appearing in a window.]
+So attackers race to hit everyone who hasn't updated yet. Old, un-updated systems
+are just open windows waiting.
+[Door 2 / window... then it's sealed shut.]
+The defense is almost annoyingly simple: update. Patch fast. Those "install update"
+nags are security, not nagging.
+
+--- WAY 3: THE KEY UNDER THE MAT (≈1:08–1:34) ---
+
+The third door: stolen and reused passwords. Billions of passwords have leaked in
+past breaches, and people reuse them everywhere.
+[A giant pile of leaked passwords; the same one being tried on many sites.]
+So attackers take a password leaked from one site and just try it on all your
+other accounts — banking, email, work. A reused password is a key left under the
+mat.
+[Door 3... then locked.]
+The defense: a unique password for everything — ideally a password manager — and
+again, multi-factor login.
+
+--- PUNCHLINE / OUTRO (≈1:34–1:48) ---
+
+Notice what none of these needed: movie-style genius.
+[The three locked doors side by side.]
+Hackers rarely break in. They log in — with a trick, a missed update, or a
+password you reused. The good news? Those same three doors are exactly the ones
+you can lock.
+
+Want more of how security really works?
+[Stacktags logo animates in with a "Follow" prompt.]
+Follow Stacktags.

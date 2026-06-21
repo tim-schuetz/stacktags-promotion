@@ -1,0 +1,94 @@
+VIDEO SCRIPT
+Title: How to launder $1.5 billion in crypto
+Topic: Crypto / Finance
+Target length: ~100 seconds (fits the 30s–3min window)
+Language of narration: English
+Format: Voiceover script. Spoken lines are plain text. [Bracketed lines] describe
+what is on screen AT THE SAME TIME as the narration next to them.
+
+==================================================================
+THE CORE IDEA
+==================================================================
+Counterintuitive truth: crypto is NOT anonymous — by design, almost every
+transaction is public and permanent on the blockchain, so stolen funds are visible
+to the whole world. Told through the real case of the Lazarus Group (North Korea)
+and the record ~$1.5B exchange hack. Stealing is easy; SPENDING is hard. To break
+the trail, the thieves rely on three moves: chain hopping, mixers, and splitting
+the coins.
+Punchline: crypto is the most transparent money ever made — which is exactly why
+even a state-backed hacker can't just walk up and spend a stolen billion.
+
+NOTE (responsibility): this is an AWARENESS / EXPLAINER piece on why crypto is
+traceable — NOT a how-to. Keep the techniques CONCEPTUAL (what they are, one line
+each); no operational steps or service recommendations.
+
+NOTE (accuracy): the user wrote "Bitget"; the record February-2025 Lazarus heist
+was BYBIT (~$1.5B), the biggest crypto theft ever. Script uses the Bybit case —
+flagged to user.
+
+KEY VISUALS:
+- A public ledger where every wallet + transfer glows for all to see.
+- Stolen funds tagged "RADIOACTIVE"; then a quick 3-item list: chain hopping,
+  mixers, splitting.
+
+==================================================================
+SCRIPT
+==================================================================
+
+--- HOOK (0:00–0:14) — the payoff up front ---
+
+When North Korean hackers pulled off the biggest crypto heist in history — around
+1.5 billion dollars — they ran straight into a problem most people never expect:
+[A vault drained; a giant "$1.5B" glowing.]
+in crypto, you can't actually hide the money. Every coin they stole was visible to
+the entire world.
+[The stolen funds lit up on a public ledger for everyone to see.]
+
+--- THE MYTH (≈0:14–0:38) ---
+
+Here's what most people get wrong. They think crypto is anonymous — perfect for
+crime. It's almost the opposite.
+[A "100% anonymous?" label getting stamped FALSE.]
+Most blockchains are a public ledger: every transaction, every wallet, every
+movement, recorded forever, for anyone on Earth to read.
+[An endless transparent ledger scrolling.]
+So when the group known as Lazarus drained that exchange, the whole world could
+watch the stolen funds sitting in their wallets. Stealing it was the easy part.
+Spending it is the hard part.
+
+--- WHY THEY CAN'T JUST SPEND IT (≈0:38–1:00) ---
+
+Because the moment they try to send that money to an exchange to cash out, it gets
+flagged and frozen.
+So to have any hope of using it, they try to break the trail. They do it
+three ways.
+
+--- THE THREE MOVES (≈1:00–1:30) ---
+
+One: chain hopping.
+[A coin leaping between separate blockchains, over and over.]
+They bounce the money across different blockchains, again and again, so the trail
+has to keep jumping networks.
+
+Two: mixers.
+[Thousands of coins poured into one tumbler and swirled together.]
+They throw the coins into a pot with thousands of others and shuffle them, blurring
+which coins came from where.
+
+Three: splitting.
+[One big pile shattering into a cloud of tiny transfers.]
+They chop the haul into thousands of tiny transfers across countless wallets, so
+there's no single stream left to follow.
+
+--- PUNCHLINE / OUTRO (≈1:30–1:44) ---
+
+And that's the irony. The only reason they need all of this is that crypto isn't
+anonymous at all.
+[The glowing public ledger, every move on record.]
+It's the most transparent money ever made — a permanent, public record. So
+stealing a billion is the easy part. Actually spending it is a problem most
+criminals never saw coming.
+
+Want more of how crypto really works?
+[Stacktags logo animates in with a "Follow" prompt.]
+Follow Stacktags.

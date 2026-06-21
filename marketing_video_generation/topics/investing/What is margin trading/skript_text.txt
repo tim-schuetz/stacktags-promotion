@@ -1,0 +1,71 @@
+VIDEO SCRIPT
+Title: What is margin trading?
+Topic: Investing
+Target length: ~90 seconds (fits the 30s–3min window)
+Language of narration: English
+Format: Voiceover script. Spoken lines are plain text. [Bracketed lines] describe
+what is on screen AT THE SAME TIME as the narration next to them.
+
+==================================================================
+THE CORE IDEA
+==================================================================
+Margin trading = borrowing money from your broker to buy more than your cash
+allows, using your investments as collateral (leverage). It multiplies gains AND
+losses equally. If your position falls too far, you get a "margin call": add cash
+now or the broker liquidates — and you can lose MORE than you put in.
+Punchline: margin doesn't change whether you're right — it just multiplies the
+result. An accelerator with no brakes.
+
+NOTE (responsibility): educational, NOT advice. The "losses are multiplied / you
+can lose more than your deposit" message is the key honest point.
+
+KEY VISUALS:
+- $1,000 of your cash + $2,000 borrowed = $3,000 buying power.
+- A gain scenario and a loss scenario, both 3× — then a "MARGIN CALL" alarm.
+
+==================================================================
+SCRIPT
+==================================================================
+
+--- HOOK (0:00–0:12) — the payoff up front ---
+
+Margin trading is how a trader turns 1,000 dollars into 3,000 dollars of buying
+power — by borrowing the rest.
+[$1,000 cash + $2,000 borrowed → $3,000 buying power.]
+It can multiply your gains. But it can also wipe you out faster than almost
+anything else in investing.
+[The stack triples... then a red "MARGIN CALL" alarm flashes.]
+
+--- THE IDEA (≈0:12–0:35) ---
+
+Here's how it works. Your broker lends you money to invest, on top of your own
+cash. You put in 1,000, borrow another 2,000 — and now you control 3,000 dollars
+of stock. That's leverage.
+[The position scaled up 3×.]
+If that stock rises 10%, you don't make 10% on your thousand. You make 10% on
+three thousand — three times the gain.
+[+10% on $3,000 = +$300, vs +$100 unleveraged.]
+
+--- THE CATCH (≈0:35–1:05) ---
+
+But it works exactly the same way in reverse.
+[The chart turns red.]
+A 10% drop is now a 10% loss on three thousand dollars — three times the hit to
+your own money. Leverage cuts both ways, equally.
+[−10% on $3,000 = −$300, eating deep into the $1,000.]
+And there's a trap. Your investments are the collateral for that loan. If they
+fall too far, the broker issues a margin call: add more cash immediately — or they
+sell your positions automatically, often at the worst possible moment.
+[A "MARGIN CALL" alarm; positions force-sold at the bottom.]
+You can walk away owing more than you ever put in.
+
+--- PUNCHLINE / OUTRO (≈1:05–1:18) ---
+
+So margin doesn't change whether you're right or wrong.
+[The same trade, scaled up in both directions.]
+It just multiplies the result. It's an accelerator pedal with no brakes — bigger
+wins, and brutal losses.
+
+Want to understand the tools the pros use?
+[Stacktags logo animates in with a "Follow" prompt.]
+Follow Stacktags.

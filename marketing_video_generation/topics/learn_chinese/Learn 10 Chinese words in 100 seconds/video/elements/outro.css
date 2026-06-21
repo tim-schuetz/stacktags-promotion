@@ -1,0 +1,54 @@
+/* ============================================================
+   Stacktags OUTRO — updated brand card
+   Matches promotion/instagram/defaults/outro-animation: a teal
+   isometric stack bracketed by two chevrons, the two-tone
+   "stacktags" wordmark, and a grey "stacktags.io" line.
+   Sits on the dynamic grid (transparent bg). Namespaced .stk-outro.
+   ============================================================ */
+.stk-outro {
+  --o-teal: #35A292;
+  --o-ink:  #232B33;
+  --o-muted:#6b7680;
+  position: absolute; inset: 0;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  gap: 0; padding: 80px 70px;
+  text-align: center; background: transparent;
+}
+
+/* ---- logo (isometric stack + chevrons) ---- */
+.stk-outro-logo { width: 600px; height: 360px; margin-bottom: 26px; overflow: visible; }
+.stk-outro-logo .stk-logo-stack,
+.stk-outro-logo .stk-logo-chev {
+  opacity: 0;
+  transform-box: fill-box; transform-origin: center;
+  transition: opacity .5s ease, transform .75s cubic-bezier(.34,1.56,.64,1);
+}
+.stk-outro-logo .stk-logo-stack  { transform: translateY(-34px) scale(.7); }
+.stk-outro-logo .stk-logo-chev-l { transform: translateX(-90px); }
+.stk-outro-logo .stk-logo-chev-r { transform: translateX(90px); }
+.stk-outro.assemble .stk-logo-stack { opacity: 1; transform: none; }
+.stk-outro.assemble .stk-logo-chev  { opacity: 1; transform: none; transition-delay: .3s; }
+
+/* ---- wordmark ---- */
+.stk-outro-wordmark {
+  font-family: 'Nunito', system-ui, sans-serif;
+  font-weight: 900; font-size: 116px; letter-spacing: -2px; line-height: 1;
+  opacity: 0; transform: translateY(22px);
+  transition: opacity .5s ease .35s, transform .6s cubic-bezier(.2,.8,.2,1) .35s;
+}
+.stk-outro.assemble .stk-outro-wordmark { opacity: 1; transform: none; }
+.stk-outro-wordmark .wm-stack { color: var(--o-ink); }
+.stk-outro-wordmark .wm-tags  { color: var(--o-teal); }
+
+/* ---- grey url line ---- */
+.stk-outro-url {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-weight: 700; font-size: 36px; letter-spacing: 3px; color: var(--o-muted);
+  margin-top: 18px;
+  opacity: 0; transform: translateY(14px);
+  transition: opacity .5s ease .55s, transform .5s ease .55s;
+}
+.stk-outro.assemble .stk-outro-url { opacity: 1; transform: none; }
+
+.stk-outro.reset-hide { opacity: 0; }

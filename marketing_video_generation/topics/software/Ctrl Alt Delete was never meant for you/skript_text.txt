@@ -1,0 +1,79 @@
+VIDEO SCRIPT
+Title: Ctrl+Alt+Delete was never meant for you
+Topic: Software
+Target length: ~90 seconds (fits the 30s–3min window)
+Language of narration: English
+Format: Voiceover script. Spoken lines are plain text. [Bracketed lines] describe
+what is on screen AT THE SAME TIME as the narration next to them.
+
+==================================================================
+THE CORE IDEA
+==================================================================
+Ctrl+Alt+Delete was created ~1981 by IBM engineer David Bradley as an INTERNAL
+developer shortcut to quickly reboot the IBM PC during testing — never meant for end
+users. He deliberately made it three keys, spread apart, so it couldn't be pressed
+by accident. It leaked out and became iconic; Microsoft later made it the Windows
+login/management combo (Bill Gates reportedly regretted it).
+Punchline: the world's most famous shortcut was a backstage tool, built to be
+awkward, that accidentally became the front door to the PC.
+
+NOTE (accuracy): Bradley's quip — "I may have invented it, but Bill made it famous."
+Keys were positioned so two hands / deliberate effort were needed (no accidents).
+
+KEY VISUALS:
+- The three keys lighting up far apart on a keyboard; two hands needed to press them.
+- A "developers only" backstage door; the combo slipping out to a billion users.
+
+==================================================================
+SCRIPT
+==================================================================
+
+--- HOOK (0:00–0:12) — the payoff up front ---
+
+The most famous keyboard shortcut on Earth — Control, Alt, Delete — was never meant
+for you.
+[The three keys glowing on a keyboard.]
+It was a secret developer hack. And the keys were placed far apart on purpose.
+Here's the story.
+[Two hands stretching to hit all three at once.]
+
+--- THE ORIGIN (≈0:12–0:38) ---
+
+Rewind to around 1981, when IBM was building the very first PC. Engineers needed a
+fast way to restart the computer during testing — without the slow, full
+power-off-and-on.
+[A developer waiting impatiently for a full reboot.]
+So an engineer named David Bradley wired up a hidden shortcut: press Control, Alt,
+and Delete together, and the machine instantly reboots.
+[The combo pressed; the PC snaps into a quick restart.]
+It was a tool for developers — a quick reset hidden inside the keyboard. Regular
+users weren't supposed to know it existed.
+
+--- THE DELIBERATE AWKWARDNESS (≈0:38–1:00) ---
+
+And Bradley made it awkward on purpose. He chose three keys, spread apart, so you'd
+need two hands and real intent to hit them.
+[The three keys highlighted at distant corners; one-handed press = impossible.]
+The whole point was that you could never trigger a reboot by accident — never just
+rest your hands on the keyboard and wipe out your work. The clumsiness was a safety
+feature.
+
+--- IT ESCAPED (≈1:00–1:20) ---
+
+But the secret got out. The combo became widely known — and then Microsoft made it
+the way you log in and manage Windows.
+[A "developers only" door bursting open; the combo flooding out to millions of PCs.]
+A developer's hidden reset button was suddenly placed in front of a billion users.
+Bill Gates later admitted that was a mistake. As Bradley himself joked: "I may have
+invented Control-Alt-Delete — but Bill Gates made it famous."
+
+--- PUNCHLINE / OUTRO (≈1:20–1:32) ---
+
+So the most iconic shortcut in computing was really an inside joke that got loose —
+[The three keys, glowing, center screen.]
+a backstage tool, built to be deliberately awkward, that accidentally became the
+front door to the PC.
+
+Want more stories of how technology really works?
+[Stacktags logo animates in; "stacktags.io" shown on screen.]
+Discover thousands of free exercises and more learning content on stacktags.io.
