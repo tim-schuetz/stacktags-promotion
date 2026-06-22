@@ -1,0 +1,63 @@
+/* ============================================================
+   Stacktags default element — GRAPH CHART
+   A clean animated line/area or bar chart that draws itself in,
+   with a moving end-dot and a counting headline value.
+   White + turquoise, Inter only, thin grey gridlines, no borders.
+   Drive with graph-chart.js (StacktagsGraphChart).
+   ============================================================ */
+.stk-chart {
+  position: absolute; inset: 0;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  gap: 30px;
+  padding: 120px 90px;
+  font-family: var(--stk-font, 'Inter', sans-serif);
+}
+
+.stk-chart-head {
+  text-align: center;
+  opacity: 0; transform: translateY(-18px);
+  transition: opacity .5s ease, transform .5s cubic-bezier(.2,.8,.2,1);
+}
+.stk-chart.head-in .stk-chart-head { opacity: 1; transform: none; }
+.stk-chart-title {
+  font-weight: 800; font-size: 58px; letter-spacing: -1.4px; color: var(--stk-ink, #232B33);
+}
+.stk-chart-title b { color: var(--stk-teal-d, #119271); }
+.stk-chart-sub {
+  font-weight: 600; font-size: 32px; color: var(--stk-muted, #8a949d);
+  margin-top: 8px; letter-spacing: -.2px;
+}
+
+/* the big number that counts up while the chart draws */
+.stk-chart-value {
+  font-weight: 900; font-size: 130px; line-height: 1; letter-spacing: -4px;
+  color: var(--stk-teal-d, #119271);
+  opacity: 0; transform: translateY(14px);
+  transition: opacity .5s ease, transform .5s ease;
+}
+.stk-chart.value-in .stk-chart-value { opacity: 1; transform: none; }
+.stk-chart-value .unit { font-size: 64px; letter-spacing: -1px; }
+
+.stk-chart-plot { width: 100%; max-width: 900px; }
+.stk-chart-plot svg { width: 100%; height: auto; display: block; overflow: visible; }
+
+/* gridlines + axis labels (thin, grey, border-less) */
+.stk-chart-grid line { stroke: rgba(35,43,51,0.10); stroke-width: 2; }
+.stk-chart-xlabels text, .stk-chart-ylabels text {
+  font-family: var(--stk-font, 'Inter', sans-serif);
+  font-weight: 600; fill: var(--stk-muted, #8a949d);
+}
+
+/* line + area */
+.stk-chart-area { fill: var(--stk-teal, #35A292); opacity: .14; }
+.stk-chart-line {
+  fill: none; stroke: var(--stk-teal, #35A292); stroke-width: 7;
+  stroke-linecap: round; stroke-linejoin: round;
+}
+.stk-chart-dot { fill: var(--stk-teal-d, #119271); }
+.stk-chart-dot-halo { fill: var(--stk-teal, #35A292); opacity: .25; }
+
+/* bars */
+.stk-chart-bar { fill: var(--stk-teal, #35A292); }
+.stk-chart-bar.peak { fill: var(--stk-teal-d, #119271); }

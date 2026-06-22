@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Tether — the most genius business model ever invented</title>
+<link rel="icon" href="data:," />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
+
+<!-- shared theme tokens + grid + subtitles (the design system) -->
+<link rel="stylesheet" href="elements/theme.css">
+<!-- the dynamic depth-grid look (reuse its grid styling) -->
+<link rel="stylesheet" href="elements/depth-transitions.css">
+<!-- default elements used as components -->
+<link rel="stylesheet" href="elements/graph-chart.css">
+<link rel="stylesheet" href="elements/text-popup.css">
+<!-- this video's own scene styling -->
+<link rel="stylesheet" href="styles.css?v=1">
+</head>
+<body>
+<div class="wrap">
+  <div class="stage stk-grid-bg" id="stage">
+
+    <!-- persistent dynamic grid: the camera (zoom/pan) lives here -->
+    <div class="stk-depth2-grid" id="grid"></div>
+
+    <!-- all scene layers stack here -->
+    <div class="scenes" id="scenes">
+
+      <!-- ===== HOOK ===== -->
+      <div class="scene" id="sc-intro">
+        <img class="intro-cash" src="assets/cash_pile.png" alt="" onerror="this.style.display='none'">
+        <img class="intro-char" src="assets/character.png" alt="" onerror="this.style.display='none'">
+        <div class="chip intro-chip a" id="intro-chip-a">≈100 employees</div>
+        <div class="chip intro-chip b" id="intro-chip-b">billions / year</div>
+      </div>
+
+      <!-- ===== THE DEAL: $1 in → token out → dollar kept ===== -->
+      <div class="scene" id="sc-deal">
+        <div class="deal">
+          <div class="deal-you" id="deal-you">YOU</div>
+          <img class="deal-dollar" id="deal-dollar" src="assets/dollar_bill.png" alt="" onerror="this.style.display='none'">
+          <div class="deal-flow" id="deal-flow"></div>
+          <div class="brand-tether deal-coin" id="deal-coin"></div>
+          <div class="deal-coinlbl" id="deal-coinlbl">1 USDT</div>
+          <img class="deal-vault" id="deal-vault" src="assets/vault.png" alt="" onerror="this.style.display='none'">
+          <img class="deal-keep" id="deal-keep" src="assets/dollar_bill.png" alt="" onerror="this.style.display='none'">
+          <div class="deal-keeplbl" id="deal-keeplbl">Tether keeps it</div>
+        </div>
+      </div>
+
+      <!-- ===== "That's Tether — completely legal" ===== -->
+      <div class="scene" id="sc-legal">
+        <div class="legal-wrap">
+          <div class="brand-tether" id="legal-coin"></div>
+          <div class="legal-name">Tether</div>
+          <div class="stamp" id="legal-stamp">100% LEGAL</div>
+        </div>
+      </div>
+
+      <!-- ===== TITLE CARD ===== -->
+      <div class="scene" id="sc-title">
+        <div class="title-card">
+          <div class="title-eyebrow">the most</div>
+          <div class="title-big"><span class="hl">genius</span> business model</div>
+          <div class="title-sub">ever invented</div>
+        </div>
+      </div>
+
+      <!-- ===== STABLECOIN ===== -->
+      <div class="scene" id="sc-stable">
+        <div class="stable-wrap">
+          <div class="brand-tether big" id="stable-coin"></div>
+          <div class="pill-lbl" id="stable-lbl">a “stablecoin”</div>
+        </div>
+      </div>
+
+      <!-- ===== THE PEG: 1 USDT ⇄ $1 ===== -->
+      <div class="scene" id="sc-peg">
+        <div class="peg" id="peg">
+          <div class="peg-side"><div class="brand-tether mid"></div><div class="peg-cap">1 USDT</div></div>
+          <div class="peg-link" id="peg-link">🔒</div>
+          <div class="peg-side"><div class="coin-dollar">$1</div><div class="peg-cap">1 US dollar</div></div>
+        </div>
+      </div>
+
+      <!-- ===== BLOCKCHAIN / TRADERS ===== -->
+      <div class="scene" id="sc-chain">
+        <div class="chain-wrap" id="chain-wrap">
+          <div class="chain-row">
+            <span class="block"></span><span class="block"></span>
+            <span class="block tok"><span class="brand-tether sm"></span></span>
+            <span class="block"></span><span class="block"></span>
+          </div>
+          <div class="chain-cap">a dollar on the blockchain</div>
+          <div class="chain-io"><span class="io in" id="chain-in">in ↘</span><span class="io out" id="chain-out">↗ out</span></div>
+        </div>
+      </div>
+
+      <!-- ===== MINT ===== -->
+      <div class="scene" id="sc-mint">
+        <div class="mint" id="mint">
+          <div class="mint-step a"><div class="coin-dollar">$1</div><small>your real dollar</small></div>
+          <div class="mint-arrow">→</div>
+          <div class="mint-step b"><div class="brand-tether mid"></div><small>they mint a token</small></div>
+        </div>
+      </div>
+
+      <!-- ===== THE MAGIC ===== -->
+      <div class="scene" id="sc-magic">
+        <div class="magic" id="magic">
+          <div class="magic-item token"><div class="brand-tether mid"></div><div class="magic-cap">not the token</div></div>
+          <div class="magic-item dollar"><div class="coin-dollar big">$</div><div class="magic-cap key">your dollar</div></div>
+        </div>
+      </div>
+
+      <!-- ===== VAULT → T-BILLS ===== -->
+      <div class="scene" id="sc-tbills">
+        <div class="tbills" id="tbills">
+          <img class="tb-vault" src="assets/vault.png" alt="" onerror="this.style.display='none'">
+          <div class="tb-arrow" id="tb-arrow">→</div>
+          <div class="tb-stack" id="tb-stack">
+            <div class="tbill">U.S. TREASURY BILL</div>
+            <div class="tbill">U.S. TREASURY BILL</div>
+            <div class="tbill top">U.S. TREASURY BILL</div>
+          </div>
+          <div class="tb-cap" id="tb-cap">the safest loan on Earth</div>
+        </div>
+      </div>
+
+      <!-- ===== YIELD CHART ===== -->
+      <div class="scene" id="sc-yield"><div class="yield-host" id="yield-host"></div></div>
+
+      <!-- ===== ZERO ===== -->
+      <div class="scene" id="sc-zero">
+        <div class="zero-wrap">
+          <div class="zero-q" id="zero-q">passed back to <b>you</b>?</div>
+          <div class="zero-stamp" id="zero-stamp">0%</div>
+        </div>
+      </div>
+
+      <!-- ===== YOU 0% vs TETHER keeps yield ===== -->
+      <div class="scene" id="sc-keep">
+        <div class="keep" id="keep">
+          <div class="keep-col you">
+            <div class="keep-head">YOU</div>
+            <div class="keep-val zero">0%</div>
+            <div class="keep-sub">a dollar that pays nothing</div>
+          </div>
+          <div class="keep-col teth">
+            <div class="keep-head">TETHER</div>
+            <div class="keep-val">≈5%</div>
+            <div class="keep-sub">keeps every cent</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== $100B COUNTER ===== -->
+      <div class="scene" id="sc-counter">
+        <div class="counter-wrap">
+          <div class="counter-num" id="counter-num">$0</div>
+          <div class="counter-lbl" id="counter-lbl">USDT in circulation</div>
+        </div>
+      </div>
+
+      <!-- ===== OTHER PEOPLE'S MONEY → FREE ===== -->
+      <div class="scene" id="sc-opm">
+        <div class="opm" id="opm">
+          <div class="opm-crowd" id="opm-crowd"></div>
+          <div class="opm-arrow">→</div>
+          <div class="opm-tether"><div class="brand-tether mid"></div></div>
+          <div class="stamp free" id="opm-stamp">FREE</div>
+        </div>
+      </div>
+
+      <!-- ===== EVERYONE PAYS · TETHER DOESN'T ===== -->
+      <div class="scene" id="sc-cost">
+        <div class="cost" id="cost">
+          <div class="cost-col" id="cost-bank">
+            <img src="assets/bank_building.png" alt="" onerror="this.style.display='none'">
+            <div class="cost-tag">bank → pays interest</div>
+            <div class="cost-out">−%</div>
+          </div>
+          <div class="cost-col" id="cost-co">
+            <img src="assets/company_building.png" alt="" onerror="this.style.display='none'">
+            <div class="cost-tag">company → pays interest</div>
+            <div class="cost-out">−%</div>
+          </div>
+          <div class="cost-col teth" id="cost-teth">
+            <div class="brand-tether mid"></div>
+            <div class="cost-tag">Tether → pays</div>
+            <div class="cost-out zero">$0</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== $13B PROFIT ===== -->
+      <div class="scene" id="sc-profit">
+        <div class="profit-host" id="profit-host"></div>
+        <div class="profit-team" id="profit-team">
+          <span class="ppl">👤👤👤👤👤</span>
+          <span class="ppl-cap">a team you could fit in one room</span>
+        </div>
+      </div>
+
+      <!-- ===== TRUST (token balanced on vault) ===== -->
+      <div class="scene" id="sc-trust">
+        <div class="trust" id="trust">
+          <div class="brand-tether mid trust-coin" id="trust-coin"></div>
+          <img class="trust-vault" src="assets/vault.png" alt="" onerror="this.style.display='none'">
+          <div class="trust-word" id="trust-word">TRUST</div>
+        </div>
+      </div>
+
+      <!-- ===== BACKED? / RUSH TO CASH OUT ===== -->
+      <div class="scene" id="sc-backed">
+        <div class="backed" id="backed">
+          <div class="backed-row">
+            <div class="backed-tok"><div class="brand-tether sm"></div><span>token</span></div>
+            <div class="backed-eq" id="backed-eq">=</div>
+            <div class="backed-dol"><div class="coin-dollar">$1</div><span>real?</span></div>
+          </div>
+          <div class="backed-run" id="backed-run">everyone cashes out at once →</div>
+        </div>
+      </div>
+
+      <!-- ===== MAGNIFY RESERVES ===== -->
+      <div class="scene" id="sc-magnify">
+        <div class="magnify" id="magnify">
+          <div class="report">
+            <div class="report-h">RESERVE REPORT</div>
+            <div class="report-line"></div><div class="report-line"></div>
+            <div class="report-line short"></div><div class="report-line"></div>
+            <div class="report-redact" id="report-redact"></div>
+          </div>
+          <div class="lens" id="lens"><div class="lens-q">?</div></div>
+          <div class="magnify-cap" id="magnify-cap"><b>attestations</b> — not full audits</div>
+        </div>
+      </div>
+
+      <!-- ===== BRILLIANT / CONFIDENCE ===== -->
+      <div class="scene" id="sc-conf">
+        <div class="conf" id="conf">
+          <div class="conf-l1" id="conf-l1">brilliant.</div>
+          <div class="conf-l2" id="conf-l2">but it runs on <span class="hl">confidence</span>.</div>
+        </div>
+      </div>
+
+      <!-- ===== STOCKS / COINS FADE ===== -->
+      <div class="scene" id="sc-fade"><div class="fade-host" id="fade-host"></div></div>
+
+      <!-- ===== THRONE PUNCHLINE ===== -->
+      <div class="scene" id="sc-throne">
+        <div class="throne" id="throne">
+          <div class="throne-coin"><div class="brand-tether big" id="throne-coin"></div></div>
+          <div class="throne-base" id="throne-base">
+            <div class="tbill wide">U.S. TREASURY BILL</div>
+            <div class="tbill wide">U.S. TREASURY BILL</div>
+            <div class="tbill wide">U.S. TREASURY BILL</div>
+            <div class="tbill wide">U.S. TREASURY BILL</div>
+          </div>
+          <div class="throne-line" id="throne-line">issue the dollar → keep the interest</div>
+        </div>
+      </div>
+
+      <!-- ===== OUTRO ===== -->
+      <div class="scene" id="sc-outro">
+        <div class="ec" id="outro-ec">
+          <div id="outro-logo"></div>
+          <div class="wm"><span class="s">stack</span><span class="t">tags</span></div>
+          <div class="url">stacktags.io</div>
+        </div>
+      </div>
+
+    </div><!-- /scenes -->
+
+    <!-- subtitles mirror the narration -->
+    <div class="stk-subs" id="subs"><span class="stk-subs-line" id="subs-line"></span></div>
+
+  </div><!-- /stage -->
+</div>
+
+<!-- HUD (hidden in clean/capture mode) -->
+<div id="hud">
+  <button id="btn-play">▶ Play</button>
+  <input id="seek" type="range" min="0" max="119.58" step="0.01" value="0" />
+  <span id="tcode">0.0</span>
+</div>
+
+<audio id="vo" src="../script_voice.mp3" preload="auto"></audio>
+
+<!-- default elements (used as components) -->
+<script src="elements/graph-chart.js"></script>
+<script src="elements/text-popup.js"></script>
+<script src="elements/outro.js"></script>
+
+<!-- this video's choreography -->
+<script src="app.js?v=1"></script>
+</body>
+</html>

@@ -1,0 +1,351 @@
+/* ============================================================
+   Stacktags — "How to launder $1.5 billion in crypto" (depth style)
+   White + turquoise (#35A292). Inter (+ JetBrains Mono for ledger hashes).
+   Beats are .stk-depth2-* wrappers flying through the moving grid; each
+   carries a .beat-* class set in app.js.
+   ============================================================ */
+* { box-sizing: border-box; }
+html, body { margin: 0; height: 100%; background: #0b0e0d; overflow: hidden; }
+
+.root { position: fixed; inset: 0; display: flex; align-items: center; justify-content: center; }
+.stage {
+  position: relative; width: 1080px; height: 1920px; flex-shrink: 0;
+  transform-origin: center; overflow: hidden;
+  background: #fff;
+  font-family: var(--stk-font);
+}
+
+.layer { position: absolute; inset: 0; }
+#chart-host { z-index: 2; opacity: 1; transition: opacity .45s ease; }
+#chart-host.hide { opacity: 0; pointer-events: none; }
+#depth-host { z-index: 1; opacity: 1; transition: opacity .45s ease; }
+#depth-host.hide { opacity: 0; }
+#enum-host { z-index: 3; opacity: 0; transition: opacity .5s ease; pointer-events: none; }
+#enum-host.show { opacity: 1; }
+#enum-host.grid {
+  background-color: #fff;
+  background-image:
+    linear-gradient(to right,  var(--stk-grid-line) 4px, transparent 4px),
+    linear-gradient(to bottom, var(--stk-grid-line) 4px, transparent 4px);
+  background-size: var(--stk-grid-size) var(--stk-grid-size);
+  background-position: center center;
+}
+
+/* progress bar */
+.vprogress { position: absolute; top: 0; left: 0; right: 0; height: 6px; background: rgba(35,43,51,.06); z-index: 60; }
+.vprogress-fill { height: 100%; width: 0; background: var(--stk-teal); }
+
+/* ---- HUD ---- */
+.hud {
+  position: fixed; left: 50%; bottom: 18px; transform: translateX(-50%);
+  display: flex; gap: 10px; align-items: center; z-index: 999;
+  background: rgba(20,28,26,.78); padding: 8px 12px; border-radius: 12px;
+  font-family: var(--stk-font); color: #fff;
+}
+.hud button { font: inherit; font-weight: 700; border: 0; border-radius: 8px; padding: 8px 14px; background: var(--stk-teal); color: #fff; cursor: pointer; }
+.hud .info { font-variant-numeric: tabular-nums; opacity: .85; min-width: 54px; text-align: center; }
+body.clean .hud { display: none; }
+body.clean .vprogress { display: none; }
+
+b { color: var(--stk-teal-d); }
+.key { color: var(--stk-teal); }
+
+/* ============================================================
+   CHART hook — biggest crypto heists
+   ============================================================ */
+.chart-title {
+  position: absolute; left: 0; right: 0; top: 150px; z-index: 5;
+  display: flex; flex-direction: column; align-items: center; gap: 10px; text-align: center;
+}
+.chart-title .ct-1 { font-size: 70px; font-weight: 800; letter-spacing: -2px; color: var(--stk-ink); }
+.chart-title .ct-2 { font-size: 34px; font-weight: 600; color: var(--stk-muted); letter-spacing: .5px; }
+/* the peak bar's value reads as $1.5B — nudge the bv2 value colour deep teal (peak) */
+.chart-layer .bv2-val { font-size: 64px; }
+.chart-layer .bv2-xlabel { font-size: 52px; }
+
+/* ============================================================
+   Generic depth beat text reset
+   ============================================================ */
+.depth-layer .stk-depth2-text { width: 1000px; font-weight: 800; font-size: 56px; letter-spacing: normal; line-height: 1.1; color: var(--stk-ink); }
+
+/* ============================================================
+   BEAT 0 — hacker with the loot
+   ============================================================ */
+.loot { position: relative; width: 760px; height: 1180px; margin: 0 auto; display: flex; align-items: center; justify-content: center; }
+.loot-hacker { height: 940px; width: auto; object-fit: contain; filter: drop-shadow(0 30px 50px rgba(20,40,33,.22)); }
+.loot-tag {
+  position: absolute; top: 120px; right: -10px; z-index: 3;
+  background: var(--stk-teal-soft); color: var(--stk-teal-d);
+  font-weight: 900; font-size: 96px; letter-spacing: -3px; line-height: .92;
+  padding: 22px 34px 26px; border-radius: 26px; text-align: center;
+  box-shadow: 0 18px 40px rgba(30,72,60,.16);
+  transform: rotate(-6deg);
+}
+.loot-tag span { display: block; font-size: 30px; font-weight: 700; letter-spacing: 2px; color: var(--stk-muted); text-transform: uppercase; }
+
+/* ============================================================
+   PUBLIC LEDGER (shared by ledger1 / ledger2 / trans)
+   ============================================================ */
+.ldscene, .trans { position: relative; width: 1000px; margin: 0 auto; text-align: center; }
+.ld-cap { font-size: 46px; font-weight: 800; letter-spacing: -1px; color: var(--stk-ink); margin-bottom: 34px; }
+.ledger { position: relative; width: 900px; height: 760px; margin: 0 auto; overflow: hidden;
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 12%, #000 88%, transparent 100%);
+          mask-image: linear-gradient(to bottom, transparent 0, #000 12%, #000 88%, transparent 100%); }
+.ledger-scroll { display: flex; flex-direction: column; gap: 16px; animation: ledroll 18s linear infinite; }
+@keyframes ledroll { from { transform: translateY(0); } to { transform: translateY(-50%); } }
+.lg-row { display: flex; align-items: center; gap: 20px; padding: 18px 30px; border-radius: 14px;
+  background: #fff; box-shadow: 0 8px 22px rgba(30,72,60,.08);
+  font-family: 'JetBrains Mono', ui-monospace, monospace; }
+.lg-w { font-size: 34px; font-weight: 500; color: var(--stk-ink-2); }
+.lg-arr { font-size: 34px; color: var(--stk-teal); font-weight: 700; }
+.lg-amt { margin-left: auto; font-size: 32px; font-weight: 700; color: var(--stk-teal-d); }
+.lg-row.hot { background: var(--stk-teal-soft); box-shadow: 0 0 0 0 rgba(53,162,146,0); }
+.beat-ledger1.lit .lg-row.hot, .beat-trans.lit .lg-row.hot {
+  box-shadow: 0 0 36px 6px rgba(53,162,146,.45); }
+.beat-ledger1.lit .lg-row.hot .lg-amt::after { content: ' · STOLEN'; color: var(--stk-ink); font-size: 24px; letter-spacing: 1px; }
+.ld-watch { margin-top: 30px; font-size: 40px; font-weight: 700; color: var(--stk-muted); }
+.beat-ledger1.lit .ld-watch { color: var(--stk-teal-d); }
+
+/* ledger detail: dim the ledger so the chips read clearly on top */
+.beat-ledger2 .ledger { opacity: .32; }
+.ld-chips { position: absolute; inset: 0; display: flex; flex-wrap: wrap; align-content: center; justify-content: center;
+  gap: 22px 26px; pointer-events: none; }
+.chip { background: var(--stk-teal-soft); color: var(--stk-teal-d); font-size: 40px; font-weight: 800;
+  padding: 18px 34px; border-radius: 999px; box-shadow: 0 14px 30px rgba(30,72,60,.14);
+  opacity: 0; transform: scale(.5) translateY(20px); transition: opacity .35s ease, transform .5s cubic-bezier(.34,1.56,.64,1); }
+.chip.in { opacity: 1; transform: none; }
+.chip[data-c="3"] { background: var(--stk-teal-d); color: #fff; }
+
+/* ============================================================
+   BEAT 2 — 100% ANONYMOUS?  → FALSE
+   ============================================================ */
+.anon { position: relative; width: 940px; margin: 0 auto; text-align: center; }
+.anon-q { font-size: 120px; font-weight: 900; letter-spacing: -4px; line-height: 1.0; color: var(--stk-ink); }
+.anon-q .qm { color: var(--stk-teal); }
+.anon-stamp {
+  position: absolute; left: 50%; top: 52%; transform: translate(-50%, -50%) rotate(-13deg) scale(2.4);
+  font-size: 130px; font-weight: 900; letter-spacing: 4px; color: #232B33;
+  padding: 10px 40px; border: 12px solid #232B33; border-radius: 18px;
+  opacity: 0; }
+.beat-anon.stamp .anon-stamp { animation: stampin .42s cubic-bezier(.3,1.4,.5,1) forwards; }
+.beat-anon.stamp .anon-q { opacity: .25; transition: opacity .3s ease; }
+@keyframes stampin { 0% { opacity: 0; transform: translate(-50%, -50%) rotate(-13deg) scale(2.4); }
+  60% { opacity: 1; transform: translate(-50%, -50%) rotate(-13deg) scale(.92); }
+  100% { opacity: 1; transform: translate(-50%, -50%) rotate(-13deg) scale(1); } }
+
+/* ============================================================
+   BEAT 4 — Lazarus wallet, the world watching
+   ============================================================ */
+.watch { position: relative; width: 980px; height: 1180px; margin: 0 auto; display: flex; align-items: center; justify-content: center; }
+.wallet { position: relative; z-index: 3; width: 700px; background: #fff; border-radius: 30px;
+  box-shadow: 0 26px 60px rgba(30,72,60,.16); padding: 50px 56px; text-align: center; }
+.wl-top { font-size: 32px; font-weight: 700; letter-spacing: 1px; color: var(--stk-muted); text-transform: uppercase; }
+.wl-bal { font-size: 78px; font-weight: 900; letter-spacing: -2px; color: var(--stk-teal-d); margin: 18px 0 14px; }
+.wl-tag { font-size: 34px; font-weight: 700; color: var(--stk-ink-2); }
+.eyes { position: absolute; inset: 0; z-index: 1; }
+.ey { position: absolute; width: 150px; opacity: 0; transform: scale(.3);
+  transition: opacity .4s ease, transform .5s cubic-bezier(.34,1.56,.64,1); }
+.ey .eye { width: 100%; height: auto; display: block; }
+.beat-watch.seen .ey { opacity: 1; transform: none; }
+.ey.e0 { left: 40px;  top: 120px; transition-delay: 0s; }
+.ey.e1 { right: 30px; top: 90px;  transition-delay: .08s; }
+.ey.e2 { left: 90px;  bottom: 150px; transition-delay: .16s; }
+.ey.e3 { right: 80px; bottom: 120px; transition-delay: .24s; }
+.ey.e4 { left: 50%; top: 30px; transform: translateX(-50%) scale(.3); transition-delay: .32s; }
+.beat-watch.seen .ey.e4 { transform: translateX(-50%); }
+.ey.e5 { left: 50%; bottom: 40px; transform: translateX(-50%) scale(.3); transition-delay: .4s; }
+.beat-watch.seen .ey.e5 { transform: translateX(-50%); }
+
+/* ============================================================
+   BEAT 5 — stealing easy / spending hard
+   ============================================================ */
+.eh { width: 920px; margin: 0 auto; display: flex; flex-direction: column; gap: 44px; }
+.eh-row { display: flex; align-items: baseline; justify-content: center; gap: 30px; }
+.eh-k { font-size: 76px; font-weight: 800; letter-spacing: -2px; color: var(--stk-ink); }
+.eh-v { font-size: 64px; font-weight: 900; letter-spacing: -1px; }
+.eh-v.ok { color: var(--stk-teal-d); }
+.eh-v.no { color: var(--stk-ink); }
+.eh-row.r2 { opacity: 0; transform: translateY(26px) scale(.9); transition: opacity .4s ease, transform .5s cubic-bezier(.34,1.56,.64,1); }
+.beat-easyhard.hard .eh-row.r2 { opacity: 1; transform: none; }
+
+/* ============================================================
+   BEAT 6 — cash out blocked: FLAGGED & FROZEN
+   ============================================================ */
+.frz { position: relative; width: 1000px; height: 1180px; margin: 0 auto; }
+.frz-hacker { position: absolute; left: 0; bottom: 60px; height: 620px; width: auto; z-index: 3;
+  filter: drop-shadow(0 24px 40px rgba(20,40,33,.2)); }
+.frz-gate { position: absolute; right: 20px; bottom: 120px; width: 470px; height: 560px;
+  background: #fff; border-radius: 26px 26px 0 0; box-shadow: 0 24px 54px rgba(30,72,60,.14); overflow: hidden; z-index: 2; }
+.frz-sign { position: absolute; top: 0; left: 0; right: 0; height: 96px; background: var(--stk-teal);
+  color: #fff; font-size: 46px; font-weight: 900; letter-spacing: 1px; display: flex; align-items: center; justify-content: center; }
+.frz-shutter { position: absolute; left: 0; right: 0; top: 96px; height: 0;
+  background: repeating-linear-gradient(#cfdad6 0 14px, #b8c6c1 14px 18px);
+  transition: height .35s cubic-bezier(.5,0,.4,1); }
+.beat-frozen.froze .frz-shutter { height: calc(100% - 96px); }
+.frz-lock { position: absolute; left: 50%; top: 58%; transform: translate(-50%,-50%) scale(.4); width: 200px; opacity: 0; z-index: 4; }
+.frz-lock .lock { width: 100%; height: auto; }
+.beat-frozen.froze .frz-lock { opacity: 1; transform: translate(-50%,-50%) scale(1); transition: opacity .3s ease .15s, transform .45s cubic-bezier(.34,1.56,.64,1) .15s; }
+.frz-flag { position: absolute; left: 40px; top: 60px; z-index: 5; background: var(--stk-ink); color: #fff;
+  font-size: 44px; font-weight: 900; letter-spacing: 2px; padding: 12px 28px; border-radius: 12px; transform: rotate(-8deg) scale(.4); opacity: 0; }
+.beat-frozen.flag .frz-flag { opacity: 1; transform: rotate(-8deg) scale(1); transition: opacity .25s ease, transform .4s cubic-bezier(.34,1.56,.64,1); }
+.frz-stamp { position: absolute; left: 66%; top: 60%; transform: translate(-50%,-50%) rotate(-12deg) scale(2.0);
+  font-size: 92px; font-weight: 900; letter-spacing: 3px; color: #232B33; padding: 8px 30px;
+  border: 10px solid #232B33; border-radius: 16px; opacity: 0; z-index: 6;
+  background: rgba(255,255,255,.78); }
+.beat-frozen.froze .frz-stamp { animation: stampin .42s cubic-bezier(.3,1.4,.5,1) forwards; }
+
+/* ============================================================
+   MOVES (shared)
+   ============================================================ */
+.mv { position: relative; width: 1000px; height: 1200px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; }
+.mv-head { display: flex; align-items: center; gap: 26px; margin-top: 40px; }
+.mv-n { width: 110px; height: 110px; border-radius: 26px; background: var(--stk-teal-d); color: #fff;
+  font-size: 70px; font-weight: 900; display: flex; align-items: center; justify-content: center; box-shadow: 0 14px 30px rgba(30,72,60,.2); }
+.mv-t { font-size: 88px; font-weight: 900; letter-spacing: -2.5px; color: var(--stk-ink); }
+.mv-sub { position: absolute; bottom: 80px; left: 0; right: 0; text-align: center; font-size: 38px; font-weight: 600; color: var(--stk-muted); }
+.coin { display: block; }
+
+/* MOVE 1 — chain hopping */
+.hop { position: relative; width: 900px; height: 640px; margin: 60px auto 0; }
+.chain { position: absolute; top: 360px; transform: translateX(-50%);
+  background: var(--stk-teal-soft); color: var(--stk-teal-d); font-size: 44px; font-weight: 800;
+  padding: 22px 30px; border-radius: 20px; box-shadow: 0 12px 26px rgba(30,72,60,.12); }
+.chain.c0 { left: 12%; } .chain.c1 { left: 37.3%; } .chain.c2 { left: 62.6%; } .chain.c3 { left: 88%; }
+.hop .hopper { position: absolute; width: 150px; height: 150px; object-fit: contain; top: 250px; left: 12%;
+  margin-left: -75px; filter: drop-shadow(0 12px 18px rgba(20,40,33,.2)); animation: hopacross 3.4s cubic-bezier(.45,0,.55,1) infinite; }
+@keyframes hopacross {
+  0%   { left: 12%;   top: 250px; }
+  12%  { top: 70px; }
+  25%  { left: 37.3%; top: 250px; }
+  37%  { top: 70px; }
+  50%  { left: 62.6%; top: 250px; }
+  62%  { top: 70px; }
+  75%  { left: 88%;   top: 250px; }
+  87%  { top: 110px; }
+  100% { left: 12%;   top: 250px; }
+}
+
+/* MOVE 2 — mixers (coins orbit into the tumbler) */
+.mix { position: relative; width: 760px; height: 760px; margin: 40px auto 0; display: flex; align-items: center; justify-content: center; }
+.tumbler { position: relative; z-index: 3; width: 460px; height: auto; object-fit: contain; filter: drop-shadow(0 26px 44px rgba(20,40,33,.22)); }
+.mix-swirl { position: absolute; inset: 0; z-index: 1; animation: swirl 4.5s linear infinite; }
+@keyframes swirl { to { transform: rotate(360deg); } }
+.mc { position: absolute; width: 96px; height: 96px; object-fit: contain; left: 50%; top: 50%; opacity: .92;
+  filter: drop-shadow(0 6px 10px rgba(20,40,33,.16)); }
+.mc0 { transform: translate(-50%,-50%) rotate(0deg)   translateX(300px); }
+.mc1 { transform: translate(-50%,-50%) rotate(36deg)  translateX(330px); }
+.mc2 { transform: translate(-50%,-50%) rotate(72deg)  translateX(280px); }
+.mc3 { transform: translate(-50%,-50%) rotate(108deg) translateX(320px); }
+.mc4 { transform: translate(-50%,-50%) rotate(144deg) translateX(290px); }
+.mc5 { transform: translate(-50%,-50%) rotate(180deg) translateX(330px); }
+.mc6 { transform: translate(-50%,-50%) rotate(216deg) translateX(280px); }
+.mc7 { transform: translate(-50%,-50%) rotate(252deg) translateX(320px); }
+.mc8 { transform: translate(-50%,-50%) rotate(288deg) translateX(300px); }
+.mc9 { transform: translate(-50%,-50%) rotate(324deg) translateX(330px); }
+
+/* MOVE 3 — splitting (one pile shatters into a cloud) */
+.split { position: relative; width: 760px; height: 700px; margin: 50px auto 0; }
+.big-coin { position: absolute; left: 50%; top: 50%; width: 280px; height: 280px; object-fit: contain;
+  transform: translate(-50%,-50%); filter: drop-shadow(0 18px 30px rgba(20,40,33,.22));
+  transition: opacity .4s ease, transform .5s ease; }
+.beat-m3.burst .big-coin { opacity: 0; transform: translate(-50%,-50%) scale(.3); }
+.sc { position: absolute; left: 50%; top: 50%; width: 70px; height: 70px; object-fit: contain;
+  transform: translate(-50%,-50%) scale(.2); opacity: 0;
+  transition: transform .7s cubic-bezier(.3,.9,.3,1), opacity .5s ease; filter: drop-shadow(0 5px 8px rgba(20,40,33,.16)); }
+.beat-m3.burst .sc { opacity: 1; }
+.beat-m3.burst .sc0  { transform: translate(-310px,-230px) scale(.7); }
+.beat-m3.burst .sc1  { transform: translate(-140px,-280px) scale(.55); }
+.beat-m3.burst .sc2  { transform: translate(60px,-300px)  scale(.8); }
+.beat-m3.burst .sc3  { transform: translate(250px,-240px) scale(.6); }
+.beat-m3.burst .sc4  { transform: translate(330px,-90px)  scale(.7); }
+.beat-m3.burst .sc5  { transform: translate(300px,90px)   scale(.5); }
+.beat-m3.burst .sc6  { transform: translate(250px,250px)  scale(.75); }
+.beat-m3.burst .sc7  { transform: translate(80px,300px)   scale(.55); }
+.beat-m3.burst .sc8  { transform: translate(-120px,300px) scale(.7); }
+.beat-m3.burst .sc9  { transform: translate(-290px,240px) scale(.6); }
+.beat-m3.burst .sc10 { transform: translate(-340px,80px)  scale(.8); }
+.beat-m3.burst .sc11 { transform: translate(-300px,-70px) scale(.5); }
+.beat-m3.burst .sc12 { transform: translate(-180px,-150px) scale(.6); }
+.beat-m3.burst .sc13 { transform: translate(170px,-160px) scale(.65); }
+.beat-m3.burst .sc14 { transform: translate(180px,170px)  scale(.6); }
+.beat-m3.burst .sc15 { transform: translate(-170px,170px) scale(.55); }
+
+/* ============================================================
+   BEAT 10 — the most transparent money ever made
+   ============================================================ */
+.beat-trans .ledger { opacity: .2; }
+.trans-card { position: absolute; left: 50px; right: 50px; top: 300px; z-index: 4; text-align: center;
+  background: rgba(255,255,255,.92); border-radius: 28px; padding: 50px 40px 44px;
+  box-shadow: 0 22px 50px rgba(30,72,60,.12); }
+.trans-head { font-size: 80px; font-weight: 900; letter-spacing: -2.5px; line-height: 1.04; color: var(--stk-ink); }
+.trans-head .key { color: var(--stk-teal); }
+.trans-sub { margin-top: 22px; font-size: 40px; font-weight: 700; color: var(--stk-muted); }
+.beat-trans.lit .lg-row.hot { box-shadow: 0 0 36px 6px rgba(53,162,146,.4); }
+
+/* ============================================================
+   BEAT 11 — callback
+   ============================================================ */
+.cb { position: relative; width: 1000px; height: 1180px; margin: 0 auto; }
+.cb-hacker { position: absolute; left: 10px; bottom: 40px; height: 700px; width: auto; z-index: 2;
+  filter: drop-shadow(0 26px 44px rgba(20,40,33,.2)); }
+.cb-lines { position: absolute; right: 0; top: 200px; width: 560px; display: flex; flex-direction: column; gap: 60px; z-index: 3; }
+.cb-l { font-size: 64px; font-weight: 800; letter-spacing: -1.5px; line-height: 1.05; color: var(--stk-ink); text-align: right; }
+.cb-l b { color: var(--stk-teal-d); font-size: 1.15em; }
+.cb-l .key { color: var(--stk-teal); }
+.cb-l.l2 { opacity: 0; transform: translateY(28px); transition: opacity .45s ease, transform .55s cubic-bezier(.2,.8,.2,1); }
+.beat-callback.l2 .cb-l.l2 { opacity: 1; transform: none; }
+
+/* ============================================================
+   ENUMERATION docked logo (corner progress badge)
+   ============================================================ */
+.enum-layer .se2-toptext { display: none; }
+.enum-layer .se2-tile {
+  filter: drop-shadow(0 8px 8px rgba(16,50,40,.14))
+          drop-shadow(2px 0 0 #1b2024) drop-shadow(-2px 0 0 #1b2024)
+          drop-shadow(0 2px 0 #1b2024) drop-shadow(0 -2px 0 #1b2024); }
+.enum-layer .se2-tile:not(.active) .se2-tile-top  { background: #ffffff; }
+.enum-layer .se2-tile:not(.active) .se2-tile-side { background: #e8edeb; }
+.enum-layer .se2-tile.active .se2-tile-side { background: #247c68; }
+.enum-layer .se2-tile-top span.glyph {
+  font-size: 76px; font-weight: 900; letter-spacing: 0; color: var(--stk-ink);
+  background: none; padding: 0; border-radius: 0; }
+.enum-layer .se2-tile.active .se2-tile-top span.glyph { color: #fff; }
+/* enumeration card image tiles: show the move number while listing */
+.enum-layer .se2-tile-top span { font-family: var(--stk-font); }
+
+/* ============================================================
+   OUTRO endcard (default `outro` element)
+   ============================================================ */
+.outro-layer { z-index: 4; opacity: 0; transition: opacity .5s ease; pointer-events: none; }
+.outro-layer.show { opacity: 1; }
+.ec { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 30px; }
+#ec-logo { display: flex; }
+#ec-logo svg { width: 560px; height: auto; display: block; }
+.ec .lyr { opacity: 0; transform: translateY(-52px) scale(.78); transform-box: fill-box; transform-origin: 50% 50%;
+  transition: transform .58s cubic-bezier(.34,1.56,.5,1) var(--d), opacity .42s ease var(--d); }
+.outro-layer.play .lyr { opacity: 1; transform: none; }
+.ec .chev path { stroke-dasharray: 300; stroke-dashoffset: 300; transition: stroke-dashoffset .55s ease .40s; }
+.outro-layer.play .chev path { stroke-dashoffset: 0; }
+.ec .wm { font-family: 'Nunito', var(--stk-font); font-weight: 900; font-size: 152px; letter-spacing: -3px; line-height: 1;
+  opacity: 0; transform: translateY(30px); transition: opacity .5s ease .52s, transform .62s cubic-bezier(.2,.8,.2,1) .52s; }
+.outro-layer.play .wm { opacity: 1; transform: none; }
+.ec .wm .s { color: var(--stk-ink); }
+.ec .wm .t { color: var(--stk-teal); }
+.ec .url { font-family: 'Nunito', var(--stk-font); font-weight: 700; font-size: 44px; letter-spacing: 7px; color: var(--stk-muted);
+  opacity: 0; transform: translateY(16px); transition: opacity .5s ease .74s, transform .5s ease .74s, letter-spacing .7s ease .74s; }
+.outro-layer.play .url { opacity: 1; transform: none; letter-spacing: 4px; }
+.ec-folder { margin-top: 8px; font-size: 32px; font-weight: 600; color: var(--stk-muted);
+  opacity: 0; transform: translateY(12px); transition: opacity .5s ease, transform .5s ease; }
+.ec-folder b { color: var(--stk-teal-d); font-weight: 800; }
+.outro-layer.folder-in .ec-folder { opacity: 1; transform: none; }
+
+/* ============================================================
+   SUBTITLES
+   ============================================================ */
+.stk-subs { bottom: 150px; }
+.stk-subs-line {
+  font-size: 46px; font-weight: 700; color: var(--stk-muted);
+  background: rgba(255,255,255,.72); padding: 8px 22px; border-radius: 14px;
+  -webkit-backdrop-filter: blur(2px); backdrop-filter: blur(2px);
+}
+.stk-subs-line b { color: var(--stk-teal-d); font-weight: 800; }

@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800;900&family=Nunito:wght@800;900&display=swap" rel="stylesheet">
+<style>
+  :root{ --teal:#35A292; --teal-d:#119271; --teal-soft:#e7f4ef; --ink:#141a1e; --muted:#8a949d; }
+  html,body{ margin:0; padding:0; }
+  .thumb{
+    position:relative; width:1280px; height:720px; overflow:hidden;
+    font-family:'Inter',system-ui,sans-serif; -webkit-font-smoothing:antialiased;
+    background-color:#fff;
+    background-image:
+      linear-gradient(to right, rgba(35,43,51,0.06) 3px, transparent 3px),
+      linear-gradient(to bottom, rgba(35,43,51,0.06) 3px, transparent 3px);
+    background-size:96px 96px; background-position:center;
+  }
+  /* faint rising chart behind the coins */
+  .chart{ position:absolute; right:0; bottom:0; width:760px; height:560px; }
+  .chart path.area{ fill:url(#g); }
+  .chart path.line{ fill:none; stroke:var(--teal); stroke-width:7; stroke-linecap:round; opacity:.85; }
+
+  .headline{ position:absolute; left:84px; top:50%; transform:translateY(-50%); z-index:5; }
+  .l1{ font-weight:800; font-size:62px; letter-spacing:-1px; color:var(--ink); margin-bottom:4px; }
+  .l2{ font-weight:900; font-size:150px; line-height:.9; letter-spacing:-6px; color:var(--teal); }
+  .l3{ font-weight:900; font-size:82px; line-height:1; letter-spacing:-2.5px; color:var(--ink); margin-top:8px; }
+
+  .coin-stage{ position:absolute; right:0; top:0; width:560px; height:720px; z-index:4; }
+  .big-coin{ position:absolute; right:70px; top:104px; width:340px;
+    filter:drop-shadow(0 30px 46px rgba(16,50,40,.32)); }
+  .doge{ position:absolute; right:24px; bottom:-10px; width:210px;
+    filter:drop-shadow(0 16px 28px rgba(16,50,40,.3)); }
+  .chip{ position:absolute; display:flex; align-items:center; justify-content:center;
+    border-radius:50%; font-weight:900; color:var(--teal-d); background:var(--teal-soft);
+    box-shadow:0 12px 26px rgba(16,50,40,.14); }
+  .chip.gold{ background:#fbe6c0; color:#9a6b16; }
+  .chip.pill{ border-radius:999px; padding:0 24px; width:auto; background:#fff; color:var(--teal-d); }
+  .c1{ right:430px; top:90px;  width:96px;  height:96px;  font-size:46px; }
+  .c2{ right:60px;  top:60px;  width:120px; height:120px; font-size:58px; }
+  .c3{ right:470px; top:330px; width:108px; height:108px; font-size:50px; }
+  .c4{ right:150px; top:430px; width:86px;  height:86px;  font-size:40px; }
+  .c5{ right:360px; bottom:120px; height:72px; font-size:40px; }
+  .c6{ right:30px;  top:300px; width:80px;  height:80px;  font-size:40px; }
+
+  .brand{ position:absolute; left:84px; bottom:46px; z-index:6;
+    font-family:'Nunito',system-ui,sans-serif; font-weight:900; font-size:54px; letter-spacing:-1.5px; }
+  .brand .s{ color:var(--ink); } .brand .t{ color:var(--teal); }
+</style>
+</head>
+<body>
+<div class="thumb" id="thumb">
+  <svg class="chart" viewBox="0 0 760 560" preserveAspectRatio="none">
+    <defs><linearGradient id="g" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#35A292" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#35A292" stop-opacity="0.01"/>
+    </linearGradient></defs>
+    <path class="area" d="M0,520 C150,500 230,470 340,360 C430,270 520,210 760,40 L760,560 L0,560 Z"/>
+    <path class="line" d="M0,520 C150,500 230,470 340,360 C430,270 520,210 760,40"/>
+  </svg>
+
+  <div class="headline">
+    <div class="l1">Why are there</div>
+    <div class="l2">MILLIONS</div>
+    <div class="l3">of crypto coins?</div>
+  </div>
+
+  <div class="coin-stage">
+    <img class="big-coin" src="../assets/photos/bitcoin_dash.png" alt="">
+    <div class="chip gold c2">₿</div>
+    <div class="chip c1">Ξ</div>
+    <div class="chip c3">◎</div>
+    <div class="chip c4">⬡</div>
+    <div class="chip pill c5">$DOGE</div>
+    <div class="chip c6">$</div>
+    <img class="doge" src="../assets/photos/doge_dash.png" alt="">
+  </div>
+
+  <div class="brand"><span class="s">stack</span><span class="t">tags</span></div>
+</div>
+</body>
+</html>

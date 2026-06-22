@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>stacktags — thumbnail</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root { --teal:#35A292; --teal-d:#119271; --teal-soft:#e7f4ef; --ink:#141a1e; --muted:#8a949d; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: #1b1f23; }
+  .thumb {
+    position: relative; width: 1280px; height: 720px; overflow: hidden;
+    background: #fff; font-family: 'Inter', system-ui, sans-serif; -webkit-font-smoothing: antialiased;
+    background-image:
+      linear-gradient(to right,  rgba(35,43,51,.05) 2px, transparent 2px),
+      linear-gradient(to bottom, rgba(35,43,51,.05) 2px, transparent 2px);
+    background-size: 84px 84px;
+  }
+
+  /* left text block */
+  .copy { position: absolute; left: 70px; top: 96px; width: 760px; z-index: 5; }
+  .kicker { display: inline-block; font-weight: 800; font-size: 30px; letter-spacing: 3px; text-transform: uppercase;
+    color: var(--teal-d); background: var(--teal-soft); padding: 10px 20px; border-radius: 10px; margin-bottom: 26px; }
+  .hl { font-weight: 900; letter-spacing: -0.03em; line-height: 0.95; margin: 0; color: var(--ink); }
+  .l1 { font-size: 132px; }
+  .l1 .d { color: var(--teal); }
+  .l2 { font-size: 96px; margin-top: 6px; }
+  .l2 .accent { color: var(--teal); }
+  .sub { margin-top: 36px; font-size: 40px; font-weight: 700; color: var(--muted); }
+  .sub b { color: var(--ink); font-weight: 800; }
+
+  /* hacker on the right, bottom-aligned */
+  .hacker { position: absolute; right: 24px; bottom: -10px; height: 640px; width: auto; z-index: 6;
+    filter: drop-shadow(0 26px 40px rgba(20,40,33,.28)); }
+
+  /* faint rising bars behind / bottom */
+  .bars { position: absolute; right: 70px; bottom: 0; display: flex; align-items: flex-end; gap: 22px; z-index: 2; opacity: .9; }
+  .bar { width: 70px; border-radius: 14px 14px 0 0; background: var(--teal-soft); }
+  .bar.b1 { height: 120px; } .bar.b2 { height: 180px; } .bar.b3 { height: 150px; }
+  .bar.b4 { height: 340px; background: var(--teal); }
+
+  /* logo mark top-right */
+  .mark { position: absolute; right: 40px; top: 36px; z-index: 7; display: flex; align-items: center; gap: 14px; }
+  .mark .wm { font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 40px; letter-spacing: -1px; }
+  .mark .wm .s { color: var(--ink); } .mark .wm .t { color: var(--teal); }
+</style>
+</head>
+<body>
+<div class="thumb" id="thumb">
+  <div class="mark"><span class="wm"><span class="s">stack</span><span class="t">tags</span></span></div>
+
+  <div class="bars"><div class="bar b1"></div><div class="bar b2"></div><div class="bar b3"></div><div class="bar b4"></div></div>
+
+  <div class="copy">
+    <span class="kicker">Crypto crime</span>
+    <h1 class="hl l1"><span class="d">$</span>1.5 BILLION</h1>
+    <h1 class="hl l2">stolen. <span class="accent">Now spend it.</span></h1>
+    <div class="sub">Why even a state hacker <b>can't hide it</b></div>
+  </div>
+
+  <img class="hacker" src="/video/assets/photos/hacker_loot.png" alt="">
+</div>
+</body>
+</html>

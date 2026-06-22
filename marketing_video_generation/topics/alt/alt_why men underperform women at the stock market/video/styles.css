@@ -1,0 +1,296 @@
+/* ============================================================
+   "why men underperform women at the stock market" — scene styling
+   White + turquoise (#35A292), Inter, no borders, dynamic grid.
+   Colour language: TEAL = patient / winner / buy-and-hold / women;
+   GREY = busy / loser / active trader / men. Red only never used as UI.
+   Scene wrappers are posed by app.js (transform/opacity/blur via JS).
+   ============================================================ */
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; height: 100%; overflow: hidden; background: #070b0a; }
+body { font-family: var(--stk-font); color: var(--stk-ink); }
+
+.wrap { position: fixed; inset: 0; display: flex; align-items: center; justify-content: center; }
+.stage {
+  position: relative; width: 1080px; height: 1920px; flex-shrink: 0;
+  transform-origin: center center; overflow: hidden; background: #fff;
+}
+#grid { z-index: 0; }
+.scenes { position: absolute; inset: 0; z-index: 1; }
+
+/* base scene: app.js sets --tx/--ty/--s + opacity/filter/zIndex */
+.scene {
+  position: absolute; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0; transform-origin: center center;
+  will-change: transform, opacity, filter;
+  transform: translate(var(--tx,0px), var(--ty,0px)) scale(var(--s,1));
+}
+.host { position: absolute; inset: 0; }
+.host.faint { opacity: .22; }
+
+/* ===== shared bits ===== */
+.eyebrow {
+  position: absolute; left: 0; right: 0; top: 250px; text-align: center;
+  font-weight: 800; font-size: 30px; letter-spacing: 5px; text-transform: uppercase;
+  color: var(--stk-teal); z-index: 4;
+}
+.eyebrow .n { color: var(--stk-teal-d); }
+.scene-title {
+  position: absolute; left: 0; right: 0; top: 330px; text-align: center; padding: 0 90px;
+  font-weight: 800; font-size: 66px; line-height: 1.1; letter-spacing: -1.8px; color: var(--stk-ink); z-index: 4;
+}
+.scene-title b { color: var(--stk-teal-d); }
+.scene-title .grey { color: var(--stk-muted); }
+
+.pill {
+  display: inline-flex; align-items: center; gap: 18px;
+  background: var(--stk-teal-soft); color: var(--stk-teal-d);
+  font-weight: 800; font-size: 40px; letter-spacing: .5px;
+  padding: 24px 46px; border-radius: 999px;
+}
+.pill .dot { width: 18px; height: 18px; border-radius: 50%; background: var(--stk-teal); }
+
+/* ============================================================
+   HOOK — sc-open : headline + the two characters facing off
+   ============================================================ */
+#sc-open .open-head {
+  position: absolute; left: 0; right: 0; top: 300px; text-align: center; padding: 0 70px;
+  font-weight: 900; font-size: 92px; line-height: 1.02; letter-spacing: -3px; color: var(--stk-ink);
+}
+#sc-open .open-head .w { color: var(--stk-teal-d); }
+#sc-open .open-head .m { color: var(--stk-muted); }
+#sc-open .open-sub {
+  position: absolute; left: 0; right: 0; top: 600px; text-align: center; padding: 0 110px;
+  font-weight: 700; font-size: 44px; line-height: 1.25; color: var(--stk-ink-2);
+}
+#sc-open .open-sub b { color: var(--stk-teal-d); }
+.open-figs { position: absolute; left: 0; right: 0; bottom: 260px; height: 650px; }
+.open-fig { position: absolute; bottom: 0; filter: drop-shadow(0 30px 50px rgba(20,40,33,.22)); }
+.open-fig img { display: block; height: 100%; width: auto; }
+.open-fig.man   { left: 10px;  height: 560px; transform: translateY(40px) scale(.6) rotate(-3deg); opacity: 0; transition: transform .7s cubic-bezier(.34,1.56,.64,1), opacity .5s ease; }
+.open-fig.woman { right: 0px;  height: 600px; transform: translateY(40px) scale(.6) rotate(3deg);  opacity: 0; transition: transform .7s cubic-bezier(.34,1.56,.64,1) .12s, opacity .5s ease .12s; }
+#sc-open.lit .open-fig.man   { transform: none; opacity: 1; }
+#sc-open.lit .open-fig.woman { transform: none; opacity: 1; }
+.open-vs {
+  position: absolute; left: 50%; bottom: 430px; transform: translate(-50%,50%) scale(.4);
+  width: 150px; height: 150px; border-radius: 50%; background: #fff;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 900; font-size: 76px; letter-spacing: -2px; color: var(--stk-teal);
+  box-shadow: 0 18px 44px rgba(16,50,40,.20);
+  opacity: 0; transition: transform .5s cubic-bezier(.34,1.56,.64,1) .3s, opacity .4s ease .3s; z-index: 6;
+}
+#sc-open.lit .open-vs { transform: translate(-50%,50%) scale(1); opacity: 1; }
+
+/* ============================================================
+   sc-pros1 — even the pros / here's the psychology
+   ============================================================ */
+.center-col {
+  position: absolute; inset: 0; display: flex; flex-direction: column;
+  align-items: center; justify-content: center; gap: 54px; padding: 0 90px; text-align: center;
+}
+.big-line { font-weight: 900; font-size: 84px; line-height: 1.05; letter-spacing: -2.6px; color: var(--stk-ink); }
+.big-line b { color: var(--stk-teal-d); }
+.big-line .grey { color: var(--stk-muted); }
+.tease {
+  font-weight: 800; font-size: 46px; letter-spacing: -1px; color: var(--stk-teal);
+  display: flex; flex-direction: column; align-items: center; gap: 10px;
+}
+.tease .arrow { font-size: 56px; }
+
+/* ============================================================
+   sc-glitch — the disposition effect portfolio
+   ============================================================ */
+.glitch-cols { position: absolute; left: 60px; right: 60px; top: 560px; bottom: 240px; display: flex; gap: 50px; }
+.glitch-col { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 30px; }
+.glitch-col .col-head { font-weight: 900; font-size: 50px; letter-spacing: -1px; }
+.glitch-col.win .col-head { color: var(--stk-teal-d); }
+.glitch-col.lose .col-head { color: var(--stk-muted); }
+.stock {
+  position: relative; width: 360px; padding: 36px 30px; border-radius: 30px; background: #fff;
+  box-shadow: 0 18px 44px rgba(16,50,40,.12);
+  display: flex; align-items: center; justify-content: space-between;
+  opacity: 0; transform: translateY(30px) scale(.9);
+  transition: transform .55s cubic-bezier(.34,1.56,.64,1), opacity .4s ease, box-shadow .4s ease;
+}
+.stock .tk { font-weight: 900; font-size: 52px; letter-spacing: -1px; color: var(--stk-ink); }
+.stock .pct { font-weight: 800; font-size: 46px; letter-spacing: -1px; }
+.stock.up   { background: var(--stk-teal-soft); }
+.stock.up .pct { color: var(--stk-teal-d); }
+.stock.down .pct { color: var(--stk-muted); }
+.glitch-col .stock.show { opacity: 1; transform: none; }
+/* winner cards get SOLD and fly up and away */
+.stock .tag {
+  position: absolute; top: -26px; right: -18px; transform: rotate(8deg) scale(.4);
+  font-weight: 900; font-size: 30px; letter-spacing: 1px; padding: 10px 22px; border-radius: 999px;
+  background: var(--stk-teal); color: #fff; opacity: 0; transition: transform .4s cubic-bezier(.34,1.56,.64,1), opacity .3s ease;
+}
+.stock.down .tag { background: var(--stk-muted); }
+.stock.tagged .tag { opacity: 1; transform: rotate(8deg) scale(1); }
+.glitch-col.win.sold .stock { transform: translateY(-420px) scale(.7) rotate(-6deg); opacity: 0; transition: transform .8s cubic-bezier(.5,.1,.7,.5), opacity .7s ease; }
+/* loser column: a clutching hand grips the cards (sits right under them) */
+.clutch {
+  margin-top: -18px; font-size: 132px; line-height: 1;
+  transform: translateY(40px) scale(.5); transform-origin: 50% 0;
+  opacity: 0; transition: transform .6s cubic-bezier(.34,1.56,.64,1), opacity .4s ease; z-index: 5;
+}
+.glitch-col.lose.held .clutch { opacity: 1; transform: translateY(0) scale(1); }
+.glitch-col.lose.held .stock { box-shadow: 0 14px 34px rgba(16,50,40,.10); }
+
+/* ============================================================
+   sc-fifty / sc-pros2 — big counting number
+   ============================================================ */
+.bignum-wrap { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 36px; padding: 0 90px; text-align: center; }
+.bignum { font-weight: 900; font-size: 300px; line-height: .9; letter-spacing: -10px; color: var(--stk-teal-d); font-variant-numeric: tabular-nums; }
+.bignum .u { font-size: 150px; letter-spacing: -4px; }
+.bignum-sub { font-weight: 800; font-size: 56px; line-height: 1.12; letter-spacing: -1.4px; color: var(--stk-ink); max-width: 860px; }
+.bignum-sub b { color: var(--stk-teal-d); }
+.bignum-sub .grey { color: var(--stk-muted); }
+.bignum-cap { font-weight: 700; font-size: 34px; letter-spacing: 1px; color: var(--stk-muted); }
+
+/* ============================================================
+   sc-tax — tax-wise backwards
+   ============================================================ */
+.tax-cards { position: absolute; left: 70px; right: 70px; top: 620px; display: flex; gap: 46px; }
+.tax-card {
+  flex: 1; background: #fff; border-radius: 34px; padding: 50px 40px; text-align: center;
+  box-shadow: 0 22px 50px rgba(16,50,40,.12); position: relative;
+  opacity: 0; transform: translateY(36px); transition: opacity .5s ease, transform .6s cubic-bezier(.2,.8,.2,1);
+}
+.scene.show-tax .tax-card { opacity: 1; transform: none; }
+.tax-card .tc-act { font-weight: 800; font-size: 40px; letter-spacing: -.5px; color: var(--stk-ink); }
+.tax-card .tc-icon { font-size: 130px; margin: 18px 0 6px; }
+.tax-card .tc-res { font-weight: 800; font-size: 36px; color: var(--stk-muted); margin-top: 8px; }
+.tax-card.held { background: var(--stk-teal-soft); }
+.tax-card.held .tc-res { color: var(--stk-teal-d); }
+/* the TAX BILL rubber stamp (charcoal, deliberately rotated) */
+.tax-stamp {
+  position: absolute; left: 50%; top: 46%; transform: translate(-50%,-50%) rotate(-14deg) scale(2.4);
+  font-weight: 900; font-size: 56px; letter-spacing: 2px; color: #2b333b;
+  padding: 14px 30px; border-radius: 14px; box-shadow: inset 0 0 0 6px #2b333b;
+  opacity: 0; background: rgba(255,255,255,.4);
+  transition: transform .26s cubic-bezier(.5,1.7,.5,1), opacity .18s ease;
+}
+.tax-card.stamped .tax-stamp { opacity: .9; transform: translate(-50%,-50%) rotate(-14deg) scale(1); }
+.tax-card.held .glow-tag {
+  position: absolute; left: 50%; bottom: 36px; transform: translateX(-50%) scale(.5); opacity: 0;
+  font-weight: 900; font-size: 30px; letter-spacing: 1px; color: #fff; background: var(--stk-teal-d);
+  padding: 12px 26px; border-radius: 999px; transition: transform .4s cubic-bezier(.34,1.56,.64,1), opacity .3s ease;
+}
+.tax-card.held.lit .glow-tag { opacity: 1; transform: translateX(-50%) scale(1); }
+.tax-card.held.lit { box-shadow: 0 22px 60px rgba(53,162,146,.4); }
+
+/* ============================================================
+   sc-bars — the default graph-chart bar + per-bar value labels
+   ============================================================ */
+#sc-bars .stk-chart-bar:not(.peak) { fill: var(--stk-muted); }   /* "most active 20%" bar = grey */
+/* per-bar value labels (SVG text appended by app.js at the bar tops) */
+#sc-bars .bar-val-svg {
+  font-family: var(--stk-font, 'Inter', sans-serif);
+  font-weight: 900; font-size: 68px; letter-spacing: -2px;
+  font-variant-numeric: tabular-nums; transition: opacity .3s ease;
+}
+#sc-bars .bar-val-svg.busy { fill: var(--stk-muted); }
+#sc-bars .bar-val-svg.calm { fill: var(--stk-teal-d); }
+#sc-bars .bar-cat-svg {
+  font-family: var(--stk-font, 'Inter', sans-serif);
+  font-weight: 700; font-size: 34px; letter-spacing: -.3px; fill: var(--stk-muted);
+  transition: opacity .3s ease;
+}
+
+/* ============================================================
+   sc-cost — text beat
+   ============================================================ */
+/* uses .center-col / .big-line */
+
+/* ============================================================
+   sc-overconf — the overconfident male trader
+   ============================================================ */
+.oc-fig { position: absolute; left: 50%; bottom: 360px; transform: translateX(-52%); height: 820px; filter: drop-shadow(0 30px 50px rgba(20,40,33,.22)); opacity: 0; transition: opacity .5s ease, transform .7s cubic-bezier(.34,1.4,.6,1); }
+.scene.show-oc .oc-fig { opacity: 1; transform: translateX(-52%) translateY(0); }
+.oc-fig img { height: 100%; width: auto; display: block; }
+.oc-fig.shake { animation: oc-shake .35s ease-in-out infinite; }
+@keyframes oc-shake { 0%,100% { transform: translateX(-52%) rotate(-1.5deg); } 50% { transform: translateX(-52%) rotate(1.5deg); } }
+.oc-tag {
+  position: absolute; top: 350px; right: 70px; transform: scale(.4) rotate(6deg); opacity: 0;
+  font-weight: 900; font-size: 84px; letter-spacing: -2px; color: var(--stk-muted); z-index: 4;
+  transition: transform .5s cubic-bezier(.34,1.7,.5,1), opacity .4s ease;
+}
+.oc-tag .small { display: block; font-size: 34px; letter-spacing: 3px; color: var(--stk-ink-2); text-transform: uppercase; }
+.scene.show-oc .oc-tag { opacity: 1; transform: scale(1) rotate(6deg); }
+.oc-eyebrow {
+  position: absolute; left: 0; right: 0; top: 250px; text-align: center;
+  font-weight: 800; font-size: 38px; letter-spacing: 4px; text-transform: uppercase; color: var(--stk-teal-d); z-index: 4;
+  opacity: 0; transition: opacity .4s ease .2s;
+}
+.scene.show-oc .oc-eyebrow { opacity: 1; }
+.oc-bottom {
+  position: absolute; left: 0; right: 0; bottom: 200px; text-align: center; padding: 0 90px;
+  font-weight: 800; font-size: 46px; letter-spacing: -1px; color: var(--stk-ink); z-index: 4;
+  opacity: 0; transform: translateY(18px); transition: opacity .5s ease, transform .5s ease;
+}
+.scene.show-oc.cap .oc-bottom { opacity: 1; transform: none; }
+.oc-bottom b { color: var(--stk-teal-d); }
+
+/* ============================================================
+   sc-secret — calm overtakes + payoff line
+   ============================================================ */
+#sc-secret .secret-head {
+  position: absolute; left: 0; right: 0; top: 250px; text-align: center; padding: 0 80px; z-index: 4;
+  font-weight: 900; font-size: 86px; line-height: 1.04; letter-spacing: -2.8px; color: var(--stk-ink);
+}
+#sc-secret .secret-head b { color: var(--stk-teal-d); }
+#sc-secret .secret-sub {
+  position: absolute; left: 0; right: 0; bottom: 210px; text-align: center; padding: 0 110px; z-index: 4;
+  font-weight: 700; font-size: 44px; line-height: 1.25; color: var(--stk-ink-2);
+  opacity: 0; transform: translateY(16px); transition: opacity .5s ease, transform .5s ease;
+}
+#sc-secret.cap .secret-sub { opacity: 1; transform: none; }
+#sc-secret .secret-sub b { color: var(--stk-teal-d); }
+
+/* ============================================================
+   OUTRO endcard — the default element (makeStacktagsLogo + .ec).
+   ============================================================ */
+#sc-outro .ec {
+  position: absolute; inset: 0;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 34px;
+}
+#sc-outro #outro-logo { display: flex; }
+#sc-outro #outro-logo svg { width: 620px; height: auto; display: block; }
+#sc-outro .lyr {
+  opacity: 0; transform: translateY(-52px) scale(.78);
+  transform-box: fill-box; transform-origin: 50% 50%;
+  transition: transform .58s cubic-bezier(.34,1.56,.5,1) var(--d), opacity .42s ease var(--d);
+}
+#sc-outro .ec.play .lyr { opacity: 1; transform: none; }
+#sc-outro .chev path { stroke-dasharray: 300; stroke-dashoffset: 300; transition: stroke-dashoffset .55s ease .40s; }
+#sc-outro .ec.play .chev path { stroke-dashoffset: 0; }
+#sc-outro .wm {
+  font-family: 'Nunito', system-ui, sans-serif; font-weight: 900; font-size: 158px;
+  letter-spacing: -3px; line-height: 1;
+  opacity: 0; transform: translateY(30px);
+  transition: opacity .5s ease .52s, transform .62s cubic-bezier(.2,.8,.2,1) .52s;
+}
+#sc-outro .ec.play .wm { opacity: 1; transform: none; }
+#sc-outro .wm .s { color: #232B33; }
+#sc-outro .wm .t { color: #3EAE93; }
+#sc-outro .url {
+  font-family: 'Nunito', system-ui, sans-serif; font-weight: 700; font-size: 44px;
+  letter-spacing: 7px; color: #8a949d;
+  opacity: 0; transform: translateY(16px);
+  transition: opacity .5s ease .74s, transform .5s ease .74s, letter-spacing .7s ease .74s;
+}
+#sc-outro .ec.play .url { opacity: 1; transform: none; letter-spacing: 4px; }
+
+/* ============================================================
+   HUD (hidden in clean / capture mode)
+   ============================================================ */
+#hud {
+  position: fixed; left: 50%; bottom: 22px; transform: translateX(-50%);
+  display: flex; align-items: center; gap: 14px; z-index: 9999;
+  background: rgba(8,14,12,.78); padding: 10px 18px; border-radius: 999px;
+  font-family: Inter, system-ui, sans-serif; color: #fff;
+}
+#hud button { border: 0; cursor: pointer; background: var(--stk-teal); color: #fff; font-weight: 700; font-size: 15px; padding: 9px 18px; border-radius: 999px; }
+#hud #seek { width: 360px; }
+#hud #tcode { font-variant-numeric: tabular-nums; font-size: 14px; opacity: .85; min-width: 54px; text-align: right; }
+body.clean #hud { display: none; }

@@ -1,0 +1,15 @@
+When North Korean hackers pulled off the biggest crypto heist in history — around 1.5 billion dollars — they ran straight into a problem most people never expect. In crypto, you can't actually hide the money. Every coin they stole was visible to the entire world.
+
+Here's what most people get wrong. They think crypto is anonymous. Perfect for crime. It's almost the opposite. Most blockchains are a public ledger: every transaction, every wallet, every movement, recorded forever, for anyone on Earth to read. So when the group known as Lazarus drained that exchange, the whole world could watch the stolen funds sitting in their wallets. Stealing it was the easy part. Spending it is the hard part.
+
+Because the moment they try to send that money to an exchange to cash out, it gets flagged and frozen. So to have any hope of using it, they try to break the trail. They do it three ways.
+
+One. Chain hopping. They bounce the money across different blockchains, again and again, so the trail has to keep jumping networks.
+
+Two. Mixers. They throw the coins into a pot with thousands of others and shuffle them, blurring which coins came from where.
+
+Three. Splitting. They chop the haul into thousands of tiny transfers across countless wallets, so there's no single stream left to follow.
+
+And that's the irony. The only reason they need all of this is that crypto isn't anonymous at all. It's the most transparent money ever made — a permanent, public record. So stealing a billion is the easy part. Actually spending it is a problem most criminals never saw coming.
+
+Want more of how crypto really works? Follow Stacktags.

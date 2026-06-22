@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root{ --teal:#35A292; --teal-d:#119271; --ink:#141a1e; --muted:#8a949d; }
+  html,body{ margin:0; padding:0; }
+  .thumb{
+    position:relative; width:1280px; height:720px; overflow:hidden;
+    font-family:'Inter',system-ui,sans-serif; -webkit-font-smoothing:antialiased;
+    background:#ffffff;
+    background-image:
+      linear-gradient(to right,  rgba(35,43,51,.05) 3px, transparent 3px),
+      linear-gradient(to bottom, rgba(35,43,51,.05) 3px, transparent 3px);
+    background-size:96px 96px; background-position:center;
+  }
+  /* faint two-line finance motif on the right, behind the trader */
+  .motif{ position:absolute; right:-10px; bottom:60px; width:720px; height:520px; opacity:.45; z-index:1; }
+  .headline{ position:absolute; left:78px; top:116px; z-index:3; max-width:600px; }
+  .headline h1{
+    margin:0; font-weight:900; letter-spacing:-.035em; line-height:.9; color:var(--ink); font-size:140px;
+  }
+  .headline h1 .accent{ color:var(--teal-d); }
+  .headline .sub{
+    margin:38px 0 0; font-weight:800; font-size:42px; letter-spacing:-.6px; color:var(--muted); max-width:560px; line-height:1.15;
+  }
+  .headline .sub b{ color:var(--teal-d); }
+  .fig{ position:absolute; bottom:0; right:-44px; height:516px; z-index:4; filter:drop-shadow(0 24px 44px rgba(20,40,33,.24)); }
+  .fig img{ display:block; height:100%; width:auto; }
+  /* small calm counterpoint, bottom-left under the text */
+  .calm{ position:absolute; left:96px; bottom:0; height:250px; z-index:4; opacity:.96; filter:drop-shadow(0 16px 30px rgba(20,40,33,.18)); }
+  .calm img{ display:block; height:100%; width:auto; }
+</style>
+</head>
+<body>
+<div class="thumb" id="thumb">
+  <svg class="motif" viewBox="0 0 720 520" fill="none">
+    <path d="M20 430 L70 395 L110 430 L160 365 L200 405 L250 330 L290 365 L345 295 L390 330 L440 280"
+          stroke="#c4ccd2" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M20 445 C 170 330, 360 200, 560 110" stroke="#119271" stroke-width="16" stroke-linecap="round" opacity=".9"/>
+    <circle cx="560" cy="110" r="16" fill="#119271"/>
+  </svg>
+
+  <div class="headline">
+    <h1>Men<br>lose to<br><span class="accent">women.</span></h1>
+    <p class="sub">the costly money mistake men <b>keep making</b></p>
+  </div>
+
+  <div class="fig"><img src="../assets/trader_man.png" alt=""></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,185 @@
+VIDEO SCRIPT
+Title: How to launder $1.5 billion in crypto
+Topic: Crypto / Finance
+Target length: ~100 seconds (fits the 30s–3min window)
+Language of narration: English
+Format: Voiceover script. Spoken lines are plain text. [Bracketed lines] describe
+what is on screen AT THE SAME TIME as the narration next to them.
+
+==================================================================
+THE CORE IDEA
+==================================================================
+Counterintuitive truth: crypto is NOT anonymous — by design, almost every
+transaction is public and permanent on the blockchain, so stolen funds are visible
+to the whole world. Told through the real case of the Lazarus Group (North Korea)
+and the record ~$1.5B exchange hack. Stealing is easy; SPENDING is hard. To break
+the trail, the thieves rely on three moves: chain hopping, mixers, and splitting.
+Punchline: crypto is the most transparent money ever made — which is exactly why
+even a state-backed hacker can't just walk up and spend a stolen billion.
+
+NOTE (responsibility): this is an AWARENESS / EXPLAINER piece on why crypto is
+traceable — NOT a how-to. Keep the techniques CONCEPTUAL (what they are, one line
+each); no operational steps or service recommendations.
+
+NOTE (accuracy): the user wrote "Bitget"; the record February-2025 Lazarus heist
+was BYBIT (~$1.5B), the biggest crypto theft ever. Script uses the Bybit case —
+flagged to user.
+
+==================================================================
+VISUAL SYSTEM (applies to every scene)
+==================================================================
+- Palette: white background + thin grey 120px grid (stk-grid-bg). Brand turquoise
+  #35A292 / deep #119271 as the ONLY accent. Ink text #232B33. Subtitle grey #8a949d.
+  Red #d8443b ONLY for the "flag" / alert marker, nowhere else.
+- Type: Inter only. Headline 80px/800, key words deep turquoise.
+- The RECURRING SPINE is a clean, on-brand "blockchain explorer / public ledger" UI
+  (a faux block-explorer panel: a list of transaction rows with truncated wallet
+  addresses 0x9f3a…c7, amounts, timestamps, every row faintly glowing turquoise).
+  We open on it, return to it in the myth, and close the argument on it — so the
+  video feels like one continuous world, not disconnected scenes (consistency).
+- Crypto/coins/ledger are drawn with CSS/SVG in brand turquoise (coin = turquoise
+  disc with a subtle ◆ stack mark) — NOT generic AI photos. Photos (Gemini) only if
+  they add real information, always cut to the object + dashed outline.
+- Transitions: faux-3D depth moves between beats (zoom-out / rise / drop), never hard
+  cuts. Subtitles mirror the narration verbatim, one line at a time, near the bottom.
+- SOUND: swoosh ONLY when the background grid actually moves OR a default element
+  animates (enumeration fold/dock, outro assemble) — not on every fly-in. Pop on
+  word pop-ups. (Soft ticking only if a number visibly counts up.)
+
+KEY VISUALS:
+- Recreated Bybit-hack news headlines as the hook (real info, not a literal "thief").
+- A public ledger where every wallet + transfer glows for all to see.
+- Stolen funds tagged "RADIOACTIVE" → flagged & frozen at the exchange; then the
+  three moves as a docked enumeration: chain hopping, mixers, splitting.
+
+==================================================================
+SCRIPT
+==================================================================
+
+--- HOOK (0:00–0:14) — the payoff up front ---
+
+When North Korean hackers pulled off the biggest crypto heist in history — around
+1.5 billion dollars — they ran straight into a problem most people never expect:
+[SCENE sc-news. Open NOT on a chart and NOT on a cartoon thief. Three recreated
+news-headline cards (built in HTML to look like real screenshots: a Reuters-style,
+a Bloomberg-style and a CoinDesk-style card — small outlet logo, headline, grey
+timestamp "Feb 21, 2025"). They slide/stack in one after another on the beat:
+ 1) "Bybit hit by record $1.5 billion crypto hack"
+ 2) "North Korea's Lazarus Group blamed for largest-ever theft"
+ 3) "Investigators trace stolen Ethereum across the blockchain"
+Cards sit slightly rotated, soft shadow, like a press wall. Grid is still →
+no swoosh yet. Keyword "$1.5 billion" / "Lazarus" turquoise in subtitle.]
+in crypto, you can't actually hide the money. Every coin they stole was visible to
+the entire world.
+[On "ran into a problem", depth zoom-OUT (grid converges → swoosh) pulls the news
+wall back and hands off to SCENE sc-ledger-hook: the public-ledger / block-explorer
+panel. A single wallet row lights up and its balance snaps up and glows: "$1,500,000,000".
+Below it, a column of transfer rows is visible, each faintly glowing turquoise — the
+whole world can see it. Hold this as the anchor image of the video.]
+
+--- THE MYTH (≈0:14–0:38) ---
+
+Here's what most people get wrong. They think crypto is anonymous — perfect for
+crime. It's almost the opposite.
+[SCENE sc-anon. Center the single word "ANONYMOUS" (big, ink, Inter 800). On
+"almost the opposite" a red rubber-stamp "FALSE" SLAMS down diagonally over it
+(quick scale-in + tiny screen shake, stamp ink texture), and the word visibly
+recolours / restamps to turquoise "TRACEABLE". Small humor in the hard stamp.
+Grid does a tiny push → soft swoosh on the stamp impact only.]
+Most blockchains are a public ledger: every transaction, every wallet, every
+movement, recorded forever, for anyone on Earth to read.
+[Depth rise back into SCENE sc-ledger-scroll: the SAME explorer panel as the hook,
+now SCROLLING upward — an endless stream of transaction rows (0x… addresses,
+amounts, timestamps) flowing past, every row glowing turquoise as it passes a faint
+"read head" line. Do NOT print sentences like "open, permanent, public" on screen —
+let the endless scroll carry the meaning. Subtitle keywords: "public ledger",
+"recorded forever".]
+So when the group known as Lazarus drained that exchange, the whole world could
+watch the stolen funds sitting in their wallets. Stealing it was the easy part.
+Spending it is the hard part.
+[The scroll settles; a cluster of rows tagged "LAZARUS" pulses. On "Stealing it was
+the easy part / Spending it is the hard part" split the frame into two soft turquoise
+chips that drop in: left "STEALING — easy ✓" (turquoise check), right "SPENDING —
+hard" (it tries to move and a small lock snaps on, ✗). This sets up the next beat.]
+
+--- WHY THEY CAN'T JUST SPEND IT (≈0:38–1:00) ---
+
+Because the moment they try to send that money to an exchange to cash out, it gets
+flagged and frozen.
+[SCENE sc-frozen. A single glowing coin/transfer tagged "RADIOACTIVE" (small ☢-style
+turquoise badge, faint pulsing halo) travels along a dashed path toward a labelled
+node "EXCHANGE" (a clean turquoise building/portal glyph, CSS). The instant it
+arrives, a red "FLAGGED" tag fires and a "FROZEN" frost/ice overlay creeps over it +
+a padlock snaps shut. Coin stops dead, halo turns to frost. Red used ONLY here.]
+So to have any hope of using it, they try to break the trail. They do it
+three ways.
+[On "break the trail", the dashed path from the previous shot FRACTURES into three
+diverging dashed branches that fan out — a visual bridge straight into the
+enumeration. Depth zoom-out + swoosh as the grid pulls back to reveal the list.]
+
+--- THE THREE MOVES (≈1:00–1:30) ---
+
+[SCENE sc-enum — use the `enumeration_with_in_detail_follow_up` default element.
+Border-less numbered list cascades in (swoosh on the fold), then DOCKS to the
+top-left as a small stacked badge and stays there as a progress indicator. It
+highlights item 1, then 2, then 3 in turquoise as each is narrated:
+   1  Chain hopping
+   2  Mixers
+   3  Splitting
+After it docks, each move gets its own custom mini-animation below it.]
+
+One: chain hopping.
+[Enumeration item 1 goes active (turquoise) and docks. Below, SCENE sc-move1: a
+turquoise coin HOPS in an arc from one labelled blockchain "island" to the next —
+three or four small rounded slabs labelled like "Chain A", "Chain B", "Chain C"
+(generic, not real-service names) spaced across the frame. The coin springs island
+→ island repeatedly, leaving a fading dashed arc trail behind each hop.]
+They bounce the money across different blockchains, again and again, so the trail
+has to keep jumping networks.
+[The coin keeps hopping; with each landing the dashed trail behind it grows more
+broken/faded, selling "the trail keeps jumping networks". Subtitle key: "different
+blockchains", "jumping networks".]
+
+Two: mixers.
+[Enumeration item 2 active. SCENE sc-move2: a central "tumbler" (a clean turquoise
+drum / mixing pot glyph). Many small coins pour IN from the top from several sources
+(each source faintly a different shade), the drum spins (swirl motion, motion-blur),
+and coins come OUT the bottom now all identical turquoise — you can no longer tell
+which came from where. A few "?" marks pop where origin labels used to be (pop SFX).]
+They throw the coins into a pot with thousands of others and shuffle them, blurring
+which coins came from where.
+[Keep the swirl going; "thousands" suggested by a dense ring of tiny coin dots
+orbiting the drum. Origins blur out.]
+
+Three: splitting.
+[Enumeration item 3 active. SCENE sc-move3: one big turquoise pile/stack of coins in
+the center. On "splitting" it BURSTS into a cloud of dozens of tiny coin-dots that
+fan out along dashed lines to many small wallet glyphs scattered across the frame
+(each wallet receives a tiny amount). No single thick stream remains — just a spray
+of thin threads.]
+They chop the haul into thousands of tiny transfers across countless wallets, so
+there's no single stream left to follow.
+[The tiny transfers keep multiplying outward to the frame edges; the once-single
+bright stream is now a faint web of many threads — "no single stream left to follow".]
+
+--- PUNCHLINE / OUTRO (≈1:30–1:44) ---
+
+And that's the irony. The only reason they need all of this is that crypto isn't
+anonymous at all.
+[Depth zoom-out + swoosh; the scattered threads pull back and RESOLVE into the
+familiar public-ledger panel again (callback to the hook / spine). Every row still
+glowing — all those moves still live on the permanent record. The docked enumeration
+badge fades.]
+It's the most transparent money ever made — a permanent, public record. So
+stealing a billion is the easy part. Actually spending it is a problem most
+criminals never saw coming.
+[On "most transparent money ever made", the ledger rows all glow up brightly in
+unison once. Briefly re-show the "STEALING easy ✓ / SPENDING hard 🔒" chips as a
+quick callback, then let them recede on "never saw coming".]
+
+Want more of how crypto really works?
+[SCENE sc-outro — use the `outro` default element. Grid does the assemble move
+(swoosh): the stacked-cube Stacktags logo flies together between the two turquoise
+chevrons, the "stacktags" wordmark and grey "stacktags.io" line settle in.]
+Follow Stacktags.
+[A "Follow" prompt / cursor tap pulses under the wordmark to close.]

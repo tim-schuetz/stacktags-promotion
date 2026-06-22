@@ -1,0 +1,442 @@
+/* ============================================================
+   "Why are there so many crypto coins?" — Stacktags NEW STYLE
+   A continuous faux-3D camera over a dynamic grid. White + turquoise
+   (#35A292), Inter only, no borders, subtitles at the bottom.
+   Scene wrappers are posed by app.js (transform/opacity/blur via JS);
+   in-scene micro-animation is CSS.
+   ============================================================ */
+*{ box-sizing:border-box; }
+html,body{ margin:0; padding:0; height:100%; overflow:hidden; background:#070b0a; }
+body{ font-family:var(--stk-font); color:var(--stk-ink); }
+
+.wrap{ position:fixed; inset:0; display:flex; align-items:center; justify-content:center; }
+.stage{
+  position:relative; width:1080px; height:1920px; flex-shrink:0;
+  transform-origin:center center; overflow:hidden; background:#fff;
+}
+
+/* the persistent dynamic grid fills (and over-fills) the stage; app.js drives
+   its camera by setting background-size / background-position each frame. */
+#grid{
+  position:absolute; inset:-30%; z-index:0;
+  background-color:#fff;
+  background-image:
+    linear-gradient(to right,  var(--stk-grid-line) 4px, transparent 4px),
+    linear-gradient(to bottom, var(--stk-grid-line) 4px, transparent 4px);
+  background-size:120px 120px; background-position:center center;
+}
+
+.scenes{ position:absolute; inset:0; z-index:1; }
+
+/* base scene: app.js sets --tx/--ty/--s + opacity/filter/zIndex */
+.scene{
+  position:absolute; inset:0;
+  display:flex; align-items:center; justify-content:center;
+  opacity:0; transform-origin:center center;
+  will-change:transform, opacity, filter;
+  transform: translate(var(--tx,0px), var(--ty,0px)) scale(var(--s,1));
+}
+
+/* ===== shared bits ===== */
+.eyebrow{
+  font-weight:800; font-size:30px; letter-spacing:5px; text-transform:uppercase;
+  color:var(--stk-teal); margin-bottom:26px;
+}
+.key{ color:var(--stk-teal); } .key-d{ color:var(--stk-teal-d); }
+.mono{ font-family:'JetBrains Mono', ui-monospace, monospace; }
+
+/* a generic coin chip (used in floods / nodes) */
+.coin{
+  display:inline-flex; align-items:center; justify-content:center;
+  border-radius:50%; background:var(--stk-teal-soft); color:var(--stk-teal-d);
+  font-weight:900; box-shadow:0 10px 24px rgba(16,50,40,.12);
+}
+
+/* ============================================================
+   HOOK 1 — counter rocketing to millions
+   ============================================================ */
+#sc-count .count-wrap{ position:relative; width:1080px; height:1920px; }
+.count-coins{ position:absolute; inset:0; z-index:1; pointer-events:none; }
+.count-chip{
+  position:absolute; width:var(--d,72px); height:var(--d,72px); border-radius:50%;
+  display:flex; align-items:center; justify-content:center;
+  font-weight:900; font-size:calc(var(--d,72px)*.42); color:var(--stk-teal-d);
+  background:var(--stk-teal-soft); box-shadow:0 8px 20px rgba(16,50,40,.10);
+  opacity:0; transform:translate(-50%,-50%) scale(.2);
+  transition:opacity .4s ease, transform .6s cubic-bezier(.34,1.56,.64,1);
+}
+.count-chip.gold{ background:#fbe6c0; color:#9a6b16; }
+.count-chip.in{ opacity:1; transform:translate(-50%,-50%) scale(1); }
+.count-center{
+  position:absolute; left:0; right:0; top:50%; transform:translateY(-50%);
+  text-align:center; z-index:3; padding:0 60px;
+}
+.count-eyebrow{
+  font-weight:800; font-size:34px; letter-spacing:4px; text-transform:uppercase;
+  color:var(--stk-teal); margin-bottom:8px;
+}
+.count-num{
+  font-weight:900; font-size:140px; line-height:1; letter-spacing:-4px; white-space:nowrap;
+  color:var(--stk-ink); font-variant-numeric:tabular-nums;
+  text-shadow:0 18px 50px rgba(16,50,40,.14);
+}
+.count-num .count-plus{ color:var(--stk-teal); }
+.count-tag{
+  margin-top:30px; font-weight:800; font-size:62px; letter-spacing:-1.5px;
+  color:var(--stk-ink-2);
+  opacity:0; transform:translateY(20px) scale(.9);
+  transition:opacity .4s ease, transform .5s cubic-bezier(.34,1.56,.64,1);
+}
+.count-tag.in{ opacity:1; transform:none; }
+.count-tag b{ color:var(--stk-teal); font-weight:900; }
+
+/* ============================================================
+   HOOK 2 — a single Bitcoin, too slow (snail)
+   ============================================================ */
+#sc-slow .slow-wrap{ position:relative; width:1080px; height:1920px; }
+.slow-coin{
+  position:absolute; left:50%; top:640px; transform:translateX(-50%);
+  width:430px; filter:drop-shadow(0 30px 50px rgba(16,50,40,.30));
+}
+.slow-coin img{ width:100%; display:block; }
+.slow-snail{
+  position:absolute; left:300px; top:980px; width:300px; z-index:4;
+  opacity:0; transform:translateX(-120px);
+  transition:opacity .5s ease, transform 1s cubic-bezier(.4,.0,.5,1);
+}
+.slow-snail.in{ opacity:1; transform:translateX(0); }
+.slow-snail img{ width:100%; display:block; filter:drop-shadow(0 16px 24px rgba(16,50,40,.22)); }
+.slow-label{
+  position:absolute; left:0; right:0; top:1180px; text-align:center;
+  font-weight:900; font-size:150px; letter-spacing:-4px; color:var(--stk-ink);
+  opacity:0; transform:scale(.7); transition:opacity .4s ease, transform .5s cubic-bezier(.34,1.56,.64,1);
+}
+.slow-label.in{ opacity:1; transform:none; }
+.slow-label b{ color:var(--stk-teal); }
+.slow-bar{
+  position:absolute; left:140px; right:140px; top:1420px; height:34px; border-radius:999px;
+  background:var(--stk-teal-soft); overflow:hidden;
+  opacity:0; transition:opacity .4s ease;
+}
+.slow-bar.in{ opacity:1; }
+.slow-bar i{ position:absolute; left:0; top:0; bottom:0; width:6%; border-radius:999px; background:var(--stk-teal);
+  transition:width 3.2s linear; }
+.slow-bar.go i{ width:34%; }
+
+/* ============================================================
+   GENERIC "WAVE" CARD (Bitcoin / Ethereum)
+   ============================================================ */
+.wave{ position:relative; width:1080px; height:1920px; }
+.wave-top{ position:absolute; left:0; right:0; top:150px; text-align:center; z-index:5; }
+.wave-num{
+  display:inline-block; font-weight:900; font-size:40px; letter-spacing:2px;
+  color:#fff; background:var(--stk-teal); border-radius:999px; padding:8px 30px;
+  box-shadow:0 12px 28px rgba(53,162,146,.4);
+}
+.wave-name{ margin-top:18px; font-weight:900; font-size:96px; letter-spacing:-3px; color:var(--stk-ink); }
+.wave-sub{ margin-top:4px; font-weight:700; font-size:40px; color:var(--stk-muted); }
+
+.wave-coin{
+  position:absolute; left:50%; top:420px; transform:translateX(-50%);
+  width:300px; z-index:3; filter:drop-shadow(0 26px 44px rgba(16,50,40,.28));
+}
+.wave-coin img{ width:100%; display:block; }
+
+/* ---- Bitcoin: one rail, can't build ---- */
+.btc-rail{
+  position:absolute; left:120px; right:120px; top:820px; height:120px; z-index:2;
+  opacity:0; transform:translateY(24px); transition:opacity .5s ease, transform .5s cubic-bezier(.2,.8,.2,1);
+}
+.btc-rail.in{ opacity:1; transform:none; }
+.btc-rail .rail-line{ position:absolute; left:0; right:0; top:58px; height:8px; border-radius:999px; background:var(--stk-teal-soft); }
+.btc-rail .rail-end{ position:absolute; top:40px; width:44px; height:44px; border-radius:50%; background:var(--stk-teal-soft); }
+.btc-rail .rail-end.a{ left:0; } .btc-rail .rail-end.b{ right:0; }
+.btc-rail .rail-coin{
+  position:absolute; top:30px; left:0; width:64px; height:64px; border-radius:50%;
+  background:#fbe6c0; color:#9a6b16; font-weight:900; font-size:34px;
+  display:flex; align-items:center; justify-content:center; box-shadow:0 8px 18px rgba(16,50,40,.18);
+}
+.btc-rail.go .rail-coin{ animation:rail-move 2.4s ease-in-out infinite; }
+@keyframes rail-move{ 0%{ left:0; } 50%{ left:calc(100% - 64px); } 100%{ left:0; } }
+.btc-rail .rail-cap{
+  position:absolute; left:0; right:0; top:-58px; text-align:center;
+  font-weight:800; font-size:38px; color:var(--stk-ink-2);
+}
+
+.btc-build{
+  position:absolute; left:0; right:0; top:1040px; text-align:center; z-index:2;
+}
+.btc-blocks{ position:relative; height:340px; }
+.btc-block{
+  position:absolute; left:50%; width:200px; height:90px; border-radius:18px;
+  background:#fff; box-shadow:0 14px 30px rgba(16,50,40,.12);
+  display:flex; align-items:center; justify-content:center; font-weight:800; font-size:34px; color:var(--stk-ink-2);
+  opacity:0;
+}
+.btc-block .x{ color:var(--stk-muted); }
+.btc-build.in .btc-block{ animation:block-fall .9s ease-in forwards; }
+.btc-build.in .btc-block.b1{ animation-delay:.0s; }
+.btc-build.in .btc-block.b2{ animation-delay:.18s; }
+.btc-build.in .btc-block.b3{ animation-delay:.36s; }
+@keyframes block-fall{
+  0%{ opacity:0; transform:translate(-50%,-160px) rotate(-4deg); }
+  35%{ opacity:1; transform:translate(-50%,0) rotate(0deg); }
+  60%{ transform:translate(-50%,0) rotate(0deg); }
+  100%{ opacity:0; transform:translate(calc(-50% + 220px),260px) rotate(40deg); }
+}
+.btc-more{
+  position:absolute; left:0; right:0; top:1500px; text-align:center;
+  font-weight:900; font-size:76px; letter-spacing:-2px; color:var(--stk-ink);
+  opacity:0; transform:translateY(20px); transition:opacity .4s ease, transform .5s cubic-bezier(.2,.8,.2,1);
+}
+.btc-more.in{ opacity:1; transform:none; }
+.btc-more b{ color:var(--stk-teal); }
+
+/* ---- Ethereum: platform + apps + code → token ---- */
+.eth-platform{
+  position:absolute; left:200px; right:200px; top:660px; height:150px; border-radius:26px;
+  background:linear-gradient(180deg, var(--stk-teal-soft), #fff);
+  box-shadow:0 22px 50px rgba(16,50,40,.16); z-index:2;
+  opacity:0; transform:translateY(30px) scale(.96); transition:opacity .5s ease, transform .6s cubic-bezier(.2,.8,.2,1);
+  display:flex; align-items:center; justify-content:center;
+  font-weight:900; font-size:48px; letter-spacing:1px; color:var(--stk-teal-d);
+}
+.eth-platform.in{ opacity:1; transform:none; }
+.eth-apps{ position:absolute; left:0; right:0; top:450px; text-align:center; z-index:3; height:160px; }
+.eth-app{
+  position:absolute; top:0; width:150px; height:150px; border-radius:26px; background:#fff;
+  box-shadow:0 16px 36px rgba(16,50,40,.14); display:flex; align-items:center; justify-content:center;
+  font-size:74px; opacity:0; transform:translateY(40px) scale(.6);
+  transition:opacity .4s ease, transform .55s cubic-bezier(.34,1.56,.64,1);
+}
+.eth-app.a1{ left:calc(50% - 250px); } .eth-app.a2{ left:calc(50% - 75px); } .eth-app.a3{ left:calc(50% + 100px); }
+.eth-apps.in .eth-app{ opacity:1; transform:none; }
+.eth-apps.in .eth-app.a2{ transition-delay:.1s; } .eth-apps.in .eth-app.a3{ transition-delay:.2s; }
+.eth-sc{
+  position:absolute; left:0; right:0; top:850px; text-align:center; z-index:4;
+  opacity:0; transform:scale(.7); transition:opacity .35s ease, transform .5s cubic-bezier(.34,1.56,.64,1);
+}
+.eth-sc.in{ opacity:1; transform:none; }
+.eth-sc .chip{
+  display:inline-block; background:var(--stk-teal); color:#fff; font-weight:900; font-size:46px;
+  letter-spacing:-1px; padding:18px 44px; border-radius:999px; box-shadow:0 16px 34px rgba(53,162,146,.4);
+}
+.eth-code{
+  position:absolute; left:150px; right:150px; top:1010px; z-index:4;
+  background:#0f1c19; border-radius:26px; padding:34px 40px; text-align:left;
+  box-shadow:0 26px 60px rgba(16,50,40,.3);
+  opacity:0; transform:translateY(40px); transition:opacity .45s ease, transform .55s cubic-bezier(.2,.8,.2,1);
+}
+.eth-code.in{ opacity:1; transform:none; }
+.eth-code pre{ margin:0; font-family:'JetBrains Mono',monospace; font-size:33px; line-height:1.5; color:#cdeee3; }
+.eth-code .kw{ color:#7fe7cc; } .eth-code .fn{ color:#fff; } .eth-code .cm{ color:#5e7a72; }
+/* tokens are minted out of the code box and fan DOWN into the empty lower band */
+.eth-tokens{ position:absolute; left:0; right:0; top:1300px; z-index:5; height:360px; pointer-events:none; }
+.eth-token{
+  position:absolute; width:84px; height:84px; border-radius:50%; background:var(--stk-teal-soft);
+  color:var(--stk-teal-d); font-weight:900; font-size:32px; display:flex; align-items:center; justify-content:center;
+  box-shadow:0 10px 24px rgba(16,50,40,.14); opacity:0; transform:translate(-50%,-50%) scale(.2);
+}
+.eth-token.in{ animation:token-out .9s cubic-bezier(.34,1.4,.5,1) forwards; }
+@keyframes token-out{ 0%{ opacity:0; transform:translate(-50%,-50%) scale(.2);} 30%{ opacity:1; } 100%{ opacity:1; transform:translate(calc(-50% + var(--ex)), calc(-50% + var(--ey))) scale(1);} }
+
+/* ============================================================
+   WAVE 3 — fees chart + rivals
+   ============================================================ */
+.fees-host{ position:absolute; left:60px; right:60px; top:560px; z-index:3; }
+.fees-cap{
+  position:absolute; left:0; right:0; top:1300px; text-align:center;
+  font-weight:800; font-size:46px; letter-spacing:-1px; color:var(--stk-ink-2);
+  opacity:0; transform:translateY(16px); transition:opacity .4s ease, transform .5s ease;
+}
+#sc-fees.cap-in .fees-cap{ opacity:1; transform:none; }
+.fees-cap b{ color:var(--stk-teal-d); }
+
+#sc-rivals .rivals-wrap{ position:relative; width:1080px; height:1920px; }
+.rivals-title{
+  position:absolute; left:0; right:0; top:300px; text-align:center;
+  font-weight:900; font-size:72px; letter-spacing:-2px; color:var(--stk-ink);
+}
+.rivals-title b{ color:var(--stk-teal); }
+.rival-node{
+  position:absolute; width:300px; text-align:center; z-index:3;
+  opacity:0; transform:scale(.5); transition:opacity .4s ease, transform .55s cubic-bezier(.34,1.56,.64,1);
+}
+.rival-node.in{ opacity:1; transform:none; }
+.rival-badge{
+  width:200px; height:200px; margin:0 auto; border-radius:40px; background:#fff;
+  box-shadow:0 22px 50px rgba(16,50,40,.16); display:flex; align-items:center; justify-content:center;
+  font-weight:900; font-size:84px; color:var(--stk-teal-d); position:relative;
+}
+.rival-coin-badge{
+  position:absolute; right:-14px; bottom:-14px; width:80px; height:80px; border-radius:50%;
+  background:var(--stk-teal); color:#fff; font-weight:900; font-size:42px;
+  display:flex; align-items:center; justify-content:center; box-shadow:0 10px 22px rgba(53,162,146,.4);
+  opacity:0; transform:scale(.2); transition:opacity .3s ease, transform .45s cubic-bezier(.34,1.7,.5,1);
+}
+.rival-node.coined .rival-coin-badge{ opacity:1; transform:none; }
+.rival-name{ margin-top:22px; font-weight:800; font-size:46px; letter-spacing:-1px; color:var(--stk-ink); }
+
+/* ============================================================
+   WAVE 4 — Pump.fun mint button + memecoin flood
+   ============================================================ */
+#sc-mint .mint-wrap{ position:relative; width:1080px; height:1920px; display:flex; flex-direction:column; align-items:center; justify-content:center; }
+.mint-eyebrow{ font-weight:800; font-size:38px; letter-spacing:3px; color:var(--stk-teal); text-transform:uppercase; margin-bottom:30px; }
+.mint-platform{
+  font-weight:900; font-size:54px; letter-spacing:-1px; color:var(--stk-ink); margin-bottom:60px;
+  opacity:0; transform:translateY(16px); transition:opacity .4s ease, transform .5s cubic-bezier(.2,.8,.2,1);
+}
+#sc-mint.plat-in .mint-platform{ opacity:1; transform:none; }
+.mint-platform b{ color:var(--stk-teal-d); }
+.mint-btn-box{ position:relative; }
+.mint-btn{
+  position:relative; display:inline-flex; align-items:center; gap:26px;
+  background:var(--stk-teal); color:#fff; font-weight:900; font-size:96px; letter-spacing:-2px;
+  padding:56px 110px; border-radius:46px; box-shadow:0 30px 70px rgba(53,162,146,.5);
+  transform:scale(.7); opacity:0; transition:transform .5s cubic-bezier(.34,1.56,.64,1), opacity .4s ease;
+}
+#sc-mint.btn-in .mint-btn{ transform:scale(1); opacity:1; }
+#sc-mint.tap .mint-btn{ animation:mint-press 0.6s ease-in-out infinite; }
+@keyframes mint-press{ 0%,100%{ transform:scale(1);} 50%{ transform:scale(.93);} }
+.mint-finger{ position:absolute; right:60px; bottom:-30px; font-size:120px; opacity:0; transform:translateY(50px); }
+#sc-mint.tap .mint-finger{ opacity:1; animation:mint-tap 0.6s ease-in-out infinite; }
+@keyframes mint-tap{ 0%,100%{ transform:translateY(0);} 50%{ transform:translateY(-30px);} }
+.mint-spit{ position:absolute; left:0; right:0; top:0; bottom:0; pointer-events:none; z-index:6; }
+.mint-tok{
+  position:absolute; left:50%; top:40%; width:90px; height:90px; border-radius:50%;
+  background:var(--stk-teal-soft); color:var(--stk-teal-d); font-weight:900; font-size:34px;
+  display:flex; align-items:center; justify-content:center; box-shadow:0 10px 24px rgba(16,50,40,.14);
+  opacity:0;
+}
+.mint-tok.go{ animation:spit 1.3s ease-out forwards; }
+@keyframes spit{ 0%{ opacity:0; transform:translate(-50%,-50%) scale(.3);} 20%{ opacity:1;} 100%{ opacity:0; transform:translate(calc(-50% + var(--sx)), calc(-50% + var(--sy))) scale(1);} }
+
+.flood-host{ position:absolute; inset:0; z-index:3; }
+.flood-doge{
+  position:absolute; left:50%; top:50%; width:360px; transform:translate(-50%,-50%) scale(.5); z-index:5;
+  opacity:0; transition:opacity .4s ease, transform .55s cubic-bezier(.34,1.56,.64,1);
+  filter:drop-shadow(0 24px 40px rgba(16,50,40,.3));
+}
+.flood-doge img{ width:100%; display:block; }
+.flood-doge.in{ opacity:1; transform:translate(-50%,-50%) scale(1); }
+.flood-chip{
+  position:absolute; padding:14px 26px; border-radius:999px; background:#fff;
+  box-shadow:0 12px 28px rgba(16,50,40,.12); font-weight:900; font-size:40px; color:var(--stk-teal-d);
+  opacity:0; transform:translate(-50%,-50%) scale(.3) rotate(var(--r,0deg));
+  transition:opacity .4s ease, transform .5s cubic-bezier(.34,1.56,.64,1), filter .6s ease;
+  white-space:nowrap;
+}
+.flood-chip.in{ opacity:1; transform:translate(-50%,-50%) scale(1) rotate(var(--r,0deg)); }
+.flood-chip.dead{ opacity:.32; color:var(--stk-muted); filter:grayscale(1); transform:translate(-50%,-50%) scale(.9) rotate(var(--r,0deg)); }
+.flood-verdict{
+  position:absolute; left:0; right:0; top:1430px; text-align:center; z-index:7;
+  font-weight:900; font-size:70px; letter-spacing:-2px; color:var(--stk-ink);
+  opacity:0; transform:translateY(20px); transition:opacity .4s ease, transform .5s cubic-bezier(.2,.8,.2,1);
+}
+#sc-flood.verdict-in .flood-verdict{ opacity:1; transform:none; }
+.flood-verdict b{ color:var(--stk-muted); }
+
+/* ============================================================
+   PUNCHLINE — branching tree
+   ============================================================ */
+#sc-tree .tree-wrap{ position:relative; width:1080px; height:1920px; }
+.tree-svg{ position:absolute; inset:0; z-index:1; overflow:visible; }
+.tree-svg path{ fill:none; stroke:var(--stk-teal); stroke-width:6; stroke-linecap:round;
+  stroke-dasharray:var(--len); stroke-dashoffset:var(--len); transition:stroke-dashoffset .7s ease; }
+.tree-svg path.drawn{ stroke-dashoffset:0; }
+.tree-node{
+  position:absolute; transform:translate(-50%,-50%) scale(.2); z-index:3;
+  display:flex; flex-direction:column; align-items:center; gap:10px;
+  opacity:0; transition:opacity .4s ease, transform .5s cubic-bezier(.34,1.56,.64,1);
+}
+.tree-node.in{ opacity:1; transform:translate(-50%,-50%) scale(1); }
+.tree-dot{
+  width:var(--nd,120px); height:var(--nd,120px); border-radius:50%;
+  display:flex; align-items:center; justify-content:center; font-weight:900;
+  background:#fff; box-shadow:0 16px 36px rgba(16,50,40,.18); color:var(--stk-teal-d);
+  font-size:calc(var(--nd,120px)*.34); overflow:hidden;
+}
+.tree-dot.teal{ background:var(--stk-teal); color:#fff; }
+.tree-dot img{ width:100%; height:100%; object-fit:cover; }
+.tree-cap{ font-weight:800; font-size:32px; letter-spacing:-.5px; color:var(--stk-ink); white-space:nowrap; }
+.tree-cap small{ display:block; font-weight:700; font-size:24px; color:var(--stk-muted); }
+.tree-leaf{
+  position:absolute; width:46px; height:46px; border-radius:50%; background:var(--stk-teal-soft);
+  z-index:2; opacity:0; transform:translate(-50%,-50%) scale(.2);
+  transition:opacity .35s ease, transform .5s cubic-bezier(.34,1.6,.5,1), background .5s ease, filter .5s ease;
+}
+.tree-leaf.in{ opacity:1; transform:translate(-50%,-50%) scale(1); }
+.tree-leaf.dead{ background:#cfd6db; opacity:.5; transform:translate(-50%,-50%) scale(.7); }
+/* origin pulse on "one careful experiment" */
+.tree-node.lit .tree-dot{ animation:tree-pulse 1s ease-in-out infinite; box-shadow:0 0 0 14px rgba(53,162,146,.16), 0 16px 40px rgba(16,50,40,.22); }
+@keyframes tree-pulse{ 0%,100%{ transform:scale(1);} 50%{ transform:scale(1.08);} }
+.tree-headline{
+  position:absolute; left:0; right:0; top:150px; text-align:center; z-index:5;
+  font-weight:900; font-size:72px; letter-spacing:-2px; color:var(--stk-ink); padding:0 80px;
+  opacity:0; transform:translateY(16px); transition:opacity .4s ease, transform .5s cubic-bezier(.2,.8,.2,1);
+}
+.tree-headline.in{ opacity:1; transform:none; }
+.tree-headline b{ color:var(--stk-teal); }
+.tree-footnote{
+  position:absolute; left:0; right:0; bottom:330px; text-align:center; z-index:5;
+  font-weight:800; font-size:48px; letter-spacing:-1px; color:var(--stk-ink-2); padding:0 90px;
+  opacity:0; transform:translateY(16px); transition:opacity .4s ease, transform .5s ease;
+}
+.tree-footnote.in{ opacity:1; transform:none; }
+.tree-footnote b{ color:var(--stk-muted); }
+
+/* ============================================================
+   OUTRO endcard — default element (makeStacktagsLogo + .ec).
+   ============================================================ */
+#sc-outro .ec{
+  position:absolute; inset:0;
+  display:flex; flex-direction:column; align-items:center; justify-content:center; gap:30px;
+}
+.ec-follow{
+  font-family:'Nunito',system-ui,sans-serif; font-weight:900; font-size:64px; letter-spacing:-1px;
+  color:#fff; background:var(--stk-teal); padding:20px 64px; border-radius:999px;
+  box-shadow:0 22px 50px rgba(53,162,146,.45);
+  opacity:0; transform:translateY(-30px) scale(.7);
+  transition:opacity .45s ease, transform .55s cubic-bezier(.34,1.56,.64,1);
+}
+#sc-outro .ec.play .ec-follow{ opacity:1; transform:none; }
+#sc-outro #outro-logo{ display:flex; }
+#sc-outro #outro-logo svg{ width:560px; height:auto; display:block; }
+#sc-outro .lyr{
+  opacity:0; transform:translateY(-52px) scale(.78);
+  transform-box:fill-box; transform-origin:50% 50%;
+  transition:transform .58s cubic-bezier(.34,1.56,.5,1) var(--d), opacity .42s ease var(--d);
+}
+#sc-outro .ec.play .lyr{ opacity:1; transform:none; }
+#sc-outro .chev path{ stroke-dasharray:300; stroke-dashoffset:300; transition:stroke-dashoffset .55s ease .40s; }
+#sc-outro .ec.play .chev path{ stroke-dashoffset:0; }
+#sc-outro .wm{
+  font-family:'Nunito',system-ui,sans-serif; font-weight:900; font-size:150px;
+  letter-spacing:-3px; line-height:1;
+  opacity:0; transform:translateY(30px);
+  transition:opacity .5s ease .52s, transform .62s cubic-bezier(.2,.8,.2,1) .52s;
+}
+#sc-outro .ec.play .wm{ opacity:1; transform:none; }
+#sc-outro .wm .s{ color:#232B33; }
+#sc-outro .wm .t{ color:#3EAE93; }
+#sc-outro .url{
+  font-family:'Nunito',system-ui,sans-serif; font-weight:700; font-size:44px;
+  letter-spacing:7px; color:#8a949d;
+  opacity:0; transform:translateY(16px);
+  transition:opacity .5s ease .74s, transform .5s ease .74s, letter-spacing .7s ease .74s;
+}
+#sc-outro .ec.play .url{ opacity:1; transform:none; letter-spacing:4px; }
+
+/* ============================================================
+   HUD (hidden in clean / capture mode)
+   ============================================================ */
+#hud{
+  position:fixed; left:50%; bottom:22px; transform:translateX(-50%);
+  display:flex; align-items:center; gap:14px; z-index:9999;
+  background:rgba(8,14,12,.78); padding:10px 18px; border-radius:999px;
+  font-family:Inter,system-ui,sans-serif; color:#fff;
+}
+#hud button{ border:0; cursor:pointer; background:var(--stk-teal); color:#fff; font-weight:700; font-size:15px; padding:9px 18px; border-radius:999px; }
+#hud #seek{ width:360px; }
+#hud #tcode{ font-variant-numeric:tabular-nums; font-size:14px; opacity:.85; min-width:54px; text-align:right; }
+body.clean #hud{ display:none; }

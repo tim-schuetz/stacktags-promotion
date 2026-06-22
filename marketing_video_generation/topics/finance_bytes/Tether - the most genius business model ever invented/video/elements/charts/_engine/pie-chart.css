@@ -1,0 +1,58 @@
+/* ============================================================
+   Stacktags default element — PIE / DONUT CHART
+   A clean animated pie (Kreisdiagramm) or donut that sweeps in
+   clockwise, with a pop-in legend and an optional centre total.
+   White + turquoise palette, Inter only, no borders.
+   Drive with pie-chart.js (StacktagsPieChart).
+   ============================================================ */
+.stk-pie {
+  position: absolute; inset: 0;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  gap: 48px; padding: 120px 90px;
+  font-family: var(--stk-font, 'Inter', sans-serif);
+}
+
+.stk-pie-head {
+  text-align: center;
+  opacity: 0; transform: translateY(-18px);
+  transition: opacity .5s ease, transform .5s cubic-bezier(.2,.8,.2,1);
+}
+.stk-pie.head-in .stk-pie-head { opacity: 1; transform: none; }
+.stk-pie-title { font-weight: 800; font-size: 58px; letter-spacing: -1.4px; color: var(--stk-ink, #232B33); }
+.stk-pie-title b { color: var(--stk-teal-d, #119271); }
+.stk-pie-sub { font-weight: 600; font-size: 32px; color: var(--stk-muted, #8a949d); margin-top: 8px; }
+
+.stk-pie-plot { position: relative; width: 720px; height: 720px; }
+.stk-pie-plot svg { width: 100%; height: 100%; display: block; overflow: visible; }
+.stk-pie-track { fill: none; stroke: rgba(35,43,51,0.07); }
+
+/* curved labels around the outer radius (donut) */
+.stk-pie-arclabel {
+  font-family: var(--stk-font, 'Inter', sans-serif);
+  font-weight: 700; font-size: 20px; letter-spacing: -.2px;
+  fill: var(--stk-ink, #232B33);
+}
+/* labels inside the segments (pie); the biggest segment is larger + shows % */
+.stk-pie-inlabel {
+  font-family: var(--stk-font, 'Inter', sans-serif);
+  font-weight: 700; font-size: 19px; fill: #ffffff;
+}
+.stk-pie-inlabel.big { font-weight: 800; font-size: 42px; fill: var(--stk-ink-2, #4a5560); stroke: #ffffff; stroke-width: 6px; paint-order: stroke; }
+.stk-pie-inlabel .pctline { font-weight: 800; }
+
+/* legend */
+.stk-pie-legend {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 20px 60px;
+  width: 100%; max-width: 720px;
+}
+.stk-pie-li {
+  display: flex; align-items: center; gap: 18px;
+  font-size: 36px; font-weight: 700; color: var(--stk-ink, #232B33);
+  opacity: 0; transform: translateX(-16px);
+  transition: opacity .4s ease, transform .45s cubic-bezier(.2,.8,.2,1);
+}
+.stk-pie-li.in { opacity: 1; transform: none; }
+.stk-pie-li .dot { width: 30px; height: 30px; border-radius: 9px; flex-shrink: 0; }
+.stk-pie-li .lbl { flex: 1; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.stk-pie-li .pct { font-weight: 800; color: var(--stk-muted, #8a949d); }

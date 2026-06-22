@@ -1,0 +1,3176 @@
+{
+  "task": "transcribe",
+  "language": "english",
+  "duration": 119.58000183105469,
+  "text": "There's a company that makes more money per employee than almost anyone on earth, around a hundred staff, billions in annual profit, and the entire business model is this. You give them a dollar, they hand you a token, and they keep the dollar. That's Tether, and it's completely legal. Here's why it might be the most genius business model ever invented. Tether runs USDT, a stablecoin. One USDT is always meant to equal one US dollar. Crypto traders love it. It's a dollar that lives on the blockchain, so they can jump in and out of trades instantly. To get one, you hand Tether a real dollar, and they mint you a token. Simple. But the magic isn't the token, it's what happens to your dollar. Because Tether doesn't just let your dollar sit in a drawer, it takes all those billions and parks them mostly in US treasury bills. Basically the safest loan on the planet, earning around 4-5% a year. And how much of that interest do they pass back to you, the token holder? Zero. You're holding a dollar that pays you nothing, and Tether keeps every cent of the yield. Now multiply it. There's well over 100 billion dollars of USDT out there. Which means well over 100 billion of other people's money working for Tether, for free. And normally, getting capital is expensive. A bank pays interest to its depositors, a company pays interest on its bonds. Everyone pays for money. Tether's cost? Nothing. It's an interest-free loan from millions of users, and it keeps 100% of the return. In 2024, the company reported around 13 billion dollars in profit, with a team you could fit in a single room. So what's the catch? Trust. The whole thing holds up only as long as people believe every token is really backed by a real dollar, and don't all rush to cash out at once. Tether has been fined before for overstating what was actually in its reserves, and it publishes attestations, not full independent audits. The model is brilliant, but it runs entirely on confidence. Still, it cracks something most people never even see. The most profitable trade in finance wasn't picking the right stock, or the right coin. It was realizing that if you get to issue the dollar, you get to keep the interest, Want more business models that sound illegal but aren't? Follow StackTags.",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0,
+      "end": 3.619999885559082,
+      "text": " There's a company that makes more money per employee than almost anyone on earth, around",
+      "tokens": [
+        50364,
+        821,
+        311,
+        257,
+        2237,
+        300,
+        1669,
+        544,
+        1460,
+        680,
+        10738,
+        813,
+        1920,
+        2878,
+        322,
+        4120,
+        11,
+        926,
+        50543
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.2562071979045868,
+      "compression_ratio": 1.6808511018753052,
+      "no_speech_prob": 0.001674312399700284
+    },
+    {
+      "id": 1,
+      "seek": 0,
+      "start": 3.619999885559082,
+      "end": 7.860000133514404,
+      "text": " a hundred staff, billions in annual profit, and the entire business model is this.",
+      "tokens": [
+        50543,
+        257,
+        3262,
+        3525,
+        11,
+        17375,
+        294,
+        9784,
+        7475,
+        11,
+        293,
+        264,
+        2302,
+        1606,
+        2316,
+        307,
+        341,
+        13,
+        50778
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.2562071979045868,
+      "compression_ratio": 1.6808511018753052,
+      "no_speech_prob": 0.001674312399700284
+    },
+    {
+      "id": 2,
+      "seek": 0,
+      "start": 8.260000228881836,
+      "end": 11.420000076293945,
+      "text": " You give them a dollar, they hand you a token, and they keep the dollar.",
+      "tokens": [
+        50778,
+        509,
+        976,
+        552,
+        257,
+        7241,
+        11,
+        436,
+        1011,
+        291,
+        257,
+        14862,
+        11,
+        293,
+        436,
+        1066,
+        264,
+        7241,
+        13,
+        50954
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.2562071979045868,
+      "compression_ratio": 1.6808511018753052,
+      "no_speech_prob": 0.001674312399700284
+    },
+    {
+      "id": 3,
+      "seek": 0,
+      "start": 11.680000305175781,
+      "end": 13.579999923706055,
+      "text": " That's Tether, and it's completely legal.",
+      "tokens": [
+        50954,
+        663,
+        311,
+        314,
+        1666,
+        11,
+        293,
+        309,
+        311,
+        2584,
+        5089,
+        13,
+        51074
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.2562071979045868,
+      "compression_ratio": 1.6808511018753052,
+      "no_speech_prob": 0.001674312399700284
+    },
+    {
+      "id": 4,
+      "seek": 0,
+      "start": 14.119999885559082,
+      "end": 17.1200008392334,
+      "text": " Here's why it might be the most genius business model ever invented.",
+      "tokens": [
+        51074,
+        1692,
+        311,
+        983,
+        309,
+        1062,
+        312,
+        264,
+        881,
+        14017,
+        1606,
+        2316,
+        1562,
+        14479,
+        13,
+        51250
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.2562071979045868,
+      "compression_ratio": 1.6808511018753052,
+      "no_speech_prob": 0.001674312399700284
+    },
+    {
+      "id": 5,
+      "seek": 0,
+      "start": 17.719999313354492,
+      "end": 19.84000015258789,
+      "text": " Tether runs USDT, a stablecoin.",
+      "tokens": [
+        51250,
+        314,
+        1666,
+        6676,
+        24375,
+        51,
+        11,
+        257,
+        8351,
+        8562,
+        13,
+        51386
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.2562071979045868,
+      "compression_ratio": 1.6808511018753052,
+      "no_speech_prob": 0.001674312399700284
+    },
+    {
+      "id": 6,
+      "seek": 0,
+      "start": 20.31999969482422,
+      "end": 23.479999542236328,
+      "text": " One USDT is always meant to equal one US dollar.",
+      "tokens": [
+        51386,
+        1485,
+        24375,
+        51,
+        307,
+        1009,
+        4140,
+        281,
+        2681,
+        472,
+        2546,
+        7241,
+        13,
+        51570
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.2562071979045868,
+      "compression_ratio": 1.6808511018753052,
+      "no_speech_prob": 0.001674312399700284
+    },
+    {
+      "id": 7,
+      "seek": 0,
+      "start": 23.979999542236328,
+      "end": 25.079999923706055,
+      "text": " Crypto traders love it.",
+      "tokens": [
+        51570,
+        34809,
+        78,
+        26014,
+        959,
+        309,
+        13,
+        51632
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.2562071979045868,
+      "compression_ratio": 1.6808511018753052,
+      "no_speech_prob": 0.001674312399700284
+    },
+    {
+      "id": 8,
+      "seek": 0,
+      "start": 25.200000762939453,
+      "end": 28.979999542236328,
+      "text": " It's a dollar that lives on the blockchain, so they can jump in and out of trades instantly.",
+      "tokens": [
+        51632,
+        467,
+        311,
+        257,
+        7241,
+        300,
+        2909,
+        322,
+        264,
+        17176,
+        11,
+        370,
+        436,
+        393,
+        3012,
+        294,
+        293,
+        484,
+        295,
+        21287,
+        13518,
+        13,
+        51838
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.2562071979045868,
+      "compression_ratio": 1.6808511018753052,
+      "no_speech_prob": 0.001674312399700284
+    },
+    {
+      "id": 9,
+      "seek": 2898,
+      "start": 29.5,
+      "end": 32.31999969482422,
+      "text": " To get one, you hand Tether a real dollar, and they mint you a token.",
+      "tokens": [
+        50390,
+        1407,
+        483,
+        472,
+        11,
+        291,
+        1011,
+        314,
+        1666,
+        257,
+        957,
+        7241,
+        11,
+        293,
+        436,
+        18189,
+        291,
+        257,
+        14862,
+        13,
+        50558
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.24683117866516113,
+      "compression_ratio": 1.682539701461792,
+      "no_speech_prob": 0.0008693631389178336
+    },
+    {
+      "id": 10,
+      "seek": 2898,
+      "start": 32.959999084472656,
+      "end": 33.20000076293945,
+      "text": " Simple.",
+      "tokens": [
+        50558,
+        21532,
+        13,
+        50608
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.24683117866516113,
+      "compression_ratio": 1.682539701461792,
+      "no_speech_prob": 0.0008693631389178336
+    },
+    {
+      "id": 11,
+      "seek": 2898,
+      "start": 33.720001220703125,
+      "end": 36.63999938964844,
+      "text": " But the magic isn't the token, it's what happens to your dollar.",
+      "tokens": [
+        50608,
+        583,
+        264,
+        5585,
+        1943,
+        380,
+        264,
+        14862,
+        11,
+        309,
+        311,
+        437,
+        2314,
+        281,
+        428,
+        7241,
+        13,
+        50778
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.24683117866516113,
+      "compression_ratio": 1.682539701461792,
+      "no_speech_prob": 0.0008693631389178336
+    },
+    {
+      "id": 12,
+      "seek": 2898,
+      "start": 37.099998474121094,
+      "end": 40.63999938964844,
+      "text": " Because Tether doesn't just let your dollar sit in a drawer, it takes all those billions",
+      "tokens": [
+        50778,
+        1436,
+        314,
+        1666,
+        1177,
+        380,
+        445,
+        718,
+        428,
+        7241,
+        1394,
+        294,
+        257,
+        24039,
+        11,
+        309,
+        2516,
+        439,
+        729,
+        17375,
+        50948
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.24683117866516113,
+      "compression_ratio": 1.682539701461792,
+      "no_speech_prob": 0.0008693631389178336
+    },
+    {
+      "id": 13,
+      "seek": 2898,
+      "start": 40.63999938964844,
+      "end": 42.70000076293945,
+      "text": " and parks them mostly in US treasury bills.",
+      "tokens": [
+        50948,
+        293,
+        16213,
+        552,
+        5240,
+        294,
+        2546,
+        47213,
+        12433,
+        13,
+        51072
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.24683117866516113,
+      "compression_ratio": 1.682539701461792,
+      "no_speech_prob": 0.0008693631389178336
+    },
+    {
+      "id": 14,
+      "seek": 2898,
+      "start": 43.2400016784668,
+      "end": 47.220001220703125,
+      "text": " Basically the safest loan on the planet, earning around 4-5% a year.",
+      "tokens": [
+        51072,
+        8537,
+        264,
+        37558,
+        10529,
+        322,
+        264,
+        5054,
+        11,
+        12353,
+        926,
+        1017,
+        12,
+        20,
+        4,
+        257,
+        1064,
+        13,
+        51302
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.24683117866516113,
+      "compression_ratio": 1.682539701461792,
+      "no_speech_prob": 0.0008693631389178336
+    },
+    {
+      "id": 15,
+      "seek": 2898,
+      "start": 47.540000915527344,
+      "end": 50.619998931884766,
+      "text": " And how much of that interest do they pass back to you, the token holder?",
+      "tokens": [
+        51302,
+        400,
+        577,
+        709,
+        295,
+        300,
+        1179,
+        360,
+        436,
+        1320,
+        646,
+        281,
+        291,
+        11,
+        264,
+        14862,
+        20349,
+        30,
+        51470
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.24683117866516113,
+      "compression_ratio": 1.682539701461792,
+      "no_speech_prob": 0.0008693631389178336
+    },
+    {
+      "id": 16,
+      "seek": 2898,
+      "start": 51.040000915527344,
+      "end": 51.459999084472656,
+      "text": " Zero.",
+      "tokens": [
+        51470,
+        17182,
+        13,
+        51520
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.24683117866516113,
+      "compression_ratio": 1.682539701461792,
+      "no_speech_prob": 0.0008693631389178336
+    },
+    {
+      "id": 17,
+      "seek": 2898,
+      "start": 51.91999816894531,
+      "end": 55.5,
+      "text": " You're holding a dollar that pays you nothing, and Tether keeps every cent of the yield.",
+      "tokens": [
+        51520,
+        509,
+        434,
+        5061,
+        257,
+        7241,
+        300,
+        10604,
+        291,
+        1825,
+        11,
+        293,
+        314,
+        1666,
+        5965,
+        633,
+        1489,
+        295,
+        264,
+        11257,
+        13,
+        51712
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.24683117866516113,
+      "compression_ratio": 1.682539701461792,
+      "no_speech_prob": 0.0008693631389178336
+    },
+    {
+      "id": 18,
+      "seek": 2898,
+      "start": 55.91999816894531,
+      "end": 56.7599983215332,
+      "text": " Now multiply it.",
+      "tokens": [
+        51712,
+        823,
+        12972,
+        309,
+        13,
+        51762
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.24683117866516113,
+      "compression_ratio": 1.682539701461792,
+      "no_speech_prob": 0.0008693631389178336
+    },
+    {
+      "id": 19,
+      "seek": 5676,
+      "start": 56.7599983215332,
+      "end": 59.720001220703125,
+      "text": " There's well over 100 billion dollars of USDT out there.",
+      "tokens": [
+        50384,
+        821,
+        311,
+        731,
+        670,
+        2319,
+        5218,
+        3808,
+        295,
+        24375,
+        51,
+        484,
+        456,
+        13,
+        50536
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.2634684145450592,
+      "compression_ratio": 1.6857142448425293,
+      "no_speech_prob": 0.26889070868492126
+    },
+    {
+      "id": 20,
+      "seek": 5676,
+      "start": 60.2400016784668,
+      "end": 64.0199966430664,
+      "text": " Which means well over 100 billion of other people's money working for Tether, for free.",
+      "tokens": [
+        50536,
+        3013,
+        1355,
+        731,
+        670,
+        2319,
+        5218,
+        295,
+        661,
+        561,
+        311,
+        1460,
+        1364,
+        337,
+        314,
+        1666,
+        11,
+        337,
+        1737,
+        13,
+        50754
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.2634684145450592,
+      "compression_ratio": 1.6857142448425293,
+      "no_speech_prob": 0.26889070868492126
+    },
+    {
+      "id": 21,
+      "seek": 5676,
+      "start": 64.5,
+      "end": 66.68000030517578,
+      "text": " And normally, getting capital is expensive.",
+      "tokens": [
+        50754,
+        400,
+        5646,
+        11,
+        1242,
+        4238,
+        307,
+        5124,
+        13,
+        50866
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.2634684145450592,
+      "compression_ratio": 1.6857142448425293,
+      "no_speech_prob": 0.26889070868492126
+    },
+    {
+      "id": 22,
+      "seek": 5676,
+      "start": 66.91999816894531,
+      "end": 70.5999984741211,
+      "text": " A bank pays interest to its depositors, a company pays interest on its bonds.",
+      "tokens": [
+        50866,
+        316,
+        3765,
+        10604,
+        1179,
+        281,
+        1080,
+        19107,
+        830,
+        11,
+        257,
+        2237,
+        10604,
+        1179,
+        322,
+        1080,
+        14713,
+        13,
+        51096
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.2634684145450592,
+      "compression_ratio": 1.6857142448425293,
+      "no_speech_prob": 0.26889070868492126
+    },
+    {
+      "id": 23,
+      "seek": 5676,
+      "start": 71.16000366210938,
+      "end": 72.12000274658203,
+      "text": " Everyone pays for money.",
+      "tokens": [
+        51096,
+        5198,
+        10604,
+        337,
+        1460,
+        13,
+        51168
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.2634684145450592,
+      "compression_ratio": 1.6857142448425293,
+      "no_speech_prob": 0.26889070868492126
+    },
+    {
+      "id": 24,
+      "seek": 5676,
+      "start": 72.9000015258789,
+      "end": 73.41999816894531,
+      "text": " Tether's cost?",
+      "tokens": [
+        51168,
+        314,
+        1666,
+        311,
+        2063,
+        30,
+        51218
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.2634684145450592,
+      "compression_ratio": 1.6857142448425293,
+      "no_speech_prob": 0.26889070868492126
+    },
+    {
+      "id": 25,
+      "seek": 5676,
+      "start": 73.68000030517578,
+      "end": 73.9800033569336,
+      "text": " Nothing.",
+      "tokens": [
+        51218,
+        6693,
+        13,
+        51268
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.2634684145450592,
+      "compression_ratio": 1.6857142448425293,
+      "no_speech_prob": 0.26889070868492126
+    },
+    {
+      "id": 26,
+      "seek": 5676,
+      "start": 74.16000366210938,
+      "end": 78.22000122070312,
+      "text": " It's an interest-free loan from millions of users, and it keeps 100% of the return.",
+      "tokens": [
+        51268,
+        467,
+        311,
+        364,
+        1179,
+        12,
+        10792,
+        10529,
+        490,
+        6803,
+        295,
+        5022,
+        11,
+        293,
+        309,
+        5965,
+        2319,
+        4,
+        295,
+        264,
+        2736,
+        13,
+        51470
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.2634684145450592,
+      "compression_ratio": 1.6857142448425293,
+      "no_speech_prob": 0.26889070868492126
+    },
+    {
+      "id": 27,
+      "seek": 5676,
+      "start": 78.77999877929688,
+      "end": 83.73999786376953,
+      "text": " In 2024, the company reported around 13 billion dollars in profit, with a team you could fit",
+      "tokens": [
+        51470,
+        682,
+        45237,
+        11,
+        264,
+        2237,
+        7055,
+        926,
+        3705,
+        5218,
+        3808,
+        294,
+        7475,
+        11,
+        365,
+        257,
+        1469,
+        291,
+        727,
+        3318,
+        51710
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.2634684145450592,
+      "compression_ratio": 1.6857142448425293,
+      "no_speech_prob": 0.26889070868492126
+    },
+    {
+      "id": 28,
+      "seek": 5676,
+      "start": 83.73999786376953,
+      "end": 84.5199966430664,
+      "text": " in a single room.",
+      "tokens": [
+        51710,
+        294,
+        257,
+        2167,
+        1808,
+        13,
+        51780
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.2634684145450592,
+      "compression_ratio": 1.6857142448425293,
+      "no_speech_prob": 0.26889070868492126
+    },
+    {
+      "id": 29,
+      "seek": 5676,
+      "start": 84.94000244140625,
+      "end": 85.87999725341797,
+      "text": " So what's the catch?",
+      "tokens": [
+        51780,
+        407,
+        437,
+        311,
+        264,
+        3745,
+        30,
+        51830
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.2634684145450592,
+      "compression_ratio": 1.6857142448425293,
+      "no_speech_prob": 0.26889070868492126
+    },
+    {
+      "id": 30,
+      "seek": 8588,
+      "start": 85.87999725341797,
+      "end": 86.5199966430664,
+      "text": " Trust.",
+      "tokens": [
+        50380,
+        11580,
+        13,
+        50430
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.22693964838981628,
+      "compression_ratio": 1.7454545497894287,
+      "no_speech_prob": 0.0474231094121933
+    },
+    {
+      "id": 31,
+      "seek": 8588,
+      "start": 86.86000061035156,
+      "end": 90.31999969482422,
+      "text": " The whole thing holds up only as long as people believe every token is really backed by a",
+      "tokens": [
+        50430,
+        440,
+        1379,
+        551,
+        9190,
+        493,
+        787,
+        382,
+        938,
+        382,
+        561,
+        1697,
+        633,
+        14862,
+        307,
+        534,
+        20391,
+        538,
+        257,
+        50576
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.22693964838981628,
+      "compression_ratio": 1.7454545497894287,
+      "no_speech_prob": 0.0474231094121933
+    },
+    {
+      "id": 32,
+      "seek": 8588,
+      "start": 90.31999969482422,
+      "end": 92.80000305175781,
+      "text": " real dollar, and don't all rush to cash out at once.",
+      "tokens": [
+        50576,
+        957,
+        7241,
+        11,
+        293,
+        500,
+        380,
+        439,
+        9300,
+        281,
+        6388,
+        484,
+        412,
+        1564,
+        13,
+        50726
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.22693964838981628,
+      "compression_ratio": 1.7454545497894287,
+      "no_speech_prob": 0.0474231094121933
+    },
+    {
+      "id": 33,
+      "seek": 8588,
+      "start": 93.23999786376953,
+      "end": 97.33999633789062,
+      "text": " Tether has been fined before for overstating what was actually in its reserves, and it",
+      "tokens": [
+        50726,
+        314,
+        1666,
+        575,
+        668,
+        962,
+        292,
+        949,
+        337,
+        48834,
+        990,
+        437,
+        390,
+        767,
+        294,
+        1080,
+        27483,
+        11,
+        293,
+        309,
+        50918
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.22693964838981628,
+      "compression_ratio": 1.7454545497894287,
+      "no_speech_prob": 0.0474231094121933
+    },
+    {
+      "id": 34,
+      "seek": 8588,
+      "start": 97.33999633789062,
+      "end": 99.9800033569336,
+      "text": " publishes attestations, not full independent audits.",
+      "tokens": [
+        50918,
+        11374,
+        279,
+        951,
+        377,
+        763,
+        11,
+        406,
+        1577,
+        6695,
+        2379,
+        1208,
+        13,
+        51090
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.22693964838981628,
+      "compression_ratio": 1.7454545497894287,
+      "no_speech_prob": 0.0474231094121933
+    },
+    {
+      "id": 35,
+      "seek": 8588,
+      "start": 100.22000122070312,
+      "end": 103.30000305175781,
+      "text": " The model is brilliant, but it runs entirely on confidence.",
+      "tokens": [
+        51090,
+        440,
+        2316,
+        307,
+        10248,
+        11,
+        457,
+        309,
+        6676,
+        7696,
+        322,
+        6687,
+        13,
+        51256
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.22693964838981628,
+      "compression_ratio": 1.7454545497894287,
+      "no_speech_prob": 0.0474231094121933
+    },
+    {
+      "id": 36,
+      "seek": 8588,
+      "start": 103.55999755859375,
+      "end": 106.5999984741211,
+      "text": " Still, it cracks something most people never even see.",
+      "tokens": [
+        51256,
+        8291,
+        11,
+        309,
+        21770,
+        746,
+        881,
+        561,
+        1128,
+        754,
+        536,
+        13,
+        51422
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.22693964838981628,
+      "compression_ratio": 1.7454545497894287,
+      "no_speech_prob": 0.0474231094121933
+    },
+    {
+      "id": 37,
+      "seek": 8588,
+      "start": 106.9800033569336,
+      "end": 110.9800033569336,
+      "text": " The most profitable trade in finance wasn't picking the right stock, or the right coin.",
+      "tokens": [
+        51422,
+        440,
+        881,
+        21608,
+        4923,
+        294,
+        10719,
+        2067,
+        380,
+        8867,
+        264,
+        558,
+        4127,
+        11,
+        420,
+        264,
+        558,
+        11464,
+        13,
+        51645
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.22693964838981628,
+      "compression_ratio": 1.7454545497894287,
+      "no_speech_prob": 0.0474231094121933
+    },
+    {
+      "id": 38,
+      "seek": 8588,
+      "start": 111.4000015258789,
+      "end": 115.23999786376953,
+      "text": " It was realizing that if you get to issue the dollar, you get to keep the interest,",
+      "tokens": [
+        51645,
+        467,
+        390,
+        16734,
+        300,
+        498,
+        291,
+        483,
+        281,
+        2734,
+        264,
+        7241,
+        11,
+        291,
+        483,
+        281,
+        1066,
+        264,
+        1179,
+        11,
+        51848
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.22693964838981628,
+      "compression_ratio": 1.7454545497894287,
+      "no_speech_prob": 0.0474231094121933
+    },
+    {
+      "id": 39,
+      "seek": 11524,
+      "start": 115.23999786376953,
+      "end": 118.0999984741211,
+      "text": " Want more business models that sound illegal but aren't?",
+      "tokens": [
+        50380,
+        11773,
+        544,
+        1606,
+        5245,
+        300,
+        1626,
+        11905,
+        457,
+        3212,
+        380,
+        30,
+        50510
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.5041387677192688,
+      "compression_ratio": 0.9487179517745972,
+      "no_speech_prob": 0.5348585844039917
+    },
+    {
+      "id": 40,
+      "seek": 11524,
+      "start": 118.37999725341797,
+      "end": 119.23999786376953,
+      "text": " Follow StackTags.",
+      "tokens": [
+        50510,
+        9876,
+        37649,
+        51,
+        12109,
+        13,
+        50568
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.5041387677192688,
+      "compression_ratio": 0.9487179517745972,
+      "no_speech_prob": 0.5348585844039917
+    }
+  ],
+  "words": [
+    {
+      "word": "There's",
+      "start": 0,
+      "end": 0.25999999046325684
+    },
+    {
+      "word": "a",
+      "start": 0.25999999046325684,
+      "end": 0.3799999952316284
+    },
+    {
+      "word": "company",
+      "start": 0.3799999952316284,
+      "end": 0.6200000047683716
+    },
+    {
+      "word": "that",
+      "start": 0.6200000047683716,
+      "end": 0.8399999737739563
+    },
+    {
+      "word": "makes",
+      "start": 0.8399999737739563,
+      "end": 0.9399999976158142
+    },
+    {
+      "word": "more",
+      "start": 0.9399999976158142,
+      "end": 1.2400000095367432
+    },
+    {
+      "word": "money",
+      "start": 1.2400000095367432,
+      "end": 1.440000057220459
+    },
+    {
+      "word": "per",
+      "start": 1.440000057220459,
+      "end": 1.7000000476837158
+    },
+    {
+      "word": "employee",
+      "start": 1.7000000476837158,
+      "end": 1.940000057220459
+    },
+    {
+      "word": "than",
+      "start": 1.940000057220459,
+      "end": 2.140000104904175
+    },
+    {
+      "word": "almost",
+      "start": 2.140000104904175,
+      "end": 2.5999999046325684
+    },
+    {
+      "word": "anyone",
+      "start": 2.5999999046325684,
+      "end": 2.759999990463257
+    },
+    {
+      "word": "on",
+      "start": 2.759999990463257,
+      "end": 3.240000009536743
+    },
+    {
+      "word": "earth",
+      "start": 3.240000009536743,
+      "end": 3.240000009536743
+    },
+    {
+      "word": "around",
+      "start": 3.440000057220459,
+      "end": 3.619999885559082
+    },
+    {
+      "word": "a",
+      "start": 3.619999885559082,
+      "end": 3.7799999713897705
+    },
+    {
+      "word": "hundred",
+      "start": 3.7799999713897705,
+      "end": 4.039999961853027
+    },
+    {
+      "word": "staff",
+      "start": 4.039999961853027,
+      "end": 4.420000076293945
+    },
+    {
+      "word": "billions",
+      "start": 4.699999809265137,
+      "end": 4.920000076293945
+    },
+    {
+      "word": "in",
+      "start": 4.920000076293945,
+      "end": 5.099999904632568
+    },
+    {
+      "word": "annual",
+      "start": 5.099999904632568,
+      "end": 5.400000095367432
+    },
+    {
+      "word": "profit",
+      "start": 5.400000095367432,
+      "end": 5.739999771118164
+    },
+    {
+      "word": "and",
+      "start": 5.840000152587891,
+      "end": 6.239999771118164
+    },
+    {
+      "word": "the",
+      "start": 6.239999771118164,
+      "end": 6.340000152587891
+    },
+    {
+      "word": "entire",
+      "start": 6.340000152587891,
+      "end": 6.800000190734863
+    },
+    {
+      "word": "business",
+      "start": 6.800000190734863,
+      "end": 7.119999885559082
+    },
+    {
+      "word": "model",
+      "start": 7.119999885559082,
+      "end": 7.320000171661377
+    },
+    {
+      "word": "is",
+      "start": 7.320000171661377,
+      "end": 7.5
+    },
+    {
+      "word": "this",
+      "start": 7.5,
+      "end": 7.860000133514404
+    },
+    {
+      "word": "You",
+      "start": 8.260000228881836,
+      "end": 8.359999656677246
+    },
+    {
+      "word": "give",
+      "start": 8.359999656677246,
+      "end": 8.5
+    },
+    {
+      "word": "them",
+      "start": 8.5,
+      "end": 8.65999984741211
+    },
+    {
+      "word": "a",
+      "start": 8.65999984741211,
+      "end": 8.859999656677246
+    },
+    {
+      "word": "dollar",
+      "start": 8.859999656677246,
+      "end": 8.979999542236328
+    },
+    {
+      "word": "they",
+      "start": 9.220000267028809,
+      "end": 9.479999542236328
+    },
+    {
+      "word": "hand",
+      "start": 9.479999542236328,
+      "end": 9.520000457763672
+    },
+    {
+      "word": "you",
+      "start": 9.520000457763672,
+      "end": 9.65999984741211
+    },
+    {
+      "word": "a",
+      "start": 9.65999984741211,
+      "end": 10
+    },
+    {
+      "word": "token",
+      "start": 10,
+      "end": 10
+    },
+    {
+      "word": "and",
+      "start": 10.279999732971191,
+      "end": 10.640000343322754
+    },
+    {
+      "word": "they",
+      "start": 10.640000343322754,
+      "end": 10.819999694824219
+    },
+    {
+      "word": "keep",
+      "start": 10.819999694824219,
+      "end": 10.979999542236328
+    },
+    {
+      "word": "the",
+      "start": 10.979999542236328,
+      "end": 11.180000305175781
+    },
+    {
+      "word": "dollar",
+      "start": 11.180000305175781,
+      "end": 11.420000076293945
+    },
+    {
+      "word": "That's",
+      "start": 11.680000305175781,
+      "end": 12.15999984741211
+    },
+    {
+      "word": "Tether",
+      "start": 12.15999984741211,
+      "end": 12.15999984741211
+    },
+    {
+      "word": "and",
+      "start": 12.279999732971191,
+      "end": 12.520000457763672
+    },
+    {
+      "word": "it's",
+      "start": 12.520000457763672,
+      "end": 12.699999809265137
+    },
+    {
+      "word": "completely",
+      "start": 12.699999809265137,
+      "end": 13.319999694824219
+    },
+    {
+      "word": "legal",
+      "start": 13.319999694824219,
+      "end": 13.579999923706055
+    },
+    {
+      "word": "Here's",
+      "start": 14.119999885559082,
+      "end": 14.359999656677246
+    },
+    {
+      "word": "why",
+      "start": 14.359999656677246,
+      "end": 14.5600004196167
+    },
+    {
+      "word": "it",
+      "start": 14.5600004196167,
+      "end": 14.760000228881836
+    },
+    {
+      "word": "might",
+      "start": 14.760000228881836,
+      "end": 14.9399995803833
+    },
+    {
+      "word": "be",
+      "start": 14.9399995803833,
+      "end": 15.0600004196167
+    },
+    {
+      "word": "the",
+      "start": 15.0600004196167,
+      "end": 15.140000343322754
+    },
+    {
+      "word": "most",
+      "start": 15.140000343322754,
+      "end": 15.479999542236328
+    },
+    {
+      "word": "genius",
+      "start": 15.479999542236328,
+      "end": 15.699999809265137
+    },
+    {
+      "word": "business",
+      "start": 15.699999809265137,
+      "end": 16.079999923706055
+    },
+    {
+      "word": "model",
+      "start": 16.079999923706055,
+      "end": 16.399999618530273
+    },
+    {
+      "word": "ever",
+      "start": 16.399999618530273,
+      "end": 17.1200008392334
+    },
+    {
+      "word": "invented",
+      "start": 17.1200008392334,
+      "end": 17.1200008392334
+    },
+    {
+      "word": "Tether",
+      "start": 17.719999313354492,
+      "end": 17.760000228881836
+    },
+    {
+      "word": "runs",
+      "start": 17.760000228881836,
+      "end": 18.020000457763672
+    },
+    {
+      "word": "USDT",
+      "start": 18.020000457763672,
+      "end": 18.760000228881836
+    },
+    {
+      "word": "a",
+      "start": 19.020000457763672,
+      "end": 19.260000228881836
+    },
+    {
+      "word": "stablecoin",
+      "start": 19.260000228881836,
+      "end": 19.84000015258789
+    },
+    {
+      "word": "One",
+      "start": 20.31999969482422,
+      "end": 20.540000915527344
+    },
+    {
+      "word": "USDT",
+      "start": 20.540000915527344,
+      "end": 21.139999389648438
+    },
+    {
+      "word": "is",
+      "start": 21.139999389648438,
+      "end": 21.420000076293945
+    },
+    {
+      "word": "always",
+      "start": 21.420000076293945,
+      "end": 21.799999237060547
+    },
+    {
+      "word": "meant",
+      "start": 21.799999237060547,
+      "end": 21.920000076293945
+    },
+    {
+      "word": "to",
+      "start": 21.920000076293945,
+      "end": 22.360000610351562
+    },
+    {
+      "word": "equal",
+      "start": 22.360000610351562,
+      "end": 22.360000610351562
+    },
+    {
+      "word": "one",
+      "start": 22.360000610351562,
+      "end": 22.739999771118164
+    },
+    {
+      "word": "US",
+      "start": 22.739999771118164,
+      "end": 23.139999389648438
+    },
+    {
+      "word": "dollar",
+      "start": 23.139999389648438,
+      "end": 23.479999542236328
+    },
+    {
+      "word": "Crypto",
+      "start": 23.979999542236328,
+      "end": 24.31999969482422
+    },
+    {
+      "word": "traders",
+      "start": 24.31999969482422,
+      "end": 24.559999465942383
+    },
+    {
+      "word": "love",
+      "start": 24.559999465942383,
+      "end": 24.959999084472656
+    },
+    {
+      "word": "it",
+      "start": 24.959999084472656,
+      "end": 25.079999923706055
+    },
+    {
+      "word": "It's",
+      "start": 25.200000762939453,
+      "end": 25.399999618530273
+    },
+    {
+      "word": "a",
+      "start": 25.399999618530273,
+      "end": 25.760000228881836
+    },
+    {
+      "word": "dollar",
+      "start": 25.760000228881836,
+      "end": 25.760000228881836
+    },
+    {
+      "word": "that",
+      "start": 25.760000228881836,
+      "end": 26.15999984741211
+    },
+    {
+      "word": "lives",
+      "start": 26.15999984741211,
+      "end": 26.15999984741211
+    },
+    {
+      "word": "on",
+      "start": 26.15999984741211,
+      "end": 26.280000686645508
+    },
+    {
+      "word": "the",
+      "start": 26.280000686645508,
+      "end": 26.420000076293945
+    },
+    {
+      "word": "blockchain",
+      "start": 26.420000076293945,
+      "end": 26.799999237060547
+    },
+    {
+      "word": "so",
+      "start": 26.860000610351562,
+      "end": 27.020000457763672
+    },
+    {
+      "word": "they",
+      "start": 27.020000457763672,
+      "end": 27.1200008392334
+    },
+    {
+      "word": "can",
+      "start": 27.1200008392334,
+      "end": 27.3799991607666
+    },
+    {
+      "word": "jump",
+      "start": 27.3799991607666,
+      "end": 27.5
+    },
+    {
+      "word": "in",
+      "start": 27.5,
+      "end": 27.760000228881836
+    },
+    {
+      "word": "and",
+      "start": 27.760000228881836,
+      "end": 27.860000610351562
+    },
+    {
+      "word": "out",
+      "start": 27.860000610351562,
+      "end": 27.979999542236328
+    },
+    {
+      "word": "of",
+      "start": 27.979999542236328,
+      "end": 28.440000534057617
+    },
+    {
+      "word": "trades",
+      "start": 28.440000534057617,
+      "end": 28.440000534057617
+    },
+    {
+      "word": "instantly",
+      "start": 28.440000534057617,
+      "end": 28.979999542236328
+    },
+    {
+      "word": "To",
+      "start": 29.299999237060547,
+      "end": 29.540000915527344
+    },
+    {
+      "word": "get",
+      "start": 29.540000915527344,
+      "end": 29.719999313354492
+    },
+    {
+      "word": "one",
+      "start": 29.719999313354492,
+      "end": 29.940000534057617
+    },
+    {
+      "word": "you",
+      "start": 30.200000762939453,
+      "end": 30.260000228881836
+    },
+    {
+      "word": "hand",
+      "start": 30.260000228881836,
+      "end": 30.5
+    },
+    {
+      "word": "Tether",
+      "start": 30.5,
+      "end": 30.5
+    },
+    {
+      "word": "a",
+      "start": 30.5,
+      "end": 30.68000030517578
+    },
+    {
+      "word": "real",
+      "start": 30.68000030517578,
+      "end": 31.200000762939453
+    },
+    {
+      "word": "dollar",
+      "start": 31.200000762939453,
+      "end": 31.239999771118164
+    },
+    {
+      "word": "and",
+      "start": 31.360000610351562,
+      "end": 31.459999084472656
+    },
+    {
+      "word": "they",
+      "start": 31.459999084472656,
+      "end": 31.6200008392334
+    },
+    {
+      "word": "mint",
+      "start": 31.6200008392334,
+      "end": 31.799999237060547
+    },
+    {
+      "word": "you",
+      "start": 31.799999237060547,
+      "end": 32.040000915527344
+    },
+    {
+      "word": "a",
+      "start": 32.040000915527344,
+      "end": 32.31999969482422
+    },
+    {
+      "word": "token",
+      "start": 32.31999969482422,
+      "end": 32.31999969482422
+    },
+    {
+      "word": "Simple",
+      "start": 32.959999084472656,
+      "end": 33.20000076293945
+    },
+    {
+      "word": "But",
+      "start": 33.720001220703125,
+      "end": 33.79999923706055
+    },
+    {
+      "word": "the",
+      "start": 33.79999923706055,
+      "end": 34.060001373291016
+    },
+    {
+      "word": "magic",
+      "start": 34.060001373291016,
+      "end": 34.400001525878906
+    },
+    {
+      "word": "isn't",
+      "start": 34.400001525878906,
+      "end": 34.63999938964844
+    },
+    {
+      "word": "the",
+      "start": 34.63999938964844,
+      "end": 35.18000030517578
+    },
+    {
+      "word": "token",
+      "start": 35.18000030517578,
+      "end": 35.18000030517578
+    },
+    {
+      "word": "it's",
+      "start": 35.47999954223633,
+      "end": 35.65999984741211
+    },
+    {
+      "word": "what",
+      "start": 35.65999984741211,
+      "end": 35.86000061035156
+    },
+    {
+      "word": "happens",
+      "start": 35.86000061035156,
+      "end": 36.119998931884766
+    },
+    {
+      "word": "to",
+      "start": 36.119998931884766,
+      "end": 36.2599983215332
+    },
+    {
+      "word": "your",
+      "start": 36.2599983215332,
+      "end": 36.58000183105469
+    },
+    {
+      "word": "dollar",
+      "start": 36.58000183105469,
+      "end": 36.63999938964844
+    },
+    {
+      "word": "Because",
+      "start": 37.099998474121094,
+      "end": 37.459999084472656
+    },
+    {
+      "word": "Tether",
+      "start": 37.459999084472656,
+      "end": 37.560001373291016
+    },
+    {
+      "word": "doesn't",
+      "start": 37.560001373291016,
+      "end": 37.81999969482422
+    },
+    {
+      "word": "just",
+      "start": 37.81999969482422,
+      "end": 38.13999938964844
+    },
+    {
+      "word": "let",
+      "start": 38.13999938964844,
+      "end": 38.2400016784668
+    },
+    {
+      "word": "your",
+      "start": 38.2400016784668,
+      "end": 38.63999938964844
+    },
+    {
+      "word": "dollar",
+      "start": 38.63999938964844,
+      "end": 38.63999938964844
+    },
+    {
+      "word": "sit",
+      "start": 38.63999938964844,
+      "end": 38.81999969482422
+    },
+    {
+      "word": "in",
+      "start": 38.81999969482422,
+      "end": 38.959999084472656
+    },
+    {
+      "word": "a",
+      "start": 38.959999084472656,
+      "end": 39.2400016784668
+    },
+    {
+      "word": "drawer",
+      "start": 39.2400016784668,
+      "end": 39.2400016784668
+    },
+    {
+      "word": "it",
+      "start": 39.459999084472656,
+      "end": 39.58000183105469
+    },
+    {
+      "word": "takes",
+      "start": 39.58000183105469,
+      "end": 39.779998779296875
+    },
+    {
+      "word": "all",
+      "start": 39.779998779296875,
+      "end": 40.119998931884766
+    },
+    {
+      "word": "those",
+      "start": 40.119998931884766,
+      "end": 40.380001068115234
+    },
+    {
+      "word": "billions",
+      "start": 40.380001068115234,
+      "end": 40.63999938964844
+    },
+    {
+      "word": "and",
+      "start": 40.63999938964844,
+      "end": 40.880001068115234
+    },
+    {
+      "word": "parks",
+      "start": 40.880001068115234,
+      "end": 41.099998474121094
+    },
+    {
+      "word": "them",
+      "start": 41.099998474121094,
+      "end": 41.279998779296875
+    },
+    {
+      "word": "mostly",
+      "start": 41.279998779296875,
+      "end": 41.599998474121094
+    },
+    {
+      "word": "in",
+      "start": 41.599998474121094,
+      "end": 41.79999923706055
+    },
+    {
+      "word": "US",
+      "start": 41.79999923706055,
+      "end": 42.040000915527344
+    },
+    {
+      "word": "treasury",
+      "start": 42.040000915527344,
+      "end": 42.34000015258789
+    },
+    {
+      "word": "bills",
+      "start": 42.34000015258789,
+      "end": 42.70000076293945
+    },
+    {
+      "word": "Basically",
+      "start": 43.2400016784668,
+      "end": 43.540000915527344
+    },
+    {
+      "word": "the",
+      "start": 43.540000915527344,
+      "end": 43.84000015258789
+    },
+    {
+      "word": "safest",
+      "start": 43.84000015258789,
+      "end": 44.15999984741211
+    },
+    {
+      "word": "loan",
+      "start": 44.15999984741211,
+      "end": 44.36000061035156
+    },
+    {
+      "word": "on",
+      "start": 44.36000061035156,
+      "end": 44.52000045776367
+    },
+    {
+      "word": "the",
+      "start": 44.52000045776367,
+      "end": 44.65999984741211
+    },
+    {
+      "word": "planet",
+      "start": 44.65999984741211,
+      "end": 44.900001525878906
+    },
+    {
+      "word": "earning",
+      "start": 45.52000045776367,
+      "end": 45.63999938964844
+    },
+    {
+      "word": "around",
+      "start": 45.63999938964844,
+      "end": 45.959999084472656
+    },
+    {
+      "word": "4",
+      "start": 45.959999084472656,
+      "end": 46.2400016784668
+    },
+    {
+      "word": "5",
+      "start": 46.2400016784668,
+      "end": 46.619998931884766
+    },
+    {
+      "word": "",
+      "start": 46.619998931884766,
+      "end": 46.86000061035156
+    },
+    {
+      "word": "a",
+      "start": 46.86000061035156,
+      "end": 47.220001220703125
+    },
+    {
+      "word": "year",
+      "start": 47.220001220703125,
+      "end": 47.220001220703125
+    },
+    {
+      "word": "And",
+      "start": 47.540000915527344,
+      "end": 47.79999923706055
+    },
+    {
+      "word": "how",
+      "start": 47.79999923706055,
+      "end": 48
+    },
+    {
+      "word": "much",
+      "start": 48,
+      "end": 48.20000076293945
+    },
+    {
+      "word": "of",
+      "start": 48.20000076293945,
+      "end": 48.29999923706055
+    },
+    {
+      "word": "that",
+      "start": 48.29999923706055,
+      "end": 48.58000183105469
+    },
+    {
+      "word": "interest",
+      "start": 48.58000183105469,
+      "end": 48.79999923706055
+    },
+    {
+      "word": "do",
+      "start": 48.79999923706055,
+      "end": 48.939998626708984
+    },
+    {
+      "word": "they",
+      "start": 48.939998626708984,
+      "end": 49.060001373291016
+    },
+    {
+      "word": "pass",
+      "start": 49.060001373291016,
+      "end": 49.29999923706055
+    },
+    {
+      "word": "back",
+      "start": 49.29999923706055,
+      "end": 49.58000183105469
+    },
+    {
+      "word": "to",
+      "start": 49.58000183105469,
+      "end": 49.70000076293945
+    },
+    {
+      "word": "you",
+      "start": 49.70000076293945,
+      "end": 49.84000015258789
+    },
+    {
+      "word": "the",
+      "start": 49.91999816894531,
+      "end": 50.13999938964844
+    },
+    {
+      "word": "token",
+      "start": 50.13999938964844,
+      "end": 50.400001525878906
+    },
+    {
+      "word": "holder",
+      "start": 50.400001525878906,
+      "end": 50.619998931884766
+    },
+    {
+      "word": "Zero",
+      "start": 51.040000915527344,
+      "end": 51.459999084472656
+    },
+    {
+      "word": "You're",
+      "start": 51.91999816894531,
+      "end": 52.29999923706055
+    },
+    {
+      "word": "holding",
+      "start": 52.29999923706055,
+      "end": 52.29999923706055
+    },
+    {
+      "word": "a",
+      "start": 52.29999923706055,
+      "end": 52.65999984741211
+    },
+    {
+      "word": "dollar",
+      "start": 52.65999984741211,
+      "end": 52.65999984741211
+    },
+    {
+      "word": "that",
+      "start": 52.65999984741211,
+      "end": 52.84000015258789
+    },
+    {
+      "word": "pays",
+      "start": 52.84000015258789,
+      "end": 53
+    },
+    {
+      "word": "you",
+      "start": 53,
+      "end": 53.2599983215332
+    },
+    {
+      "word": "nothing",
+      "start": 53.2599983215332,
+      "end": 53.52000045776367
+    },
+    {
+      "word": "and",
+      "start": 53.7599983215332,
+      "end": 54.099998474121094
+    },
+    {
+      "word": "Tether",
+      "start": 54.099998474121094,
+      "end": 54.099998474121094
+    },
+    {
+      "word": "keeps",
+      "start": 54.099998474121094,
+      "end": 54.380001068115234
+    },
+    {
+      "word": "every",
+      "start": 54.380001068115234,
+      "end": 54.959999084472656
+    },
+    {
+      "word": "cent",
+      "start": 54.959999084472656,
+      "end": 55.02000045776367
+    },
+    {
+      "word": "of",
+      "start": 55.02000045776367,
+      "end": 55.15999984741211
+    },
+    {
+      "word": "the",
+      "start": 55.15999984741211,
+      "end": 55.34000015258789
+    },
+    {
+      "word": "yield",
+      "start": 55.34000015258789,
+      "end": 55.5
+    },
+    {
+      "word": "Now",
+      "start": 55.91999816894531,
+      "end": 56.34000015258789
+    },
+    {
+      "word": "multiply",
+      "start": 56.34000015258789,
+      "end": 56.540000915527344
+    },
+    {
+      "word": "it",
+      "start": 56.540000915527344,
+      "end": 56.7599983215332
+    },
+    {
+      "word": "There's",
+      "start": 56.7599983215332,
+      "end": 57.279998779296875
+    },
+    {
+      "word": "well",
+      "start": 57.279998779296875,
+      "end": 57.439998626708984
+    },
+    {
+      "word": "over",
+      "start": 57.439998626708984,
+      "end": 57.619998931884766
+    },
+    {
+      "word": "100",
+      "start": 57.619998931884766,
+      "end": 58.040000915527344
+    },
+    {
+      "word": "billion",
+      "start": 58.040000915527344,
+      "end": 58.29999923706055
+    },
+    {
+      "word": "dollars",
+      "start": 58.29999923706055,
+      "end": 58.599998474121094
+    },
+    {
+      "word": "of",
+      "start": 58.599998474121094,
+      "end": 58.7599983215332
+    },
+    {
+      "word": "USDT",
+      "start": 58.7599983215332,
+      "end": 59.34000015258789
+    },
+    {
+      "word": "out",
+      "start": 59.34000015258789,
+      "end": 59.560001373291016
+    },
+    {
+      "word": "there",
+      "start": 59.560001373291016,
+      "end": 59.720001220703125
+    },
+    {
+      "word": "Which",
+      "start": 60.2400016784668,
+      "end": 60.279998779296875
+    },
+    {
+      "word": "means",
+      "start": 60.279998779296875,
+      "end": 60.540000915527344
+    },
+    {
+      "word": "well",
+      "start": 60.540000915527344,
+      "end": 60.779998779296875
+    },
+    {
+      "word": "over",
+      "start": 60.779998779296875,
+      "end": 61
+    },
+    {
+      "word": "100",
+      "start": 61,
+      "end": 61.31999969482422
+    },
+    {
+      "word": "billion",
+      "start": 61.31999969482422,
+      "end": 61.47999954223633
+    },
+    {
+      "word": "of",
+      "start": 61.47999954223633,
+      "end": 61.68000030517578
+    },
+    {
+      "word": "other",
+      "start": 61.68000030517578,
+      "end": 61.86000061035156
+    },
+    {
+      "word": "people's",
+      "start": 61.86000061035156,
+      "end": 62.2400016784668
+    },
+    {
+      "word": "money",
+      "start": 62.2400016784668,
+      "end": 62.400001525878906
+    },
+    {
+      "word": "working",
+      "start": 62.400001525878906,
+      "end": 62.720001220703125
+    },
+    {
+      "word": "for",
+      "start": 62.720001220703125,
+      "end": 63.099998474121094
+    },
+    {
+      "word": "Tether",
+      "start": 63.099998474121094,
+      "end": 63.099998474121094
+    },
+    {
+      "word": "for",
+      "start": 63.58000183105469,
+      "end": 63.84000015258789
+    },
+    {
+      "word": "free",
+      "start": 63.84000015258789,
+      "end": 64.0199966430664
+    },
+    {
+      "word": "And",
+      "start": 64.5,
+      "end": 64.63999938964844
+    },
+    {
+      "word": "normally",
+      "start": 64.63999938964844,
+      "end": 64.9800033569336
+    },
+    {
+      "word": "getting",
+      "start": 65.41999816894531,
+      "end": 65.62000274658203
+    },
+    {
+      "word": "capital",
+      "start": 65.62000274658203,
+      "end": 65.95999908447266
+    },
+    {
+      "word": "is",
+      "start": 65.95999908447266,
+      "end": 66.16000366210938
+    },
+    {
+      "word": "expensive",
+      "start": 66.16000366210938,
+      "end": 66.68000030517578
+    },
+    {
+      "word": "A",
+      "start": 66.91999816894531,
+      "end": 67.0199966430664
+    },
+    {
+      "word": "bank",
+      "start": 67.0199966430664,
+      "end": 67.22000122070312
+    },
+    {
+      "word": "pays",
+      "start": 67.22000122070312,
+      "end": 67.41999816894531
+    },
+    {
+      "word": "interest",
+      "start": 67.41999816894531,
+      "end": 67.68000030517578
+    },
+    {
+      "word": "to",
+      "start": 67.68000030517578,
+      "end": 67.83999633789062
+    },
+    {
+      "word": "its",
+      "start": 67.83999633789062,
+      "end": 68.04000091552734
+    },
+    {
+      "word": "depositors",
+      "start": 68.04000091552734,
+      "end": 68.55999755859375
+    },
+    {
+      "word": "a",
+      "start": 68.80000305175781,
+      "end": 69.45999908447266
+    },
+    {
+      "word": "company",
+      "start": 69.45999908447266,
+      "end": 69.45999908447266
+    },
+    {
+      "word": "pays",
+      "start": 69.45999908447266,
+      "end": 69.69999694824219
+    },
+    {
+      "word": "interest",
+      "start": 69.69999694824219,
+      "end": 69.95999908447266
+    },
+    {
+      "word": "on",
+      "start": 69.95999908447266,
+      "end": 70.12000274658203
+    },
+    {
+      "word": "its",
+      "start": 70.12000274658203,
+      "end": 70.5999984741211
+    },
+    {
+      "word": "bonds",
+      "start": 70.5999984741211,
+      "end": 70.5999984741211
+    },
+    {
+      "word": "Everyone",
+      "start": 71.16000366210938,
+      "end": 71.44000244140625
+    },
+    {
+      "word": "pays",
+      "start": 71.44000244140625,
+      "end": 71.69999694824219
+    },
+    {
+      "word": "for",
+      "start": 71.69999694824219,
+      "end": 71.95999908447266
+    },
+    {
+      "word": "money",
+      "start": 71.95999908447266,
+      "end": 72.12000274658203
+    },
+    {
+      "word": "Tether's",
+      "start": 72.9000015258789,
+      "end": 73.05999755859375
+    },
+    {
+      "word": "cost",
+      "start": 73.05999755859375,
+      "end": 73.41999816894531
+    },
+    {
+      "word": "Nothing",
+      "start": 73.68000030517578,
+      "end": 73.9800033569336
+    },
+    {
+      "word": "It's",
+      "start": 74.16000366210938,
+      "end": 74.30000305175781
+    },
+    {
+      "word": "an",
+      "start": 74.30000305175781,
+      "end": 74.5
+    },
+    {
+      "word": "interest",
+      "start": 74.5,
+      "end": 74.76000213623047
+    },
+    {
+      "word": "free",
+      "start": 74.76000213623047,
+      "end": 75
+    },
+    {
+      "word": "loan",
+      "start": 75,
+      "end": 75.13999938964844
+    },
+    {
+      "word": "from",
+      "start": 75.13999938964844,
+      "end": 75.44000244140625
+    },
+    {
+      "word": "millions",
+      "start": 75.44000244140625,
+      "end": 75.69999694824219
+    },
+    {
+      "word": "of",
+      "start": 75.69999694824219,
+      "end": 76.22000122070312
+    },
+    {
+      "word": "users",
+      "start": 76.22000122070312,
+      "end": 76.22000122070312
+    },
+    {
+      "word": "and",
+      "start": 76.45999908447266,
+      "end": 76.68000030517578
+    },
+    {
+      "word": "it",
+      "start": 76.68000030517578,
+      "end": 76.94000244140625
+    },
+    {
+      "word": "keeps",
+      "start": 76.94000244140625,
+      "end": 76.95999908447266
+    },
+    {
+      "word": "100",
+      "start": 76.95999908447266,
+      "end": 77.36000061035156
+    },
+    {
+      "word": "",
+      "start": 77.36000061035156,
+      "end": 77.55999755859375
+    },
+    {
+      "word": "of",
+      "start": 77.55999755859375,
+      "end": 77.80000305175781
+    },
+    {
+      "word": "the",
+      "start": 77.80000305175781,
+      "end": 77.95999908447266
+    },
+    {
+      "word": "return",
+      "start": 77.95999908447266,
+      "end": 78.22000122070312
+    },
+    {
+      "word": "In",
+      "start": 78.77999877929688,
+      "end": 79.30000305175781
+    },
+    {
+      "word": "2024",
+      "start": 79.30000305175781,
+      "end": 79.81999969482422
+    },
+    {
+      "word": "the",
+      "start": 80.0999984741211,
+      "end": 80.22000122070312
+    },
+    {
+      "word": "company",
+      "start": 80.22000122070312,
+      "end": 80.36000061035156
+    },
+    {
+      "word": "reported",
+      "start": 80.36000061035156,
+      "end": 80.73999786376953
+    },
+    {
+      "word": "around",
+      "start": 80.73999786376953,
+      "end": 81.05999755859375
+    },
+    {
+      "word": "13",
+      "start": 81.05999755859375,
+      "end": 81.54000091552734
+    },
+    {
+      "word": "billion",
+      "start": 81.54000091552734,
+      "end": 81.83999633789062
+    },
+    {
+      "word": "dollars",
+      "start": 81.83999633789062,
+      "end": 82.22000122070312
+    },
+    {
+      "word": "in",
+      "start": 82.22000122070312,
+      "end": 82.33999633789062
+    },
+    {
+      "word": "profit",
+      "start": 82.33999633789062,
+      "end": 82.62000274658203
+    },
+    {
+      "word": "with",
+      "start": 82.80000305175781,
+      "end": 82.9800033569336
+    },
+    {
+      "word": "a",
+      "start": 82.9800033569336,
+      "end": 83.27999877929688
+    },
+    {
+      "word": "team",
+      "start": 83.27999877929688,
+      "end": 83.31999969482422
+    },
+    {
+      "word": "you",
+      "start": 83.31999969482422,
+      "end": 83.45999908447266
+    },
+    {
+      "word": "could",
+      "start": 83.45999908447266,
+      "end": 83.62000274658203
+    },
+    {
+      "word": "fit",
+      "start": 83.62000274658203,
+      "end": 83.73999786376953
+    },
+    {
+      "word": "in",
+      "start": 83.73999786376953,
+      "end": 83.81999969482422
+    },
+    {
+      "word": "a",
+      "start": 83.81999969482422,
+      "end": 83.9800033569336
+    },
+    {
+      "word": "single",
+      "start": 83.9800033569336,
+      "end": 84.30000305175781
+    },
+    {
+      "word": "room",
+      "start": 84.30000305175781,
+      "end": 84.5199966430664
+    },
+    {
+      "word": "So",
+      "start": 84.94000244140625,
+      "end": 85.22000122070312
+    },
+    {
+      "word": "what's",
+      "start": 85.22000122070312,
+      "end": 85.4000015258789
+    },
+    {
+      "word": "the",
+      "start": 85.4000015258789,
+      "end": 85.58000183105469
+    },
+    {
+      "word": "catch",
+      "start": 85.58000183105469,
+      "end": 85.87999725341797
+    },
+    {
+      "word": "Trust",
+      "start": 85.87999725341797,
+      "end": 86.5199966430664
+    },
+    {
+      "word": "The",
+      "start": 86.86000061035156,
+      "end": 86.86000061035156
+    },
+    {
+      "word": "whole",
+      "start": 86.86000061035156,
+      "end": 87.12000274658203
+    },
+    {
+      "word": "thing",
+      "start": 87.12000274658203,
+      "end": 87.30000305175781
+    },
+    {
+      "word": "holds",
+      "start": 87.30000305175781,
+      "end": 87.4800033569336
+    },
+    {
+      "word": "up",
+      "start": 87.4800033569336,
+      "end": 87.69999694824219
+    },
+    {
+      "word": "only",
+      "start": 87.69999694824219,
+      "end": 87.87999725341797
+    },
+    {
+      "word": "as",
+      "start": 87.87999725341797,
+      "end": 88.0999984741211
+    },
+    {
+      "word": "long",
+      "start": 88.0999984741211,
+      "end": 88.13999938964844
+    },
+    {
+      "word": "as",
+      "start": 88.13999938964844,
+      "end": 88.4000015258789
+    },
+    {
+      "word": "people",
+      "start": 88.4000015258789,
+      "end": 88.5199966430664
+    },
+    {
+      "word": "believe",
+      "start": 88.5199966430664,
+      "end": 88.80000305175781
+    },
+    {
+      "word": "every",
+      "start": 88.80000305175781,
+      "end": 89.23999786376953
+    },
+    {
+      "word": "token",
+      "start": 89.23999786376953,
+      "end": 89.44000244140625
+    },
+    {
+      "word": "is",
+      "start": 89.44000244140625,
+      "end": 89.5999984741211
+    },
+    {
+      "word": "really",
+      "start": 89.5999984741211,
+      "end": 90.0199966430664
+    },
+    {
+      "word": "backed",
+      "start": 90.0199966430664,
+      "end": 90.0199966430664
+    },
+    {
+      "word": "by",
+      "start": 90.0199966430664,
+      "end": 90.16000366210938
+    },
+    {
+      "word": "a",
+      "start": 90.16000366210938,
+      "end": 90.31999969482422
+    },
+    {
+      "word": "real",
+      "start": 90.31999969482422,
+      "end": 90.58000183105469
+    },
+    {
+      "word": "dollar",
+      "start": 90.58000183105469,
+      "end": 90.80000305175781
+    },
+    {
+      "word": "and",
+      "start": 91.13999938964844,
+      "end": 91.18000030517578
+    },
+    {
+      "word": "don't",
+      "start": 91.18000030517578,
+      "end": 91.33999633789062
+    },
+    {
+      "word": "all",
+      "start": 91.33999633789062,
+      "end": 91.62000274658203
+    },
+    {
+      "word": "rush",
+      "start": 91.62000274658203,
+      "end": 91.69999694824219
+    },
+    {
+      "word": "to",
+      "start": 91.69999694824219,
+      "end": 91.94000244140625
+    },
+    {
+      "word": "cash",
+      "start": 91.94000244140625,
+      "end": 92.13999938964844
+    },
+    {
+      "word": "out",
+      "start": 92.13999938964844,
+      "end": 92.31999969482422
+    },
+    {
+      "word": "at",
+      "start": 92.31999969482422,
+      "end": 92.80000305175781
+    },
+    {
+      "word": "once",
+      "start": 92.80000305175781,
+      "end": 92.80000305175781
+    },
+    {
+      "word": "Tether",
+      "start": 93.23999786376953,
+      "end": 93.27999877929688
+    },
+    {
+      "word": "has",
+      "start": 93.27999877929688,
+      "end": 93.45999908447266
+    },
+    {
+      "word": "been",
+      "start": 93.45999908447266,
+      "end": 93.77999877929688
+    },
+    {
+      "word": "fined",
+      "start": 93.77999877929688,
+      "end": 93.95999908447266
+    },
+    {
+      "word": "before",
+      "start": 93.95999908447266,
+      "end": 94.30000305175781
+    },
+    {
+      "word": "for",
+      "start": 94.30000305175781,
+      "end": 94.5
+    },
+    {
+      "word": "overstating",
+      "start": 94.5,
+      "end": 94.9800033569336
+    },
+    {
+      "word": "what",
+      "start": 94.9800033569336,
+      "end": 95.16000366210938
+    },
+    {
+      "word": "was",
+      "start": 95.16000366210938,
+      "end": 95.30000305175781
+    },
+    {
+      "word": "actually",
+      "start": 95.30000305175781,
+      "end": 95.80000305175781
+    },
+    {
+      "word": "in",
+      "start": 95.80000305175781,
+      "end": 95.9000015258789
+    },
+    {
+      "word": "its",
+      "start": 95.9000015258789,
+      "end": 96.13999938964844
+    },
+    {
+      "word": "reserves",
+      "start": 96.13999938964844,
+      "end": 96.45999908447266
+    },
+    {
+      "word": "and",
+      "start": 96.76000213623047,
+      "end": 96.94000244140625
+    },
+    {
+      "word": "it",
+      "start": 96.94000244140625,
+      "end": 97.33999633789062
+    },
+    {
+      "word": "publishes",
+      "start": 97.33999633789062,
+      "end": 97.5999984741211
+    },
+    {
+      "word": "attestations",
+      "start": 97.5999984741211,
+      "end": 98.22000122070312
+    },
+    {
+      "word": "not",
+      "start": 98.72000122070312,
+      "end": 98.9000015258789
+    },
+    {
+      "word": "full",
+      "start": 98.9000015258789,
+      "end": 99.22000122070312
+    },
+    {
+      "word": "independent",
+      "start": 99.22000122070312,
+      "end": 99.66000366210938
+    },
+    {
+      "word": "audits",
+      "start": 99.66000366210938,
+      "end": 99.9800033569336
+    },
+    {
+      "word": "The",
+      "start": 100.22000122070312,
+      "end": 100.54000091552734
+    },
+    {
+      "word": "model",
+      "start": 100.54000091552734,
+      "end": 100.73999786376953
+    },
+    {
+      "word": "is",
+      "start": 100.73999786376953,
+      "end": 101.36000061035156
+    },
+    {
+      "word": "brilliant",
+      "start": 101.36000061035156,
+      "end": 101.36000061035156
+    },
+    {
+      "word": "but",
+      "start": 101.63999938964844,
+      "end": 101.80000305175781
+    },
+    {
+      "word": "it",
+      "start": 101.80000305175781,
+      "end": 102.08000183105469
+    },
+    {
+      "word": "runs",
+      "start": 102.08000183105469,
+      "end": 102.0999984741211
+    },
+    {
+      "word": "entirely",
+      "start": 102.0999984741211,
+      "end": 102.58000183105469
+    },
+    {
+      "word": "on",
+      "start": 102.58000183105469,
+      "end": 102.9000015258789
+    },
+    {
+      "word": "confidence",
+      "start": 102.9000015258789,
+      "end": 103.30000305175781
+    },
+    {
+      "word": "Still",
+      "start": 103.55999755859375,
+      "end": 104.04000091552734
+    },
+    {
+      "word": "it",
+      "start": 104.33999633789062,
+      "end": 104.76000213623047
+    },
+    {
+      "word": "cracks",
+      "start": 104.76000213623047,
+      "end": 104.91999816894531
+    },
+    {
+      "word": "something",
+      "start": 104.91999816894531,
+      "end": 105.30000305175781
+    },
+    {
+      "word": "most",
+      "start": 105.30000305175781,
+      "end": 105.58000183105469
+    },
+    {
+      "word": "people",
+      "start": 105.58000183105469,
+      "end": 105.83999633789062
+    },
+    {
+      "word": "never",
+      "start": 105.83999633789062,
+      "end": 106.05999755859375
+    },
+    {
+      "word": "even",
+      "start": 106.05999755859375,
+      "end": 106.4800033569336
+    },
+    {
+      "word": "see",
+      "start": 106.4800033569336,
+      "end": 106.5999984741211
+    },
+    {
+      "word": "The",
+      "start": 106.9800033569336,
+      "end": 107.16000366210938
+    },
+    {
+      "word": "most",
+      "start": 107.16000366210938,
+      "end": 107.63999938964844
+    },
+    {
+      "word": "profitable",
+      "start": 107.63999938964844,
+      "end": 107.77999877929688
+    },
+    {
+      "word": "trade",
+      "start": 107.77999877929688,
+      "end": 108.13999938964844
+    },
+    {
+      "word": "in",
+      "start": 108.13999938964844,
+      "end": 108.72000122070312
+    },
+    {
+      "word": "finance",
+      "start": 108.72000122070312,
+      "end": 108.72000122070312
+    },
+    {
+      "word": "wasn't",
+      "start": 108.72000122070312,
+      "end": 108.9800033569336
+    },
+    {
+      "word": "picking",
+      "start": 108.9800033569336,
+      "end": 109.22000122070312
+    },
+    {
+      "word": "the",
+      "start": 109.22000122070312,
+      "end": 109.41999816894531
+    },
+    {
+      "word": "right",
+      "start": 109.41999816894531,
+      "end": 109.69999694824219
+    },
+    {
+      "word": "stock",
+      "start": 109.69999694824219,
+      "end": 110.0199966430664
+    },
+    {
+      "word": "or",
+      "start": 110.13999938964844,
+      "end": 110.37999725341797
+    },
+    {
+      "word": "the",
+      "start": 110.37999725341797,
+      "end": 110.5199966430664
+    },
+    {
+      "word": "right",
+      "start": 110.5199966430664,
+      "end": 110.77999877929688
+    },
+    {
+      "word": "coin",
+      "start": 110.77999877929688,
+      "end": 110.9800033569336
+    },
+    {
+      "word": "It",
+      "start": 111.4000015258789,
+      "end": 111.55999755859375
+    },
+    {
+      "word": "was",
+      "start": 111.55999755859375,
+      "end": 111.80000305175781
+    },
+    {
+      "word": "realizing",
+      "start": 111.80000305175781,
+      "end": 112.05999755859375
+    },
+    {
+      "word": "that",
+      "start": 112.05999755859375,
+      "end": 112.37999725341797
+    },
+    {
+      "word": "if",
+      "start": 112.37999725341797,
+      "end": 112.55999755859375
+    },
+    {
+      "word": "you",
+      "start": 112.55999755859375,
+      "end": 112.69999694824219
+    },
+    {
+      "word": "get",
+      "start": 112.69999694824219,
+      "end": 112.83999633789062
+    },
+    {
+      "word": "to",
+      "start": 112.83999633789062,
+      "end": 113.12000274658203
+    },
+    {
+      "word": "issue",
+      "start": 113.12000274658203,
+      "end": 113.19999694824219
+    },
+    {
+      "word": "the",
+      "start": 113.19999694824219,
+      "end": 113.41999816894531
+    },
+    {
+      "word": "dollar",
+      "start": 113.41999816894531,
+      "end": 113.66000366210938
+    },
+    {
+      "word": "you",
+      "start": 114.13999938964844,
+      "end": 114.33999633789062
+    },
+    {
+      "word": "get",
+      "start": 114.33999633789062,
+      "end": 114.5199966430664
+    },
+    {
+      "word": "to",
+      "start": 114.5199966430664,
+      "end": 114.73999786376953
+    },
+    {
+      "word": "keep",
+      "start": 114.73999786376953,
+      "end": 114.80000305175781
+    },
+    {
+      "word": "the",
+      "start": 114.80000305175781,
+      "end": 115.04000091552734
+    },
+    {
+      "word": "interest",
+      "start": 115.04000091552734,
+      "end": 115.23999786376953
+    },
+    {
+      "word": "Want",
+      "start": 115.23999786376953,
+      "end": 115.5999984741211
+    },
+    {
+      "word": "more",
+      "start": 115.5999984741211,
+      "end": 115.91999816894531
+    },
+    {
+      "word": "business",
+      "start": 115.91999816894531,
+      "end": 116.13999938964844
+    },
+    {
+      "word": "models",
+      "start": 116.13999938964844,
+      "end": 116.4800033569336
+    },
+    {
+      "word": "that",
+      "start": 116.4800033569336,
+      "end": 116.68000030517578
+    },
+    {
+      "word": "sound",
+      "start": 116.68000030517578,
+      "end": 116.9800033569336
+    },
+    {
+      "word": "illegal",
+      "start": 116.9800033569336,
+      "end": 117.26000213623047
+    },
+    {
+      "word": "but",
+      "start": 117.26000213623047,
+      "end": 117.4800033569336
+    },
+    {
+      "word": "aren't",
+      "start": 117.4800033569336,
+      "end": 118.0999984741211
+    },
+    {
+      "word": "Follow",
+      "start": 118.37999725341797,
+      "end": 118.5199966430664
+    },
+    {
+      "word": "StackTags",
+      "start": 118.5199966430664,
+      "end": 119.23999786376953
+    }
+  ],
+  "usage": {
+    "type": "duration",
+    "seconds": 120
+  }
+}

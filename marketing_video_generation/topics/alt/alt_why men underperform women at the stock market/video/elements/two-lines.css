@@ -1,0 +1,46 @@
+/* ============================================================
+   Custom element — TWO LINES  (busy/grey vs calm/teal)
+   Floats transparently over the page grid. White + turquoise, Inter.
+   ============================================================ */
+.stk-tl2 {
+  position: absolute; inset: 0;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  font-family: var(--stk-font, 'Inter', sans-serif);
+}
+.stk-tl2-title {
+  position: absolute; left: 0; right: 0; top: 250px; text-align: center; padding: 0 90px;
+  font-weight: 800; font-size: 64px; letter-spacing: -1.8px; line-height: 1.08; color: var(--stk-ink);
+}
+.stk-tl2-title b { color: var(--stk-teal-d); }
+.stk-tl2-title .grey { color: var(--stk-muted); }
+
+.stk-tl2-plot { width: 1000px; height: 1140px; margin-top: 40px; }
+.stk-tl2-svg { width: 100%; height: 100%; display: block; overflow: visible; }
+
+.stk-tl2-base { stroke: rgba(35,43,51,.16); stroke-width: 4; stroke-linecap: round; }
+
+.stk-tl2-line { fill: none; stroke-linecap: round; stroke-linejoin: round; }
+.stk-tl2-line.busy { stroke-width: 9; }
+.stk-tl2-line.calm { stroke-width: 15; }
+.stk-tl2-line.glow { filter: drop-shadow(0 0 22px rgba(17,146,113,.45)); }
+
+.stk-tl2-dot { transition: opacity .2s ease; }
+.stk-tl2-dot.calm { filter: drop-shadow(0 0 16px rgba(17,146,113,.6)); }
+.stk-tl2-dot.busy { filter: drop-shadow(0 4px 8px rgba(35,43,51,.25)); }
+
+.stk-tl2-bite { transition: opacity .25s ease; }
+
+.stk-tl2-pill { transition: opacity .5s cubic-bezier(.2,.8,.2,1); }
+.stk-tl2-pill-bg { fill: #eef1f3; }
+.stk-tl2-pill.calm .stk-tl2-pill-bg { fill: var(--stk-teal-soft, #e7f4ef); }
+.stk-tl2-pill-lab {
+  font-family: var(--stk-font, 'Inter', sans-serif);
+  font-weight: 800; font-size: 38px; letter-spacing: -.5px; fill: var(--stk-muted);
+}
+.stk-tl2-pill.calm .stk-tl2-pill-lab { fill: var(--stk-teal-d, #119271); }
+.stk-tl2-pill-val {
+  font-family: var(--stk-font, 'Inter', sans-serif);
+  font-weight: 900; font-size: 56px; letter-spacing: -1.5px; fill: var(--stk-ink);
+  font-variant-numeric: tabular-nums;
+}
+.stk-tl2-pill.calm .stk-tl2-pill-val { fill: var(--stk-teal-d, #119271); }

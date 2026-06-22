@@ -1,0 +1,378 @@
+/* ============================================================
+   "How to launder $1.5 billion in crypto" — scene styling
+   Visual spine: a clean blockchain-explorer / public-ledger UI.
+   White grid bg, turquoise accent, Inter. Red ONLY for the
+   FALSE stamp + FLAGGED tag (sparing alert marker).
+   ============================================================ */
+html,body{ margin:0; padding:0; height:100%; overflow:hidden; background:#070b0a; }
+body{ font-family:var(--stk-font); color:var(--stk-ink); }
+
+.wrap{ position:fixed; inset:0; display:flex; align-items:center; justify-content:center; }
+.stage{
+  position:relative; width:1080px; height:1920px; flex-shrink:0;
+  transform-origin:center center; overflow:hidden; background:#fff;
+}
+
+#grid{ z-index:0; }
+.scenes{ position:absolute; inset:0; z-index:1; }
+
+.scene{
+  position:absolute; inset:0;
+  display:flex; align-items:center; justify-content:center;
+  opacity:0; transform-origin:center center;
+  will-change:transform, opacity, filter;
+  transform: translate(var(--tx,0px), var(--ty,0px)) scale(var(--s,1));
+}
+
+/* ============================================================
+   THE LEDGER / WALLET — the recurring spine
+   ============================================================ */
+.ledger{
+  width:892px; background:#fff; border-radius:40px;
+  box-shadow:0 40px 90px rgba(16,50,40,.16), 0 6px 18px rgba(16,50,40,.08);
+  padding:34px 36px 40px; position:relative; overflow:hidden;
+}
+.ledger-head{ display:flex; align-items:center; gap:14px; margin-bottom:26px; }
+.ledger-head .dot{ width:18px; height:18px; border-radius:50%; background:#e3eae7; }
+.ledger-head .dot:nth-child(2){ background:#d7e7e1; }
+.ledger-head .dot:nth-child(3){ background:#cbe3da; }
+.ledger-title{
+  font-weight:800; font-size:34px; letter-spacing:.5px; color:var(--stk-ink);
+  margin-left:8px;
+}
+.ledger-live{
+  margin-left:auto; font-weight:800; font-size:26px; color:var(--stk-teal-d);
+  display:flex; align-items:center; gap:9px;
+}
+.ledger-live::before{
+  content:""; width:16px; height:16px; border-radius:50%; background:var(--stk-teal);
+  box-shadow:0 0 0 6px rgba(53,162,146,.18); animation:livePulse 1.8s ease-in-out infinite;
+}
+@keyframes livePulse{ 0%,100%{ box-shadow:0 0 0 5px rgba(53,162,146,.16);} 50%{ box-shadow:0 0 0 11px rgba(53,162,146,.05);} }
+
+/* wallet hero (hook) */
+.wallet-label{
+  font-family:'JetBrains Mono',ui-monospace,monospace; font-weight:700;
+  font-size:28px; color:var(--stk-ink-2); letter-spacing:.5px; margin-bottom:6px;
+}
+.wallet-balance{
+  font-weight:900; font-size:118px; line-height:1; letter-spacing:-3px;
+  color:var(--stk-teal-d); text-shadow:0 0 60px rgba(53,162,146,.34);
+  white-space:nowrap;
+}
+.wallet-sub{
+  font-weight:700; font-size:30px; color:var(--stk-muted); margin-top:10px; margin-bottom:30px;
+  display:flex; align-items:center; gap:12px;
+}
+.wallet-sub .eye{ color:var(--stk-teal); }
+
+/* transfer rows */
+.lrow{
+  display:flex; align-items:center; gap:20px;
+  background:#f7faf9; border-radius:22px; padding:22px 26px; margin-top:16px;
+  box-shadow:0 8px 22px rgba(16,50,40,.05);
+  transition:background .4s ease, box-shadow .4s ease, transform .4s ease;
+}
+.lrow-icon{
+  width:54px; height:54px; flex:0 0 54px; border-radius:14px;
+  background:#e7f4ef; color:var(--stk-teal-d); font-size:30px; font-weight:800;
+  display:flex; align-items:center; justify-content:center;
+}
+.lrow-addr{
+  font-family:'JetBrains Mono',ui-monospace,monospace; font-weight:500;
+  font-size:27px; color:var(--stk-ink-2); letter-spacing:-.5px; white-space:nowrap;
+}
+.lrow-amt{
+  margin-left:auto; font-weight:800; font-size:30px; color:var(--stk-teal-d); white-space:nowrap;
+}
+.lrow-time{
+  font-family:'JetBrains Mono',ui-monospace,monospace; font-size:22px;
+  color:var(--stk-muted); width:118px; text-align:right;
+}
+/* glow state — tinted fill + teal text (no borders) */
+.lrow.glow{
+  background:var(--stk-teal-soft);
+  box-shadow:0 12px 30px rgba(53,162,146,.22);
+}
+.lrow.glow .lrow-addr{ color:var(--stk-teal-d); }
+.lrow.glow .lrow-icon{ background:#fff; }
+
+/* ============================================================
+   NEWS HEADLINES (hook) — recreated press cards
+   ============================================================ */
+.news-wrap{ position:relative; width:912px; height:1180px; }
+.news-card{
+  position:absolute; left:50%; width:842px;
+  background:#fff; border-radius:30px; padding:34px 38px;
+  box-shadow:0 34px 70px rgba(16,50,40,.18), 0 4px 14px rgba(16,50,40,.07);
+  transform:translate(-50%, 60px) rotate(var(--rot,0deg)); opacity:0;
+  transition:opacity .5s ease, transform .7s cubic-bezier(.2,.85,.25,1);
+}
+.news-card.in{ opacity:1; transform:translate(-50%,0) rotate(var(--rot,0deg)); }
+.news-top{ display:flex; align-items:center; gap:16px; margin-bottom:20px; }
+.news-logo{
+  width:54px; height:54px; border-radius:13px; display:flex; align-items:center; justify-content:center;
+  font-weight:900; font-size:30px; color:#fff;
+}
+.news-outlet{ font-weight:800; font-size:28px; color:var(--stk-ink); letter-spacing:.3px; }
+.news-meta{ margin-left:auto; font-weight:600; font-size:23px; color:var(--stk-muted); }
+.news-head{
+  font-weight:800; font-size:46px; line-height:1.16; letter-spacing:-1.2px; color:var(--stk-ink);
+}
+.news-head b{ color:var(--stk-teal-d); }
+.news-live{
+  display:inline-flex; align-items:center; gap:9px; margin-top:18px;
+  font-weight:800; font-size:22px; color:#d8443b; letter-spacing:1.4px;
+}
+.news-live::before{ content:""; width:13px; height:13px; border-radius:50%; background:#d8443b; }
+
+/* ============================================================
+   ANONYMOUS -> FALSE -> TRACEABLE  (myth)
+   ============================================================ */
+.anon-wrap{ position:relative; display:flex; align-items:center; justify-content:center; width:1000px; height:600px; }
+.anon-word{
+  font-weight:900; font-size:130px; letter-spacing:-3px; color:var(--stk-ink);
+  position:relative; transition:color .45s ease;
+}
+.anon-word.struck::after{
+  content:""; position:absolute; left:-12px; right:-12px; top:52%; height:12px;
+  background:#d8443b; border-radius:6px; transform:scaleX(0); transform-origin:left center;
+  animation:strike .32s ease forwards;
+}
+@keyframes strike{ to{ transform:scaleX(1);} }
+.anon-word.traceable{ color:var(--stk-teal-d); text-shadow:0 0 50px rgba(53,162,146,.3); }
+.anon-stamp{
+  position:absolute; top:46%; left:50%;
+  font-weight:900; font-size:120px; letter-spacing:4px; color:#d8443b;
+  transform:translate(-50%,-50%) rotate(-14deg) scale(2.4); opacity:0;
+  text-shadow:0 6px 0 rgba(216,68,59,.18);
+}
+.anon-stamp.hit{ animation:stampHit .34s cubic-bezier(.3,1.5,.5,1) forwards; }
+@keyframes stampHit{ 0%{opacity:0; transform:translate(-50%,-50%) rotate(-14deg) scale(2.4);} 60%{opacity:1;} 100%{opacity:1; transform:translate(-50%,-50%) rotate(-14deg) scale(1);} }
+.anon-stamp.fade{ transition:opacity .5s ease; opacity:0; }
+
+/* ============================================================
+   LEDGER SCROLL (myth) — endless stream past a read-head
+   ============================================================ */
+.scroll-wrap{
+  position:relative; width:892px; height:1380px; overflow:hidden;
+  -webkit-mask-image:linear-gradient(to bottom, transparent 0, #000 14%, #000 86%, transparent 100%);
+          mask-image:linear-gradient(to bottom, transparent 0, #000 14%, #000 86%, transparent 100%);
+}
+.scroll-title{
+  position:absolute; top:0; left:0; right:0; z-index:3; text-align:center;
+  font-weight:800; font-size:34px; color:var(--stk-ink); letter-spacing:.5px;
+  background:linear-gradient(to bottom,#fff 55%,rgba(255,255,255,0)); padding:6px 0 26px;
+}
+.scroll-track{ position:absolute; left:0; right:0; top:70px; display:flex; flex-direction:column; gap:16px; }
+.scroll-wrap.run .scroll-track{ animation:scrollUp 9s linear infinite; }
+@keyframes scrollUp{ from{ transform:translateY(0);} to{ transform:translateY(-50%);} }
+/* read-head: a faint horizontal glow line; rows light as they cross it */
+.read-head{
+  position:absolute; left:24px; right:24px; top:50%; height:96px; transform:translateY(-50%); z-index:2;
+  border-radius:22px; background:linear-gradient(90deg,rgba(53,162,146,0),rgba(53,162,146,.10),rgba(53,162,146,0));
+  box-shadow:0 0 60px rgba(53,162,146,.16); pointer-events:none;
+}
+.scroll-track .lrow.tag{ background:var(--stk-teal-soft); box-shadow:0 12px 30px rgba(53,162,146,.22); }
+.scroll-track .lrow.tag .lrow-tag{
+  margin-left:14px; font-weight:800; font-size:22px; color:#fff; background:var(--stk-teal-d);
+  padding:6px 14px; border-radius:999px; letter-spacing:1px;
+}
+
+/* ============================================================
+   STEALING easy / SPENDING hard  (chips)
+   ============================================================ */
+.eh-wrap{ display:flex; flex-direction:column; gap:54px; align-items:center; width:860px; }
+.eh-chip{
+  width:760px; background:#fff; border-radius:34px; padding:46px 56px;
+  box-shadow:0 30px 70px rgba(16,50,40,.14); display:flex; align-items:center; justify-content:space-between;
+  opacity:0; transform:translateY(46px) scale(.94); transition:opacity .5s ease, transform .6s cubic-bezier(.34,1.4,.5,1);
+}
+.eh-chip.in{ opacity:1; transform:none; }
+.eh-k{ font-weight:800; font-size:42px; letter-spacing:2px; color:var(--stk-muted); }
+.eh-v{ font-weight:900; font-size:64px; letter-spacing:-1px; color:var(--stk-ink); display:flex; align-items:center; gap:20px; }
+.eh-chip.steal{ background:var(--stk-teal-soft); }
+.eh-chip.steal .eh-v{ color:var(--stk-teal-d); }
+.eh-mark.ok{ color:var(--stk-teal); font-size:58px; }
+.eh-lock{ font-size:52px; filter:grayscale(.2); transform:scale(0); display:inline-block; }
+.eh-chip.locked .eh-lock{ animation:lockSnap .4s cubic-bezier(.3,1.6,.5,1) forwards; }
+@keyframes lockSnap{ 0%{ transform:scale(0) rotate(-20deg);} 70%{ transform:scale(1.25);} 100%{ transform:scale(1) rotate(0);} }
+.eh-chip.spend.locked{ box-shadow:0 30px 70px rgba(16,50,40,.14), 0 0 0 4px rgba(138,148,157,.0); }
+
+/* ============================================================
+   FLAGGED & FROZEN  (why they can't spend)
+   ============================================================ */
+.fz-wrap{ position:relative; width:980px; height:520px; }
+.fz-track{
+  position:absolute; left:40px; right:300px; top:50%; height:0; transform:translateY(-50%);
+  border-top:7px dashed #c9d6d1; /* a path, not a UI element — dashed route */
+}
+.fz-exchange{
+  position:absolute; right:40px; top:50%; transform:translateY(-50%); text-align:center;
+}
+.fz-ex-glyph{
+  width:200px; height:200px; border-radius:40px; background:var(--stk-teal-soft);
+  color:var(--stk-teal-d); font-size:118px; display:flex; align-items:center; justify-content:center;
+  box-shadow:0 24px 54px rgba(53,162,146,.2); margin:0 auto 16px;
+  transition:filter .5s ease, background .5s ease;
+}
+.fz-ex-label{ font-weight:800; font-size:34px; letter-spacing:2px; color:var(--stk-ink); }
+.fz-coin{
+  position:absolute; left:40px; top:50%; transform:translate(-50%,-50%);
+  transition:left 1.5s cubic-bezier(.5,0,.5,1); text-align:center;
+}
+.fz-coin.go{ left:660px; }
+.fz-coin-disc{
+  width:150px; height:150px; border-radius:50%;
+  background:radial-gradient(circle at 36% 32%, #4fd0b7, var(--stk-teal) 64%, var(--stk-teal-d));
+  color:#fff; font-weight:900; font-size:78px; display:flex; align-items:center; justify-content:center;
+  box-shadow:0 0 0 12px rgba(53,162,146,.16), 0 16px 40px rgba(53,162,146,.3); margin:0 auto;
+  animation:radHalo 1.3s ease-in-out infinite;
+}
+@keyframes radHalo{ 0%,100%{ box-shadow:0 0 0 10px rgba(53,162,146,.18), 0 16px 40px rgba(53,162,146,.28);} 50%{ box-shadow:0 0 0 22px rgba(53,162,146,.06), 0 16px 40px rgba(53,162,146,.28);} }
+.fz-rad{
+  margin-top:14px; font-weight:800; font-size:20px; letter-spacing:1.5px; color:var(--stk-teal-d);
+  background:var(--stk-teal-soft); padding:6px 14px; border-radius:999px; display:inline-block;
+}
+.fz-flag{
+  position:absolute; right:150px; top:24%; transform:translate(40px,0) rotate(-8deg) scale(.6); opacity:0;
+  font-weight:900; font-size:46px; letter-spacing:2px; color:#fff; background:#d8443b;
+  padding:14px 28px; border-radius:16px; box-shadow:0 14px 34px rgba(216,68,59,.4);
+}
+.fz-flag.show{ animation:flagPop .36s cubic-bezier(.3,1.5,.5,1) forwards; }
+@keyframes flagPop{ to{ opacity:1; transform:translate(0,0) rotate(-8deg) scale(1);} }
+.fz-frost{
+  position:absolute; right:40px; top:50%; width:200px; height:200px; transform:translateY(-50%) scale(.4);
+  border-radius:40px; opacity:0; pointer-events:none;
+  background:radial-gradient(circle at 50% 40%, rgba(255,255,255,.85), rgba(180,210,230,.55));
+  box-shadow:inset 0 0 40px rgba(120,170,200,.7), 0 0 50px rgba(150,200,225,.5);
+}
+.fz-frost.show{ animation:frostIn .5s ease forwards; }
+@keyframes frostIn{ to{ opacity:1; transform:translateY(-50%) scale(1);} }
+.fz-wrap.frozen .fz-ex-glyph{ filter:grayscale(.35) brightness(1.05); }
+
+/* ============================================================
+   THE THREE MOVES — move panels inside the enumeration scene
+   (enumeration docks top-left; these play in the lower 60%)
+   ============================================================ */
+.move{
+  position:absolute; left:0; right:0; top:560px; height:1180px;
+  display:flex; align-items:center; justify-content:center;
+  opacity:0; transform:translateY(40px); transition:opacity .5s ease, transform .6s cubic-bezier(.2,.8,.2,1);
+  pointer-events:none;
+}
+.move.in{ opacity:1; transform:none; }
+
+/* move 1 — chain hopping */
+.ch-wrap{ position:relative; width:940px; height:760px; }
+.ch-island{
+  position:absolute; width:240px; height:120px; border-radius:30px; background:#fff;
+  box-shadow:0 22px 50px rgba(16,50,40,.12); display:flex; flex-direction:column;
+  align-items:center; justify-content:center; gap:4px;
+}
+.ch-island .ci-glyph{ font-size:46px; }
+.ch-island .ci-name{ font-weight:800; font-size:28px; color:var(--stk-ink-2); letter-spacing:.5px; }
+.ch-coin{
+  position:absolute; width:96px; height:96px; border-radius:50%; left:0; top:0;
+  background:radial-gradient(circle at 36% 32%, #4fd0b7, var(--stk-teal) 64%, var(--stk-teal-d));
+  color:#fff; font-weight:900; font-size:52px; display:flex; align-items:center; justify-content:center;
+  box-shadow:0 14px 30px rgba(53,162,146,.34); z-index:5;
+}
+.ch-arc{ position:absolute; inset:0; z-index:1; pointer-events:none; }
+.ch-arc path{ fill:none; stroke:#bcd9d0; stroke-width:5; stroke-dasharray:10 12; stroke-linecap:round; opacity:0; }
+.ch-arc path.lit{ opacity:1; transition:opacity .4s ease; }
+
+/* move 2 — mixers */
+.mx-wrap{ position:relative; width:820px; height:820px; }
+.mx-drum{
+  position:absolute; left:50%; top:50%; width:360px; height:360px; transform:translate(-50%,-50%);
+  border-radius:46px; background:linear-gradient(160deg,#e7f4ef,#cfe9e1);
+  box-shadow:inset 0 0 60px rgba(53,162,146,.25), 0 26px 60px rgba(16,50,40,.16);
+  display:flex; align-items:center; justify-content:center; overflow:hidden;
+}
+.mx-drum .mx-blades{ width:300px; height:300px; border-radius:50%;
+  background:conic-gradient(from 0deg, rgba(53,162,146,.18), rgba(53,162,146,.02) 25%, rgba(53,162,146,.18) 50%, rgba(53,162,146,.02) 75%, rgba(53,162,146,.18)); }
+.move2.in .mx-drum .mx-blades{ animation:spin 1.1s linear infinite; }
+@keyframes spin{ to{ transform:rotate(360deg);} }
+.mx-coin{ position:absolute; width:46px; height:46px; border-radius:50%; left:50%; top:50%; opacity:0; }
+.mx-q{ position:absolute; font-weight:900; font-size:64px; color:var(--stk-teal-d); opacity:0; transform:scale(.2); }
+.mx-q.pop{ animation:qpop .5s cubic-bezier(.34,1.6,.5,1) forwards; }
+@keyframes qpop{ to{ opacity:1; transform:scale(1);} }
+
+/* move 3 — splitting */
+.sp-wrap{ position:relative; width:940px; height:820px; }
+.sp-pile{
+  position:absolute; left:50%; top:50%; width:170px; height:170px; transform:translate(-50%,-50%) scale(1);
+  border-radius:34px; background:radial-gradient(circle at 38% 30%, #4fd0b7, var(--stk-teal) 70%, var(--stk-teal-d));
+  box-shadow:0 18px 44px rgba(53,162,146,.34); display:flex; align-items:center; justify-content:center;
+  color:#fff; font-weight:900; font-size:70px; z-index:4; transition:transform .4s ease, opacity .4s ease;
+}
+.move3.burst .sp-pile{ transform:translate(-50%,-50%) scale(.34); opacity:.5; }
+.sp-wallet{
+  position:absolute; width:60px; height:48px; border-radius:11px; background:#eef5f3;
+  box-shadow:0 6px 16px rgba(16,50,40,.08); opacity:0; transform:scale(.4);
+  display:flex; align-items:center; justify-content:center; font-size:26px; color:var(--stk-teal-d);
+}
+.move3.burst .sp-wallet{ opacity:1; transform:scale(1); transition:opacity .5s ease, transform .6s cubic-bezier(.3,1.3,.5,1); }
+.sp-dot{
+  position:absolute; left:50%; top:50%; width:18px; height:18px; border-radius:50%;
+  background:var(--stk-teal); box-shadow:0 0 10px rgba(53,162,146,.5); opacity:0; z-index:3;
+}
+.sp-thread{ position:absolute; inset:0; z-index:1; pointer-events:none; }
+.sp-thread line{ stroke:#cfe6dd; stroke-width:2; stroke-dasharray:6 8; opacity:0; }
+.move3.burst .sp-thread line{ opacity:1; transition:opacity .5s ease; }
+
+/* ============================================================
+   OUTRO endcard (default element + a Follow prompt)
+   ============================================================ */
+#sc-outro .ec{
+  position:absolute; inset:0;
+  display:flex; flex-direction:column; align-items:center; justify-content:center; gap:34px;
+}
+#sc-outro #outro-logo{ display:flex; }
+#sc-outro #outro-logo svg{ width:620px; height:auto; display:block; }
+#sc-outro .lyr{
+  opacity:0; transform:translateY(-52px) scale(.78);
+  transform-box:fill-box; transform-origin:50% 50%;
+  transition:transform .58s cubic-bezier(.34,1.56,.5,1) var(--d), opacity .42s ease var(--d);
+}
+#sc-outro .ec.play .lyr{ opacity:1; transform:none; }
+#sc-outro .chev path{ stroke-dasharray:300; stroke-dashoffset:300; transition:stroke-dashoffset .55s ease .40s; }
+#sc-outro .ec.play .chev path{ stroke-dashoffset:0; }
+#sc-outro .wm{
+  font-family:'Nunito',system-ui,sans-serif; font-weight:900; font-size:150px;
+  letter-spacing:-3px; line-height:1; opacity:0; transform:translateY(30px);
+  transition:opacity .5s ease .52s, transform .62s cubic-bezier(.2,.8,.2,1) .52s;
+}
+#sc-outro .ec.play .wm{ opacity:1; transform:none; }
+#sc-outro .wm .s{ color:#232B33; }
+#sc-outro .wm .t{ color:#3EAE93; }
+#sc-outro .url{
+  font-family:'Nunito',system-ui,sans-serif; font-weight:700; font-size:44px;
+  letter-spacing:7px; color:#8a949d; opacity:0; transform:translateY(16px);
+  transition:opacity .5s ease .74s, transform .5s ease .74s, letter-spacing .7s ease .74s;
+}
+#sc-outro .ec.play .url{ opacity:1; transform:none; letter-spacing:4px; }
+#sc-outro .follow{
+  margin-top:8px; font-weight:800; font-size:48px; color:#fff; background:var(--stk-teal-d);
+  padding:20px 46px; border-radius:999px; box-shadow:0 18px 40px rgba(17,146,113,.34);
+  opacity:0; transform:translateY(20px) scale(.9);
+  transition:opacity .5s ease .96s, transform .55s cubic-bezier(.34,1.5,.5,1) .96s;
+}
+#sc-outro .ec.play .follow{ opacity:1; transform:none; }
+.follow-tap{ display:inline-block; margin-left:6px; animation:tap 1.3s ease-in-out infinite; }
+@keyframes tap{ 0%,100%{ transform:translateY(0);} 50%{ transform:translateY(-8px);} }
+
+/* ============================================================
+   HUD (hidden in clean / capture mode)
+   ============================================================ */
+#hud{
+  position:fixed; left:50%; bottom:22px; transform:translateX(-50%);
+  display:flex; align-items:center; gap:14px; z-index:9999;
+  background:rgba(8,14,12,.78); padding:10px 18px; border-radius:999px;
+  font-family:Inter,system-ui,sans-serif; color:#fff;
+}
+#hud button{ border:0; cursor:pointer; background:var(--stk-teal); color:#fff; font-weight:700; font-size:15px; padding:9px 18px; border-radius:999px; }
+#hud input[type=range]{ width:360px; }
+#hud #tcode{ font-variant-numeric:tabular-nums; min-width:46px; text-align:right; }
+body.clean #hud{ display:none; }

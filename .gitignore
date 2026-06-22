@@ -6,3 +6,7 @@ _build/capture/
 _build/final_frames/
 *.bak
 *.tmp
+
+# secrets - never commit
+.env
+**/.env

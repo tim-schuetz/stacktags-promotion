@@ -1,0 +1,2319 @@
+{
+  "task": "transcribe",
+  "language": "english",
+  "duration": 105.2300033569336,
+  "text": "Men underperform women at the stock market, and it's not because they pick worse stocks, it's because they trade too much. The more you trade, the more you quietly bleed to costs, every single time. In one of the most famous studies in finance, the investors who traded the most badly lost to the ones who did almost nothing. And no, this isn't a rookie mistake, even professional fund managers fall for it. Here's the psychology. It starts with one deeply human glitch. We love selling our winners, and we can't let go of our losers. Across tens of US investors, people cashed in their gains about 50% more often than their losses. Locking in what's working, babysitting what isn't. And here's the kicker. Tax wise, that's exactly backwards. Selling a winner hands you a tax bill. Selling a loser would actually save you money. We do the opposite, on pure instinct. Think the pros are above this? They're not. Even professional funds realize their gains about 21% more often than their losses. It's wired in. Now stack the on top? Overtrading. Every trade costs, fees, spreads, taxes. And those tiny leaks compound. In that 1990s, US data, the most active 20% of investors earned just 11.4% a year. Buy and hold investors? Over 18%. Same market. The difference wasn't worth stock picking. Their picks were about as good. It was the cost of all that activity. Which brings us back to the title. Men churned their portfolios around 80% a year. Women, around 50%. Men traded roughly 45% more, fueled by overconfidence. And that extra activity is exactly what dragged their net returns below women's. Less trading, more keeping. So the uncomfortable secret of the market? Doing less beats, doing more. The best investors aren't the busiest. They're the most patient. Want more counterintuitive truths like this? Follow Stack Tags.",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0,
+      "end": 4.460000038146973,
+      "text": " Men underperform women at the stock market, and it's not because they pick worse stocks,",
+      "tokens": [
+        50364,
+        6685,
+        833,
+        26765,
+        2266,
+        412,
+        264,
+        4127,
+        2142,
+        11,
+        293,
+        309,
+        311,
+        406,
+        570,
+        436,
+        1888,
+        5324,
+        12966,
+        11,
+        50596
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.1969449669122696,
+      "compression_ratio": 1.6892307996749878,
+      "no_speech_prob": 0.0011877707438543439
+    },
+    {
+      "id": 1,
+      "seek": 0,
+      "start": 4.880000114440918,
+      "end": 9.15999984741211,
+      "text": " it's because they trade too much. The more you trade, the more you quietly bleed to costs,",
+      "tokens": [
+        50596,
+        309,
+        311,
+        570,
+        436,
+        4923,
+        886,
+        709,
+        13,
+        440,
+        544,
+        291,
+        4923,
+        11,
+        264,
+        544,
+        291,
+        19141,
+        28385,
+        281,
+        5497,
+        11,
+        50828
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.1969449669122696,
+      "compression_ratio": 1.6892307996749878,
+      "no_speech_prob": 0.0011877707438543439
+    },
+    {
+      "id": 2,
+      "seek": 0,
+      "start": 9.460000038146973,
+      "end": 14.020000457763672,
+      "text": " every single time. In one of the most famous studies in finance, the investors who traded",
+      "tokens": [
+        50828,
+        633,
+        2167,
+        565,
+        13,
+        682,
+        472,
+        295,
+        264,
+        881,
+        4618,
+        5313,
+        294,
+        10719,
+        11,
+        264,
+        11519,
+        567,
+        27157,
+        51060
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.1969449669122696,
+      "compression_ratio": 1.6892307996749878,
+      "no_speech_prob": 0.0011877707438543439
+    },
+    {
+      "id": 3,
+      "seek": 0,
+      "start": 14.020000457763672,
+      "end": 18.760000228881836,
+      "text": " the most badly lost to the ones who did almost nothing. And no, this isn't a rookie mistake,",
+      "tokens": [
+        51060,
+        264,
+        881,
+        13425,
+        2731,
+        281,
+        264,
+        2306,
+        567,
+        630,
+        1920,
+        1825,
+        13,
+        400,
+        572,
+        11,
+        341,
+        1943,
+        380,
+        257,
+        36299,
+        6146,
+        11,
+        51308
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.1969449669122696,
+      "compression_ratio": 1.6892307996749878,
+      "no_speech_prob": 0.0011877707438543439
+    },
+    {
+      "id": 4,
+      "seek": 0,
+      "start": 19.020000457763672,
+      "end": 23.799999237060547,
+      "text": " even professional fund managers fall for it. Here's the psychology. It starts with one deeply",
+      "tokens": [
+        51308,
+        754,
+        4843,
+        2374,
+        14084,
+        2100,
+        337,
+        309,
+        13,
+        1692,
+        311,
+        264,
+        15105,
+        13,
+        467,
+        3719,
+        365,
+        472,
+        8760,
+        51548
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.1969449669122696,
+      "compression_ratio": 1.6892307996749878,
+      "no_speech_prob": 0.0011877707438543439
+    },
+    {
+      "id": 5,
+      "seek": 0,
+      "start": 23.799999237060547,
+      "end": 28.719999313354492,
+      "text": " human glitch. We love selling our winners, and we can't let go of our losers. Across tens of",
+      "tokens": [
+        51548,
+        1952,
+        23552,
+        13,
+        492,
+        959,
+        6511,
+        527,
+        17193,
+        11,
+        293,
+        321,
+        393,
+        380,
+        718,
+        352,
+        295,
+        527,
+        37713,
+        13,
+        34527,
+        10688,
+        295,
+        51800
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.1969449669122696,
+      "compression_ratio": 1.6892307996749878,
+      "no_speech_prob": 0.0011877707438543439
+    },
+    {
+      "id": 6,
+      "seek": 2890,
+      "start": 28.899999618530273,
+      "end": 34.720001220703125,
+      "text": " US investors, people cashed in their gains about 50% more often than their losses. Locking in",
+      "tokens": [
+        50376,
+        2546,
+        11519,
+        11,
+        561,
+        6388,
+        292,
+        294,
+        641,
+        16823,
+        466,
+        2625,
+        4,
+        544,
+        2049,
+        813,
+        641,
+        15352,
+        13,
+        16736,
+        278,
+        294,
+        50648
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.18389642238616943,
+      "compression_ratio": 1.6480835676193237,
+      "no_speech_prob": 0.1480337530374527
+    },
+    {
+      "id": 7,
+      "seek": 2890,
+      "start": 34.720001220703125,
+      "end": 39.84000015258789,
+      "text": " what's working, babysitting what isn't. And here's the kicker. Tax wise, that's exactly backwards.",
+      "tokens": [
+        50648,
+        437,
+        311,
+        1364,
+        11,
+        39764,
+        2414,
+        437,
+        1943,
+        380,
+        13,
+        400,
+        510,
+        311,
+        264,
+        4437,
+        260,
+        13,
+        23263,
+        10829,
+        11,
+        300,
+        311,
+        2293,
+        12204,
+        13,
+        50924
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.18389642238616943,
+      "compression_ratio": 1.6480835676193237,
+      "no_speech_prob": 0.1480337530374527
+    },
+    {
+      "id": 8,
+      "seek": 2890,
+      "start": 40.459999084472656,
+      "end": 44.7599983215332,
+      "text": " Selling a winner hands you a tax bill. Selling a loser would actually save you money. We do the",
+      "tokens": [
+        50924,
+        318,
+        11073,
+        257,
+        8507,
+        2377,
+        291,
+        257,
+        3366,
+        2961,
+        13,
+        318,
+        11073,
+        257,
+        24606,
+        576,
+        767,
+        3155,
+        291,
+        1460,
+        13,
+        492,
+        360,
+        264,
+        51132
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.18389642238616943,
+      "compression_ratio": 1.6480835676193237,
+      "no_speech_prob": 0.1480337530374527
+    },
+    {
+      "id": 9,
+      "seek": 2890,
+      "start": 44.7599983215332,
+      "end": 49,
+      "text": " opposite, on pure instinct. Think the pros are above this? They're not. Even professional",
+      "tokens": [
+        51132,
+        6182,
+        11,
+        322,
+        6075,
+        16556,
+        13,
+        6557,
+        264,
+        6267,
+        366,
+        3673,
+        341,
+        30,
+        814,
+        434,
+        406,
+        13,
+        2754,
+        4843,
+        51364
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.18389642238616943,
+      "compression_ratio": 1.6480835676193237,
+      "no_speech_prob": 0.1480337530374527
+    },
+    {
+      "id": 10,
+      "seek": 2890,
+      "start": 49,
+      "end": 54.099998474121094,
+      "text": " funds realize their gains about 21% more often than their losses. It's wired in. Now stack the",
+      "tokens": [
+        51364,
+        8271,
+        4325,
+        641,
+        16823,
+        466,
+        5080,
+        4,
+        544,
+        2049,
+        813,
+        641,
+        15352,
+        13,
+        467,
+        311,
+        27415,
+        294,
+        13,
+        823,
+        8630,
+        264,
+        51624
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.18389642238616943,
+      "compression_ratio": 1.6480835676193237,
+      "no_speech_prob": 0.1480337530374527
+    },
+    {
+      "id": 11,
+      "seek": 5425,
+      "start": 54.810001373291016,
+      "end": 61.66999816894531,
+      "text": " on top? Overtrading. Every trade costs, fees, spreads, taxes. And those tiny leaks compound.",
+      "tokens": [
+        50392,
+        322,
+        1192,
+        30,
+        422,
+        3281,
+        6206,
+        278,
+        13,
+        2048,
+        4923,
+        5497,
+        11,
+        13370,
+        11,
+        25728,
+        11,
+        10041,
+        13,
+        400,
+        729,
+        5870,
+        28885,
+        14154,
+        13,
+        50736
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.2267705500125885,
+      "compression_ratio": 1.4566929340362549,
+      "no_speech_prob": 0.5505185127258301
+    },
+    {
+      "id": 12,
+      "seek": 5425,
+      "start": 61.849998474121094,
+      "end": 69.29000091552734,
+      "text": " In that 1990s, US data, the most active 20% of investors earned just 11.4% a year. Buy and hold",
+      "tokens": [
+        50736,
+        682,
+        300,
+        13384,
+        82,
+        11,
+        2546,
+        1412,
+        11,
+        264,
+        881,
+        4967,
+        945,
+        4,
+        295,
+        11519,
+        12283,
+        445,
+        2975,
+        13,
+        19,
+        4,
+        257,
+        1064,
+        13,
+        19146,
+        293,
+        1797,
+        51112
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.2267705500125885,
+      "compression_ratio": 1.4566929340362549,
+      "no_speech_prob": 0.5505185127258301
+    },
+    {
+      "id": 13,
+      "seek": 5425,
+      "start": 69.20999908447266,
+      "end": 74.91000366210938,
+      "text": " investors? Over 18%. Same market. The difference wasn't worth stock picking. Their picks were",
+      "tokens": [
+        51112,
+        11519,
+        30,
+        4886,
+        2443,
+        6856,
+        10635,
+        2142,
+        13,
+        440,
+        2649,
+        2067,
+        380,
+        3163,
+        4127,
+        8867,
+        13,
+        6710,
+        16137,
+        645,
+        51392
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.2267705500125885,
+      "compression_ratio": 1.4566929340362549,
+      "no_speech_prob": 0.5505185127258301
+    },
+    {
+      "id": 14,
+      "seek": 5425,
+      "start": 74.91000366210938,
+      "end": 79.01000213623047,
+      "text": " about as good. It was the cost of all that activity. Which brings us back to the title.",
+      "tokens": [
+        51392,
+        466,
+        382,
+        665,
+        13,
+        467,
+        390,
+        264,
+        2063,
+        295,
+        439,
+        300,
+        5191,
+        13,
+        3013,
+        5607,
+        505,
+        646,
+        281,
+        264,
+        4876,
+        13,
+        51620
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.2267705500125885,
+      "compression_ratio": 1.4566929340362549,
+      "no_speech_prob": 0.5505185127258301
+    },
+    {
+      "id": 15,
+      "seek": 7901,
+      "start": 79.01000213623047,
+      "end": 86.08999633789062,
+      "text": " Men churned their portfolios around 80% a year. Women, around 50%. Men traded roughly 45% more,",
+      "tokens": [
+        50380,
+        6685,
+        417,
+        925,
+        292,
+        641,
+        11688,
+        2717,
+        926,
+        4688,
+        4,
+        257,
+        1064,
+        13,
+        11065,
+        11,
+        926,
+        2625,
+        6856,
+        6685,
+        27157,
+        9810,
+        6905,
+        4,
+        544,
+        11,
+        50732
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.19949530065059662,
+      "compression_ratio": 1.5211267471313477,
+      "no_speech_prob": 0.02161349356174469
+    },
+    {
+      "id": 16,
+      "seek": 7901,
+      "start": 86.58999633789062,
+      "end": 91.02999877929688,
+      "text": " fueled by overconfidence. And that extra activity is exactly what dragged their net",
+      "tokens": [
+        50732,
+        45446,
+        538,
+        670,
+        47273,
+        13,
+        400,
+        300,
+        2857,
+        5191,
+        307,
+        2293,
+        437,
+        25717,
+        641,
+        2533,
+        50956
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.19949530065059662,
+      "compression_ratio": 1.5211267471313477,
+      "no_speech_prob": 0.02161349356174469
+    },
+    {
+      "id": 17,
+      "seek": 7901,
+      "start": 91.02999877929688,
+      "end": 96.87000274658203,
+      "text": " returns below women's. Less trading, more keeping. So the uncomfortable secret of the market? Doing",
+      "tokens": [
+        50956,
+        11247,
+        2507,
+        2266,
+        311,
+        13,
+        18649,
+        9529,
+        11,
+        544,
+        5145,
+        13,
+        407,
+        264,
+        10532,
+        4054,
+        295,
+        264,
+        2142,
+        30,
+        18496,
+        51252
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.19949530065059662,
+      "compression_ratio": 1.5211267471313477,
+      "no_speech_prob": 0.02161349356174469
+    },
+    {
+      "id": 18,
+      "seek": 7901,
+      "start": 96.87000274658203,
+      "end": 101.43000030517578,
+      "text": " less beats, doing more. The best investors aren't the busiest. They're the most patient.",
+      "tokens": [
+        51252,
+        1570,
+        16447,
+        11,
+        884,
+        544,
+        13,
+        440,
+        1151,
+        11519,
+        3212,
+        380,
+        264,
+        1255,
+        6495,
+        13,
+        814,
+        434,
+        264,
+        881,
+        4537,
+        13,
+        51496
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.19949530065059662,
+      "compression_ratio": 1.5211267471313477,
+      "no_speech_prob": 0.02161349356174469
+    },
+    {
+      "id": 19,
+      "seek": 7901,
+      "start": 101.94999694824219,
+      "end": 104.94999694824219,
+      "text": " Want more counterintuitive truths like this? Follow Stack Tags.",
+      "tokens": [
+        51496,
+        11773,
+        544,
+        5682,
+        686,
+        48314,
+        30079,
+        411,
+        341,
+        30,
+        9876,
+        37649,
+        11204,
+        82,
+        13,
+        51664
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.19949530065059662,
+      "compression_ratio": 1.5211267471313477,
+      "no_speech_prob": 0.02161349356174469
+    }
+  ],
+  "words": [
+    {
+      "word": "Men",
+      "start": 0,
+      "end": 0.4000000059604645
+    },
+    {
+      "word": "underperform",
+      "start": 0.4000000059604645,
+      "end": 1.059999942779541
+    },
+    {
+      "word": "women",
+      "start": 1.059999942779541,
+      "end": 1.3600000143051147
+    },
+    {
+      "word": "at",
+      "start": 1.3600000143051147,
+      "end": 1.5
+    },
+    {
+      "word": "the",
+      "start": 1.5,
+      "end": 1.659999966621399
+    },
+    {
+      "word": "stock",
+      "start": 1.659999966621399,
+      "end": 1.940000057220459
+    },
+    {
+      "word": "market",
+      "start": 1.940000057220459,
+      "end": 2.200000047683716
+    },
+    {
+      "word": "and",
+      "start": 2.640000104904175,
+      "end": 2.740000009536743
+    },
+    {
+      "word": "it's",
+      "start": 2.740000009536743,
+      "end": 2.940000057220459
+    },
+    {
+      "word": "not",
+      "start": 2.940000057220459,
+      "end": 3.1600000858306885
+    },
+    {
+      "word": "because",
+      "start": 3.1600000858306885,
+      "end": 3.5199999809265137
+    },
+    {
+      "word": "they",
+      "start": 3.5199999809265137,
+      "end": 3.700000047683716
+    },
+    {
+      "word": "pick",
+      "start": 3.700000047683716,
+      "end": 3.880000114440918
+    },
+    {
+      "word": "worse",
+      "start": 3.880000114440918,
+      "end": 4.099999904632568
+    },
+    {
+      "word": "stocks",
+      "start": 4.099999904632568,
+      "end": 4.460000038146973
+    },
+    {
+      "word": "it's",
+      "start": 4.880000114440918,
+      "end": 5
+    },
+    {
+      "word": "because",
+      "start": 5,
+      "end": 5.320000171661377
+    },
+    {
+      "word": "they",
+      "start": 5.320000171661377,
+      "end": 5.460000038146973
+    },
+    {
+      "word": "trade",
+      "start": 5.460000038146973,
+      "end": 5.78000020980835
+    },
+    {
+      "word": "too",
+      "start": 5.78000020980835,
+      "end": 6.019999980926514
+    },
+    {
+      "word": "much",
+      "start": 6.019999980926514,
+      "end": 6.300000190734863
+    },
+    {
+      "word": "The",
+      "start": 6.659999847412109,
+      "end": 6.78000020980835
+    },
+    {
+      "word": "more",
+      "start": 6.78000020980835,
+      "end": 6.960000038146973
+    },
+    {
+      "word": "you",
+      "start": 6.960000038146973,
+      "end": 7.320000171661377
+    },
+    {
+      "word": "trade",
+      "start": 7.320000171661377,
+      "end": 7.380000114440918
+    },
+    {
+      "word": "the",
+      "start": 7.579999923706055,
+      "end": 7.639999866485596
+    },
+    {
+      "word": "more",
+      "start": 7.639999866485596,
+      "end": 7.800000190734863
+    },
+    {
+      "word": "you",
+      "start": 7.800000190734863,
+      "end": 7.960000038146973
+    },
+    {
+      "word": "quietly",
+      "start": 7.960000038146973,
+      "end": 8.4399995803833
+    },
+    {
+      "word": "bleed",
+      "start": 8.4399995803833,
+      "end": 8.539999961853027
+    },
+    {
+      "word": "to",
+      "start": 8.539999961853027,
+      "end": 9.15999984741211
+    },
+    {
+      "word": "costs",
+      "start": 9.15999984741211,
+      "end": 9.15999984741211
+    },
+    {
+      "word": "every",
+      "start": 9.460000038146973,
+      "end": 9.699999809265137
+    },
+    {
+      "word": "single",
+      "start": 9.699999809265137,
+      "end": 10.020000457763672
+    },
+    {
+      "word": "time",
+      "start": 10.020000457763672,
+      "end": 10.300000190734863
+    },
+    {
+      "word": "In",
+      "start": 10.619999885559082,
+      "end": 10.819999694824219
+    },
+    {
+      "word": "one",
+      "start": 10.819999694824219,
+      "end": 10.960000038146973
+    },
+    {
+      "word": "of",
+      "start": 10.960000038146973,
+      "end": 11.0600004196167
+    },
+    {
+      "word": "the",
+      "start": 11.0600004196167,
+      "end": 11.140000343322754
+    },
+    {
+      "word": "most",
+      "start": 11.140000343322754,
+      "end": 11.640000343322754
+    },
+    {
+      "word": "famous",
+      "start": 11.640000343322754,
+      "end": 11.640000343322754
+    },
+    {
+      "word": "studies",
+      "start": 11.640000343322754,
+      "end": 11.960000038146973
+    },
+    {
+      "word": "in",
+      "start": 11.960000038146973,
+      "end": 12.199999809265137
+    },
+    {
+      "word": "finance",
+      "start": 12.199999809265137,
+      "end": 12.5
+    },
+    {
+      "word": "the",
+      "start": 12.819999694824219,
+      "end": 13.220000267028809
+    },
+    {
+      "word": "investors",
+      "start": 13.220000267028809,
+      "end": 13.520000457763672
+    },
+    {
+      "word": "who",
+      "start": 13.520000457763672,
+      "end": 14.020000457763672
+    },
+    {
+      "word": "traded",
+      "start": 14.020000457763672,
+      "end": 14.020000457763672
+    },
+    {
+      "word": "the",
+      "start": 14.020000457763672,
+      "end": 14.180000305175781
+    },
+    {
+      "word": "most",
+      "start": 14.180000305175781,
+      "end": 14.399999618530273
+    },
+    {
+      "word": "badly",
+      "start": 14.399999618530273,
+      "end": 14.720000267028809
+    },
+    {
+      "word": "lost",
+      "start": 14.720000267028809,
+      "end": 15.020000457763672
+    },
+    {
+      "word": "to",
+      "start": 15.020000457763672,
+      "end": 15.199999809265137
+    },
+    {
+      "word": "the",
+      "start": 15.199999809265137,
+      "end": 15.300000190734863
+    },
+    {
+      "word": "ones",
+      "start": 15.300000190734863,
+      "end": 15.4399995803833
+    },
+    {
+      "word": "who",
+      "start": 15.4399995803833,
+      "end": 15.619999885559082
+    },
+    {
+      "word": "did",
+      "start": 15.619999885559082,
+      "end": 15.760000228881836
+    },
+    {
+      "word": "almost",
+      "start": 15.760000228881836,
+      "end": 16.260000228881836
+    },
+    {
+      "word": "nothing",
+      "start": 16.260000228881836,
+      "end": 16.459999084472656
+    },
+    {
+      "word": "And",
+      "start": 16.68000030517578,
+      "end": 17.1200008392334
+    },
+    {
+      "word": "no",
+      "start": 17.1200008392334,
+      "end": 17.3799991607666
+    },
+    {
+      "word": "this",
+      "start": 17.600000381469727,
+      "end": 17.799999237060547
+    },
+    {
+      "word": "isn't",
+      "start": 17.799999237060547,
+      "end": 17.979999542236328
+    },
+    {
+      "word": "a",
+      "start": 17.979999542236328,
+      "end": 18.239999771118164
+    },
+    {
+      "word": "rookie",
+      "start": 18.239999771118164,
+      "end": 18.3799991607666
+    },
+    {
+      "word": "mistake",
+      "start": 18.3799991607666,
+      "end": 18.760000228881836
+    },
+    {
+      "word": "even",
+      "start": 19.020000457763672,
+      "end": 19.31999969482422
+    },
+    {
+      "word": "professional",
+      "start": 19.31999969482422,
+      "end": 19.799999237060547
+    },
+    {
+      "word": "fund",
+      "start": 19.799999237060547,
+      "end": 20.139999389648438
+    },
+    {
+      "word": "managers",
+      "start": 20.139999389648438,
+      "end": 20.360000610351562
+    },
+    {
+      "word": "fall",
+      "start": 20.360000610351562,
+      "end": 20.65999984741211
+    },
+    {
+      "word": "for",
+      "start": 20.65999984741211,
+      "end": 20.899999618530273
+    },
+    {
+      "word": "it",
+      "start": 20.899999618530273,
+      "end": 21.020000457763672
+    },
+    {
+      "word": "Here's",
+      "start": 21.299999237060547,
+      "end": 21.540000915527344
+    },
+    {
+      "word": "the",
+      "start": 21.540000915527344,
+      "end": 22.18000030517578
+    },
+    {
+      "word": "psychology",
+      "start": 22.18000030517578,
+      "end": 22.18000030517578
+    },
+    {
+      "word": "It",
+      "start": 22.399999618530273,
+      "end": 22.81999969482422
+    },
+    {
+      "word": "starts",
+      "start": 22.81999969482422,
+      "end": 23
+    },
+    {
+      "word": "with",
+      "start": 23,
+      "end": 23.219999313354492
+    },
+    {
+      "word": "one",
+      "start": 23.219999313354492,
+      "end": 23.479999542236328
+    },
+    {
+      "word": "deeply",
+      "start": 23.479999542236328,
+      "end": 23.799999237060547
+    },
+    {
+      "word": "human",
+      "start": 23.799999237060547,
+      "end": 24.079999923706055
+    },
+    {
+      "word": "glitch",
+      "start": 24.079999923706055,
+      "end": 24.299999237060547
+    },
+    {
+      "word": "We",
+      "start": 24.68000030517578,
+      "end": 24.8799991607666
+    },
+    {
+      "word": "love",
+      "start": 24.8799991607666,
+      "end": 25.100000381469727
+    },
+    {
+      "word": "selling",
+      "start": 25.100000381469727,
+      "end": 25.34000015258789
+    },
+    {
+      "word": "our",
+      "start": 25.34000015258789,
+      "end": 25.899999618530273
+    },
+    {
+      "word": "winners",
+      "start": 25.899999618530273,
+      "end": 25.899999618530273
+    },
+    {
+      "word": "and",
+      "start": 25.979999542236328,
+      "end": 26.18000030517578
+    },
+    {
+      "word": "we",
+      "start": 26.18000030517578,
+      "end": 26.420000076293945
+    },
+    {
+      "word": "can't",
+      "start": 26.420000076293945,
+      "end": 26.579999923706055
+    },
+    {
+      "word": "let",
+      "start": 26.579999923706055,
+      "end": 26.68000030517578
+    },
+    {
+      "word": "go",
+      "start": 26.68000030517578,
+      "end": 26.8799991607666
+    },
+    {
+      "word": "of",
+      "start": 26.8799991607666,
+      "end": 26.979999542236328
+    },
+    {
+      "word": "our",
+      "start": 26.979999542236328,
+      "end": 27.299999237060547
+    },
+    {
+      "word": "losers",
+      "start": 27.299999237060547,
+      "end": 27.5
+    },
+    {
+      "word": "Across",
+      "start": 28.079999923706055,
+      "end": 28.360000610351562
+    },
+    {
+      "word": "tens",
+      "start": 28.360000610351562,
+      "end": 28.65999984741211
+    },
+    {
+      "word": "of",
+      "start": 28.65999984741211,
+      "end": 28.899999618530273
+    },
+    {
+      "word": "US",
+      "start": 28.899999618530273,
+      "end": 29.420000076293945
+    },
+    {
+      "word": "investors",
+      "start": 29.420000076293945,
+      "end": 29.920000076293945
+    },
+    {
+      "word": "people",
+      "start": 30.219999313354492,
+      "end": 30.399999618530273
+    },
+    {
+      "word": "cashed",
+      "start": 30.399999618530273,
+      "end": 30.84000015258789
+    },
+    {
+      "word": "in",
+      "start": 30.84000015258789,
+      "end": 30.8799991607666
+    },
+    {
+      "word": "their",
+      "start": 30.8799991607666,
+      "end": 31.100000381469727
+    },
+    {
+      "word": "gains",
+      "start": 31.100000381469727,
+      "end": 31.34000015258789
+    },
+    {
+      "word": "about",
+      "start": 31.34000015258789,
+      "end": 32.040000915527344
+    },
+    {
+      "word": "50",
+      "start": 32.040000915527344,
+      "end": 32.400001525878906
+    },
+    {
+      "word": "",
+      "start": 32.400001525878906,
+      "end": 32.65999984741211
+    },
+    {
+      "word": "more",
+      "start": 32.65999984741211,
+      "end": 32.880001068115234
+    },
+    {
+      "word": "often",
+      "start": 32.880001068115234,
+      "end": 33.18000030517578
+    },
+    {
+      "word": "than",
+      "start": 33.18000030517578,
+      "end": 33.29999923706055
+    },
+    {
+      "word": "their",
+      "start": 33.29999923706055,
+      "end": 33.52000045776367
+    },
+    {
+      "word": "losses",
+      "start": 33.52000045776367,
+      "end": 33.81999969482422
+    },
+    {
+      "word": "Locking",
+      "start": 34.47999954223633,
+      "end": 34.619998931884766
+    },
+    {
+      "word": "in",
+      "start": 34.619998931884766,
+      "end": 34.720001220703125
+    },
+    {
+      "word": "what's",
+      "start": 34.720001220703125,
+      "end": 34.900001525878906
+    },
+    {
+      "word": "working",
+      "start": 34.900001525878906,
+      "end": 35.2599983215332
+    },
+    {
+      "word": "babysitting",
+      "start": 35.52000045776367,
+      "end": 35.91999816894531
+    },
+    {
+      "word": "what",
+      "start": 35.91999816894531,
+      "end": 36.220001220703125
+    },
+    {
+      "word": "isn't",
+      "start": 36.220001220703125,
+      "end": 36.47999954223633
+    },
+    {
+      "word": "And",
+      "start": 36.81999969482422,
+      "end": 36.91999816894531
+    },
+    {
+      "word": "here's",
+      "start": 36.91999816894531,
+      "end": 37.099998474121094
+    },
+    {
+      "word": "the",
+      "start": 37.099998474121094,
+      "end": 37.36000061035156
+    },
+    {
+      "word": "kicker",
+      "start": 37.36000061035156,
+      "end": 37.599998474121094
+    },
+    {
+      "word": "Tax",
+      "start": 38,
+      "end": 38
+    },
+    {
+      "word": "wise",
+      "start": 38,
+      "end": 38.34000015258789
+    },
+    {
+      "word": "that's",
+      "start": 38.7400016784668,
+      "end": 38.880001068115234
+    },
+    {
+      "word": "exactly",
+      "start": 38.880001068115234,
+      "end": 39.41999816894531
+    },
+    {
+      "word": "backwards",
+      "start": 39.41999816894531,
+      "end": 39.84000015258789
+    },
+    {
+      "word": "Selling",
+      "start": 40.459999084472656,
+      "end": 40.459999084472656
+    },
+    {
+      "word": "a",
+      "start": 40.459999084472656,
+      "end": 40.81999969482422
+    },
+    {
+      "word": "winner",
+      "start": 40.81999969482422,
+      "end": 40.81999969482422
+    },
+    {
+      "word": "hands",
+      "start": 40.81999969482422,
+      "end": 41.040000915527344
+    },
+    {
+      "word": "you",
+      "start": 41.040000915527344,
+      "end": 41.13999938964844
+    },
+    {
+      "word": "a",
+      "start": 41.13999938964844,
+      "end": 41.279998779296875
+    },
+    {
+      "word": "tax",
+      "start": 41.279998779296875,
+      "end": 41.560001373291016
+    },
+    {
+      "word": "bill",
+      "start": 41.560001373291016,
+      "end": 41.720001220703125
+    },
+    {
+      "word": "Selling",
+      "start": 42.08000183105469,
+      "end": 42.08000183105469
+    },
+    {
+      "word": "a",
+      "start": 42.08000183105469,
+      "end": 42.459999084472656
+    },
+    {
+      "word": "loser",
+      "start": 42.459999084472656,
+      "end": 42.459999084472656
+    },
+    {
+      "word": "would",
+      "start": 42.459999084472656,
+      "end": 42.63999938964844
+    },
+    {
+      "word": "actually",
+      "start": 42.63999938964844,
+      "end": 43.060001373291016
+    },
+    {
+      "word": "save",
+      "start": 43.060001373291016,
+      "end": 43.18000030517578
+    },
+    {
+      "word": "you",
+      "start": 43.18000030517578,
+      "end": 43.5
+    },
+    {
+      "word": "money",
+      "start": 43.5,
+      "end": 43.540000915527344
+    },
+    {
+      "word": "We",
+      "start": 43.939998626708984,
+      "end": 44.119998931884766
+    },
+    {
+      "word": "do",
+      "start": 44.119998931884766,
+      "end": 44.20000076293945
+    },
+    {
+      "word": "the",
+      "start": 44.20000076293945,
+      "end": 44.7599983215332
+    },
+    {
+      "word": "opposite",
+      "start": 44.7599983215332,
+      "end": 44.7599983215332
+    },
+    {
+      "word": "on",
+      "start": 44.880001068115234,
+      "end": 45.20000076293945
+    },
+    {
+      "word": "pure",
+      "start": 45.20000076293945,
+      "end": 45.400001525878906
+    },
+    {
+      "word": "instinct",
+      "start": 45.400001525878906,
+      "end": 45.7400016784668
+    },
+    {
+      "word": "Think",
+      "start": 46.220001220703125,
+      "end": 46.31999969482422
+    },
+    {
+      "word": "the",
+      "start": 46.31999969482422,
+      "end": 46.65999984741211
+    },
+    {
+      "word": "pros",
+      "start": 46.65999984741211,
+      "end": 46.65999984741211
+    },
+    {
+      "word": "are",
+      "start": 46.65999984741211,
+      "end": 46.900001525878906
+    },
+    {
+      "word": "above",
+      "start": 46.900001525878906,
+      "end": 47.060001373291016
+    },
+    {
+      "word": "this",
+      "start": 47.060001373291016,
+      "end": 47.380001068115234
+    },
+    {
+      "word": "They're",
+      "start": 47.70000076293945,
+      "end": 47.900001525878906
+    },
+    {
+      "word": "not",
+      "start": 47.900001525878906,
+      "end": 48.13999938964844
+    },
+    {
+      "word": "Even",
+      "start": 48.29999923706055,
+      "end": 48.5
+    },
+    {
+      "word": "professional",
+      "start": 48.5,
+      "end": 49
+    },
+    {
+      "word": "funds",
+      "start": 49,
+      "end": 49.2400016784668
+    },
+    {
+      "word": "realize",
+      "start": 49.2400016784668,
+      "end": 49.52000045776367
+    },
+    {
+      "word": "their",
+      "start": 49.52000045776367,
+      "end": 49.91999816894531
+    },
+    {
+      "word": "gains",
+      "start": 49.91999816894531,
+      "end": 49.91999816894531
+    },
+    {
+      "word": "about",
+      "start": 49.91999816894531,
+      "end": 50.18000030517578
+    },
+    {
+      "word": "21",
+      "start": 50.18000030517578,
+      "end": 50.599998474121094
+    },
+    {
+      "word": "",
+      "start": 50.599998474121094,
+      "end": 50.900001525878906
+    },
+    {
+      "word": "more",
+      "start": 50.900001525878906,
+      "end": 51.15999984741211
+    },
+    {
+      "word": "often",
+      "start": 51.15999984741211,
+      "end": 51.439998626708984
+    },
+    {
+      "word": "than",
+      "start": 51.439998626708984,
+      "end": 51.58000183105469
+    },
+    {
+      "word": "their",
+      "start": 51.58000183105469,
+      "end": 52.08000183105469
+    },
+    {
+      "word": "losses",
+      "start": 52.08000183105469,
+      "end": 52.08000183105469
+    },
+    {
+      "word": "It's",
+      "start": 52.279998779296875,
+      "end": 52.79999923706055
+    },
+    {
+      "word": "wired",
+      "start": 52.79999923706055,
+      "end": 52.959999084472656
+    },
+    {
+      "word": "in",
+      "start": 52.959999084472656,
+      "end": 53.2400016784668
+    },
+    {
+      "word": "Now",
+      "start": 53.540000915527344,
+      "end": 53.779998779296875
+    },
+    {
+      "word": "stack",
+      "start": 53.779998779296875,
+      "end": 53.97999954223633
+    },
+    {
+      "word": "the",
+      "start": 53.97999954223633,
+      "end": 54.25
+    },
+    {
+      "word": "on",
+      "start": 54.56999969482422,
+      "end": 54.83000183105469
+    },
+    {
+      "word": "top",
+      "start": 54.83000183105469,
+      "end": 55.25
+    },
+    {
+      "word": "Overtrading",
+      "start": 55.790000915527344,
+      "end": 56.310001373291016
+    },
+    {
+      "word": "Every",
+      "start": 56.810001373291016,
+      "end": 56.9900016784668
+    },
+    {
+      "word": "trade",
+      "start": 56.9900016784668,
+      "end": 57.22999954223633
+    },
+    {
+      "word": "costs",
+      "start": 57.22999954223633,
+      "end": 57.66999816894531
+    },
+    {
+      "word": "fees",
+      "start": 57.9900016784668,
+      "end": 58.369998931884766
+    },
+    {
+      "word": "spreads",
+      "start": 59.11000061035156,
+      "end": 59.11000061035156
+    },
+    {
+      "word": "taxes",
+      "start": 59.5099983215332,
+      "end": 59.869998931884766
+    },
+    {
+      "word": "And",
+      "start": 60.33000183105469,
+      "end": 60.5099983215332
+    },
+    {
+      "word": "those",
+      "start": 60.5099983215332,
+      "end": 60.77000045776367
+    },
+    {
+      "word": "tiny",
+      "start": 60.77000045776367,
+      "end": 61.06999969482422
+    },
+    {
+      "word": "leaks",
+      "start": 61.06999969482422,
+      "end": 61.27000045776367
+    },
+    {
+      "word": "compound",
+      "start": 61.27000045776367,
+      "end": 61.66999816894531
+    },
+    {
+      "word": "In",
+      "start": 61.849998474121094,
+      "end": 61.88999938964844
+    },
+    {
+      "word": "that",
+      "start": 61.88999938964844,
+      "end": 62.11000061035156
+    },
+    {
+      "word": "1990s",
+      "start": 62.11000061035156,
+      "end": 63.209999084472656
+    },
+    {
+      "word": "US",
+      "start": 63.38999938964844,
+      "end": 63.77000045776367
+    },
+    {
+      "word": "data",
+      "start": 63.77000045776367,
+      "end": 64.02999877929688
+    },
+    {
+      "word": "the",
+      "start": 64.44999694824219,
+      "end": 64.52999877929688
+    },
+    {
+      "word": "most",
+      "start": 64.52999877929688,
+      "end": 64.79000091552734
+    },
+    {
+      "word": "active",
+      "start": 64.79000091552734,
+      "end": 65.02999877929688
+    },
+    {
+      "word": "20",
+      "start": 65.02999877929688,
+      "end": 65.51000213623047
+    },
+    {
+      "word": "",
+      "start": 65.51000213623047,
+      "end": 65.66999816894531
+    },
+    {
+      "word": "of",
+      "start": 65.66999816894531,
+      "end": 66.25
+    },
+    {
+      "word": "investors",
+      "start": 66.25,
+      "end": 66.25
+    },
+    {
+      "word": "earned",
+      "start": 66.25,
+      "end": 66.48999786376953
+    },
+    {
+      "word": "just",
+      "start": 66.48999786376953,
+      "end": 66.69000244140625
+    },
+    {
+      "word": "11",
+      "start": 66.69000244140625,
+      "end": 67.1500015258789
+    },
+    {
+      "word": "4",
+      "start": 67.1500015258789,
+      "end": 67.70999908447266
+    },
+    {
+      "word": "",
+      "start": 67.70999908447266,
+      "end": 67.94999694824219
+    },
+    {
+      "word": "a",
+      "start": 67.94999694824219,
+      "end": 68.37000274658203
+    },
+    {
+      "word": "year",
+      "start": 68.37000274658203,
+      "end": 68.37000274658203
+    },
+    {
+      "word": "Buy",
+      "start": 68.87000274658203,
+      "end": 68.94999694824219
+    },
+    {
+      "word": "and",
+      "start": 68.94999694824219,
+      "end": 69.12999725341797
+    },
+    {
+      "word": "hold",
+      "start": 69.12999725341797,
+      "end": 69.29000091552734
+    },
+    {
+      "word": "investors",
+      "start": 69.20999908447266,
+      "end": 69.7300033569336
+    },
+    {
+      "word": "Over",
+      "start": 70.19000244140625,
+      "end": 70.41000366210938
+    },
+    {
+      "word": "18",
+      "start": 70.41000366210938,
+      "end": 71.47000122070312
+    },
+    {
+      "word": "Same",
+      "start": 71.47000122070312,
+      "end": 71.91000366210938
+    },
+    {
+      "word": "market",
+      "start": 71.91000366210938,
+      "end": 72.19000244140625
+    },
+    {
+      "word": "The",
+      "start": 72.61000061035156,
+      "end": 72.80999755859375
+    },
+    {
+      "word": "difference",
+      "start": 72.80999755859375,
+      "end": 73.08999633789062
+    },
+    {
+      "word": "wasn't",
+      "start": 73.08999633789062,
+      "end": 73.30999755859375
+    },
+    {
+      "word": "worth",
+      "start": 73.30999755859375,
+      "end": 73.58999633789062
+    },
+    {
+      "word": "stock",
+      "start": 73.58999633789062,
+      "end": 73.93000030517578
+    },
+    {
+      "word": "picking",
+      "start": 73.93000030517578,
+      "end": 74.11000061035156
+    },
+    {
+      "word": "Their",
+      "start": 74.38999938964844,
+      "end": 74.56999969482422
+    },
+    {
+      "word": "picks",
+      "start": 74.56999969482422,
+      "end": 74.7300033569336
+    },
+    {
+      "word": "were",
+      "start": 74.7300033569336,
+      "end": 74.91000366210938
+    },
+    {
+      "word": "about",
+      "start": 74.91000366210938,
+      "end": 75.12999725341797
+    },
+    {
+      "word": "as",
+      "start": 75.12999725341797,
+      "end": 75.37000274658203
+    },
+    {
+      "word": "good",
+      "start": 75.37000274658203,
+      "end": 75.51000213623047
+    },
+    {
+      "word": "It",
+      "start": 75.6500015258789,
+      "end": 75.80999755859375
+    },
+    {
+      "word": "was",
+      "start": 75.80999755859375,
+      "end": 75.93000030517578
+    },
+    {
+      "word": "the",
+      "start": 75.93000030517578,
+      "end": 76.1500015258789
+    },
+    {
+      "word": "cost",
+      "start": 76.1500015258789,
+      "end": 76.38999938964844
+    },
+    {
+      "word": "of",
+      "start": 76.38999938964844,
+      "end": 76.56999969482422
+    },
+    {
+      "word": "all",
+      "start": 76.56999969482422,
+      "end": 76.79000091552734
+    },
+    {
+      "word": "that",
+      "start": 76.79000091552734,
+      "end": 76.94999694824219
+    },
+    {
+      "word": "activity",
+      "start": 76.94999694824219,
+      "end": 77.33000183105469
+    },
+    {
+      "word": "Which",
+      "start": 77.62999725341797,
+      "end": 77.91000366210938
+    },
+    {
+      "word": "brings",
+      "start": 77.91000366210938,
+      "end": 78.08999633789062
+    },
+    {
+      "word": "us",
+      "start": 78.08999633789062,
+      "end": 78.29000091552734
+    },
+    {
+      "word": "back",
+      "start": 78.29000091552734,
+      "end": 78.44999694824219
+    },
+    {
+      "word": "to",
+      "start": 78.44999694824219,
+      "end": 78.56999969482422
+    },
+    {
+      "word": "the",
+      "start": 78.56999969482422,
+      "end": 79.01000213623047
+    },
+    {
+      "word": "title",
+      "start": 79.01000213623047,
+      "end": 79.01000213623047
+    },
+    {
+      "word": "Men",
+      "start": 79.01000213623047,
+      "end": 79.70999908447266
+    },
+    {
+      "word": "churned",
+      "start": 79.70999908447266,
+      "end": 79.98999786376953
+    },
+    {
+      "word": "their",
+      "start": 79.98999786376953,
+      "end": 80.16999816894531
+    },
+    {
+      "word": "portfolios",
+      "start": 80.16999816894531,
+      "end": 80.58999633789062
+    },
+    {
+      "word": "around",
+      "start": 80.58999633789062,
+      "end": 80.93000030517578
+    },
+    {
+      "word": "80",
+      "start": 80.93000030517578,
+      "end": 81.2300033569336
+    },
+    {
+      "word": "",
+      "start": 81.2300033569336,
+      "end": 81.48999786376953
+    },
+    {
+      "word": "a",
+      "start": 81.48999786376953,
+      "end": 81.93000030517578
+    },
+    {
+      "word": "year",
+      "start": 81.93000030517578,
+      "end": 81.93000030517578
+    },
+    {
+      "word": "Women",
+      "start": 82.55000305175781,
+      "end": 82.55000305175781
+    },
+    {
+      "word": "around",
+      "start": 82.69000244140625,
+      "end": 83.02999877929688
+    },
+    {
+      "word": "50",
+      "start": 83.02999877929688,
+      "end": 84.05000305175781
+    },
+    {
+      "word": "Men",
+      "start": 84.05000305175781,
+      "end": 84.3499984741211
+    },
+    {
+      "word": "traded",
+      "start": 84.3499984741211,
+      "end": 84.58999633789062
+    },
+    {
+      "word": "roughly",
+      "start": 84.58999633789062,
+      "end": 84.93000030517578
+    },
+    {
+      "word": "45",
+      "start": 84.93000030517578,
+      "end": 85.44999694824219
+    },
+    {
+      "word": "",
+      "start": 85.44999694824219,
+      "end": 85.79000091552734
+    },
+    {
+      "word": "more",
+      "start": 85.79000091552734,
+      "end": 86.08999633789062
+    },
+    {
+      "word": "fueled",
+      "start": 86.58999633789062,
+      "end": 86.7300033569336
+    },
+    {
+      "word": "by",
+      "start": 86.7300033569336,
+      "end": 87.01000213623047
+    },
+    {
+      "word": "overconfidence",
+      "start": 87.01000213623047,
+      "end": 87.69000244140625
+    },
+    {
+      "word": "And",
+      "start": 88.19000244140625,
+      "end": 88.37000274658203
+    },
+    {
+      "word": "that",
+      "start": 88.37000274658203,
+      "end": 88.55000305175781
+    },
+    {
+      "word": "extra",
+      "start": 88.55000305175781,
+      "end": 88.91000366210938
+    },
+    {
+      "word": "activity",
+      "start": 88.91000366210938,
+      "end": 89.30999755859375
+    },
+    {
+      "word": "is",
+      "start": 89.30999755859375,
+      "end": 89.55000305175781
+    },
+    {
+      "word": "exactly",
+      "start": 89.55000305175781,
+      "end": 90.08999633789062
+    },
+    {
+      "word": "what",
+      "start": 90.08999633789062,
+      "end": 90.55000305175781
+    },
+    {
+      "word": "dragged",
+      "start": 90.55000305175781,
+      "end": 90.55000305175781
+    },
+    {
+      "word": "their",
+      "start": 90.55000305175781,
+      "end": 90.79000091552734
+    },
+    {
+      "word": "net",
+      "start": 90.79000091552734,
+      "end": 91.02999877929688
+    },
+    {
+      "word": "returns",
+      "start": 91.02999877929688,
+      "end": 91.38999938964844
+    },
+    {
+      "word": "below",
+      "start": 91.38999938964844,
+      "end": 91.66999816894531
+    },
+    {
+      "word": "women's",
+      "start": 91.66999816894531,
+      "end": 92.19000244140625
+    },
+    {
+      "word": "Less",
+      "start": 92.56999969482422,
+      "end": 92.80999755859375
+    },
+    {
+      "word": "trading",
+      "start": 92.80999755859375,
+      "end": 93.1500015258789
+    },
+    {
+      "word": "more",
+      "start": 93.47000122070312,
+      "end": 93.66999816894531
+    },
+    {
+      "word": "keeping",
+      "start": 93.66999816894531,
+      "end": 93.94999694824219
+    },
+    {
+      "word": "So",
+      "start": 94.48999786376953,
+      "end": 94.66999816894531
+    },
+    {
+      "word": "the",
+      "start": 94.66999816894531,
+      "end": 94.8499984741211
+    },
+    {
+      "word": "uncomfortable",
+      "start": 94.8499984741211,
+      "end": 95.25
+    },
+    {
+      "word": "secret",
+      "start": 95.25,
+      "end": 95.61000061035156
+    },
+    {
+      "word": "of",
+      "start": 95.61000061035156,
+      "end": 95.75
+    },
+    {
+      "word": "the",
+      "start": 95.75,
+      "end": 96.01000213623047
+    },
+    {
+      "word": "market",
+      "start": 96.01000213623047,
+      "end": 96.12999725341797
+    },
+    {
+      "word": "Doing",
+      "start": 96.66999816894531,
+      "end": 96.87000274658203
+    },
+    {
+      "word": "less",
+      "start": 96.87000274658203,
+      "end": 97.08999633789062
+    },
+    {
+      "word": "beats",
+      "start": 97.08999633789062,
+      "end": 97.38999938964844
+    },
+    {
+      "word": "doing",
+      "start": 97.79000091552734,
+      "end": 97.79000091552734
+    },
+    {
+      "word": "more",
+      "start": 97.79000091552734,
+      "end": 98.05000305175781
+    },
+    {
+      "word": "The",
+      "start": 98.47000122070312,
+      "end": 98.75
+    },
+    {
+      "word": "best",
+      "start": 98.75,
+      "end": 98.98999786376953
+    },
+    {
+      "word": "investors",
+      "start": 98.98999786376953,
+      "end": 99.37000274658203
+    },
+    {
+      "word": "aren't",
+      "start": 99.37000274658203,
+      "end": 99.6500015258789
+    },
+    {
+      "word": "the",
+      "start": 99.6500015258789,
+      "end": 100.2300033569336
+    },
+    {
+      "word": "busiest",
+      "start": 100.2300033569336,
+      "end": 100.2300033569336
+    },
+    {
+      "word": "They're",
+      "start": 100.52999877929688,
+      "end": 100.69000244140625
+    },
+    {
+      "word": "the",
+      "start": 100.69000244140625,
+      "end": 100.8499984741211
+    },
+    {
+      "word": "most",
+      "start": 100.8499984741211,
+      "end": 101.19000244140625
+    },
+    {
+      "word": "patient",
+      "start": 101.19000244140625,
+      "end": 101.43000030517578
+    },
+    {
+      "word": "Want",
+      "start": 101.94999694824219,
+      "end": 101.98999786376953
+    },
+    {
+      "word": "more",
+      "start": 101.98999786376953,
+      "end": 102.38999938964844
+    },
+    {
+      "word": "counterintuitive",
+      "start": 102.38999938964844,
+      "end": 102.80999755859375
+    },
+    {
+      "word": "truths",
+      "start": 102.80999755859375,
+      "end": 103.08999633789062
+    },
+    {
+      "word": "like",
+      "start": 103.08999633789062,
+      "end": 103.29000091552734
+    },
+    {
+      "word": "this",
+      "start": 103.29000091552734,
+      "end": 103.58999633789062
+    },
+    {
+      "word": "Follow",
+      "start": 103.98999786376953,
+      "end": 104.25
+    },
+    {
+      "word": "Stack",
+      "start": 104.25,
+      "end": 104.56999969482422
+    },
+    {
+      "word": "Tags",
+      "start": 104.56999969482422,
+      "end": 104.94999694824219
+    }
+  ],
+  "usage": {
+    "type": "duration",
+    "seconds": 106
+  }
+}

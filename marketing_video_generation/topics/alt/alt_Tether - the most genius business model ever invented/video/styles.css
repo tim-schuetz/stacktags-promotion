@@ -1,0 +1,443 @@
+/* ============================================================
+   "Tether — the most genius business model ever invented"
+   NEW STACKTAGS STYLE: faux-3D camera over a dynamic grid.
+   White + turquoise (#35A292), Inter only, no borders, bottom
+   subtitles. Scene wrappers are posed by app.js (transform/
+   opacity/blur); in-scene micro-animation is CSS.
+   (Money-green #3aa75e is used sparingly, only for the $ motif,
+    to tell the dollar apart from the turquoise token.)
+   ============================================================ */
+*{ box-sizing:border-box; }
+html,body{ margin:0; padding:0; height:100%; overflow:hidden; background:#070b0a; }
+body{ font-family:var(--stk-font); color:var(--stk-ink); }
+
+.wrap{ position:fixed; inset:0; display:flex; align-items:center; justify-content:center; }
+.stage{
+  position:relative; width:1080px; height:1920px; flex-shrink:0;
+  transform-origin:center center; overflow:hidden; background:#fff;
+}
+#grid{ z-index:0; }
+.scenes{ position:absolute; inset:0; z-index:1; }
+.scene{
+  position:absolute; inset:0;
+  display:flex; align-items:center; justify-content:center;
+  opacity:0; transform-origin:center center;
+  will-change:transform, opacity, filter;
+  transform: translate(var(--tx,0px), var(--ty,0px)) scale(var(--s,1));
+}
+
+:root{ --money:#3aa75e; --money-d:#2c8049; }
+
+/* ===== shared bits ===== */
+.hl{ color:var(--stk-teal-d); }
+.chip{
+  font-weight:800; font-size:40px; letter-spacing:-.5px;
+  background:var(--stk-teal-soft); color:var(--stk-teal-d);
+  padding:20px 38px; border-radius:999px;
+  box-shadow:0 14px 34px rgba(16,50,40,.12);
+}
+.stamp{
+  font-weight:900; font-size:74px; letter-spacing:2px; color:#fff;
+  background:var(--stk-teal); padding:24px 52px; border-radius:26px;
+  transform:rotate(-8deg) scale(.4); opacity:0;
+  box-shadow:0 26px 60px rgba(53,162,146,.45);
+  transition:transform .5s cubic-bezier(.34,1.7,.5,1), opacity .35s ease;
+}
+.stamp.in{ transform:rotate(-8deg) scale(1); opacity:1; }
+.stamp.free{ background:var(--stk-teal-d); }
+
+/* the USDT token coin (app.js injects the ₮ glyph + label) */
+.brand-tether{
+  width:230px; height:230px; border-radius:50%;
+  background:radial-gradient(circle at 36% 30%, #5fc9b4 0%, #35A292 55%, #119271 100%);
+  box-shadow:inset 0 -12px 26px rgba(0,0,0,.16), 0 24px 54px rgba(53,162,146,.40);
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  color:#fff; flex-shrink:0;
+}
+.brand-tether.big{ width:330px; height:330px; }
+.brand-tether.mid{ width:180px; height:180px; }
+.brand-tether.sm{ width:96px; height:96px; }
+.brand-tether .tt-glyph{ width:46%; height:46%; display:block; }
+.brand-tether .tt-lbl{ font-weight:900; font-size:34px; letter-spacing:3px; margin-top:2px; }
+.brand-tether.big .tt-lbl{ font-size:48px; }
+.brand-tether.mid .tt-lbl{ font-size:27px; }
+.brand-tether.sm .tt-lbl{ display:none; }
+
+/* the dollar token (money-green $) */
+.coin-dollar{
+  width:200px; height:200px; border-radius:50%;
+  background:#fff; box-shadow:0 18px 44px rgba(16,50,40,.16), inset 0 0 0 9px #e4f3ea;
+  display:flex; align-items:center; justify-content:center;
+  font-weight:900; font-size:104px; color:var(--money); letter-spacing:-2px; flex-shrink:0;
+}
+.coin-dollar.big{ width:280px; height:280px; font-size:170px; }
+
+/* ============================================================
+   HOOK / INTRO — cash pile + character
+   ============================================================ */
+.intro-cash{
+  position:absolute; left:50%; top:38%; width:780px; transform:translate(-50%,-50%) scale(.9);
+  opacity:0; transition:opacity .6s ease, transform .9s cubic-bezier(.2,.8,.2,1);
+  filter:drop-shadow(0 40px 60px rgba(20,40,33,.22));
+}
+#sc-intro.show .intro-cash{ opacity:1; transform:translate(-50%,-50%) scale(1); }
+.intro-char{
+  position:absolute; left:50%; bottom:240px; width:300px; transform:translateX(-50%) translateY(60px);
+  opacity:0; transition:opacity .55s ease .15s, transform .7s cubic-bezier(.2,.8,.2,1) .15s;
+  filter:drop-shadow(0 24px 34px rgba(20,40,33,.22)); z-index:3;
+}
+#sc-intro.show .intro-char{ opacity:1; transform:translateX(-50%) translateY(0); }
+.intro-chip{ position:absolute; opacity:0; transform:scale(.4); transition:transform .5s cubic-bezier(.34,1.6,.5,1), opacity .35s ease; z-index:4; }
+.intro-chip.a{ left:120px; top:560px; }
+.intro-chip.b{ right:120px; top:680px; }
+#sc-intro.stats .intro-chip{ opacity:1; transform:scale(1); }
+
+/* ============================================================
+   THE DEAL — $1 in → token out → dollar kept
+   ============================================================ */
+.deal{ position:relative; width:1080px; height:1920px; }
+.deal-you{
+  position:absolute; left:90px; top:560px; font-weight:900; font-size:54px; color:var(--stk-muted); letter-spacing:1px;
+  opacity:0; transition:opacity .4s ease;
+}
+#sc-deal.s1 .deal-you{ opacity:1; }
+.deal-dollar{
+  position:absolute; left:140px; top:720px; width:220px;
+  opacity:0; transform:translateX(-520px) rotate(-10deg);
+  transition:opacity .4s ease, transform .8s cubic-bezier(.3,.85,.3,1);
+  filter:drop-shadow(0 20px 30px rgba(20,40,33,.22)); z-index:4;
+}
+#sc-deal.s1 .deal-dollar{ opacity:1; transform:translateX(0) rotate(-6deg); }
+#sc-deal.s3 .deal-dollar{ opacity:0; transform:translateX(0) translateY(40px) scale(.8); }
+.deal-flow{
+  position:absolute; left:360px; top:820px; width:360px; height:10px; border-radius:6px;
+  background:linear-gradient(90deg,var(--stk-teal),var(--stk-teal-d));
+  transform-origin:left center; transform:scaleX(0); opacity:.0;
+  transition:transform .6s cubic-bezier(.2,.8,.2,1), opacity .3s ease;
+}
+#sc-deal.s2 .deal-flow{ transform:scaleX(1); opacity:.9; }
+.deal-coin{
+  position:absolute; right:130px; top:690px; width:230px; height:230px;
+  opacity:0; transform:scale(.2);
+  transition:opacity .35s ease, transform .55s cubic-bezier(.34,1.7,.5,1);
+}
+.deal-coinlbl{
+  position:absolute; right:150px; top:940px; width:190px; text-align:center;
+  font-weight:800; font-size:38px; color:var(--stk-teal-d); opacity:0; transition:opacity .4s ease .1s;
+}
+#sc-deal.s2 .deal-coin{ opacity:1; transform:scale(1); }
+#sc-deal.s2 .deal-coinlbl{ opacity:1; }
+.deal-vault{
+  position:absolute; left:50%; bottom:300px; transform:translateX(-50%) translateY(60px); width:420px;
+  opacity:0; transition:opacity .5s ease, transform .6s cubic-bezier(.2,.8,.2,1);
+  filter:drop-shadow(0 30px 44px rgba(20,40,33,.26)); z-index:3;
+}
+#sc-deal.s1 .deal-vault{ opacity:1; transform:translateX(-50%) translateY(0); }
+#sc-deal.s3 .deal-vault{ filter:drop-shadow(0 0 50px rgba(53,162,146,.55)) drop-shadow(0 30px 44px rgba(20,40,33,.26)); }
+.deal-keep{
+  position:absolute; left:50%; top:740px; width:180px; transform:translate(-50%,0) scale(1);
+  opacity:0; z-index:2;
+  transition:opacity .3s ease, transform .8s cubic-bezier(.5,.05,.6,.5);
+}
+#sc-deal.s3 .deal-keep{ opacity:1; animation:dropIntoVault .9s cubic-bezier(.5,.05,.6,.5) forwards; }
+@keyframes dropIntoVault{
+  0%{ opacity:1; transform:translate(-50%,0) scale(1) rotate(0deg); }
+  100%{ opacity:0; transform:translate(-50%,760px) scale(.18) rotate(40deg); }
+}
+.deal-keeplbl{
+  position:absolute; left:0; right:0; bottom:200px; text-align:center;
+  font-weight:900; font-size:56px; color:var(--stk-teal-d); letter-spacing:-1px;
+  opacity:0; transform:translateY(14px); transition:opacity .45s ease, transform .45s ease;
+}
+#sc-deal.s3 .deal-keeplbl{ opacity:1; transform:none; }
+
+/* ============================================================
+   LEGAL stamp
+   ============================================================ */
+.legal-wrap{ text-align:center; position:relative; }
+.legal-wrap .brand-tether{ margin:0 auto; }
+.legal-name{ font-weight:900; font-size:96px; letter-spacing:-3px; color:var(--stk-ink); margin-top:36px; }
+.legal-wrap .stamp{ position:absolute; left:50%; top:30px; transform:translateX(-50%) rotate(-8deg) scale(.4); }
+.legal-wrap .stamp.in{ transform:translateX(180px) rotate(-8deg) scale(1); }
+
+/* ============================================================
+   TITLE card
+   ============================================================ */
+.title-card{ text-align:center; padding:0 80px; }
+.title-eyebrow{ font-weight:800; font-size:44px; letter-spacing:8px; text-transform:uppercase; color:var(--stk-teal); }
+.title-big{ font-weight:900; font-size:118px; line-height:1.0; letter-spacing:-4px; color:var(--stk-ink); margin-top:18px; }
+.title-big .hl{ color:var(--stk-teal-d); }
+.title-sub{ font-weight:900; font-size:118px; letter-spacing:-4px; color:var(--stk-ink); }
+
+/* ============================================================
+   STABLECOIN
+   ============================================================ */
+.stable-wrap{ text-align:center; }
+.stable-wrap .brand-tether{ margin:0 auto; }
+.pill-lbl{
+  display:inline-block; margin-top:46px;
+  font-weight:800; font-size:52px; color:var(--stk-teal-d);
+  background:var(--stk-teal-soft); padding:22px 50px; border-radius:999px;
+}
+
+/* ============================================================
+   PEG — 1 USDT ⇄ $1
+   ============================================================ */
+.peg{ display:flex; align-items:center; justify-content:center; gap:60px; }
+.peg-side{ text-align:center; }
+.peg-side .brand-tether, .peg-side .coin-dollar{ margin:0 auto; }
+.peg-cap{ margin-top:26px; font-weight:800; font-size:42px; color:var(--stk-ink-2); }
+.peg-link{
+  font-size:90px; transform:scale(.3); opacity:0;
+  transition:transform .55s cubic-bezier(.34,1.7,.5,1), opacity .35s ease;
+}
+#sc-peg.lock .peg-link{ transform:scale(1); opacity:1; }
+
+/* ============================================================
+   BLOCKCHAIN / TRADERS
+   ============================================================ */
+.chain-wrap{ text-align:center; }
+.chain-row{ display:flex; align-items:center; justify-content:center; gap:18px; }
+.block{ width:118px; height:118px; border-radius:24px; background:var(--stk-teal-soft); box-shadow:0 12px 28px rgba(16,50,40,.10); }
+.block.tok{ background:transparent; box-shadow:none; display:flex; align-items:center; justify-content:center; }
+.chain-cap{ margin-top:44px; font-weight:800; font-size:48px; color:var(--stk-ink); letter-spacing:-1px; }
+.chain-io{ margin-top:40px; display:flex; gap:50px; justify-content:center; }
+.chain-io .io{ font-weight:900; font-size:46px; color:var(--stk-teal-d); background:var(--stk-teal-soft); padding:16px 40px; border-radius:999px; opacity:0; transform:translateY(16px); transition:opacity .4s ease, transform .4s cubic-bezier(.2,.8,.2,1); }
+#sc-chain.io-in .io.in{ opacity:1; transform:none; }
+#sc-chain.io-out .io.out{ opacity:1; transform:none; }
+
+/* ============================================================
+   MINT
+   ============================================================ */
+.mint{ display:flex; align-items:center; justify-content:center; gap:60px; }
+.mint-step{ text-align:center; opacity:0; transform:translateY(24px); transition:opacity .5s ease, transform .55s cubic-bezier(.2,.8,.2,1); }
+.mint-step .brand-tether,.mint-step .coin-dollar{ margin:0 auto; }
+.mint-step small{ display:block; margin-top:22px; font-weight:700; font-size:34px; color:var(--stk-muted); }
+.mint-arrow{ font-size:88px; color:var(--stk-teal); opacity:0; transform:scale(.4); transition:opacity .4s ease, transform .5s cubic-bezier(.34,1.7,.5,1); }
+#sc-mint.a .mint-step.a{ opacity:1; transform:none; }
+#sc-mint.b .mint-arrow{ opacity:1; transform:scale(1); }
+#sc-mint.b .mint-step.b{ opacity:1; transform:none; transition-delay:.12s; }
+
+/* ============================================================
+   MAGIC — token dims, dollar glows
+   ============================================================ */
+.magic{ display:flex; align-items:center; justify-content:center; gap:90px; }
+.magic-item{ text-align:center; transition:opacity .5s ease, transform .5s ease, filter .5s ease; }
+.magic-item .brand-tether,.magic-item .coin-dollar{ margin:0 auto; }
+.magic-cap{ margin-top:30px; font-weight:800; font-size:44px; color:var(--stk-ink-2); }
+.magic-cap.key{ color:var(--stk-teal-d); }
+#sc-magic.dim .magic-item.token{ opacity:.34; filter:grayscale(.6); transform:scale(.86); }
+.magic-item.dollar{ opacity:.9; transform:scale(.96); }
+#sc-magic.dim .magic-item.dollar{ opacity:1; transform:scale(1.12); }
+#sc-magic.dim .magic-item.dollar .coin-dollar{ box-shadow:0 0 60px rgba(58,167,94,.5), 0 18px 44px rgba(16,50,40,.16), inset 0 0 0 9px #e4f3ea; }
+
+/* ============================================================
+   VAULT → T-BILLS
+   ============================================================ */
+.tbills{ position:relative; width:980px; height:900px; display:flex; align-items:center; justify-content:center; gap:50px; }
+.tb-vault{ width:360px; filter:drop-shadow(0 28px 40px rgba(20,40,33,.24)); }
+.tb-arrow{ font-size:90px; color:var(--stk-teal); opacity:0; transform:translateX(-20px); transition:opacity .45s ease, transform .5s ease; }
+#sc-tbills.flow .tb-arrow{ opacity:1; transform:none; }
+.tb-stack{ position:relative; width:340px; height:300px; }
+.tbill{
+  position:absolute; left:0; right:0;
+  background:linear-gradient(135deg,#dbf0e7,#bfe3d4);
+  color:var(--stk-teal-dd); font-weight:900; font-size:26px; letter-spacing:1px; text-align:center;
+  padding:30px 0; border-radius:18px; box-shadow:0 16px 34px rgba(16,50,40,.20);
+  opacity:0; transform:translateY(40px);
+  transition:opacity .45s ease, transform .55s cubic-bezier(.2,.8,.2,1);
+}
+.tb-stack .tbill:nth-child(1){ top:160px; }
+.tb-stack .tbill:nth-child(2){ top:90px; }
+.tb-stack .tbill:nth-child(3){ top:20px; }
+.tbill.top{ background:linear-gradient(135deg,#cdebde,#b2dcca); }
+#sc-tbills.flow .tbill{ opacity:1; transform:none; }
+#sc-tbills.flow .tbill:nth-child(2){ transition-delay:.12s; }
+#sc-tbills.flow .tbill:nth-child(3){ transition-delay:.24s; }
+.tb-cap{ position:absolute; left:0; right:0; bottom:-40px; text-align:center; font-weight:800; font-size:42px; color:var(--stk-teal-d); opacity:0; transition:opacity .4s ease .3s; }
+#sc-tbills.flow .tb-cap{ opacity:1; }
+
+/* ============================================================
+   YIELD chart host
+   ============================================================ */
+.yield-host{ position:absolute; inset:0; }
+
+/* ============================================================
+   ZERO
+   ============================================================ */
+.zero-wrap{ text-align:center; }
+.zero-q{ font-weight:800; font-size:58px; color:var(--stk-ink-2); letter-spacing:-1px; opacity:0; transform:translateY(14px); transition:opacity .45s ease, transform .45s ease; }
+.zero-q b{ color:var(--stk-teal-d); }
+#sc-zero.q .zero-q{ opacity:1; transform:none; }
+.zero-stamp{
+  margin-top:50px; font-weight:900; font-size:360px; line-height:1; letter-spacing:-12px; color:var(--stk-ink);
+  transform:scale(.3) rotate(-6deg); opacity:0;
+  transition:transform .55s cubic-bezier(.34,1.7,.5,1), opacity .35s ease;
+}
+#sc-zero.stamp-in .zero-stamp{ opacity:1; transform:scale(1) rotate(-6deg); }
+
+/* ============================================================
+   KEEP — YOU 0% vs TETHER ≈5%
+   ============================================================ */
+.keep{ display:flex; gap:60px; align-items:stretch; justify-content:center; }
+.keep-col{ width:380px; padding:60px 30px; border-radius:36px; text-align:center; background:#fff; box-shadow:0 22px 54px rgba(16,50,40,.12); opacity:0; transform:translateY(40px); transition:opacity .5s ease, transform .55s cubic-bezier(.2,.8,.2,1); }
+.keep-col.teth{ background:var(--stk-teal-soft); }
+#sc-keep.a .keep-col.you{ opacity:1; transform:none; }
+#sc-keep.b .keep-col.teth{ opacity:1; transform:none; transition-delay:.1s; }
+.keep-head{ font-weight:900; font-size:46px; letter-spacing:2px; color:var(--stk-muted); }
+.keep-col.teth .keep-head{ color:var(--stk-teal-d); }
+.keep-val{ font-weight:900; font-size:160px; line-height:1; letter-spacing:-6px; color:var(--stk-teal-d); margin:24px 0; }
+.keep-val.zero{ color:var(--stk-ink); }
+.keep-sub{ font-weight:700; font-size:34px; color:var(--stk-ink-2); }
+
+/* ============================================================
+   $100B COUNTER
+   ============================================================ */
+.counter-wrap{ text-align:center; }
+.counter-num{ font-weight:900; font-size:94px; line-height:1; letter-spacing:-3px; color:var(--stk-teal-d); font-variant-numeric:tabular-nums; white-space:nowrap; }
+.counter-lbl{ margin-top:34px; font-weight:800; font-size:52px; color:var(--stk-ink); letter-spacing:-1px; }
+
+/* ============================================================
+   OTHER PEOPLE'S MONEY → FREE
+   ============================================================ */
+.opm{ position:relative; display:flex; align-items:center; justify-content:center; gap:46px; }
+.opm-crowd{ display:grid; grid-template-columns:repeat(4,1fr); gap:14px; font-size:64px; width:330px; opacity:0; transform:translateY(20px); transition:opacity .5s ease, transform .5s ease; }
+#sc-opm.in .opm-crowd{ opacity:1; transform:none; }
+.opm-arrow{ font-size:84px; color:var(--stk-teal); opacity:0; transition:opacity .4s ease .15s; }
+#sc-opm.in .opm-arrow{ opacity:1; }
+.opm-tether{ opacity:0; transform:scale(.6); transition:opacity .45s ease .2s, transform .5s cubic-bezier(.34,1.6,.5,1) .2s; }
+#sc-opm.in .opm-tether{ opacity:1; transform:none; }
+.opm .stamp.free{ position:absolute; right:60px; top:-20px; }
+
+/* ============================================================
+   COST — bank / company pay · Tether $0
+   ============================================================ */
+.cost{ display:flex; align-items:flex-end; justify-content:center; gap:46px; }
+.cost-col{ width:300px; text-align:center; opacity:0; transform:translateY(40px); transition:opacity .5s ease, transform .55s cubic-bezier(.2,.8,.2,1); }
+.cost-col img{ width:230px; height:auto; display:block; margin:0 auto; filter:drop-shadow(0 22px 30px rgba(20,40,33,.2)); }
+.cost-col .brand-tether{ margin:0 auto 14px; }
+.cost-tag{ margin-top:22px; font-weight:800; font-size:34px; color:var(--stk-ink-2); }
+.cost-out{ margin-top:14px; font-weight:900; font-size:64px; color:var(--stk-ink); letter-spacing:-1px; }
+.cost-out.zero{ color:var(--stk-teal-d); }
+#sc-cost.bank .cost-col#cost-bank{ opacity:1; transform:none; }
+#sc-cost.co .cost-col#cost-co{ opacity:1; transform:none; }
+#sc-cost.teth .cost-col#cost-teth{ opacity:1; transform:none; }
+
+/* ============================================================
+   $13B PROFIT
+   ============================================================ */
+.profit-host{ position:absolute; inset:0; }
+.profit-team{ position:absolute; left:0; right:0; bottom:300px; text-align:center; opacity:0; transform:translateY(20px); transition:opacity .5s ease, transform .5s ease; }
+#sc-profit.team .profit-team{ opacity:1; transform:none; }
+.profit-team .ppl{ font-size:72px; letter-spacing:6px; }
+.profit-team .ppl-cap{ display:block; margin-top:14px; font-weight:800; font-size:40px; color:var(--stk-ink-2); }
+
+/* ============================================================
+   TRUST
+   ============================================================ */
+.trust{ position:relative; width:600px; height:900px; display:flex; align-items:center; justify-content:center; }
+.trust-vault{ position:absolute; left:50%; top:430px; transform:translateX(-50%); width:380px; filter:drop-shadow(0 28px 40px rgba(20,40,33,.24)); }
+.trust-coin{ position:absolute; left:50%; top:200px; transform:translateX(-50%) translateY(-30px); opacity:0; transition:opacity .4s ease, transform 1.6s ease; }
+#sc-trust.on .trust-coin{ opacity:1; animation:trustWobble 2.4s ease-in-out .3s infinite; }
+@keyframes trustWobble{ 0%,100%{ transform:translateX(-50%) rotate(-4deg); } 50%{ transform:translateX(-50%) rotate(4deg); } }
+.trust-word{ position:absolute; left:0; right:0; bottom:60px; text-align:center; font-weight:900; font-size:96px; letter-spacing:4px; color:var(--stk-teal-d); opacity:0; transform:scale(.6); transition:opacity .4s ease, transform .55s cubic-bezier(.34,1.6,.5,1); }
+#sc-trust.on .trust-word{ opacity:1; transform:scale(1); }
+
+/* ============================================================
+   BACKED?
+   ============================================================ */
+.backed{ text-align:center; }
+.backed-row{ display:flex; align-items:center; justify-content:center; gap:48px; }
+.backed-tok,.backed-dol{ display:flex; flex-direction:column; align-items:center; gap:18px; font-weight:800; font-size:40px; color:var(--stk-ink-2); }
+.backed-eq{ font-weight:900; font-size:96px; color:var(--stk-muted); }
+.backed-run{ margin-top:80px; font-weight:900; font-size:54px; color:var(--stk-ink); letter-spacing:-1px; opacity:0; transform:translateX(-30px); transition:opacity .45s ease, transform .55s cubic-bezier(.2,.8,.2,1); }
+#sc-backed.run .backed-run{ opacity:1; transform:none; }
+#sc-backed.run .backed-eq{ color:var(--stk-teal-d); }
+
+/* ============================================================
+   MAGNIFY reserves
+   ============================================================ */
+.magnify{ position:relative; width:760px; height:900px; display:flex; align-items:center; justify-content:center; }
+.report{ position:relative; width:520px; padding:54px 50px; border-radius:30px; background:#fff; box-shadow:0 30px 64px rgba(16,50,40,.16); }
+.report-h{ font-weight:900; font-size:42px; letter-spacing:2px; color:var(--stk-teal-d); margin-bottom:36px; }
+.report-line{ height:26px; border-radius:8px; background:#e9eef0; margin:22px 0; }
+.report-line.short{ width:60%; }
+.report-redact{ height:26px; border-radius:8px; background:var(--stk-ink); width:70%; margin:22px 0; opacity:0; transition:opacity .4s ease; }
+#sc-magnify.q .report-redact{ opacity:1; }
+.lens{
+  position:absolute; left:54%; top:40%; width:280px; height:280px; border-radius:50%;
+  box-shadow:0 0 0 16px rgba(53,162,146,.9), 0 30px 60px rgba(16,50,40,.3);
+  background:rgba(53,162,146,.08);
+  opacity:0; transform:scale(.5);
+  transition:opacity .4s ease, transform .7s cubic-bezier(.3,.85,.3,1), left .9s ease, top .9s ease;
+}
+.lens::after{ content:''; position:absolute; right:-70px; bottom:-50px; width:130px; height:30px; border-radius:18px; background:var(--stk-teal-d); transform:rotate(45deg); }
+.lens-q{ position:absolute; inset:0; display:flex; align-items:center; justify-content:center; font-weight:900; font-size:150px; color:var(--stk-teal-d); }
+#sc-magnify.q .lens{ opacity:1; transform:scale(1); left:42%; top:30%; }
+.magnify-cap{ position:absolute; left:0; right:0; bottom:30px; text-align:center; font-weight:800; font-size:46px; color:var(--stk-ink-2); opacity:0; transform:translateY(14px); transition:opacity .45s ease, transform .45s ease; }
+.magnify-cap b{ color:var(--stk-teal-d); }
+#sc-magnify.cap .magnify-cap{ opacity:1; transform:none; }
+
+/* ============================================================
+   CONFIDENCE
+   ============================================================ */
+.conf{ text-align:center; padding:0 80px; }
+.conf-l1{ font-weight:900; font-size:130px; letter-spacing:-4px; color:var(--stk-ink); opacity:0; transform:scale(.7); transition:opacity .4s ease, transform .55s cubic-bezier(.34,1.6,.5,1); }
+#sc-conf.a .conf-l1{ opacity:1; transform:none; }
+.conf-l2{ margin-top:40px; font-weight:800; font-size:74px; letter-spacing:-2px; color:var(--stk-ink-2); opacity:0; transform:translateY(20px); transition:opacity .45s ease .1s, transform .5s ease .1s; }
+.conf-l2 .hl{ color:var(--stk-teal-d); }
+#sc-conf.b .conf-l2{ opacity:1; transform:none; }
+
+/* ============================================================
+   STOCKS / COINS FADE host
+   ============================================================ */
+.fade-host{ position:absolute; inset:0; transition:opacity 1.1s ease, filter 1.1s ease; }
+#sc-fade.gone .fade-host{ opacity:0; filter:blur(10px); }
+
+/* ============================================================
+   THRONE punchline
+   ============================================================ */
+.throne{ position:relative; width:720px; height:1100px; display:flex; flex-direction:column; align-items:center; justify-content:flex-end; }
+.throne-coin{ position:relative; z-index:6; margin-bottom:-22px; }
+.throne-coin .brand-tether{ position:relative; z-index:6; opacity:0; transform:translateY(40px) scale(.7); transition:opacity .5s ease, transform .7s cubic-bezier(.34,1.5,.5,1); }
+#sc-throne.up .throne-coin .brand-tether{ opacity:1; transform:none; box-shadow:0 0 80px rgba(53,162,146,.6), inset 0 -12px 26px rgba(0,0,0,.16), 0 24px 54px rgba(53,162,146,.45); }
+.throne-base{ position:relative; width:600px; display:flex; flex-direction:column; align-items:center; gap:10px; }
+.throne-base .tbill.wide{ position:relative; left:auto; right:auto; margin:0 auto; padding:22px 0; opacity:0; transform:translateY(50px); }
+#sc-throne.up .throne-base .tbill.wide{ opacity:1; transform:none; }
+.throne-base .tbill.wide:nth-child(1){ width:340px; }
+.throne-base .tbill.wide:nth-child(2){ width:430px; transition-delay:.08s; }
+.throne-base .tbill.wide:nth-child(3){ width:520px; transition-delay:.16s; }
+.throne-base .tbill.wide:nth-child(4){ width:600px; transition-delay:.24s; }
+.throne-line{ margin-top:54px; font-weight:900; font-size:58px; letter-spacing:-1.5px; color:var(--stk-teal-d); text-align:center; opacity:0; transform:translateY(16px); transition:opacity .5s ease .3s, transform .5s ease .3s; }
+#sc-throne.line .throne-line{ opacity:1; transform:none; }
+
+/* ============================================================
+   OUTRO endcard (default element layout)
+   ============================================================ */
+#sc-outro .ec{ position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:34px; }
+#sc-outro #outro-logo{ display:flex; }
+#sc-outro #outro-logo svg{ width:600px; height:auto; display:block; }
+#sc-outro .lyr{ opacity:0; transform:translateY(-52px) scale(.78); transform-box:fill-box; transform-origin:50% 50%; transition:transform .58s cubic-bezier(.34,1.56,.5,1) var(--d), opacity .42s ease var(--d); }
+#sc-outro .ec.play .lyr{ opacity:1; transform:none; }
+#sc-outro .chev path{ stroke-dasharray:300; stroke-dashoffset:300; transition:stroke-dashoffset .55s ease .40s; }
+#sc-outro .ec.play .chev path{ stroke-dashoffset:0; }
+#sc-outro .wm{ font-family:'Nunito',system-ui,sans-serif; font-weight:900; font-size:158px; letter-spacing:-3px; line-height:1; opacity:0; transform:translateY(30px); transition:opacity .5s ease .52s, transform .62s cubic-bezier(.2,.8,.2,1) .52s; }
+#sc-outro .ec.play .wm{ opacity:1; transform:none; }
+#sc-outro .wm .s{ color:#232B33; }
+#sc-outro .wm .t{ color:#3EAE93; }
+#sc-outro .url{ font-family:'Nunito',system-ui,sans-serif; font-weight:700; font-size:44px; letter-spacing:7px; color:#8a949d; opacity:0; transform:translateY(16px); transition:opacity .5s ease .74s, transform .5s ease .74s, letter-spacing .7s ease .74s; }
+#sc-outro .ec.play .url{ opacity:1; transform:none; letter-spacing:4px; }
+
+/* ============================================================
+   HUD (hidden in clean / capture mode)
+   ============================================================ */
+#hud{
+  position:fixed; left:50%; bottom:22px; transform:translateX(-50%);
+  display:flex; align-items:center; gap:14px; z-index:9999;
+  background:rgba(8,14,12,.78); padding:10px 18px; border-radius:999px;
+  font-family:Inter,system-ui,sans-serif; color:#fff;
+}
+#hud button{ border:0; cursor:pointer; background:var(--stk-teal); color:#fff; font-weight:700; font-size:15px; padding:9px 18px; border-radius:999px; }
+#hud #seek{ width:360px; }
+#hud #tcode{ font-variant-numeric:tabular-nums; font-size:14px; opacity:.85; min-width:54px; text-align:right; }
+body.clean #hud{ display:none; }

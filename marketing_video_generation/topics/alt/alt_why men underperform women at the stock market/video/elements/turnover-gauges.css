@@ -1,0 +1,45 @@
+/* ============================================================
+   Custom element — TURNOVER GAUGES
+   ============================================================ */
+.stk-gauge {
+  position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+  width: 860px;
+  font-family: var(--stk-font, 'Inter', sans-serif);
+  display: flex; flex-direction: column; gap: 96px;
+}
+.stk-gauge-title {
+  position: absolute; left: 0; right: 0; top: -300px; text-align: center;
+  font-weight: 800; font-size: 56px; letter-spacing: -1.4px; color: var(--stk-ink);
+}
+.stk-gauge-title b { color: var(--stk-teal-d); }
+
+.stk-gauge-row {
+  opacity: 0; transform: translateY(40px);
+  transition: opacity .5s ease var(--d), transform .6s cubic-bezier(.2,.8,.2,1) var(--d);
+}
+.stk-gauge.in .stk-gauge-row { opacity: 1; transform: none; }
+
+.stk-gauge-head {
+  display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 24px;
+}
+.stk-gauge-label { font-weight: 800; font-size: 56px; letter-spacing: -1px; color: var(--stk-ink); display: flex; align-items: center; gap: 20px; }
+.stk-gauge-icon { font-size: 60px; line-height: 1; }
+.stk-gauge-row.men .stk-gauge-icon { color: var(--stk-muted); }
+.stk-gauge-row.women .stk-gauge-icon { color: var(--stk-teal-d); }
+.stk-gauge-val { font-weight: 900; font-size: 92px; letter-spacing: -2.5px; color: var(--stk-ink); font-variant-numeric: tabular-nums; }
+.stk-gauge-row.men .stk-gauge-val { color: var(--stk-muted); }
+.stk-gauge-row.women .stk-gauge-val { color: var(--stk-teal-d); }
+
+.stk-gauge-track {
+  height: 84px; border-radius: 999px; background: #eef1f3; overflow: hidden;
+  box-shadow: inset 0 2px 6px rgba(35,43,51,.07);
+}
+.stk-gauge-fill {
+  height: 100%; width: 0%; border-radius: 999px;
+  box-shadow: 0 8px 22px rgba(16,50,40,.18);
+}
+.stk-gauge-row.women .stk-gauge-fill { box-shadow: 0 8px 26px rgba(53,162,146,.42); }
+
+.stk-gauge-sub {
+  margin-top: 16px; font-weight: 700; font-size: 34px; color: var(--stk-muted);
+}

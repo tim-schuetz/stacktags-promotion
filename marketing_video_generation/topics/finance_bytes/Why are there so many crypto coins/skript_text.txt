@@ -1,0 +1,153 @@
+VIDEO SCRIPT
+Title: Why are there so many crypto coins?
+Topic: Crypto
+Target length: ~105 seconds (fits the 30s–3min window)
+Language of narration: English
+Format: Voiceover script. Spoken lines are plain text. [Bracketed lines] describe
+what is on screen AT THE SAME TIME as the narration next to them.
+
+==================================================================
+THE CORE IDEA
+==================================================================
+There are now millions of crypto coins because each wave fixed a limit of the last
+AND made minting new coins easier:
+1. Bitcoin — great money, but slow and can basically only do one thing.
+2. Ethereum — added "smart contracts," so blockchains could run apps; anyone could
+   create a token in a few lines of code.
+3. Rival chains (Solana, BNB, etc.) — launched to be faster/cheaper than a
+   congested Ethereum; each brings its own coin.
+4. Memecoin explosion — platforms like Pump.fun let anyone mint a token in seconds
+   for almost nothing → millions of joke/speculative coins.
+Punchline: crypto kept fixing its own limits, and each fix made it easier to spit
+out the next coin.
+
+NOTE (honesty): the vast majority of these coins have no real use and are highly
+speculative or outright scams — quantity isn't quality.
+
+KEY VISUALS:
+- A timeline/tree: 1 Bitcoin → Ethereum branching into many tokens → rival chains →
+  an explosion of memecoins flooding the screen.
+
+==================================================================
+VISUAL TREATMENT (design language for the whole video)
+==================================================================
+- New Stacktags style: WHITE background + thin grey 120px grid, TURQUOISE the only
+  accent (#35A292 / deep #119271 / soft #e7f4ef), Inter only, NO borders. Continuous
+  faux-3D camera over the dynamic grid; depth transitions between every beat (never a
+  hard cut). Grey subtitles (#8a949d) bottom-centre, key words turquoise, verbatim.
+- ANTI-SLOP rules applied: never literally re-draw the spoken sentence; visuals add
+  information or a beat of humour. Coins/chains are rendered as ON-BRAND turquoise
+  glyph-chips (₿ Ξ SOL BNB), NOT their real multi-colour logos (keeps white+turquoise).
+- IMAGES (Gemini → rembg cut-out): a single real ₿ Bitcoin coin (dashed silhouette
+  outline, it's a single object). The memecoin faces (dog / sunglasses-celebrity /
+  rocket) are cartoon characters → NO dashed outline. Everything else is HTML/CSS so
+  it stays crisp and on-brand (the Pump.fun launch card is REBUILT as a clean UI, like
+  the recreated-headlines example — recreation adds value over a literal screenshot).
+- SOUND: ticking while numbers count up (the millions counter, the rising gas fee);
+  pop when a token/word springs in; swoosh only when the grid actually moves or a
+  default element animates. Assets normalised to ~-3 dBFS so they sit under the voice.
+- DEFAULT ELEMENTS reused: text-popup (springy key terms), the depth-transition grid,
+  outro (closing brand card). A counting headline (ticking) for the hook & the fee.
+
+==================================================================
+SCRIPT
+==================================================================
+
+--- HOOK (0:00–0:12) — the payoff up front ---
+
+There are now millions of different cryptocurrencies. Not thousands — millions.
+[SCENE 1 — THE COUNTER. Enter on a zoom-in. A huge tabular-number headline counts up
+fast from 0, ticking SFX rising in pitch; it blows past a struck-through "thousands"
+and locks onto "1,000,000+" in deep turquoise. As it crosses into the millions, dozens
+of small turquoise coin-chips (₿ Ξ ¢ generic) flood IN from all four screen edges and
+pile up behind the number. Sub keyword "millions" turquoise. Busy, overwhelming — on
+purpose.]
+And it all started because the very first one, Bitcoin, was simply too slow.
+[SCENE 2 — depth zoom-OUT: the coin-flood recedes and we land on ONE real ₿ Bitcoin
+coin (assets/bitcoin.png — Gemini photo, cut out, dashed silhouette outline). It inches
+slowly along a single grid line at a tired, sluggish pace (a tiny motion-trail behind
+it). Subtitle keyword "too slow" turquoise. Swoosh on the camera move.]
+
+--- WAVE 1: BITCOIN (≈0:12–0:32) ---
+
+Bitcoin was the original — brilliant as digital money. But it's limited. It's slow,
+and it can basically do just one thing: move bitcoin.
+[SCENE 3 — the ₿ coin docks onto a SINGLE clean turquoise rail/track that runs left→
+right. One coin slides A→B along the one rail (its one job). A text-popup chip "move
+BTC — that's it." springs in (pop). Minimal: one coin, one rail, nothing else.]
+You can't really build anything on top of it. So people wanted more.
+[SCENE 4 — (depth transition, no cut) try to STACK on top: 2–3 turquoise app-blocks
+drop onto the coin/rail but slide off and topple with a springy bounce; a small grey
+"?" puff. The single rail can't hold a tower. Keyword "build" greyed.]
+
+--- WAVE 2: ETHEREUM (≈0:32–0:55) ---
+
+That's where Ethereum came in. It added "smart contracts" — little programs that
+run on the blockchain itself.
+[SCENE 5 — depth DROP to Ethereum: a wide turquoise PLATFORM slab labelled Ξ Ethereum
+slides up from the bottom; small rounded "app-blocks" (each a tiny icon: a swap, a
+game pad, a picture) pop up and sit RUNNING on top, gently pulsing. A soft chip label
+"smart contracts" appears. This is the thing Bitcoin couldn't do.]
+Suddenly a blockchain could host apps, not just payments. And crucially, anyone
+could create their own token on top of Ethereum with just a few lines of code.
+[SCENE 6 — a small monospace CODE-SNIPPET card slides in (≈4 lines of an ERC-20-style
+"mint" stub, syntax-tinted turquoise). A cursor hits a "Deploy" line → a fresh token-
+chip POPS out of the card (pop). Mirrors the good "code → object" example: the visual
+teaches that a token is just a few lines of code.]
+The floodgates cracked open.
+[SCENE 7 — that one token becomes several, then MANY: a rapid cascade of token-chips
+multiplying out of the card and spreading across the platform (quick stutter of pops +
+a swoosh as the grid pushes back). Keyword "floodgates" turquoise.]
+
+--- WAVE 3: THE RIVALS (≈0:55–1:18) ---
+
+Then Ethereum got so popular it became slow and expensive to use.
+[SCENE 8 — the Ethereum platform now CONGESTED: the app-blocks are jammed shoulder-to-
+shoulder and jitter in place; a "GAS FEE $" readout ticks UP fast (ticking SFX) while a
+little clock-spinner says slow. Nothing red — congestion shown by density + the rising
+number. Keywords "slow and expensive" turquoise.]
+So a wave of rival blockchains launched, each promising to be faster or cheaper —
+Solana, BNB, and many more. And every single one comes with its own coin.
+[SCENE 9 — depth pan to a cluster of RIVAL CHAINS as on-brand turquoise node-chips:
+SOL, BNB, AVAX, … each pops in (pop/swoosh) with a micro-label "faster · cheaper", and
+each chip drops its OWN little coin beneath it. They keep popping past the frame edge to
+say "and many more". NOT real brand colours — stays white+turquoise.]
+
+--- WAVE 4: THE MEMECOIN FLOOD (≈1:18–1:40) ---
+
+And finally, it became trivial to make a coin at all. Platforms like Pump.fun let
+anyone launch a token in seconds, for almost nothing.
+[SCENE 10 — a REBUILT "launch a coin" UI card (Pump.fun-style, clean & on-brand): a
+Name field "DogeMoonInu", a Ticker field "$DMI", "cost ≈ $2", "ready in ~30s", and a big
+turquoise "Launch Coin" button. A finger/cursor taps Launch → a token shoots out (pop).
+Recreating the interface = research/value, not a literal screenshot.]
+The result: a flood of memecoins — coins based on jokes, dogs, celebrities — most
+with no purpose beyond speculation, and most worthless within days.
+[SCENE 11 — a TIDAL FLOOD of joke coins pours down the screen (rapid pops). Riding the
+wave: 2–3 cartoon MEMECOIN FACES — a goofy dog coin (assets/coin-dog.png), a sunglasses
+"celebrity" coin (assets/coin-celeb.png), a rocket/moon coin (assets/coin-moon.png),
+Gemini cartoons, NO dashed outline. On "worthless within days" the whole wave drains of
+colour to faint grey and slides/falls to the bottom — a value line crashing to zero
+(downward swoosh). The only place we let it get silly = the punctual humour.]
+
+--- PUNCHLINE / OUTRO (≈1:40–1:54) ---
+
+So why are there millions of coins? Because crypto kept fixing its own
+limitations —
+[SCENE 12 — THE TREE. A clean vertical branch-tree assembles top→down, one branch per
+fix (swoosh each): ① ₿ Bitcoin "slow" → ② Ξ Ethereum "smart contracts" → ③ rival
+chains "faster · cheaper" → ④ one-click mint "memecoins". Each branch visibly spawns
+MORE coin-dots than the last — the shape of the explosion in one picture.]
+and each fix made it easier for anyone to mint the next one. We went from one
+careful experiment... to a button that spits out a new currency in seconds. Just
+remember: almost none of them are worth anything.
+[SCENE 13 — callback: the lone ₿ ("one careful experiment") on the left morphs across
+to the "Launch Coin" BUTTON on the right, now auto-firing coins rapidly into a heap.
+Then the heap fades to faint grey and a single restrained turquoise line "≈ worthless"
+settles in — the honesty beat, understated, not preachy.]
+
+Want more of how crypto really works?
+[SCENE 14 — OUTRO default element: Stacktags stacked-cube logo + chevrons + the
+"stacktags" wordmark + "stacktags.io" assemble (swoosh), with a "Follow" prompt /
+button. Lands exactly on "Follow Stacktags."]
+Follow Stacktags.
