@@ -62,15 +62,15 @@ body.clean { background: #fff; }
   transition: transform .5s cubic-bezier(.3, 1.5, .5, 1), opacity .3s ease;
 }
 .sticks.up { opacity: 1; transform: translateY(0) rotate(0deg); }
-.sticks.flat { opacity: 1; transform: translate(150px, -6px) rotate(-88deg); }
+.sticks.flat { opacity: 1; transform: translate(160px, -4px) rotate(-88deg); }
 .stick {
-  position: absolute; bottom: 0; width: 20px; height: 348px; border-radius: 5px;
+  position: absolute; bottom: 0; width: 28px; height: 372px; border-radius: 6px;
   background: linear-gradient(to bottom, #e6c596 0%, #cda067 55%, #ac7a48 100%);
-  clip-path: polygon(30% 0, 70% 0, 58% 100%, 42% 100%);
-  filter: drop-shadow(0 12px 10px rgba(20, 40, 33, .22));
+  clip-path: polygon(32% 0, 68% 0, 57% 100%, 43% 100%);
+  filter: drop-shadow(0 13px 11px rgba(20, 40, 33, .22));
 }
-.stick.s1 { left: -25px; }
-.stick.s2 { left: 5px; }
+.stick.s1 { left: -36px; }
+.stick.s2 { left: 8px; }
 
 /* rising smoke wisps (ominous over the bowl; also over the censer) */
 .smoke { position: absolute; opacity: 0; transition: opacity .6s ease; pointer-events: none; z-index: 5; }

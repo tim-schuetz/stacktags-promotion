@@ -16,7 +16,7 @@
 
   // scene parts
   const tableInner = $('#table-inner');
-  const bowlGroup = $('#bowl-group'), sticks = $('#sticks'), diner = $('#diner');
+  const bowlGroup = $('#bowl-group'), sticks = $('#sticks');
   const rhymeSide = $('#rhyme-side'), smokeBowl = $('#smoke-bowl');
   const smokeCenser = rhymeSide.querySelector('.smoke-censer');
   const ghostset = $('#ghostset'), vocabK = $('#vocab-kuaizi');
@@ -123,13 +123,11 @@
     cls(smokeCenser, 'on', on);
     gcam.x = on ? 70 : 0;            // small camera pan justifies the swoosh
   }
-  function dinerReact(on) { cls(diner, 'recoil', on); }
-  function tableHook() {            // bowl present, diner leans in, sticks not yet
-    cls(diner, 'in', true); dinerReact(false);
+  function tableHook() {            // bowl present, sticks not yet
     rhymeOn(false); cls(smokeBowl, 'on', false); cls(ghostset, 'on', false);
   }
   function tablePunch() {           // bare, respectful: centered bowl + flat sticks
-    rhymeOn(false); cls(diner, 'in', false); dinerReact(false);
+    rhymeOn(false);
     cls(smokeBowl, 'on', false); cls(ghostset, 'on', false);
     cls(vocabK, 'in', false); setSticks('flat');
   }
@@ -192,12 +190,12 @@
     [0.0, (i) => enter($('#sc-table'), 'fade', 600, i, tableHook)],
     [3.0, () => setSticks('up')],                                   // chopsticks slam upright
     [3.7, () => cls(vocabK, 'in', true)],                           // 筷子 pops
-    [7.08, () => { cls(smokeBowl, 'on', true); dinerReact(true); }],  // "for the dead"
+    [7.08, () => { cls(smokeBowl, 'on', true); }],  // "for the dead"
     [8.14, () => { gridPush(); }],                                   // ominous push on "looks so wrong"
     [9.6, () => cls(vocabK, 'in', false)],
 
     // ---- WHY IT'S TABOO — the rhyme ----
-    [10.1, () => { cls(diner, 'in', false); cls(smokeBowl, 'on', true); setSticks('up'); }],
+    [10.1, () => { cls(smokeBowl, 'on', true); setSticks('up'); }],
     [14.92, () => { rhymeOn(true); cls(smokeBowl, 'on', true); }],   // censer slides in, camera pans
     [28.0, () => { rhymeOn(false); cls(smokeBowl, 'on', true); }],   // omen: censer leaves, smoke keeps rising
 
@@ -245,7 +243,6 @@
   function resetScenes() {
     setSticks('');
     cls(tableInner, 'rhyme', false);
-    cls(diner, 'in', false); dinerReact(false);
     cls(smokeBowl, 'on', false); cls(smokeCenser, 'on', false);
     cls(ghostset, 'on', false);
     cls(vocabK, 'in', false); cls(vocabG, 'in', false);
