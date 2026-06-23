@@ -1,0 +1,93 @@
+VIDEO SCRIPT
+Title options (pick one): The chopstick mistake that means death in China
+Topic: Learn Chinese
+Target length: ~85 seconds (fits the 30s–3min window)
+Language of narration: English
+Format: Spoken voiceover narration + [bracketed] visual cues. The brackets are NOT spoken —
+they are stripped before TTS; the spoken text is exactly the un-bracketed words.
+
+==================================================================
+THE CORE IDEA
+==================================================================
+Sticking chopsticks straight up in a bowl of rice is a deep taboo: it mirrors the
+incense/rice offerings made to the dead at funerals and for ancestors. So it reads as
+an omen of death at the table. (Death-related taboos intensify during the 7th lunar
+month — "Ghost Month.") Etiquette is really old belief, frozen into manners.
+Punchline: stand your chopsticks up, and you've quietly turned dinner into a funeral.
+
+VISUAL SPINE (anti-slop): ONE recurring hero object — the same white rice bowl — carries the
+whole video; scenes are chained transitions of that object, not a new scene per sentence.
+The clever beat: the upright chopsticks visually RHYME with the upright incense sticks of a
+funeral offering (that IS the cultural reason). Tone = subtle & symbolic (smoke, a white
+chrysanthemum — never a literal altar/portrait). A small comic diner adds light humor.
+On-screen text only when it ADDS info: the vocab 筷子 (kuàizi) and 鬼月 (guǐyuè). White grid bg,
+white + turquoise only. Swoosh SFX only when the grid moves / a default element animates.
+
+==================================================================
+SCRIPT
+==================================================================
+
+--- HOOK (0:00–0:12) — the payoff up front ---
+
+[HERO bowl of white rice, centered on the white grid; a small comic diner reaches in with a
+pair of chopsticks. Bottom subtitle only — no explanatory on-screen text.]
+There's one thing you must never do with chopsticks in China: stand them straight up
+in your bowl of rice.
+[On "stand them straight up": the two chopsticks SLAM upright into the rice (springy pop).
+The comic diner freezes mid-reach. Vocab 筷子 (kuàizi) pops in briefly via text-popup, then fades —
+the only on-screen word.]
+Do it, and you've just set a place... for the dead.
+[On "for the dead": the comic diner desaturates/leans back uneasily; a single thin wisp of
+incense-smoke curls up behind the bowl; a faint, empty "second place setting" ghosts in opposite.]
+Here's why this one looks so wrong.
+[Slow ominous camera push-in — the grid converges (zoom-in), bowl recedes slightly. Swoosh.]
+
+--- WHY IT'S TABOO (≈0:12–0:42) ---
+
+It's one of the deepest dining taboos in Chinese culture.
+[Faux-3D depth transition (grid moves → swoosh). The dinner bowl with upright chopsticks holds
+on the LEFT.]
+And the reason is what it resembles.
+[On "what it resembles": a censer with two upright incense sticks + rising smoke and a single
+white chrysanthemum SLIDES IN from the right (dashed-outline cutouts). Same silhouette, same
+upright posture as the chopsticks — laid out as a mirrored pair.]
+At funerals and ancestor rituals, a bowl of rice with incense — or chopsticks —
+standing straight up is offered to the deceased. It's a gift for the dead.
+[A turquoise dashed line connects the two upright pairs (chopsticks ↔ incense), spelling out the
+visual rhyme. The censer side glows faintly.]
+So at a normal dinner, chopsticks jammed upright look exactly like a death offering.
+[Camera returns to the dinner bowl; for a beat the upright chopsticks cross-fade toward the
+incense look and back — they read as the SAME thing.]
+It's read as an omen — almost like inviting death to the table.
+[The faint empty place-setting / a pale ghost-wisp drifts at the table edge. Subtle.]
+
+--- THE RIGHT WAY AND GHOST MONTH (≈0:42–1:05) ---
+
+Instead, you lay your chopsticks flat — across the top of the bowl, or on a little
+rest.
+[The SAME hero bowl. On "lay your chopsticks flat": the two chopsticks rotate in one clean,
+satisfying motion from vertical → resting flat across the rim (settle ease). Calm turquoise tint;
+smoke clears. No checkmark text.]
+Tiny gesture, completely different meaning.
+And these death-related taboos get taken even more seriously during the seventh lunar
+month — "Ghost Month" —
+[On "Ghost Month": background cools toward night (grid dims); a paper lantern rises and glows.
+Vocab 鬼月 (guǐyuè) pops in via text-popup — second and last on-screen word.]
+when spirits are said to roam, and people avoid anything that might invite bad luck.
+[One or two pale wisps drift through; lantern sways. Kept restrained.]
+
+--- PUNCHLINE / OUTRO (≈1:05–1:20) ---
+
+It's just two sticks and a bowl of rice.
+[Strip back to the bare hero: bowl + two chopsticks resting flat on the clean white grid. Quiet.]
+But stand them up, and you've turned dinner into a funeral —
+[On "stand them up": the chopsticks snap upright again; a quick callback of the smoke/chrysanthemum
+rhyme flickers over the bowl, then settles. The "dinner → funeral" flip in one beat.]
+which is exactly why, in China, you simply never do it.
+Half of good manners, it turns out, is just very old beliefs frozen into etiquette.
+[Calm settle on the bowl with chopsticks laid flat — the "correct", respectful state.]
+
+Wanna actually start learning Chinese?
+Discover thousands of free exercises and more learning content on stacktags.io.
+[Default OUTRO element: stacked-cube logo between turquoise chevrons, "stacktags" wordmark,
+grey "stacktags.io" line. Assemble swoosh.]
