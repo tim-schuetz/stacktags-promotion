@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>The chopstick mistake that means death in China</title>
+<link rel="icon" href="data:," />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@500;700;900&display=swap" rel="stylesheet">
+
+<!-- shared design system: tokens + grid + subtitles -->
+<link rel="stylesheet" href="elements/theme.css">
+<!-- dynamic depth-grid look (the camera grid styling reused by app.js) -->
+<link rel="stylesheet" href="elements/depth-transitions.css">
+<!-- this video's own scene styling -->
+<link rel="stylesheet" href="styles.css?v=1">
+</head>
+<body>
+<div class="wrap">
+  <div class="stage stk-grid-bg" id="stage">
+
+    <!-- persistent dynamic grid: the camera (zoom/pan) lives here -->
+    <div class="stk-depth2-grid" id="grid"></div>
+
+    <div class="scenes" id="scenes">
+
+      <!-- ============================================================
+           HERO TABLE — carries the whole bowl story:
+           hook → taboo (the chopstick↔incense rhyme) → the fix → punchline.
+           The bowl is ONE persistent object; phases just re-pose its parts.
+           ============================================================ -->
+      <div class="scene" id="sc-table">
+        <div class="table-inner" id="table-inner">
+
+          <!-- the rhyme partner: a censer with upright incense (slides in right) -->
+          <div class="rhyme-side" id="rhyme-side">
+            <div class="smoke smoke-censer">
+              <span class="wisp w1"></span><span class="wisp w2"></span><span class="wisp w3"></span>
+            </div>
+            <div class="censer" id="censer"><img src="assets/photos/censer_dash.png" alt=""></div>
+            <div class="chrys" id="chrys"><img src="assets/photos/chrys_dash.png" alt=""></div>
+          </div>
+
+          <!-- the dashed connector that spells out "these two are the same" -->
+          <svg class="rhyme-link" id="rhyme-link" viewBox="0 0 1080 1920" preserveAspectRatio="none">
+            <path id="rhyme-path" d="" pathLength="100"></path>
+          </svg>
+
+          <!-- the hero bowl + its chopsticks + its (ominous) smoke -->
+          <div class="bowl-group" id="bowl-group">
+            <div class="smoke smoke-bowl" id="smoke-bowl">
+              <span class="wisp w1"></span><span class="wisp w2"></span><span class="wisp w3"></span>
+            </div>
+            <div class="bowl" id="bowl"><img src="assets/photos/bowl_dash.png" alt=""></div>
+            <div class="sticks" id="sticks">
+              <span class="stick s1"></span>
+              <span class="stick s2"></span>
+            </div>
+            <!-- vocab: 筷子 (the only on-screen word in the hook) -->
+            <div class="vocab" id="vocab-kuaizi">
+              <div class="zh cjk">筷子</div>
+              <div class="py">kuàizi</div>
+              <div class="en">chopsticks</div>
+            </div>
+          </div>
+
+          <!-- faint, empty "second place setting" opposite — the omen -->
+          <div class="ghostset" id="ghostset">
+            <div class="g-bowl"></div>
+            <div class="g-sticks"><i></i><i></i></div>
+          </div>
+
+          <!-- the comic diner (light humour) -->
+          <div class="diner" id="diner">
+            <svg viewBox="0 0 220 240">
+              <ellipse class="d-shadow" cx="110" cy="226" rx="64" ry="12"/>
+              <path class="d-body" d="M44 240 Q44 150 110 150 Q176 150 176 240 Z"/>
+              <circle class="d-head" cx="110" cy="104" r="58"/>
+              <circle class="d-eye l" cx="90" cy="100" r="7.5"/>
+              <circle class="d-eye r" cx="130" cy="100" r="7.5"/>
+              <path class="d-mouth" d="M90 128 Q110 144 130 128"/>
+              <path class="d-brow l" d="M78 80 Q90 74 102 80"/>
+              <path class="d-brow r" d="M118 80 Q130 74 142 80"/>
+            </svg>
+            <div class="d-mark">!</div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ============================================================
+           GHOST MONTH — night veil, a lotus river-lantern, 鬼月, faint spirits.
+           ============================================================ -->
+      <div class="scene" id="sc-ghost">
+        <div class="ghost-inner" id="ghost-inner">
+          <div class="night-veil"></div>
+          <div class="ghost-wisps" id="ghost-wisps">
+            <span class="gwisp a"></span><span class="gwisp b"></span><span class="gwisp c"></span>
+          </div>
+          <div class="lantern" id="lantern">
+            <div class="lantern-glow"></div>
+            <img src="assets/photos/lantern_dash.png" alt="">
+          </div>
+          <div class="vocab ghost-vocab" id="vocab-guiyue">
+            <div class="zh cjk">鬼月</div>
+            <div class="py">guǐyuè</div>
+            <div class="en">Ghost Month</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ============================================================
+           OUTRO endcard
+           ============================================================ -->
+      <div class="scene" id="sc-outro">
+        <div class="ec" id="outro-ec">
+          <div id="outro-logo"></div>
+          <div class="wm"><span class="s">stack</span><span class="t">tags</span></div>
+          <div class="url">stacktags.io</div>
+        </div>
+      </div>
+
+    </div><!-- /scenes -->
+
+    <!-- subtitles mirror the narration (grey; key words turquoise) -->
+    <div class="stk-subs" id="subs"><span class="stk-subs-line" id="subs-line"></span></div>
+
+  </div><!-- /stage -->
+</div>
+
+<!-- HUD (hidden in clean/capture mode) -->
+<div id="hud">
+  <button id="btn-play">▶ Play</button>
+  <input id="seek" type="range" min="0" max="72" step="0.01" value="0" />
+  <span id="tcode">0.0</span>
+</div>
+
+<audio id="vo" src="../script_voice.mp3" preload="auto"></audio>
+
+<!-- elements -->
+<script src="elements/outro.js"></script>
+
+<!-- this video's choreography -->
+<script src="app.js?v=1"></script>
+</body>
+</html>
