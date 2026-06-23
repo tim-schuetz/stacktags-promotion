@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>thumbnail — The chopstick mistake that means death in China</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Noto+Sans+SC:wght@700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../video/elements/theme.css">
+<style>
+  html, body { margin: 0; height: 100%; background: #20262b; }
+  .wrap { display: grid; place-items: center; height: 100%; }
+  .thumb { position: relative; width: 1280px; height: 720px; overflow: hidden; background: #fff;
+    background-image:
+      linear-gradient(to right,  rgba(35,43,51,.06) 3px, transparent 3px),
+      linear-gradient(to bottom, rgba(35,43,51,.06) 3px, transparent 3px);
+    background-size: 96px 96px; background-position: center; font-family: 'Inter', sans-serif; }
+
+  /* faint turquoise glow behind the headline */
+  .bg-glow { position: absolute; left: -140px; top: -120px; width: 540px; height: 540px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(53,162,146,.12) 0%, rgba(53,162,146,0) 68%); }
+
+  /* headline (left) */
+  .hl-wrap { position: absolute; left: 84px; top: 104px; width: 640px; }
+  .kicker { font-weight: 800; font-size: 25px; letter-spacing: 4px; color: var(--stk-muted); margin-bottom: 22px; white-space: nowrap; }
+  .hl { margin: 0; font-weight: 900; font-size: 98px; line-height: .96; letter-spacing: -4px; color: var(--stk-ink); }
+  .hl .accent { color: var(--stk-teal); }
+  .hl .accent-d { color: var(--stk-teal-d); }
+  .sub { margin-top: 34px; font-weight: 700; font-size: 33px; color: var(--stk-ink-2); letter-spacing: -.3px; line-height: 1.18; }
+
+  /* right-side prop: rice bowl with chopsticks jammed straight up */
+  .prop { position: absolute; right: 56px; top: 50%; transform: translateY(-50%); width: 520px; height: 600px; }
+  .t-bowl { position: absolute; left: 50%; transform: translateX(-50%); bottom: 64px; width: 432px; }
+  .t-bowl img { width: 100%; height: auto; display: block; filter: drop-shadow(0 30px 36px rgba(20,40,33,.20)); }
+
+  /* upright chopsticks (CSS), rising out of the rice */
+  .t-chop { position: absolute; width: 22px; height: 270px; border-radius: 6px; bottom: 300px;
+    background: linear-gradient(to bottom, #e6c596 0%, #cda067 55%, #ac7a48 100%);
+    clip-path: polygon(30% 0, 70% 0, 58% 100%, 42% 100%);
+    filter: drop-shadow(0 12px 12px rgba(20,40,33,.22)); }
+  .t-chop.a { left: calc(50% - 30px); }
+  .t-chop.b { left: calc(50% + 8px); }
+
+  /* a thin rising incense-like smoke wisp */
+  .t-smoke { position: absolute; left: 50%; transform: translateX(-50%); bottom: 560px; width: 10px; height: 96px;
+    border-radius: 6px; filter: blur(4px);
+    background: linear-gradient(to top, rgba(120,132,142,0), rgba(120,132,142,.55) 45%, rgba(120,132,142,0)); }
+
+  /* a single white chrysanthemum (funeral flower) at the bowl's base */
+  .t-chrys { position: absolute; left: 18px; bottom: 70px; width: 142px; }
+  .t-chrys img { width: 100%; height: auto; display: block; filter: drop-shadow(0 14px 18px rgba(20,40,33,.16)); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="thumb stk-grid-bg" id="thumb">
+    <div class="bg-glow"></div>
+    <div class="hl-wrap">
+      <div class="kicker">LEARN CHINESE · DINNER TABOO</div>
+      <h1 class="hl">Chopsticks</h1>
+      <h1 class="hl">straight up?</h1>
+      <h1 class="hl"><span class="accent">= a funeral.</span></h1>
+      <div class="sub">The one chopstick mistake<br>you never make in China.</div>
+    </div>
+    <div class="prop">
+      <div class="t-smoke"></div>
+      <div class="t-chop a"></div>
+      <div class="t-chop b"></div>
+      <div class="t-bowl"><img src="../video/assets/photos/bowl_dash.png" alt=""></div>
+      <div class="t-chrys"><img src="../video/assets/photos/chrys_dash.png" alt=""></div>
+    </div>
+  </div>
+</div>
+<script>window.__ready = true;</script>
+</body>
+</html>
