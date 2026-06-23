@@ -8,8 +8,8 @@ const BUILD = __dirname;
 const webm = path.join(BUILD, 'capture', 'recording.webm');
 // prefer the narration-with-SFX mix (mix_sfx.js); fall back to the bare narration
 const sfxMix = path.join(BUILD, 'capture', 'narration_sfx.m4a');
-const mp3  = fs.existsSync(sfxMix) ? sfxMix : path.resolve(BUILD, '../../script_audio.mp3');
-const out  = path.resolve(BUILD, '../5-chinese-words-5-cities.mp4');
+const mp3  = fs.existsSync(sfxMix) ? sfxMix : path.resolve(BUILD, '../../script_voice.mp3');
+const out  = path.resolve(BUILD, '../how-to-launder-1-5-billion-in-crypto.mp4');
 const preroll = JSON.parse(fs.readFileSync(path.join(BUILD, 'capture', 'preroll.json'), 'utf8')).preroll;
 
 if (!fs.existsSync(webm)) { console.error('no recording.webm'); process.exit(1); }
@@ -25,7 +25,7 @@ const args = [
   '-c:a', 'aac', '-b:a', '192k',
   // pad the narration with silence so the outro brand card finishes assembling
   // and holds for a beat after the last spoken word.
-  '-af', 'apad', '-t', '128.1',
+  '-af', 'apad', '-t', '101.0',
   '-movflags', '+faststart',
   out,
 ];

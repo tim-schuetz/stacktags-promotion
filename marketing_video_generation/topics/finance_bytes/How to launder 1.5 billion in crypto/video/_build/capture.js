@@ -11,7 +11,7 @@ const exe = CHROME_CANDIDATES.find(p => fs.existsSync(p));
 const OUTDIR = path.resolve(__dirname, 'capture');
 fs.mkdirSync(OUTDIR, { recursive: true });
 
-const END = 125.4;   // narration length (script_audio.mp3 ≈ 125.5s)
+const END = 97.5;   // narration length (script_voice.mp3 ≈ 98.2s)
 
 (async () => {
   const browser = await chromium.launch({
@@ -37,7 +37,7 @@ const END = 125.4;   // narration length (script_audio.mp3 ≈ 125.5s)
   const tRec = Date.now();   // recording starts ~when the page is created
   page.on('console', m => { if (m.type() === 'error') console.log('  [page error]', m.text()); });
 
-  await page.goto('http://localhost:8861/video/index.html', { waitUntil: 'domcontentloaded' });
+  await page.goto('http://localhost:8862/video/index.html', { waitUntil: 'domcontentloaded' });
   await page.evaluate(async () => { try { await document.fonts.ready; } catch {} });
   // dump the page's declared SFX bed so the audio step can rebuild it
   // deterministically (headless can't record Web Audio).
@@ -46,8 +46,7 @@ const END = 125.4;   // narration length (script_audio.mp3 ≈ 125.5s)
     fs.writeFileSync(path.join(OUTDIR, 'sfx.json'), JSON.stringify(sfx));
     console.log('SFX cues dumped:', sfx.length);
   } catch (e) { console.log('SFX dump failed:', e.message); }
-  // give the 3D globe (Three.js + world-atlas from CDN) a moment to be ready
-  await page.waitForTimeout(1500);
+  await page.waitForTimeout(600);
   await page.evaluate(() => { document.body.classList.add('clean'); window.dispatchEvent(new Event('resize')); });
   await page.waitForTimeout(800);
 

@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>China is forgetting how to write</title>
+<link rel="icon" href="data:," />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- Inter (full latin) for all UI/English text -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<!-- Noto Sans SC, subsetted to only the CJK glyphs we actually show as text -->
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@500;700;900&text=餐厅提笔忘字是时事试我每天都看书学习&display=swap" rel="stylesheet">
+
+<!-- shared theme tokens + grid + subtitles (the design system) -->
+<link rel="stylesheet" href="elements/theme.css">
+<!-- the dynamic depth-grid look (we reuse its grid styling) -->
+<link rel="stylesheet" href="elements/depth-transitions.css">
+<!-- default element: text-popup (the 提笔忘字 reveal) -->
+<link rel="stylesheet" href="elements/text-popup.css">
+<!-- this video's own scene styling -->
+<link rel="stylesheet" href="styles.css?v=1">
+</head>
+<body>
+<div class="wrap">
+  <div class="stage stk-grid-bg" id="stage">
+
+    <!-- persistent dynamic grid: the camera (zoom/pan) lives here -->
+    <div class="stk-depth2-grid" id="grid"></div>
+
+    <!-- all scene layers stack here -->
+    <div class="scenes" id="scenes">
+
+      <!-- ===== HOOK — a real sentence read fluently (sweep), then phone glows ===== -->
+      <div class="scene" id="sc-hook">
+        <div class="readline" id="hk-read"></div>
+        <div class="phone glow" id="hk-phone">
+          <div class="ph-scr"></div>
+        </div>
+      </div>
+
+      <!-- ===== PHENOMENON 0 — picture an educated Chinese speaker (real photo) ===== -->
+      <div class="scene" id="sc-student">
+        <div class="chalkboard"><div class="cb-chalk">餐</div></div>
+        <img class="student" src="assets/img/student_dashed.png" alt="" />
+      </div>
+
+      <!-- ===== PHENOMENON 2 — the Chinese term pops in (the one taught phrase) ===== -->
+      <div class="scene" id="sc-term">
+        <div id="term-host"></div>
+        <div class="term-py" id="term-py">tí bǐ wàng zì</div>
+        <div class="term-gloss" id="term-gloss">pick up the pen — forget the character</div>
+      </div>
+
+      <!-- ===== WHY — the phone IME does the recognising for you ===== -->
+      <div class="scene" id="sc-phone">
+        <div class="phone big" id="im-phone">
+          <div class="ph-scr">
+            <div class="ime-field"><span class="ime-typed" id="ime-typed"></span><span class="ime-caret"></span></div>
+            <div class="ime-cands" id="ime-cands">
+              <div class="ime-cand" data-i="0">是</div>
+              <div class="ime-cand" data-i="1">时</div>
+              <div class="ime-cand" data-i="2">事</div>
+              <div class="ime-cand" data-i="3">试</div>
+            </div>
+            <div class="ime-kb" id="ime-kb"></div>
+            <div class="ph-finger" id="ime-finger"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== RECALL — recognition stays (ghost), recall fades (ink crumbles) ===== -->
+      <div class="scene" id="sc-recall">
+        <div class="hero" id="rc-char"></div>
+        <div class="phone mini" id="rc-phone"><div class="ph-scr"><div class="rc-screenchar" id="rc-screenchar"></div></div></div>
+      </div>
+
+      <!-- ===== PUNCHLINE — hand writes it, hand fails, the keyboard types it ===== -->
+      <div class="scene" id="sc-history">
+        <div class="hero" id="hs-char"></div>
+        <div class="phone hist" id="hs-phone">
+          <div class="ph-scr">
+            <div class="hist-char" id="hist-char">餐</div>
+            <div class="hist-kb" id="hist-kb"></div>
+            <div class="ph-finger" id="hist-finger"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== OUTRO ===== -->
+      <div class="scene" id="sc-outro">
+        <div class="ec" id="outro-ec">
+          <div id="outro-logo"></div>
+          <div class="wm"><span class="s">stack</span><span class="t">tags</span></div>
+          <div class="url">stacktags.io</div>
+        </div>
+      </div>
+
+    </div><!-- /scenes -->
+
+    <!-- subtitles mirror the narration -->
+    <div class="stk-subs" id="subs"><span class="stk-subs-line" id="subs-line"></span></div>
+
+  </div><!-- /stage -->
+</div>
+
+<!-- HUD (hidden in clean/capture mode) -->
+<div id="hud">
+  <button id="btn-play">&#9654; Play</button>
+  <input id="seek" type="range" min="0" max="72" step="0.01" value="0" />
+  <span id="tcode">0.0</span>
+</div>
+
+<audio id="vo" src="../script_voice.mp3" preload="auto"></audio>
+
+<!-- default elements (used as components) -->
+<script src="elements/text-popup.js"></script>
+<script src="elements/outro.js"></script>
+
+<!-- hero-character stroke data (餐), exposed as window.HANZI_CAN -->
+<script src="assets/hanzi/can.js"></script>
+
+<!-- this video's choreography -->
+<script src="app.js?v=1"></script>
+</body>
+</html>

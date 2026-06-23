@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>stacktags — thumbnail</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root { --teal:#35A292; --teal-d:#119271; --teal-soft:#e7f4ef; --ink:#141a1e; --muted:#8a949d; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: #1b1f23; }
+  .thumb {
+    position: relative; width: 1280px; height: 720px; overflow: hidden;
+    background: #fff; font-family: 'Inter', system-ui, sans-serif; -webkit-font-smoothing: antialiased;
+    background-image:
+      linear-gradient(to right,  rgba(35,43,51,.05) 2px, transparent 2px),
+      linear-gradient(to bottom, rgba(35,43,51,.05) 2px, transparent 2px);
+    background-size: 90px 90px;
+  }
+
+  /* left text block */
+  .copy { position: absolute; left: 72px; top: 132px; width: 670px; z-index: 6; }
+  .kicker { display: inline-block; font-weight: 800; font-size: 27px; letter-spacing: 3px; text-transform: uppercase;
+    color: var(--teal-d); background: var(--teal-soft); padding: 11px 20px; border-radius: 10px; margin-bottom: 30px; }
+  .hl { font-weight: 900; letter-spacing: -0.035em; line-height: 0.94; margin: 0; color: var(--ink); white-space: nowrap; }
+  .l1 { font-size: 124px; }
+  .l1 .d { color: var(--teal); }
+  .l2 { font-size: 124px; }
+  .sub { margin-top: 40px; font-size: 46px; font-weight: 800; color: var(--ink); }
+  .sub .t { color: var(--teal-d); }
+
+  /* faint rising two-line proof behind the figures */
+  .chart { position: absolute; right: 6px; top: 84px; width: 600px; height: 360px; z-index: 2; }
+  .chart svg { width: 100%; height: 100%; overflow: visible; }
+  .clab { position: absolute; font-weight: 900; font-size: 38px; letter-spacing: -1px; color: var(--teal-d); right: 30px; top: 60px; }
+
+  /* characters bottom-right: calm woman (winner) in front, frantic man behind */
+  .fig { position: absolute; bottom: -8px; filter: drop-shadow(0 22px 36px rgba(20,40,33,.26)); }
+  .fig.man { right: 250px; height: 350px; z-index: 4; }
+  .fig.woman { right: 18px; height: 460px; z-index: 5; }
+
+  /* logo mark top-right */
+  .mark { position: absolute; right: 40px; top: 34px; z-index: 7; }
+  .mark .wm { font-weight: 900; font-size: 40px; letter-spacing: -1.5px; }
+  .mark .wm .s { color: var(--ink); } .mark .wm .t { color: var(--teal); }
+</style>
+</head>
+<body>
+<div class="thumb" id="thumb">
+  <div class="mark"><span class="wm"><span class="s">stack</span><span class="t">tags</span></span></div>
+
+  <div class="chart">
+    <svg viewBox="0 0 600 360">
+      <path d="M 14 280 L 70 256 L 120 280 L 180 232 L 240 250 L 310 210 L 380 226 L 460 196 L 545 208"
+            fill="none" stroke="#cdd4d9" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M 14 300 C 170 286, 340 200, 575 56" fill="none" stroke="#119271" stroke-width="16"
+            stroke-linecap="round" filter="drop-shadow(0 0 14px rgba(17,146,113,.35))"/>
+      <circle cx="575" cy="56" r="16" fill="#119271"/>
+    </svg>
+    <div class="clab">Women ▲</div>
+  </div>
+
+  <div class="copy">
+    <span class="kicker">Behavioral finance</span>
+    <h1 class="hl l1">Why <span class="d">women</span></h1>
+    <h1 class="hl l2">beat men</h1>
+    <div class="sub">They just <span class="t">trade less</span>.</div>
+  </div>
+
+  <img class="fig man" src="/video/assets/trader_man.png" alt="">
+  <img class="fig woman" src="/video/assets/calm_woman.png" alt="">
+</div>
+</body>
+</html>

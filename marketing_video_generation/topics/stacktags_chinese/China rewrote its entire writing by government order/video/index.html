@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>China rewrote its entire writing by government order</title>
+<link rel="icon" href="data:," />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- Inter (full latin) for all UI/English text -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<!-- Noto Sans SC, subsetted to the CJK glyphs we show as static TEXT (wall + labels) -->
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@500;700;900&text=国國简繁體龍龙鬱郁愛爱龜龟馬马門门彩采蛋旦餐歺書學藝鐵聲廳灣黨憂豐豔籠羅關難繼續舊歲衛醫嚴屬廣麗&display=swap" rel="stylesheet">
+
+<!-- shared theme tokens + grid + subtitles (the design system) -->
+<link rel="stylesheet" href="elements/theme.css">
+<!-- the dynamic depth-grid look (reuse its grid styling) -->
+<link rel="stylesheet" href="elements/depth-transitions.css">
+<!-- default element: text-popup (cascade words) -->
+<link rel="stylesheet" href="elements/text-popup.css">
+<!-- this video's own scene styling -->
+<link rel="stylesheet" href="styles.css?v=1">
+</head>
+<body>
+<div class="wrap">
+  <div class="stage stk-grid-bg" id="stage">
+
+    <!-- persistent dynamic grid: the camera (zoom/pan) lives here -->
+    <div class="stk-depth2-grid" id="grid"></div>
+
+    <!-- all scene layers stack here -->
+    <div class="scenes" id="scenes">
+
+      <!-- ===== HOOK — the hero character is rewritten by decree ===== -->
+      <div class="scene" id="sc-hook">
+        <div class="cell">
+          <div class="tzg"><span class="tzg-h"></span><span class="tzg-v"></span></div>
+          <div class="glyph" id="hk-trad"></div>
+          <div class="glyph" id="hk-simp"></div>
+          <div class="glyph skel" id="hk-skel"></div>
+          <div class="strike" id="hk-strike"></div>
+          <div class="tick" id="hk-tick">✓</div>
+        </div>
+        <div class="decree" id="hk-decree"><span class="seal"></span></div>
+        <div class="yearstamp" id="hk-year">1956</div>
+      </div>
+
+      <!-- ===== WHY — a wall of dense characters most people couldn't read ===== -->
+      <div class="scene" id="sc-wall">
+        <div class="wall" id="wall"></div>
+        <div class="reader" id="wall-reader">
+          <svg viewBox="0 0 200 150" width="200" height="150" aria-hidden="true">
+            <circle cx="100" cy="44" r="34" fill="#232B33"/>
+            <path d="M40 150 Q40 86 100 86 Q160 86 160 150 Z" fill="#232B33"/>
+          </svg>
+        </div>
+        <div class="bub bub-q" id="wall-bub">?</div>
+      </div>
+
+      <!-- ===== WHY 2 — one genuinely complex character + a stroke counter ===== -->
+      <div class="scene" id="sc-complex">
+        <div class="cell">
+          <div class="tzg"><span class="tzg-h"></span><span class="tzg-v"></span></div>
+          <div class="glyph" id="cx-char"></div>
+        </div>
+        <div class="counter" id="cx-counter"><span class="cnum" id="cx-num">0</span><span class="clab">strokes</span></div>
+      </div>
+
+      <!-- ===== CUT — 愛 loses its heart → 爱, then a cascade of pairs ===== -->
+      <div class="scene" id="sc-cut">
+        <div class="cell">
+          <div class="tzg"><span class="tzg-h"></span><span class="tzg-v"></span></div>
+          <div class="glyph" id="cut-trad"></div>
+          <div class="glyph" id="cut-simp"></div>
+          <div class="glyph heart" id="cut-heart"></div>
+        </div>
+        <div class="cascade" id="cut-cascade"></div>
+      </div>
+
+      <!-- ===== FASTER — slow many-stroke vs fast few-stroke (a racing pen) ===== -->
+      <div class="scene" id="sc-faster">
+        <div class="duo">
+          <div class="duo-cell left"><div class="tzg sm"><span class="tzg-h"></span><span class="tzg-v"></span></div><div class="glyph" id="fast-trad"></div></div>
+          <div class="duo-arrow">›</div>
+          <div class="duo-cell right"><div class="tzg sm"><span class="tzg-h"></span><span class="tzg-v"></span></div><div class="glyph" id="fast-simp"></div><div class="pen" id="fast-pen"><div class="pen-body"></div><div class="pen-nib"></div></div></div>
+        </div>
+      </div>
+
+      <!-- ===== MAP — mainland (simplified) vs Taiwan/HK (traditional) ===== -->
+      <div class="scene" id="sc-map">
+        <div class="map-host" id="map-host"></div>
+      </div>
+
+      <!-- ===== ROUND TWO — simplified again, too far (1977) ===== -->
+      <div class="scene" id="sc-round2">
+        <div class="cell">
+          <div class="tzg"><span class="tzg-h"></span><span class="tzg-v"></span></div>
+          <div class="glyph" id="r2-trad"></div>
+          <div class="glyph" id="r2-simp"></div>
+        </div>
+        <div class="decree" id="r2-decree"><span class="seal"></span></div>
+        <div class="yearstamp" id="r2-year">1977</div>
+      </div>
+
+      <!-- ===== CONFUSION — two different words collapse to one shape ===== -->
+      <div class="scene" id="sc-confusion">
+        <div class="conf">
+          <div class="conf-cell" id="conf-a">
+            <div class="tzg sm"><span class="tzg-h"></span><span class="tzg-v"></span></div>
+            <div class="glyph" id="cf-color"></div>
+            <div class="conf-gloss">“colour”</div>
+          </div>
+          <div class="conf-cell" id="conf-b">
+            <div class="tzg sm"><span class="tzg-h"></span><span class="tzg-v"></span></div>
+            <div class="glyph" id="cf-pick"></div>
+            <div class="conf-gloss">“pick”</div>
+          </div>
+        </div>
+        <div class="bub bub-q" id="conf-bub">?!</div>
+      </div>
+
+      <!-- ===== SCRAP — 1986, the second round is struck out and reverted ===== -->
+      <div class="scene" id="sc-scrap">
+        <div class="cell">
+          <div class="tzg"><span class="tzg-h"></span><span class="tzg-v"></span></div>
+          <div class="glyph" id="sp-simp"></div>
+          <div class="glyph" id="sp-trad"></div>
+          <div class="strike big" id="sp-strike"></div>
+        </div>
+        <div class="decree reverse" id="sp-decree"><span class="seal"></span></div>
+        <div class="yearstamp" id="sp-year">1986</div>
+      </div>
+
+      <!-- ===== PUNCHLINE — top-down decree vs the people pushing back ===== -->
+      <div class="scene" id="sc-punch">
+        <div class="cell">
+          <div class="tzg"><span class="tzg-h"></span><span class="tzg-v"></span></div>
+          <div class="glyph" id="pn-char"></div>
+        </div>
+        <div class="decree" id="pn-decree"><span class="seal"></span></div>
+        <div class="handsup" id="pn-hands"></div>
+      </div>
+
+      <!-- ===== OUTRO ===== -->
+      <div class="scene" id="sc-outro">
+        <div class="ec" id="outro-ec">
+          <div id="outro-logo"></div>
+          <div class="wm"><span class="s">stack</span><span class="t">tags</span></div>
+          <div class="url">stacktags.io</div>
+        </div>
+      </div>
+
+    </div><!-- /scenes -->
+
+    <!-- subtitles mirror the narration -->
+    <div class="stk-subs" id="subs"><span class="stk-subs-line" id="subs-line"></span></div>
+
+  </div><!-- /stage -->
+</div>
+
+<!-- HUD (hidden in clean/capture mode) -->
+<div id="hud">
+  <button id="btn-play">&#9654; Play</button>
+  <input id="seek" type="range" min="0" max="90" step="0.01" value="0" />
+  <span id="tcode">0.0</span>
+</div>
+
+<audio id="vo" src="../script_voice.mp3" preload="auto"></audio>
+
+<!-- topojson (for the china map) -->
+<script src="https://cdn.jsdelivr.net/npm/topojson-client@3.1.0/dist/topojson-client.min.js"></script>
+
+<!-- default elements (used as components) -->
+<script src="elements/text-popup.js"></script>
+<script src="elements/china-map.js"></script>
+<script src="elements/outro.js"></script>
+
+<!-- vendored stroke data for every animated character: window.HANZI -->
+<script src="assets/hanzi/hanzi.js"></script>
+
+<!-- this video's choreography -->
+<script src="app.js?v=1"></script>
+</body>
+</html>

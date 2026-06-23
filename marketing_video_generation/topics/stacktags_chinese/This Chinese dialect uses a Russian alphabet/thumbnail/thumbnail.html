@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>thumbnail — Dungan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@700;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#141a1e; --ink2:#4a5560; --teal:#35A292; --teal-d:#119271; --teal-soft:#e7f4ef;
+    --muted:#8a949d; --red:#d8443b;
+  }
+  html,body{ margin:0; padding:0; }
+  body{ font-family:'Inter',system-ui,sans-serif; background:#222; }
+  .thumb{
+    position:relative; width:1280px; height:720px; overflow:hidden; background:#fff;
+    -webkit-font-smoothing:antialiased;
+    background-image:
+      linear-gradient(to right,  rgba(35,43,51,.06) 2px, transparent 2px),
+      linear-gradient(to bottom, rgba(35,43,51,.06) 2px, transparent 2px);
+    background-size:96px 96px;
+  }
+  .cjk{ font-family:'Noto Sans SC','Inter',sans-serif; }
+
+  /* faint giant Cyrillic letters in the backdrop (the "Russian alphabet") */
+  .ghost{ position:absolute; font-weight:900; color:rgba(53,162,146,.07); letter-spacing:-6px;
+    line-height:.8; user-select:none; }
+  .ghost.g1{ top:-60px; right:-20px; font-size:520px; }
+  .ghost.g2{ bottom:-150px; left:-30px; font-size:430px; color:rgba(35,43,51,.045); }
+
+  /* headline (left, kept within the left column so props never collide) */
+  .head{ position:absolute; left:78px; top:150px; z-index:3; width:560px; }
+  .hl{ font-weight:900; letter-spacing:-.035em; line-height:.95; color:var(--ink); margin:0; }
+  .l1{ font-size:104px; }
+  .l2{ font-size:62px; font-weight:800; color:var(--ink2); margin-top:6px; }
+  .l3{ font-size:138px; color:var(--teal); margin-top:0; }
+  .l3 .dot{ color:var(--ink); }
+
+  /* hero proof card: 再見 → зэ җян (right column, clear of the headline) */
+  .proof{ position:absolute; right:66px; top:120px; z-index:4;
+    display:flex; align-items:center; gap:22px;
+    background:#fff; border-radius:34px; padding:30px 40px;
+    box-shadow:0 40px 90px rgba(16,50,40,.20); }
+  .proof .han{ font-family:'Noto Sans SC',sans-serif; font-weight:900; font-size:96px; color:var(--ink); line-height:1;
+    position:relative; }
+  .proof .han::after{ content:''; position:absolute; left:-8px; right:-8px; top:52%; height:8px;
+    background:var(--red); border-radius:5px; transform:rotate(-8deg); }
+  .proof .arrow{ font-size:62px; color:var(--teal); font-weight:700; }
+  .proof .cyr{ font-weight:800; font-size:96px; color:var(--teal-d); letter-spacing:-3px; line-height:1; }
+  .proof-cap{ position:absolute; right:90px; top:280px; z-index:4; text-align:center; width:380px;
+    font-weight:800; font-size:32px; letter-spacing:2px; text-transform:uppercase; color:var(--muted); }
+
+  /* the real Dungan mosque, cut out, lower-right corner */
+  .mosque{ position:absolute; right:54px; bottom:-12px; width:250px; z-index:3;
+    filter:drop-shadow(0 24px 40px rgba(16,50,40,.28)); }
+  .mosque img{ width:100%; height:auto; display:block; }
+
+  /* brand chip lower-left */
+  .brand{ position:absolute; left:84px; bottom:70px; z-index:5; display:flex; align-items:center; gap:16px; }
+  .brand .logo{ width:64px; height:64px; }
+  .brand .wm{ font-family:'Nunito','Inter',sans-serif; font-weight:900; font-size:54px; letter-spacing:-1px; }
+  .brand .wm .s{ color:var(--ink); } .brand .wm .t{ color:var(--teal); }
+</style>
+</head>
+<body>
+<div class="thumb" id="thumb">
+  <div class="ghost g1">ЖЯ</div>
+  <div class="ghost g2">Д</div>
+
+  <div class="head">
+    <p class="hl l1">Chinese,</p>
+    <p class="hl l2">written in</p>
+    <p class="hl l3">Russian<span class="dot">.</span></p>
+  </div>
+
+  <div class="proof">
+    <span class="han">再見</span>
+    <span class="arrow">→</span>
+    <span class="cyr">зэ җян</span>
+  </div>
+  <div class="proof-cap">same word · real Dungan</div>
+
+  <div class="mosque">
+    <img src="../video/assets/photos/karakol_mosque_cut.png" alt="" onerror="this.style.display='none'">
+  </div>
+
+  <div class="brand">
+    <div class="logo" id="brand-logo"></div>
+    <div class="wm"><span class="s">stack</span><span class="t">tags</span></div>
+  </div>
+</div>
+<script src="../video/elements/outro.js"></script>
+<script>
+  if (window.makeStacktagsLogo) document.getElementById('brand-logo').innerHTML = window.makeStacktagsLogo({ size: 64 });
+</script>
+</body>
+</html>

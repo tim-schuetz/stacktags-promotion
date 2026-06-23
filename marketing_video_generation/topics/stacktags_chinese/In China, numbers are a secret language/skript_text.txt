@@ -1,0 +1,140 @@
+VIDEO SCRIPT
+Title options (pick one): In China, numbers are a secret language
+Topic: Learn Chinese
+Target length: ~85 seconds (fits the 30s–3min window)
+Language of narration: English
+Format: Spoken voiceover narration + [bracketed] on-screen storyboard cues.
+
+NOTE ON STORYBOARD CUES: Every line in [square brackets] is a visual direction, NOT
+spoken. Strip all [...] before generating the TTS — the narration text between the
+brackets is the only thing read aloud.
+
+VISUAL SPINE (persistent hero device): a clean, brand-styled phone CHAT on the white
+grid (white bg, turquoise outgoing bubbles = --stk-teal, soft grey incoming bubbles,
+no borders, soft shadows, Inter + Noto Sans SC). The codes LIVE here — they arrive as
+messages and morph. Core reusable MORPH ENGINE, reused for every code:
+digits → pinyin-under-each-digit → "sounds like" bridge → Chinese characters (pop in
+one by one) → meaning. Icons are inline SVG (heart / waving hand / flame / grumpy),
+never OS emoji. Camera: depth zoom between the big beats (swoosh ONLY when the grid
+moves); gentle pans inside the chat (no swoosh).
+
+==================================================================
+THE CORE IDEA
+==================================================================
+Chinese number homophones became a slang code. 520 (wǔ-èr-líng) ≈ 我爱你 "I love
+you" (→ May 20 is an online romance day); 1314 ≈ "forever" (一生一世); 250 (èrbǎiwǔ)
+= "idiot/fool"; 88 ≈ "bye-bye"; 666 = "awesome/skilled." Same trick, opposite
+meanings — love letters and insults made of digits.
+Punchline: a string of numbers in a Chinese chat could be a maths problem… a love
+letter… or an insult.
+
+NOTE (honesty): 250 = "fool" — etymology is debated (the "half a string of coins" /
+半吊子 story) → say "the story goes."
+
+==================================================================
+SCRIPT
+==================================================================
+
+--- HOOK (0:00–0:12) — the payoff up front ---
+
+[OPEN directly on the phone chat (NO chart, NO bar graph). The chat header reads a
+playful "密码 · secret code". Empty thread on the white grid.]
+
+In China, "520" means "I love you."
+[A turquoise OUTGOING bubble pops in (pop sfx): "520". Quick light morph: tiny pinyin
+"wǔ èr líng" flickers under it → it flips to 我爱你 with a small turquoise heart-SVG.]
+
+But "250" means "you idiot."
+[A grey INCOMING bubble pops in below (pop sfx): "250" → morphs to 二百五 with a small
+grumpy-face SVG. The mood between the two bubbles is visibly opposite.]
+
+Numbers there aren't just numbers — they're a whole secret language.
+[The two bubbles sit in the thread; the bare digits 5·2·0 and 2·5·0 briefly glow
+turquoise, as if "decoding". The chat title "secret code" underlines.]
+
+Here's how to read it.
+[DEPTH zoom-in toward the chat (grid moves → swoosh) to start the mechanic.]
+
+--- WHY IT WORKS (≈0:12–0:32) ---
+
+It works because Chinese is full of words that sound almost exactly like numbers.
+[A compact HOMOPHONE STRIP on the chat: three digits each ghost into a near-homophone
+character, popping one by one (pop sfx each): 4 → 死 sǐ "death", 8 → 发 fā "wealth",
+9 → 久 jiǔ "lasting". Small wink on 4=death.]
+
+So people started using strings of numbers as code — something you can text, comment,
+or even put on a gift.
+[The SAME little code (e.g. 1314) appears in three quick contexts, swapping in place:
+(1) a chat bubble (text), (2) a social COMMENT under a video, (3) engraved on a small
+gift / red envelope. Reinforces it's really used, not literal narration.]
+
+A few digits standing in for a whole phrase.
+[The digits collapse/snap together into one phrase chip. Settle, then DEPTH pan into
+the love section.]
+
+--- THE LOVE CODES (≈0:32–0:58) ---
+
+Say five-two-zero fast — wǔ èr líng — and it sounds like wǒ ài nǐ: "I love you."
+[THE HERO MORPH, in full and slower: outgoing bubble "520" → pinyin "wǔ / èr / líng"
+under each digit → "sounds like" bridge → "wǒ / ài / nǐ" → 我爱你 pops in char-by-char
+(pop sfx each) + heart-SVG + "I love you".]
+
+It's so well known that May 20th — written 5/20 — has become an unofficial romance
+day, like a second Valentine's.
+[A clean CSS calendar page (May) flips up (grid moves → swoosh); the 20 is circled in
+turquoise with a small heart; caption chip "5·20 · 网络情人节 / online romance day".]
+
+Add 1314 — which sounds like "forever, a lifetime" — and 520 1314 means "I'll love
+you forever."
+[Back to the chat: "1314" bubble → pinyin "yī sān yī sì" → 一生一世 (yīshēng yīshì)
+"a lifetime". Then "520" + "1314" slide together into one message / onto the gift:
+"5201314" with 我爱你一生一世 = "I'll love you forever".]
+
+--- THE INSULTS (≈0:58–1:14) ---
+
+But the same trick cuts the other way.
+[Tone flip: the warm hearts fade, the thread cools to grey. DEPTH push (grid moves →
+swoosh).]
+
+Call someone a 250 — èr bǎi wǔ — and you've called them a fool.
+[Grey bubble "250" → pinyin "èr bǎi wǔ" → 二百五 "a fool" + grumpy-face SVG.]
+
+The story goes it comes from an old expression about half a string of coins — being
+"not quite all there."
+[SHOW THE REASON (real cropped photo, dashed outline): a string of old round
+square-holed bronze coins, only HALF strung — label 半吊子 "half-strung · not all
+there". Small "the story goes" tag to stay honest. (full string 1000 → 半吊子 500 →
+250 = half of that).]
+
+And there's more: 88 sounds like "bye-bye."
+[Chat: "88" → pinyin "bā bā" → 拜拜 (bàibài) "bye-bye" + a small waving-hand SVG; the
+bubble waves itself out.]
+
+666 means you're a legend, seriously skilled.
+[A FLOOD of grey "666" comments scrolls up the thread (livestream style, soft tick) →
+the top one morphs: "liù liù liù" → 溜 / 厉害 "awesome · skilled" + a small flame-SVG.]
+
+A few digits can carry an entire mood.
+[Three tiny mood icons (heart / grumpy / flame) flick across the same blank bubble.]
+
+--- PUNCHLINE / OUTRO (≈1:14–1:26) ---
+
+So a string of numbers in a Chinese chat might be a maths problem...
+[One bubble holds a plain block of digits "520 1314 250". First reading: math symbols
+(+ − × =) flick over them, a sum resolves. DEPTH zoom (grid moves → swoosh).]
+
+or a love letter...
+[Same digits, second reading: hearts + 我爱你一生一世 bloom over them.]
+
+or an insult.
+[Same digits, third reading: 二百五 + grumpy-face over them.]
+
+One block of numbers — two completely different worlds.
+[The same digit block splits visually into the two opposite worlds (warm love / cool
+insult) for a beat, then settles.]
+
+[DEPTH lift to the OUTRO brand card (default outro element: stacked-cube logo between
+turquoise chevrons, "stacktags" wordmark, grey stacktags.io line) — swoosh.]
+
+Wanna actually start learning Chinese?
+Discover thousands of free exercises and more learning content on stacktags.io.

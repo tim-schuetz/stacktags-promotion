@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Thumbnail — How to launder $1.5B in crypto</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@600;700;800;900&family=Nunito:wght@700;800;900&family=JetBrains+Mono:wght@600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --teal:#35A292; --teal-d:#119271; --teal-soft:#e7f4ef;
+    --ink:#1c2630; --ink-2:#4a5560; --muted:#8a949d; --red:#d8443b;
+  }
+  *{ margin:0; padding:0; box-sizing:border-box; }
+  html,body{ width:1080px; height:1920px; overflow:hidden; }
+  .tw{
+    position:relative; width:1080px; height:1920px;
+    background-color:#f5f8f7;
+    background-image:
+      linear-gradient(to right,  rgba(35,43,51,.06) 3px, transparent 3px),
+      linear-gradient(to bottom, rgba(35,43,51,.06) 3px, transparent 3px);
+    background-size:118px 118px; background-position:center;
+    font-family:'Inter',sans-serif; color:var(--ink); overflow:hidden;
+  }
+  /* soft teal glow blobs for depth */
+  .blob{ position:absolute; border-radius:50%; filter:blur(70px); opacity:.5; }
+  .blob.a{ width:620px; height:620px; left:-180px; top:-160px; background:#cdeae1; }
+  .blob.b{ width:680px; height:680px; right:-220px; bottom:120px; background:#d7efe8; }
+
+  .eyebrow{
+    position:absolute; top:96px; left:0; right:0; text-align:center;
+    font-weight:800; font-size:33px; letter-spacing:5px; color:var(--muted);
+  }
+  .eyebrow b{ color:var(--teal-d); }
+
+  .headline{
+    position:absolute; top:150px; left:0; right:0; text-align:center;
+    font-family:'Nunito',sans-serif; font-weight:900; letter-spacing:-3px; line-height:.92;
+  }
+  .headline .l1{ font-size:96px; color:var(--ink); }
+  .headline .hero{
+    font-size:340px; color:var(--teal-d); letter-spacing:-12px;
+    text-shadow:0 0 70px rgba(53,162,146,.30); line-height:.9; margin:6px 0 2px;
+  }
+  .headline .l3{ font-size:80px; color:var(--ink); }
+  .headline .l3 u{ color:var(--teal-d); text-decoration:none; position:relative; }
+  .headline .l3 u::after{ content:""; position:absolute; left:0; right:0; bottom:6px; height:10px; background:rgba(53,162,146,.28); border-radius:5px; z-index:-1; }
+
+  /* the wallet / ledger card */
+  .card{
+    position:absolute; left:96px; right:96px; top:880px;
+    background:#fff; border-radius:46px; padding:46px 52px 52px;
+    box-shadow:0 48px 110px rgba(16,50,40,.20), 0 8px 22px rgba(16,50,40,.08);
+  }
+  .card-head{ display:flex; align-items:center; gap:16px; margin-bottom:30px; }
+  .card-head .dot{ width:20px; height:20px; border-radius:50%; background:#dcebe6; }
+  .card-head .ttl{ margin-left:8px; font-weight:800; font-size:36px; color:var(--ink); letter-spacing:.5px; }
+  .card-head .live{ margin-left:auto; font-weight:800; font-size:28px; color:var(--teal-d); display:flex; align-items:center; gap:10px; }
+  .card-head .live::before{ content:""; width:18px; height:18px; border-radius:50%; background:var(--teal); box-shadow:0 0 0 7px rgba(53,162,146,.16); }
+  .lbl{ font-family:'JetBrains Mono',monospace; font-weight:700; font-size:30px; color:var(--ink-2); margin-bottom:8px; }
+  .bal{ font-family:'Nunito',sans-serif; font-weight:900; font-size:128px; letter-spacing:-3px; color:var(--teal-d); text-shadow:0 0 50px rgba(53,162,146,.28); }
+  .row{ display:flex; align-items:center; gap:22px; background:var(--teal-soft); border-radius:24px; padding:26px 30px; margin-top:22px; }
+  .row .ic{ width:58px; height:58px; border-radius:15px; background:#fff; color:var(--teal-d); font-size:32px; font-weight:800; display:flex; align-items:center; justify-content:center; }
+  .row .ad{ font-family:'JetBrains Mono',monospace; font-weight:600; font-size:30px; color:var(--teal-d); }
+  .row .am{ margin-left:auto; font-weight:800; font-size:34px; color:var(--teal-d); }
+
+  /* red TRACEABLE stamp slammed across the card */
+  .stamp{
+    position:absolute; left:50%; top:1364px; transform:translate(-50%,-50%) rotate(-8deg);
+    font-family:'Nunito',sans-serif; font-weight:900; font-size:104px; letter-spacing:2px; color:var(--red);
+    padding:16px 40px; border:9px solid var(--red); border-radius:24px;
+    background:rgba(255,255,255,.10); box-shadow:0 20px 50px rgba(216,68,59,.26);
+    text-shadow:0 4px 0 rgba(216,68,59,.18);
+  }
+
+  /* radioactive coin floating on a corner */
+  .coin{
+    position:absolute; right:118px; top:752px; width:196px; height:196px; border-radius:50%;
+    background:radial-gradient(circle at 36% 30%, #5fd9c1, var(--teal) 62%, var(--teal-d));
+    color:#fff; font-weight:900; font-size:108px; display:flex; align-items:center; justify-content:center;
+    box-shadow:0 0 0 16px rgba(53,162,146,.16), 0 26px 54px rgba(53,162,146,.4);
+    font-family:'Nunito',sans-serif;
+  }
+  .coin .rad{
+    position:absolute; bottom:-30px; left:50%; transform:translateX(-50%); white-space:nowrap;
+    font-family:'Inter',sans-serif; font-weight:800; font-size:24px; letter-spacing:1.5px; color:var(--teal-d);
+    background:#fff; padding:8px 18px; border-radius:999px; box-shadow:0 10px 24px rgba(16,50,40,.12);
+  }
+
+  /* brand footer */
+  .brand{ position:absolute; left:0; right:0; bottom:96px; display:flex; align-items:center; justify-content:center; gap:22px; }
+  .brand .wm{ font-family:'Nunito',sans-serif; font-weight:900; font-size:78px; letter-spacing:-2px; }
+  .brand .wm .s{ color:var(--ink); } .brand .wm .t{ color:var(--teal); }
+  .brand #logo svg{ width:120px; height:auto; display:block; }
+</style>
+</head>
+<body>
+<div class="tw">
+  <div class="blob a"></div><div class="blob b"></div>
+
+  <div class="eyebrow">NORTH KOREA&rsquo;S <b>$1.5B</b> CRYPTO HEIST</div>
+
+  <div class="headline">
+    <div class="l1">They stole</div>
+    <div class="hero">$1.5B</div>
+    <div class="l3">&hellip;and <u>can&rsquo;t</u> spend it.</div>
+  </div>
+
+  <div class="coin">$<div class="rad">&#9762; RADIOACTIVE</div></div>
+
+  <div class="card">
+    <div class="card-head">
+      <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+      <span class="ttl">PUBLIC LEDGER</span>
+      <span class="live">live</span>
+    </div>
+    <div class="lbl">STOLEN WALLET &middot; 0x47a9&hellip;f0b3</div>
+    <div class="bal">$1,500,000,000</div>
+    <div class="row"><span class="ic">&#8644;</span><span class="ad">0x9f3a&hellip;c7 &rarr; 0x4b8e&hellip;a9</span><span class="am">+491.7 ETH</span></div>
+    <div class="row"><span class="ic">&#8644;</span><span class="ad">0xdb56&hellip;fe &rarr; 0x1540&hellip;e4</span><span class="am">+288.4 ETH</span></div>
+  </div>
+
+  <div class="stamp">TRACEABLE</div>
+
+  <div class="brand">
+    <span id="logo"></span>
+    <span class="wm"><span class="s">stack</span><span class="t">tags</span></span>
+  </div>
+</div>
+<script src="../video/elements/outro.js"></script>
+<script>
+  if (window.makeStacktagsLogo) document.getElementById('logo').innerHTML = window.makeStacktagsLogo({ size: 150 });
+</script>
+</body>
+</html>

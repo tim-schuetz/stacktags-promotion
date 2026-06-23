@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>thumbnail — Why all of China runs on one clock</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Noto+Sans+SC:wght@700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../video/elements/theme.css">
+<style>
+  html, body { margin: 0; height: 100%; background: #20262b; }
+  .wrap { display: grid; place-items: center; height: 100%; }
+  .thumb { position: relative; width: 1280px; height: 720px; overflow: hidden; background: #fff;
+    background-image:
+      linear-gradient(to right,  rgba(35,43,51,.06) 3px, transparent 3px),
+      linear-gradient(to bottom, rgba(35,43,51,.06) 3px, transparent 3px);
+    background-size: 96px 96px; background-position: center; font-family: 'Inter', sans-serif; }
+
+  /* faint oversized sun-glow behind, lower-left */
+  .bg-sun { position: absolute; left: -120px; bottom: -160px; width: 520px; height: 520px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(53,162,146,.14) 0%, rgba(53,162,146,0) 68%); }
+
+  /* headline (left) */
+  .hl-wrap { position: absolute; left: 84px; top: 132px; width: 660px; }
+  .kicker { font-weight: 800; font-size: 30px; letter-spacing: 6px; color: var(--stk-muted); margin-bottom: 18px; }
+  .hl { margin: 0; font-weight: 900; font-size: 130px; line-height: .94; letter-spacing: -4px; color: var(--stk-ink); }
+  .hl .accent { color: var(--stk-teal); }
+  .hl .num { color: var(--stk-teal-d); }
+  .sub { margin-top: 30px; font-weight: 700; font-size: 33px; color: var(--stk-ink-2); letter-spacing: -.3px; }
+
+  /* right-side prop: China map + clocks */
+  .prop { position: absolute; right: 38px; top: 50%; transform: translateY(-50%); width: 540px; height: 580px; }
+  .prop .map-host { position: absolute; left: 0; right: 0; top: 124px; height: 430px; }
+  .cn-map-fill { fill: var(--stk-teal); opacity: .17; }
+  .cn-map-line { fill: none; stroke: var(--stk-teal-d); stroke-width: 3.4; stroke-linejoin: round; }
+  .ghost-row { position: absolute; left: 50%; top: 14px; transform: translateX(-50%); display: flex; gap: 15px; }
+  .ghost-row .clk { width: 74px; height: 74px; opacity: .9; }
+  .big-clk { position: absolute; left: 49%; top: 58%; transform: translate(-50%, -50%); width: 226px; height: 226px; }
+  .clk-svg { width: 100%; height: 100%; display: block; overflow: visible; }
+  .clk-face { fill: #fff; filter: drop-shadow(0 18px 38px rgba(20,40,33,.22)); }
+  .clk-tick { stroke: var(--stk-muted); stroke-width: 1.4; stroke-linecap: round; opacity: .6; }
+  .clk-tick.maj { stroke: var(--stk-ink); stroke-width: 2.6; opacity: .9; }
+  .clk-hand { stroke: var(--stk-ink); stroke-linecap: round; }
+  .clk-hh { stroke-width: 5; } .clk-mh { stroke-width: 3.4; }
+  .clk-hour, .clk-min { transform-box: view-box; transform-origin: 50px 50px; }
+  .clk-hub { fill: var(--stk-teal-d); }
+  .clk-ghost .clk-face { filter: drop-shadow(0 6px 12px rgba(20,40,33,.10)); }
+  .clk-ghost .clk-hand { stroke: var(--stk-ink-2); }
+  .clk-ghost .clk-tick { opacity: .3; }
+  /* a red Beijing pin on the map */
+  .pin { position: absolute; width: 26px; height: 26px; transform: translate(-50%, -50%); }
+  .pin::before { content: ''; position: absolute; inset: 0; border-radius: 50% 50% 50% 0; transform: rotate(-45deg);
+    background: var(--stk-red); box-shadow: 0 6px 14px rgba(216,68,59,.4); }
+  .pin::after { content: ''; position: absolute; left: 50%; top: 42%; width: 9px; height: 9px; transform: translate(-50%,-50%); border-radius: 50%; background: #fff; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="thumb stk-grid-bg" id="thumb">
+    <div class="bg-sun"></div>
+    <div class="hl-wrap">
+      <div class="kicker">ALL OF CHINA · ONE TIME ZONE</div>
+      <h1 class="hl"><span class="num">5</span> time zones.</h1>
+      <h1 class="hl"><span class="accent">1 clock.</span></h1>
+      <div class="sub">5,000 km wide — but the sun doesn't<br>take orders from Beijing.</div>
+    </div>
+    <div class="prop" id="prop">
+      <div class="map-host" id="thumb-map"></div>
+      <div class="ghost-row" id="ghost-row"></div>
+      <div class="big-clk" id="big-clk"></div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/topojson-client@3.1.0/dist/topojson-client.min.js"></script>
+<script src="../video/elements/country-map.js"></script>
+<script src="../video/elements/clock-kit.js"></script>
+<script>
+  (async function () {
+    const m = await window.mountCountryMap(document.getElementById('thumb-map'), { country: 'China', width: 540, height: 420, pad: 36 });
+    m.showInstant();
+    // a red Beijing pin
+    const pb = m.project(39.9, 116.4);
+    const pin = document.createElement('div'); pin.className = 'pin';
+    pin.style.left = (pb.x / m.W * 100) + '%'; pin.style.top = (pb.y / m.H * 100) + '%';
+    document.getElementById('thumb-map').appendChild(pin);
+    // 5 faint ghost clocks (different hours) = the 5 natural zones
+    const row = document.getElementById('ghost-row');
+    [9, 10, 11, 12, 13].forEach((h) => { const c = window.makeAnalogClock({ size: 78, h: h, theme: 'ghost' }); row.appendChild(c.el); });
+    // one bold clock over China
+    document.getElementById('big-clk').appendChild(window.makeAnalogClock({ size: 230, h: 12, m: 0, theme: 'official' }).el);
+    window.__ready = true;
+  })();
+</script>
+</body>
+</html>

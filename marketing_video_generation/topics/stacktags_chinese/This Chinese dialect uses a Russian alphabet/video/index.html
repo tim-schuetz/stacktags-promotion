@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>This Chinese dialect uses a Russian alphabet</title>
+<link rel="icon" href="data:," />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Nunito:wght@700;800;900&family=Noto+Sans+SC:wght@500;700;900&display=swap" rel="stylesheet">
+
+<!-- shared theme tokens + grid + subtitles (the design system) -->
+<link rel="stylesheet" href="elements/theme.css">
+<!-- the dynamic depth-grid look (we reuse its grid styling) -->
+<link rel="stylesheet" href="elements/depth-transitions.css">
+<!-- default elements used as components -->
+<link rel="stylesheet" href="elements/text-popup.css">
+<!-- this video's own scene styling -->
+<link rel="stylesheet" href="styles.css?v=1">
+</head>
+<body>
+<div class="wrap">
+  <div class="stage stk-grid-bg" id="stage">
+
+    <!-- persistent dynamic grid: the camera (zoom/pan) lives here -->
+    <div class="stk-depth2-grid" id="grid"></div>
+
+    <!-- all scene layers stack here -->
+    <div class="scenes" id="scenes">
+
+      <!-- ===== HOOK: 再見 (hanzi) morphs into зэ җян (Cyrillic) ===== -->
+      <div class="scene" id="sc-hook"></div>
+
+      <!-- ===== MIGRATION: globe + dashed route China→Central Asia → mosque ===== -->
+      <div class="scene" id="sc-migration">
+        <div class="globe-host" id="globe-host"></div>
+        <div class="mig-label origin" id="mig-origin">陕西 · 甘肃</div>
+        <div class="caravan" id="caravan"></div>
+        <div class="photo mosque" id="mosque-photo">
+          <img src="assets/photos/karakol_mosque_cut.png" alt="Dungan Mosque, Karakol" onerror="this.style.display='none'">
+          <div class="mosque-cap"><b>Каракол</b> · Kyrgyzstan</div>
+        </div>
+      </div>
+
+      <!-- ===== TWO SPEAKERS: Mandarin ↔ Dungan, mutually intelligible ===== -->
+      <div class="scene" id="sc-speakers"></div>
+
+      <!-- ===== TWIST: hanzi wall fades → a full Dungan sentence in Cyrillic ===== -->
+      <div class="scene" id="sc-twist"></div>
+
+      <!-- ===== HOMOPHONE objection → tone-letter proof ===== -->
+      <div class="scene" id="sc-homophone"></div>
+
+      <!-- ===== BIGGER IDEA: one spoken language → two writing systems ===== -->
+      <div class="scene" id="sc-idea"></div>
+
+      <!-- ===== PUNCHLINE: the Cyrillic, glowing (callback) ===== -->
+      <div class="scene" id="sc-punch"></div>
+
+      <!-- ===== OUTRO endcard ===== -->
+      <div class="scene" id="sc-outro">
+        <div class="ec" id="outro-ec">
+          <div id="outro-logo"></div>
+          <div class="wm"><span class="s">stack</span><span class="t">tags</span></div>
+          <div class="url">stacktags.io</div>
+        </div>
+      </div>
+
+    </div><!-- /scenes -->
+
+    <!-- subtitles mirror the narration -->
+    <div class="stk-subs" id="subs"><span class="stk-subs-line" id="subs-line"></span></div>
+
+  </div><!-- /stage -->
+</div>
+
+<!-- HUD (hidden in clean/capture mode) -->
+<div id="hud">
+  <button id="btn-play">▶ Play</button>
+  <input id="seek" type="range" min="0" max="84" step="0.01" value="0" />
+  <span id="tcode">0.0</span>
+</div>
+
+<audio id="vo" src="../script_voice.mp3" preload="auto"></audio>
+
+<!-- libs for the globe -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/earcut@2.2.4/dist/earcut.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/topojson-client@3.1.0/dist/topojson-client.min.js"></script>
+
+<!-- default elements (used as components) -->
+<script src="elements/globe.js"></script>
+<script src="elements/text-popup.js"></script>
+<script src="elements/outro.js"></script>
+
+<!-- this video's choreography -->
+<script src="app.js?v=1"></script>
+</body>
+</html>

@@ -1,241 +1,38 @@
 /* ============================================================
-   "5 Chinese words from 5 Chinese cities" — NEW STYLE choreography
-   A continuous faux-3D camera over a persistent dynamic grid.
-   Everything is driven off the narration's audio.currentTime (cue
-   engine) so each beat lands on the spoken word. Reuses the default
-   elements: globe, enumeration-with-detail, text-popup, china-map,
-   the shared depth-grid + theme/subtitles.
+   "Tether — the most genius business model ever invented"
+   Continuous faux-3D camera over a persistent dynamic grid.
+   Everything is driven off the narration's audio.currentTime
+   (cue engine) so each beat lands on the spoken word.
    ============================================================ */
 (function () {
   'use strict';
   const $ = (s) => document.querySelector(s);
+  const $$ = (s) => Array.from(document.querySelectorAll(s));
 
-  // ---- stage refs ----
   const stage = $('#stage');
   const grid = $('#grid');
   const vo = $('#vo');
   const subsLine = $('#subs-line');
 
-  // fit the 1080×1920 stage into the viewport
   function fit() {
     const s = Math.min(innerWidth / 1080, innerHeight / 1920);
     stage.style.transform = 'scale(' + s + ')';
   }
   addEventListener('resize', fit); fit();
 
-  // ============================================================
-  // DATA
-  // ============================================================
-  const HOOK = [
-    { hanzi: '上海', py: 'Shànghǎi',  learn: '海', mean: 'sea' },
-    { hanzi: '北京', py: 'Běijīng',   learn: '北', mean: 'north' },
-    { hanzi: '南京', py: 'Nánjīng',   learn: '南', mean: 'south' },
-    { hanzi: '青岛', py: 'Qīngdǎo',   learn: '岛', mean: 'island' },
-    { hanzi: '香港', py: 'Xiānggǎng', learn: '港', mean: 'harbor' },
-  ];
-
-  const CITIES = [
-    { id: 'shanghai', en: 'Shanghai', hanzi: '上海', py: 'Shànghǎi', index: 1,
-      photo: 'assets/photos/shanghai.png',
-      chars: [{ zh: '上', py: 'shàng', mean: 'on' }, { zh: '海', py: 'hǎi', mean: 'sea', learn: true }],
-      take: { zh: '海', mean: 'sea' } },
-    { id: 'beijing', en: 'Beijing', hanzi: '北京', py: 'Běijīng', index: 2,
-      photo: 'assets/photos/beijing.png',
-      chars: [{ zh: '北', py: 'běi', mean: 'north', learn: true }, { zh: '京', py: 'jīng', mean: 'capital' }],
-      take: { zh: '北', mean: 'north' } },
-    { id: 'nanjing', en: 'Nanjing', hanzi: '南京', py: 'Nánjīng', index: 3,
-      photo: 'assets/photos/nanjing.png',
-      chars: [{ zh: '南', py: 'nán', mean: 'south', learn: true }, { zh: '京', py: 'jīng', mean: 'capital' }],
-      take: { zh: '南', mean: 'south' },
-      note: '<span class="cjk">北京</span> <b>北</b> north · <span class="cjk">南京</span> <b>南</b> south' },
-    { id: 'qingdao', en: 'Qingdao', hanzi: '青岛', py: 'Qīngdǎo', index: 4, bottle: true,
-      photo: 'assets/photos/qingdao.png',
-      chars: [{ zh: '青', py: 'qīng', mean: 'green' }, { zh: '岛', py: 'dǎo', mean: 'island', learn: true }],
-      take: { zh: '岛', mean: 'island' } },
-    { id: 'hongkong', en: 'Hong Kong', hanzi: '香港', py: 'Xiānggǎng', index: 5,
-      photo: 'assets/photos/hongkong.png',
-      chars: [{ zh: '香', py: 'xiāng', mean: 'fragrant' }, { zh: '港', py: 'gǎng', mean: 'harbor', learn: true }],
-      take: { zh: '港', mean: 'harbor' } },
-  ];
-
-  // a real Tsingtao bottle — Gemini (Imagen 4) photo, cut out with rembg, with a
-  // dashed silhouette outline baked on (assets/tsingtao-dashed.png, transparent).
-  const TSINGTAO_SVG = `<div class="tsingtao-bottle"><img src="assets/tsingtao-dashed.png" alt="Tsingtao" onerror="this.style.display='none'"></div>`;
-
-  // ============================================================
-  // SCENE BUILDERS
-  // ============================================================
-  HOOK.forEach((h, i) => {
-    $('#sc-hook' + i).innerHTML =
-      `<div class="hook-inner">
-         <div class="hook-city cjk">${h.hanzi}</div>
-         <div class="hook-py">${h.py}</div>
-         <div class="hook-vocab"><span class="hv-zh cjk">${h.learn}</span> = <span class="hv-mean">${h.mean}</span></div>
-       </div>`;
-  });
-
-  CITIES.forEach((c) => {
-    const scene = $('#sc-' + c.id);
-    scene.innerHTML =
-      `<div class="card" id="card-${c.id}">
-         <div class="card-index"><b>${c.index}</b> / 5</div>
-         <div class="card-photo">
-           <img src="${c.photo}" alt="" onerror="this.style.display='none'">
-           <div class="card-photo-cap"><div class="zh cjk">${c.hanzi}</div><div class="py">${c.py}</div></div>
-         </div>
-         <div class="card-split">
-           ${c.chars.map((ch) => `
-             <div class="char ${ch.learn ? 'learn' : ''}">
-               <div class="char-zh">${ch.zh}</div>
-               <div class="char-py">${ch.py}</div>
-               <div class="char-mean">${ch.mean}</div>
-             </div>`).join('')}
-         </div>
-         <div class="card-takeaway"><span class="ta-zh cjk">${c.take.zh}</span> = <span class="ta-mean">${c.take.mean}</span></div>
-         ${c.note ? `<div class="card-note">${c.note}</div>` : ''}
-         ${c.bottle ? TSINGTAO_SVG : ''}
-       </div>`;
-  });
-
-  // compass (no spoken-text headings — the rose + needle illustrate it)
-  $('#sc-compass').innerHTML =
-    `<div class="cmp-wrap" id="cmp-wrap">
-       <div class="cmp-rose">
-         <div class="cmp-needle" id="cmp-needle"></div>
-         <div class="cmp-hub"></div>
-         <div class="cmp-pt n lit"><div class="zh">北</div><small>north · Běijīng</small></div>
-         <div class="cmp-pt s lit"><div class="zh">南</div><small>south · Nánjīng</small></div>
-         <div class="cmp-pt w pending" id="cmp-w"><div class="zh">西</div><small>west · Xī'ān</small></div>
-         <div class="cmp-pt e pending" id="cmp-e"><div class="zh">东</div><small>east · Guǎngdōng</small></div>
-       </div>
-     </div>`;
-
-  // CTA — no spoken-text echo; a Practice button (the action) over a fan of
-  // exercise-card chips (illustrates "free exercises"). The narration + the
-  // outro (stacktags.io) carry the words.
-  $('#cta-host').innerHTML =
-    `<div class="cta-wrap" id="cta-wrap">
-       <div class="cta-cards"><span class="cc l"></span><span class="cc c"></span><span class="cc r"></span></div>
-       <div style="position:relative;display:inline-block;">
-         <div class="cta-ring"></div>
-         <div class="cta-btn">Practice <span class="arr">→</span></div>
-         <div class="cta-finger">👆</div>
-       </div>
-     </div>`;
-
-  // OUTRO endcard — updated default element (makeStacktagsLogo + .ec layout).
-  // Lands on the narration's closing "…on stacktags.io".
-  const outroLogo = $('#outro-logo');
-  if (outroLogo && window.makeStacktagsLogo) outroLogo.innerHTML = window.makeStacktagsLogo({ size: 620 });
-  function outroAssemble() { const ec = $('#outro-ec'); if (ec) ec.classList.add('play'); }
-  function outroReset() { const ec = $('#outro-ec'); if (ec) ec.classList.remove('play'); }
-
-  // ============================================================
-  // COMPONENT MOUNTS (default elements)
-  // ============================================================
-  // enumeration → in-detail follow-up
-  let enumEl = null;
-  try {
-    enumEl = new StacktagsEnumerationDetail($('#enum-host'), {
-      items: CITIES.map((c) => ({ label: c.en, sub: `${c.take.zh} · ${c.take.mean}` })),
-    });
-    // drop the real skyline photos into the morphing tiles
-    enumEl.tiles.forEach((tile, i) => {
-      const top = tile.querySelector('.se2-tile-top');
-      if (!top) return;
-      top.style.backgroundImage = `url(${CITIES[i].photo})`;
-      top.style.backgroundSize = 'cover';
-      top.style.backgroundPosition = 'center';
-      const sp = top.querySelector('span'); if (sp) sp.remove();
-    });
-  } catch (e) { /* element missing — fail soft */ }
-
-  // text-popup recap word cloud — popped scattered, then converged to a
-  // centred vertical column (= "a vocabulary list") on the "vocabulary" beat.
-  const RECAP_WORDS = [
-    { text: '海 sea',     x: -250, y: -380, key: true, size: 80 },
-    { text: '北 north',   x: 240,  y: -200, size: 80 },
-    { text: '南 south',   x: -210, y: -20,  size: 80 },
-    { text: '岛 island',  x: 270,  y: 160,  key: true, size: 80 },
-    { text: '港 harbor',  x: -250, y: 330,  size: 80 },
-    { text: '西 west',    x: 220,  y: 470,  pill: true, size: 60 },
-    { text: '东 east',    x: -150, y: 560,  pill: true, size: 60 },
-  ];
-  let recapPop = null, recapWordEls = [];
-  try {
-    recapPop = new StacktagsTextPopup($('#sc-recap'), { words: RECAP_WORDS });
-    recapWordEls = Array.from($('#sc-recap').querySelectorAll('.stk-pop-word'));
-  } catch (e) { /* fail soft */ }
-
-  function setRecapHome() {   // scatter (original positions)
-    recapWordEls.forEach((el, i) => {
-      el.style.setProperty('--tx', RECAP_WORDS[i].x + 'px');
-      el.style.setProperty('--ty', RECAP_WORDS[i].y + 'px');
-    });
-  }
-  function convergeRecap(instant) {   // all to horizontal centre, stacked vertically
-    const n = recapWordEls.length;
-    recapWordEls.forEach((el, i) => {
-      if (instant) el.style.transition = 'none';
-      el.style.setProperty('--tx', '0px');
-      el.style.setProperty('--ty', ((i - (n - 1) / 2) * 132) + 'px');
-      el.classList.add('in'); el.classList.remove('behind');
-    });
-    if (instant) { void $('#sc-recap').offsetWidth; recapWordEls.forEach((el) => { el.style.transition = ''; }); }
-  }
-
-  // globe 1 (Shanghai dive at ~20.7s) + globe 2 (Qingdao → Hong Kong at ~84s).
-  // Both mount now but stay paused (no render) until needed — software/GPU
-  // WebGL is expensive and rendering them the whole clip stretches the capture.
-  let globeCtrl = null, globe2Ctrl = null;
-  const globeHost = $('#globe-host');
-  const globePhoto = $('#globe-photo');
-  const globeHost2 = $('#globe-host2');
-  const gv2PhotoA = $('#gv2-photoA');
-  const gv2PhotoB = $('#gv2-photoB');
-  (function mountGlobe1() {
-    if (!(window.THREE && window.earcut && window.topojson)) { setTimeout(mountGlobe1, 80); return; }
-    try {
-      window.mountStacktagsGlobe(globeHost, {
-        focus: { lat: 30, lon: 118, cam: 3.0 },
-        startCam: 3.6,
-        highlight: 'China',
-        marker: { lat: 31.23, lon: 121.47 },   // Shanghai
-        autoReveal: false,
-        onReady: (c) => { globeCtrl = c; c.pause(); },
-      });
-    } catch (e) { /* fail soft */ }
-  })();
-  // globe 2 = the default "zoom-out → dive-in" element. Mounted lazily (~95s),
-  // just before its move, so only ONE WebGL context is live at a time.
-  function mountGlobe2() {
-    if (globe2Ctrl || !(window.THREE && window.earcut && window.topojson) || !window.mountStacktagsGlobeV2) return;
-    try {
-      window.mountStacktagsGlobeV2(globeHost2, {
-        highlight: 'China',
-        markers: [{ lat: 36.07, lon: 120.38 }, { lat: 22.30, lon: 114.17 }],   // Qingdao → Hong Kong
-        closeCam: 1.05,
-        overviewCam: 2.6,
-        onReady: (c) => { globe2Ctrl = c; },
-      });
-    } catch (e) { /* fail soft */ }
-  }
-
-  // china-map silhouette behind the payoff line
-  let cnMap = null;
-  (function mountMap() {
-    if (!window.mountChinaMap || !window.topojson) { setTimeout(mountMap, 80); return; }
-    window.mountChinaMap($('#payoff-map'), { width: 820, height: 900, pad: 120 })
-      .then((m) => { cnMap = m; m.line.style.opacity = '0'; m.fill.style.opacity = '0'; })
-      .catch(() => {});
-  })();
+  // ---- math helpers ----
+  const easeInOut = (p) => (p < 0.5 ? 4 * p * p * p : 1 - Math.pow(-2 * p + 2, 3) / 2);
+  const easeOut = (p) => 1 - Math.pow(1 - p, 3);
+  const clamp01 = (v) => Math.max(0, Math.min(1, v));
+  const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
+  const lerp = (a, b, t) => a + (b - a) * t;
+  const rnd = (a, b) => a + Math.random() * (b - a);
 
   // ============================================================
   // GRID CAMERA (persistent, always subtly moving)
   // ============================================================
-  const gcam = { s: 1, x: 0, y: 0 };    // target
-  const gdisp = { s: 1, x: 0, y: 0 };   // displayed (follows gcam)
-  function clamp(v, a, b) { return Math.max(a, Math.min(b, v)); }
+  const gcam = { s: 1, x: 0, y: 0 };
+  const gdisp = { s: 1, x: 0, y: 0 };
   function applyGrid() {
     const t = vo.currentTime || 0;
     const idleS = 1 + Math.sin(t * 0.5) * 0.012;
@@ -252,11 +49,7 @@
   // ============================================================
   // DEPTH SCENE TRANSITIONS (ported from the depth-transitions element)
   // ============================================================
-  const easeInOut = (p) => (p < 0.5 ? 4 * p * p * p : 1 - Math.pow(-2 * p + 2, 3) / 2);
-  const clamp01 = (v) => Math.max(0, Math.min(1, v));
-  const lerp = (a, b, t) => a + (b - a) * t;
-
-  const SCENES = Array.from(document.querySelectorAll('.scene'));
+  const SCENES = $$('.scene');
   function setPose(el, p) {
     el.style.setProperty('--tx', (p.tx || 0) + 'px');
     el.style.setProperty('--ty', (p.ty || 0) + 'px');
@@ -265,7 +58,6 @@
     el.style.filter = p.blur ? `blur(${p.blur}px)` : 'none';
     if (p.z != null) el.style.zIndex = p.z;
   }
-
   function POSES(mode, e) {
     switch (mode) {
       case 'rise': return {
@@ -276,10 +68,6 @@
         from: { s: lerp(1, .34, e), ty: lerp(0, 40, e), blur: 14 * e, op: clamp01(1.1 - e / .7), z: 1 },
         to:   { s: lerp(2.6, 1, e), blur: 18 * (1 - e), op: clamp01((e - .05) / .45), z: 3 },
         grid: .8 };
-      case 'pan-left': return {
-        from: { tx: lerp(0, -1180, e), blur: 6 * e, op: clamp01(1.1 - e / .8), z: 2 },
-        to:   { tx: lerp(1180, 0, e), blur: 4 * (1 - e), op: clamp01(e / .45), z: 3 },
-        panX: -1180 };
       case 'pan-right': return {
         from: { tx: lerp(0, 1180, e), blur: 6 * e, op: clamp01(1.1 - e / .8), z: 2 },
         to:   { tx: lerp(-1180, 0, e), blur: 4 * (1 - e), op: clamp01(e / .45), z: 3 },
@@ -299,16 +87,12 @@
         grid: 1.45 };
     }
   }
-
-  let current = null;
-  let sceneRAF = 0;
+  let current = null, sceneRAF = 0;
   function depthGo(toEl, mode, dur, onArrive) {
     mode = mode || 'zoom-in'; dur = dur || 1100;
     const fromEl = current;
     if (sceneRAF) cancelAnimationFrame(sceneRAF);
-
-    const gs0 = gcam.s, gx0 = gcam.x, gy0 = gcam.y;
-
+    const gs0 = gcam.s, gx0 = gcam.x;
     if (mode === 'lift') {
       gcam.s = gs0 * 1.3;
       const t0 = performance.now();
@@ -318,21 +102,17 @@
         const z = lerp(1, 1.3, e), dy = 1450 * e;
         if (fromEl) setPose(fromEl, { ty: dy, s: z, op: 1, blur: 0, z: 4 });
         setPose(toEl, { ty: lerp(-700, 0, e), s: lerp(1.3, 1, e), op: clamp01(e / .4), blur: 6 * (1 - e), z: 2 });
-        gdisp.y = gy0 + dy * 0.5;
         if ((now - t0) < dur) { sceneRAF = requestAnimationFrame(step); return; }
         if (fromEl) setPose(fromEl, { op: 0, z: 0 });
         setPose(toEl, { tx: 0, ty: 0, s: 1, op: 1, blur: 0, z: 3 });
-        gdisp.y = gy0; gcam.s = gs0;
-        current = toEl; if (onArrive) onArrive();
+        gcam.s = gs0; current = toEl; if (onArrive) onArrive();
       })(performance.now());
       return;
     }
-
     const p0 = POSES(mode, 0);
     if (p0.grid != null) gcam.s = gs0 * p0.grid;
     if (p0.panX != null) gcam.x = gx0 + p0.panX * gs0 * 0.18;
     setPose(toEl, Object.assign({ op: 0 }, p0.to));
-
     const t0 = performance.now();
     (function step(now) {
       const e = easeInOut(clamp01((now - t0) / dur));
@@ -342,63 +122,121 @@
       if ((now - t0) < dur) { sceneRAF = requestAnimationFrame(step); return; }
       if (fromEl) setPose(fromEl, { op: 0, z: 0 });
       setPose(toEl, { tx: 0, ty: 0, s: 1, op: 1, blur: 0, z: 3 });
-      gcam.s = gs0 * (p0.grid != null ? p0.grid : 1);   // keep the kicked scale
+      gcam.s = gs0 * (p0.grid != null ? p0.grid : 1);
       current = toEl; if (onArrive) onArrive();
     })(performance.now());
   }
-
   function showInstant(el) {
     SCENES.forEach((s) => { if (s !== el) setPose(s, { op: 0, z: 0 }); });
     setPose(el, { tx: 0, ty: 0, s: 1, op: 1, blur: 0, z: 3 });
     current = el;
   }
-
   function enter(el, mode, dur, instant, onArrive) {
     if (instant) { showInstant(el); if (onArrive) onArrive(); return; }
     depthGo(el, mode, dur, onArrive);
   }
 
-  // ---- in-scene helpers ----
-  function lightCity(id) {
-    const card = $('#card-' + id);
-    if (!card) return;
-    card.querySelectorAll('.char').forEach((ch) => {
-      if (ch.classList.contains('learn')) ch.classList.add('lit'); else ch.classList.add('dim');
-    });
-    card.classList.add('reveal');
+  // ============================================================
+  // DYNAMIC CONTENT BUILDERS
+  // ============================================================
+  function buildCrowd() {   // a rain of real (₮) USDT coins falling down
+    const host = $('#sc-crowd'); host.innerHTML = '';
+    for (let k = 0; k < 22; k++) {
+      const u = document.createElement('div'); u.className = 'u usdt';
+      u.innerHTML = '<span class="tk">₮</span>';
+      u.style.left = rnd(20, 1000) + 'px';
+      u.style.setProperty('--dur', rnd(1.8, 2.8).toFixed(2) + 's');
+      u.dataset.delay = Math.floor(rnd(0, 2600));
+      host.appendChild(u);
+    }
   }
-  function noteCity(id) { const c = $('#card-' + id); if (c) c.classList.add('note-in'); }
-
-  // rotate the compass needle to point at a direction (0=N, -90=W/西, 90=E/东)
-  function setNeedle(deg, instant) {
-    const n = $('#cmp-needle'); if (!n) return;
-    if (instant) n.style.transition = 'none';
-    n.style.transform = 'rotate(' + deg + 'deg)';
-    if (instant) { void n.offsetWidth; n.style.transition = ''; }
+  function streamCrowd(instant) {
+    const us = $('#sc-crowd').querySelectorAll('.u');
+    if (instant) { us.forEach((u) => { u.classList.remove('go'); u.style.opacity = '0'; }); return; }
+    us.forEach((u) => { u.classList.remove('go'); u.style.opacity = ''; });
+    us.forEach((u) => setTimeout(() => u.classList.add('go'), +u.dataset.delay));
   }
-
-  // PAYOFF illustration — pin the 5 learned characters on the China map at their
-  // real city locations (a "map you can read"). No spoken-text echo.
-  const PAYOFF_PINS = [
-    [31.23, 121.47, '海'], [39.90, 116.40, '北'], [32.06, 118.80, '南'],
-    [36.07, 120.38, '岛'], [22.30, 114.17, '港'],
-  ];
-  function buildPayoffPins(instant) {
-    const host = $('#payoff-map'); if (!host || !cnMap) return;
-    host.querySelectorAll('.payoff-pin').forEach((p) => p.remove());
-    // the 5 cities cluster on the east coast — show clean small red dots
-    // (no glyphs, which would overlap); the meanings live in the hook + recap.
-    PAYOFF_PINS.forEach(([lat, lon], k) => {
-      const pos = cnMap.project(lat, lon);
-      const pin = document.createElement('div');
-      pin.className = 'payoff-pin';
-      pin.style.left = pos.x + 'px';
-      pin.style.top = pos.y + 'px';
-      host.appendChild(pin);
-      if (instant) pin.classList.add('in');
-      else setTimeout(() => pin.classList.add('in'), 450 + k * 380);
+  function buildTower() {
+    const host = $('#tw-tbills'); host.innerHTML = '';
+    ['T-BILLS', 'RESERVES', 'OTHER ASSETS'].forEach((l) => {
+      const d = document.createElement('div'); d.className = 'tb'; d.textContent = l; host.appendChild(d);
     });
   }
+  function buildThrone() {
+    const host = $('#th-stack'); host.innerHTML = '';
+    [170, 230, 280, 320, 350].forEach((w) => {
+      const d = document.createElement('div'); d.className = 'tb'; d.dataset.w = w; host.appendChild(d);
+    });
+  }
+  function crownThrone(instant) {
+    const tbs = $('#th-stack').querySelectorAll('.tb');
+    tbs.forEach((d, i) => {
+      const w = d.dataset.w + 'px';
+      if (instant) { d.style.transition = 'none'; d.style.width = w; }
+      else { d.style.transition = ''; setTimeout(() => { d.style.width = w; }, 250 + i * 130); }
+    });
+  }
+  function resetThrone() { $('#th-stack').querySelectorAll('.tb').forEach((d) => { d.style.transition = 'none'; d.style.width = '0'; }); }
+  function buildRoom() {
+    const team = $('#room-team'); team.innerHTML = '';
+    for (let k = 0; k < 100; k++) {
+      const d = document.createElement('i');
+      d.style.left = ((k % 20) * 14) + 'px';
+      d.style.bottom = (Math.floor(k / 20) * 22) + 'px';
+      team.appendChild(d);
+    }
+    const lbl = document.createElement('div'); lbl.className = 'lbl'; lbl.textContent = '~100 people'; team.appendChild(lbl);
+    const stack = $('#room-stack');
+    if (!stack.querySelector('.bar')) { const bar = document.createElement('div'); bar.className = 'bar'; stack.insertBefore(bar, stack.firstChild); }
+  }
+  function growRoom(instant) {
+    const bar = $('#room-stack .bar'); if (!bar) return;
+    if (instant) { bar.style.transition = 'none'; bar.style.height = '1200px'; }
+    else { bar.style.transition = 'height 1.5s cubic-bezier(.2,.8,.2,1)'; requestAnimationFrame(() => { bar.style.height = '1200px'; }); }
+  }
+  function resetRoom() { const bar = $('#room-stack .bar'); if (bar) { bar.style.transition = 'none'; bar.style.height = '0'; } }
+  function buildPunchNoise() {   // the "obvious trades", a tidy centred list
+    const host = $('#pu-noise'); host.innerHTML = '';
+    ['STOCKS', 'CRYPTO', 'ALTCOINS', 'NFTs', 'BONDS', 'GOLD'].forEach((txt) => {
+      const c = document.createElement('div'); c.className = 'chip'; c.textContent = txt; host.appendChild(c);
+    });
+  }
+
+  // ---- count-ups ----
+  function runYield(instant) {
+    const num = $('#yield-num'), fill = $('#yield-fill');
+    if (instant) { num.textContent = '4.8'; fill.style.width = '82%'; return; }
+    const t0 = performance.now(), dur = 1900;
+    (function step(now) {
+      const e = easeOut(clamp01((now - t0) / dur));
+      num.textContent = lerp(0, 4.8, e).toFixed(1);
+      fill.style.width = lerp(0, 82, e) + '%';
+      if (e < 1) requestAnimationFrame(step);
+    })(performance.now());
+  }
+  function runOdometer(instant) {
+    const el = $('#odo'); const TARGET = 104000000000;
+    if (instant) { el.textContent = '$' + TARGET.toLocaleString('en-US'); return; }
+    const t0 = performance.now(), dur = 3200;
+    (function step(now) {
+      const e = easeOut(clamp01((now - t0) / dur));
+      const v = Math.floor(lerp(0, TARGET, e) / 1e6) * 1e6;
+      el.textContent = '$' + v.toLocaleString('en-US');
+      if (e < 1) requestAnimationFrame(step);
+      else el.textContent = '$' + TARGET.toLocaleString('en-US');
+    })(performance.now());
+  }
+
+  // ---- outro ----
+  const outroLogo = $('#outro-logo');
+  if (outroLogo && window.makeStacktagsLogo) outroLogo.innerHTML = window.makeStacktagsLogo({ size: 560 });
+  function outroPlay() { const ec = $('#outro-ec'); if (ec) ec.classList.add('play'); }
+  function outroReset() { const ec = $('#outro-ec'); if (ec) ec.classList.remove('play'); }
+
+  buildCrowd(); buildTower(); buildThrone(); buildRoom(); buildPunchNoise();
+
+  // ---- per-scene class helpers ----
+  const cls = (sel, c) => { const el = $(sel); if (el) el.classList.add(c); };
 
   // ============================================================
   // SUBTITLES (mirror the narration, one short line at a time)
@@ -406,194 +244,195 @@
   function setSub(html, instant) {
     if (instant) { subsLine.innerHTML = html; subsLine.classList.add('in'); return; }
     subsLine.classList.remove('in');
-    setTimeout(() => { subsLine.innerHTML = html; subsLine.classList.add('in'); }, 140);
+    setTimeout(() => { subsLine.innerHTML = html; subsLine.classList.add('in'); }, 130);
   }
-  // Subtitles are PINYIN only (no hanzi — the cards carry the characters), each
-  // city named ONCE, and every clause complete (nothing clipped).
   const SUBS = [
-    [0.0,  'Shanghai means “on the <b>sea</b>.”'],
-    [2.50, 'Beijing — “<b>northern</b> capital.”'],
-    [4.78, 'Nanjing — “<b>southern</b> capital.”'],
-    [7.02, 'Qingdao — “green <b>island</b>.”'],
-    [8.84, 'And Hong Kong? “Fragrant <b>harbor</b>.”'],
-    [11.02,'Chinese city names aren’t random sounds —'],
-    [13.6, 'every one is a tiny <b>description</b>.'],
-    [15.5, 'A map you can actually <b>read</b>.'],
-    [17.06,'Learn five characters from five cities —'],
-    [19.7, 'you’ll never read a map the same way.'],
-    [21.88,'We start on the coast — Shànghǎi.'],
-    [23.94,'shàng means “on,” hǎi means “<b>sea</b>.”'],
-    [27.7, 'Literally “on the sea” — at the edge of the Pacific.'],
-    [32.92,'First character: hǎi, “<b>sea</b>.”'],
-    [35.54,'Now head north — Běijīng, the capital.'],
-    [38.66,'jīng means “capital,” běi means “<b>north</b>.”'],
-    [42.5, 'The “northern capital” — which begs a question…'],
-    [46.86,'If there’s a northern capital, there’s a southern one — Nánjīng.'],
-    [49.76,'nán means “<b>south</b>,” and jīng is the same “capital.”'],
-    [56.66,'Two cities, one character apart.'],
-    [59.10,'North and south — let’s finish the compass.'],
-    [61.66,'Xī’ān sits west — xī means “<b>west</b>.”'],
-    [63.66,'Guǎngdōng — guǎng “wide,” dōng means “<b>east</b>.”'],
-    [71.62,'North, south, west, east — straight off the map.'],
-    [74.96,'Now back to the coast — Qingdao.'],
-    [77.26,'qīng means “green,” dǎo means “<b>island</b>.”'],
-    [82.0, 'A century ago — a German colony,'],
-    [85.0, 'home of Tsingtao, China’s most famous beer.'],
-    [88.54,'Down the coast — to the last one.'],
-    [91.08,'You know it as Hong Kong —'],
-    [94.0, 'its Chinese name, Xiānggǎng, is no accident:'],
-    [97.0, 'xiāng means “fragrant,” gǎng means “<b>harbor</b>.”'],
-    [100.5,'The “fragrant harbor” — named for the scented wood.'],
-    [104.58,'Five cities: sea, north, south, island, harbor —'],
-    [109.16,'plus <b>west</b> and <b>east</b>, for free.'],
-    [113.04,'The names you half-know are already teaching you the language.'],
-    [117.52,'A map isn’t just a map — it’s a <b>vocabulary list</b>.'],
-    [119.28,'Wanna actually start learning Chinese?'],
-    [121.54,'Discover thousands of free exercises and more learning content'],
-    [124.10,'on <b>stacktags.io</b>.'],
+    [0.0,  'There’s a company that makes more money <b>per employee</b>'],
+    [2.0,  'than almost anyone on Earth.'],
+    [3.76, 'Around a hundred staff. Billions in annual profit.'],
+    [6.5,  'And the entire business model is this:'],
+    [8.86, 'you give them a dollar, they hand you a <b>token</b> —'],
+    [11.3, 'and they <b>keep the dollar</b>.'],
+    [12.6, 'That’s Tether. And it’s completely <b>legal</b>.'],
+    [14.56,'Here’s why it might be the most <b>genius</b> business model ever invented.'],
+    [17.88,'Tether runs <b>USDT</b> — a stablecoin.'],
+    [20.54,'One USDT is always meant to equal <b>one US dollar</b>.'],
+    [23.94,'Crypto traders love it: it’s a dollar that lives on the <b>blockchain</b>,'],
+    [27.38,'so they can jump in and out of trades instantly.'],
+    [29.72,'To get one, you hand Tether a real dollar,'],
+    [31.5, 'and they <b>mint</b> you a token.'],
+    [33.34,'Simple. But the magic isn’t the token —'],
+    [35.2, 'it’s what happens to <b>your dollar</b>.'],
+    [37.4, 'Because Tether doesn’t just let your dollar sit in a drawer.'],
+    [40.02,'It takes all those billions and parks them mostly in <b>US Treasury bills</b> —'],
+    [43.84,'basically the safest loan on the planet —'],
+    [46.0, 'earning around <b>4 to 5%</b> a year.'],
+    [48.46,'And how much of that interest do they pass back to you, the token holder?'],
+    [52.12,'<b>Zero.</b> You’re holding a dollar that pays you nothing —'],
+    [54.7, 'and Tether keeps <b>every cent</b> of the yield.'],
+    [56.3, 'Now multiply it.'],
+    [57.96,'There’s well over <b>a hundred billion dollars</b> of USDT out there —'],
+    [61.24,'which means well over a hundred billion of other people’s money,'],
+    [63.6, 'working for Tether, <b>for free</b>.'],
+    [65.76,'And normally, getting capital is expensive: a bank pays interest to its depositors,'],
+    [69.94,'a company pays interest on its bonds. Everyone pays for money.'],
+    [73.72,'Tether’s cost? <b>Nothing.</b>'],
+    [74.62,'It’s an interest-free loan from millions of users —'],
+    [77.62,'and it keeps <b>100%</b> of the return.'],
+    [79.9, 'In 2024, the company reported around <b>13 billion dollars</b> in profit,'],
+    [83.86,'with a team you could fit in a <b>single room</b>.'],
+    [86.42,'So what’s the catch? <b>Trust.</b>'],
+    [88.12,'The whole thing holds up only as long as people believe'],
+    [91.7, 'every token is really backed by a real dollar —'],
+    [93.6, 'and don’t all rush to cash out at once.'],
+    [95.88,'Tether has been <b>fined</b> before for overstating'],
+    [97.7, 'what was actually in its reserves,'],
+    [99.7, 'and it publishes <b>attestations</b>, not full independent audits.'],
+    [103.22,'The model is brilliant. But it runs entirely on <b>confidence</b>.'],
+    [106.78,'Still — it cracked something most people never even see.'],
+    [109.86,'The most profitable trade in finance wasn’t'],
+    [111.6,'picking the right stock, or the right coin.'],
+    [113.06,'It was realizing that if you get to <b>issue the dollar</b>…'],
+    [116.4,'you get to <b>keep the interest</b>.'],
+    [118.14,'Discover millions of ideas, exercises'],
+    [120.22,'and more learning content on <b>stacktags.io</b>.'],
   ];
 
   // ============================================================
   // CUES — scene actions on the narration timeline
   // ============================================================
   const CUES = [
-    // ---- HOOK (Beijing drops from top, Nanjing rises from below) ----
-    [0.0,  (i) => enter($('#sc-hook0'), 'fade', 650, i)],
-    [2.50, (i) => enter($('#sc-hook1'), 'drop', 700, i)],
-    [4.78, (i) => enter($('#sc-hook2'), 'rise', 700, i)],
-    [7.02, (i) => enter($('#sc-hook3'), 'pan-right', 700, i)],
-    [8.84, (i) => enter($('#sc-hook4'), 'zoom-out', 700, i)],
-
-    // ---- PAYOFF — the China map with the 5 characters pinned (a readable map) ----
-    [11.02, (i) => enter($('#sc-payoff'), 'zoom-out', 1150, i, () => {
-      if (cnMap) { i ? cnMap.showInstant() : cnMap.drawIn(1300); }
-      buildPayoffPins(i);
+    // ---- 1 · HEADLINES (cascade in quickly, one right after another) ----
+    [0.0, (i) => enter($('#sc-headlines'), 'fade', 650, i, () => {
+      if (i) { $$('#sc-headlines .headline').forEach((h) => h.classList.add('in')); return; }
+      setTimeout(() => cls('#sc-headlines .h1', 'in'), 200);
+      setTimeout(() => cls('#sc-headlines .h2', 'in'), 950);
+      setTimeout(() => cls('#sc-headlines .h3', 'in'), 1700);
     })],
 
-    // ---- ENUMERATION (5 cities list → fold into the Stacktags stack) ----
-    [17.06, (i) => {
-      enter($('#sc-enum'), 'lift', 1000, i);
-      if (!enumEl) return;
-      if (i) { enumEl.revealAll({ stagger: 0 }); enumEl.collapseToLogo({ delay: 0 }); return; }
-      enumEl.reset();
-      enumEl.revealAll({ stagger: 260 });
-      setTimeout(() => enumEl.collapseToLogo({ delay: 0 }), 2400);
-      setTimeout(() => { if (globeCtrl) globeCtrl.resume(); }, 3800);   // wake globe ~20.8s, before its dive
-    }],
-
-    // ---- GLOBE → SHANGHAI photo handoff ----
-    [21.88, (i) => enter($('#sc-globe'), 'zoom-out', 1100, i, () => {
-      if (i) { globeHost.classList.add('gone'); globePhoto.classList.add('in'); return; }
-      setTimeout(() => {
-        if (!globeCtrl) { globeHost.classList.add('gone'); globePhoto.classList.add('in'); return; }
-        globeCtrl.resume();
-        globeCtrl.reveal();
-        globeCtrl.zoomToMarker(
-          { lat: 31.23, lon: 121.47, cam: 1.02, duration: 1500 },
-          { onArrive: () => {
-              globeHost.classList.add('gone'); globePhoto.classList.add('in');
-              setTimeout(() => globeCtrl && globeCtrl.dispose(), 350);
-          } }
-        );
-      }, 220);
+    // ---- 2 · MECHANIC ($1 → token → vault) ----
+    [8.86, (i) => enter($('#sc-mechanic'), 'zoom-out', 1100, i, () => {
+      const m = $('#mech');
+      if (i) { m.classList.add('has-bill', 'has-token', 'in-vault'); return; }
+      setTimeout(() => m.classList.add('has-bill'), 350);
     })],
+    [9.5,  (i) => { if (!i) cls('#mech', 'has-bill'); }],
+    [10.52,(i) => { if (!i) cls('#mech', 'has-token'); }],
+    // dollar flies right into the vault; token flies left to the trader
+    [11.78,(i) => { if (!i) { $('#mech').classList.add('in-vault', 'clink'); } }],
 
-    // ---- SHANGHAI ----
-    [24.0, (i) => enter($('#sc-shanghai'), 'zoom-in', 1100, i, () => { if (i) lightCity('shanghai'); })],
-    [26.0, () => lightCity('shanghai')],
-
-    // ---- BEIJING (drops in from the TOP) ----
-    [35.54, (i) => enter($('#sc-beijing'), 'drop', 1050, i, () => { if (i) lightCity('beijing'); })],
-    [41.0,  () => lightCity('beijing')],
-
-    // ---- NANJING (rises in from BELOW) ----
-    [46.86, (i) => enter($('#sc-nanjing'), 'rise', 1050, i, () => { if (i) { lightCity('nanjing'); noteCity('nanjing'); } })],
-    [51.0,  () => lightCity('nanjing')],
-    [53.0,  () => noteCity('nanjing')],
-
-    // ---- COMPASS (needle points at each direction as it's named) ----
-    [59.10, (i) => enter($('#sc-compass'), 'zoom-out', 1100, i, () => {
-      setNeedle(0, i);
-      if (i) {
-        $('#cmp-w').classList.remove('pending'); $('#cmp-w').classList.add('lit');
-        $('#cmp-e').classList.remove('pending'); $('#cmp-e').classList.add('lit');
-        setNeedle(90, true);
-      }
+    // ---- 3 · WHAT IT IS (peg + trader + swap) ----
+    [17.88,(i) => enter($('#sc-usdt'), 'lift', 1000, i, () => {
+      const w = $('#usdtwrap');
+      if (i) { w.classList.add('peg-in', 'peg-locked', 'trader-in'); return; }
+      setTimeout(() => w.classList.add('peg-in'), 250);
     })],
-    // Xī'ān (west) → needle swings LEFT to 西 — right as "Xī'ān" is named (61.94)
-    [62.0, () => { const w = $('#cmp-w'); w.classList.remove('pending'); w.classList.add('lit', 'pop'); setNeedle(-90); }],
-    // Guǎngdōng (east) → needle swings RIGHT to 东 — right as "Guǎngdōng" is named (65.50)
-    [65.5, () => { const e2 = $('#cmp-e'); e2.classList.remove('pending'); e2.classList.add('lit', 'pop'); setNeedle(90); }],
+    [20.54,(i) => { if (!i) cls('#usdtwrap', 'peg-locked'); }],
+    [23.94,(i) => { if (!i) cls('#usdtwrap', 'trader-in'); }],
+    // swap: the bill pulses up/down, then the token pulses up/down
+    [29.72,(i) => { if (!i) { const w = $('#usdtwrap'); w.classList.add('swap-bill'); setTimeout(() => w.classList.remove('swap-bill'), 700); } }],
+    [31.5, (i) => { if (!i) { const w = $('#usdtwrap'); w.classList.add('swap-token'); setTimeout(() => w.classList.remove('swap-token'), 700); } }],
 
-    // ---- QINGDAO (real Tsingtao bottle flies in from the left) ----
-    [74.96, (i) => enter($('#sc-qingdao'), 'pan-right', 1050, i, () => { if (i) { lightCity('qingdao'); $('#card-qingdao').classList.add('bottle-in'); } })],
-    [80.0,  () => lightCity('qingdao')],
-    [84.5,  () => $('#card-qingdao').classList.add('bottle-in')],   // Tsingtao bottle flies in (when "Tsingtao" is said)
-    [86.5,  (i) => { if (!i) mountGlobe2(); }],   // pre-warm the 2nd globe
-
-    // ---- QINGDAO → HONG KONG (default zoom-out → dive-in element) ----
-    [88.54, (i) => {
-      enter($('#sc-globe2'), 'fade', 700, i);
-      const burst = () => { globeHost2.classList.add('gone'); gv2PhotoB.classList.add('in'); };
-      if (i) { gv2PhotoA.classList.add('out'); burst(); return; }
-      // Qingdao photo shrinks back into its dot, then one continuous out→across→dive-in arc to Hong Kong
-      setTimeout(() => gv2PhotoA.classList.add('out'), 180);
-      setTimeout(() => {
-        if (!globe2Ctrl) { burst(); return; }
-        globe2Ctrl.outIn(
-          { total: 2500 },
-          { onArrive: () => { burst(); setTimeout(() => globe2Ctrl && globe2Ctrl.stop(), 350); } }
-        );
-      }, 1000);
-    }],
-
-    // ---- HONG KONG card ----
-    [93.0, (i) => enter($('#sc-hongkong'), 'zoom-in', 1050, i, () => { if (i) lightCity('hongkong'); })],
-    [100.0,  () => lightCity('hongkong')],
-
-    // ---- RECAP (text-popup word cloud) ----
-    [104.58, (i) => enter($('#sc-recap'), 'zoom-out', 1150, i, () => {
-      if (!recapPop) return;
-      if (i) { recapPop.showAll(); return; }
-      recapPop.reset(); setRecapHome();
-      const times = [700, 1200, 1700, 2200, 2700, 4580, 5200];   // sea,north,south,island,harbor,west,east
-      times.forEach((ms, idx) => setTimeout(() => recapPop.pop(idx), ms));
+    // ---- 4 · THE TRICK (vault → T-bills → yield) ----
+    [37.4, (i) => enter($('#sc-trick'), 'zoom-out', 1100, i, () => {
+      const t = $('#trick');
+      if (i) { t.classList.add('flow', 'meter'); runYield(true); return; }
+      setTimeout(() => t.classList.add('flow'), 600);
     })],
+    [43.84,(i) => { if (!i) { cls('#trick', 'meter'); runYield(false); } }],
 
-    // ---- VOCAB: the popped words slide to centre, stacking into a list ----
-    [117.52, (i) => convergeRecap(i)],
+    // ---- 5 · ZERO (empty palm → 0% stamp → founder pockets) ----
+    [48.46,(i) => enter($('#sc-zero'), 'drop', 1050, i, () => {
+      const z = $('#zero');
+      if (i) { z.classList.add('holder-in', 'stamp', 'founder-in', 'pocket'); return; }
+      setTimeout(() => z.classList.add('holder-in'), 300);
+    })],
+    [52.12,(i) => { if (!i) cls('#zero', 'stamp'); }],
+    [54.7, (i) => { if (!i) { const z = $('#zero'); z.classList.add('founder-in'); setTimeout(() => z.classList.add('pocket'), 500); } }],
 
-    // ---- OUTRO endcard straight after the list (lands on "…on stacktags.io") ----
-    [119.5, (i) => { enter($('#sc-follow'), 'lift', 1100, i); outroAssemble(); }],
+    // ---- 6 · SCALE ($100B odometer + crowd) ----
+    [56.3, (i) => enter($('#sc-scale'), 'zoom-out', 1100, i, () => {
+      const s = $('#scale');
+      if (i) { s.classList.add('sub-in'); runOdometer(true); streamCrowd(true); return; }
+    })],
+    [57.96,(i) => { if (!i) { cls('#scale', 'sub-in'); runOdometer(false); streamCrowd(false); } }],
+
+    // ---- 7 · COST OF CAPITAL ----
+    [65.76,(i) => enter($('#sc-cost'), 'rise', 1050, i, () => {
+      if (i) { $$('.cost-row').forEach((r) => r.classList.add('in')); return; }
+      setTimeout(() => cls('.r-bank', 'in'), 250);
+    })],
+    [69.94,(i) => { if (!i) cls('.r-co', 'in'); }],
+    [73.72,(i) => { if (!i) cls('.r-tether', 'in'); }],
+
+    // ---- 8 · ROOM GAG ($13B, tiny team) ----
+    [79.9, (i) => enter($('#sc-room'), 'zoom-out', 1100, i, () => {
+      const r = $('#room');
+      if (i) { r.classList.add('bar-in', 'team-in'); growRoom(true); return; }
+      r.classList.add('bar-in'); growRoom(false);
+    })],
+    [83.86,(i) => { if (!i) cls('#room', 'team-in'); }],
+
+    // ---- 9 · THE CATCH (trust tower) ----
+    [86.42,(i) => enter($('#sc-catch'), 'lift', 1100, i, () => {
+      const c = $('#catch');
+      if (i) { c.classList.add('build'); return; }
+      setTimeout(() => c.classList.add('build'), 1400);
+    })],
+    [103.22,(i) => { if (!i) { const c = $('#catch'); c.classList.add('wobble'); setTimeout(() => c.classList.remove('wobble'), 1600); } }],
+
+    // ---- 10 · AUDIT (magnifier + fine headline) ----
+    [95.88,(i) => enter($('#sc-audit'), 'zoom-in', 1050, i, () => {
+      const a = $('#audit');
+      if (i) { a.classList.add('report-in', 'scan', 'stamp', 'news'); return; }
+      setTimeout(() => a.classList.add('report-in'), 300);
+      setTimeout(() => a.classList.add('scan'), 900);
+    })],
+    [99.7, (i) => { if (!i) { cls('#audit', 'stamp'); cls('#audit', 'news'); } }],
+
+    // ---- 11 · PUNCHLINE (obvious trades struck through → slide up → coin rises) ----
+    [106.78,(i) => enter($('#sc-punch'), 'zoom-out', 1100, i, () => {
+      const p = $('#punch'), chips = $$('#pu-noise .chip');
+      if (i) { chips.forEach((c) => c.classList.add('show')); p.classList.add('strike', 'lift', 'crown'); crownThrone(true); return; }
+      chips.forEach((c, idx) => setTimeout(() => c.classList.add('show'), 250 + idx * 200));
+    })],
+    [110.5,(i) => { if (!i) cls('#punch', 'strike'); }],
+    [113.5,(i) => { if (!i) { cls('#punch', 'lift'); crownThrone(false); } }],
+    [114.3,(i) => { if (!i) cls('#punch', 'crown'); }],
+
+    // ---- 12 · OUTRO ----
+    [118.14,(i) => { enter($('#sc-outro'), 'lift', 1100, i, () => outroPlay()); }],
   ];
 
   // ============================================================
-  // SFX — declared sound bed (the default elements' swoosh/pop, mapped onto
-  // THIS video's real beats). Single source of truth: the render pipeline reads
-  // window.SFX and overlays each sound on the narration with ffmpeg (Playwright
-  // headless can't record Web Audio), and a real browser plays them live below.
-  // [t = narration seconds, sound ∈ {swoosh,pop}, vol 0..1]
+  // SFX — swoosh on grid-moving transitions / default-element animates;
+  // pop on objects appearing; ticking on count-ups. [t, sound, vol]
   // ============================================================
   const SFX = [
-    // hook — four quick depth cuts
-    [2.50, 'swoosh', 0.40], [4.78, 'swoosh', 0.40], [7.02, 'swoosh', 0.40], [8.84, 'swoosh', 0.40],
-    [11.02, 'swoosh', 0.50],                                       // payoff map zoom-out
-    [17.06, 'swoosh', 0.50], [19.50, 'swoosh', 0.40],              // enumeration lift + fold into the stack
-    [21.88, 'swoosh', 0.50], [23.60, 'swoosh', 0.48],              // globe zoom-out + Shanghai photo burst
-    [35.54, 'swoosh', 0.50],                                       // Beijing drops in
-    [46.86, 'swoosh', 0.50],                                       // Nanjing rises in
-    [59.10, 'swoosh', 0.50], [62.00, 'swoosh', 0.34], [65.50, 'swoosh', 0.34],  // compass + the two needle swings
-    [74.96, 'swoosh', 0.50], [84.50, 'swoosh', 0.50],              // Qingdao pan + Tsingtao bottle fly-in
-    [89.70, 'swoosh', 0.48], [92.10, 'swoosh', 0.50],              // Qingdao→Hong Kong globe pull-back + dive burst
-    [104.58, 'swoosh', 0.50],                                      // recap scene
-    // the 7 recap words popping in (sea, north, south, island, harbor, west, east)
-    [106.43, 'pop', 0.55], [106.93, 'pop', 0.55], [107.43, 'pop', 0.55], [107.93, 'pop', 0.55],
-    [108.43, 'pop', 0.55], [110.31, 'pop', 0.55], [110.93, 'pop', 0.55],
-    [117.52, 'swoosh', 0.45],                                      // words converge into the vocabulary list
-    [119.62, 'swoosh', 0.60],                                      // outro endcard assembles
+    [8.86, 'swoosh', 0.5],
+    [10.52, 'pop', 0.55],
+    [17.88, 'swoosh', 0.5],
+    [20.7, 'pop', 0.5],
+    [29.72, 'pop', 0.45],
+    [31.5, 'pop', 0.45],
+    [37.4, 'swoosh', 0.5],
+    [43.9, 'ticking', 0.5],
+    [48.46, 'swoosh', 0.48],
+    [52.12, 'pop', 0.6],
+    [56.3, 'swoosh', 0.5],
+    [57.96, 'ticking', 0.55],
+    [65.76, 'swoosh', 0.5],
+    [79.9, 'swoosh', 0.5],
+    [81.9, 'ticking', 0.45],
+    [86.42, 'swoosh', 0.5],
+    [95.88, 'swoosh', 0.48],
+    [99.7, 'pop', 0.45],
+    [106.78, 'swoosh', 0.5],
+    [114.3, 'pop', 0.55],
+    [118.14, 'swoosh', 0.6],
   ];
   window.SFX = SFX;
-  const SND = { swoosh: 'assets/sound/swoosh.ogg', pop: 'assets/sound/pop.wav' };
+  const SND = { swoosh: 'assets/sound/swoosh.ogg', pop: 'assets/sound/pop.wav', ticking: 'assets/sound/ticking.wav' };
   function playSfx(entry) {
     try { const a = new Audio(SND[entry[1]]); a.volume = entry[2] != null ? entry[2] : 0.6; a.play().catch(() => {}); } catch (e) {}
   }
@@ -606,28 +445,31 @@
   const firedSfx = new Set();
   let lastT = 0;
 
+  const STATE = {
+    '#mech': ['has-bill', 'has-token', 'in-vault', 'clink'],
+    '#usdtwrap': ['peg-in', 'peg-locked', 'trader-in', 'swap-bill', 'swap-token'],
+    '#trick': ['flow', 'meter'],
+    '#zero': ['holder-in', 'stamp', 'founder-in', 'pocket'],
+    '#scale': ['sub-in'],
+    '#room': ['bar-in', 'team-in'],
+    '#catch': ['build', 'wobble'],
+    '#audit': ['report-in', 'scan', 'stamp', 'news'],
+    '#punch': ['strike', 'lift', 'crown'],
+  };
+
   function hardReset() {
     firedScene.clear(); firedSub.clear(); firedSfx.clear();
     SCENES.forEach((el) => setPose(el, { tx: 0, ty: 0, s: 1, op: 0, blur: 0, z: 0 }));
     current = null;
     gcam.s = 1; gcam.x = 0; gcam.y = 0; gdisp.s = 1; gdisp.x = 0; gdisp.y = 0;
-    if (enumEl) enumEl.reset();
-    globeHost.classList.remove('gone'); globePhoto.classList.remove('in');
-    globeHost2.classList.remove('gone');
-    if (gv2PhotoA) gv2PhotoA.classList.remove('out');
-    if (gv2PhotoB) gv2PhotoB.classList.remove('in');
-    document.querySelectorAll('.char').forEach((c) => c.classList.remove('lit', 'dim'));
-    document.querySelectorAll('.card').forEach((c) => c.classList.remove('reveal', 'note-in', 'bottle-in'));
-    const w = $('#cmp-w'), e2 = $('#cmp-e');
-    if (w) { w.classList.add('pending'); w.classList.remove('lit', 'pop'); }
-    if (e2) { e2.classList.add('pending'); e2.classList.remove('lit', 'pop'); }
-    setNeedle(0, true);
-    if ($('#cta-wrap')) $('#cta-wrap').classList.remove('btn-in', 'tap');
+    Object.keys(STATE).forEach((sel) => { const el = $(sel); if (el) STATE[sel].forEach((c) => el.classList.remove(c)); });
+    $$('#sc-headlines .headline').forEach((h) => h.classList.remove('in'));
+    $$('.cost-row').forEach((r) => r.classList.remove('in'));
+    $$('#pu-noise .chip').forEach((c) => c.classList.remove('show'));
+    $('#odo').textContent = '$0';
+    $('#yield-num').textContent = '0'; $('#yield-fill').style.width = '0';
+    resetThrone(); resetRoom(); streamCrowd(true);
     outroReset();
-    if (recapPop) recapPop.reset();
-    setRecapHome();
-    if (cnMap) { cnMap.line.style.opacity = '0'; cnMap.fill.style.opacity = '0'; }
-    const pm = $('#payoff-map'); if (pm) pm.querySelectorAll('.payoff-pin').forEach((p) => p.remove());
     subsLine.classList.remove('in');
   }
 
@@ -635,29 +477,23 @@
     hardReset();
     SUBS.forEach((s, k) => { if (s[0] <= t) { firedSub.add(k); setSub(s[1], true); } });
     CUES.forEach((c, k) => { if (c[0] <= t) { firedScene.add(k); c[1](true); } });
-    SFX.forEach((s, k) => { if (s[0] <= t) firedSfx.add(k); });   // mark past sounds as played (don't replay on seek)
+    SFX.forEach((s, k) => { if (s[0] <= t) firedSfx.add(k); });
   }
 
   function tick() {
     requestAnimationFrame(tick);
     const t = vo.currentTime || 0;
-
-    // grid follow + render (always moving = dynamic grid)
     gdisp.s += (gcam.s - gdisp.s) * 0.07;
     gdisp.x += (gcam.x - gdisp.x) * 0.07;
     gdisp.y += (gcam.y - gdisp.y) * 0.07;
     applyGrid();
-
     if (!vo.paused) {
-      // backward seek → re-render end-states instantly
       if (t < lastT - 0.3) applyUpTo(t);
       for (let k = 0; k < SUBS.length; k++) if (!firedSub.has(k) && t >= SUBS[k][0]) { firedSub.add(k); setSub(SUBS[k][1], false); }
       for (let k = 0; k < CUES.length; k++) if (!firedScene.has(k) && t >= CUES[k][0]) { firedScene.add(k); CUES[k][1](false); }
       for (let k = 0; k < SFX.length; k++) if (!firedSfx.has(k) && t >= SFX[k][0]) { firedSfx.add(k); playSfx(SFX[k]); }
     }
     lastT = t;
-
-    // HUD
     const seek = $('#seek'), tcode = $('#tcode');
     if (seek && document.activeElement !== seek) seek.value = t;
     if (tcode) tcode.textContent = t.toFixed(1);
@@ -667,16 +503,10 @@
   // ============================================================
   // PLAYBACK CONTROL
   // ============================================================
-  function play() {
-    hardReset();
-    vo.currentTime = 0;
-    lastT = 0;
-    vo.play().catch(() => {});
-  }
+  function play() { hardReset(); vo.currentTime = 0; lastT = 0; vo.play().catch(() => {}); }
   window.__play = play;
   window.__seek = (t) => { vo.pause(); vo.currentTime = t; lastT = t; applyUpTo(t); };
 
-  // HUD wiring
   $('#btn-play').addEventListener('click', () => { if (vo.paused) play(); else vo.pause(); });
   $('#seek').addEventListener('input', (e) => { window.__seek(parseFloat(e.target.value)); });
   addEventListener('keydown', (e) => {
@@ -684,6 +514,5 @@
     if (e.key.toLowerCase() === 'c') document.body.classList.toggle('clean');
   });
 
-  // start at a clean reset
   hardReset();
 })();

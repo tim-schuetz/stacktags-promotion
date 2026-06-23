@@ -1,0 +1,124 @@
+VIDEO SCRIPT
+Title options (pick one): China rewrote its entire writing by government order
+Topic: Learn Chinese
+Target length: ~95 seconds (fits the 30s–3min window)
+Language of narration: English
+Format: Spoken voiceover narration + [bracketed] visual cues. The brackets are NOT spoken —
+they are stripped before TTS; the spoken text is exactly the un-bracketed words.
+
+==================================================================
+THE CORE IDEA
+==================================================================
+To boost literacy, the PRC simplified Chinese characters (1950s–60s): fewer strokes,
+some characters merged. "Simplified Chinese" stuck (mainland), while Taiwan/Hong Kong
+kept Traditional. A radical SECOND round (二简字, 1977) went too far, was confusing
+and unpopular, and was officially scrapped in 1986 — a rare reversal of a language
+reform.
+Punchline: you can redesign a language top-down — but only up to the point where the
+people writing it push back.
+
+NOTE (honesty): keep neutral, non-political. Frame as literacy-driven simplification
++ the failed/reverted 1977 reform; note merging blurred some once-distinct characters.
+
+VISUAL SPINE (anti-slop): ONE recurring hero "workshop" — a single 田字格 practice cell
+centre-stage carries the whole video. Real characters are written into it from REAL
+makemeahanzi stroke data (stroke-by-stroke, 100% authentic) and are reshaped BY DECREE:
+they shed strokes (round one works), then shed too many (round two breaks), then get
+reverted. Same cell, same layout throughout = consistency, not a new scene per sentence.
+Visual rhyme: a faint TOP-DOWN hand/seal = "by government order"; at the very end the
+people PUSH BACK FROM BELOW. On-screen text only when it ADDS info — the only "words" are
+the Chinese characters themselves (the viewer actually learns: 愛→爱 lost its heart, 彩→采
+collided) + tiny year stamps (1956 / 1977 / 1986). Grey verbatim subtitles, key word turquoise.
+White grid bg, white + turquoise only; red only as a map pin. Swoosh SFX only when the grid
+moves / a default element animates; pop on a character/word; ticking on the stroke counter.
+Verified facts baked in: 二简字 promulgated 1977-12-20, rescinded 1986-06-24 by the State
+Council; real second-round forms 蛋→旦, 餐→歺, and the clarity-killing merger 彩→采 (color → pick).
+
+==================================================================
+SCRIPT
+==================================================================
+
+--- HOOK (0:00–0:14) — the payoff up front ---
+
+[HERO 田字格 cell, centred on the white grid. A genuinely intricate traditional character
+龍 (lóng, "dragon", 16 strokes) writes itself ON, stroke by stroke (no figure — pure glyph).
+Bottom subtitle only.]
+In the 20th century, China did something almost no country ever does: it rewrote its
+own writing — by government order.
+[On "by government order": a faint TOP-DOWN hand/seal presses in from above; the dragon's
+strokes crumble and fall away, snapping to the simplified 龙 (5 strokes). Grid jolts → swoosh.
+A tiny turquoise "1956" stamp ghosts in by the cell.]
+The first time, it stuck.
+[龙 settles solid; a small turquoise tick.]
+The second time, it was such a disaster they had to cancel it.
+[A skeletal, over-simplified ghost glyph flickers into the cell and is instantly struck
+through and crumbles to nothing.]
+Here's the story of how you redesign a language — and how it can backfire.
+[Slow camera push-in: grid converges (zoom-in), cell recedes a touch. Swoosh.]
+
+--- WHY (≈0:14–0:38) ---
+
+Back in the mid-1900s, most people in China couldn't read.
+[Faux-3D depth move (grid moves → swoosh). A dense, intimidating WALL of traditional
+characters fills the frame; one small cartoon figure looks up at it with a "?" / "!%$#"
+bubble — the complexity is the barrier. (figure cut-out, no dashed outline)]
+The characters were beautiful — but complex, often with dozens of strokes each.
+[Camera dives into ONE busy character in the cell (鬱, yù) and it draws on stroke by stroke
+while a small stroke-counter ticks UP to its true count (~29) — ticking SFX.]
+So to lift literacy, the government decided to simplify the writing itself — officially
+cutting strokes and streamlining thousands of characters.
+[HERO example 愛 → 爱 in the cell: strokes drop away and the 心 ("heart") component is
+highlighted turquoise as it is removed — love literally loses its heart. Then a quick cascade
+龜→龟, 馬→马, 門→门 pops past to show "thousands". Pops on each.]
+
+--- ROUND ONE: IT WORKED (≈0:38–1:00) ---
+
+That first simplification, through the 1950s and 60s, largely worked. Characters got
+faster to write,
+[Side-by-side in the cell: the many-stroke traditional form draws SLOWLY; beside it the
+few-stroke simplified form is dashed off FAST by a racing pen. Speed contrast is the point.]
+literacy climbed —
+[A restrained, grounded line rises across 1950→1980 with real-ish % labels (counter ticks,
+faint). Kept minimal and data-grounded — NOT a generic opener chart. (drop in QA if it reads slop.)]
+and "Simplified Chinese" is still what the mainland uses today, while Taiwan and Hong
+Kong kept the original, traditional forms.
+[Reusable china-map.js, true-scale: the MAINLAND fills turquoise showing 国 (simplified);
+small red pins on Taiwan + Hong Kong flip to 國 (traditional) beside them. Real geography.]
+So far, a rare success in engineering a language. Then they pushed their luck.
+[Ominous beat: map recedes, the cell re-centres, the top-down hand returns from above. Swoosh.]
+
+--- ROUND TWO: TOO FAR (≈1:00–1:25) ---
+
+In 1977 came a second round, simplifying characters even further.
+[The cell character is simplified AGAIN to a REAL 二简字 form (蛋→旦, then 餐→歺) — now skeletal,
+stripped to a stub. Tiny turquoise "1977" stamp.]
+But this one went too far. The new forms were confusing, stripped of so much that they
+lost their clarity —
+[Clarity collapse made literal: show two DIFFERENT words — 彩 (cǎi, "colour") and the existing
+采 (cǎi, "pick") — then the second round deletes the 彡 from 彩, and now BOTH are 采. Two
+meanings, one identical shape. A second small figure looks between them, baffled ("?" bubble).]
+and people hated them.
+[Figures shove the skeletal glyph away / cross it out.]
+It was so unpopular that in 1986, the government officially scrapped the entire second
+round.
+[The top-down hand returns but REVERSES: a turquoise ✗ strikes the 二简字 forms and they snap
+back to the round-one forms (旦→蛋, 歺→餐). "scrapped" = crumple/delete. Tiny "1986" stamp. Swoosh.]
+A rare, public admission that a language reform had simply failed.
+[The cell holds the restored, readable simplified form, steady.]
+
+--- PUNCHLINE / OUTRO (≈1:25–1:38) ---
+
+Most languages drift and evolve slowly, on their own.
+[A character in the cell morphs gently, organically along a slow drifting timeline — no hand,
+no jolt. Calm.]
+China engineered its writing by decree — proving you really can redesign a language
+from the top down...
+[The top-down hand/seal returns and firmly reshapes the glyph from above (clean, deliberate).]
+but only up to the point where the people writing it push back.
+[VISUAL RHYME payoff: many small hands push UP from below against an over-simplified glyph;
+it springs back to the readable form (springy settle). Top-down vs bottom-up resolved.]
+
+Wanna actually start learning Chinese?
+Discover thousands of free exercises and more learning content on stacktags.io.
+[Default OUTRO element: stacked-cube logo between turquoise chevrons, "stacktags" wordmark,
+grey "stacktags.io" line. Assemble swoosh.]

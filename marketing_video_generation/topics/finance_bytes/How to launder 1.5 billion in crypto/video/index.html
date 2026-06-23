@@ -31,40 +31,26 @@
       <!-- ===== HOOK 1 — recreated Bybit-hack news headlines ===== -->
       <div class="scene" id="sc-news"></div>
 
-      <!-- ===== HOOK 2 — public ledger: stolen wallet, glowing $1.5B ===== -->
-      <div class="scene" id="sc-ledger-hook"></div>
-
-      <!-- ===== MYTH 1 — "ANONYMOUS" stamped FALSE -> TRACEABLE ===== -->
-      <div class="scene" id="sc-anon">
-        <div class="anon-wrap">
-          <div class="anon-word" id="anon-word">ANONYMOUS</div>
-          <div class="anon-stamp" id="anon-stamp">FALSE</div>
-        </div>
-      </div>
-
-      <!-- ===== MYTH 2 — the public ledger scrolling forever ===== -->
-      <div class="scene" id="sc-ledger-scroll"></div>
-
-      <!-- ===== MYTH 3 — stealing easy / spending hard ===== -->
-      <div class="scene" id="sc-easyhard">
-        <div class="eh-wrap">
-          <div class="eh-chip steal" id="eh-steal">
-            <div class="eh-k">STEALING</div><div class="eh-v">easy <span class="eh-mark ok">✓</span></div>
-          </div>
-          <div class="eh-chip spend" id="eh-spend">
-            <div class="eh-k">SPENDING</div><div class="eh-v">hard <span class="eh-lock" id="eh-lock">🔒</span></div>
-          </div>
-        </div>
-      </div>
+      <!-- ===== WHY: STRUCTURE — decentralised server network (the spine) ===== -->
+      <div class="scene" id="sc-network"></div>
 
       <!-- ===== WHY — tagged transfer flagged & frozen at the exchange ===== -->
       <div class="scene" id="sc-frozen">
         <div class="fz-wrap">
           <div class="fz-track"></div>
-          <div class="fz-exchange"><div class="fz-ex-glyph">⛁</div><div class="fz-ex-label">EXCHANGE</div></div>
-          <div class="fz-coin" id="fz-coin"><div class="fz-coin-disc">$</div><div class="fz-rad">RADIOACTIVE</div></div>
-          <div class="fz-flag" id="fz-flag">FLAGGED</div>
-          <div class="fz-frost" id="fz-frost"></div>
+          <div class="fz-node fz-wallet">
+            <div class="fz-glyph small">▦</div>
+            <div class="fz-node-label">THIEF WALLET</div>
+          </div>
+          <div class="fz-node fz-exchange">
+            <div class="fz-glyph big" id="fz-exglyph">⛁<div class="fz-frost" id="fz-frost"></div></div>
+            <div class="fz-node-label">EXCHANGE · cash out</div>
+          </div>
+          <div class="fz-coin" id="fz-coin">
+            <div class="fz-rad">☢ RADIOACTIVE</div>
+            <div class="fz-coin-disc">$</div>
+          </div>
+          <div class="fz-flag" id="fz-flag">FROZEN</div>
         </div>
       </div>
 
@@ -100,7 +86,7 @@
 <!-- HUD (hidden in clean/capture mode) -->
 <div id="hud">
   <button id="btn-play">▶ Play</button>
-  <input id="seek" type="range" min="0" max="84" step="0.01" value="0" />
+  <input id="seek" type="range" min="0" max="99" step="0.01" value="0" />
   <span id="tcode">0.0</span>
 </div>
 

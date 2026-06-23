@@ -71,6 +71,43 @@ Reel/TikTok: tighte 30–45s-Version; YouTube: volle ~120s. Untertitel immer ein
 3. **„Wie China aus ‚Coca-Cola' einen Satz macht, der ‚schmackhaft & fröhlich' bedeutet."**
    可口可乐 — phono-semantisches Matching. Anwendbar als Linse auf jeden Markennamen.
 
+### CHINESE — weitere Vorschläge (noch NICHT im stacktags_chinese-Ordner)
+
+> Bereits als Skript/Ordner vorhanden und hier bewusst NICHT wiederholt: Piktogramme,
+> Lehnwörter, Markennamen/可口可乐, das shi-Gedicht, Kantonesisch/Pop-Songs, eine Zeitzone,
+> Mandarin-Ursprung, Städtenamen.
+
+**Top-Picks:**
+1. **„‚Krise = Gefahr + Chance' ist ein Mythos."** 机 in 危机 = „Wende-/Knotenpunkt", nicht „Chance"
+   (Victor Mair). Korrigiert ein Business-Meme (Mumford/JFK).
+2. **„Sie nahmen das Herz aus der Liebe."** Trad. 愛 enthält 心; vereinfacht 爱 entfernt es. Morph-tauglich.
+   *Caveat: beliebte, leicht romantisierte Lesart.*
+3. **„Chinesisch hat kein ‚Ja' und kein ‚Nein'."** Antwort = Wiederholung des Frage-Verbs (饿 / 不饿).
+4. **„Eine Geheimschrift, die nur Frauen lesen konnten"** — Nüshu, eine Silbenschrift; letzte Schreiberin †2004.
+5. **„Chinesische Grammatik ist lächerlich einfach"** — keine Zeitformen/Plural/Fälle/Geschlechter; schwer sind nur Schrift+Töne.
+
+**Schrift & Zeichen:**
+6. **Eine Kaiserin erfand ihr eigenes Zeichen** (Wu Zetian, 曌) — nach ihrem Tod gelöscht.
+7. **Frauen-Radikal-Kontroverse** — 女 in Neid 妒/Verrat 奸; 姦 = „Frau hoch drei". *Caveat: „90 % negativ" nur qualitativ.*
+8. **„Character Amnesia"** (提筆忘字) — China verlernt das Handschreiben durch Pinyin-Tippen.
+9. **Das 58-Striche-Zeichen, das kein Computer kannte** (biáng) — bis 2020 nicht in Unicode.
+10. **China vereinfachte zweimal** — die 2. Reform (1977) wurde 1986 zurückgenommen.
+11. **Die Schreibmaschine von 1947, die das moderne Tippen erfand** (MingKwai, „magic eye").
+
+**Kultur, Aberglaube & Slang:**
+12. **Der „grüne Hut"** (戴绿帽子 = betrogen werden) — warum kein Chinese eine grüne Kappe trägt.
+13. **Der Drache macht Babys** — Geburtenrate steigt im Drachenjahr messbar (2012 Höchststand seit 1999).
+14. **躺平 vs. 内卷** — „flach hinlegen" als zensierte Protestbewegung.
+15. **Zahlen-Geheimsprache** — 520 = „ich liebe dich", 250 = „Vollidiot".
+16. **Geistermonat-Tabus** — Stäbchen nie senkrecht in den Reis (= Totenopfer).
+17. **Generationen-Gedicht** (字辈) — dein Vorname-Zeichen wurde vor 500 Jahren in einem Gedicht festgelegt.
+18. **Chengyu komprimieren ganze Geschichten** — 杯弓蛇影 („Bogen im Becher, Schatten der Schlange").
+
+**Linguistik & Mythos:**
+19. **„Zwei Bier" ist ein Grammatikfehler** — Zählwörter (两瓶啤酒); >150, aber 个 deckt ~94 %.
+20. **Dungan — Chinesisch in kyrillischen Buchstaben** (zentralasiatische Hui-Muslime).
+21. **Kein eindeutiges Wort für „Onkel"** — Unterscheidung väterlich/mütterlich, Blut/Heirat, Alter.
+
 ## 💻 SOFTWARE DEVELOPMENT
 
 ### Kuriositäten & kontraintuitive Konzepte

@@ -3,8 +3,6 @@ Title Why all of China runs on one clock
 Topic Geography
 Target length ~95 seconds (fits the 30s–3min window)
 Language of narration English
-Format Voiceover script. Spoken lines are plain text. [Bracketed lines] describe
-what is on screen AT THE SAME TIME as the narration next to them.
 
 ==================================================================
 THE CORE IDEA
@@ -16,51 +14,41 @@ the sun (winter sunrise ~10 a.m.), so many people quietly live on an unofficial
 Xinjiang time (two hours behind Beijing).
 Punchline one nation, one clock — but the sun doesn't take orders from Beijing.
 
-KEY VISUALS
-- A map of China with the ~5 natural time-zone bands, all overwritten by a single
-  Beijing Time stamp.
-- A western city where the clock says 7 a.m. but the sky is still dark.
-
 ==================================================================
 SCRIPT
 ==================================================================
 
---- HOOK (000–012) — the payoff up front ---
+--- HOOK ---
 
 China is almost 5,000 kilometers wide — wide enough to cross five time zones. But
-the entire country runs on a single clock Beijing time.
-[The map shows five natural time bands; a giant BEIJING TIME stamp slams over all of them.]
+the entire country runs on a single clock: Beijing time.
+
 Which means that out in the far west, the sun sometimes doesn't come up until ten
 in the morning.
-[A western city a clock reads 930 a.m., the sky still pitch dark.]
 
---- ONE COUNTRY, ONE TIME (≈012–042) ---
+--- ONE COUNTRY, ONE TIME ---
 
 Geographically, China is about as wide as the United States — which uses four
 separate time zones. So China should have roughly five.
-[The US with its 4 zones, side by side with China's would-be 5.]
+
 But in 1949, the new government scrapped them all and put the whole nation on one
 time — Beijing time — as a symbol of national unity. One country, one clock.
-[Five clocks merge into a single clock face.]
 
---- WHERE IT BREAKS (≈042–115) ---
+--- WHERE IT BREAKS ---
 
 Near Beijing, that's fine. But thousands of kilometers west, in Xinjiang, the
 official time is wildly out of step with the sky. In winter, sunrise can come
 around 10 a.m. — and the sun can still be up late into the evening.
-[Split screen Beijing noon (sun overhead) vs Xinjiang noon (sun barely risen).]
+
 So people out there quietly run their lives on an unofficial Xinjiang time —
 two hours behind Beijing. The buses, the shops, when you meet for dinner...
-[Two clocks side by side Beijing time and local time, two hours apart.]
-Ask someone the time, and you might have to ask back Beijing time, or our time
 
---- PUNCHLINE  OUTRO (≈115–128) ---
+Ask someone the time, and you might have to ask back: Beijing time, or our time?
 
-A single time zone keeps the country on the same page.
-[The one-clock map, calm and unified.]
-But the sun doesn't take orders from Beijing — so half a continent away, people
-just quietly made their own time anyway.
+--- PUNCHLINE / OUTRO ---
 
-Want more places that break the map
-[Stacktags logo animates in with a Follow prompt.]
-Follow Stacktags.
+A single time zone keeps the country on the same page. But the sun doesn't take
+orders from Beijing — so half a continent away, people just quietly made their own
+time anyway.
+
+Want more places that break the map? Follow Stacktags.

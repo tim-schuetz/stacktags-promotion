@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Why men underperform women at the stock market</title>
+<link rel="icon" href="data:," />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
+
+<!-- shared theme tokens + grid + subtitles (the design system) -->
+<link rel="stylesheet" href="elements/theme.css">
+<!-- the dynamic depth-grid look (we reuse its grid styling) -->
+<link rel="stylesheet" href="elements/depth-transitions.css">
+<!-- default + custom elements used as components -->
+<link rel="stylesheet" href="elements/graph-chart.css">
+<link rel="stylesheet" href="elements/text-popup.css">
+<link rel="stylesheet" href="elements/two-lines.css">
+<link rel="stylesheet" href="elements/turnover-gauges.css">
+<!-- this video's own scene styling -->
+<link rel="stylesheet" href="styles.css?v=1">
+</head>
+<body>
+<div class="wrap">
+  <div class="stage stk-grid-bg" id="stage">
+
+    <!-- persistent dynamic grid: the camera (zoom/pan) lives here -->
+    <div class="stk-depth2-grid" id="grid"></div>
+
+    <!-- all scene layers stack here -->
+    <div class="scenes" id="scenes">
+
+      <!-- HOOK -->
+      <div class="scene" id="sc-hook">
+        <div class="hook-paper">
+          <div class="hp-badge">Quarterly Journal of Economics · 2001</div>
+          <div class="hp-title">Boys Will Be Boys</div>
+          <div class="hp-subtitle">Gender, Overconfidence, and Common Stock Investment</div>
+          <div class="hp-byline">Brad M. Barber &nbsp;·&nbsp; Terrance Odean</div>
+          <div class="hp-abstract">
+            <span class="hp-col"></span><span class="hp-col"></span>
+          </div>
+          <div class="hp-highlight">men trade <b>45% more</b> than women — and earn less</div>
+        </div>
+        <div class="hook-card hc-news">
+          <div class="hc-kicker">MARKETS</div>
+          <div class="hc-head">Why women quietly <b>beat men</b> at investing</div>
+          <div class="hc-dek">It isn't the stock picks. It's the trading.</div>
+        </div>
+        <div class="hook-card hc-stat">
+          <div class="hc-stat-row"><span class="up">▲ Women</span><span class="dn">▼ Men</span></div>
+          <div class="hc-stat-sub">net annual return</div>
+        </div>
+        <div class="hook-stamp" id="hook-stamp">✕✕✕<span>too many trades</span></div>
+      </div>
+
+      <div class="scene" id="sc-lines1"><div class="host" id="lines1-host"></div></div>
+      <div class="scene" id="sc-study"><div class="host" id="study-host"></div></div>
+
+      <div class="scene" id="sc-pros1">
+        <div class="center-col">
+          <div class="big-line">Not just <span class="grey">rookies</span>.</div>
+          <div class="pill"><span class="dot"></span> Even professional fund managers</div>
+          <div class="tease"><span class="arrow">↓</span> here's the psychology</div>
+        </div>
+      </div>
+
+      <!-- WHY #1 — disposition effect -->
+      <div class="scene" id="sc-glitch">
+        <div class="eyebrow">Mistake <span class="n">#1</span> · the disposition effect</div>
+        <div class="glitch-cols">
+          <div class="glitch-col win" id="gl-win">
+            <div class="col-head win-head">Winners ▲</div>
+            <div class="stock up"><span class="tk">NVDA</span><span class="pct">+38%</span><span class="tag">SOLD ✓</span></div>
+            <div class="stock up"><span class="tk">AAPL</span><span class="pct">+24%</span><span class="tag">SOLD ✓</span></div>
+          </div>
+          <div class="glitch-col lose" id="gl-lose">
+            <div class="col-head lose-head">Losers ▼</div>
+            <div class="stock down"><span class="tk">ACME</span><span class="pct">−31%</span><span class="tag">HELD</span></div>
+            <div class="stock down"><span class="tk">QRS</span><span class="pct">−19%</span><span class="tag">HELD</span></div>
+            <div class="clutch">✊</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="scene" id="sc-fifty">
+        <div class="bignum-wrap">
+          <div class="bignum"><span class="num">0</span><span class="u">%</span></div>
+          <div class="bignum-sub">more likely to <b>cash in a gain</b><br>than to take a <span class="grey">loss</span></div>
+          <div class="bignum-cap">tens of thousands of US investors · Odean 1998</div>
+        </div>
+      </div>
+
+      <div class="scene" id="sc-tax">
+        <div class="tax-cards">
+          <div class="tax-card sold" id="tax-sold">
+            <div class="tc-act">Sold a winner</div>
+            <div class="tc-icon">📈</div>
+            <div class="tc-res">→ hands you a bill</div>
+            <div class="tax-stamp">TAX BILL</div>
+          </div>
+          <div class="tax-card held" id="tax-held">
+            <div class="tc-act">Held a loser</div>
+            <div class="tc-icon">📉</div>
+            <div class="tc-res">a write-off you skipped</div>
+            <div class="glow-tag">MISSED DEDUCTION ↺</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="scene" id="sc-pros2">
+        <div class="bignum-wrap">
+          <div class="pill"><span class="dot"></span> Even professional funds</div>
+          <div class="bignum deep"><span class="num">0</span><span class="u">%</span></div>
+          <div class="bignum-sub">more often realize <b>gains</b> than <span class="grey">losses</span></div>
+          <div class="wired">it's wired in</div>
+        </div>
+      </div>
+
+      <!-- WHY #2 — overtrading & cost -->
+      <div class="scene" id="sc-overtrade">
+        <div class="eyebrow top-left">Mistake <span class="n">#2</span> · overtrading</div>
+        <div class="host" id="overtrade-host"></div>
+      </div>
+      <div class="scene" id="sc-fees"><div class="host" id="fees-host"></div></div>
+      <div class="scene" id="sc-bars"><div class="host" id="bars-host"></div></div>
+
+      <div class="scene" id="sc-cost">
+        <div class="center-col">
+          <div class="big-line">Their picks were<br><span class="grey">just as good</span>.<br>It was the <b>cost</b>.</div>
+        </div>
+      </div>
+
+      <!-- WHY #3 — the men vs women gap -->
+      <div class="scene" id="sc-gauges"><div class="host" id="gauges-host"></div></div>
+
+      <div class="scene" id="sc-overconf">
+        <div class="oc-text">
+          <div class="oc-eyebrow">fueled by overconfidence</div>
+          <div class="oc-tag">+45%<span class="small">more trades</span></div>
+          <div class="oc-bottom">…which dragged his net returns <b>below women's</b>.</div>
+        </div>
+        <div class="oc-fig"><img src="assets/trader_man.png" alt=""></div>
+      </div>
+
+      <!-- OUTRO / CTA -->
+      <div class="scene" id="sc-secret">
+        <div class="host" id="secret-host"></div>
+        <div class="secret-overlay">
+          <div class="secret-head">Doing <b>less</b> beats doing more.</div>
+          <div class="secret-sub">The best investors aren't the busiest —<br>they're the most <b>patient</b>.</div>
+        </div>
+        <div class="secret-fig"><img src="assets/calm_woman.png" alt=""></div>
+      </div>
+
+      <div class="scene" id="sc-outro">
+        <div class="ec" id="outro-ec">
+          <div id="outro-logo"></div>
+          <div class="wm"><span class="s">stack</span><span class="t">tags</span></div>
+          <div class="url">stacktags.io</div>
+          <div class="follow">Follow</div>
+        </div>
+      </div>
+
+    </div><!-- /scenes -->
+
+    <!-- subtitles mirror the narration -->
+    <div class="stk-subs" id="subs"><span class="stk-subs-line" id="subs-line"></span></div>
+
+  </div><!-- /stage -->
+</div>
+
+<!-- HUD (hidden in clean/capture mode) -->
+<div id="hud">
+  <button id="btn-play">▶ Play</button>
+  <input id="seek" type="range" min="0" max="109.5" step="0.01" value="0" />
+  <span id="tcode">0.0</span>
+</div>
+
+<audio id="vo" src="../script_voice.mp3" preload="auto"></audio>
+
+<!-- default + custom elements (used as components) -->
+<script src="elements/outro.js"></script>
+<script src="elements/graph-chart.js"></script>
+<script src="elements/text-popup.js"></script>
+<script src="elements/two-lines.js"></script>
+<script src="elements/turnover-gauges.js"></script>
+
+<!-- this video's choreography -->
+<script src="app.js?v=1"></script>
+</body>
+</html>

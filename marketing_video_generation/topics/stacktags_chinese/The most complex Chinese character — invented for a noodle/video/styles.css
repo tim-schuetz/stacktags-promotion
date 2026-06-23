@@ -1,0 +1,242 @@
+/* ============================================================
+   "The most complex Chinese character — invented for a noodle"
+   Spine: ONE biáng glyph (public-domain SVG) in a 田字格 practice
+   cell carries the whole video. White + turquoise, Inter, CJK in
+   Noto Sans SC. No hard borders (soft shadows / tinted fills only).
+   ============================================================ */
+* { box-sizing: border-box; }
+html, body { margin: 0; height: 100%; background: #0b0e12; }
+.wrap { position: fixed; inset: 0; display: flex; align-items: center; justify-content: center; }
+.stage {
+  position: relative; width: 1080px; height: 1920px; overflow: hidden;
+  transform-origin: center center; font-family: var(--stk-font);
+}
+#grid { z-index: 0; }
+.scenes { position: absolute; inset: 0; z-index: 1; }
+.scene {
+  position: absolute; inset: 0; opacity: 0;
+  transform-origin: 50% 50%;
+  transform: translate(var(--tx,0px), var(--ty,0px)) scale(var(--s,1));
+  will-change: transform, opacity, filter;
+}
+
+/* HUD */
+#hud { position: fixed; left: 50%; bottom: 16px; transform: translateX(-50%);
+  display: flex; gap: 12px; align-items: center; background: #11161b; color: #cfe6dd;
+  padding: 8px 14px; border-radius: 12px; font: 600 14px Inter; z-index: 99; }
+#hud button { background: #35A292; color: #fff; border: 0; border-radius: 8px; padding: 6px 12px; font: 700 14px Inter; cursor: pointer; }
+#hud input[type=range] { width: 360px; }
+body.clean #hud { display: none; }
+
+/* shared: a "tofu" missing-glyph box (soft grey, no border) */
+.tofu { display: inline-block; width: 72px; height: 72px; border-radius: 12px;
+  background: #e3e8ec; box-shadow: inset 0 0 0 3px rgba(35,43,51,.08); vertical-align: middle; }
+.tofu.sm { width: 42px; height: 42px; border-radius: 8px; }
+.tofu.resolved { background: #fff url('assets/img/biang.svg') center/86% no-repeat; box-shadow: none; }
+
+/* a blinking caret reused by chat / dict search */
+.chat-caret { display: inline-block; width: 4px; height: 46px; background: var(--stk-teal);
+  margin-left: 8px; vertical-align: middle; animation: caretBlink 1s steps(1) infinite; }
+@keyframes caretBlink { 0%,49% { opacity: 1; } 50%,100% { opacity: 0; } }
+
+/* ============================================================
+   HERO — the 田字格 practice cell + biáng glyph (persistent)
+   ============================================================ */
+.cell { position: absolute; left: 50%; top: 770px; width: 720px; height: 720px;
+  transform: translate(-50%, -50%) scale(var(--cs, 1));
+  background: rgba(255,255,255,.55);
+  box-shadow: inset 0 0 0 4px rgba(35,43,51,.14); border-radius: 10px;
+  transition: top .8s cubic-bezier(.2,.8,.2,1), transform .8s cubic-bezier(.2,.8,.2,1); }
+.cell.up { top: 600px; --cs: .82; }
+.cell-h, .cell-v { position: absolute; }
+.cell-h { left: 6%; right: 6%; top: 50%; height: 3px; transform: translateY(-50%);
+  background: repeating-linear-gradient(to right, rgba(35,43,51,.14) 0 15px, transparent 15px 28px); }
+.cell-v { top: 6%; bottom: 6%; left: 50%; width: 3px; transform: translateX(-50%);
+  background: repeating-linear-gradient(to bottom, rgba(35,43,51,.14) 0 15px, transparent 15px 28px); }
+
+.glyph-wrap { position: absolute; left: 50%; top: 50%; width: 86%; height: 86%;
+  transform: translate(-50%, -50%); }
+.biang { width: 100%; height: 100%; object-fit: contain; display: block;
+  /* hook ink write-on: revealed top -> bottom by animating the bottom inset */
+  clip-path: inset(0 0 100% 0); }
+.biang.full { clip-path: inset(0 0 0 0); }
+
+/* stroke counter pill at the cell's top-right corner */
+.counter { position: absolute; top: -30px; right: -22px; display: flex; align-items: baseline; gap: 10px;
+  background: var(--stk-teal-soft); border-radius: 999px; padding: 12px 26px;
+  box-shadow: 0 10px 26px rgba(20,40,33,.10);
+  opacity: 0; transform: translateY(-8px) scale(.9); transition: opacity .35s ease, transform .4s cubic-bezier(.34,1.56,.64,1); }
+.counter.in { opacity: 1; transform: none; }
+.counter.pulse { animation: ctPulse .5s ease; }
+@keyframes ctPulse { 0%,100% { transform: none; } 40% { transform: scale(1.12); } }
+.ct-n { font: 900 64px Inter; letter-spacing: -2px; color: var(--stk-teal-d); }
+.ct-l { font: 700 28px Inter; color: var(--stk-teal-d); opacity: .8; }
+
+/* simple comparison characters above the cell */
+.compare { position: absolute; left: 0; right: 0; top: 300px; display: flex; justify-content: center; gap: 64px; }
+.cmp { display: flex; flex-direction: column; align-items: center; gap: 14px;
+  opacity: 0; transform: translateY(-16px) scale(.85); transition: opacity .3s ease, transform .45s cubic-bezier(.34,1.56,.64,1); }
+.cmp.in { opacity: 1; transform: none; }
+.cmp.dim { opacity: .32; transform: scale(.8); }
+.cmp-ch { font-family: 'Noto Sans SC', var(--stk-font); font-weight: 700; font-size: 132px; color: var(--stk-ink); line-height: .9; }
+.cmp-chip { font: 800 30px Inter; color: var(--stk-teal-d); background: var(--stk-teal-soft); border-radius: 999px; padding: 6px 18px; }
+
+/* component-decomposition highlights over the glyph */
+.comp-layer { position: absolute; inset: 0; pointer-events: none; }
+.comp-box { position: absolute; left: var(--cx); top: var(--cy); width: var(--bw); height: var(--bh);
+  transform: translate(-50%, -50%) scale(.7); background: rgba(53,162,146,.16); border-radius: 14px;
+  opacity: 0; transition: opacity .3s ease, transform .4s cubic-bezier(.34,1.56,.64,1); }
+.comp-box.in { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+.comp-lab { position: absolute; white-space: nowrap; font-family: 'Noto Sans SC', var(--stk-font);
+  font-weight: 700; font-size: 40px; color: var(--stk-teal-d);
+  background: #fff; border-radius: 999px; padding: 6px 16px; box-shadow: 0 8px 20px rgba(20,40,33,.12); }
+.comp-lab i { font-family: var(--stk-font); font-style: normal; font-weight: 700; font-size: 30px; color: var(--stk-ink-2); }
+.comp-lab[data-side="r"] { left: 100%; top: 50%; transform: translate(14px, -50%); }
+.comp-lab[data-side="l"] { right: 100%; top: 50%; transform: translate(-14px, -50%); }
+.comp-lab[data-side="t"] { left: 50%; bottom: 100%; transform: translate(-50%, -12px); }
+.comp-lab[data-side="b"] { left: 50%; top: 100%; transform: translate(-50%, 12px); }
+
+/* pinyin under the cell */
+.pinyin { position: absolute; left: 0; right: 0; top: 1190px; text-align: center;
+  font: 800 96px Inter; letter-spacing: -1px; color: var(--stk-ink);
+  opacity: 0; transform: translateY(16px); transition: opacity .4s ease, transform .5s cubic-bezier(.2,.8,.2,1); }
+.pinyin.in { opacity: 1; transform: none; }
+
+/* hook chat input where the glyph can't be typed */
+.chatstrip { position: absolute; left: 50%; top: 1280px; transform: translate(-50%, 24px);
+  display: flex; align-items: center; gap: 10px; padding: 22px 34px; border-radius: 22px;
+  background: #f1f4f6; box-shadow: 0 14px 36px rgba(20,40,33,.10);
+  font: 600 46px Inter; color: var(--stk-ink-2);
+  opacity: 0; transition: opacity .4s ease, transform .5s cubic-bezier(.2,.8,.2,1); }
+.chatstrip.in { opacity: 1; transform: translate(-50%, 0); }
+
+/* noodle bowl rises from the bottom */
+.bowl { position: absolute; left: 50%; bottom: 320px; width: 480px; height: auto;
+  transform: translate(-50%, 560px); opacity: 0; z-index: 4;
+  filter: drop-shadow(0 26px 40px rgba(20,40,33,.16));
+  transition: opacity .5s ease, transform .8s cubic-bezier(.2,.8,.2,1); }
+.bowl.in { opacity: 1; transform: translate(-50%, 0); }
+.bowl-lab { position: absolute; left: 50%; bottom: 268px; transform: translateX(-50%) translateY(10px);
+  font: 800 40px Inter; color: var(--stk-teal-d); background: var(--stk-teal-soft); border-radius: 999px; padding: 8px 24px;
+  opacity: 0; transition: opacity .4s ease .15s, transform .4s ease .15s; z-index: 5; }
+.bowl-lab.in { opacity: 1; transform: translateX(-50%) translateY(0); }
+.conn { position: absolute; left: 50%; top: 905px; width: 40px; height: 290px; transform: translateX(-50%);
+  opacity: 0; transition: opacity .4s ease; }
+.conn path { fill: none; stroke: var(--stk-teal); stroke-width: 4; stroke-linecap: round; stroke-dasharray: 2 22; }
+.conn.in { opacity: 1; }
+
+/* emoji size-gag row (punchline) */
+.emojirow { position: absolute; left: 0; right: 0; top: 1300px; display: flex; justify-content: center; gap: 26px;
+  font-size: 64px; opacity: 0; transform: translateY(16px); transition: opacity .4s ease, transform .5s cubic-bezier(.34,1.56,.64,1); }
+.emojirow.in { opacity: 1; transform: none; }
+
+/* ============================================================
+   DICTIONARY — search biáng, it isn't there
+   ============================================================ */
+.dict { position: absolute; left: 50%; top: 50%; width: 760px; transform: translate(-50%, -50%); text-align: left; }
+.dict-search { display: flex; align-items: center; padding: 26px 38px; border-radius: 22px;
+  background: #f1f4f6; box-shadow: inset 0 0 0 3px rgba(17,146,113,.14); }
+.dict-q { font: 800 64px Inter; color: var(--stk-ink); }
+.dict-rows { margin: 46px 8px 0; display: flex; flex-direction: column; gap: 30px; }
+.dict-row { display: flex; align-items: center; gap: 34px; opacity: .34; }
+.dr-ch { font-family: 'Noto Sans SC', var(--stk-font); font-weight: 700; font-size: 76px; color: var(--stk-ink); }
+.dr-py { font: 600 42px Inter; color: var(--stk-ink-2); }
+.dict-none { margin: 46px 8px 0; font: 800 56px Inter; color: var(--stk-muted); text-align: center;
+  opacity: 0; transform: scale(.9); transition: opacity .35s ease, transform .4s cubic-bezier(.34,1.56,.64,1); }
+.dict-none.in { opacity: 1; transform: none; }
+.dict.shake { animation: dShake .4s ease; }
+@keyframes dShake { 0%,100% { transform: translate(-50%, -50%); } 25% { transform: translate(-52%, -50%); } 75% { transform: translate(-48%, -50%); } }
+
+/* ============================================================
+   NOODLE STALL — the name is the slap of the dough
+   ============================================================ */
+.table { position: absolute; left: 50%; top: 1160px; width: 760px; height: 26px; transform: translateX(-50%);
+  border-radius: 8px; background: linear-gradient(180deg, #dfe6e3, #c8d4cf);
+  box-shadow: 0 30px 60px rgba(20,40,33,.10); }
+.dough { position: absolute; left: 50%; top: 1100px; width: 300px; height: 130px; transform: translate(-50%, -300px);
+  border-radius: 50% 50% 46% 54% / 60% 60% 40% 40%; background: radial-gradient(120% 120% at 40% 30%, #fbfdfc, #e8efeb);
+  box-shadow: inset 0 -10px 20px rgba(20,40,33,.06); opacity: 0; }
+.dough.slap { animation: doughSlap .5s cubic-bezier(.3,1.4,.5,1) forwards; }
+@keyframes doughSlap { 0% { opacity: 1; transform: translate(-50%, -300px) scaleY(1.1); }
+  70% { opacity: 1; transform: translate(-50%, -6px) scaleY(.58) scaleX(1.2); }
+  100% { opacity: 1; transform: translate(-50%, -22px) scaleY(.78) scaleX(1.06); } }
+.slap-word { position: absolute; left: 50%; top: 980px; transform: translate(-50%, -50%) scale(.3) rotate(-8deg);
+  font: 900 180px Inter; letter-spacing: -4px; color: var(--stk-teal-d); opacity: 0;
+  text-shadow: 0 14px 30px rgba(20,40,33,.14); }
+.slap-word.in { animation: slapWord .6s cubic-bezier(.34,1.56,.64,1) forwards; }
+@keyframes slapWord { 0% { opacity: 0; transform: translate(-50%, -50%) scale(.3) rotate(-8deg); }
+  60% { opacity: 1; transform: translate(-50%, -50%) scale(1.12) rotate(-8deg); }
+  100% { opacity: 1; transform: translate(-50%, -50%) scale(1) rotate(-8deg); } }
+
+/* ============================================================
+   UNICODE — scrolling master list with a gap where biáng is
+   ============================================================ */
+.uni-cap { position: absolute; left: 0; right: 0; top: 360px; text-align: center;
+  font: 800 40px Inter; letter-spacing: 6px; text-transform: uppercase; color: var(--stk-muted); }
+.uni-list { position: absolute; left: 50%; top: 980px; width: 620px; transform: translate(-50%, -50%);
+  display: flex; flex-direction: column; gap: 14px; }
+.uni-row { display: flex; align-items: center; gap: 30px; padding: 14px 30px; border-radius: 16px; background: #f4f6f7; }
+.uni-hex { font: 600 34px 'Inter'; color: var(--stk-muted); width: 200px; }
+.uni-ch { font-family: 'Noto Sans SC', var(--stk-font); font-weight: 700; font-size: 60px; color: var(--stk-ink); }
+.uni-row.gap { background: var(--stk-teal-soft); }
+.uni-row.gap .uni-hex { color: var(--stk-teal-d); }
+.uni-row.gap.pulse { animation: gapPulse .6s ease; }
+@keyframes gapPulse { 0%,100% { transform: scale(1); } 45% { transform: scale(1.06); box-shadow: 0 0 0 6px rgba(53,162,146,.18); } }
+
+/* ============================================================
+   SCREEN — phone / menu show □; 2020 stamp resolves it
+   ============================================================ */
+.phone { position: absolute; background: #1b2228; border-radius: 60px; box-shadow: 0 34px 80px rgba(20,40,33,.24); }
+.phone .ph-scr { position: absolute; inset: 16px; border-radius: 46px; background: #fff; overflow: hidden; }
+#phone { width: 560px; height: 1120px; left: 50%; top: 50%; transform: translate(-50%, -50%); }
+
+.msg { position: absolute; top: 120px; left: 50px; right: 50px; padding: 30px 34px; border-radius: 28px 28px 28px 8px;
+  background: #eef1f3; font: 600 44px Inter; color: var(--stk-ink); display: flex; align-items: center; flex-wrap: wrap;
+  opacity: 0; transform: translateY(16px); transition: opacity .4s ease, transform .5s cubic-bezier(.2,.8,.2,1); }
+.msg.in { opacity: 1; transform: none; }
+
+.menu { position: absolute; top: 380px; left: 50px; right: 50px; padding: 36px 40px; border-radius: 26px;
+  background: #f7f9fa; box-shadow: 0 16px 40px rgba(20,40,33,.08);
+  opacity: 0; transform: translateY(24px); transition: opacity .45s ease, transform .55s cubic-bezier(.2,.8,.2,1); }
+.menu.in { opacity: 1; transform: none; }
+.menu-title { font: 800 40px Inter; color: var(--stk-muted); letter-spacing: 2px; margin-bottom: 24px; }
+.menu-line { display: flex; align-items: center; justify-content: space-between; padding: 18px 0; font: 700 46px Inter; color: var(--stk-ink); }
+.menu-line.dim { opacity: .4; }
+.ml-name { display: flex; align-items: center; gap: 12px; }
+.ml-price { color: var(--stk-ink-2); font-weight: 600; }
+
+.paste { position: absolute; top: 392px; left: 96px; width: 150px; height: 150px; transform: rotate(-7deg);
+  background: #fff; padding: 14px; box-shadow: 0 12px 26px rgba(20,40,33,.18);
+  opacity: 0; transition: opacity .35s ease, transform .4s cubic-bezier(.34,1.56,.64,1); }
+.paste img { width: 100%; height: 100%; object-fit: contain; display: block; }
+.paste::before { content: ''; position: absolute; top: -12px; left: 50%; width: 80px; height: 26px; transform: translateX(-50%) rotate(3deg);
+  background: rgba(53,162,146,.28); border-radius: 3px; }
+.paste.in { opacity: 1; }
+
+.stamp { position: absolute; left: 50%; top: 300px; transform: translate(-50%, -50%) scale(2.4) rotate(-12deg);
+  display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 22px 40px; border-radius: 18px;
+  background: var(--stk-teal-soft); opacity: 0; }
+.stamp .st-u { font: 800 34px Inter; letter-spacing: 2px; color: var(--stk-teal-d); }
+.stamp b { font: 900 90px Inter; letter-spacing: -2px; color: var(--stk-teal-d); line-height: .9; }
+.stamp.in { animation: stampSlam .5s cubic-bezier(.3,1.3,.5,1) forwards; }
+@keyframes stampSlam { 0% { opacity: 0; transform: translate(-50%, -50%) scale(2.4) rotate(-12deg); }
+  60% { opacity: 1; transform: translate(-50%, -50%) scale(.92) rotate(-12deg); }
+  100% { opacity: 1; transform: translate(-50%, -50%) scale(1) rotate(-12deg); } }
+
+/* ============================================================
+   OUTRO endcard
+   ============================================================ */
+.ec { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); text-align: center; }
+.ec #outro-logo svg { display: block; margin: 0 auto; }
+.ec .lyr { opacity: 0; transform: translateY(28px) scale(.92);
+  transition: opacity .5s ease, transform .6s cubic-bezier(.34,1.56,.64,1); transition-delay: var(--d, 0s); }
+.ec.play .lyr { opacity: 1; transform: none; }
+.ec .chev { opacity: 0; transition: opacity .5s ease .42s; }
+.ec.play .chev { opacity: 1; }
+.ec .wm { margin-top: 18px; font: 900 96px Inter; letter-spacing: -3px;
+  opacity: 0; transform: translateY(20px); transition: opacity .5s ease .5s, transform .5s ease .5s; }
+.ec .wm .s { color: var(--stk-ink); } .ec .wm .t { color: var(--stk-teal); }
+.ec.play .wm { opacity: 1; transform: none; }
+.ec .url { margin-top: 14px; font: 600 42px Inter; color: var(--stk-muted);
+  opacity: 0; transition: opacity .5s ease .66s; }
+.ec.play .url { opacity: 1; }

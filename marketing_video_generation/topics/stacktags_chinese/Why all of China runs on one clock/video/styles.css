@@ -1,0 +1,297 @@
+/* ===========================================================================
+   "Why all of China runs on one clock" — scene styling.
+   White + turquoise, Inter, thin grey grid. No borders (the stamp is a solid
+   filled object; the sun is a single semantic accent).
+   =========================================================================== */
+
+/* ---- stage / camera base (mirrors the reference engine) ---- */
+* { box-sizing: border-box; }
+html, body { margin: 0; height: 100%; background: #0c0f12; overflow: hidden; }
+.wrap { position: fixed; inset: 0; display: grid; place-items: center; }
+.stage {
+  position: relative; width: 1080px; height: 1920px; overflow: hidden;
+  transform-origin: center center; background: #fff;
+}
+#grid { z-index: 0; }
+.scenes { position: absolute; inset: 0; z-index: 1; }
+
+.scene {
+  position: absolute; inset: 0; opacity: 0;
+  display: flex; align-items: center; justify-content: center;
+  transform: translate(var(--tx, 0px), var(--ty, 0px)) scale(var(--s, 1));
+  transform-origin: center center;
+  will-change: transform, opacity, filter;
+}
+.cjk { font-family: 'Noto Sans SC', 'Inter', sans-serif; }
+
+/* ---- HUD ---- */
+#hud {
+  position: fixed; left: 50%; bottom: 18px; transform: translateX(-50%);
+  display: flex; align-items: center; gap: 12px; z-index: 99;
+  background: #11171d; color: #cfe; padding: 8px 14px; border-radius: 12px;
+  font: 600 14px/1 'Inter', sans-serif;
+}
+#hud button { background: var(--stk-teal); color: #fff; border: 0; border-radius: 8px; padding: 8px 12px; font-weight: 800; cursor: pointer; }
+#hud input[type=range] { width: 520px; }
+body.clean #hud { display: none; }
+body.clean { background: #fff; }
+
+/* ===========================================================================
+   MAPS
+   =========================================================================== */
+.map-stage { position: absolute; left: 50%; top: 45%; transform: translate(-50%, -50%); width: 940px; }
+.map-host { position: relative; width: 940px; height: 660px; }
+.cn-map-svg { width: 100%; height: 100%; display: block; overflow: visible; }
+.cn-map-fill { fill: var(--stk-teal); opacity: .16; }
+.cn-map-line { fill: none; stroke: var(--stk-teal-d); stroke-width: 3; stroke-linejoin: round; stroke-linecap: round; }
+.cn-map-dn { opacity: .9; mix-blend-mode: multiply; }
+/* day/night gradient stops */
+.dn-night { stop-color: #16222b; stop-opacity: .80; }
+.dn-dusk  { stop-color: #4a5560; stop-opacity: .28; }
+.dn-day   { stop-color: #ffffff; stop-opacity: 0; }
+
+/* ===========================================================================
+   ANALOG CLOCK
+   =========================================================================== */
+.clk { position: relative; }
+.clk-svg { width: 100%; height: 100%; display: block; overflow: visible; }
+.clk-face { fill: #fff; stroke: none; filter: drop-shadow(0 14px 30px rgba(20,40,33,.16)); }
+.clk-tick { stroke: var(--stk-muted); stroke-width: 1.4; stroke-linecap: round; opacity: .6; }
+.clk-tick.maj { stroke: var(--stk-ink); stroke-width: 2.4; opacity: .85; }
+.clk-hand { stroke: var(--stk-ink); stroke-linecap: round; }
+.clk-hh { stroke-width: 5; }
+.clk-mh { stroke-width: 3.4; }
+.clk-hour, .clk-min { transform-box: view-box; transform-origin: 50px 50px; }
+.clk-hub { fill: var(--stk-teal-d); }
+
+/* themes */
+.clk-local .clk-face { filter: drop-shadow(0 16px 34px rgba(53,162,146,.34)); }
+.clk-local .clk-hand { stroke: var(--stk-teal-d); }
+.clk-local .clk-tick.maj { stroke: var(--stk-teal-d); }
+.clk-ghost { opacity: .9; }
+.clk-ghost .clk-face { filter: drop-shadow(0 8px 16px rgba(20,40,33,.10)); }
+.clk-ghost .clk-hand { stroke: var(--stk-ink-2); }
+.clk-ghost .clk-tick { opacity: .35; }
+.clk-dim { opacity: .42; filter: saturate(.5); transition: opacity .6s ease, filter .6s ease; }
+
+.clk-label {
+  position: absolute; left: 50%; top: calc(100% + 14px); transform: translateX(-50%);
+  white-space: nowrap; font: 700 30px/1 'Inter', sans-serif; color: var(--stk-muted); letter-spacing: -.3px;
+}
+.clk-local .clk-label { color: var(--stk-teal-d); }
+
+/* ===========================================================================
+   TIME-ZONE BANDS (+ ghost clocks)
+   =========================================================================== */
+.tzbands { position: absolute; inset: 0; z-index: 3; pointer-events: none; }
+.tzband {
+  position: absolute; background: rgba(53,162,146,.13);
+  opacity: 0; transform: scaleY(.55); transform-origin: center bottom;
+  transition: opacity .5s ease, transform .55s cubic-bezier(.2,.8,.2,1), background .6s ease;
+}
+.tzband.alt { background: rgba(53,162,146,.05); }
+.tzband.in { opacity: 1; transform: scaleY(1); }
+.tzband.one { background: rgba(53,162,146,.12) !important; }
+.tz-ghost-clk {
+  position: absolute; opacity: 0; transform: translate(-50%, -50%) scale(.4);
+  transition: opacity .4s ease, transform .5s cubic-bezier(.34,1.56,.64,1);
+}
+.tz-ghost-clk.in { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+
+/* ===========================================================================
+   BEIJING STAMP
+   =========================================================================== */
+.stamp { position: absolute; left: 50%; top: 44%; transform: translate(-50%, -50%); z-index: 9; opacity: 0; }
+.stamp-inner {
+  background: var(--stk-teal); color: #fff; border-radius: 30px;
+  padding: 26px 56px 30px; text-align: center; box-shadow: 0 26px 60px rgba(6,58,44,.34);
+  transform: rotate(-7deg); transform-origin: center;
+}
+.stamp-zh { font-weight: 900; font-size: 88px; line-height: 1; letter-spacing: 2px; white-space: nowrap; }
+.stamp-sub { margin-top: 8px; font: 800 40px/1 'Inter', sans-serif; letter-spacing: 6px; opacity: .92; }
+.stamp.slam { opacity: 1; }
+.stamp.slam .stamp-inner { animation: stampDrop .52s cubic-bezier(.3,1.45,.55,1) forwards; }
+@keyframes stampDrop {
+  0%   { opacity: 0; transform: rotate(-15deg) translateY(-220px) scale(1.95); }
+  55%  { opacity: 1; transform: rotate(-5deg) translateY(14px) scale(.95); }
+  78%  { transform: rotate(-8deg) translateY(-6px) scale(1.03); }
+  100% { opacity: 1; transform: rotate(-7deg) translateY(0) scale(1); }
+}
+/* white impact flash */
+.hook-flash { position: absolute; inset: -300px; background: #fff; opacity: 0; pointer-events: none; z-index: 8; }
+.hook-flash.go { animation: flashHit .34s ease-out; }
+@keyframes flashHit { 0% { opacity: .0; } 12% { opacity: .66; } 100% { opacity: 0; } }
+
+/* ===========================================================================
+   CALIPER (5,000 km width measure)
+   =========================================================================== */
+.caliper {
+  position: absolute; left: 50%; bottom: -86px; transform: translateX(-50%);
+  display: flex; align-items: center; gap: 0; width: 0; opacity: 0;
+  transition: width .7s cubic-bezier(.2,.8,.2,1), opacity .4s ease;
+  white-space: nowrap;
+}
+.caliper.open { width: 760px; opacity: 1; }
+.cal-end { width: 4px; height: 34px; background: var(--stk-ink); border-radius: 2px; flex: 0 0 auto; }
+.cal-bar { height: 3px; background: var(--stk-ink); flex: 1 1 auto; }
+.cal-lab { flex: 0 0 auto; padding: 0 22px; font: 800 38px/1 'Inter', sans-serif; color: var(--stk-ink); letter-spacing: -.5px; }
+
+/* ===========================================================================
+   SUN (marker, for the hero glide)  &  SKY card (S3 / punchline)
+   =========================================================================== */
+.sun { position: absolute; transform: translate(-50%, -50%); z-index: 6; pointer-events: none; }
+.sun-core { position: absolute; inset: 18%; border-radius: 50%;
+  background: radial-gradient(circle at 38% 35%, #7fd9c8 0%, var(--stk-teal) 58%, var(--stk-teal-d) 100%);
+  box-shadow: 0 0 36px rgba(53,162,146,.6); }
+.sun-glow { position: absolute; inset: -30%; border-radius: 50%;
+  background: radial-gradient(circle, rgba(53,162,146,.42) 0%, rgba(53,162,146,0) 68%); }
+
+.sky { position: relative; overflow: hidden; border-radius: 44px; box-shadow: 0 40px 90px rgba(20,40,33,.28); }
+.sky-grad { position: absolute; inset: 0; background: linear-gradient(180deg, #10202b 0%, #1d2f3b 64%, #24323d 100%); }
+.sky-grad::after { content: ''; position: absolute; inset: 0;
+  background: linear-gradient(180deg, #d8f0e8 0%, #eef9f5 60%, #ffffff 100%); opacity: var(--lit, 0); }
+.sky-stars { position: absolute; inset: 0; }
+.star { position: absolute; width: 4px; height: 4px; border-radius: 50%; background: #cfe; opacity: .8; box-shadow: 0 0 6px rgba(200,240,235,.7); }
+.sky-glow { position: absolute; left: 0; right: 0; bottom: 26%; height: 40%; opacity: 0;
+  background: radial-gradient(60% 120% at 56% 100%, rgba(53,162,146,.5) 0%, rgba(53,162,146,0) 70%); }
+.sun-disc { position: absolute; left: 50%; top: 70%; width: 150px; height: 150px; transform: translate(-50%, -50%);
+  border-radius: 50%; background: radial-gradient(circle at 40% 36%, #8fe0d0, var(--stk-teal) 60%, var(--stk-teal-d));
+  box-shadow: 0 0 50px rgba(53,162,146,.7); }
+.sky-horizon { position: absolute; left: 0; right: 0; top: 70%; height: 3px; background: rgba(255,255,255,.22); }
+
+/* ---- S3 west card ---- */
+.west-card { position: absolute; left: 50%; top: 46%; transform: translate(-50%, -50%); width: 820px; height: 1180px; }
+.west-card .sky { position: absolute; inset: 0; }
+.west-photo { position: absolute; left: 0; right: 0; bottom: 0; height: 38%; z-index: 2; }
+.west-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; opacity: .95;
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 26%); mask-image: linear-gradient(to bottom, transparent 0%, #000 26%); }
+.west-clock { position: absolute; left: 50%; top: 30%; transform: translate(-50%, -50%); width: 300px; height: 300px; z-index: 4; }
+/* small simultaneous "Beijing now" inset (bright, noon, sun high) */
+.bj-inset { position: absolute; right: 26px; top: 26px; width: 250px; height: 300px; border-radius: 28px; overflow: hidden;
+  z-index: 5; box-shadow: 0 18px 40px rgba(20,40,33,.26); }
+.bj-inset .sky { position: absolute; inset: 0; border-radius: 0; box-shadow: none; }
+.bj-inset .bj-clk { position: absolute; left: 50%; top: 44%; transform: translate(-50%, -50%); width: 150px; height: 150px; }
+.place-tag { position: absolute; z-index: 6; font: 800 26px/1 'Inter', sans-serif; letter-spacing: .5px;
+  color: #fff; opacity: .92; }
+.place-tag.west { left: 34px; top: 30px; font-size: 32px; }
+.place-tag.bj { left: 14px; bottom: 12px; font-size: 22px; }
+
+/* ===========================================================================
+   北京时间 title (S2) · globe scenes (S3/S6) · full-screen photo (S3)
+   =========================================================================== */
+.bj-title { position: absolute; left: 50%; top: 84%; transform: translate(-50%, 22px);
+  font-weight: 900; font-size: 78px; letter-spacing: 4px; color: var(--stk-teal-d);
+  opacity: 0; transition: none; }
+.bj-title.in { opacity: 1; transform: translate(-50%, 0); }
+/* the Beijing clock that travels from the noon band to centre + grows (lives in #hook-stage) */
+.bj-clock { position: absolute; left: 67%; top: 12%; transform: translate(-50%, -50%) scale(1); transform-origin: center; opacity: 0; z-index: 6; }
+
+.globe-host { position: absolute; inset: 0; z-index: 1; transition: opacity .4s ease; }
+.globe-host.gone { opacity: 0; }
+/* S3 — a city at dusk on the (slightly darkened) white grid background */
+.west-city { position: absolute; inset: 0; z-index: 2; overflow: hidden; opacity: 0; transition: opacity .5s ease;
+  background: rgba(33, 43, 51, 0.12); }   /* dims the white grid behind without hiding it */
+.west-city.in { opacity: 1; }
+.wc-moon { position: absolute; right: 150px; top: 150px; width: 130px; height: 130px;
+  filter: drop-shadow(0 0 22px rgba(201, 169, 78, 0.55)); }
+.wc-moon path { fill: #c7a548; }
+.wc-houses { position: absolute; left: 0; right: 0; bottom: 0; display: flex; align-items: flex-end; justify-content: center; }
+.wc-houses img { display: block; height: auto; filter: drop-shadow(0 -4px 22px rgba(20,30,40,.28)); }
+/* darken the very bottom a touch so the grey subtitle stays readable over the houses */
+.west-city::after { content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 22%; z-index: 3;
+  background: linear-gradient(to bottom, rgba(20,28,36,0) 0%, rgba(20,28,36,.4) 100%); pointer-events: none; }
+
+/* ===========================================================================
+   S4+S5 — US (4) vs CHINA (5) → continuous merge
+   =========================================================================== */
+.compare { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); z-index: 2;
+  width: 900px; display: flex; flex-direction: column; align-items: center; gap: 30px;
+  opacity: 0; transition: opacity .5s ease; }
+.compare.in { opacity: 1; }
+.cmp-row, .cmp-china-wrap { position: relative; display: flex; flex-direction: column; align-items: center; }
+.cmp-china-wrap { transition: none; }
+.cmp-china-wrap.centred { transform: translateY(-330px); }
+.cmp-map { position: relative; }
+.cmp-name { margin-top: 4px; font: 800 34px/1 'Inter', sans-serif; color: var(--stk-muted); letter-spacing: .4px; }
+.cmp-china-wrap .cmp-name.china { color: var(--stk-teal-d); }
+.year-tick { position: absolute; left: 50%; top: -8%; transform: translate(-50%, 0); z-index: 7;
+  font: 900 64px/1 'Inter', sans-serif; color: var(--stk-ink); letter-spacing: -1px; opacity: 0; }
+.year-tick.in { animation: yearPop 1.4s ease forwards; }
+@keyframes yearPop { 0% { opacity: 0; transform: translate(-50%, 30px) scale(.7); } 16% { opacity: 1; transform: translate(-50%,0) scale(1); } 80% { opacity: 1; } 100% { opacity: 0; transform: translate(-50%,-26px) scale(.95); } }
+
+/* ===========================================================================
+   S9 punch layer (calm map + clock + sun crest)
+   =========================================================================== */
+.punch-layer { position: absolute; inset: 0; z-index: 5; pointer-events: none; }
+.hero-clk { position: absolute; transform: translate(-50%, -50%); z-index: 6; }
+
+/* ===========================================================================
+   S7 — local unofficial time
+   =========================================================================== */
+.local { position: absolute; left: 50%; top: 42%; transform: translate(-50%, -50%); width: 980px; height: 980px; }
+/* stacked digital clocks: Beijing on top, Xinjiang below (2 h behind) */
+.dclocks { position: absolute; left: 50%; top: 0; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 14px;
+  opacity: 0; transition: opacity .45s ease; }
+.dclocks.in { opacity: 1; }
+.dclock { display: flex; flex-direction: column; align-items: center; padding: 22px 58px 26px;
+  background: transparent; border: 5px dotted var(--stk-ink); border-radius: 16px; min-width: 480px; }
+.dclock.bj { border-color: var(--stk-muted); }
+.dclock.xj { border-color: var(--stk-teal-d); }
+.dc-time { font: 900 132px/1 'Inter', sans-serif; letter-spacing: 5px; font-variant-numeric: tabular-nums; }
+.dclock.bj .dc-time { color: var(--stk-muted); }
+.dclock.xj .dc-time { color: var(--stk-teal-d); }
+.dc-label { margin-top: 6px; font: 800 34px/1 'Inter', sans-serif; letter-spacing: 1px; }
+.dclock.bj .dc-label { color: var(--stk-muted); }
+.dclock.xj .dc-label { color: var(--stk-teal-d); }
+.dc-gap { font: 800 38px/1 'Inter', sans-serif; color: var(--stk-teal-d); letter-spacing: 1px; }
+.life-row { position: absolute; left: 50%; bottom: 30px; transform: translateX(-50%); display: flex; align-items: flex-end; gap: 56px; }
+.life { display: flex; flex-direction: column; align-items: center; gap: 14px;
+  opacity: 0; transform: translateY(28px) scale(.82); transition: opacity .4s ease, transform .5s cubic-bezier(.34,1.56,.64,1); }
+.life.in { opacity: 1; transform: translateY(0) scale(1); }
+.life-imgwrap { height: 180px; display: flex; align-items: flex-end; justify-content: center; }
+.life-img { max-width: 240px; max-height: 180px; width: auto; height: auto; display: block;
+  filter: drop-shadow(0 14px 24px rgba(20,40,33,.18)); }
+.life .life-t { font: 800 38px/1 'Inter', sans-serif; color: var(--stk-teal-d); letter-spacing: -.5px; }
+
+/* ===========================================================================
+   S8 — dialogue figures + comic bubbles
+   =========================================================================== */
+.fig-scene { position: absolute; inset: 0; }
+.vfig { position: absolute; bottom: 360px; z-index: 3; opacity: 0; transform: translateY(40px);
+  transition: opacity .5s ease, transform .6s cubic-bezier(.2,.8,.2,1); filter: drop-shadow(0 18px 30px rgba(20,40,33,.2)); }
+.vfig.in { opacity: 1; transform: translateY(0); }
+.vfig.left { left: 130px; } .vfig.right { right: 130px; }
+.vfig svg { width: 300px; height: auto; display: block; }
+.vbub {
+  position: absolute; z-index: 6; background: #fff; color: var(--stk-ink);
+  border: 7px solid var(--stk-ink); border-radius: 40px; padding: 22px 34px;
+  box-shadow: 0 14px 32px rgba(20,40,33,.16);
+  opacity: 0; transform: scale(.4); transform-origin: 50% 130%;
+  transition: opacity .35s ease, transform .5s cubic-bezier(.34,1.56,.64,1);
+}
+.vbub.in { opacity: 1; transform: scale(1); }
+.vbub::before { content: ''; position: absolute; bottom: -40px; width: 0; height: 0; border-top: 40px solid var(--stk-ink); border-right: 30px solid transparent; }
+.vbub::after  { content: ''; position: absolute; bottom: -24px; width: 0; height: 0; border-top: 28px solid #fff; border-right: 20px solid transparent; }
+.vbub.q { left: 250px; top: 520px; font: 900 60px/1 'Inter','Noto Sans SC',sans-serif; }
+.vbub.q::before { left: 40px; } .vbub.q::after { left: 47px; }
+.vbub.a { right: 210px; top: 470px; }
+.vbub.a::before { right: 40px; border-right: 0; border-left: 30px solid transparent; }
+.vbub.a::after  { right: 47px; border-right: 0; border-left: 20px solid transparent; }
+.vbub-clocks { display: flex; align-items: center; gap: 18px; }
+.vbub-clocks .clk { width: 110px; height: 110px; }
+.vbub-q { font: 900 64px/1 'Inter',sans-serif; color: var(--stk-muted); }
+
+/* ===========================================================================
+   S11 — OUTRO endcard
+   =========================================================================== */
+.ec { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); text-align: center; }
+.ec #outro-logo svg { display: block; margin: 0 auto; }
+.ec .lyr { opacity: 0; transform: translateY(-46px) scale(.8); transition: transform .56s cubic-bezier(.34,1.56,.5,1) var(--d, 0s), opacity .4s ease var(--d, 0s); }
+.ec .chev { opacity: 0; transition: opacity .5s ease .3s; }
+.ec.play .lyr { opacity: 1; transform: none; }
+.ec.play .chev { opacity: 1; }
+.ec .wm { margin-top: 18px; font: 900 150px/1 'Inter', sans-serif; letter-spacing: -4px; opacity: 0; transform: translateY(20px); transition: opacity .5s ease .35s, transform .5s ease .35s; }
+.ec .wm .s { color: var(--stk-ink); } .ec .wm .t { color: var(--stk-teal); }
+.ec.play .wm { opacity: 1; transform: none; }
+.ec .url { margin-top: 14px; font: 700 44px/1 'Inter', sans-serif; color: var(--stk-muted); opacity: 0; transition: opacity .5s ease .55s; }
+.ec.play .url { opacity: 1; }

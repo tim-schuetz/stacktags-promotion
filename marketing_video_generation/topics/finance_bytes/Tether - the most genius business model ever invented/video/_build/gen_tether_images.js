@@ -31,6 +31,7 @@ const SHOTS = [
   { key: 'office',   prompt: 'A single small modern minimalist glass-and-steel office building, a low two-story corporate cube, clean architecture, seen from a slight downward three-quarter angle.' },
   { key: 'magnifier', prompt: 'A single classic magnifying glass with a polished metal rim and a dark handle, lens facing the camera at a slight angle.' },
   { key: 'cash',     prompt: 'A single neat banded brick bundle of US one-hundred-dollar bills, crisp stacked banknotes wrapped with a paper band.' },
+  { key: 'company',  prompt: 'A single tall modern corporate skyscraper office tower, a sleek glass high-rise headquarters building, seen from a slight upward three-quarter angle.' },
 ];
 
 async function gen(shot, attempt = 1) {

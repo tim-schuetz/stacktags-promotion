@@ -1,0 +1,127 @@
+VIDEO SCRIPT
+Title options: The most complex Chinese character — invented for a noodle
+Topic: Learn Chinese
+Target length: ~85 seconds (fits the 30s–3min window)
+Language of narration: English
+Format: Spoken voiceover narration + [bracketed] on-screen storyboard cues.
+
+NOTE: Lines in [square brackets] are visual direction only — they are STRIPPED before
+TTS, so the spoken track = the plain narration lines below them. Build the video from the
+brackets; design rules in designguide.md, anti-slop rules in ai_slop_vs_high_quality_content.md.
+
+==================================================================
+THE CORE IDEA
+==================================================================
+"Biáng" — one of the most complex Chinese characters (~58 strokes), used only for
+biángbiáng noodles (a Shaanxi dish). So obscure/complex it wasn't in standard
+dictionaries and wasn't in Unicode until 2020 (Unicode 13.0) — so for years you
+literally couldn't type it. Its origin is folklore (the "biang" = the slap of dough
+on the table).
+Punchline: a character too complicated for the digital age, invented for a bowl of
+noodles.
+
+NOTE (honesty): stroke count is usually cited ~57–58 (varies by counting); origin
+is legend, so say "as the story goes." Unicode 13.0 (2020) added it.
+
+PERSISTENT HERO: ONE biáng glyph living inside a single 田字格 practice cell carries the
+whole video. The cell stays put on the white grid; only the context around it changes
+(stroke counter, component labels, comparison characters, a phone, a noodle bowl). No
+new scene per sentence — scenes flow into one another (see anti-slop example 4).
+biáng is rendered from the public-domain Wikimedia SVG (no per-stroke data exists), so
+the reveal is an INK WRITE-ON (a brush wipe-mask filling the glyph) plus a stroke
+counter ticking up — not a true stroke-by-stroke animation.
+
+==================================================================
+SCRIPT
+==================================================================
+
+--- HOOK (0:00–0:12) — the payoff up front ---
+
+[Open already on the empty 田字格 practice cell, centered on the white grid. On the first
+words the biáng glyph BRUSH-WRITES itself in: a soft ink wipe-mask floods the huge glyph
+from top-left to bottom-right (ticking sound), while a small counter at the cell's corner
+races up 1 → 58. The glyph is so dense it reads like a tiny ink painting. No title text —
+the character IS the hook.]
+This is one single Chinese character. It has around 58 strokes, it means one
+specific kind of noodle —
+[On "no computer on Earth could type it": a small phone / chat input field slides up over
+the lower grid; we type and the message shows the glyph as a missing-glyph TOFU BOX □
+(not the character). The □ blinks once. This is the through-line we pay off at the end.]
+and until 2020, no computer on Earth could type it.
+
+--- THE CHARACTER (≈0:12–0:38) ---
+
+[Phone slides away. Camera settles back on the glyph in its cell; the pinyin "biáng"
+(with the á tone mark) pops in just under the cell — the one piece of on-screen text that
+teaches.]
+Meet "biáng."
+[Three SIMPLE characters pop in small along the top, each with its tiny stroke count in a
+turquoise chip: 大 ·3, 中 ·4, 你 ·7 (pop sound per character). They look calm and sparse
+next to the dense biáng below.]
+Most Chinese characters have a handful of strokes — five, ten, maybe
+fifteen.
+[The simple characters shrink/fade; biáng zooms up to fill the cell. The "58" counter
+re-emphasizes (gentle pulse). The contrast: a wall of ink vs. the little ones.]
+This one crams nearly sixty strokes into a single character. It's so packed
+it looks less like writing and more like a tiny painting.
+[COMPONENT DECOMPOSITION — the anti-slop core ("show, don't tell"): faint turquoise
+highlight boxes sweep across the glyph one by one, each with a small leader label naming
+a REAL character hiding inside it — 馬 horse, 心 heart, 月 moon, 言 speak, 長 long, 辶 walk.
+The point lands visually: biáng is whole words crammed together. Highlights fade back out,
+leaving the full glyph.]
+And after all that
+complexity, it means... just one thing.
+
+--- WHAT IT'S FOR (≈0:38–1:00) ---
+
+[The biáng glyph slides to the upper third; from the bottom of the frame a REAL, cropped,
+dashed-outlined photo of a bowl of thick hand-pulled biángbiáng noodles rises in (bottom-
+anchored, swoosh as it enters). Small turquoise label "biángbiáng" by the bowl.]
+Biángbiáng noodles — a thick, hand-pulled noodle from the Shaanxi region of China.
+That's it.
+[Beat: the giant glyph above, the humble single bowl below, joined by a thin dotted
+turquoise connector — "all THIS, for THAT." (visual rhyme, like the chopstick video).]
+One of the most complicated characters ever, for one bowl of food.
+[A dictionary page slides in; a search bar types "biáng" and returns an empty result /
+"no entry" — the glyph is conspicuously absent from the ordered list of normal entries.]
+It doesn't even appear in standard dictionaries.
+[Humor beat: a quick stylized hand slaps a rope of dough onto a wooden table; on the slap
+a bold "biáng!" onomatopoeia pops out of the impact (pop sound). Ties the name to the
+sound of the dough — the folk origin.]
+As the story goes, it was dreamed up
+around a noodle stall — the "biang" being the slapping sound of the dough
+hitting the table.
+
+--- THE COMPUTER PROBLEM (≈1:00–1:18) ---
+
+[Back to the glyph. On "didn't exist in Unicode": a long scrolling vertical list of code
+points / characters streams past (the "master list"), each a real glyph in its slot — but
+where biáng should be there's an empty gap / a TOFU BOX □. Small caption chip "Unicode".]
+And because it's so rare and so complex, for years it simply didn't exist in
+Unicode — the master list of every character computers can display.
+[Three quick states cycle in the phone, each showing the □ where biáng should be: a typed
+message (□), then a digital menu line "□ noodles  ¥28" (□). Show, don't narrate.]
+So you couldn't
+type it, text it, or put it on a digital menu.
+[A printed paper menu where the dish name is a hand-drawn biáng scribble / a pasted little
+image patch taped into the line — the real-world workaround. Slightly janky on purpose.]
+Restaurants had to draw it by hand or
+paste in a picture.
+[On "2020": a "Unicode 13.0 · 2020" rubber-stamp slams down; the TOFU BOX □ in the phone
+dissolves and RESOLVES into the real biáng glyph (it finally renders). Subtle relief.]
+Only in 2020 did it finally get added — so computers could at
+last render a single bowl of noodles.
+
+--- PUNCHLINE / OUTRO (≈1:18–1:30) ---
+
+[Final composed shot: the full biáng glyph back in its cell, and the little noodle bowl
+nested beside/below it — the whole story in one frame. Calm, settled.]
+A character too complicated for the digital age — invented for a plate of noodles.
+[A neat row of simple emojis lines up beside the towering biáng for one last size gag —
+the emojis tiny and tidy, biáng absurdly dense.]
+Proof that even in a world of emojis, some words are just too gloriously complex to
+type.
+[Transition to the standard stacktags OUTRO element (logo between chevrons, wordmark,
+stacktags.io line).]
+Wanna actually start learning Chinese?
+Discover thousands of free exercises and more learning content on stacktags.io.

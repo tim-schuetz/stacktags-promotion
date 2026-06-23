@@ -1,0 +1,1366 @@
+{
+"words": [
+{
+"w": "There's",
+"start": 0.0,
+"end": 0.26
+},
+{
+"w": "a",
+"start": 0.26,
+"end": 0.38
+},
+{
+"w": "form",
+"start": 0.38,
+"end": 0.52
+},
+{
+"w": "of",
+"start": 0.52,
+"end": 0.76
+},
+{
+"w": "Chinese",
+"start": 0.76,
+"end": 1.04
+},
+{
+"w": "written",
+"start": 1.04,
+"end": 1.28
+},
+{
+"w": "with",
+"start": 1.28,
+"end": 1.48
+},
+{
+"w": "no",
+"start": 1.48,
+"end": 1.74
+},
+{
+"w": "Chinese",
+"start": 1.74,
+"end": 2.08
+},
+{
+"w": "characters",
+"start": 2.08,
+"end": 2.42
+},
+{
+"w": "at",
+"start": 2.42,
+"end": 2.68
+},
+{
+"w": "all,",
+"start": 2.68,
+"end": 2.92
+},
+{
+"w": "in",
+"start": 3.12,
+"end": 3.2
+},
+{
+"w": "the",
+"start": 3.2,
+"end": 3.34
+},
+{
+"w": "same",
+"start": 3.34,
+"end": 3.58
+},
+{
+"w": "alphabet",
+"start": 3.58,
+"end": 3.9
+},
+{
+"w": "as",
+"start": 3.9,
+"end": 4.16
+},
+{
+"w": "Russian.",
+"start": 4.16,
+"end": 4.4
+},
+{
+"w": "It's",
+"start": 5.02,
+"end": 5.24
+},
+{
+"w": "spoken",
+"start": 5.24,
+"end": 5.42
+},
+{
+"w": "in",
+"start": 5.42,
+"end": 5.72
+},
+{
+"w": "Central",
+"start": 5.72,
+"end": 5.96
+},
+{
+"w": "Asia,",
+"start": 5.96,
+"end": 6.22
+},
+{
+"w": "and",
+"start": 6.54,
+"end": 6.64
+},
+{
+"w": "it",
+"start": 6.64,
+"end": 6.76
+},
+{
+"w": "quietly",
+"start": 6.76,
+"end": 7.04
+},
+{
+"w": "proves",
+"start": 7.04,
+"end": 7.46
+},
+{
+"w": "something",
+"start": 7.46,
+"end": 7.82
+},
+{
+"w": "a",
+"start": 7.82,
+"end": 8.08
+},
+{
+"w": "lot",
+"start": 8.08,
+"end": 8.24
+},
+{
+"w": "of",
+"start": 8.24,
+"end": 8.36
+},
+{
+"w": "people",
+"start": 8.36,
+"end": 8.52
+},
+{
+"w": "insist",
+"start": 8.52,
+"end": 8.9
+},
+{
+"w": "is",
+"start": 8.9,
+"end": 9.08
+},
+{
+"w": "impossible.",
+"start": 9.08,
+"end": 9.6
+},
+{
+"w": "In",
+"start": 10.48,
+"end": 10.58
+},
+{
+"w": "the",
+"start": 10.58,
+"end": 10.72
+},
+{
+"w": "1800s,",
+"start": 10.72,
+"end": 11.54
+},
+{
+"w": "a",
+"start": 11.58,
+"end": 11.7
+},
+{
+"w": "group",
+"start": 11.7,
+"end": 11.84
+},
+{
+"w": "of",
+"start": 11.84,
+"end": 12.1
+},
+{
+"w": "Chinese",
+"start": 12.1,
+"end": 12.38
+},
+{
+"w": "Muslims,",
+"start": 12.38,
+"end": 12.78
+},
+{
+"w": "the",
+"start": 13.12,
+"end": 13.26
+},
+{
+"w": "Hui,",
+"start": 13.26,
+"end": 13.58
+},
+{
+"w": "fled",
+"start": 13.9,
+"end": 14.14
+},
+{
+"w": "unrest",
+"start": 14.14,
+"end": 14.5
+},
+{
+"w": "and",
+"start": 14.5,
+"end": 14.78
+},
+{
+"w": "migrated",
+"start": 14.78,
+"end": 15.12
+},
+{
+"w": "west,",
+"start": 15.12,
+"end": 15.54
+},
+{
+"w": "settling",
+"start": 16.0,
+"end": 16.24
+},
+{
+"w": "in",
+"start": 16.24,
+"end": 16.48
+},
+{
+"w": "what's",
+"start": 16.48,
+"end": 16.74
+},
+{
+"w": "now",
+"start": 16.74,
+"end": 16.92
+},
+{
+"w": "Kyrgyzstan",
+"start": 16.92,
+"end": 17.44
+},
+{
+"w": "and",
+"start": 17.44,
+"end": 17.64
+},
+{
+"w": "Kazakhstan.",
+"start": 17.64,
+"end": 18.06
+},
+{
+"w": "Their",
+"start": 18.76,
+"end": 18.9
+},
+{
+"w": "descendants",
+"start": 18.9,
+"end": 19.24
+},
+{
+"w": "are",
+"start": 19.24,
+"end": 19.54
+},
+{
+"w": "called",
+"start": 19.54,
+"end": 19.72
+},
+{
+"w": "the",
+"start": 19.72,
+"end": 19.9
+},
+{
+"w": "Dungan,",
+"start": 19.9,
+"end": 20.2
+},
+{
+"w": "and",
+"start": 20.54,
+"end": 20.74
+},
+{
+"w": "they",
+"start": 20.74,
+"end": 20.9
+},
+{
+"w": "still",
+"start": 20.9,
+"end": 21.12
+},
+{
+"w": "speak",
+"start": 21.12,
+"end": 21.36
+},
+{
+"w": "a",
+"start": 21.36,
+"end": 21.54
+},
+{
+"w": "language",
+"start": 21.54,
+"end": 21.74
+},
+{
+"w": "descended",
+"start": 21.74,
+"end": 22.14
+},
+{
+"w": "from",
+"start": 22.14,
+"end": 22.46
+},
+{
+"w": "Mandarin",
+"start": 22.46,
+"end": 22.74
+},
+{
+"w": "Chinese,",
+"start": 22.74,
+"end": 23.22
+},
+{
+"w": "close",
+"start": 23.82,
+"end": 23.98
+},
+{
+"w": "enough",
+"start": 23.98,
+"end": 24.22
+},
+{
+"w": "that",
+"start": 24.22,
+"end": 24.4
+},
+{
+"w": "a",
+"start": 24.4,
+"end": 24.52
+},
+{
+"w": "Mandarin",
+"start": 24.52,
+"end": 24.78
+},
+{
+"w": "speaker",
+"start": 24.78,
+"end": 25.08
+},
+{
+"w": "can",
+"start": 25.08,
+"end": 25.34
+},
+{
+"w": "largely",
+"start": 25.34,
+"end": 25.68
+},
+{
+"w": "follow",
+"start": 25.68,
+"end": 26.02
+},
+{
+"w": "it.",
+"start": 26.02,
+"end": 26.3
+},
+{
+"w": "But",
+"start": 26.56,
+"end": 26.84
+},
+{
+"w": "here's",
+"start": 26.84,
+"end": 27.04
+},
+{
+"w": "the",
+"start": 27.04,
+"end": 27.2
+},
+{
+"w": "twist,",
+"start": 27.2,
+"end": 27.5
+},
+{
+"w": "cut",
+"start": 27.8,
+"end": 27.88
+},
+{
+"w": "off",
+"start": 27.88,
+"end": 28.02
+},
+{
+"w": "from",
+"start": 28.02,
+"end": 28.22
+},
+{
+"w": "China",
+"start": 28.22,
+"end": 28.48
+},
+{
+"w": "and",
+"start": 28.48,
+"end": 28.82
+},
+{
+"w": "living",
+"start": 28.82,
+"end": 29.0
+},
+{
+"w": "in",
+"start": 29.0,
+"end": 29.18
+},
+{
+"w": "the",
+"start": 29.18,
+"end": 29.28
+},
+{
+"w": "Soviet",
+"start": 29.28,
+"end": 29.52
+},
+{
+"w": "world,",
+"start": 29.52,
+"end": 29.86
+},
+{
+"w": "they",
+"start": 30.22,
+"end": 30.4
+},
+{
+"w": "stopped",
+"start": 30.4,
+"end": 30.64
+},
+{
+"w": "using",
+"start": 30.64,
+"end": 30.92
+},
+{
+"w": "Chinese",
+"start": 30.92,
+"end": 31.3
+},
+{
+"w": "characters",
+"start": 31.3,
+"end": 31.68
+},
+{
+"w": "entirely.",
+"start": 31.68,
+"end": 32.1
+},
+{
+"w": "Today",
+"start": 32.84,
+"end": 33.0
+},
+{
+"w": "the",
+"start": 33.0,
+"end": 33.22
+},
+{
+"w": "Dungan",
+"start": 33.22,
+"end": 33.5
+},
+{
+"w": "language",
+"start": 33.5,
+"end": 33.78
+},
+{
+"w": "is",
+"start": 33.78,
+"end": 34.0
+},
+{
+"w": "written",
+"start": 34.0,
+"end": 34.24
+},
+{
+"w": "in",
+"start": 34.24,
+"end": 34.4
+},
+{
+"w": "Cyrillic,",
+"start": 34.4,
+"end": 34.82
+},
+{
+"w": "letters,",
+"start": 35.18,
+"end": 35.34
+},
+{
+"w": "just",
+"start": 35.76,
+"end": 35.86
+},
+{
+"w": "like",
+"start": 35.86,
+"end": 36.06
+},
+{
+"w": "Russian.",
+"start": 36.06,
+"end": 36.4
+},
+{
+"w": "Which",
+"start": 36.98,
+"end": 37.22
+},
+{
+"w": "matters,",
+"start": 37.22,
+"end": 37.58
+},
+{
+"w": "because",
+"start": 38.02,
+"end": 38.3
+},
+{
+"w": "people",
+"start": 38.3,
+"end": 38.54
+},
+{
+"w": "often",
+"start": 38.54,
+"end": 38.86
+},
+{
+"w": "say",
+"start": 38.86,
+"end": 39.16
+},
+{
+"w": "Chinese",
+"start": 39.16,
+"end": 39.56
+},
+{
+"w": "can't",
+"start": 39.56,
+"end": 39.98
+},
+{
+"w": "be",
+"start": 39.98,
+"end": 40.08
+},
+{
+"w": "written",
+"start": 40.08,
+"end": 40.24
+},
+{
+"w": "with",
+"start": 40.24,
+"end": 40.42
+},
+{
+"w": "an",
+"start": 40.42,
+"end": 40.56
+},
+{
+"w": "alphabet,",
+"start": 40.56,
+"end": 40.96
+},
+{
+"w": "that",
+"start": 41.36,
+"end": 41.74
+},
+{
+"w": "it",
+"start": 41.74,
+"end": 41.84
+},
+{
+"w": "needs",
+"start": 41.84,
+"end": 42.06
+},
+{
+"w": "characters,",
+"start": 42.06,
+"end": 42.58
+},
+{
+"w": "because",
+"start": 42.88,
+"end": 43.14
+},
+{
+"w": "too",
+"start": 43.14,
+"end": 43.4
+},
+{
+"w": "many",
+"start": 43.4,
+"end": 43.58
+},
+{
+"w": "words",
+"start": 43.58,
+"end": 43.84
+},
+{
+"w": "sound",
+"start": 43.84,
+"end": 44.1
+},
+{
+"w": "alike.",
+"start": 44.1,
+"end": 44.42
+},
+{
+"w": "Dungan",
+"start": 45.16,
+"end": 45.42
+},
+{
+"w": "is",
+"start": 45.42,
+"end": 45.6
+},
+{
+"w": "living",
+"start": 45.6,
+"end": 45.84
+},
+{
+"w": "proof",
+"start": 45.84,
+"end": 46.1
+},
+{
+"w": "that",
+"start": 46.1,
+"end": 46.32
+},
+{
+"w": "it",
+"start": 46.32,
+"end": 46.44
+},
+{
+"w": "can.",
+"start": 46.44,
+"end": 46.7
+},
+{
+"w": "A",
+"start": 47.28,
+"end": 47.46
+},
+{
+"w": "complete,",
+"start": 47.46,
+"end": 47.88
+},
+{
+"w": "working,",
+"start": 48.18,
+"end": 48.64
+},
+{
+"w": "synodic",
+"start": 48.76,
+"end": 49.08
+},
+{
+"w": "language,",
+"start": 49.08,
+"end": 49.52
+},
+{
+"w": "written",
+"start": 49.94,
+"end": 50.14
+},
+{
+"w": "phonetically",
+"start": 50.14,
+"end": 50.62
+},
+{
+"w": "with",
+"start": 50.62,
+"end": 51.06
+},
+{
+"w": "letters,",
+"start": 51.06,
+"end": 51.38
+},
+{
+"w": "and",
+"start": 51.84,
+"end": 52.04
+},
+{
+"w": "that",
+"start": 52.04,
+"end": 52.2
+},
+{
+"w": "quietly",
+"start": 52.2,
+"end": 52.48
+},
+{
+"w": "reveals",
+"start": 52.48,
+"end": 52.96
+},
+{
+"w": "something.",
+"start": 52.96,
+"end": 53.38
+},
+{
+"w": "The",
+"start": 53.38,
+"end": 54.02
+},
+{
+"w": "characters",
+"start": 54.02,
+"end": 54.38
+},
+{
+"w": "and",
+"start": 54.38,
+"end": 54.84
+},
+{
+"w": "the",
+"start": 54.84,
+"end": 54.98
+},
+{
+"w": "language",
+"start": 54.98,
+"end": 55.28
+},
+{
+"w": "aren't",
+"start": 55.28,
+"end": 55.54
+},
+{
+"w": "the",
+"start": 55.54,
+"end": 55.7
+},
+{
+"w": "same",
+"start": 55.7,
+"end": 55.92
+},
+{
+"w": "thing,",
+"start": 55.92,
+"end": 56.2
+},
+{
+"w": "the",
+"start": 56.58,
+"end": 56.74
+},
+{
+"w": "spoken",
+"start": 56.74,
+"end": 57.02
+},
+{
+"w": "Chinese",
+"start": 57.02,
+"end": 57.48
+},
+{
+"w": "language",
+"start": 57.48,
+"end": 57.8
+},
+{
+"w": "could,",
+"start": 57.8,
+"end": 58.14
+},
+{
+"w": "in",
+"start": 58.5,
+"end": 58.68
+},
+{
+"w": "principle,",
+"start": 58.68,
+"end": 59.08
+},
+{
+"w": "be",
+"start": 59.42,
+"end": 59.5
+},
+{
+"w": "written",
+"start": 59.5,
+"end": 59.7
+},
+{
+"w": "in",
+"start": 59.7,
+"end": 59.88
+},
+{
+"w": "letters,",
+"start": 59.88,
+"end": 60.1
+},
+{
+"w": "and",
+"start": 60.4,
+"end": 60.68
+},
+{
+"w": "the",
+"start": 60.68,
+"end": 60.82
+},
+{
+"w": "Dungan",
+"start": 60.82,
+"end": 61.16
+},
+{
+"w": "have",
+"start": 61.16,
+"end": 61.68
+},
+{
+"w": "been",
+"start": 61.68,
+"end": 61.82
+},
+{
+"w": "doing",
+"start": 61.82,
+"end": 62.04
+},
+{
+"w": "exactly",
+"start": 62.04,
+"end": 62.42
+},
+{
+"w": "that",
+"start": 62.42,
+"end": 62.8
+},
+{
+"w": "for",
+"start": 62.8,
+"end": 62.98
+},
+{
+"w": "generations.",
+"start": 62.98,
+"end": 63.46
+},
+{
+"w": "So",
+"start": 64.1,
+"end": 64.3
+},
+{
+"w": "somewhere",
+"start": 64.3,
+"end": 64.64
+},
+{
+"w": "in",
+"start": 64.64,
+"end": 64.82
+},
+{
+"w": "Central",
+"start": 64.82,
+"end": 65.04
+},
+{
+"w": "Asia,",
+"start": 65.04,
+"end": 65.4
+},
+{
+"w": "people",
+"start": 65.6,
+"end": 65.8
+},
+{
+"w": "are",
+"start": 65.8,
+"end": 65.96
+},
+{
+"w": "speaking",
+"start": 65.96,
+"end": 66.2
+},
+{
+"w": "a",
+"start": 66.2,
+"end": 66.44
+},
+{
+"w": "kind",
+"start": 66.44,
+"end": 66.58
+},
+{
+"w": "of",
+"start": 66.58,
+"end": 66.76
+},
+{
+"w": "Chinese,",
+"start": 66.76,
+"end": 67.12
+},
+{
+"w": "and",
+"start": 67.66,
+"end": 67.84
+},
+{
+"w": "writing",
+"start": 67.84,
+"end": 68.1
+},
+{
+"w": "it",
+"start": 68.1,
+"end": 68.26
+},
+{
+"w": "in",
+"start": 68.26,
+"end": 68.44
+},
+{
+"w": "the",
+"start": 68.44,
+"end": 68.56
+},
+{
+"w": "alphabet",
+"start": 68.56,
+"end": 68.94
+},
+{
+"w": "of",
+"start": 68.94,
+"end": 69.18
+},
+{
+"w": "Russian.",
+"start": 69.18,
+"end": 69.52
+},
+{
+"w": "A",
+"start": 70.02,
+"end": 70.22
+},
+{
+"w": "reminder",
+"start": 70.22,
+"end": 70.5
+},
+{
+"w": "that",
+"start": 70.5,
+"end": 70.86
+},
+{
+"w": "how",
+"start": 70.86,
+"end": 71.02
+},
+{
+"w": "a",
+"start": 71.02,
+"end": 71.16
+},
+{
+"w": "language",
+"start": 71.16,
+"end": 71.38
+},
+{
+"w": "sounds,",
+"start": 71.38,
+"end": 71.72
+},
+{
+"w": "and",
+"start": 71.94,
+"end": 71.98
+},
+{
+"w": "how",
+"start": 71.98,
+"end": 72.12
+},
+{
+"w": "we",
+"start": 72.12,
+"end": 72.34
+},
+{
+"w": "choose",
+"start": 72.34,
+"end": 72.56
+},
+{
+"w": "to",
+"start": 72.56,
+"end": 72.74
+},
+{
+"w": "write",
+"start": 72.74,
+"end": 72.86
+},
+{
+"w": "it",
+"start": 72.86,
+"end": 73.0
+},
+{
+"w": "down,",
+"start": 73.0,
+"end": 73.28
+},
+{
+"w": "aren't",
+"start": 73.66,
+"end": 73.94
+},
+{
+"w": "the",
+"start": 73.94,
+"end": 74.06
+},
+{
+"w": "same",
+"start": 74.06,
+"end": 74.24
+},
+{
+"w": "thing",
+"start": 74.24,
+"end": 74.42
+},
+{
+"w": "at",
+"start": 74.42,
+"end": 74.54
+},
+{
+"w": "all.",
+"start": 74.54,
+"end": 74.76
+},
+{
+"w": "Want",
+"start": 75.18,
+"end": 75.34
+},
+{
+"w": "to",
+"start": 75.34,
+"end": 75.42
+},
+{
+"w": "actually",
+"start": 75.42,
+"end": 75.7
+},
+{
+"w": "start",
+"start": 75.7,
+"end": 75.92
+},
+{
+"w": "learning",
+"start": 75.92,
+"end": 76.16
+},
+{
+"w": "Chinese?",
+"start": 76.16,
+"end": 76.54
+},
+{
+"w": "Discover",
+"start": 77.08,
+"end": 77.36
+},
+{
+"w": "thousands",
+"start": 77.36,
+"end": 77.8
+},
+{
+"w": "of",
+"start": 77.8,
+"end": 78.04
+},
+{
+"w": "free",
+"start": 78.04,
+"end": 78.22
+},
+{
+"w": "exercises",
+"start": 78.22,
+"end": 78.72
+},
+{
+"w": "and",
+"start": 78.72,
+"end": 79.08
+},
+{
+"w": "more",
+"start": 79.08,
+"end": 79.3
+},
+{
+"w": "learning",
+"start": 79.3,
+"end": 79.58
+},
+{
+"w": "content",
+"start": 79.58,
+"end": 79.94
+},
+{
+"w": "on",
+"start": 79.94,
+"end": 80.14
+},
+{
+"w": "stacktags",
+"start": 80.14,
+"end": 80.64
+},
+{
+"w": ".io.",
+"start": 80.64,
+"end": 81.18
+}
+],
+"segments": [
+{
+"start": 0.0,
+"end": 3.9,
+"text": "There's a form of Chinese written with no Chinese characters at all, in the same alphabet"
+},
+{
+"start": 3.9,
+"end": 4.4,
+"text": "as Russian."
+},
+{
+"start": 5.02,
+"end": 9.08,
+"text": "It's spoken in Central Asia, and it quietly proves something a lot of people insist is"
+},
+{
+"start": 9.08,
+"end": 9.6,
+"text": "impossible."
+},
+{
+"start": 10.48,
+"end": 16.24,
+"text": "In the 1800s, a group of Chinese Muslims, the Hui, fled unrest and migrated west, settling"
+},
+{
+"start": 16.24,
+"end": 18.06,
+"text": "in what's now Kyrgyzstan and Kazakhstan."
+},
+{
+"start": 18.76,
+"end": 22.14,
+"text": "Their descendants are called the Dungan, and they still speak a language descended"
+},
+{
+"start": 22.14,
+"end": 26.3,
+"text": "from Mandarin Chinese, close enough that a Mandarin speaker can largely follow it."
+},
+{
+"start": 26.82,
+"end": 30.64,
+"text": "But here's the twist, cut off from China and living in the Soviet world, they stopped"
+},
+{
+"start": 30.64,
+"end": 32.1,
+"text": "using Chinese characters entirely."
+},
+{
+"start": 32.84,
+"end": 36.4,
+"text": "Today the Dungan language is written in Cyrillic, letters, just like Russian."
+},
+{
+"start": 36.98,
+"end": 41.84,
+"text": "Which matters, because people often say Chinese can't be written with an alphabet, that it"
+},
+{
+"start": 41.84,
+"end": 44.42,
+"text": "needs characters, because too many words sound alike."
+},
+{
+"start": 45.16,
+"end": 46.7,
+"text": "Dungan is living proof that it can."
+},
+{
+"start": 47.28,
+"end": 52.48,
+"text": "A complete, working, synodic language, written phonetically with letters, and that quietly"
+},
+{
+"start": 52.48,
+"end": 53.38,
+"text": "reveals something."
+},
+{
+"start": 53.38,
+"end": 58.14,
+"text": "The characters and the language aren't the same thing, the spoken Chinese language could,"
+},
+{
+"start": 58.5,
+"end": 63.46,
+"text": "in principle, be written in letters, and the Dungan have been doing exactly that for generations."
+},
+{
+"start": 64.1,
+"end": 68.26,
+"text": "So somewhere in Central Asia, people are speaking a kind of Chinese, and writing it"
+},
+{
+"start": 68.26,
+"end": 69.52,
+"text": "in the alphabet of Russian."
+},
+{
+"start": 70.02,
+"end": 74.06,
+"text": "A reminder that how a language sounds, and how we choose to write it down, aren't the"
+},
+{
+"start": 74.06,
+"end": 74.76,
+"text": "same thing at all."
+},
+{
+"start": 75.18,
+"end": 76.54,
+"text": "Want to actually start learning Chinese?"
+},
+{
+"start": 77.08,
+"end": 81.18,
+"text": "Discover thousands of free exercises and more learning content on stacktags.io."
+}
+]
+}

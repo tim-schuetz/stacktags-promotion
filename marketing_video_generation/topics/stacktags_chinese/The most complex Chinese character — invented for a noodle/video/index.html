@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>The most complex Chinese character — invented for a noodle</title>
+<link rel="icon" href="data:," />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- Inter (full latin) for all UI/English text -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<!-- Noto Sans SC, subsetted to only the CJK glyphs we actually show as text -->
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@500;700;900&text=永家影馬長长心月言辶刂面字典词条米菜饭一二三人大小山水火日中国麵&display=swap" rel="stylesheet">
+
+<!-- shared theme tokens + grid + subtitles (the design system) -->
+<link rel="stylesheet" href="elements/theme.css">
+<!-- the dynamic depth-grid look (we reuse its grid styling) -->
+<link rel="stylesheet" href="elements/depth-transitions.css">
+<!-- this video's own scene styling -->
+<link rel="stylesheet" href="styles.css?v=1">
+</head>
+<body>
+<div class="wrap">
+  <div class="stage stk-grid-bg" id="stage">
+
+    <!-- persistent dynamic grid: the camera (zoom/pan) lives here -->
+    <div class="stk-depth2-grid" id="grid"></div>
+
+    <!-- all scene layers stack here -->
+    <div class="scenes" id="scenes">
+
+      <!-- ===== HERO — ONE biáng glyph in a 田字格 practice cell carries the video ===== -->
+      <div class="scene" id="sc-hero">
+
+        <!-- simple comparison characters (pop above the cell) -->
+        <div class="compare" id="compare">
+          <div class="cmp" data-i="0"><span class="cmp-ch">永</span><span class="cmp-chip">5</span></div>
+          <div class="cmp" data-i="1"><span class="cmp-ch">家</span><span class="cmp-chip">10</span></div>
+          <div class="cmp" data-i="2"><span class="cmp-ch">影</span><span class="cmp-chip">15</span></div>
+        </div>
+
+        <!-- the practice cell + hero glyph -->
+        <div class="cell" id="cell">
+          <span class="cell-h"></span><span class="cell-v"></span>
+          <div class="glyph-wrap" id="glyph-wrap">
+            <img class="biang" id="biang" src="assets/img/biang.svg" alt="biáng" />
+            <!-- component-decomposition highlights (real characters hiding inside) -->
+            <div class="comp-layer" id="comp">
+              <div class="comp-box" style="--cx:50%; --cy:52%; --bw:24%; --bh:22%"><span class="comp-lab" data-side="r">馬 <i>horse</i></span></div>
+              <div class="comp-box" style="--cx:50%; --cy:77%; --bw:22%; --bh:16%"><span class="comp-lab" data-side="b">心 <i>heart</i></span></div>
+              <div class="comp-box" style="--cx:13%; --cy:50%; --bw:14%; --bh:26%"><span class="comp-lab" data-side="l">月 <i>moon</i></span></div>
+              <div class="comp-box" style="--cx:50%; --cy:29%; --bw:20%; --bh:13%"><span class="comp-lab" data-side="t">言 <i>speak</i></span></div>
+              <div class="comp-box" style="--cx:69%; --cy:50%; --bw:13%; --bh:24%"><span class="comp-lab" data-side="r">長 <i>long</i></span></div>
+              <div class="comp-box" style="--cx:24%; --cy:82%; --bw:22%; --bh:14%"><span class="comp-lab" data-side="l">辶 <i>walk</i></span></div>
+            </div>
+          </div>
+          <!-- stroke counter sits at the cell's top-right corner -->
+          <div class="counter" id="counter"><span class="ct-n" id="ct-n">0</span><span class="ct-l">strokes</span></div>
+        </div>
+
+        <!-- pinyin label under the cell -->
+        <div class="pinyin" id="pinyin">biáng</div>
+
+        <!-- hook: a small chat input where the glyph can't be typed (shows □) -->
+        <div class="chatstrip" id="chat">
+          <span class="chat-txt">how do you type</span><span class="tofu" id="chat-tofu"></span><span class="chat-caret"></span>
+        </div>
+
+        <!-- noodle bowl rises from the bottom (the one thing it's for) -->
+        <img class="bowl" id="bowl" src="assets/img/noodles_dashed.png" alt="" />
+        <div class="bowl-lab" id="bowl-lab">biángbiáng</div>
+        <!-- dotted "all THIS for THAT" connector -->
+        <svg class="conn" id="conn" viewBox="0 0 40 400" preserveAspectRatio="none"><path d="M20 8 L20 392" /></svg>
+
+        <!-- emoji size-gag row (punchline) -->
+        <div class="emojirow" id="emoji"><span>😀</span><span>🍜</span><span>👍</span><span>🔥</span><span>✨</span></div>
+      </div>
+
+      <!-- ===== DICTIONARY — look it up, it isn't there ===== -->
+      <div class="scene" id="sc-dict">
+        <div class="dict" id="dict">
+          <div class="dict-search"><span class="dict-q" id="dict-q">biáng</span><span class="chat-caret"></span></div>
+          <div class="dict-rows" id="dict-rows">
+            <div class="dict-row"><span class="dr-ch">面</span><span class="dr-py">miàn — noodle</span></div>
+            <div class="dict-row"><span class="dr-ch">米</span><span class="dr-py">mǐ — rice</span></div>
+            <div class="dict-row"><span class="dr-ch">菜</span><span class="dr-py">cài — dish</span></div>
+          </div>
+          <div class="dict-none" id="dict-none">no entry found</div>
+        </div>
+      </div>
+
+      <!-- ===== NOODLE STALL — the name is the slap of the dough ===== -->
+      <div class="scene" id="sc-slap">
+        <div class="table" id="table"></div>
+        <div class="dough" id="dough"></div>
+        <div class="slap-word" id="slap-word">biáng!</div>
+      </div>
+
+      <!-- ===== UNICODE — the master list, with a gap where biáng should be ===== -->
+      <div class="scene" id="sc-unicode">
+        <div class="uni-cap">Unicode</div>
+        <div class="uni-list" id="uni-list"></div>
+      </div>
+
+      <!-- ===== SCREEN — phone/menu show □; then 2020 stamp resolves it ===== -->
+      <div class="scene" id="sc-screen">
+        <div class="phone" id="phone">
+          <div class="ph-scr">
+            <div class="msg" id="msg"><span class="msg-pre">dinner? </span><span class="tofu sm" id="msg-tofu"></span><span class="msg-post"> noodles</span></div>
+            <div class="menu" id="menu">
+              <div class="menu-title">Menu</div>
+              <div class="menu-line"><span class="ml-name"><span class="tofu sm" id="menu-tofu"></span> noodles</span><span class="ml-price">¥28</span></div>
+              <div class="menu-line dim"><span class="ml-name">rice bowl</span><span class="ml-price">¥18</span></div>
+            </div>
+            <!-- hand-drawn / pasted workaround -->
+            <div class="paste" id="paste"><img src="assets/img/biang.svg" alt="" /></div>
+          </div>
+        </div>
+        <div class="stamp" id="stamp"><span class="st-u">Unicode 13.0</span><b>2020</b></div>
+      </div>
+
+      <!-- ===== OUTRO ===== -->
+      <div class="scene" id="sc-outro">
+        <div class="ec" id="outro-ec">
+          <div id="outro-logo"></div>
+          <div class="wm"><span class="s">stack</span><span class="t">tags</span></div>
+          <div class="url">stacktags.io</div>
+        </div>
+      </div>
+
+    </div><!-- /scenes -->
+
+    <!-- subtitles mirror the narration -->
+    <div class="stk-subs" id="subs"><span class="stk-subs-line" id="subs-line"></span></div>
+
+  </div><!-- /stage -->
+</div>
+
+<!-- HUD (hidden in clean/capture mode) -->
+<div id="hud">
+  <button id="btn-play">&#9654; Play</button>
+  <input id="seek" type="range" min="0" max="82" step="0.01" value="0" />
+  <span id="tcode">0.0</span>
+</div>
+
+<audio id="vo" src="../script_voice.mp3" preload="auto"></audio>
+
+<!-- default elements (used as components) -->
+<script src="elements/outro.js"></script>
+
+<!-- this video's choreography -->
+<script src="app.js?v=1"></script>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Thumbnail — Why Japan stole China's writing</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@600;700;800;900&family=Nunito:wght@700;800;900&family=Noto+Sans+JP:wght@500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --teal:#35A292; --teal-d:#119271; --teal-soft:#e7f4ef;
+    --ink:#1c2630; --ink-2:#4a5560; --muted:#8a949d;
+  }
+  *{ margin:0; padding:0; box-sizing:border-box; }
+  html,body{ width:1080px; height:1920px; overflow:hidden; }
+  .tw{
+    position:relative; width:1080px; height:1920px;
+    background-color:#f5f8f7;
+    background-image:
+      linear-gradient(to right,  rgba(35,43,51,.06) 3px, transparent 3px),
+      linear-gradient(to bottom, rgba(35,43,51,.06) 3px, transparent 3px);
+    background-size:118px 118px; background-position:center;
+    font-family:'Inter',sans-serif; color:var(--ink); overflow:hidden;
+  }
+  .blob{ position:absolute; border-radius:50%; filter:blur(70px); opacity:.55; }
+  .blob.a{ width:640px; height:640px; left:-180px; top:-150px; background:#cdeae1; }
+  .blob.b{ width:720px; height:720px; right:-240px; bottom:-120px; background:#d7efe8; }
+
+  .eyebrow{
+    position:absolute; top:120px; left:0; right:0; text-align:center;
+    font-weight:800; font-size:34px; letter-spacing:6px; color:var(--muted);
+  }
+  .eyebrow b{ color:var(--teal-d); }
+
+  .headline{
+    position:absolute; top:196px; left:0; right:0; text-align:center;
+    font-family:'Nunito',sans-serif; font-weight:900; letter-spacing:-3px; line-height:.9;
+  }
+  .headline .l1{ font-size:104px; color:var(--ink); }
+  .headline .hero{
+    font-size:330px; color:var(--teal-d); letter-spacing:-10px; line-height:.86; margin:2px 0;
+    text-shadow:0 0 70px rgba(53,162,146,.30);
+  }
+  .headline .l3{ font-size:96px; color:var(--ink); }
+
+  /* the three-scripts card */
+  .card{
+    position:absolute; left:84px; right:84px; top:1010px;
+    background:#fff; border-radius:48px; padding:54px 56px 64px;
+    box-shadow:0 48px 110px rgba(16,50,40,.20), 0 8px 22px rgba(16,50,40,.08);
+  }
+  .card-top{ text-align:center; font-weight:800; font-size:34px; letter-spacing:3px; color:var(--muted); margin-bottom:46px; }
+  .card-top b{ color:var(--teal-d); }
+  .scripts{ display:flex; align-items:center; justify-content:center; gap:30px; }
+  .scr{ display:flex; flex-direction:column; align-items:center; gap:20px; flex:1; }
+  .scr .g{ font-family:'Noto Sans JP',sans-serif; font-weight:900; line-height:1; }
+  .scr.borrowed .g{ font-size:200px; color:var(--ink); }
+  .scr.invented .g{ font-size:200px; color:var(--teal-d); letter-spacing:8px; }
+  .scr .lbl{ font-weight:800; font-size:38px; text-align:center; color:var(--ink); line-height:1.05; }
+  .scr .lbl small{ display:block; font-size:27px; font-weight:700; color:var(--muted); margin-top:6px; }
+  .arrow{ font-size:90px; font-weight:300; color:var(--muted); align-self:flex-start; margin-top:60px; }
+
+  /* brand footer */
+  .brand{ position:absolute; left:0; right:0; bottom:120px; display:flex; align-items:center; justify-content:center; gap:24px; }
+  .brand .wm{ font-family:'Nunito',sans-serif; font-weight:900; font-size:82px; letter-spacing:-2px; }
+  .brand .wm .s{ color:var(--ink); } .brand .wm .t{ color:var(--teal); }
+  .brand #logo svg{ width:128px; height:auto; display:block; }
+  .url{ position:absolute; left:0; right:0; bottom:74px; text-align:center; font-weight:700; font-size:34px; color:var(--muted); letter-spacing:1px; }
+</style>
+</head>
+<body>
+<div class="tw">
+  <div class="blob a"></div><div class="blob b"></div>
+
+  <div class="eyebrow">ONE LANGUAGE &middot; <b>THREE SCRIPTS</b></div>
+
+  <div class="headline">
+    <div class="l1">Japan</div>
+    <div class="hero">stole</div>
+    <div class="l3">China&rsquo;s writing</div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">SO IT <b>BORROWED</b> ONE &mdash; THEN <b>INVENTED</b> TWO</div>
+    <div class="scripts">
+      <div class="scr borrowed">
+        <div class="g">漢字</div>
+        <div class="lbl">borrowed<small>from China</small></div>
+      </div>
+      <div class="arrow">&plus;</div>
+      <div class="scr invented">
+        <div class="g">あ ア</div>
+        <div class="lbl">invented<small>in Japan</small></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="brand">
+    <span id="logo"></span>
+    <span class="wm"><span class="s">stack</span><span class="t">tags</span></span>
+  </div>
+  <div class="url">stacktags.io</div>
+</div>
+<script src="../video/elements/outro.js"></script>
+<script>
+  if (window.makeStacktagsLogo) document.getElementById('logo').innerHTML = window.makeStacktagsLogo({ size: 160 });
+</script>
+</body>
+</html>

@@ -3,21 +3,18 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>5 Chinese words from 5 Chinese cities</title>
+<title>Tether — the most genius business model ever invented</title>
 <link rel="icon" href="data:," />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Nunito:wght@700;800;900&family=Noto+Sans+SC:wght@500;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
 
 <!-- shared theme tokens + grid + subtitles (the design system) -->
 <link rel="stylesheet" href="elements/theme.css">
 <!-- the dynamic depth-grid look (we reuse its grid styling) -->
 <link rel="stylesheet" href="elements/depth-transitions.css">
-<!-- default elements used as components -->
-<link rel="stylesheet" href="elements/enumeration_with_in_detail_follow_up.css">
-<link rel="stylesheet" href="elements/text-popup.css">
 <!-- this video's own scene styling -->
-<link rel="stylesheet" href="styles.css?v=2">
+<link rel="stylesheet" href="styles.css?v=1">
 </head>
 <body>
 <div class="wrap">
@@ -29,57 +26,175 @@
     <!-- all scene layers stack here -->
     <div class="scenes" id="scenes">
 
-      <!-- ===== HOOK: 5 rapid depth beats ===== -->
-      <div class="scene hook" id="sc-hook0"></div>
-      <div class="scene hook" id="sc-hook1"></div>
-      <div class="scene hook" id="sc-hook2"></div>
-      <div class="scene hook" id="sc-hook3"></div>
-      <div class="scene hook" id="sc-hook4"></div>
-
-      <!-- ===== PAYOFF: the China map with the 5 characters pinned ===== -->
-      <div class="scene" id="sc-payoff">
-        <div class="payoff-map" id="payoff-map"></div>
-      </div>
-
-      <!-- ===== ENUMERATION (default element host) ===== -->
-      <div class="scene" id="sc-enum"><div id="enum-host"></div></div>
-
-      <!-- ===== GLOBE -> Shanghai photo handoff (default element) ===== -->
-      <div class="scene" id="sc-globe">
-        <div class="globe-host" id="globe-host"></div>
-        <div class="photo" id="globe-photo">
-          <img src="assets/photos/shanghai.png" alt="Shanghai" onerror="this.style.display='none'">
-          <div class="photo-cap"><div class="zh">上海</div><div class="en">SHÀNGHǍI</div></div>
+      <!-- ===== 1 · HOOK: reconstructed headlines ===== -->
+      <div class="scene" id="sc-headlines">
+        <div class="hl-wrap">
+          <div class="headline h1">
+            <div class="hl-src"><span class="dot teal"></span>FINANCE&nbsp;DAILY<span class="date">· business</span></div>
+            <div class="hl-head">Tether reports record <b>$13B</b> profit for 2024</div>
+          </div>
+          <div class="headline h2">
+            <div class="hl-src"><span class="dot ink"></span>MARKET&nbsp;WIRE</div>
+            <div class="hl-head">Around <b>100 employees.</b> Billions in profit.</div>
+          </div>
+          <div class="headline h3">
+            <div class="hl-src"><span class="dot red"></span>THE&nbsp;LEDGER</div>
+            <div class="hl-head">More profit <u>per&nbsp;head</u> than Wall-Street giants</div>
+          </div>
         </div>
       </div>
 
-      <!-- ===== GLOBE 2 (default element): Qingdao photo → zoom out → fly → dive into Hong Kong → photo ===== -->
-      <div class="scene" id="sc-globe2">
-        <div class="globe-host" id="globe-host2"></div>
-        <!-- B: destination (Hong Kong) — under A, bursts in at the end -->
-        <div class="gphoto b" id="gv2-photoB">
-          <img src="assets/photos/hongkong.png" alt="Hong Kong" onerror="this.style.display='none'">
-          <div class="photo-cap"><div class="zh cjk">香港</div><div class="en">XIĀNGGǍNG</div></div>
-        </div>
-        <!-- A: origin (Qingdao) — covers the screen, shrinks into the dot -->
-        <div class="gphoto a" id="gv2-photoA">
-          <img src="assets/photos/qingdao.png" alt="Qingdao" onerror="this.style.display='none'">
-          <div class="photo-cap"><div class="zh cjk">青岛</div><div class="en">QĪNGDǍO</div></div>
+      <!-- ===== 2 · MECHANIC: $1 → USDT → vault (recurring motif) ===== -->
+      <div class="scene" id="sc-mechanic">
+        <div class="mech" id="mech">
+          <img class="mech-figure" src="assets/figures/trader_cut.png" alt="">
+          <img class="mech-vault" src="assets/photos/vault_dashed.png" alt="" onerror="this.style.display='none'">
+          <img class="mech-bill" src="assets/photos/dollar_dashed.png" alt="">
+          <div class="usdt mech-token"><span class="tk">₮</span></div>
         </div>
       </div>
 
-      <!-- ===== 5 CITY BREAKDOWN CARDS (built by app.js) ===== -->
-      <div class="scene" id="sc-shanghai"></div>
-      <div class="scene" id="sc-beijing"></div>
-      <div class="scene" id="sc-nanjing"></div>
-      <div class="scene" id="sc-compass"></div>
-      <div class="scene" id="sc-qingdao"></div>
-      <div class="scene" id="sc-hongkong"></div>
+      <!-- ===== 3 · WHAT IT IS: peg + trader + swap ===== -->
+      <div class="scene" id="sc-usdt">
+        <div class="usdtwrap" id="usdtwrap">
+          <!-- peg: token + dollar locked -->
+          <div class="peg" id="peg">
+            <div class="usdt peg-token"><span class="tk">₮</span></div>
+            <div class="peg-link">=</div>
+            <img class="peg-bill" src="assets/photos/dollar_dashed.png" alt="">
+            <div class="peg-eq">1 USDT&nbsp;=&nbsp;$1</div>
+          </div>
+          <!-- trader + blockchain hops -->
+          <img class="ux-trader" src="assets/figures/trader_cut.png" alt="">
+          <div class="ux-chain"><span></span><span></span><span></span><span></span><span></span></div>
+        </div>
+      </div>
 
-      <!-- ===== OUTRO ===== -->
-      <div class="scene" id="sc-recap"></div>
-      <div class="scene" id="sc-cta"><div id="cta-host"></div></div>
-      <div class="scene" id="sc-follow">
+      <!-- ===== 4 · THE TRICK: vault → T-bills → yield meter ===== -->
+      <div class="scene" id="sc-trick">
+        <div class="trick" id="trick">
+          <img class="tr-vault" src="assets/photos/vault_dashed.png" alt="">
+          <div class="tr-flow" id="tr-flow"></div>
+          <div class="tr-tbill">
+            <div class="tbill">
+              <div class="tbill-top">U.S. TREASURY BILL</div>
+              <div class="tbill-body"><span></span><span></span><span></span><span class="rate">~5% / yr</span></div>
+            </div>
+          </div>
+          <div class="tr-meter" id="tr-meter">
+            <div class="ym-cap">earning</div>
+            <div class="ym-val"><span id="yield-num">0</span><span class="pct">%</span></div>
+            <div class="ym-cap2">a year · risk-free</div>
+            <div class="ym-bar"><i id="yield-fill"></i></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== 5 · ZERO: empty palm → 0% stamp → founder pockets ===== -->
+      <div class="scene" id="sc-zero">
+        <div class="zero" id="zero">
+          <div class="z-holder">
+            <img class="z-trader" src="assets/figures/trader_cut.png" alt="">
+            <div class="usdt z-token sm"><span class="tk">₮</span></div>
+            <div class="z-tag">earns 0%</div>
+          </div>
+          <div class="z-stamp">0%</div>
+          <div class="z-founder">
+            <img src="assets/figures/founder_cut.png" alt="">
+            <div class="z-coins" id="z-coins"></div>
+            <div class="z-tag t">keeps ~5%</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== 6 · SCALE: $100B odometer + crowd ===== -->
+      <div class="scene" id="sc-scale">
+        <div class="scale" id="scale">
+          <div class="sc-odo" id="odo">$0</div>
+          <div class="sc-sub">of other people's money — working for free</div>
+          <div class="sc-crowd" id="sc-crowd"></div>
+        </div>
+      </div>
+
+      <!-- ===== 7 · COST OF CAPITAL: everyone pays vs Tether ===== -->
+      <div class="scene" id="sc-cost">
+        <div class="cost" id="cost">
+          <div class="cost-row r-bank">
+            <img class="cost-fig bld" src="assets/photos/office_cut.png" alt="">
+            <div class="cost-lab">bank</div>
+            <div class="cost-coins"><i></i><i></i><i></i></div>
+            <div class="cost-pct">pays ~4%</div>
+          </div>
+          <div class="cost-row r-co">
+            <img class="cost-fig bld" src="assets/photos/company_cut.png" alt="">
+            <div class="cost-lab">company</div>
+            <div class="cost-coins"><i></i><i></i><i></i></div>
+            <div class="cost-pct">pays ~5%</div>
+          </div>
+          <div class="cost-row r-tether">
+            <img class="cost-fig" src="assets/figures/founder_cut.png" alt="">
+            <div class="cost-lab">Tether</div>
+            <div class="cost-coins"></div>
+            <div class="cost-pct teal">pays <b>0%</b></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== 8 · ROOM GAG: $13B profit, tiny team ===== -->
+      <div class="scene" id="sc-room">
+        <div class="room" id="room">
+          <div class="room-floor"></div>
+          <div class="room-team" id="room-team"></div>
+          <div class="room-stack" id="room-stack">
+            <div class="room-amt">$13B</div>
+            <div class="room-amt-sub">2024 profit</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== 9 · THE CATCH: the trust tower ===== -->
+      <div class="scene" id="sc-catch">
+        <div class="catch" id="catch">
+          <div class="tw-thread"></div>
+          <div class="tw-trust">TRUST</div>
+          <div class="tower" id="tower">
+            <div class="usdt tw-token"><span class="tk">₮</span></div>
+            <div class="tw-tbills" id="tw-tbills"></div>
+            <img class="tw-vault" src="assets/photos/vault_dashed.png" alt="">
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== 10 · AUDIT: magnifier + fine headline + attestation ===== -->
+      <div class="scene" id="sc-audit">
+        <div class="audit" id="audit">
+          <div class="au-report">
+            <div class="au-rep-top">RESERVE REPORT</div>
+            <div class="au-rep-body"><span></span><span></span><span class="q">does it all add up?</span><span></span></div>
+            <div class="au-stamp">ATTESTATION <i>≠ full audit</i></div>
+          </div>
+          <img class="au-glass" src="assets/photos/magnifier_dashed.png" alt="">
+          <div class="headline au-news">
+            <div class="hl-src"><span class="dot red"></span>REGULATOR&nbsp;WATCH</div>
+            <div class="hl-head">Tether <b>fined</b> over reserve claims</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== 11 · PUNCHLINE: charts fade → token on throne of T-bills ===== -->
+      <div class="scene" id="sc-punch">
+        <div class="punch" id="punch">
+          <div class="pu-noise" id="pu-noise"></div>
+          <div class="throne" id="throne">
+            <div class="usdt th-token"><span class="tk">₮</span></div>
+            <div class="th-stack" id="th-stack"></div>
+            <div class="th-glow"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== 12 · OUTRO endcard ===== -->
+      <div class="scene" id="sc-outro">
         <div class="ec" id="outro-ec">
           <div id="outro-logo"></div>
           <div class="wm"><span class="s">stack</span><span class="t">tags</span></div>
@@ -98,26 +213,16 @@
 <!-- HUD (hidden in clean/capture mode) -->
 <div id="hud">
   <button id="btn-play">▶ Play</button>
-  <input id="seek" type="range" min="0" max="134.4" step="0.01" value="0" />
+  <input id="seek" type="range" min="0" max="122" step="0.01" value="0" />
   <span id="tcode">0.0</span>
 </div>
 
-<audio id="vo" src="../script_audio.mp3" preload="auto"></audio>
-
-<!-- libs for the globe + china map -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/earcut@2.2.4/dist/earcut.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/topojson-client@3.1.0/dist/topojson-client.min.js"></script>
+<audio id="vo" src="../script_voice.mp3" preload="auto"></audio>
 
 <!-- default elements (used as components) -->
-<script src="elements/globe.js"></script>
-<script src="elements/globe-v2.js"></script>
-<script src="elements/china-map.js"></script>
-<script src="elements/enumeration_with_in_detail_follow_up.js"></script>
-<script src="elements/text-popup.js"></script>
 <script src="elements/outro.js"></script>
 
 <!-- this video's choreography -->
-<script src="app.js?v=2"></script>
+<script src="app.js?v=1"></script>
 </body>
 </html>

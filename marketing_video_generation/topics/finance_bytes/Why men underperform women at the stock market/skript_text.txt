@@ -12,16 +12,43 @@ individual investors in the 1990s — present as a classic, NOT as fresh data)
 ==================================================================
 - Disposition effect: investors realize GAINS ~50% more often than LOSSES
   → tax-wise exactly backwards (selling winners triggers tax; harvesting
-  losses would save it).
+  losses would save it).  [Odean 1998, "Are Investors Reluctant to Realize
+  Their Losses?", Journal of Finance 53(5).]
 - Not a rookie thing: even professional funds do it ~21% more often.
 - The most active 20% of traders earned ~11.4%/yr NET vs ~18.5% for buy-and-hold.
+  [Barber & Odean 2000, "Trading Is Hazardous to Your Wealth", Journal of
+  Finance 55(2), 66,465 households 1991–1996, most active 11.4% vs market ~17.9%.]
 - Men's turnover ~80%/yr vs women's ~50% → men trade ~45% more → underperform.
+  [Barber & Odean 2001, "Boys Will Be Boys", Quarterly Journal of Economics
+  116(1): men trade 45% more, earn ~1.4% less risk-adjusted net.]
 - KEY HONESTY POINT: the gap is COST-driven (net returns). Their stock PICKS
   weren't worse — the trading costs were.
 
-Recurring visual device — "the two lines":
-A busy "Trader" portfolio line vs a calm "Buy-and-Hold" line. Every trade takes
-a tiny fee-bite out of the Trader's line; the calm line just keeps climbing.
+==================================================================
+VISUAL SYSTEM (read once — applies to every bracket below)
+==================================================================
+- One continuous faux-3D camera over a persistent thin grey 120px grid (white bg).
+  Scenes are CHAINED with depth transitions (zoom-out / zoom-in / drop / rise /
+  pan / lift / fade), NEVER hard-cut. Each beat animates in ON the spoken word.
+- COLOUR LANGUAGE (strict): TEAL #35A292 / deep #119271 = women · patient ·
+  buy-and-hold · the "right" behaviour.  GREY #8a949d = men · busy · active ·
+  overtrading · the "loser" behaviour.  RED only as a tiny chart accent, never UI.
+- Inter only. No borders anywhere — separate with whitespace / soft shadow /
+  soft-teal fill.  Subtitles are handled globally (grey, key words teal, verbatim);
+  do NOT also dump the spoken sentence as on-screen text.
+- RECURRING DEVICE — "the two lines": a busy GREY portfolio line (jagged, with
+  little downward "fee-bite" notches at every trade) vs a calm TEAL line (smooth,
+  softly glowing) that just keeps climbing and finishes higher. Custom element
+  `two-lines`. It returns 3x (hook, study reframe, outro overtake) so the video
+  feels like ONE consistent story, not 12 unrelated scenes.
+- SFX rule: swoosh ONLY when the grid moves (a depth transition) or a default
+  element animates; `pop` for a single object springing in / a word popping;
+  `ticking` for count-ups (numbers, bars, gauges).
+- Images: `trader_man` (frantic over-confident male day-trader) and `calm_woman`
+  (relaxed female investor) are flat-vector cartoons (Gemini Imagen 4), rembg
+  cut-outs, NO dashed outline (characters). Any single inanimate object gets a
+  dashed silhouette outline. Hook clippings are real HTML/CSS (rebuilt study +
+  headlines), NOT generated screenshots — authenticity over AI-slop.
 
 ==================================================================
 SCRIPT
@@ -31,61 +58,150 @@ SCRIPT
 
 Men underperform women at the stock market — and it's not because they pick
 worse stocks. It's because they trade too much.
-[Split screen: a "Men" line and a "Women" line; the women's line finishes higher.]
+[SCENE "hook-study" (fade in, no swoosh on the very first frame). DON'T open on a
+chart — open on REAL evidence, like a researcher's desk. A faux academic-paper
+header sits slightly rotated on the grid like a clipping: title "Boys Will Be
+Boys: Gender, Overconfidence, and Common Stock Investment", byline "Barber &
+Odean · The Quarterly Journal of Economics, 2001", a faint two-column abstract,
+one sentence highlighted in teal: "men trade 45% more than women — and earn
+less." Around it, two skewed news/headline cards pin onto the grid one after the
+other (each: tiny pop + paper-shadow): a finance-news card "Why women quietly
+beat men at investing" and a stat card showing a teal ▲ vs grey ▼. On "they
+pick worse stocks" the words "worse stocks" get a grey strike-through; on "trade
+too much" a small grey ✕✕✕ rapid-trade scribble stamps over the trader side.
+Establishes the real study + adds info instead of just illustrating the audio.]
+
 The more you trade, the more you quietly bleed to costs — every single time.
-[Each trade on the men's line takes a tiny fee-bite out of it.]
+[Depth ZOOM-OUT (grid converges → swoosh) into SCENE "lines-1": the recurring
+two-lines device draws live. GREY "Men" line climbs but is jagged; at every
+trade a tiny notch bites a sliver off it (each bite a faint downward tick + the
+running total dips). TEAL "Women" line is smooth, glowing, climbs calmly. Title
+above (small): "They just trade too much." Women's line clearly finishes higher.]
+
 In one of the most famous studies in finance, the investors who traded the most
 badly lost to the ones who did almost nothing.
-[A busy line and a calm line; the calm one pulls ahead.]
+[Same device, ZOOM-OUT to SCENE "lines-2" — IDENTICAL layout (consistency), only
+the labels morph: GREY "Most active" vs TEAL "Did almost nothing". The teal line
+visibly pulls ahead and the gap between the two end-points pings with a soft teal
+"+gap" marker. Re-using the device (not a brand-new visual) is the point.]
+
 And no — this isn't a rookie mistake. Even professional fund managers fall for
 it. Here's the psychology.
+[Depth DROP (next scene falls from top → swoosh) into SCENE "pros-tease": centre
+line "And no — this isn't a rookie mistake." with "rookie" greyed. A soft-teal
+pill drops in: "● Even professional fund managers". Below, a teal "↓ here's the
+psychology" nudges the camera toward Why #1. (No bar chart anywhere in the hook.)]
 
 --- WHY #1: THE DISPOSITION EFFECT (≈0:12–0:42) ---
 
 It starts with one deeply human glitch: we love selling our winners, and we
 can't let go of our losers.
-[A portfolio: green "winner" stocks get sold fast; red "loser" stocks get clutched.]
+[Depth ZOOM-IN into SCENE "glitch": a small mock portfolio, two columns, no
+borders. LEFT "Winners ▲" (teal): two cards NVDA +38%, AAPL +24%. RIGHT "Losers ▼"
+(grey/red-accent): ACME −31%, QRS −19%. Cards pop in one by one (pop SFX). On
+"selling our winners" the two winner cards get a teal "SOLD ✓" tag and slide UP
+and out fast (sold). On "can't let go of our losers" a little ✊ clutch grips the
+two loser cards and they shake but STAY — even drift slightly closer/bigger
+(babysat). Behaviour shown, not narrated on screen.]
+
 Across tens of thousands of US investors, people cashed in their gains about
 50% more often than their losses — locking in what's working, babysitting what
 isn't.
+[Depth ZOOM-OUT to SCENE "fifty": a big count-up number springs from 0 → 50
+(ticking SFX), huge teal "50%", caption under it "more likely to cash in a gain
+than to take a loss", tiny grey footnote "across tens of thousands of US
+investors · Odean 1998". Number lands on the beat of "50%".]
 
 And here's the kicker: tax-wise, that's exactly backwards.
-[A "TAX BILL" stamp hits the sold winner; the held loser glows "missed deduction".]
+[Depth RISE into SCENE "tax": two cards side by side. LEFT card "Sold a winner"
+(the teal one from before, now flipped to a problem): a red "TAX BILL" rubber
+stamp SLAMS diagonally onto it (pop SFX, slight shake). RIGHT card "Held a loser":
+softly glows with a grey→teal "MISSED DEDUCTION ↺" tag — the write-off you skipped.
+The contrast = we do the costly thing on instinct.]
+
 Selling a winner hands you a tax bill; selling a loser would actually save you
 money. We do the opposite — on pure instinct.
+[Stay in SCENE "tax": on "hands you a tax bill" the stamp settles; on "save you
+money" the held-loser card lifts a small teal "−$ tax saved" ghost that we then
+let fade (the saving we DON'T take). A tiny grey hand-cursor flicks the wrong way
+to sell on "pure instinct".]
 
 Think the pros are above this? They're not.
-[A "PROFESSIONAL FUNDS" badge appears over the same behavior.]
+[Depth DROP into SCENE "pros-21": soft-teal pill "● Even professional funds".]
+
 Even professional funds realize their gains about 21% more often than their
 losses. It's wired in.
+[Same scene: count-up 0 → 21 (ticking), big "21%" in DEEP teal, caption "more
+often realize gains than losses", then a small grey "it's wired in" locks in with
+a faint circuit/lock motif. Keeps the same number-card layout as the 50% scene
+(consistency between the two stats).]
 
 --- WHY #2: OVERTRADING & COST (≈0:42–1:08) ---
 
 Now stack the second mistake on top: overtrading.
-[Back to the two lines.]
-Every trade costs — fees, spreads, taxes — and those tiny leaks compound. In
-that 1990s US data, the most active 20% of investors earned just 11.4% a year.
-[11.4% drops onto the busy line.]
+[Depth ZOOM-OUT to SCENE "overtrade": bring back ONLY the GREY busy line from the
+two-lines device (the teal one stays faint/ghosted) so it's clearly "the same
+trader". An eyebrow "Mistake #2 · overtrading" sits top-left. The grey line keeps
+trading and taking fee-bites, faster now.]
+
+Every trade costs — fees, spreads, taxes — and those tiny leaks compound.
+[Depth ZOOM-OUT to SCENE "fees" using default element `text-popup`: the three
+words "fees", "spreads", "taxes" POP in (pop SFX each), scattered, deep-teal, big.
+On "tiny leaks compound" little grey droplets drip off each word toward the busy
+line below (the leak metaphor).]
+
+In that 1990s US data, the most active 20% of investors earned just 11.4% a year.
+[Depth ZOOM-OUT to SCENE "bars" using default element `graph-chart` (bar mode).
+Two bars on the 120px grid: "Active 20%" (GREY) and "Buy & hold" (TEAL). Bars
+draw upward (ticking). The GREY bar's value counts up to 11.4% and stops low; a
+small grey "just 11.4%" sits above it. Title small: "Same market — 1990s US data".]
+
 Buy-and-hold investors? Over 18%.
-[18.5% drops onto the calm line, far above.]
+[Same SCENE "bars": the TEAL bar draws much taller, value counts up to 18.5%,
+clearly towering over the grey one (ticking). A tiny grey source line fades in
+under the axis: "Barber & Odean, 2000".]
+
 Same market. The difference wasn't worse stock-picking — their picks were about
 as good. It was the cost of all that activity.
-[Source line appears small: "Barber & Odean."]
+[Depth PAN-RIGHT into SCENE "cost": big centred line "Their picks were just as
+good. It was the cost." with "just as good" greyed and "the cost" in deep teal.
+On "as good" two faint equal stock-pick badges blink side by side (≈), then the
+grey one is eaten away by little fee-notches to show cost — not skill — is the gap.]
 
 --- WHY #3: THE MEN-VS-WOMEN GAP (≈1:08–1:28) ---
 
 Which brings us back to the title.
-[Two turnover gauges fill up: Men ~80%, Women ~50%.]
+[Depth ZOOM-OUT to SCENE "gauges" (custom element `turnover-gauges`): two
+horizontal turnover meters, "Portfolio turnover per year".]
+
 Men churned their portfolios around 80% a year; women, around 50%. Men traded
 roughly 45% more — fueled by overconfidence — and that extra activity is exactly
 what dragged their net returns below women's. Less trading, more keeping.
+[SCENE "gauges": GREY "Men ♂" meter fills to ~80% (ticking), TEAL "Women ♀" meter
+fills to ~50%. The difference bracket pings "+45% more trades". Then depth
+PAN-RIGHT into SCENE "overconf": the `trader_man` cut-out (frantic, no dashed
+outline) leans in shaking; a grey tag "+45% more trades · fueled by
+overconfidence"; bottom line "…which dragged his net returns below women's." A
+small teal ▲ (women) sits quietly above his grey ▼.]
 
 --- OUTRO / CTA (≈1:28–1:40) ---
 
 So the uncomfortable secret of the market: doing less beats doing more.
-[The calm buy-and-hold line quietly overtakes the busy one for good.]
+[Depth ZOOM-OUT to SCENE "secret": the two-lines device returns ONE last time
+(full circle). The TEAL calm line, which had been neck-and-neck, quietly OVERTAKES
+the GREY busy line for good and pulls clearly above it. Centre overlay: "Doing
+LESS beats doing more." ("less" deep teal). `calm_woman` cut-out may sit small,
+at ease, to the side.]
+
 The best investors aren't the busiest — they're the most patient.
+[Stay in SCENE "secret": caption resolves "The best investors aren't the busiest —
+they're the most patient." with "busiest" greyed, "patient" deep teal; the teal
+line gives a soft final glow pulse.]
 
 Want more counterintuitive truths like this?
-[Stacktags logo animates in with a "Follow" prompt.]
+[Depth LIFT into SCENE "outro" using default element `outro` (makeStacktagsLogo):
+the stacked-cube logo assembles between two flat teal chevrons (swoosh on assemble).]
+
 Follow Stacktags.
+[SCENE "outro": the `stacktags` wordmark and grey "stacktags.io" line settle in;
+a small teal "Follow" prompt. Hold ~3s.]

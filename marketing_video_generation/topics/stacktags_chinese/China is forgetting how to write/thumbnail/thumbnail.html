@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Thumbnail — China is forgetting how to write</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@700;900&text=%E9%A4%90%E6%8F%90%E7%AC%94%E5%BF%98%E5%AD%97&display=swap" rel="stylesheet">
+<style>
+  :root{ --teal:#35A292; --teal-d:#119271; --teal-soft:#e7f4ef; --ink:#1c2630; --ink-2:#4a5560; --muted:#8a949d; }
+  *{ margin:0; padding:0; box-sizing:border-box; }
+  html,body{ width:1080px; height:1920px; overflow:hidden; }
+  .tw{
+    position:relative; width:1080px; height:1920px;
+    background-color:#f6f9f8;
+    background-image:
+      linear-gradient(to right,  rgba(35,43,51,.06) 3px, transparent 3px),
+      linear-gradient(to bottom, rgba(35,43,51,.06) 3px, transparent 3px);
+    background-size:118px 118px; background-position:center;
+    font-family:'Inter',sans-serif; color:var(--ink); overflow:hidden;
+  }
+  .blob{ position:absolute; border-radius:50%; filter:blur(80px); opacity:.5; }
+  .blob.a{ width:640px; height:640px; left:-200px; top:-180px; background:#cdeae1; }
+  .blob.b{ width:700px; height:700px; right:-240px; bottom:60px; background:#d7efe8; }
+
+  .eyebrow{
+    position:absolute; top:104px; left:0; right:0; text-align:center;
+    font-weight:800; font-size:34px; letter-spacing:5px; color:var(--muted);
+  }
+  .eyebrow .cjk{ font-family:'Noto Sans SC',sans-serif; font-weight:900; letter-spacing:2px; color:var(--teal-d); }
+
+  .l1{ position:absolute; top:196px; left:0; right:0; text-align:center;
+    font-weight:900; font-size:96px; letter-spacing:-3px; color:var(--ink); }
+  .l1 u{ color:var(--teal-d); text-decoration:none; position:relative; }
+
+  .l2{ position:absolute; top:1404px; left:0; right:0; text-align:center;
+    font-weight:900; font-size:104px; letter-spacing:-3.5px; color:var(--ink); line-height:.95; }
+  .l2 u{ color:var(--teal-d); text-decoration:none; position:relative; }
+  .l2 u::after{ content:""; position:absolute; left:0; right:0; bottom:8px; height:12px;
+    background:rgba(53,162,146,.28); border-radius:6px; z-index:-1; }
+
+  /* 田字格 practice cell holding the hero character */
+  .cell{ position:absolute; left:50%; top:830px; width:760px; height:760px; transform:translate(-50%,-50%);
+    box-shadow:inset 0 0 0 4px rgba(35,43,51,.12); border-radius:8px; background:rgba(255,255,255,.45); }
+  .cell .ch{ position:absolute; left:7%; right:7%; top:50%; height:4px; transform:translateY(-50%);
+    background:repeating-linear-gradient(to right, rgba(35,43,51,.18) 0 16px, transparent 16px 30px); }
+  .cell .cv{ position:absolute; top:7%; bottom:7%; left:50%; width:4px; transform:translateX(-50%);
+    background:repeating-linear-gradient(to bottom, rgba(35,43,51,.18) 0 16px, transparent 16px 30px); }
+  #hz{ position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); }
+  #hz svg{ display:block; overflow:visible; filter:drop-shadow(0 18px 30px rgba(20,40,33,.12)); }
+
+  /* a pen, stalled at the top-right of the character */
+  .pen{ position:absolute; left:50%; top:830px; width:60px; height:380px;
+    transform:translate(210px,-300px) rotate(34deg); transform-origin:50% 100%; }
+  .pen .body{ position:absolute; left:50%; top:0; width:34px; height:316px; transform:translateX(-50%);
+    border-radius:18px; background:linear-gradient(180deg,#2c343c,#444e58); }
+  .pen .nib{ position:absolute; left:50%; bottom:0; transform:translateX(-50%);
+    border-left:17px solid transparent; border-right:17px solid transparent; border-top:50px solid var(--teal-d); }
+
+  .brand{ position:absolute; left:0; right:0; bottom:104px; display:flex; align-items:center; justify-content:center; gap:22px; }
+  .brand .wm{ font-weight:900; font-size:80px; letter-spacing:-2px; }
+  .brand .wm .s{ color:var(--ink); } .brand .wm .t{ color:var(--teal); }
+  .brand #logo svg{ width:122px; height:auto; display:block; }
+</style>
+</head>
+<body>
+<div class="tw">
+  <div class="blob a"></div><div class="blob b"></div>
+
+  <div class="eyebrow"><span class="cjk">提笔忘字</span> &middot; CHARACTER AMNESIA</div>
+
+  <div class="l1">They can read it&hellip;</div>
+
+  <div class="cell"><span class="ch"></span><span class="cv"></span><div id="hz"></div></div>
+  <div class="pen"><div class="body"></div><div class="nib"></div></div>
+
+  <div class="l2">but can&rsquo;t <u>write</u> it.</div>
+
+  <div class="brand">
+    <span id="logo"></span>
+    <span class="wm"><span class="s">stack</span><span class="t">tags</span></span>
+  </div>
+</div>
+
+<script src="../video/assets/hanzi/can.js"></script>
+<script src="../video/elements/outro.js"></script>
+<script>
+  // render 餐 from real stroke data, frozen mid-crumble (bottom strokes drifting/fading)
+  (function(){
+    var NS='http://www.w3.org/2000/svg';
+    var strokes = window.HANZI_CAN || [];
+    var svg=document.createElementNS(NS,'svg');
+    svg.setAttribute('viewBox','0 0 1024 1024'); svg.setAttribute('width',680); svg.setAttribute('height',680);
+    // faint ghost (full character, recognised)
+    var g0=document.createElementNS(NS,'g'); g0.setAttribute('transform','translate(0,1024) scale(1,-1)');
+    strokes.forEach(function(d){ var p=document.createElementNS(NS,'path'); p.setAttribute('d',d); p.setAttribute('fill','#1c2630'); p.setAttribute('opacity','0.10'); g0.appendChild(p); });
+    svg.appendChild(g0);
+    // ink strokes, with the last few detaching
+    var g=document.createElementNS(NS,'g'); g.setAttribute('transform','translate(0,1024) scale(1,-1)');
+    var drift={ 12:[70,-60,16], 13:[-40,-90,-14], 14:[96,-30,20], 15:[40,-120,24] };
+    var faded={ 10:0.28, 11:0.22 };
+    strokes.forEach(function(d,i){
+      var p=document.createElementNS(NS,'path'); p.setAttribute('d',d); p.setAttribute('fill','#1c2630');
+      p.style.transformBox='fill-box'; p.style.transformOrigin='50% 50%';
+      if(drift[i]){ var v=drift[i]; p.style.transform='translate('+v[0]+'px,'+v[1]+'px) rotate('+v[2]+'deg)'; p.setAttribute('opacity','0.42'); }
+      else if(faded[i]!=null){ p.setAttribute('opacity', faded[i]); }
+      g.appendChild(p);
+    });
+    svg.appendChild(g);
+    document.getElementById('hz').appendChild(svg);
+    if (window.makeStacktagsLogo) document.getElementById('logo').innerHTML = window.makeStacktagsLogo({ size: 150 });
+  })();
+</script>
+</body>
+</html>
