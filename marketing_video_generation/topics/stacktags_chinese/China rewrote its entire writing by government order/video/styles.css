@@ -116,17 +116,27 @@ body.clean #hud { display: none; }
 /* ============================================================
    WALL — a dense block of traditional characters (the barrier)
    ============================================================ */
-.wall { position: absolute; left: 50%; top: 41%; transform: translate(-50%, -50%);
-  width: 900px; display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px 10px;
+.wall { position: absolute; left: 50%; top: 29%; transform: translate(-50%, -50%);
+  width: 860px; display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px 10px;
   justify-items: center; }
-.wc { font-family: 'Noto Sans SC', var(--stk-font); font-weight: 500; font-size: 92px; line-height: 1;
+.wc { font-family: 'Noto Sans SC', var(--stk-font); font-weight: 500; font-size: 78px; line-height: 1;
   color: var(--stk-ink); opacity: 0; transform: translateY(10px) scale(.9);
   transition: opacity .4s ease, transform .5s cubic-bezier(.34,1.56,.64,1), color .45s ease; }
-.wall.show .wc { opacity: .9; transform: none; }
+.wall.show .wc { opacity: .82; transform: none; }
 .wall.lit .wc { color: var(--stk-teal-d); opacity: 1; }      /* literacy callback: now legible */
-.reader { position: absolute; left: 50%; bottom: 250px; transform: translateX(-50%) translateY(40px);
-  opacity: 0; transition: opacity .5s ease, transform .6s cubic-bezier(.2,.8,.2,1); }
-.sc-show .reader, #sc-wall.lookup .reader { opacity: 1; transform: translateX(-50%); }
+
+/* the recurring "the people" archival photo (1950s literacy drive) */
+.photocard { position: absolute; left: 50%; bottom: 332px; transform: translate(-50%, 40px) scale(.96);
+  width: 690px; opacity: 0; transition: opacity .55s ease, transform .65s cubic-bezier(.2,.8,.2,1);
+  padding: 16px 16px 14px; background: #fff; border-radius: 10px;
+  box-shadow: 0 26px 60px rgba(20,40,33,.26); z-index: 6; }
+.photocard img { display: block; width: 100%; height: auto; border-radius: 4px;
+  filter: grayscale(1) contrast(1.05) brightness(.9); transition: filter .7s ease; }
+.photocard .pc-cap { display: block; text-align: center; font: 700 26px Inter; letter-spacing: .3px;
+  color: var(--stk-muted); margin-top: 12px; }
+.photocard.in { opacity: 1; transform: translate(-50%, 0) scale(1); }
+.photocard.bright img { filter: grayscale(0) contrast(1.02) brightness(1.02); }
+
 .bub { position: absolute; font-family: var(--stk-font); font-weight: 900; font-size: 96px;
   color: var(--stk-ink); background: #fff; border-radius: 38px; padding: 6px 40px; white-space: nowrap;
   box-shadow: 0 14px 32px rgba(20,40,33,.16); opacity: 0; transform: scale(.4); transform-origin: 50% 130%;
@@ -135,8 +145,6 @@ body.clean #hud { display: none; }
 .bub::after { content:''; position:absolute; bottom:-22px; left:50%; transform:translateX(-50%);
   width:0; height:0; border-top:26px solid var(--stk-ink); border-left:18px solid transparent; border-right:18px solid transparent; }
 .bub.in { opacity: 1; transform: scale(1); }
-#wall-bub { left: 50%; bottom: 470px; transform: translateX(-30px) scale(.4); }
-#wall-bub.in { transform: translateX(-30px) scale(1); }
 #conf-bub { left: 50%; top: 20%; transform: translateX(-50%) scale(.4); }
 #conf-bub.in { transform: translateX(-50%) scale(1); }
 
@@ -152,16 +160,32 @@ body.clean #hud { display: none; }
 .clab { font: 700 34px Inter; color: var(--stk-muted); letter-spacing: 1px; margin-top: 6px; }
 
 /* ============================================================
-   CUT — cascade of trad→simp pairs under the 愛→爱 cell
+   SCHEME — the recreated 1956 official simplification document
    ============================================================ */
-.cascade { position: absolute; left: 50%; bottom: 360px; transform: translateX(-50%);
-  display: flex; gap: 70px; }
-.casc { display: flex; align-items: center; gap: 14px; opacity: 0; transform: translateY(16px) scale(.85);
-  transition: opacity .35s ease, transform .5s cubic-bezier(.34,1.56,.64,1); }
-.casc.in { opacity: 1; transform: none; }
-.casc .ct { font-family: 'Noto Sans SC', var(--stk-font); font-weight: 700; font-size: 96px; line-height: 1; color: var(--stk-ink); }
-.casc .ca { font: 800 56px Inter; color: var(--stk-muted); }
-.casc .cs { font-family: 'Noto Sans SC', var(--stk-font); font-weight: 700; font-size: 96px; line-height: 1; color: var(--stk-teal-d); }
+.doc { position: absolute; left: 50%; top: 43%; transform: translate(-50%, -50%);
+  width: 770px; padding: 34px 56px 150px; background: #fbf7ec; border-radius: 7px;
+  box-shadow: 0 30px 72px rgba(20,40,33,.24); }
+.doc::before { content: ''; position: absolute; left: 0; right: 0; top: 0; height: 14px;
+  background: var(--stk-teal-d); border-radius: 7px 7px 0 0; }
+.doc-band { text-align: center; font: 800 27px Inter; letter-spacing: 3px; color: var(--stk-muted); margin-top: 18px; }
+.doc-title { text-align: center; font-family: 'Noto Sans SC', var(--stk-font); font-weight: 900;
+  font-size: 100px; letter-spacing: 4px; color: var(--stk-ink); margin: 10px 0 2px; }
+.doc-sub { text-align: center; font: 600 30px Inter; color: var(--stk-muted); margin-bottom: 34px; }
+.doc-rows { display: grid; grid-template-columns: 1fr 1fr; gap: 20px 44px; }
+.drow { display: flex; align-items: center; justify-content: center; gap: 18px;
+  opacity: 0; transform: translateY(12px); transition: opacity .35s ease, transform .45s cubic-bezier(.34,1.56,.64,1); }
+.drow.in { opacity: 1; transform: none; }
+.drow .dt { font-family: 'Noto Sans SC', var(--stk-font); font-weight: 700; font-size: 72px; color: var(--stk-ink-2); }
+.drow .da { font: 800 36px Inter; color: var(--stk-teal); }
+.drow .ds { font-family: 'Noto Sans SC', var(--stk-font); font-weight: 900; font-size: 72px; color: var(--stk-teal-d); }
+.doc-seal { position: absolute; left: 50%; bottom: 22px; width: 124px; height: 124px;
+  display: flex; align-items: center; justify-content: center; transform: translateX(-50%) rotate(-9deg) scale(.3); opacity: 0;
+  transition: opacity .25s ease, transform .4s cubic-bezier(.5,1.7,.5,1); }
+.doc-seal::before { content: ''; position: absolute; inset: 0; border-radius: 16px;
+  background: var(--stk-red); box-shadow: inset 0 0 0 6px rgba(255,255,255,.82); }
+.doc-seal span { position: relative; font-family: 'Noto Sans SC', var(--stk-font); font-weight: 900;
+  font-size: 68px; color: #fff; }
+.doc.sealed .doc-seal { opacity: .96; transform: translateX(-50%) rotate(-9deg) scale(1); }
 
 /* ============================================================
    FASTER — two mini cells side by side + a racing pen
@@ -224,14 +248,6 @@ body.clean #hud { display: none; }
 /* ============================================================
    PUNCHLINE — hands pushing up from below
    ============================================================ */
-.handsup { position: absolute; left: 50%; bottom: 360px; transform: translateX(-50%);
-  display: flex; gap: 46px; opacity: 0; }
-.handsup.in { opacity: 1; }
-.hand { width: 0; height: 0; border-left: 34px solid transparent; border-right: 34px solid transparent;
-  border-bottom: 58px solid var(--stk-teal-d); transform: translateY(40px); opacity: 0;
-  transition: transform .4s cubic-bezier(.34,1.56,.64,1), opacity .3s ease; }
-.handsup.in .hand { transform: translateY(0); opacity: 1; }
-
 /* ============================================================
    OUTRO endcard
    ============================================================ */

@@ -105,27 +105,31 @@
   // ============================================================
   // SCENE BUILDERS (wall, counter, cascade, hands, map)
   // ============================================================
-  const WALL_CHARS = ['龍','鬱','書','學','藝','鐵','聲','廳','灣','黨','憂','豐','豔','籠','羅','關','難','繼','續','舊','歲','衛','醫','嚴','屬','廣','麗','龜'];
+  // the wall of writing = the barrier. Each char can swap traditional -> simplified
+  // (the barrier "lowering" when literacy climbs).
+  const WALL_PAIRS = [['龍','龙'],['鬱','郁'],['書','书'],['學','学'],['藝','艺'],['鐵','铁'],['聲','声'],['廳','厅'],['灣','湾'],['黨','党'],['憂','忧'],['豐','丰'],['豔','艳'],['籠','笼'],['羅','罗'],['關','关'],['難','难'],['繼','继'],['續','续'],['舊','旧'],['歲','岁'],['衛','卫'],['醫','医'],['嚴','严'],['屬','属'],['廣','广'],['麗','丽'],['龜','龟']];
+  const wallEls = [];
   (function buildWall() {
     const host = $('#wall'); if (!host) return;
-    WALL_CHARS.forEach((c, i) => { const s = document.createElement('div'); s.className = 'wc'; s.textContent = c; s.style.transitionDelay = (i * 28) + 'ms'; host.appendChild(s); });
+    WALL_PAIRS.forEach(([t, s], i) => { const el = document.createElement('div'); el.className = 'wc'; el.textContent = t; el.dataset.t = t; el.dataset.s = s; el.style.transitionDelay = (i * 22) + 'ms'; host.appendChild(el); wallEls.push(el); });
   })();
+  function simplifyWall() { wallEls.forEach((el) => { el.textContent = el.dataset.s; }); $('#wall').classList.add('lit'); }
+  function resetWall() { wallEls.forEach((el) => { el.textContent = el.dataset.t; }); $('#wall').classList.remove('show', 'lit'); }
 
-  const CASCADE = [['龜', '龟'], ['馬', '马'], ['門', '门']];
-  (function buildCascade() {
-    const host = $('#cut-cascade'); if (!host) return;
-    CASCADE.forEach(([t, s]) => {
-      const w = document.createElement('div'); w.className = 'casc';
-      w.innerHTML = `<span class="ct">${t}</span><span class="ca">→</span><span class="cs">${s}</span>`;
+  // the recreated 1956 official simplification scheme (繁 -> 简 rows + a red seal)
+  const DOC_PAIRS = [['龍', '龙'], ['愛', '爱'], ['馬', '马'], ['門', '门'], ['書', '书'], ['國', '国']];
+  (function buildDocRows() {
+    const host = $('#doc-rows'); if (!host) return;
+    DOC_PAIRS.forEach(([t, s]) => {
+      const w = document.createElement('div'); w.className = 'drow';
+      w.innerHTML = `<span class="dt">${t}</span><span class="da">→</span><span class="ds">${s}</span>`;
       host.appendChild(w);
     });
   })();
-  const cascEls = () => Array.from(document.querySelectorAll('#cut-cascade .casc'));
-
-  (function buildHands() {
-    const host = $('#pn-hands'); if (!host) return;
-    for (let i = 0; i < 7; i++) { const h = document.createElement('div'); h.className = 'hand'; h.style.transitionDelay = (i * 45) + 'ms'; host.appendChild(h); }
-  })();
+  const docRowEls = () => Array.from(document.querySelectorAll('#doc-rows .drow'));
+  function revealDoc(instant) {
+    docRowEls().forEach((el, k) => { if (instant) el.classList.add('in'); else setTimeout(() => el.classList.add('in'), k * 130); });
+  }
 
   // counter
   let cxRAF = 0;
@@ -324,25 +328,23 @@
     [10.34, () => $('#hk-strike').classList.add('in')],
     [10.94, (i) => { hkSkel.shedAll({ instant: i, stagger: 60 }); $('#hk-strike').classList.remove('in'); hkSimp.full(); }],
 
-    // ---- WHY: the barrier ----
-    [16.02, (i) => { enter($('#sc-wall'), 'zoom-out', 1100, i); $('#wall').classList.add('show'); }],
-    [18.08, () => { $('#sc-wall').classList.add('lookup'); $('#wall-bub').classList.add('in'); }],
+    // ---- WHY: writing as a barrier looming over the people who can't read ----
+    [16.02, (i) => { enter($('#sc-wall'), 'zoom-out', 1100, i); $('#wall').classList.add('show'); $('#wall-people').classList.add('in'); }],
 
-    // ---- WHY: one complex character + stroke counter ----
+    // ---- WHY: just how complex one character was (stroke counter) ----
     [19.1, (i) => { enter($('#sc-complex'), 'zoom-in', 1050, i); $('#cx-counter').classList.add('in'); cxChar.writeOn({ instant: i, stagger: 100 }); countTo(29, 2900, i); }],
 
-    // ---- WHY: cut strokes (愛 loses its heart) + cascade ----
+    // ---- WHY: the emblematic cut — 愛 loses its heart ----
     [22.96, (i) => { enter($('#sc-cut'), 'zoom-out', 1100, i); cutTrad.writeOn({ instant: i, stagger: 120 }); }],
-    [25.2, (i) => { $('#cut-heart').classList.add('show'); }],
+    [25.2, () => $('#cut-heart').classList.add('show')],
     [26.82, (i) => { $('#cut-heart').classList.remove('show'); $('#cut-heart').classList.add('lift'); simplify(cutTrad, cutSimp, { instant: i, stagger: 55 }); }],
-    [28.14, (i) => cascEls().forEach((el, k) => { if (i) el.classList.add('in'); else setTimeout(() => el.classList.add('in'), k * 200); })],
 
-    // ---- ROUND ONE: faster to write ----
-    [29.88, (i) => { enter($('#sc-faster'), 'pan-right', 1050, i); fastTrad.full(); fastSimp.hide(); }],
-    [34.7, (i) => { if (i) { fastSimp.full(); } else { $('#fast-pen').classList.remove('write'); void $('#fast-pen').offsetWidth; $('#fast-pen').classList.add('write'); fastSimp.writeOn({ stagger: 70 }); } }],
+    // ---- the mass act: the official 1956 simplification scheme, held + stamped "adopted" ----
+    [28.14, (i) => { enter($('#sc-doc'), 'zoom-out', 1100, i); revealDoc(i); }],
+    [33.0, () => $('#doc').classList.add('sealed')],
 
-    // ---- ROUND ONE: literacy callback (the wall, now legible) ----
-    [36.06, (i) => { enter($('#sc-wall'), 'zoom-in', 1000, i); $('#wall').classList.add('show', 'lit'); $('#sc-wall').classList.remove('lookup'); $('#wall-bub').classList.remove('in'); }],
+    // ---- ROUND ONE: literacy climbs — the SAME wall, now simplified & legible, people brighten ----
+    [36.06, (i) => { enter($('#sc-wall'), 'zoom-in', 1000, i); $('#wall').classList.add('show'); simplifyWall(); $('#wall-people').classList.add('in', 'bright'); }],
 
     // ---- ROUND ONE: mainland vs Taiwan/HK ----
     [37.38, (i) => { enter($('#sc-map'), 'zoom-out', 1150, i, () => { if (mapCtrl) { if (i) mapCtrl.showInstant(); else mapCtrl.drawIn(1500); } }); }],
@@ -368,7 +370,7 @@
     // ---- PUNCHLINE ----
     [68.46, (i) => { enter($('#sc-punch'), 'zoom-out', 1150, i); pnChar.full(); $('#pn-char').classList.add('drift'); }],
     [71.58, (i) => { $('#pn-char').classList.remove('drift'); if (!i) { D4.classList.add('press'); gridKick(); setTimeout(() => D4.classList.remove('press'), 900); } }],
-    [77.62, () => { $('#pn-hands').classList.add('in'); }],
+    [77.62, () => { $('#pn-people').classList.add('in'); }],
     [78.36, (i) => { const el = $('#pn-char'); el.classList.remove('spring'); if (!i) { void el.offsetWidth; el.classList.add('spring'); } }],
 
     // ---- OUTRO ----
@@ -383,8 +385,8 @@
     [16.02, 'swoosh', 0.5], [18.08, 'pop', 0.5],
     [19.1, 'swoosh', 0.5], [19.3, 'ticking', 0.4],
     [22.96, 'swoosh', 0.5], [26.82, 'pop', 0.45],
-    [28.14, 'pop', 0.5], [28.34, 'pop', 0.5], [28.54, 'pop', 0.5],
-    [29.88, 'swoosh', 0.5], [34.7, 'pop', 0.45],
+    [28.14, 'swoosh', 0.5], [28.4, 'pop', 0.4], [28.7, 'pop', 0.4], [29.0, 'pop', 0.4],
+    [33.0, 'pop', 0.5],
     [36.06, 'swoosh', 0.5],
     [37.38, 'swoosh', 0.5], [39.06, 'pop', 0.5], [40.56, 'pop', 0.5], [41.3, 'pop', 0.5],
     [48.1, 'swoosh', 0.5], [48.26, 'pop', 0.5], [49.54, 'swoosh', 0.5],
@@ -411,14 +413,15 @@
     [D, D2, D3, D4].forEach((d) => d && d.classList.remove('press'));
     document.querySelectorAll('.yearstamp').forEach((y) => y.classList.remove('in'));
     $('#hk-tick').classList.remove('in'); $('#hk-strike').classList.remove('in');
-    $('#wall').classList.remove('show', 'lit'); $('#sc-wall').classList.remove('lookup'); $('#wall-bub').classList.remove('in');
+    resetWall();
+    document.querySelectorAll('.photocard').forEach((p) => p.classList.remove('in', 'bright'));
     $('#cx-counter').classList.remove('in'); cancelAnimationFrame(cxRAF); $('#cx-num').textContent = '0';
-    cascEls().forEach((el) => el.classList.remove('in'));
     $('#cut-heart').classList.remove('show', 'lift');
+    docRowEls().forEach((el) => el.classList.remove('in')); $('#doc').classList.remove('sealed');
     $('#fast-pen').classList.remove('write');
     $('#sc-confusion').classList.remove('collide'); $('#conf-bub').classList.remove('in');
     $('#sp-strike').classList.remove('in');
-    $('#pn-char').classList.remove('drift', 'spring'); $('#pn-hands').classList.remove('in');
+    $('#pn-char').classList.remove('drift', 'spring');
     $('#outro-ec').classList.remove('play');
     mapReset();
     subsLine.classList.remove('in');

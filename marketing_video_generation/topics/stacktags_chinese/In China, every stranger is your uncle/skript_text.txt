@@ -3,7 +3,9 @@ Title options (pick one): In China, every stranger is your uncle
 Topic: Learn Chinese
 Target length: ~90 seconds (fits the 30s–3min window)
 Language of narration: English
-Format: Spoken voiceover narration only — no on-screen/visual cues.
+Format: Spoken voiceover narration + [bracketed] on-screen storyboard cues.
+NOTE: Lines/spans in [brackets] are visual directions only — they are stripped before TTS,
+so the spoken narration is every non-bracket line, verbatim.
 
 ==================================================================
 THE CORE IDEA
@@ -17,42 +19,95 @@ Punchline: a language incredibly precise about family — that treats the whole 
 like family.
 
 ==================================================================
+VISUAL CONCEPT (persistent hero + two visual rhymes)
+==================================================================
+Persistent hero object = a turquoise KINSHIP MAP (family tree) that fills in with real
+Hanzi+pinyin nodes. Two anti-slop visual rhymes:
+ (1) the three street STRANGERS from the hook physically RETURN in the flip-side;
+ (2) the SAME word 叔叔 is the precise map term "father's younger brother" AND the warm
+     greeting for a random older man — the punchline is SHOWN, not told.
+People = flat cartoon/vector figures (no photoreal faces → avoids stock-uncle slop).
+Three scenes connected by soft depth-transitions: #sc-people → #sc-map → (back to) #sc-people → #sc-outro.
+On-screen text limited to Hanzi+pinyin chips + tiny axis labels (real learning value); no sentence overlays.
+
+==================================================================
 SCRIPT
 ==================================================================
 
 --- HOOK (0:00–0:14) — the payoff up front ---
 
+[SCENE #sc-people: white grid. Three flat cartoon strangers stand in a row, each in a tiny
+iconic setting that reads their role instantly: a SHOPKEEPER behind a little stall counter,
+a BUS DRIVER framed in a bus window, a NEIGHBOR in a doorway. Calm, friendly, brand colours.]
 In China, the man at the shop, the bus driver, your neighbor — they're all your
+[on "shop / bus driver / neighbor", a turquoise kinship chip pops above each figure in turn
+(springy pop + soft pop-sound): 叔叔 over the shopkeeper, 叔叔 over the bus driver, 阿姨 over the
+neighbor. Pinyin shū-shu / ā-yí tiny under each.]
 "uncle" or "aunty." But here's the irony: there's no single Chinese word for "uncle"
+[the three chips fly together to screen-centre and fuse into ONE English box reading "UNCLE ?".]
 at all. There are at least eight. Let me explain.
+[DEPTH ZOOM-OUT (grid converges, swoosh): the "UNCLE ?" box recedes and we transition into
+SCENE #sc-map.]
 
 --- THE PROBLEM WITH "UNCLE" (≈0:14–0:48) ---
 
-English has one lazy word — "uncle" — for a whole crowd of different people. Chinese
-refuses to be that vague. It needs to know exactly who you mean. Is he your father's
-brother, or your mother's? Is he older than your parent, or younger? Is he blood, or
-married in? Every combination is a different word. Father's older brother, father's
-younger brother, mother's brother, the husband of your father's sister — all
-completely separate terms. There's no neutral "uncle" to fall back on. The word
-itself tells you the exact relationship.
+[SCENE #sc-map: the "UNCLE ?" box sits center. ]
+English has one lazy word — "uncle" — for a whole crowd of different people.
+[behind/under the single box, a CROWD of identical little grey stick-men peek out and shuffle —
+visual gag: English crams them all into one word. They overflow the box.]
+Chinese refuses to be that vague. It needs to know exactly who you mean.
+[the box cracks; the crowd FANS OUT and snaps onto a structured kinship map: a faint turquoise
+tree with two columns — left "父 father's side", right "母 mother's side" — and rows for older/younger.]
+Is he your father's brother, or your mother's?
+[the two side-columns (father's side ⟷ mother's side) light up as they're named.]
+Is he older than your parent, or younger?
+[an older/younger axis highlights within the father's column.]
+Is he blood, or married in?
+[a "by blood ⟷ married-in" distinction flickers (married-in nodes get a small ring icon).]
+Every combination is a different word.
+Father's older brother, father's younger brother, mother's brother,
+[each phrase lights its node with Hanzi + pinyin + tiny English gloss, in order:
+ 伯伯 bóbo (father's older brother) → 叔叔 shūshu (father's younger brother) →
+ 舅舅 jiùjiu (mother's brother). Springy pop each.]
+the husband of your father's sister — all completely separate terms.
+[node 姑父 gūfu (husband of father's sister) lights up. Other faint nodes already on the map
+(姨父 yífu, 姑姑 gūgu, 姨 yí, 婶婶 shěnshen) make the "at least eight" honest.]
+There's no neutral "uncle" to fall back on.
+[the empty CENTRE slot — where a generic "uncle" would sit — shows a turquoise ✗ / stays struck-through empty.]
+The word itself tells you the exact relationship.
 
 --- WHY (≈0:48–1:05) ---
 
+[stay on #sc-map, the full tree now visible.]
 It's because family structure mattered so much that the language baked it right in —
-which side, which generation, which order of birth. You don't just say "uncle." You
-say precisely where he sits in the family.
+which side, which generation, which order of birth.
+[three small axis labels sweep across the map one at a time as they're spoken:
+ 哪边 which side · 哪辈 which generation · 排行 birth order.]
+You don't just say "uncle."
+You say precisely where he sits in the family.
+[a single node on the tree pulses to show "his exact seat".]
 
 --- THE FLIP SIDE (≈1:05–1:25) ---
 
-And yet — Chinese uses these very same family words for total strangers. You call an
-older man "uncle," an older woman "aunty," a young woman "big sister" — as a sign of
-warmth and respect. Everyone gets slotted into the family.
+[DEPTH transition BACK to SCENE #sc-people (swoosh) — the SAME three strangers return (visual rhyme).]
+And yet — Chinese uses these very same family words for total strangers.
+[precise terms FLY OUT of the map and land as warm greetings on the strangers.]
+You call an older man "uncle," an older woman "aunty," a young woman "big sister" —
+[on each: 叔叔 shūshu lands on the older man (note: the SAME 叔叔 from the map — briefly echo it),
+ 阿姨 āyí on the older woman, 大姐 dàjiě on a young woman. Pop each.]
+as a sign of warmth and respect. Everyone gets slotted into the family.
+[faint family-tree branches sketch outward from each stranger — they get pulled into the tree.]
 
 --- PUNCHLINE / OUTRO (≈1:25–1:38) ---
 
 So Chinese can't translate "uncle" with a single word — it has a whole map of them.
-But it'll happily call a stranger on the street your uncle. A language incredibly
-precise about family... that treats the entire world like one.
+[left: a compact precise mini-map of the nodes.]
+But it'll happily call a stranger on the street your uncle.
+[right: the strangers/crowd. The map's branches reach out and gently wrap the strangers.]
+A language incredibly precise about family... that treats the entire world like one.
+[the precise map and the wrapped strangers settle side by side — the contrast holds for a beat.]
 
+[DEPTH lift to SCENE #sc-outro: default brand outro element.]
 Wanna actually start learning Chinese?
 Discover thousands of free exercises and more learning content on stacktags.io.
+[outro: stacked-cube logo between two turquoise chevrons, "stacktags" wordmark, grey stacktags.io line.]

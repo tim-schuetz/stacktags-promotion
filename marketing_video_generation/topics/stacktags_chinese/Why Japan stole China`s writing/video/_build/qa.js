@@ -13,7 +13,8 @@ fs.mkdirSync(OUT, { recursive: true });
 
 // [time, label]
 const SHOTS = [
-  [1.5, 'hook-sentence'], [5.2, 'hook-split'], [9.0, 'misfit'],
+  [1.5, 'hook-sentence'], [4.6, 'hook-split'],
+  [6.0, 'borrow-start'], [7.0, 'borrow-handoff'], [8.2, 'borrow-jp2'], [9.3, 'borrow-jp3'],
   [13.0, 'scroll-show'], [17.2, 'scroll-filled'], [20.5, 'map-sail'],
   [24.5, 'figure'], [28.5, 'english-jam'], [31.5, 'english-nofit'],
   [36.5, 'twojobs-meaning'], [39.0, 'twojobs-sound'],

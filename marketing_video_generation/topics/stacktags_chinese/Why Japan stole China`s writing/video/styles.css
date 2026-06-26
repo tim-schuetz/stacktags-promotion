@@ -350,3 +350,54 @@ body.clean .wrap{ background:#fff; }
 .ec .url{ font-weight:700; font-size:50px; color:var(--stk-muted); letter-spacing:1px;
   opacity:0; transition:opacity .5s ease .45s; }
 .ec.play .url{ opacity:1; }
+
+/* ============================================================
+   BORROW — China & Japan side by side; speech-bubble handoff + drift
+   ============================================================ */
+.borrow{ position:relative; width:1080px; height:1920px; }
+.bw-map{ position:absolute; inset:0; width:1080px; height:1920px; }
+.bw-land{ fill:#eef2f1; stroke:#d4dbd8; stroke-width:3; }
+.bw-land.china{ fill:var(--stk-teal-soft); stroke:var(--stk-teal); }
+.bw-land.japan{ fill:#eef3f1; stroke:#d4dbd8; }
+.bw-label{ position:absolute; font-weight:800; font-size:40px; color:var(--stk-ink); text-align:center;
+  opacity:0; transition:opacity .5s ease .2s; }
+.borrow.show .bw-label{ opacity:1; }
+.bw-label small{ display:block; font-size:25px; color:var(--stk-muted); font-weight:700; }
+.bw-label.cn{ left:175px; top:1300px; } .bw-label.jp{ left:760px; top:1336px; }
+
+.bw-fig{ position:absolute; opacity:0; transform:translateY(46px);
+  transition:opacity .5s ease, transform .6s cubic-bezier(.2,.8,.2,1); }
+.borrow.show .bw-fig{ opacity:1; transform:none; }
+.bw-fig.cnf{ left:130px; top:840px; }
+.bw-fig.j1{ left:585px; top:905px; transition-delay:.12s; }
+.bw-fig.j2{ left:735px; top:920px; transition-delay:.20s; }
+.bw-fig.j3{ left:882px; top:935px; transition-delay:.28s; }
+.bw-fig .person{ display:block; }
+.bw-fig.talk{ animation:bwTalk .55s cubic-bezier(.34,1.5,.5,1); }
+@keyframes bwTalk{ 0%,100%{ transform:translateY(0); } 42%{ transform:translateY(-18px); } }
+
+.bw-bub{ position:absolute; display:flex; align-items:center; justify-content:center;
+  min-width:172px; height:172px; padding:0 26px; background:#fff; border:6px solid var(--stk-ink);
+  border-radius:40px; box-shadow:0 16px 34px rgba(20,40,33,.16); z-index:6;
+  opacity:0; transform:scale(.4); transform-origin:50% 120%;
+  transition:opacity .3s ease, transform .5s cubic-bezier(.34,1.56,.64,1), border-color .45s ease; }
+.bw-bub.in{ opacity:1; transform:scale(1); }
+.bw-bub .bw-char{ font-size:116px; font-weight:900; color:var(--stk-ink); line-height:1; }
+.bw-bub.jp{ border-color:var(--stk-teal); }
+.bw-bub.jp .bw-char{ color:var(--stk-teal-d); }
+.bw-bub.shared{ left:398px; top:636px; }
+.bw-bub.shared.flip{ border-color:var(--stk-teal); }
+.bw-bub.shared.flip .bw-char{ color:var(--stk-teal-d); }
+.bw-bub.j2b{ left:722px; top:560px; }
+.bw-bub.j3b{ left:880px; top:628px; }
+/* outlined tail (ink edge + white fill); shared tail flips left→right on handoff */
+.bw-bub .tail{ position:absolute; bottom:-30px; left:36px; width:0; height:0;
+  transition:left .5s cubic-bezier(.5,0,.5,1), transform .5s ease; }
+.bw-bub .tail::before{ content:''; position:absolute; left:0; top:0;
+  border-top:36px solid var(--stk-ink); border-right:26px solid transparent; }
+.bw-bub .tail::after{ content:''; position:absolute; left:6px; top:-3px;
+  border-top:26px solid #fff; border-right:18px solid transparent; }
+.bw-bub.jp .tail::before{ border-top-color:var(--stk-teal); }
+.bw-bub .tail.c{ left:50%; margin-left:-13px; }
+.bw-bub.shared.flip .tail{ left:150px; transform:scaleX(-1); }
+.bw-bub.shared.flip .tail::before{ border-top-color:var(--stk-teal); }

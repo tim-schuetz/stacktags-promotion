@@ -1,0 +1,283 @@
+/* ===========================================================================
+   "The plan to replace Chinese characters with the alphabet" — scene styling.
+   White + turquoise, Inter (CJK in Noto Sans SC), thin grey grid, no borders.
+   =========================================================================== */
+
+/* ---- stage / camera base (mirrors the reference engine) ---- */
+* { box-sizing: border-box; }
+html, body { margin: 0; height: 100%; background: #0c0f12; overflow: hidden; }
+.wrap { position: fixed; inset: 0; display: grid; place-items: center; }
+.stage {
+  position: relative; width: 1080px; height: 1920px; overflow: hidden;
+  transform-origin: center center; background: #fff;
+}
+#grid { z-index: 0; }
+.scenes { position: absolute; inset: 0; z-index: 1; }
+.scene {
+  position: absolute; inset: 0; opacity: 0;
+  display: flex; align-items: center; justify-content: center;
+  transform: translate(var(--tx, 0px), var(--ty, 0px)) scale(var(--s, 1));
+  transform-origin: center center;
+  will-change: transform, opacity, filter;
+}
+.cjk { font-family: 'Noto Sans SC', 'Inter', sans-serif; }
+
+/* ---- HUD ---- */
+#hud {
+  position: fixed; left: 50%; bottom: 18px; transform: translateX(-50%);
+  display: flex; align-items: center; gap: 12px; z-index: 99;
+  background: #11171d; color: #cfe; padding: 8px 14px; border-radius: 12px;
+  font: 600 14px/1 'Inter', sans-serif;
+}
+#hud button { background: var(--stk-teal); color: #fff; border: 0; border-radius: 8px; padding: 8px 12px; font-weight: 800; cursor: pointer; }
+#hud input[type=range] { width: 520px; }
+body.clean #hud { display: none; }
+body.clean { background: #fff; }
+
+/* ===========================================================================
+   GLYPH HERO  (letters ↔ character battle; life-support callback)
+   =========================================================================== */
+.glyph-stage { position: absolute; inset: 0; }
+.duo {
+  position: absolute; left: 50%; top: 50%; width: 760px; height: 620px;
+  transform: translate(-50%, -50%);
+  transition: transform .7s cubic-bezier(.2,.8,.2,1);
+}
+.char {
+  position: absolute; left: 50%; top: 42%;
+  transform: translate(-50%, -50%) scale(1);
+  width: max-content; white-space: nowrap;
+  font: 900 330px/1 'Noto Sans SC', sans-serif; color: var(--stk-ink);
+  transition: transform .7s cubic-bezier(.2,.8,.2,1), opacity .6s ease, color .6s ease, filter .6s ease;
+}
+.alpha {
+  position: absolute; left: 50%; top: 80%;
+  transform: translate(-50%, -50%) scale(1);
+  width: max-content; display: flex; gap: 2px; white-space: nowrap;
+  transition: transform .7s cubic-bezier(.2,.8,.2,1), opacity .5s ease;
+}
+.alpha span { font: 800 76px/1 'Inter', sans-serif; color: var(--stk-muted); letter-spacing: -1px; }
+.duo.replacing .char { transform: translate(-50%, -50%) scale(.4); opacity: .26; filter: grayscale(1); color: var(--stk-muted); }
+.duo.replacing .alpha { top: 44%; transform: translate(-50%, -50%) scale(2.35); }
+.duo.replacing .alpha span { color: var(--stk-teal); }
+.duo.killed .char { transform: translate(-50%, -50%) scale(.28); opacity: .08; filter: grayscale(1); }
+.duo.killed .alpha { top: 44%; transform: translate(-50%, -50%) scale(2.7); }
+.duo.killed .alpha span { color: var(--stk-teal-d); }
+.duo.pop .char { animation: charPop .55s cubic-bezier(.34,1.56,.5,1); }
+@keyframes charPop {
+  0% { transform: translate(-50%, -50%) scale(.3); opacity:.2; }
+  60% { transform: translate(-50%, -50%) scale(1.12); opacity:1; }
+  100% { transform: translate(-50%, -50%) scale(1); opacity:1; }
+}
+.pulse {
+  position: absolute; left: 50%; top: 80%; transform: translate(-50%, -50%);
+  width: 460px; opacity: 0; transition: opacity .5s ease;
+}
+.pulse svg { width: 100%; height: 80px; display: block; }
+#pulse-path { fill: none; stroke: var(--stk-teal); stroke-width: 6; stroke-linecap: round; stroke-linejoin: round; }
+.duo.ls .alpha { opacity: 0; }
+.duo.ls .pulse { opacity: 1; }
+.duo.ls #pulse-path { animation: ecg 1.4s ease-in-out infinite; }
+@keyframes ecg { 0%, 100% { opacity: .5; } 50% { opacity: 1; } }
+
+/* ===========================================================================
+   VOCAB  (pinyin writes SOUNDS — 3 object words with real cropped photos)
+   =========================================================================== */
+.vocab-stage { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 38px; }
+.vhead { display: flex; align-items: baseline; gap: 18px; opacity: 0; transform: translateY(-18px); transition: opacity .3s ease, transform .4s cubic-bezier(.2,.8,.2,1); }
+.vhead.in { opacity: 1; transform: none; }
+.vhead .zh { font: 900 96px/1 'Noto Sans SC', sans-serif; color: var(--stk-teal-d); letter-spacing: 4px; }
+.vhead .rom { font: 800 44px/1 'Inter', sans-serif; color: var(--stk-muted); }
+.vrow { display: flex; align-items: center; gap: 50px; width: 720px;
+  opacity: 0; transform: translateX(-44px) scale(.92);
+  transition: opacity .3s ease, transform .5s cubic-bezier(.34,1.6,.5,1); }
+.vrow.in { opacity: 1; transform: none; }
+.vimg { width: 268px; height: 214px; flex: 0 0 268px; display: flex; align-items: center; justify-content: center; }
+.vimg img { max-width: 100%; max-height: 100%; object-fit: contain; }
+.vtext { display: flex; flex-direction: column; }
+.vtext .zh { font: 900 108px/1 'Noto Sans SC', sans-serif; color: var(--stk-ink); letter-spacing: 2px; }
+.vtext .rom { margin-top: 10px; font: 800 50px/1 'Inter', sans-serif; color: var(--stk-teal-d); }
+.vtext .en { margin-top: 6px; font: 700 34px/1 'Inter', sans-serif; color: var(--stk-muted); }
+
+/* ===========================================================================
+   ZHOU YOUGUANG  (real portrait in a soft profile card + name)
+   =========================================================================== */
+.zhou-stage { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; gap: 26px; padding-bottom: 296px; }
+.zhou-photo { width: 430px; opacity: 0; transform: scale(.88) translateY(24px);
+  transition: opacity .4s ease, transform .6s cubic-bezier(.2,.8,.2,1); }
+.zhou-photo img { width: 100%; height: auto; display: block; filter: drop-shadow(0 26px 42px rgba(20,40,33,.24)); }
+.zhou-stage.in .zhou-photo { opacity: 1; transform: none; }
+.zhou-card { text-align: center; opacity: 0; transform: translateY(16px);
+  transition: opacity .4s ease .15s, transform .5s ease .15s; }
+.zhou-stage.in .zhou-card { opacity: 1; transform: none; }
+.zhou-card .zh { font: 900 100px/1 'Noto Sans SC', sans-serif; color: var(--stk-ink); letter-spacing: 4px; }
+.zhou-card .rom { margin-top: 12px; font: 800 46px/1 'Inter', sans-serif; color: var(--stk-teal-d); }
+.zhou-card .en { margin-top: 10px; font: 700 32px/1 'Inter', sans-serif; color: var(--stk-muted); }
+
+/* ===========================================================================
+   REFORM WALL  (pinyin tries to replace a row of characters, fails, becomes
+   a helper tucked under them)
+   =========================================================================== */
+.reform-stage { position: absolute; inset: 0; }
+.charrow { position: absolute; left: 50%; top: 52%; transform: translate(-50%, -50%); display: flex; gap: 30px; transition: opacity .4s ease; }
+.charrow.gag { opacity: 0; }
+.cell { position: relative; width: 168px; height: 268px; }
+.cell .hz { position: absolute; left: 50%; top: 80px; transform: translate(-50%, -50%) scale(1);
+  font: 900 148px/1 'Noto Sans SC', sans-serif; color: var(--stk-ink);
+  transition: transform .5s cubic-bezier(.2,.8,.2,1), opacity .4s ease, color .4s ease, filter .4s ease; }
+.cell .py { position: absolute; left: 50%; top: 214px; transform: translate(-50%, -50%) scale(1);
+  font: 800 44px/1 'Inter', sans-serif; color: var(--stk-teal-d); white-space: nowrap;
+  transition: transform .5s cubic-bezier(.2,.8,.2,1), opacity .4s ease, color .4s ease; }
+/* the alphabet overtakes: pinyin swells to the centre, the character is pushed out */
+.cell.taken .hz { opacity: 0; transform: translate(-50%, -50%) scale(.25); filter: grayscale(1); }
+.cell.taken .py { top: 80px; transform: translate(-50%, -50%) scale(2.0); color: var(--stk-teal); }
+/* buried: the taken-over pinyin greys and sinks */
+.cell.buried .hz { opacity: 0; }
+.cell.buried .py { opacity: .3; filter: grayscale(1); transform: translate(-50%, -50%) translateY(46px) scale(1.8); }
+/* helper end-state: the pinyin under each character glows (its real role) */
+.charrow.helper .cell .py { color: var(--stk-teal); }
+
+.abc-future { position: absolute; right: 110px; top: 300px; text-align: center;
+  opacity: 0; transform: scale(.85); transition: opacity .4s ease, transform .5s cubic-bezier(.34,1.6,.5,1); }
+.abc-future.in { opacity: 1; transform: none; }
+.abc-future .lab { font: 800 96px/1 'Inter', sans-serif; color: var(--stk-muted); letter-spacing: 10px; transition: color .4s ease; }
+.abc-future.lit .lab { color: var(--stk-teal-d); }
+.abc-future .cap { margin-top: 8px; font: 700 26px/1 'Inter', sans-serif; color: var(--stk-muted); letter-spacing: .4px; }
+
+.toohard { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%) scale(.6);
+  opacity: 0; transition: opacity .35s ease, transform .5s cubic-bezier(.34,1.6,.5,1);
+  display: flex; flex-direction: column; align-items: center; gap: 14px; z-index: 8; }
+.toohard.in { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+.toohard .th-char { font: 900 380px/1 'Noto Sans SC', sans-serif; color: var(--stk-ink); position: relative; }
+.toohard .th-learner { position: absolute; right: -30px; bottom: 30px; width: 150px; height: 150px; }
+.toohard .th-learner svg { width: 100%; height: 100%; display: block; }
+.toohard .th-cap { font: 800 42px/1 'Inter', sans-serif; color: var(--stk-teal-d); letter-spacing: .5px; }
+
+.lawstamp { position: absolute; left: 50%; top: -220px; transform: translateX(-50%) rotate(-11deg);
+  opacity: 0; z-index: 9; transition: opacity .3s ease, top .55s cubic-bezier(.2,.8,.2,1); }
+.lawstamp.in { opacity: 1; top: 150px; }
+.lawstamp.in .stampface { animation: stampShake 1.6s ease-in-out infinite; }
+.stampface { display: flex; flex-direction: column; align-items: center; gap: 4px;
+  background: var(--stk-teal); color: #fff; border-radius: 22px; padding: 22px 48px;
+  box-shadow: 0 22px 50px rgba(53,162,146,.42); }
+.stampface .zh { font: 900 78px/1 'Noto Sans SC', sans-serif; }
+.stampface .en { font: 800 30px/1 'Inter', sans-serif; letter-spacing: 2px; opacity: .92; }
+@keyframes stampShake { 0%,100% { transform: rotate(0deg); } 50% { transform: rotate(-3deg); } }
+
+/* ===========================================================================
+   MODERN  (literacy rate chart + skyscrapers sliding up from below)
+   =========================================================================== */
+.modern-stage { position: absolute; inset: 0; }
+.skyline { position: absolute; left: 0; right: 0; bottom: 0; height: 1100px;
+  display: flex; align-items: flex-end; justify-content: center; gap: 18px; pointer-events: none; }
+.tower { transform: translateY(760px); opacity: 0;
+  transition: transform .75s cubic-bezier(.2,.8,.2,1), opacity .45s ease; }
+.tower img { display: block; width: auto; filter: drop-shadow(0 18px 28px rgba(20,40,33,.13)); }
+.tower.t1 img { height: 660px; } .tower.t2 img { height: 800px; } .tower.t3 img { height: 600px; }
+.skyline.in .tower { transform: none; opacity: 1; }
+.skyline.in .tower.t1 { transition-delay: .05s; }
+.skyline.in .tower.t2 { transition-delay: .20s; }
+.skyline.in .tower.t3 { transition-delay: .34s; }
+
+.litchart { position: absolute; left: 50%; top: 300px; transform: translateX(-50%); width: 768px;
+  background: rgba(255,255,255,.86); border-radius: 34px; padding: 34px 44px 26px;
+  box-shadow: 0 28px 64px rgba(20,40,33,.14); opacity: 0; transition: opacity .4s ease; }
+.litchart.in { opacity: 1; }
+.lc-title { font: 800 38px/1 'Inter', sans-serif; color: var(--stk-ink); letter-spacing: -.5px; margin-bottom: 6px; }
+.lc-svg { width: 100%; height: auto; display: block; overflow: visible; }
+.lc-axis { stroke: rgba(35,43,51,.16); stroke-width: 3; }
+.lc-area { fill: rgba(53,162,146,.12); opacity: 0; transition: opacity .6s ease .6s; }
+.litchart.in .lc-area { opacity: 1; }
+.lc-line { fill: none; stroke: var(--stk-teal); stroke-width: 9; stroke-linecap: round; stroke-linejoin: round;
+  stroke-dasharray: 720; stroke-dashoffset: 720; }
+.litchart.in .lc-line { animation: draw 1.7s cubic-bezier(.4,0,.3,1) forwards; }
+@keyframes draw { to { stroke-dashoffset: 0; } }
+.lc-dot { fill: var(--stk-teal-d); opacity: 0; transition: opacity .3s ease 1.6s; }
+.litchart.in .lc-dot { opacity: 1; }
+.lc-val { position: absolute; right: 60px; top: 70px; font: 900 96px/1 'Inter', sans-serif; color: var(--stk-teal-d); letter-spacing: -3px; }
+.lc-years { display: flex; justify-content: space-between; padding: 6px 30px 0; font: 700 27px/1 'Inter', sans-serif; color: var(--stk-muted); }
+
+/* ===========================================================================
+   PHONE IME  (type pinyin → pick the character)
+   =========================================================================== */
+.phone-cam {
+  position: absolute; inset: 0; will-change: transform;
+  transform: translate(var(--px,0px), var(--py,0px)) scale(var(--pz,1));
+  transition: transform .9s cubic-bezier(.2,.8,.2,1);
+}
+.phone {
+  position: absolute; left: 50%; top: 196px; transform: translateX(-50%);
+  width: 768px; height: 1376px; background: #fff; border-radius: 68px;
+  box-shadow: 0 50px 90px rgba(20,40,33,.16), 0 8px 26px rgba(20,40,33,.08);
+  overflow: hidden;
+}
+.phone-top {
+  position: absolute; left: 0; right: 0; top: 0; height: 132px;
+  display: flex; align-items: center; justify-content: center; gap: 16px;
+  background: #fff; z-index: 6; box-shadow: 0 1px 0 rgba(35,43,51,.06);
+}
+.phone-top .back { position: absolute; left: 40px; top: 50%; transform: translateY(-50%);
+  width: 18px; height: 18px; border-left: 4px solid var(--stk-muted); border-bottom: 4px solid var(--stk-muted);
+  rotate: 45deg; border-radius: 2px; opacity: .6; }
+.phone-top .who { display: flex; flex-direction: column; align-items: center; }
+.phone-top .who .nm { font: 800 36px/1.05 'Inter', sans-serif; color: var(--stk-ink); letter-spacing: -.6px; }
+.phone-top .who .st { margin-top: 6px; font: 600 24px/1 'Inter', sans-serif; color: var(--stk-teal); letter-spacing: .2px; }
+
+.ime { position: absolute; left: 0; right: 0; top: 132px; bottom: 0; display: flex; flex-direction: column; padding: 44px 44px 36px; }
+.ime-field {
+  flex: 0 0 auto; min-height: 168px; background: #f4f6f7; border-radius: 30px; padding: 34px 38px;
+  display: flex; align-items: center; gap: 4px;
+  transition: transform .5s cubic-bezier(.2,.8,.2,1), box-shadow .5s ease;
+}
+.ime-field.alive { transform: scale(1.03); animation: alivepulse 1.7s ease-in-out infinite; }
+.ime-field.alive .han { color: var(--stk-teal-d); }
+@keyframes alivepulse {
+  0%, 100% { box-shadow: 0 0 0 3px rgba(53,162,146,.16), 0 14px 34px rgba(53,162,146,.16); }
+  50% { box-shadow: 0 0 0 7px rgba(53,162,146,.30), 0 18px 46px rgba(53,162,146,.28); }
+}
+.ime-field .pin { font: 700 72px/1 'Inter', sans-serif; color: var(--stk-teal-d); letter-spacing: 1px; }
+.ime-field .han { font: 800 88px/1 'Noto Sans SC', sans-serif; color: var(--stk-ink); letter-spacing: 2px; }
+.caret { width: 5px; height: 70px; background: var(--stk-teal); margin-left: 8px; }
+.ime.typing .caret { animation: blink 1s steps(1) infinite; }
+@keyframes blink { 50% { opacity: 0; } }
+
+.ime-cands { flex: 0 0 auto; height: 0; overflow: hidden; display: flex; gap: 18px; margin-top: 0; opacity: 0;
+  transition: opacity .25s ease, height .3s ease, margin-top .3s ease; }
+.ime-cands.show { height: 132px; opacity: 1; margin-top: 26px; }
+.cand {
+  background: #fff; box-shadow: 0 12px 26px rgba(20,40,33,.10); border-radius: 22px; padding: 18px 28px;
+  display: flex; align-items: center; gap: 14px;
+  transform: translateY(18px) scale(.7); opacity: 0;
+  transition: transform .32s cubic-bezier(.34,1.6,.5,1), opacity .26s ease, background .25s ease, color .25s ease;
+}
+.cand.show { transform: none; opacity: 1; }
+.cand .idx { font: 700 30px/1 'Inter', sans-serif; color: var(--stk-muted); }
+.cand .zh { font: 700 66px/1 'Noto Sans SC', sans-serif; color: var(--stk-ink); }
+.cand.pick { background: var(--stk-teal); box-shadow: 0 16px 34px rgba(53,162,146,.4); }
+.cand.pick .idx { color: rgba(255,255,255,.8); }
+.cand.pick .zh { color: #fff; }
+
+.ime-keys { margin-top: auto; display: flex; flex-direction: column; gap: 18px; padding-top: 28px; }
+.krow { display: flex; justify-content: center; gap: 12px; }
+.key {
+  flex: 1 1 0; max-width: 62px; height: 96px; background: #fff; box-shadow: 0 6px 0 rgba(20,40,33,.07);
+  border-radius: 14px; display: grid; place-items: center;
+  font: 700 38px/1 'Inter', sans-serif; color: var(--stk-ink);
+  transition: transform .12s ease, background .12s ease, color .12s ease, box-shadow .12s ease;
+}
+.key.down { background: var(--stk-teal); color: #fff; transform: translateY(4px); box-shadow: 0 2px 0 rgba(20,40,33,.07); }
+
+/* ===========================================================================
+   OUTRO endcard
+   =========================================================================== */
+.ec { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); text-align: center; }
+.ec #outro-logo svg { display: block; margin: 0 auto; }
+.ec .lyr { opacity: 0; transform: translateY(-46px) scale(.8); transition: transform .56s cubic-bezier(.34, 1.56, .5, 1) var(--d, 0s), opacity .4s ease var(--d, 0s); }
+.ec .chev { opacity: 0; transition: opacity .5s ease .3s; }
+.ec.play .lyr { opacity: 1; transform: none; }
+.ec.play .chev { opacity: 1; }
+.ec .wm { margin-top: 18px; font: 900 150px/1 'Inter', sans-serif; letter-spacing: -4px; opacity: 0; transform: translateY(20px); transition: opacity .5s ease .35s, transform .5s ease .35s; }
+.ec .wm .s { color: var(--stk-ink); } .ec .wm .t { color: var(--stk-teal); }
+.ec.play .wm { opacity: 1; transform: none; }
+.ec .url { margin-top: 14px; font: 700 44px/1 'Inter', sans-serif; color: var(--stk-muted); opacity: 0; transition: opacity .5s ease .55s; }
+.ec.play .url { opacity: 1; }

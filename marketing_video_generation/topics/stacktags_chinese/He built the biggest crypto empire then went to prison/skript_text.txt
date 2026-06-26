@@ -1,0 +1,67 @@
+VIDEO SCRIPT
+Title: He built the world's biggest crypto empire — then went to prison and stayed a billionaire
+Topic: Finance / business
+Target length: ~100 seconds (fits the 30s–3min window)
+Language of narration: English
+Format: Spoken voiceover narration only — no on-screen/visual cues.
+
+==================================================================
+THE CORE IDEA
+==================================================================
+Changpeng Zhao ("CZ"): born in China, raised in Canada; founded Binance in 2017, which
+became the world's largest crypto exchange, making him one of the richest people alive.
+In 2023 he pleaded guilty to US money-laundering / Bank Secrecy Act violations; Binance
+paid a ~$4.3B settlement; CZ stepped down as CEO and served ~4 months in US prison
+(2024). He remained a multi-billionaire.
+Punchline: he committed to the biggest crypto fine in history, did his time, and walked
+out still one of the wealthiest people on Earth.
+
+NOTE (honesty): keep it factual — guilty plea to AML/BSA failures (not fraud/theft);
+Binance ~$4.3B; CZ ~$50M fine + ~4 months prison; still a billionaire.
+
+==================================================================
+SCRIPT
+==================================================================
+
+--- HOOK (0:00–0:16) — the payoff up front ---
+
+This man built the biggest cryptocurrency company on the planet, became one of the
+richest people alive, then pleaded guilty in the United States and went to prison. And
+when he walked out a few months later? Still a billionaire many times over. Meet
+Changpeng Zhao.
+
+--- THE RISE (≈0:16–0:46) ---
+
+Most people just call him CZ. He was born in China, moved to Canada as a kid, and worked
+his way through the world of trading software. Then, in 2017, he founded a crypto
+exchange called Binance — a place to buy and sell digital currencies. And it exploded.
+Within just a few years, Binance became the largest crypto exchange on Earth, handling
+enormous volumes of trades every single day. CZ, who owned a huge chunk of it, saw his
+net worth rocket into the tens of billions. From a coding job to one of the richest
+people on the planet, in well under a decade.
+
+--- THE FALL (≈0:46–1:18) ---
+
+But Binance had grown at breakneck speed — and US regulators argued it had cut serious
+corners. The core accusation wasn't that CZ stole money. It was that Binance failed to
+put proper controls in place to stop money laundering — letting illicit funds flow
+through the platform. In 2023, it caught up with him. CZ pleaded guilty. Binance agreed
+to pay around four billion dollars — one of the largest corporate settlements in US
+history. CZ stepped down as CEO, paid a personal fine, and in 2024, he was sentenced to
+prison. The founder of the world's biggest crypto empire, behind bars.
+
+--- THE TWIST (≈1:18–1:36) ---
+
+And here's the part that stuns people. His sentence was about four months. He served it,
+walked out — and was still worth tens of billions of dollars. Because the value of his
+stake in Binance dwarfed the fines. He'd broken the rules, paid a record penalty, done
+his time... and emerged as one of the wealthiest human beings on Earth.
+
+--- PUNCHLINE / OUTRO (≈1:36–1:48) ---
+
+It's a story that says a lot about this era of money: you can build an empire at
+lightning speed, collide head-on with the law, go to prison — and still come out the
+other side a billionaire. Crypto's wild west, in one man's life.
+
+Want to actually understand money and business?
+Discover thousands of free exercises and more learning content on stacktags.io.

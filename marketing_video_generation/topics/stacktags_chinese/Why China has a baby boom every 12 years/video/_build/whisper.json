@@ -1,0 +1,1377 @@
+{
+ "duration": 78.669,
+ "words": [
+  {
+   "w": "Every",
+   "start": 0.0,
+   "end": 0.26
+  },
+  {
+   "w": "12",
+   "start": 0.26,
+   "end": 0.54
+  },
+  {
+   "w": "years,",
+   "start": 0.54,
+   "end": 0.76
+  },
+  {
+   "w": "China",
+   "start": 1.06,
+   "end": 1.28
+  },
+  {
+   "w": "and",
+   "start": 1.28,
+   "end": 1.8
+  },
+  {
+   "w": "much",
+   "start": 1.8,
+   "end": 1.98
+  },
+  {
+   "w": "of",
+   "start": 1.98,
+   "end": 2.18
+  },
+  {
+   "w": "East",
+   "start": 2.18,
+   "end": 2.36
+  },
+  {
+   "w": "Asia",
+   "start": 2.36,
+   "end": 2.68
+  },
+  {
+   "w": "has",
+   "start": 2.68,
+   "end": 3.04
+  },
+  {
+   "w": "a",
+   "start": 3.04,
+   "end": 3.22
+  },
+  {
+   "w": "baby",
+   "start": 3.22,
+   "end": 3.44
+  },
+  {
+   "w": "boom.",
+   "start": 3.44,
+   "end": 3.76
+  },
+  {
+   "w": "Not",
+   "start": 4.34,
+   "end": 4.48
+  },
+  {
+   "w": "because",
+   "start": 4.48,
+   "end": 4.74
+  },
+  {
+   "w": "of",
+   "start": 4.74,
+   "end": 4.92
+  },
+  {
+   "w": "the",
+   "start": 4.92,
+   "end": 5.0
+  },
+  {
+   "w": "economy,",
+   "start": 5.0,
+   "end": 5.38
+  },
+  {
+   "w": "not",
+   "start": 5.88,
+   "end": 5.96
+  },
+  {
+   "w": "because",
+   "start": 5.96,
+   "end": 6.18
+  },
+  {
+   "w": "of",
+   "start": 6.18,
+   "end": 6.38
+  },
+  {
+   "w": "policy,",
+   "start": 6.38,
+   "end": 6.72
+  },
+  {
+   "w": "because",
+   "start": 7.06,
+   "end": 7.24
+  },
+  {
+   "w": "of",
+   "start": 7.24,
+   "end": 7.4
+  },
+  {
+   "w": "the",
+   "start": 7.4,
+   "end": 7.48
+  },
+  {
+   "w": "zodiac.",
+   "start": 7.48,
+   "end": 7.92
+  },
+  {
+   "w": "Parents",
+   "start": 8.4,
+   "end": 8.66
+  },
+  {
+   "w": "want",
+   "start": 8.66,
+   "end": 8.84
+  },
+  {
+   "w": "their",
+   "start": 8.84,
+   "end": 9.0
+  },
+  {
+   "w": "child",
+   "start": 9.0,
+   "end": 9.26
+  },
+  {
+   "w": "born",
+   "start": 9.26,
+   "end": 9.54
+  },
+  {
+   "w": "in",
+   "start": 9.54,
+   "end": 9.8
+  },
+  {
+   "w": "the",
+   "start": 9.8,
+   "end": 9.9
+  },
+  {
+   "w": "year",
+   "start": 9.9,
+   "end": 10.02
+  },
+  {
+   "w": "of",
+   "start": 10.02,
+   "end": 10.16
+  },
+  {
+   "w": "the",
+   "start": 10.16,
+   "end": 10.28
+  },
+  {
+   "w": "dragon.",
+   "start": 10.28,
+   "end": 10.56
+  },
+  {
+   "w": "The",
+   "start": 11.04,
+   "end": 11.22
+  },
+  {
+   "w": "Chinese",
+   "start": 11.22,
+   "end": 11.5
+  },
+  {
+   "w": "zodiac",
+   "start": 11.5,
+   "end": 11.92
+  },
+  {
+   "w": "runs",
+   "start": 11.92,
+   "end": 12.14
+  },
+  {
+   "w": "on",
+   "start": 12.14,
+   "end": 12.34
+  },
+  {
+   "w": "12",
+   "start": 12.34,
+   "end": 12.58
+  },
+  {
+   "w": "animals,",
+   "start": 12.58,
+   "end": 12.96
+  },
+  {
+   "w": "one",
+   "start": 13.2,
+   "end": 13.42
+  },
+  {
+   "w": "per",
+   "start": 13.42,
+   "end": 13.62
+  },
+  {
+   "w": "year,",
+   "start": 13.62,
+   "end": 13.88
+  },
+  {
+   "w": "and",
+   "start": 14.12,
+   "end": 14.38
+  },
+  {
+   "w": "the",
+   "start": 14.38,
+   "end": 14.56
+  },
+  {
+   "w": "dragon",
+   "start": 14.56,
+   "end": 14.78
+  },
+  {
+   "w": "is",
+   "start": 14.78,
+   "end": 14.98
+  },
+  {
+   "w": "the",
+   "start": 14.98,
+   "end": 15.12
+  },
+  {
+   "w": "most",
+   "start": 15.12,
+   "end": 15.28
+  },
+  {
+   "w": "prized",
+   "start": 15.28,
+   "end": 15.6
+  },
+  {
+   "w": "of",
+   "start": 15.6,
+   "end": 15.76
+  },
+  {
+   "w": "them",
+   "start": 15.76,
+   "end": 15.86
+  },
+  {
+   "w": "all,",
+   "start": 15.86,
+   "end": 16.1
+  },
+  {
+   "w": "tied",
+   "start": 16.3,
+   "end": 16.46
+  },
+  {
+   "w": "to",
+   "start": 16.46,
+   "end": 16.7
+  },
+  {
+   "w": "strength,",
+   "start": 16.7,
+   "end": 16.88
+  },
+  {
+   "w": "luck,",
+   "start": 17.24,
+   "end": 17.32
+  },
+  {
+   "w": "ambition,",
+   "start": 17.56,
+   "end": 17.88
+  },
+  {
+   "w": "success.",
+   "start": 18.22,
+   "end": 18.52
+  },
+  {
+   "w": "A",
+   "start": 19.02,
+   "end": 19.16
+  },
+  {
+   "w": "dragon",
+   "start": 19.16,
+   "end": 19.4
+  },
+  {
+   "w": "child",
+   "start": 19.4,
+   "end": 19.74
+  },
+  {
+   "w": "is",
+   "start": 19.74,
+   "end": 19.98
+  },
+  {
+   "w": "seen",
+   "start": 19.98,
+   "end": 20.14
+  },
+  {
+   "w": "as",
+   "start": 20.14,
+   "end": 20.32
+  },
+  {
+   "w": "destined",
+   "start": 20.32,
+   "end": 20.64
+  },
+  {
+   "w": "for",
+   "start": 20.64,
+   "end": 20.94
+  },
+  {
+   "w": "great",
+   "start": 20.94,
+   "end": 21.18
+  },
+  {
+   "w": "things.",
+   "start": 21.18,
+   "end": 21.6
+  },
+  {
+   "w": "So",
+   "start": 21.94,
+   "end": 22.12
+  },
+  {
+   "w": "couples",
+   "start": 22.12,
+   "end": 22.36
+  },
+  {
+   "w": "actually",
+   "start": 22.36,
+   "end": 22.72
+  },
+  {
+   "w": "plan",
+   "start": 22.72,
+   "end": 22.98
+  },
+  {
+   "w": "around",
+   "start": 22.98,
+   "end": 23.24
+  },
+  {
+   "w": "it,",
+   "start": 23.24,
+   "end": 23.48
+  },
+  {
+   "w": "trying",
+   "start": 23.72,
+   "end": 23.96
+  },
+  {
+   "w": "to",
+   "start": 23.96,
+   "end": 24.14
+  },
+  {
+   "w": "time",
+   "start": 24.14,
+   "end": 24.44
+  },
+  {
+   "w": "a",
+   "start": 24.44,
+   "end": 24.6
+  },
+  {
+   "w": "birth",
+   "start": 24.6,
+   "end": 24.76
+  },
+  {
+   "w": "for",
+   "start": 24.76,
+   "end": 25.0
+  },
+  {
+   "w": "a",
+   "start": 25.0,
+   "end": 25.4
+  },
+  {
+   "w": "dragon",
+   "start": 25.4,
+   "end": 25.4
+  },
+  {
+   "w": "year.",
+   "start": 25.4,
+   "end": 25.58
+  },
+  {
+   "w": "And",
+   "start": 25.92,
+   "end": 26.12
+  },
+  {
+   "w": "here's",
+   "start": 26.12,
+   "end": 26.36
+  },
+  {
+   "w": "the",
+   "start": 26.36,
+   "end": 26.46
+  },
+  {
+   "w": "wild",
+   "start": 26.46,
+   "end": 26.72
+  },
+  {
+   "w": "part.",
+   "start": 26.72,
+   "end": 27.02
+  },
+  {
+   "w": "You",
+   "start": 27.22,
+   "end": 27.34
+  },
+  {
+   "w": "can",
+   "start": 27.34,
+   "end": 27.5
+  },
+  {
+   "w": "see",
+   "start": 27.5,
+   "end": 27.7
+  },
+  {
+   "w": "it",
+   "start": 27.7,
+   "end": 27.8
+  },
+  {
+   "w": "in",
+   "start": 27.8,
+   "end": 27.9
+  },
+  {
+   "w": "the",
+   "start": 27.9,
+   "end": 28.0
+  },
+  {
+   "w": "numbers.",
+   "start": 28.0,
+   "end": 28.26
+  },
+  {
+   "w": "In",
+   "start": 28.68,
+   "end": 28.9
+  },
+  {
+   "w": "dragon",
+   "start": 28.9,
+   "end": 29.28
+  },
+  {
+   "w": "years,",
+   "start": 29.28,
+   "end": 29.52
+  },
+  {
+   "w": "births",
+   "start": 29.96,
+   "end": 30.04
+  },
+  {
+   "w": "rise.",
+   "start": 30.04,
+   "end": 30.46
+  },
+  {
+   "w": "China's",
+   "start": 31.08,
+   "end": 31.44
+  },
+  {
+   "w": "last",
+   "start": 31.44,
+   "end": 31.64
+  },
+  {
+   "w": "full",
+   "start": 31.64,
+   "end": 31.92
+  },
+  {
+   "w": "dragon",
+   "start": 31.92,
+   "end": 32.16
+  },
+  {
+   "w": "year,",
+   "start": 32.16,
+   "end": 32.36
+  },
+  {
+   "w": "2012,",
+   "start": 32.48,
+   "end": 32.92
+  },
+  {
+   "w": "brought",
+   "start": 33.42,
+   "end": 33.56
+  },
+  {
+   "w": "a",
+   "start": 33.56,
+   "end": 33.72
+  },
+  {
+   "w": "clear",
+   "start": 33.72,
+   "end": 33.94
+  },
+  {
+   "w": "bump,",
+   "start": 33.94,
+   "end": 34.22
+  },
+  {
+   "w": "reportedly",
+   "start": 34.76,
+   "end": 34.94
+  },
+  {
+   "w": "the",
+   "start": 34.94,
+   "end": 35.22
+  },
+  {
+   "w": "most",
+   "start": 35.22,
+   "end": 35.42
+  },
+  {
+   "w": "births",
+   "start": 35.42,
+   "end": 35.66
+  },
+  {
+   "w": "in",
+   "start": 35.66,
+   "end": 35.84
+  },
+  {
+   "w": "over",
+   "start": 35.84,
+   "end": 36.02
+  },
+  {
+   "w": "a",
+   "start": 36.02,
+   "end": 36.18
+  },
+  {
+   "w": "decade,",
+   "start": 36.18,
+   "end": 36.48
+  },
+  {
+   "w": "and",
+   "start": 36.9,
+   "end": 37.1
+  },
+  {
+   "w": "the",
+   "start": 37.1,
+   "end": 37.2
+  },
+  {
+   "w": "effect",
+   "start": 37.2,
+   "end": 37.48
+  },
+  {
+   "w": "is",
+   "start": 37.48,
+   "end": 37.66
+  },
+  {
+   "w": "even",
+   "start": 37.66,
+   "end": 37.84
+  },
+  {
+   "w": "sharper",
+   "start": 37.84,
+   "end": 38.14
+  },
+  {
+   "w": "in",
+   "start": 38.14,
+   "end": 38.38
+  },
+  {
+   "w": "places",
+   "start": 38.38,
+   "end": 38.56
+  },
+  {
+   "w": "like",
+   "start": 38.56,
+   "end": 38.82
+  },
+  {
+   "w": "Taiwan,",
+   "start": 38.82,
+   "end": 39.22
+  },
+  {
+   "w": "Hong",
+   "start": 39.8,
+   "end": 39.92
+  },
+  {
+   "w": "Kong,",
+   "start": 39.92,
+   "end": 40.22
+  },
+  {
+   "w": "and",
+   "start": 40.42,
+   "end": 40.56
+  },
+  {
+   "w": "Singapore,",
+   "start": 40.56,
+   "end": 40.96
+  },
+  {
+   "w": "where",
+   "start": 41.38,
+   "end": 41.6
+  },
+  {
+   "w": "dragon",
+   "start": 41.6,
+   "end": 41.9
+  },
+  {
+   "w": "years",
+   "start": 41.9,
+   "end": 42.1
+  },
+  {
+   "w": "produce",
+   "start": 42.1,
+   "end": 42.34
+  },
+  {
+   "w": "a",
+   "start": 42.34,
+   "end": 42.52
+  },
+  {
+   "w": "visible",
+   "start": 42.52,
+   "end": 42.84
+  },
+  {
+   "w": "spike,",
+   "start": 42.84,
+   "end": 43.2
+  },
+  {
+   "w": "followed",
+   "start": 43.6,
+   "end": 43.8
+  },
+  {
+   "w": "by",
+   "start": 43.8,
+   "end": 43.98
+  },
+  {
+   "w": "a",
+   "start": 43.98,
+   "end": 44.12
+  },
+  {
+   "w": "dip",
+   "start": 44.12,
+   "end": 44.26
+  },
+  {
+   "w": "the",
+   "start": 44.26,
+   "end": 44.44
+  },
+  {
+   "w": "very",
+   "start": 44.44,
+   "end": 44.64
+  },
+  {
+   "w": "next",
+   "start": 44.64,
+   "end": 44.94
+  },
+  {
+   "w": "year.",
+   "start": 44.94,
+   "end": 45.16
+  },
+  {
+   "w": "A",
+   "start": 45.54,
+   "end": 45.72
+  },
+  {
+   "w": "superstition,",
+   "start": 45.72,
+   "end": 46.3
+  },
+  {
+   "w": "leaving",
+   "start": 46.56,
+   "end": 46.66
+  },
+  {
+   "w": "a",
+   "start": 46.66,
+   "end": 46.86
+  },
+  {
+   "w": "hard",
+   "start": 46.86,
+   "end": 47.06
+  },
+  {
+   "w": "fingerprint",
+   "start": 47.06,
+   "end": 47.4
+  },
+  {
+   "w": "on",
+   "start": 47.4,
+   "end": 47.62
+  },
+  {
+   "w": "a",
+   "start": 47.62,
+   "end": 47.94
+  },
+  {
+   "w": "country's",
+   "start": 47.94,
+   "end": 48.1
+  },
+  {
+   "w": "demographics.",
+   "start": 48.1,
+   "end": 48.5
+  },
+  {
+   "w": "There's",
+   "start": 49.18,
+   "end": 49.36
+  },
+  {
+   "w": "even",
+   "start": 49.36,
+   "end": 49.52
+  },
+  {
+   "w": "a",
+   "start": 49.52,
+   "end": 49.64
+  },
+  {
+   "w": "catch",
+   "start": 49.64,
+   "end": 49.86
+  },
+  {
+   "w": "for",
+   "start": 49.86,
+   "end": 50.04
+  },
+  {
+   "w": "the",
+   "start": 50.04,
+   "end": 50.18
+  },
+  {
+   "w": "dragon",
+   "start": 50.18,
+   "end": 50.44
+  },
+  {
+   "w": "kids",
+   "start": 50.44,
+   "end": 50.62
+  },
+  {
+   "w": "themselves.",
+   "start": 50.62,
+   "end": 51.1
+  },
+  {
+   "w": "Being",
+   "start": 51.62,
+   "end": 51.78
+  },
+  {
+   "w": "born",
+   "start": 51.78,
+   "end": 52.0
+  },
+  {
+   "w": "in",
+   "start": 52.0,
+   "end": 52.16
+  },
+  {
+   "w": "a",
+   "start": 52.16,
+   "end": 52.3
+  },
+  {
+   "w": "boom",
+   "start": 52.3,
+   "end": 52.42
+  },
+  {
+   "w": "year",
+   "start": 52.42,
+   "end": 52.62
+  },
+  {
+   "w": "means",
+   "start": 52.62,
+   "end": 52.78
+  },
+  {
+   "w": "a",
+   "start": 52.78,
+   "end": 52.98
+  },
+  {
+   "w": "bigger",
+   "start": 52.98,
+   "end": 53.18
+  },
+  {
+   "w": "generation,",
+   "start": 53.18,
+   "end": 53.66
+  },
+  {
+   "w": "so",
+   "start": 53.94,
+   "end": 54.12
+  },
+  {
+   "w": "more",
+   "start": 54.12,
+   "end": 54.32
+  },
+  {
+   "w": "competition",
+   "start": 54.32,
+   "end": 54.74
+  },
+  {
+   "w": "for",
+   "start": 54.74,
+   "end": 55.02
+  },
+  {
+   "w": "school",
+   "start": 55.02,
+   "end": 55.28
+  },
+  {
+   "w": "places,",
+   "start": 55.28,
+   "end": 55.7
+  },
+  {
+   "w": "university",
+   "start": 56.3,
+   "end": 56.44
+  },
+  {
+   "w": "spots,",
+   "start": 56.44,
+   "end": 56.88
+  },
+  {
+   "w": "jobs,",
+   "start": 57.14,
+   "end": 57.34
+  },
+  {
+   "w": "their",
+   "start": 57.78,
+   "end": 57.84
+  },
+  {
+   "w": "whole",
+   "start": 57.84,
+   "end": 58.1
+  },
+  {
+   "w": "lives,",
+   "start": 58.1,
+   "end": 58.4
+  },
+  {
+   "w": "a",
+   "start": 58.88,
+   "end": 59.04
+  },
+  {
+   "w": "lucky",
+   "start": 59.04,
+   "end": 59.34
+  },
+  {
+   "w": "sign,",
+   "start": 59.34,
+   "end": 59.72
+  },
+  {
+   "w": "and",
+   "start": 60.14,
+   "end": 60.32
+  },
+  {
+   "w": "a",
+   "start": 60.32,
+   "end": 60.44
+  },
+  {
+   "w": "very",
+   "start": 60.44,
+   "end": 60.7
+  },
+  {
+   "w": "crowded",
+   "start": 60.7,
+   "end": 61.04
+  },
+  {
+   "w": "class.",
+   "start": 61.04,
+   "end": 61.42
+  },
+  {
+   "w": "We",
+   "start": 61.94,
+   "end": 62.04
+  },
+  {
+   "w": "tend",
+   "start": 62.04,
+   "end": 62.2
+  },
+  {
+   "w": "to",
+   "start": 62.2,
+   "end": 62.36
+  },
+  {
+   "w": "think",
+   "start": 62.36,
+   "end": 62.5
+  },
+  {
+   "w": "of",
+   "start": 62.5,
+   "end": 62.66
+  },
+  {
+   "w": "superstition",
+   "start": 62.66,
+   "end": 63.2
+  },
+  {
+   "w": "as",
+   "start": 63.2,
+   "end": 63.42
+  },
+  {
+   "w": "harmless,",
+   "start": 63.42,
+   "end": 63.78
+  },
+  {
+   "w": "but",
+   "start": 64.18,
+   "end": 64.38
+  },
+  {
+   "w": "the",
+   "start": 64.38,
+   "end": 64.52
+  },
+  {
+   "w": "wish",
+   "start": 64.52,
+   "end": 64.7
+  },
+  {
+   "w": "for",
+   "start": 64.7,
+   "end": 64.92
+  },
+  {
+   "w": "a",
+   "start": 64.92,
+   "end": 65.06
+  },
+  {
+   "w": "dragon",
+   "start": 65.06,
+   "end": 65.3
+  },
+  {
+   "w": "child",
+   "start": 65.3,
+   "end": 65.64
+  },
+  {
+   "w": "literally",
+   "start": 65.64,
+   "end": 65.94
+  },
+  {
+   "w": "bends",
+   "start": 65.94,
+   "end": 66.32
+  },
+  {
+   "w": "the",
+   "start": 66.32,
+   "end": 66.52
+  },
+  {
+   "w": "birth",
+   "start": 66.52,
+   "end": 66.7
+  },
+  {
+   "w": "rate",
+   "start": 66.7,
+   "end": 66.88
+  },
+  {
+   "w": "of",
+   "start": 66.88,
+   "end": 67.0
+  },
+  {
+   "w": "the",
+   "start": 67.0,
+   "end": 67.1
+  },
+  {
+   "w": "most",
+   "start": 67.1,
+   "end": 67.24
+  },
+  {
+   "w": "populous",
+   "start": 67.24,
+   "end": 67.7
+  },
+  {
+   "w": "region",
+   "start": 67.7,
+   "end": 68.02
+  },
+  {
+   "w": "on",
+   "start": 68.02,
+   "end": 68.22
+  },
+  {
+   "w": "earth",
+   "start": 68.22,
+   "end": 68.48
+  },
+  {
+   "w": "every",
+   "start": 68.48,
+   "end": 69.18
+  },
+  {
+   "w": "12",
+   "start": 69.18,
+   "end": 69.48
+  },
+  {
+   "w": "years.",
+   "start": 69.48,
+   "end": 69.76
+  },
+  {
+   "w": "Like",
+   "start": 70.28,
+   "end": 70.34
+  },
+  {
+   "w": "clockwork.",
+   "start": 70.34,
+   "end": 70.86
+  },
+  {
+   "w": "Want",
+   "start": 71.36,
+   "end": 71.44
+  },
+  {
+   "w": "to",
+   "start": 71.44,
+   "end": 71.52
+  },
+  {
+   "w": "actually",
+   "start": 71.52,
+   "end": 71.8
+  },
+  {
+   "w": "start",
+   "start": 71.8,
+   "end": 72.08
+  },
+  {
+   "w": "learning?",
+   "start": 72.08,
+   "end": 72.46
+  },
+  {
+   "w": "Chinese?",
+   "start": 73.16,
+   "end": 73.6
+  },
+  {
+   "w": "Discover",
+   "start": 74.38,
+   "end": 74.44
+  },
+  {
+   "w": "thousands",
+   "start": 74.44,
+   "end": 74.88
+  },
+  {
+   "w": "of",
+   "start": 74.88,
+   "end": 75.16
+  },
+  {
+   "w": "free",
+   "start": 75.16,
+   "end": 75.32
+  },
+  {
+   "w": "exercises",
+   "start": 75.32,
+   "end": 75.8
+  },
+  {
+   "w": "and",
+   "start": 75.8,
+   "end": 76.14
+  },
+  {
+   "w": "more",
+   "start": 76.14,
+   "end": 76.34
+  },
+  {
+   "w": "learning",
+   "start": 76.34,
+   "end": 76.6
+  },
+  {
+   "w": "content",
+   "start": 76.6,
+   "end": 76.94
+  },
+  {
+   "w": "on",
+   "start": 76.94,
+   "end": 77.14
+  },
+  {
+   "w": "stacktags",
+   "start": 77.14,
+   "end": 77.7
+  },
+  {
+   "w": ".io.",
+   "start": 77.7,
+   "end": 78.26
+  }
+ ],
+ "segments": [
+  {
+   "start": 0.0,
+   "end": 3.76,
+   "text": "Every 12 years, China and much of East Asia has a baby boom."
+  },
+  {
+   "start": 4.34,
+   "end": 7.92,
+   "text": "Not because of the economy, not because of policy, because of the zodiac."
+  },
+  {
+   "start": 8.4,
+   "end": 10.56,
+   "text": "Parents want their child born in the year of the dragon."
+  },
+  {
+   "start": 11.04,
+   "end": 15.6,
+   "text": "The Chinese zodiac runs on 12 animals, one per year, and the dragon is the most prized"
+  },
+  {
+   "start": 15.6,
+   "end": 18.52,
+   "text": "of them all, tied to strength, luck, ambition, success."
+  },
+  {
+   "start": 19.02,
+   "end": 21.6,
+   "text": "A dragon child is seen as destined for great things."
+  },
+  {
+   "start": 21.94,
+   "end": 25.58,
+   "text": "So couples actually plan around it, trying to time a birth for a dragon year."
+  },
+  {
+   "start": 25.92,
+   "end": 27.02,
+   "text": "And here's the wild part."
+  },
+  {
+   "start": 27.22,
+   "end": 28.26,
+   "text": "You can see it in the numbers."
+  },
+  {
+   "start": 28.78,
+   "end": 30.46,
+   "text": "In dragon years, births rise."
+  },
+  {
+   "start": 31.08,
+   "end": 35.84,
+   "text": "China's last full dragon year, 2012, brought a clear bump, reportedly the most births in"
+  },
+  {
+   "start": 35.84,
+   "end": 40.96,
+   "text": "over a decade, and the effect is even sharper in places like Taiwan, Hong Kong, and Singapore,"
+  },
+  {
+   "start": 41.38,
+   "end": 45.16,
+   "text": "where dragon years produce a visible spike, followed by a dip the very next year."
+  },
+  {
+   "start": 45.54,
+   "end": 48.5,
+   "text": "A superstition, leaving a hard fingerprint on a country's demographics."
+  },
+  {
+   "start": 49.18,
+   "end": 51.1,
+   "text": "There's even a catch for the dragon kids themselves."
+  },
+  {
+   "start": 51.62,
+   "end": 55.28,
+   "text": "Being born in a boom year means a bigger generation, so more competition for school"
+  },
+  {
+   "start": 55.28,
+   "end": 61.42,
+   "text": "places, university spots, jobs, their whole lives, a lucky sign, and a very crowded class."
+  },
+  {
+   "start": 61.94,
+   "end": 65.94,
+   "text": "We tend to think of superstition as harmless, but the wish for a dragon child literally"
+  },
+  {
+   "start": 65.94,
+   "end": 69.76,
+   "text": "bends the birth rate of the most populous region on earth every 12 years."
+  },
+  {
+   "start": 70.28,
+   "end": 70.86,
+   "text": "Like clockwork."
+  },
+  {
+   "start": 71.36,
+   "end": 72.46,
+   "text": "Want to actually start learning?"
+  },
+  {
+   "start": 73.16,
+   "end": 73.6,
+   "text": "Chinese?"
+  },
+  {
+   "start": 74.38,
+   "end": 78.26,
+   "text": "Discover thousands of free exercises and more learning content on stacktags.io."
+  }
+ ]
+}

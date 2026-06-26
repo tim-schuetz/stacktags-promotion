@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>thumbnail — In China, numbers are a secret language</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Noto+Sans+SC:wght@700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../video/elements/theme.css">
+<style>
+  html, body { margin: 0; height: 100%; background: #20262b; }
+  .wrap { display: grid; place-items: center; height: 100%; }
+  .thumb { position: relative; width: 1280px; height: 720px; overflow: hidden; background: #fff;
+    background-image:
+      linear-gradient(to right,  rgba(35,43,51,.06) 3px, transparent 3px),
+      linear-gradient(to bottom, rgba(35,43,51,.06) 3px, transparent 3px);
+    background-size: 96px 96px; background-position: center; font-family: 'Inter', sans-serif; }
+
+  /* faint turquoise glow behind the headline */
+  .bg-glow { position: absolute; left: -160px; top: -140px; width: 600px; height: 600px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(53,162,146,.14) 0%, rgba(53,162,146,0) 68%); }
+
+  /* headline (left) */
+  .hl-wrap { position: absolute; left: 82px; top: 118px; width: 660px; }
+  .kicker { font-weight: 800; font-size: 26px; letter-spacing: 4px; color: var(--stk-muted); margin-bottom: 30px; white-space: nowrap; }
+  .hl { margin: 0; font-weight: 900; font-size: 112px; line-height: .98; letter-spacing: -4px; color: var(--stk-ink); display: flex; align-items: baseline; gap: 24px; }
+  .hl .num { font-size: 124px; }
+  .hl .num.love { color: var(--stk-teal); }
+  .hl .num.bad  { color: var(--stk-muted); }
+  .hl .eq { color: var(--stk-ink); }
+  .hl.two { margin-top: 14px; }
+  .hl .word.love { color: var(--stk-teal-d); }
+  .sub { margin-top: 40px; font-weight: 700; font-size: 35px; color: var(--stk-ink-2); letter-spacing: -.3px; line-height: 1.18; }
+  .sub b { color: var(--stk-teal-d); }
+
+  /* right-side prop: a clean chat snippet showing both codes morph */
+  .prop { position: absolute; right: 70px; top: 50%; transform: translateY(-50%);
+    width: 408px; background: #fff; border-radius: 44px; padding: 52px 44px;
+    box-shadow: 0 40px 70px rgba(20,40,33,.16), 0 6px 20px rgba(20,40,33,.07); }
+  .pbubble { font: 900 56px/1 'Inter'; letter-spacing: 1px; padding: 26px 38px; border-radius: 30px; display: inline-block; }
+  .pbubble.out { background: var(--stk-teal); color: #fff; border-bottom-right-radius: 9px; float: right; }
+  .pbubble.in  { background: #eef1f3; color: var(--stk-ink); border-bottom-left-radius: 9px; }
+  .pres { display: flex; align-items: center; gap: 16px; font: 900 64px/1 'Noto Sans SC','Inter'; color: var(--stk-ink); }
+  .pres.grey { color: var(--stk-ink-2); }
+  .pres svg { width: 54px; height: 54px; }
+  .row1 { overflow: hidden; }
+  .pres.love { margin: 18px 0 44px; justify-content: flex-end; }
+  .pres.bad  { margin: 18px 0 0; }
+  .clearfix { clear: both; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="thumb stk-grid-bg" id="thumb">
+    <div class="bg-glow"></div>
+
+    <div class="hl-wrap">
+      <div class="kicker">LEARN CHINESE · NUMBER SLANG</div>
+      <h1 class="hl"><span class="num love">520</span><span class="eq">=</span><span class="word love">love</span></h1>
+      <h1 class="hl two"><span class="num bad">250</span><span class="eq">=</span><span class="word">idiot</span></h1>
+      <div class="sub">A whole <b>secret language</b>,<br>written in numbers.</div>
+    </div>
+
+    <div class="prop">
+      <div class="row1"><span class="pbubble out">520</span></div>
+      <div class="clearfix"></div>
+      <div class="pres love"><span class="cjk">我爱你</span>
+        <span class="ic"><svg viewBox="0 0 32 29"><path fill="#35A292" d="M16 28C16 28 2.5 19.5 2.5 9.8 2.5 5.3 6 1.8 10.3 1.8 12.8 1.8 15 3.2 16 5 17 3.2 19.2 1.8 21.7 1.8 26 1.8 29.5 5.3 29.5 9.8 29.5 19.5 16 28 16 28Z"/></svg></span>
+      </div>
+      <div><span class="pbubble in">250</span></div>
+      <div class="pres bad"><span class="cjk">二百五</span>
+        <span class="ic"><svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="27" fill="none" stroke="#8a949d" stroke-width="5"/><circle cx="23" cy="28" r="3.6" fill="#8a949d"/><circle cx="41" cy="28" r="3.6" fill="#8a949d"/><path d="M22 45 Q32 37 42 45" fill="none" stroke="#8a949d" stroke-width="5" stroke-linecap="round"/></svg></span>
+      </div>
+    </div>
+
+  </div>
+</div>
+<script>window.__ready = true;</script>
+</body>
+</html>

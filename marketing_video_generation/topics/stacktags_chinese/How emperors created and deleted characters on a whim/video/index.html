@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>How emperors created and deleted characters on a whim</title>
+<link rel="icon" href="data:," />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- Inter (full latin) for all UI/English text -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<!-- Noto Sans SC, subsetted to the CJK glyphs shown as static TEXT (subs + labels) -->
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@500;700;900&text=避讳李世民觀世音曌圀埊瞾&display=swap" rel="stylesheet">
+
+<!-- shared theme tokens + grid + subtitles (the design system) -->
+<link rel="stylesheet" href="elements/theme.css">
+<!-- the dynamic depth-grid look (reuse its grid styling) -->
+<link rel="stylesheet" href="elements/depth-transitions.css">
+<!-- default element: text-popup (cascade words) -->
+<link rel="stylesheet" href="elements/text-popup.css">
+<!-- this video's own scene styling -->
+<link rel="stylesheet" href="styles.css?v=1">
+</head>
+<body>
+<div class="wrap">
+  <div class="stage stk-grid-bg" id="stage">
+
+    <!-- persistent dynamic grid: the camera (zoom/pan) lives here -->
+    <div class="stk-depth2-grid" id="grid"></div>
+
+    <!-- all scene layers stack here -->
+    <div class="scenes" id="scenes">
+
+      <!-- ===== HOOK — the seal deletes a char, then mints one; two teasers ===== -->
+      <div class="scene" id="sc-hook">
+        <div class="cell" id="hk-cell">
+          <div class="cell-glyph" id="hk-del"></div>
+          <div class="cell-glyph" id="hk-new"></div>
+        </div>
+        <div class="seal" id="hk-seal"></div>
+        <div class="teasers" id="hk-teasers">
+          <div class="teaser" id="hk-t1"><div class="t-glyph" id="hk-t1g"></div></div>
+          <div class="teaser" id="hk-t2"><div class="t-glyph zh-static" id="hk-t2g">曌</div></div>
+        </div>
+      </div>
+
+      <!-- ===== RULE — the naming taboo 避讳, + a "missing stroke" demo ===== -->
+      <div class="scene" id="sc-rule">
+        <div class="bigword" id="rule-word"><span class="pg" id="rule-w0"></span><span class="pg" id="rule-w1"></span></div>
+        <div class="word-py" id="rule-py">bìhuì</div>
+        <div class="word-gloss" id="rule-gloss">the naming taboo</div>
+        <div class="cell sm" id="rule-cell"><div class="cell-glyph" id="rule-sample"></div></div>
+        <div class="seal" id="rule-seal"></div>
+      </div>
+
+      <!-- ===== COLLISION — emperor & goddess share 世; his claim forces hers out ===== -->
+      <div class="scene" id="sc-collide">
+        <img class="portrait emp" id="co-emp" src="assets/img/taizong_dashed.png" alt="" />
+        <div class="cn-name" id="co-empname">
+          <span class="pg" id="co-e0"></span><span class="pg shi" id="co-e1"></span><span class="pg" id="co-e2"></span>
+        </div>
+        <div class="cn-cap" id="co-empcap">Tang Taizong</div>
+
+        <div class="link-wrap" id="co-link"><span class="link-pulse" id="co-pulse"></span></div>
+
+        <div class="cn-name god" id="co-godname">
+          <span class="gslot" id="co-g0s"><span class="pg" id="co-g0"></span></span>
+          <span class="gslot mid" id="co-g1s"><span class="pg shi" id="co-g1"></span></span>
+          <span class="gslot" id="co-g2s"><span class="pg" id="co-g2"></span></span>
+        </div>
+        <div class="word-py" id="co-py">Guānshìyīn</div>
+        <div class="word-gloss" id="co-gloss">goddess of mercy</div>
+        <img class="portrait statue" id="co-god" src="assets/img/guanyin_dashed.png" alt="" />
+      </div>
+
+      <!-- ===== WU ZETIAN — only female emperor; she invents characters ===== -->
+      <div class="scene" id="sc-wuzetian">
+        <img class="portrait" id="wz-fig" src="assets/img/wuzetian_dashed.png" alt="" />
+        <div class="namecard" id="wz-name">
+          <div class="nc-glyphs"><span class="pg" id="wz-w0"></span><span class="pg" id="wz-w1"></span><span class="pg" id="wz-w2"></span></div>
+          <div class="nc-en">Wu Zetian</div>
+        </div>
+        <div class="seal" id="wz-seal"></div>
+      </div>
+
+      <!-- ===== 曌 — built from sun 日 + moon 月 over sky 空 ===== -->
+      <div class="scene" id="sc-zhao">
+        <div class="assembly" id="zh-asm">
+          <div class="asm-top">
+            <div class="asm-part" id="zh-sun-wrap"><div class="ap-host" id="zh-sun"></div><div class="ap-lab">sun</div></div>
+            <div class="asm-part" id="zh-moon-wrap"><div class="ap-host" id="zh-moon"></div><div class="ap-lab">moon</div></div>
+          </div>
+          <div class="asm-bot">
+            <div class="asm-part" id="zh-sky-wrap"><div class="ap-host" id="zh-sky"></div><div class="ap-lab">sky</div></div>
+          </div>
+        </div>
+        <div class="zh-final zh-static" id="zh-final">曌</div>
+        <div class="word-py" id="zh-py">zhào</div>
+        <div class="word-gloss" id="zh-gloss">sun &amp; moon over the sky</div>
+        <div class="vanish-row" id="zh-others">
+          <span class="zh-static vg" id="zo0">圀</span>
+          <span class="zh-static vg" id="zo1">埊</span>
+          <span class="zh-static vg" id="zo2">瞾</span>
+        </div>
+        <div class="seal" id="zh-seal"></div>
+      </div>
+
+      <!-- ===== PUNCHLINE — the throne erases / mints; Guanyin endures ===== -->
+      <div class="scene" id="sc-punchline">
+        <div class="pu-side left" id="pu-del"><span class="pg" id="pu-delg"></span></div>
+        <div class="seal big" id="pu-seal"></div>
+        <div class="pu-side right" id="pu-mint"><span class="zh-static" id="pu-mintg">曌</span></div>
+        <img class="portrait statue" id="pu-statue" src="assets/img/guanyin_dashed.png" alt="" />
+        <div class="pu-guanyin" id="pu-guanyin"><span class="pg" id="pu-gy0"></span><span class="pg" id="pu-gy1"></span></div>
+        <div class="word-py" id="pu-py">Guānyīn</div>
+      </div>
+
+      <!-- ===== OUTRO ===== -->
+      <div class="scene" id="sc-outro">
+        <div class="ec" id="outro-ec">
+          <div id="outro-logo"></div>
+          <div class="wm"><span class="s">stack</span><span class="t">tags</span></div>
+          <div class="url">stacktags.io</div>
+        </div>
+      </div>
+
+    </div><!-- /scenes -->
+
+    <!-- subtitles mirror the narration -->
+    <div class="stk-subs" id="subs"><span class="stk-subs-line" id="subs-line"></span></div>
+
+  </div><!-- /stage -->
+</div>
+
+<!-- HUD (hidden in clean/capture mode) -->
+<div id="hud">
+  <button id="btn-play">&#9654; Play</button>
+  <input id="seek" type="range" min="0" max="100" step="0.01" value="0" />
+  <span id="tcode">0.0</span>
+</div>
+
+<audio id="vo" src="../script_voice.mp3" preload="auto"></audio>
+
+<!-- default elements (used as components) -->
+<script src="elements/text-popup.js"></script>
+<script src="elements/outro.js"></script>
+
+<!-- vendored stroke data for every animated character: window.HANZI -->
+<script src="assets/hanzi/hanzi.js"></script>
+
+<!-- this video's choreography -->
+<script src="app.js?v=1"></script>
+</body>
+</html>

@@ -1,0 +1,119 @@
+VIDEO SCRIPT
+Title options (pick one): Chinese had no word for "she" — so a poet built one
+Topic: Learn Chinese
+Target length: ~95 seconds (fits the 30s–3min window)
+Language of narration: English
+Format: Spoken voiceover narration + [bracketed] on-screen storyboard cues (the brackets
+are stripped before TTS — narration text only is spoken).
+
+==================================================================
+THE CORE IDEA
+==================================================================
+Until ~1920, 他 (tā) covered he/she/it. Translating Western literature created
+pressure to mark "she." Poet/linguist Liu Bannong coined and popularized 她 (tā,
+"she") around 1920 by swapping the "person" radical 亻 in 他 for the "woman" radical
+女. Shows radical-swap as word-building. (It was controversial at the time.) Learn:
+她/他; how characters are built from parts.
+Punchline: the Chinese word for "she" has an author — and a birth year.
+
+==================================================================
+VISUAL SYSTEM (persistent hero)
+==================================================================
+The whole video lives in/around ONE Chinese writing-practice cell (a square with a
+faint grey/teal cross-guide, like a 田字格 — never red; red is map-pin only) sitting on
+the white grid. The single character inside it is written, taken apart, and rebuilt.
+Brand: white + turquoise (#35A292 / #119271 emphasis), Inter, grey subtitles (#8a949d)
+with teal keywords. Characters are real stroke-data (makeHanzi writeOn/shed). On-screen
+text only when it teaches a real word (CJK + pinyin); never echo the English narration.
+
+==================================================================
+SCRIPT
+==================================================================
+
+--- HOOK (0:00–0:12) — the payoff up front ---
+
+[SCENE 1 — the writing cell appears centred on the white grid; 他 writes itself in
+stroke by stroke (makeHanzi writeOn). Three small inline-SVG icons fade in around it —
+a man, a woman, a cat (the "thing") — each with a thin leader line pointing back to the
+SAME single 他.]
+Just a hundred years ago, Chinese had no word for "she." A single word covered he,
+[On "no word for 'she'": the WOMAN icon's leader line ends in an EMPTY cell with a
+blinking turquoise "?" — there is literally no character for her. The man + cat lines
+still land on 他.]
+she, and it. Then a poet sat down and literally built a new one.
+[On "built a new one": a brush nib slides in from the right and just touches the empty
+cell (teaser) — then we transition (grid zoom). swoosh on the camera move.]
+
+--- THE OLD WAY (≈0:12–0:36) ---
+
+[SCENE 2 — 他 centred large, pinyin "tā" appears below it (teach the word). The three
+icons (man / woman / cat) line up in a row beneath, each connected to the one 他.]
+For most of its history, Chinese got by with one pronoun — 他, tā — for he, she, and
+it. And spoken, it doesn't matter: tā is tā, no matter who you mean.
+[On "spoken … tā is tā": a small speaker/soundwave pulses; all three icons pop identical
+speech bubbles reading "tā" (pop sfx) — three different beings, exact same sound (gentle
+humour).]
+In writing, that one character did the whole job. Nobody felt anything was missing.
+[On "in writing … did the whole job": the speech bubbles fade, leaving only the written
+cell. On "nothing missing": a calm small ✓ next to the cell; it sits content.]
+
+--- THE PRESSURE (≈0:36–0:58) ---
+
+[SCENE 3 — an HTML-recreated open Western novel page slides in (paper card, soft shadow,
+real English-looking lines) with "he said" and "she said" highlighted — NOT a generic
+book pile.]
+Then, in the early twentieth century, Chinese writers started translating a flood of
+Western books — full of "he said," "she said."
+[On "he said / she said": two arrows leave those phrases — one from "he said", one from
+"she said" — and BOTH collide on the same single 他 (teal clash / knot, no red). The
+empty "she" cell from the hook returns beside it, still blank.]
+And suddenly, that one catch-all pronoun was a problem. To translate faithfully, they
+needed a way to tell "he" and "she" apart on the page.
+[On "a problem": a small translator figure gives a frustrated shrug at the two-into-one
+collision (light humour). On "tell he and she apart": the blank "she" cell pulses —
+urgently needed now. Transition to the invention (grid zoom, swoosh).]
+
+--- THE INVENTION (≈0:58–1:24) ---
+
+[SCENE 4 — the centrepiece. Liu Bannong appears as a cropped, dashed-outline period
+portrait card on the left when his name is spoken, then slides to the edge so the cell
+stays the focus.]
+So, around 1920, a poet and linguist named Liu Bannong did something elegant.
+[On his name: portrait card pops in (cut-out + dashed outline).]
+He took the existing character for "he" — 他 — which is built with a little "person"
+piece on the left.
+[On "built with a little 'person' piece on the left": 他 splits into two LEGO-style
+blocks — the left block 亻 (label "person") highlights teal, the right block 也 stays.]
+And he simply swapped that piece out, replacing the "person" part with the character
+for "woman," 女. The result was 她 — a brand-new character, meaning "she."
+[On "swapped that piece out": the 亻 block lifts OUT and slides away; a 女 block (label
+"woman · nǚ") slides into the empty slot and snaps in (pop sfx) → the cell recomposes
+into 她. The "she" cell that was blank since the hook is now FILLED with 她.]
+And that shows you something about how Chinese actually works. Characters are built
+from parts — so you can engineer a whole new word just by changing one component.
+Person, plus the rest, equals "he." Woman, plus the rest, equals "she."
+[On "Person, plus the rest, equals 'he'": a clean slot-equation builds — 亻 + 也 = 他
+(he). On "Woman, plus the rest, equals 'she'": directly below — 女 + 也 = 她 (she); only
+the left block differs, 也 ("the rest") is shared and stays put.]
+Same sound, new meaning, built like Lego.
+[On "same sound": both 他 and 她 show pinyin "tā" — identical — pulse them together. The
+blocks click with a subtle stud/puzzle look (pop).]
+
+--- PUNCHLINE / OUTRO (≈1:24–1:38) ---
+
+It wasn't loved by everyone — some argued that giving women a separate pronoun, while
+men kept the original "default" one, was itself a statement.
+[On "default one": brief side-by-side tension — 他 labelled the old "default", 她 the
+new one; a small debate spark, kept light, no clutter.]
+But it stuck. Today 她 is everywhere.
+[On "今天 … everywhere": many small 她 pop across the field / into a wash of modern text.]
+So the Chinese word for "she" is younger than the lightbulb —
+[On "younger than the lightbulb": a lightbulb icon stamped "1879" next to 她 "1920" — 她
+is the younger one (concrete comparison).]
+and unlike almost every other word, it has an author.
+[On "it has an author": 她 gets a small brush byline "刘半农 · 1920" — like a signature on
+the character. The hook's promise (author + birth year) paid off.]
+Wanna actually start learning Chinese?
+[OUTRO — standard Stacktags brand card: stacked-cube logo between two turquoise chevrons,
+"stacktags" wordmark, grey "stacktags.io" line (makeStacktagsLogo). swoosh on assemble.]
+Discover thousands of free exercises and more learning content on stacktags.io.

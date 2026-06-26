@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>For 2,000 years, Chinese wrote in a dead language</title>
+<link rel="icon" href="data:," />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@500;700;900&text=我不知道吾文言白话胡适新青年汝爾你&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="elements/theme.css">
+<link rel="stylesheet" href="elements/depth-transitions.css">
+<link rel="stylesheet" href="elements/text-popup.css">
+<link rel="stylesheet" href="styles.css?v=2">
+</head>
+<body>
+<div class="wrap">
+  <div class="stage stk-grid-bg" id="stage">
+
+    <div class="stk-depth2-grid" id="grid"></div>
+
+    <div class="scenes" id="scenes">
+
+      <!-- ===== HOOK — one person SPEAKS plain, WRITES classical (mouth ≠ hand) ===== -->
+      <div class="scene" id="sc-hook">
+        <img class="figimg" id="hk-hero" src="assets/img/hero_cut.png" alt="" />
+        <div class="bubble" id="hk-bubble"><span class="zh">我不知道</span></div>
+        <div class="paper" id="hk-paper">
+          <div class="scroll-glyphs" id="hk-scroll">
+            <span class="pg" id="hk-w0"></span><span class="pg" id="hk-w1"></span><span class="pg" id="hk-w2"></span>
+          </div>
+          <div class="brush" id="hk-brush"><span class="b-body"></span><span class="b-nib"></span></div>
+        </div>
+        <div class="relsign neq" id="hk-neq">&ne;</div>
+        <div class="micro micro-say" id="hk-say">spoken</div>
+        <div class="micro micro-write" id="hk-write">written</div>
+      </div>
+
+      <!-- ===== DRIFT — one word: written froze (文言文), spoken kept changing (白话) ===== -->
+      <div class="scene" id="sc-drift">
+        <div class="drift2" id="drift2">
+          <div class="d-kicker">the everyday word for <b>“you”</b></div>
+          <div class="d-label dl-left">文言文</div>
+          <div class="d-label dl-right">白话</div>
+          <div class="d-line d-line-left" id="dl-left"></div>
+          <div class="d-line d-line-right" id="dl-right"></div>
+          <div class="d-card" id="dc-lt"><div class="d-host"><span class="pg" id="dlt"></span></div><div class="d-py">rǔ</div></div>
+          <div class="d-card" id="dc-rt"><div class="d-host"><span class="pg" id="drt"></span></div><div class="d-py">rǔ</div></div>
+          <div class="d-card" id="dc-rm"><div class="d-host"><span class="pg" id="drm"></span></div><div class="d-py">ěr</div></div>
+          <div class="d-card teal" id="dc-rb"><div class="d-host"><span class="pg" id="drb"></span></div><div class="d-py">nǐ</div></div>
+          <div class="d-card frozen" id="dc-lb"><div class="d-host"><span class="pg" id="dlb-o"></span><span class="pg ov" id="dlb-n"></span></div><div class="d-py" id="dlb-py">rǔ</div></div>
+        </div>
+      </div>
+
+      <!-- ===== DIGLOSSIA — one tongue for the street (白话), another for the page (文言文) ===== -->
+      <div class="scene" id="sc-dig">
+        <div class="dig-term" id="dig-term">diglossia</div>
+        <div class="dig-side street" id="dig-street">
+          <img class="figimg" id="dig-crowd" src="assets/img/crowd_cut.png" alt="" />
+          <div class="dig-bubble"><span class="zh">白话</span></div>
+        </div>
+        <div class="dig-split" id="dig-split"></div>
+        <div class="dig-side page" id="dig-page">
+          <div class="scroll-ico" id="dig-scroll"></div>
+          <div class="dig-doclabel"><span class="zh">文言文</span></div>
+        </div>
+      </div>
+
+      <!-- ===== ELITE — literacy locked to a tiny scholarly few, high above the many ===== -->
+      <div class="scene" id="sc-elite">
+        <div class="el-top" id="el-top">
+          <img class="figimg" id="el-scholar" src="assets/img/scholar_cut.png" alt="" />
+          <div class="el-doc"><span class="zh">文言文</span></div>
+        </div>
+        <div class="el-divide" id="el-divide"></div>
+        <div class="el-bottom" id="el-bottom">
+          <img class="figimg" id="el-crowd" src="assets/img/crowd_cut.png" alt="" />
+          <div class="el-speak"><span class="zh">白话</span></div>
+        </div>
+      </div>
+
+      <!-- ===== HU SHI — the 1917 reformer; brush writes plain speech ===== -->
+      <div class="scene" id="sc-huishi">
+        <img class="figimg portrait" id="hs-fig" src="assets/img/hushi_cut.png" alt="" />
+        <div class="namecard" id="hs-name"><span class="zh">胡适</span><span class="en">Hu Shi</span></div>
+        <div class="yearstamp" id="hs-year"><span class="seal-ring">1917</span></div>
+        <div class="paper hs-paper" id="hs-paper">
+          <div class="scroll-glyphs" id="hs-scroll"><span class="pg" id="hs0"></span><span class="pg" id="hs1"></span></div>
+          <div class="brush" id="hs-brush"><span class="b-body"></span><span class="b-nib"></span></div>
+        </div>
+      </div>
+
+      <!-- ===== NEWS — within a decade: New Youth flips classical → vernacular ===== -->
+      <div class="scene" id="sc-news">
+        <div class="decade" id="news-decade"><span class="dec-y" id="news-y">1917</span></div>
+        <div class="newspaper" id="newspaper">
+          <div class="np-mast"><span class="zh">新青年</span><span class="np-sub">NEW YOUTH · 1917</span></div>
+          <div class="np-body" id="np-body">
+            <div class="np-classical" id="np-classical"></div>
+            <div class="np-vernacular" id="np-vernacular"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== PAYOFF — same person now SPEAKS and WRITES the same (≠ → =) ===== -->
+      <div class="scene" id="sc-payoff">
+        <img class="figimg" id="pay-hero" src="assets/img/hero_cut.png" alt="" />
+        <div class="bubble" id="pay-bubble"><span class="zh">我不知道</span></div>
+        <div class="paper" id="pay-paper">
+          <div class="scroll-glyphs old" id="pay-old">
+            <span class="pg" id="po0"></span><span class="pg" id="po1"></span><span class="pg" id="po2"></span>
+          </div>
+          <div class="scroll-glyphs new" id="pay-new">
+            <span class="pg" id="pn0"></span><span class="pg" id="pn1"></span><span class="pg" id="pn2"></span><span class="pg" id="pn3"></span>
+          </div>
+        </div>
+        <div class="relsign" id="pay-rel">&ne;</div>
+      </div>
+
+      <!-- ===== OUTRO ===== -->
+      <div class="scene" id="sc-outro">
+        <div class="ec" id="outro-ec">
+          <div id="outro-logo"></div>
+          <div class="wm"><span class="s">stack</span><span class="t">tags</span></div>
+          <div class="url">stacktags.io</div>
+        </div>
+      </div>
+
+    </div><!-- /scenes -->
+
+    <div class="stk-subs" id="subs"><span class="stk-subs-line" id="subs-line"></span></div>
+
+  </div><!-- /stage -->
+</div>
+
+<div id="hud">
+  <button id="btn-play">&#9654; Play</button>
+  <input id="seek" type="range" min="0" max="100" step="0.01" value="0" />
+  <span id="tcode">0.0</span>
+</div>
+
+<audio id="vo" src="../script_voice.mp3" preload="auto"></audio>
+
+<script src="elements/text-popup.js"></script>
+<script src="elements/outro.js"></script>
+<script src="assets/hanzi/hanzi.js"></script>
+<script src="app.js?v=2"></script>
+</body>
+</html>

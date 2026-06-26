@@ -47,9 +47,9 @@
   }
 
   async function buildCompare() {
-    const FIXED = 12.2;
-    usCmp = await window.mountCountryMap($('#us-map'), { country: 'United States of America', mainlandOnly: true, fixedScale: FIXED, width: 820, height: 480, pad: 30 });
-    cnCmp = await window.mountCountryMap($('#cn-map'), { country: 'China', fixedScale: FIXED, width: 820, height: 540, pad: 30 });
+    const FIXED = 14;   // a touch larger now that the country labels are gone
+    usCmp = await window.mountCountryMap($('#us-map'), { country: 'United States of America', mainlandOnly: true, fixedScale: FIXED, width: 880, height: 500, pad: 30 });
+    cnCmp = await window.mountCountryMap($('#cn-map'), { country: 'China', fixedScale: FIXED, width: 880, height: 660, pad: 30 });
     $('#us-map').style.width = usCmp.W + 'px'; $('#us-map').style.height = usCmp.H + 'px';
     $('#cn-map').style.width = cnCmp.W + 'px'; $('#cn-map').style.height = cnCmp.H + 'px';
     usCmp.showInstant(); cnCmp.showInstant();
@@ -111,10 +111,11 @@
   function mountGlobes() {
     if (!(window.THREE && window.earcut && window.topojson && window.mountStacktagsGlobe)) { setTimeout(mountGlobes, 120); return; }
     try {
-      window.mountStacktagsGlobe($('#west-globe'), { focus: { lat: 38, lon: 86, cam: 2.2 }, startCam: 3.1, startLat: 15, startLon: 100, highlight: 'China', marker: { lat: 39.47, lon: 75.99 }, autoReveal: false, onReady: (c) => { westGlobeCtrl = c; c.halt(); } });
+      window.mountStacktagsGlobe($('#west-globe'), { focus: { lat: 38, lon: 90, cam: 4.0 }, startCam: 4.0, startLat: 20, startLon: 104, highlight: 'China', marker: { lat: 39.47, lon: 75.99 }, autoReveal: false, onReady: (c) => { westGlobeCtrl = c; c.halt(); } });
     } catch (e) {}
     try {
-      window.mountStacktagsGlobe($('#route-globe'), { focus: { lat: 38, lon: 100, cam: 2.5 }, startCam: 3.0, startLat: 16, startLon: 102, highlight: 'China', autoReveal: false, onReady: (c) => { route6Ctrl = c; c.halt(); } });
+      // zoomed out enough that the full round globe fits the portrait frame (no side clipping)
+      window.mountStacktagsGlobe($('#route-globe'), { focus: { lat: 36, lon: 100, cam: 4.5 }, startCam: 4.7, startLat: 18, startLon: 104, highlight: 'China', autoReveal: false, onReady: (c) => { route6Ctrl = c; c.halt(); } });
     } catch (e) {}
     try {
       // S4 intro: starts zoomed on the western point of China, then zooms out and travels to the USA
@@ -340,7 +341,7 @@
       cs.classList.remove('in'); cg.classList.remove('gone');
       if (!compareGlobeCtrl) { cs.classList.add('in'); if (usBands) usBands.wipeIn({ stagger: 120 }); return; }
       compareGlobeCtrl.resume(); compareGlobeCtrl.reveal();
-      setTimeout(() => compareGlobeCtrl.setFocus(38, 262, 2.7), 220);          // zoom out + travel east to the USA
+      setTimeout(() => compareGlobeCtrl.setFocus(38, 262, 4.5), 220);          // zoom out (full globe, no side clip) + travel east to the USA
       setTimeout(() => { cg.classList.add('gone'); cs.classList.add('in'); if (usBands) usBands.wipeIn({ stagger: 120 }); setTimeout(() => compareGlobeCtrl && compareGlobeCtrl.halt(), 450); }, 2500);
     })],
     [18.6, (i) => { if (cnBands) (i ? cnBands.showInstant() : cnBands.wipeIn({ stagger: 110 })); }],
@@ -360,7 +361,7 @@
     // S7 — unofficial local time + real cut-out objects (stays through the "ask the time" line)
     [42.4, (i) => enter($('#sc-local'), 'rise', 1000, i, () => {
       if (route6Ctrl) route6Ctrl.halt();
-      const dc = $('#dclocks'); if (dc) dc.classList.add('in');
+      const dc = $('#dclocks'); if (dc) { dc.classList.add('in'); if (i) dc.classList.add('in2'); else setTimeout(() => dc.classList.add('in2'), 1700); }
       if (i) lifeEls.forEach((l) => l.classList.add('in'));
     })],
     [48.9, (i) => { if (!i && lifeEls[0]) lifeEls[0].classList.add('in'); }],
@@ -427,7 +428,7 @@
     if (cw) { cw.style.transition = 'none'; cw.classList.remove('centred'); }
     if (yt) yt.classList.remove('in');
     if (route6Ctrl) route6Ctrl.halt();
-    const dcl = $('#dclocks'); if (dcl) dcl.classList.remove('in');
+    const dcl = $('#dclocks'); if (dcl) dcl.classList.remove('in', 'in2');
     lifeEls.forEach((l) => l.classList.remove('in'));
     if (cnPunch) { cnPunch.line.style.opacity = '0'; cnPunch.fill.style.opacity = '0'; } if (punchClk) punchClk.snap(12, 0);
     if (punchGhost) punchGhost.el.style.opacity = '0';

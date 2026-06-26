@@ -1,0 +1,1692 @@
+{
+ "duration": 94.691,
+ "words": [
+  {
+   "w": "Pinyin,",
+   "start": 0.0,
+   "end": 0.42
+  },
+  {
+   "w": "the",
+   "start": 0.58,
+   "end": 0.84
+  },
+  {
+   "w": "system",
+   "start": 0.84,
+   "end": 1.18
+  },
+  {
+   "w": "that",
+   "start": 1.18,
+   "end": 1.42
+  },
+  {
+   "w": "spells",
+   "start": 1.42,
+   "end": 1.78
+  },
+  {
+   "w": "Chinese",
+   "start": 1.78,
+   "end": 2.16
+  },
+  {
+   "w": "with",
+   "start": 2.16,
+   "end": 2.4
+  },
+  {
+   "w": "the",
+   "start": 2.4,
+   "end": 2.56
+  },
+  {
+   "w": "Latin",
+   "start": 2.56,
+   "end": 2.8
+  },
+  {
+   "w": "alphabet,",
+   "start": 2.8,
+   "end": 3.22
+  },
+  {
+   "w": "was",
+   "start": 3.5,
+   "end": 3.78
+  },
+  {
+   "w": "originally",
+   "start": 3.78,
+   "end": 4.2
+  },
+  {
+   "w": "built",
+   "start": 4.2,
+   "end": 4.5
+  },
+  {
+   "w": "to",
+   "start": 4.5,
+   "end": 4.7
+  },
+  {
+   "w": "do",
+   "start": 4.7,
+   "end": 4.86
+  },
+  {
+   "w": "one",
+   "start": 4.86,
+   "end": 5.14
+  },
+  {
+   "w": "thing,",
+   "start": 5.14,
+   "end": 5.4
+  },
+  {
+   "w": "replace",
+   "start": 5.7,
+   "end": 5.96
+  },
+  {
+   "w": "Chinese",
+   "start": 5.96,
+   "end": 6.42
+  },
+  {
+   "w": "characters",
+   "start": 6.42,
+   "end": 6.82
+  },
+  {
+   "w": "completely.",
+   "start": 6.82,
+   "end": 7.34
+  },
+  {
+   "w": "The",
+   "start": 7.92,
+   "end": 8.08
+  },
+  {
+   "w": "plan",
+   "start": 8.08,
+   "end": 8.34
+  },
+  {
+   "w": "was",
+   "start": 8.34,
+   "end": 8.8
+  },
+  {
+   "w": "to",
+   "start": 8.8,
+   "end": 8.98
+  },
+  {
+   "w": "let",
+   "start": 8.98,
+   "end": 9.1
+  },
+  {
+   "w": "the",
+   "start": 9.1,
+   "end": 9.3
+  },
+  {
+   "w": "alphabet",
+   "start": 9.3,
+   "end": 9.76
+  },
+  {
+   "w": "quietly",
+   "start": 9.76,
+   "end": 10.18
+  },
+  {
+   "w": "kill",
+   "start": 10.18,
+   "end": 10.5
+  },
+  {
+   "w": "them",
+   "start": 10.5,
+   "end": 10.68
+  },
+  {
+   "w": "off.",
+   "start": 10.68,
+   "end": 10.88
+  },
+  {
+   "w": "It",
+   "start": 11.16,
+   "end": 11.28
+  },
+  {
+   "w": "failed,",
+   "start": 11.28,
+   "end": 11.56
+  },
+  {
+   "w": "and",
+   "start": 11.96,
+   "end": 12.12
+  },
+  {
+   "w": "today",
+   "start": 12.12,
+   "end": 12.38
+  },
+  {
+   "w": "it",
+   "start": 12.38,
+   "end": 12.62
+  },
+  {
+   "w": "does",
+   "start": 12.62,
+   "end": 12.74
+  },
+  {
+   "w": "the",
+   "start": 12.74,
+   "end": 12.88
+  },
+  {
+   "w": "exact",
+   "start": 12.88,
+   "end": 13.2
+  },
+  {
+   "w": "opposite.",
+   "start": 13.2,
+   "end": 13.58
+  },
+  {
+   "w": "Pinyin",
+   "start": 14.14,
+   "end": 14.36
+  },
+  {
+   "w": "is",
+   "start": 14.36,
+   "end": 14.54
+  },
+  {
+   "w": "the",
+   "start": 14.54,
+   "end": 14.7
+  },
+  {
+   "w": "system",
+   "start": 14.7,
+   "end": 14.98
+  },
+  {
+   "w": "that",
+   "start": 14.98,
+   "end": 15.16
+  },
+  {
+   "w": "writes",
+   "start": 15.16,
+   "end": 15.38
+  },
+  {
+   "w": "Chinese",
+   "start": 15.38,
+   "end": 15.82
+  },
+  {
+   "w": "sounds",
+   "start": 15.82,
+   "end": 16.12
+  },
+  {
+   "w": "using",
+   "start": 16.12,
+   "end": 16.42
+  },
+  {
+   "w": "our",
+   "start": 16.42,
+   "end": 16.62
+  },
+  {
+   "w": "familiar",
+   "start": 16.62,
+   "end": 16.98
+  },
+  {
+   "w": "ABC",
+   "start": 16.98,
+   "end": 17.68
+  },
+  {
+   "w": "letters.",
+   "start": 17.68,
+   "end": 18.12
+  },
+  {
+   "w": "It",
+   "start": 18.54,
+   "end": 18.74
+  },
+  {
+   "w": "was",
+   "start": 18.74,
+   "end": 18.88
+  },
+  {
+   "w": "created",
+   "start": 18.88,
+   "end": 19.24
+  },
+  {
+   "w": "in",
+   "start": 19.24,
+   "end": 19.54
+  },
+  {
+   "w": "the",
+   "start": 19.54,
+   "end": 19.68
+  },
+  {
+   "w": "1950s",
+   "start": 19.68,
+   "end": 20.46
+  },
+  {
+   "w": "by",
+   "start": 20.46,
+   "end": 20.64
+  },
+  {
+   "w": "a",
+   "start": 20.64,
+   "end": 20.8
+  },
+  {
+   "w": "committee",
+   "start": 20.8,
+   "end": 21.02
+  },
+  {
+   "w": "led",
+   "start": 21.02,
+   "end": 21.26
+  },
+  {
+   "w": "by",
+   "start": 21.26,
+   "end": 21.46
+  },
+  {
+   "w": "a",
+   "start": 21.46,
+   "end": 21.54
+  },
+  {
+   "w": "man",
+   "start": 21.54,
+   "end": 21.72
+  },
+  {
+   "w": "named",
+   "start": 21.72,
+   "end": 21.96
+  },
+  {
+   "w": "Zhou",
+   "start": 21.96,
+   "end": 22.16
+  },
+  {
+   "w": "Yuguang,",
+   "start": 22.16,
+   "end": 22.72
+  },
+  {
+   "w": "who's",
+   "start": 23.06,
+   "end": 23.2
+  },
+  {
+   "w": "often",
+   "start": 23.2,
+   "end": 23.42
+  },
+  {
+   "w": "called",
+   "start": 23.42,
+   "end": 23.66
+  },
+  {
+   "w": "the",
+   "start": 23.66,
+   "end": 23.84
+  },
+  {
+   "w": "father",
+   "start": 23.84,
+   "end": 24.1
+  },
+  {
+   "w": "of",
+   "start": 24.1,
+   "end": 24.32
+  },
+  {
+   "w": "Pinyin.",
+   "start": 24.32,
+   "end": 24.72
+  },
+  {
+   "w": "But",
+   "start": 25.04,
+   "end": 25.2
+  },
+  {
+   "w": "for",
+   "start": 25.2,
+   "end": 25.36
+  },
+  {
+   "w": "many",
+   "start": 25.36,
+   "end": 25.58
+  },
+  {
+   "w": "of",
+   "start": 25.58,
+   "end": 25.76
+  },
+  {
+   "w": "the",
+   "start": 25.76,
+   "end": 25.88
+  },
+  {
+   "w": "reformers",
+   "start": 25.88,
+   "end": 26.38
+  },
+  {
+   "w": "behind",
+   "start": 26.38,
+   "end": 26.68
+  },
+  {
+   "w": "it,",
+   "start": 26.68,
+   "end": 26.96
+  },
+  {
+   "w": "including",
+   "start": 27.28,
+   "end": 27.6
+  },
+  {
+   "w": "Mao",
+   "start": 27.6,
+   "end": 27.84
+  },
+  {
+   "w": "himself,",
+   "start": 27.84,
+   "end": 28.26
+  },
+  {
+   "w": "Pinyin",
+   "start": 28.76,
+   "end": 28.9
+  },
+  {
+   "w": "wasn't",
+   "start": 28.9,
+   "end": 29.2
+  },
+  {
+   "w": "meant",
+   "start": 29.2,
+   "end": 29.28
+  },
+  {
+   "w": "to",
+   "start": 29.28,
+   "end": 29.44
+  },
+  {
+   "w": "just",
+   "start": 29.44,
+   "end": 29.58
+  },
+  {
+   "w": "sit",
+   "start": 29.58,
+   "end": 29.82
+  },
+  {
+   "w": "politely",
+   "start": 29.82,
+   "end": 30.1
+  },
+  {
+   "w": "beside",
+   "start": 30.1,
+   "end": 30.5
+  },
+  {
+   "w": "the",
+   "start": 30.5,
+   "end": 30.66
+  },
+  {
+   "w": "characters,",
+   "start": 30.66,
+   "end": 31.02
+  },
+  {
+   "w": "it",
+   "start": 31.58,
+   "end": 31.72
+  },
+  {
+   "w": "was",
+   "start": 31.72,
+   "end": 31.82
+  },
+  {
+   "w": "meant",
+   "start": 31.82,
+   "end": 31.98
+  },
+  {
+   "w": "to",
+   "start": 31.98,
+   "end": 32.16
+  },
+  {
+   "w": "gradually",
+   "start": 32.16,
+   "end": 32.48
+  },
+  {
+   "w": "replace",
+   "start": 32.48,
+   "end": 32.9
+  },
+  {
+   "w": "them.",
+   "start": 32.9,
+   "end": 33.16
+  },
+  {
+   "w": "The",
+   "start": 33.56,
+   "end": 33.74
+  },
+  {
+   "w": "thinking",
+   "start": 33.74,
+   "end": 34.02
+  },
+  {
+   "w": "went,",
+   "start": 34.02,
+   "end": 34.3
+  },
+  {
+   "w": "the",
+   "start": 34.66,
+   "end": 34.8
+  },
+  {
+   "w": "characters",
+   "start": 34.8,
+   "end": 35.12
+  },
+  {
+   "w": "were",
+   "start": 35.12,
+   "end": 35.36
+  },
+  {
+   "w": "too",
+   "start": 35.36,
+   "end": 35.52
+  },
+  {
+   "w": "hard,",
+   "start": 35.52,
+   "end": 35.86
+  },
+  {
+   "w": "holding",
+   "start": 36.2,
+   "end": 36.44
+  },
+  {
+   "w": "back",
+   "start": 36.44,
+   "end": 36.7
+  },
+  {
+   "w": "literacy.",
+   "start": 36.7,
+   "end": 37.02
+  },
+  {
+   "w": "The",
+   "start": 37.52,
+   "end": 37.72
+  },
+  {
+   "w": "future",
+   "start": 37.72,
+   "end": 37.92
+  },
+  {
+   "w": "was",
+   "start": 37.92,
+   "end": 38.14
+  },
+  {
+   "w": "a",
+   "start": 38.14,
+   "end": 38.28
+  },
+  {
+   "w": "simple",
+   "start": 38.28,
+   "end": 38.52
+  },
+  {
+   "w": "alphabet,",
+   "start": 38.52,
+   "end": 38.98
+  },
+  {
+   "w": "like",
+   "start": 39.22,
+   "end": 39.32
+  },
+  {
+   "w": "most",
+   "start": 39.32,
+   "end": 39.54
+  },
+  {
+   "w": "of",
+   "start": 39.54,
+   "end": 39.72
+  },
+  {
+   "w": "the",
+   "start": 39.72,
+   "end": 39.8
+  },
+  {
+   "w": "world",
+   "start": 39.8,
+   "end": 39.96
+  },
+  {
+   "w": "used.",
+   "start": 39.96,
+   "end": 40.34
+  },
+  {
+   "w": "Pinyin",
+   "start": 40.86,
+   "end": 41.06
+  },
+  {
+   "w": "was",
+   "start": 41.06,
+   "end": 41.22
+  },
+  {
+   "w": "the",
+   "start": 41.22,
+   "end": 41.38
+  },
+  {
+   "w": "bridge",
+   "start": 41.38,
+   "end": 41.56
+  },
+  {
+   "w": "to",
+   "start": 41.56,
+   "end": 41.76
+  },
+  {
+   "w": "get",
+   "start": 41.76,
+   "end": 41.92
+  },
+  {
+   "w": "there,",
+   "start": 41.92,
+   "end": 42.14
+  },
+  {
+   "w": "now",
+   "start": 42.3,
+   "end": 42.54
+  },
+  {
+   "w": "the",
+   "start": 42.54,
+   "end": 42.8
+  },
+  {
+   "w": "honest",
+   "start": 42.8,
+   "end": 43.08
+  },
+  {
+   "w": "part.",
+   "start": 43.08,
+   "end": 43.38
+  },
+  {
+   "w": "That",
+   "start": 43.78,
+   "end": 43.94
+  },
+  {
+   "w": "goal",
+   "start": 43.94,
+   "end": 44.14
+  },
+  {
+   "w": "was",
+   "start": 44.14,
+   "end": 44.3
+  },
+  {
+   "w": "never",
+   "start": 44.3,
+   "end": 44.6
+  },
+  {
+   "w": "fully",
+   "start": 44.6,
+   "end": 44.86
+  },
+  {
+   "w": "written",
+   "start": 44.86,
+   "end": 45.12
+  },
+  {
+   "w": "into",
+   "start": 45.12,
+   "end": 45.34
+  },
+  {
+   "w": "law,",
+   "start": 45.34,
+   "end": 45.58
+  },
+  {
+   "w": "and",
+   "start": 45.82,
+   "end": 45.88
+  },
+  {
+   "w": "it",
+   "start": 45.88,
+   "end": 46.04
+  },
+  {
+   "w": "was",
+   "start": 46.04,
+   "end": 46.16
+  },
+  {
+   "w": "never",
+   "start": 46.16,
+   "end": 46.5
+  },
+  {
+   "w": "officially",
+   "start": 46.5,
+   "end": 46.92
+  },
+  {
+   "w": "declared",
+   "start": 46.92,
+   "end": 47.32
+  },
+  {
+   "w": "dead,",
+   "start": 47.32,
+   "end": 47.62
+  },
+  {
+   "w": "either.",
+   "start": 47.78,
+   "end": 48.02
+  },
+  {
+   "w": "It",
+   "start": 48.18,
+   "end": 48.28
+  },
+  {
+   "w": "was",
+   "start": 48.28,
+   "end": 48.42
+  },
+  {
+   "w": "simply",
+   "start": 48.42,
+   "end": 48.82
+  },
+  {
+   "w": "buried.",
+   "start": 48.82,
+   "end": 49.96
+  },
+  {
+   "w": "As",
+   "start": 50.32,
+   "end": 50.56
+  },
+  {
+   "w": "literacy",
+   "start": 50.56,
+   "end": 50.9
+  },
+  {
+   "w": "rose",
+   "start": 50.9,
+   "end": 51.32
+  },
+  {
+   "w": "and",
+   "start": 51.32,
+   "end": 51.54
+  },
+  {
+   "w": "the",
+   "start": 51.54,
+   "end": 51.66
+  },
+  {
+   "w": "country",
+   "start": 51.66,
+   "end": 51.94
+  },
+  {
+   "w": "modernized,",
+   "start": 51.94,
+   "end": 52.5
+  },
+  {
+   "w": "the",
+   "start": 53.0,
+   "end": 53.04
+  },
+  {
+   "w": "appetite",
+   "start": 53.04,
+   "end": 53.36
+  },
+  {
+   "w": "to",
+   "start": 53.36,
+   "end": 53.6
+  },
+  {
+   "w": "throw",
+   "start": 53.6,
+   "end": 53.82
+  },
+  {
+   "w": "out",
+   "start": 53.82,
+   "end": 53.94
+  },
+  {
+   "w": "thousands",
+   "start": 53.94,
+   "end": 54.26
+  },
+  {
+   "w": "of",
+   "start": 54.26,
+   "end": 54.6
+  },
+  {
+   "w": "years",
+   "start": 54.6,
+   "end": 54.74
+  },
+  {
+   "w": "of",
+   "start": 54.74,
+   "end": 54.9
+  },
+  {
+   "w": "characters",
+   "start": 54.9,
+   "end": 55.28
+  },
+  {
+   "w": "faded,",
+   "start": 55.28,
+   "end": 55.62
+  },
+  {
+   "w": "and",
+   "start": 56.06,
+   "end": 56.24
+  },
+  {
+   "w": "Pinyin",
+   "start": 56.24,
+   "end": 56.52
+  },
+  {
+   "w": "got",
+   "start": 56.52,
+   "end": 56.7
+  },
+  {
+   "w": "quietly",
+   "start": 56.7,
+   "end": 57.08
+  },
+  {
+   "w": "reclassified",
+   "start": 57.08,
+   "end": 57.66
+  },
+  {
+   "w": "as",
+   "start": 57.66,
+   "end": 58.12
+  },
+  {
+   "w": "a",
+   "start": 58.12,
+   "end": 58.26
+  },
+  {
+   "w": "helper.",
+   "start": 58.26,
+   "end": 58.5
+  },
+  {
+   "w": "A",
+   "start": 58.5,
+   "end": 58.86
+  },
+  {
+   "w": "way",
+   "start": 58.86,
+   "end": 58.98
+  },
+  {
+   "w": "to",
+   "start": 58.98,
+   "end": 59.14
+  },
+  {
+   "w": "teach",
+   "start": 59.14,
+   "end": 59.34
+  },
+  {
+   "w": "pronunciation",
+   "start": 59.34,
+   "end": 59.84
+  },
+  {
+   "w": "and",
+   "start": 59.84,
+   "end": 60.3
+  },
+  {
+   "w": "sound",
+   "start": 60.3,
+   "end": 60.54
+  },
+  {
+   "w": "out",
+   "start": 60.54,
+   "end": 60.72
+  },
+  {
+   "w": "characters.",
+   "start": 60.72,
+   "end": 61.16
+  },
+  {
+   "w": "Not",
+   "start": 61.66,
+   "end": 61.8
+  },
+  {
+   "w": "to",
+   "start": 61.8,
+   "end": 61.96
+  },
+  {
+   "w": "replace",
+   "start": 61.96,
+   "end": 62.24
+  },
+  {
+   "w": "them,",
+   "start": 62.24,
+   "end": 62.5
+  },
+  {
+   "w": "and",
+   "start": 62.64,
+   "end": 62.76
+  },
+  {
+   "w": "here's",
+   "start": 62.76,
+   "end": 63.0
+  },
+  {
+   "w": "the",
+   "start": 63.0,
+   "end": 63.14
+  },
+  {
+   "w": "twist,",
+   "start": 63.14,
+   "end": 63.38
+  },
+  {
+   "w": "Pinyin",
+   "start": 63.96,
+   "end": 64.12
+  },
+  {
+   "w": "didn't",
+   "start": 64.12,
+   "end": 64.44
+  },
+  {
+   "w": "kill",
+   "start": 64.44,
+   "end": 64.56
+  },
+  {
+   "w": "the",
+   "start": 64.56,
+   "end": 64.76
+  },
+  {
+   "w": "characters,",
+   "start": 64.76,
+   "end": 65.04
+  },
+  {
+   "w": "it",
+   "start": 65.38,
+   "end": 65.52
+  },
+  {
+   "w": "saved",
+   "start": 65.52,
+   "end": 65.78
+  },
+  {
+   "w": "them.",
+   "start": 65.78,
+   "end": 66.04
+  },
+  {
+   "w": "Because",
+   "start": 66.36,
+   "end": 66.62
+  },
+  {
+   "w": "today,",
+   "start": 66.62,
+   "end": 66.94
+  },
+  {
+   "w": "how",
+   "start": 67.34,
+   "end": 67.46
+  },
+  {
+   "w": "do",
+   "start": 67.46,
+   "end": 67.54
+  },
+  {
+   "w": "you",
+   "start": 67.54,
+   "end": 67.66
+  },
+  {
+   "w": "type",
+   "start": 67.66,
+   "end": 67.84
+  },
+  {
+   "w": "Chinese",
+   "start": 67.84,
+   "end": 68.16
+  },
+  {
+   "w": "on",
+   "start": 68.16,
+   "end": 68.38
+  },
+  {
+   "w": "a",
+   "start": 68.38,
+   "end": 68.56
+  },
+  {
+   "w": "phone",
+   "start": 68.56,
+   "end": 68.7
+  },
+  {
+   "w": "or",
+   "start": 68.7,
+   "end": 68.9
+  },
+  {
+   "w": "a",
+   "start": 68.9,
+   "end": 69.02
+  },
+  {
+   "w": "keyboard?",
+   "start": 69.02,
+   "end": 69.34
+  },
+  {
+   "w": "You",
+   "start": 69.74,
+   "end": 69.9
+  },
+  {
+   "w": "type",
+   "start": 69.9,
+   "end": 70.1
+  },
+  {
+   "w": "the",
+   "start": 70.1,
+   "end": 70.28
+  },
+  {
+   "w": "Pinyin,",
+   "start": 70.28,
+   "end": 70.62
+  },
+  {
+   "w": "and",
+   "start": 70.88,
+   "end": 71.08
+  },
+  {
+   "w": "pick",
+   "start": 71.08,
+   "end": 71.24
+  },
+  {
+   "w": "the",
+   "start": 71.24,
+   "end": 71.44
+  },
+  {
+   "w": "character",
+   "start": 71.44,
+   "end": 71.7
+  },
+  {
+   "w": "from",
+   "start": 71.7,
+   "end": 71.96
+  },
+  {
+   "w": "a",
+   "start": 71.96,
+   "end": 72.1
+  },
+  {
+   "w": "list.",
+   "start": 72.1,
+   "end": 72.32
+  },
+  {
+   "w": "The",
+   "start": 72.74,
+   "end": 72.92
+  },
+  {
+   "w": "system",
+   "start": 72.92,
+   "end": 73.24
+  },
+  {
+   "w": "built",
+   "start": 73.24,
+   "end": 73.42
+  },
+  {
+   "w": "to",
+   "start": 73.42,
+   "end": 73.64
+  },
+  {
+   "w": "replace",
+   "start": 73.64,
+   "end": 73.94
+  },
+  {
+   "w": "the",
+   "start": 73.94,
+   "end": 74.14
+  },
+  {
+   "w": "characters",
+   "start": 74.14,
+   "end": 74.48
+  },
+  {
+   "w": "is",
+   "start": 74.48,
+   "end": 74.78
+  },
+  {
+   "w": "now",
+   "start": 74.78,
+   "end": 75.0
+  },
+  {
+   "w": "the",
+   "start": 75.0,
+   "end": 75.12
+  },
+  {
+   "w": "main",
+   "start": 75.12,
+   "end": 75.4
+  },
+  {
+   "w": "reason",
+   "start": 75.4,
+   "end": 75.66
+  },
+  {
+   "w": "they",
+   "start": 75.66,
+   "end": 75.86
+  },
+  {
+   "w": "thrive",
+   "start": 75.86,
+   "end": 76.1
+  },
+  {
+   "w": "in",
+   "start": 76.1,
+   "end": 76.28
+  },
+  {
+   "w": "the",
+   "start": 76.28,
+   "end": 76.4
+  },
+  {
+   "w": "digital",
+   "start": 76.4,
+   "end": 76.7
+  },
+  {
+   "w": "age.",
+   "start": 76.7,
+   "end": 77.02
+  },
+  {
+   "w": "So",
+   "start": 77.48,
+   "end": 77.64
+  },
+  {
+   "w": "Pinyin",
+   "start": 77.64,
+   "end": 77.94
+  },
+  {
+   "w": "was",
+   "start": 77.94,
+   "end": 78.08
+  },
+  {
+   "w": "a",
+   "start": 78.08,
+   "end": 78.22
+  },
+  {
+   "w": "weapon",
+   "start": 78.22,
+   "end": 78.42
+  },
+  {
+   "w": "aimed",
+   "start": 78.42,
+   "end": 78.68
+  },
+  {
+   "w": "straight",
+   "start": 78.68,
+   "end": 78.92
+  },
+  {
+   "w": "at",
+   "start": 78.92,
+   "end": 79.08
+  },
+  {
+   "w": "Chinese",
+   "start": 79.08,
+   "end": 79.42
+  },
+  {
+   "w": "characters,",
+   "start": 79.42,
+   "end": 79.86
+  },
+  {
+   "w": "that",
+   "start": 80.1,
+   "end": 80.28
+  },
+  {
+   "w": "completely",
+   "start": 80.28,
+   "end": 80.68
+  },
+  {
+   "w": "missed",
+   "start": 80.68,
+   "end": 81.06
+  },
+  {
+   "w": "and",
+   "start": 81.06,
+   "end": 81.6
+  },
+  {
+   "w": "became",
+   "start": 81.6,
+   "end": 81.88
+  },
+  {
+   "w": "their",
+   "start": 81.88,
+   "end": 82.08
+  },
+  {
+   "w": "life",
+   "start": 82.08,
+   "end": 82.28
+  },
+  {
+   "w": "support",
+   "start": 82.28,
+   "end": 82.64
+  },
+  {
+   "w": "instead.",
+   "start": 82.64,
+   "end": 83.06
+  },
+  {
+   "w": "The",
+   "start": 83.52,
+   "end": 83.78
+  },
+  {
+   "w": "bridge",
+   "start": 83.78,
+   "end": 84.0
+  },
+  {
+   "w": "meant",
+   "start": 84.0,
+   "end": 84.2
+  },
+  {
+   "w": "to",
+   "start": 84.2,
+   "end": 84.36
+  },
+  {
+   "w": "lead",
+   "start": 84.36,
+   "end": 84.48
+  },
+  {
+   "w": "away",
+   "start": 84.48,
+   "end": 84.66
+  },
+  {
+   "w": "from",
+   "start": 84.66,
+   "end": 84.84
+  },
+  {
+   "w": "the",
+   "start": 84.84,
+   "end": 85.0
+  },
+  {
+   "w": "characters",
+   "start": 85.0,
+   "end": 85.28
+  },
+  {
+   "w": "is",
+   "start": 85.28,
+   "end": 85.54
+  },
+  {
+   "w": "now",
+   "start": 85.54,
+   "end": 85.74
+  },
+  {
+   "w": "the",
+   "start": 85.74,
+   "end": 85.9
+  },
+  {
+   "w": "bridge",
+   "start": 85.9,
+   "end": 86.1
+  },
+  {
+   "w": "everyone",
+   "start": 86.1,
+   "end": 86.42
+  },
+  {
+   "w": "uses",
+   "start": 86.42,
+   "end": 86.76
+  },
+  {
+   "w": "to",
+   "start": 86.76,
+   "end": 87.04
+  },
+  {
+   "w": "reach",
+   "start": 87.04,
+   "end": 87.18
+  },
+  {
+   "w": "them.",
+   "start": 87.18,
+   "end": 87.42
+  },
+  {
+   "w": "Want",
+   "start": 87.42,
+   "end": 88.04
+  },
+  {
+   "w": "to",
+   "start": 88.04,
+   "end": 88.12
+  },
+  {
+   "w": "actually",
+   "start": 88.12,
+   "end": 88.4
+  },
+  {
+   "w": "start",
+   "start": 88.4,
+   "end": 88.68
+  },
+  {
+   "w": "learning",
+   "start": 88.68,
+   "end": 88.96
+  },
+  {
+   "w": "Chinese?",
+   "start": 88.96,
+   "end": 89.54
+  },
+  {
+   "w": "Discover",
+   "start": 90.44,
+   "end": 90.44
+  },
+  {
+   "w": "thousands",
+   "start": 90.44,
+   "end": 90.94
+  },
+  {
+   "w": "of",
+   "start": 90.94,
+   "end": 91.2
+  },
+  {
+   "w": "free",
+   "start": 91.2,
+   "end": 91.34
+  },
+  {
+   "w": "exercises",
+   "start": 91.34,
+   "end": 91.82
+  },
+  {
+   "w": "and",
+   "start": 91.82,
+   "end": 92.2
+  },
+  {
+   "w": "more",
+   "start": 92.2,
+   "end": 92.42
+  },
+  {
+   "w": "learning",
+   "start": 92.42,
+   "end": 92.68
+  },
+  {
+   "w": "content",
+   "start": 92.68,
+   "end": 93.04
+  },
+  {
+   "w": "on",
+   "start": 93.04,
+   "end": 93.2
+  },
+  {
+   "w": "stacktags",
+   "start": 93.2,
+   "end": 93.72
+  },
+  {
+   "w": ".io",
+   "start": 93.72,
+   "end": 94.2
+  }
+ ],
+ "segments": [
+  {
+   "start": 0.0,
+   "end": 4.7,
+   "text": "Pinyin, the system that spells Chinese with the Latin alphabet, was originally built to"
+  },
+  {
+   "start": 4.7,
+   "end": 7.34,
+   "text": "do one thing, replace Chinese characters completely."
+  },
+  {
+   "start": 7.92,
+   "end": 10.88,
+   "text": "The plan was to let the alphabet quietly kill them off."
+  },
+  {
+   "start": 11.16,
+   "end": 13.58,
+   "text": "It failed, and today it does the exact opposite."
+  },
+  {
+   "start": 14.14,
+   "end": 18.12,
+   "text": "Pinyin is the system that writes Chinese sounds using our familiar ABC letters."
+  },
+  {
+   "start": 18.54,
+   "end": 23.42,
+   "text": "It was created in the 1950s by a committee led by a man named Zhou Yuguang, who's often"
+  },
+  {
+   "start": 23.42,
+   "end": 24.72,
+   "text": "called the father of Pinyin."
+  },
+  {
+   "start": 25.04,
+   "end": 29.28,
+   "text": "But for many of the reformers behind it, including Mao himself, Pinyin wasn't meant"
+  },
+  {
+   "start": 29.28,
+   "end": 33.16,
+   "text": "to just sit politely beside the characters, it was meant to gradually replace them."
+  },
+  {
+   "start": 33.56,
+   "end": 37.02,
+   "text": "The thinking went, the characters were too hard, holding back literacy."
+  },
+  {
+   "start": 37.52,
+   "end": 40.34,
+   "text": "The future was a simple alphabet, like most of the world used."
+  },
+  {
+   "start": 40.86,
+   "end": 43.38,
+   "text": "Pinyin was the bridge to get there, now the honest part."
+  },
+  {
+   "start": 43.78,
+   "end": 47.62,
+   "text": "That goal was never fully written into law, and it was never officially declared dead,"
+  },
+  {
+   "start": 47.78,
+   "end": 48.02,
+   "text": "either."
+  },
+  {
+   "start": 48.18,
+   "end": 49.96,
+   "text": "It was simply buried."
+  },
+  {
+   "start": 50.32,
+   "end": 54.74,
+   "text": "As literacy rose and the country modernized, the appetite to throw out thousands of years"
+  },
+  {
+   "start": 54.74,
+   "end": 58.5,
+   "text": "of characters faded, and Pinyin got quietly reclassified as a helper."
+  },
+  {
+   "start": 58.5,
+   "end": 61.16,
+   "text": "A way to teach pronunciation and sound out characters."
+  },
+  {
+   "start": 61.66,
+   "end": 65.78,
+   "text": "Not to replace them, and here's the twist, Pinyin didn't kill the characters, it saved"
+  },
+  {
+   "start": 65.78,
+   "end": 66.04,
+   "text": "them."
+  },
+  {
+   "start": 66.36,
+   "end": 69.34,
+   "text": "Because today, how do you type Chinese on a phone or a keyboard?"
+  },
+  {
+   "start": 69.74,
+   "end": 72.32,
+   "text": "You type the Pinyin, and pick the character from a list."
+  },
+  {
+   "start": 72.74,
+   "end": 76.4,
+   "text": "The system built to replace the characters is now the main reason they thrive in the"
+  },
+  {
+   "start": 76.4,
+   "end": 77.02,
+   "text": "digital age."
+  },
+  {
+   "start": 77.48,
+   "end": 81.06,
+   "text": "So Pinyin was a weapon aimed straight at Chinese characters, that completely missed"
+  },
+  {
+   "start": 81.06,
+   "end": 83.06,
+   "text": "and became their life support instead."
+  },
+  {
+   "start": 83.52,
+   "end": 86.76,
+   "text": "The bridge meant to lead away from the characters is now the bridge everyone uses"
+  },
+  {
+   "start": 86.76,
+   "end": 87.42,
+   "text": "to reach them."
+  },
+  {
+   "start": 87.42,
+   "end": 89.54,
+   "text": "Want to actually start learning Chinese?"
+  },
+  {
+   "start": 90.44,
+   "end": 94.2,
+   "text": "Discover thousands of free exercises and more learning content on stacktags.io"
+  }
+ ]
+}

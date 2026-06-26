@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Why China has a baby boom every 12 years</title>
+<link rel="icon" href="data:," />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@500;700;900&family=Noto+Serif:wght@700;900&display=swap" rel="stylesheet">
+
+<!-- shared design system: tokens + grid + subtitles -->
+<link rel="stylesheet" href="elements/theme.css">
+<!-- dynamic depth-grid look (the camera grid styling reused by app.js) -->
+<link rel="stylesheet" href="elements/depth-transitions.css">
+<!-- this video's own scene styling -->
+<link rel="stylesheet" href="styles.css?v=1">
+</head>
+<body>
+<div class="wrap">
+  <div class="stage stk-grid-bg" id="stage">
+
+    <!-- persistent dynamic grid: the camera (zoom/pan) lives here -->
+    <div class="stk-depth2-grid" id="grid"></div>
+
+    <div class="scenes" id="scenes">
+
+      <!-- ============================================================
+           SCENE 1 — THE WHEEL (carries HOOK + BELIEF).
+           Year-ticker pulse → eliminate economy/policy → the zodiac
+           wheel spins in and locks on the Dragon → the belief.
+           ============================================================ -->
+      <div class="scene" id="sc-wheel">
+
+        <!-- hook intro: a 12-year rhythm of baby booms -->
+        <div class="ticker" id="hook-ticker">
+          <div class="tk-line"></div>
+          <div class="tk-years" id="tk-years"></div>
+          <div class="tk-bursts" id="tk-bursts"></div>
+        </div>
+
+        <!-- elimination beat: not the economy, not policy -->
+        <div class="elim" id="hook-elim">
+          <div class="elim-item" id="elim-econ">
+            <div class="elim-ic">
+              <svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="26" fill="none" stroke="#8a949d" stroke-width="5"/><path d="M32 16v32M24 23c0-4 4-6 8-6s8 2 8 6-4 5-8 5-8 1-8 6 4 6 8 6 8-2 8-6" fill="none" stroke="#8a949d" stroke-width="5" stroke-linecap="round"/></svg>
+            </div>
+            <div class="elim-lab">the economy</div>
+            <div class="elim-x"></div>
+          </div>
+          <div class="elim-item" id="elim-pol">
+            <div class="elim-ic">
+              <svg viewBox="0 0 64 64"><rect x="16" y="10" width="32" height="44" rx="4" fill="none" stroke="#8a949d" stroke-width="5"/><path d="M23 24h18M23 33h18M23 42h11" stroke="#8a949d" stroke-width="5" stroke-linecap="round"/></svg>
+            </div>
+            <div class="elim-lab">policy</div>
+            <div class="elim-x"></div>
+          </div>
+        </div>
+
+        <!-- the hero device -->
+        <div class="wheel-host" id="wheel-host"></div>
+
+        <!-- belief: the parents who plan around it -->
+        <div class="parents" id="parents"></div>
+
+      </div><!-- /sc-wheel -->
+
+      <!-- ============================================================
+           SCENE 2 — THE DATA (births chart + recreated news headline)
+           ============================================================ -->
+      <div class="scene" id="sc-data">
+        <div class="data-title" id="data-title"><span class="dt-zh"></span></div>
+        <div class="chart-host" id="births-host"></div>
+
+        <!-- recreated, realistic news clipping (the "reportedly" info anchor) -->
+        <div class="newscard" id="news-card">
+          <div class="nc-masthead"><span class="nc-name">THE NATIONAL DAILY</span><span class="nc-date">January 2013</span></div>
+          <div class="nc-kicker">DEMOGRAPHICS</div>
+          <div class="nc-head">Dragon-year baby boom: <em>most births in over a decade</em></div>
+          <div class="nc-body"><span class="nc-col"></span><span class="nc-col"></span><span class="nc-col"></span></div>
+        </div>
+
+        <div class="data-cap" id="data-cap"></div>
+      </div><!-- /sc-data -->
+
+      <!-- ============================================================
+           SCENE 3 — THE TWIST (one dragon-baby multiplies into a crowd)
+           ============================================================ -->
+      <div class="scene" id="sc-twist">
+        <div class="twist-stage" id="twist-stage">
+          <div class="crowd" id="crowd"></div>
+          <div class="twist-hero" id="twist-hero">
+            <div class="th-kid" id="th-kid"></div>
+            <div class="th-label"><div class="kl-zh cjk">龙宝宝</div><div class="kl-py">lóng bǎobao</div><div class="kl-en">“dragon baby”</div></div>
+          </div>
+          <div class="seat" id="seat"><div class="seat-ic"><svg viewBox="0 0 64 64"><path d="M18 14v20M46 14v20M14 34h36v6a6 6 0 0 1-6 6H20a6 6 0 0 1-6-6z M22 46v8M42 46v8" fill="none" stroke="#119271" stroke-width="5" stroke-linecap="round"/></svg></div><div class="seat-lab">one spot</div></div>
+        </div>
+      </div><!-- /sc-twist -->
+
+      <!-- ============================================================
+           SCENE 4 — PUNCHLINE (wheel-as-clock over China; line pulses)
+           ============================================================ -->
+      <div class="scene" id="sc-punch">
+        <div class="china-bg" id="china-bg"></div>
+        <div class="punch-clock" id="punch-clock"></div>
+        <div class="pulse-line" id="pulse-line">
+          <svg viewBox="0 0 900 220" id="pulse-svg" preserveAspectRatio="none"></svg>
+        </div>
+      </div><!-- /sc-punch -->
+
+      <!-- ============================================================
+           SCENE 5 — OUTRO endcard
+           ============================================================ -->
+      <div class="scene" id="sc-outro">
+        <div class="ec" id="outro-ec">
+          <div id="outro-logo"></div>
+          <div class="wm"><span class="s">stack</span><span class="t">tags</span></div>
+          <div class="url">stacktags.io</div>
+        </div>
+      </div>
+
+    </div><!-- /scenes -->
+
+    <!-- subtitles mirror the narration (grey; key words turquoise) -->
+    <div class="stk-subs" id="subs"><span class="stk-subs-line" id="subs-line"></span></div>
+
+  </div><!-- /stage -->
+</div>
+
+<!-- HUD (hidden in clean/capture mode) -->
+<div id="hud">
+  <button id="btn-play">▶ Play</button>
+  <input id="seek" type="range" min="0" max="82" step="0.01" value="0" />
+  <span id="tcode">0.0</span>
+</div>
+
+<audio id="vo" src="../script_voice.mp3" preload="auto"></audio>
+
+<!-- elements -->
+<script src="elements/china-silhouette.js"></script>
+<script src="elements/zodiac-wheel.js"></script>
+<script src="elements/outro.js"></script>
+
+<!-- this video's choreography -->
+<script src="app.js?v=1"></script>
+</body>
+</html>

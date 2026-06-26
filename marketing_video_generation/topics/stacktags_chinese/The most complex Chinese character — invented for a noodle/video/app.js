@@ -51,14 +51,57 @@
   }
   function counterPulse() { counter.classList.add('pulse'); setTimeout(() => counter.classList.remove('pulse'), 500); }
 
-  // compare characters / components
-  const cmps = $$('#compare .cmp');
-  const compBoxes = $$('#comp .comp-box');
-  function popCmp(i) { if (cmps[i]) cmps[i].classList.add('in'); }
-  function dimCompare() { cmps.forEach((c) => c.classList.add('dim')); }
-  function hideCompare() { $('#compare').style.opacity = '0'; }
-  function showComp(i) { if (compBoxes[i]) compBoxes[i].classList.add('in'); }
-  function hideComps() { compBoxes.forEach((b) => b.classList.remove('in')); }
+  // PARTS — the real characters biáng is built from. They lift OUT of the glyph
+  // into a ring (= "most characters are just a handful of strokes"), then cram
+  // back IN to build it (= "this one crams nearly sixty into one"). The glyph
+  // ghosts while they're out and re-solidifies as they merge.
+  const PARTS = [
+    { ch: '言', gloss: 'speak', sx: 250, sy: 330 },
+    { ch: '月', gloss: 'moon',  sx: 830, sy: 330 },
+    { ch: '馬', gloss: 'horse', sx: 95,  sy: 770 },
+    { ch: '長', gloss: 'long',  sx: 985, sy: 770 },
+    { ch: '心', gloss: 'heart', sx: 250, sy: 1200 },
+    { ch: '辶', gloss: 'walk',  sx: 830, sy: 1200 },
+  ];
+  const CX = 540, CY = 770;
+  let partsBuilt = false; const partEls = [];
+  function buildParts() {
+    if (partsBuilt) return; partsBuilt = true;
+    const host = $('#parts');
+    PARTS.forEach((p) => {
+      const el = document.createElement('div');
+      el.className = 'part';
+      el.style.setProperty('--sx', p.sx + 'px');
+      el.style.setProperty('--sy', p.sy + 'px');
+      el.style.setProperty('--dx', (CX - p.sx) + 'px');
+      el.style.setProperty('--dy', (CY - p.sy) + 'px');
+      el.innerHTML = '<span class="part-ch">' + p.ch + '</span><span class="part-gloss">' + p.gloss + '</span>';
+      host.appendChild(el);
+      partEls.push(el);
+    });
+  }
+  function liftParts(instant) {
+    buildParts();
+    biang.style.opacity = '.12';
+    counter.classList.remove('in');
+    partEls.forEach((el, i) => {
+      el.classList.remove('cram');
+      if (instant) el.classList.add('out');
+      else setTimeout(() => el.classList.add('out'), i * 90);
+    });
+  }
+  function cramParts(instant) {
+    buildParts();
+    biang.style.opacity = '1';
+    partEls.forEach((el, i) => {
+      el.classList.remove('out');
+      if (instant) el.classList.add('cram');
+      else setTimeout(() => el.classList.add('cram'), i * 70);
+    });
+    counter.classList.add('in');
+    if (!instant) counterPulse();
+  }
+  function hideParts() { partEls.forEach((el) => el.classList.remove('out', 'cram')); biang.style.opacity = ''; }
 
   // hook chat / pinyin
   function showChat() { $('#chat').classList.add('in'); }
@@ -77,7 +120,7 @@
   function showConn() { $('#conn').classList.add('in'); }
   function finalShot() {
     $('#cell').classList.add('up');
-    hideCompare(); hideComps(); hideChat(); hidePinyin();
+    hideParts(); hideChat(); hidePinyin();
     counter.classList.remove('in');
     setWrite(1);
     $('#bowl').classList.add('in');
@@ -101,9 +144,8 @@
   }
 
   // ============================================================
-  // SLAP — dough hits the table, "biáng!"
+  // SLAP — the dough photo is the scene; "biáng!" bursts on the slap
   // ============================================================
-  function doughSlap() { $('#dough').classList.add('slap'); }
   function slapWord() { $('#slap-word').classList.add('in'); }
 
   // ============================================================
@@ -294,30 +336,20 @@
     [0.0, (i) => enter($('#sc-hero'), 'fade', 650, i, () => writeOn(i))],
     [3.0, (i) => { if (i) writeOn(true); else counterPulse(); }],
     [7.14, () => showChat()],
-    // THE CHARACTER
-    [9.0, () => { hideChat(); showPinyin(); }],
-    [12.12, () => popCmp(0)],
-    [12.64, () => popCmp(1)],
-    [13.2, () => popCmp(2)],
-    [14.3, () => { dimCompare(); counterPulse(); }],
-    // decomposition — real characters hiding inside (馬 心 月 言 長 辶)
-    [18.12, () => { hideCompare(); showComp(0); }],
-    [18.56, () => showComp(3)],
-    [19.14, () => showComp(2)],
-    [19.6, () => showComp(1)],
-    [20.94, () => showComp(4)],
-    [21.4, () => showComp(5)],
-    [22.64, () => { hideComps(); hideCompare(); }],
+    // THE CHARACTER — biáng breaks into the real words it's built from, then crams them back
+    [9.0, () => hideChat()],
+    [9.74, (i) => liftParts(i)],                       // "most chars have a handful of strokes" → its parts lift out
+    [14.3, (i) => { cramParts(i); showPinyin(); }],    // "this crams nearly sixty into one" → they fly back, 58
+    [20.8, () => counterPulse()],                      // "after all that complexity…" — a last beat on 58
     // NOODLES — the one thing it's for
     [25.12, () => showBowl()],
     [31.94, () => showConn()],
     // DICTIONARY — it isn't there
     [33.6, (i) => enter($('#sc-dict'), 'zoom-out', 1000, i)],
     [34.86, (i) => dictNone(i)],
-    // STALL — the slap of the dough
+    // STALL — the folk origin (real dough-slap photo); "biáng!" bursts on impact
     [37.18, (i) => enter($('#sc-slap'), 'drop', 950, i)],
-    [41.28, (i) => { if (!i) doughSlap(); }],
-    [41.72, (i) => { if (i) { doughSlap(); slapWord(); } else slapWord(); }],
+    [41.28, () => slapWord()],
     // UNICODE — the gap
     [42.48, (i) => enter($('#sc-unicode'), 'zoom-in', 1000, i, () => uniPlay(i))],
     [46.46, () => { const g = $('#uni-list .gap'); if (g) { g.classList.add('pulse'); } }],
@@ -341,13 +373,14 @@
   const SFX = [
     [0.4, 'ticking', 0.40],
     [3.0, 'pop', 0.45],
-    [12.12, 'pop', 0.50], [12.64, 'pop', 0.50], [13.2, 'pop', 0.50],
-    [18.12, 'pop', 0.32], [18.56, 'pop', 0.32], [19.14, 'pop', 0.32],
-    [19.6, 'pop', 0.32], [20.94, 'pop', 0.32], [21.4, 'pop', 0.32],
+    // parts lift out of the glyph (staggered) …
+    [9.74, 'pop', 0.34], [9.83, 'pop', 0.34], [9.92, 'pop', 0.34],
+    [10.01, 'pop', 0.34], [10.10, 'pop', 0.34], [10.19, 'pop', 0.34],
+    [14.3, 'pop', 0.50],   // … and cram back into one
     [33.6, 'swoosh', 0.50],
     [34.86, 'pop', 0.45],
     [37.18, 'swoosh', 0.50],
-    [41.72, 'pop', 0.60],
+    [41.28, 'pop', 0.60],
     [42.48, 'swoosh', 0.50],
     [50.26, 'swoosh', 0.50],
     [52.7, 'pop', 0.40],
@@ -374,15 +407,13 @@
     if (writeRAF) cancelAnimationFrame(writeRAF);
     setWrite(0);
     counter.classList.remove('in', 'pulse');
-    cmps.forEach((c) => c.classList.remove('in', 'dim'));
-    $('#compare').style.opacity = '';
-    hideComps();
+    hideParts();
     hideChat(); hidePinyin();
     $('#cell').classList.remove('up');
     $('#bowl').classList.remove('in'); $('#bowl-lab').classList.remove('in'); $('#conn').classList.remove('in');
     $('#emoji').classList.remove('in');
     $('#dict-none').classList.remove('in'); $('#dict').classList.remove('shake');
-    $('#dough').classList.remove('slap'); $('#slap-word').classList.remove('in');
+    $('#slap-word').classList.remove('in');
     const ul = $('#uni-list'); if (ul) ul.classList.remove('in');
     const g = $('#uni-list .gap'); if (g) g.classList.remove('pulse');
     $('#msg').classList.remove('in'); $('#menu').classList.remove('in'); $('#paste').classList.remove('in'); $('#stamp').classList.remove('in');

@@ -1,0 +1,27 @@
+<!doctype html>
+<html><head><meta charset="utf-8"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@700;800;900&family=Noto+Sans+JP:wght@700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../elements/theme.css">
+<style>
+  html,body{margin:0;height:100%;}
+  .stage{position:relative;width:1080px;height:1920px;background:#fff;}
+  .row{position:absolute;top:760px;left:0;right:0;display:flex;align-items:flex-end;justify-content:space-around;}
+  .cap{position:absolute;top:1280px;left:0;right:0;text-align:center;font-family:Inter;font-weight:800;color:#8a949d;font-size:30px;}
+</style></head>
+<body>
+<div class="stage stk-grid-bg" id="stage">
+  <div class="row" id="row"></div>
+  <div class="cap">Chinese scholar &middot; JP short &middot; JP side &middot; JP topknot</div>
+</div>
+<script src="../elements/people.js"></script>
+<script>
+  const row = document.getElementById('row');
+  const people = [
+    makePerson({ robe:'#119271', collar:'#eaf5f1', obi:'#0c5f4b', skin:'#f1c49a', hair:'#241f1b', style:'scholar', arm:'up', w:230 }),
+    makePerson({ robe:'#e6ebe9', collar:'#ffffff', obi:'#35A292', skin:'#f6cfa6', hair:'#2c2622', style:'short', w:210 }),
+    makePerson({ robe:'#cfe6dd', collar:'#ffffff', obi:'#232B33', skin:'#efc197', hair:'#34291f', style:'side', w:210 }),
+    makePerson({ robe:'#ffffff', collar:'#e7f4ef', obi:'#35A292', skin:'#f3c79e', hair:'#241f1b', style:'topknot', w:210 }),
+  ];
+  row.innerHTML = people.join('');
+</script>
+</body></html>

@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Chinese had no word for "she" — so a poet built one</title>
+<link rel="icon" href="data:," />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- Inter (full latin + pinyin diacritics) for all UI/English text -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<!-- Noto Sans SC, subsetted to the CJK glyphs shown as STATIC text (labels, signature, wash) -->
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@500;700;900&text=她他女也它人刘半农说&display=swap" rel="stylesheet">
+
+<!-- shared theme tokens + grid + subtitles (the design system) -->
+<link rel="stylesheet" href="elements/theme.css">
+<!-- the dynamic depth-grid look (reuse its grid styling) -->
+<link rel="stylesheet" href="elements/depth-transitions.css">
+<!-- default element: text-popup (cascade words) -->
+<link rel="stylesheet" href="elements/text-popup.css">
+<!-- this video's own scene styling -->
+<link rel="stylesheet" href="styles.css?v=1">
+</head>
+<body>
+<div class="wrap">
+  <div class="stage stk-grid-bg" id="stage">
+
+    <!-- persistent dynamic grid: the camera (zoom/pan) lives here -->
+    <div class="stk-depth2-grid" id="grid"></div>
+
+    <!-- all scene layers stack here -->
+    <div class="scenes" id="scenes">
+
+      <!-- ===== INTRO (HOOK + OLD WAY) — a real "she" who could only be written 他 ===== -->
+      <div class="scene" id="sc-intro">
+        <!-- the recurring "she": a 1920s woman with no word of her own -->
+        <div class="person" id="in-woman"><div class="person-photo woman"></div></div>
+        <div class="say-bubble" id="in-say">tā</div>
+
+        <!-- to write her, you wrote 他 (the brush links her to the only character) -->
+        <div class="conn" id="in-conn"><span class="conn-arrow"></span></div>
+        <div class="cell hero-cell" id="in-cell">
+          <span class="cell-cross"></span>
+          <span class="cell-glyph" id="in-he"></span>
+        </div>
+        <div class="cell-py" id="in-py">tā</div>
+
+        <!-- her own word: still missing -->
+        <div class="newcell" id="in-newcell">
+          <span class="cell-cross"></span>
+          <span class="newq">?</span>
+          <div class="brush sm" id="in-brush"><span class="b-body"></span><span class="b-nib"></span></div>
+        </div>
+      </div>
+
+      <!-- ===== PRESSURE — translating Western novels: he said / she said collide on 他 ===== -->
+      <div class="scene" id="sc-pressure">
+        <div class="novel" id="pr-novel">
+          <div class="novel-head">— a novel, in translation —</div>
+          <div class="novel-lines" id="pr-lines"></div>
+        </div>
+
+        <svg class="pr-links" id="pr-arrows" viewBox="0 0 1080 1920" aria-hidden="true">
+          <path class="pl" id="pl-he"  d="M300,560 C 380,760 470,900 528,1010" />
+          <path class="pl" id="pl-she" d="M300,640 C 360,800 470,920 540,1010" />
+        </svg>
+
+        <div class="cell hero-cell sm" id="pr-cell">
+          <span class="cell-cross"></span>
+          <span class="cell-glyph" id="pr-he"></span>
+          <span class="clash" id="pr-clash"></span>
+        </div>
+        <div class="newcell solo" id="pr-newcell">
+          <span class="cell-cross"></span>
+          <span class="newq">?</span>
+        </div>
+        <div class="pr-need" id="pr-need">tell them apart?</div>
+      </div>
+
+      <!-- ===== INVENTION — the radical swap 亻→女 ; slot equation ; Liu Bannong ===== -->
+      <div class="scene" id="sc-invent">
+        <div class="liu-card" id="iv-liu">
+          <div class="liu-photo" id="iv-liu-photo"></div>
+          <div class="liu-cap"><span class="zh">刘半农</span><span class="en">Liu Bannong · 1920</span></div>
+        </div>
+
+        <div class="cell hero-cell big" id="iv-cell">
+          <span class="cell-cross"></span>
+          <span class="comp-box" id="iv-box"></span>
+          <span class="cell-glyph he" id="iv-he"></span>
+          <span class="cell-glyph she" id="iv-she"></span>
+        </div>
+        <div class="comp-label woman" id="iv-lbl-woman"><span class="zh">女</span><span class="lw">nǚ</span></div>
+
+        <!-- slot equation: only the LEFT block changes; 也 ("the rest") stays -->
+        <div class="equation" id="iv-eq">
+          <div class="eqrow" id="iv-eq1">
+            <span class="eqg" id="eq-ren"></span><span class="eqop">+</span>
+            <span class="eqg" id="eq-ye1"></span><span class="eqop">=</span>
+            <span class="eqg" id="eq-he"></span><span class="eqpy" id="eq-py1">tā</span>
+          </div>
+          <div class="eqrow" id="iv-eq2">
+            <span class="eqg" id="eq-nv"></span><span class="eqop">+</span>
+            <span class="eqg" id="eq-ye2"></span><span class="eqop">=</span>
+            <span class="eqg" id="eq-she"></span><span class="eqpy" id="eq-py2">tā</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== PUNCH 1 — the new 她 spreads: from one woman to everywhere ===== -->
+      <div class="scene" id="sc-punch1">
+        <div class="vs" id="pu-vs">
+          <div class="vs-item"><div class="cell sm"><span class="cell-cross"></span><span class="cell-glyph" id="pu-he"></span></div></div>
+          <div class="vs-item new"><div class="cell sm"><span class="cell-cross"></span><span class="cell-glyph" id="pu-she"></span></div></div>
+        </div>
+        <div class="everywhere" id="pu-every"></div>
+      </div>
+
+      <!-- ===== PUNCH 2 — younger than the lightbulb ; she finally has her word (with an author) ===== -->
+      <div class="scene" id="sc-punch2">
+        <div class="younger" id="pu-young">
+          <div class="yo-item"><span class="bulb" id="pu-bulb"></span><span class="yo-year">1879</span></div>
+          <div class="yo-vs">vs</div>
+          <div class="yo-item new"><div class="cell xs"><span class="cell-cross"></span><span class="cell-glyph" id="pu-she2"></span></div><span class="yo-year teal">1920</span></div>
+        </div>
+
+        <div class="byline" id="pu-by">
+          <div class="person sm" id="pu-woman"><div class="person-photo woman"></div></div>
+          <div class="cell sm"><span class="cell-cross"></span><span class="cell-glyph" id="pu-she3"></span></div>
+          <div class="by-sig" id="pu-sig"><span class="by-pen"></span><span class="zh">刘半农</span><span class="by-yr">1920</span></div>
+        </div>
+      </div>
+
+      <!-- ===== OUTRO ===== -->
+      <div class="scene" id="sc-outro">
+        <div class="ec" id="outro-ec">
+          <div id="outro-logo"></div>
+          <div class="wm"><span class="s">stack</span><span class="t">tags</span></div>
+          <div class="url">stacktags.io</div>
+        </div>
+      </div>
+
+    </div><!-- /scenes -->
+
+    <!-- subtitles mirror the narration -->
+    <div class="stk-subs" id="subs"><span class="stk-subs-line" id="subs-line"></span></div>
+
+  </div><!-- /stage -->
+</div>
+
+<!-- HUD (hidden in clean/capture mode) -->
+<div id="hud">
+  <button id="btn-play">&#9654; Play</button>
+  <input id="seek" type="range" min="0" max="100" step="0.01" value="0" />
+  <span id="tcode">0.0</span>
+</div>
+
+<audio id="vo" src="../script_voice.mp3" preload="auto"></audio>
+
+<!-- default elements (used as components) -->
+<script src="elements/text-popup.js"></script>
+<script src="elements/outro.js"></script>
+
+<!-- vendored stroke data for every animated character: window.HANZI -->
+<script src="assets/hanzi/hanzi.js"></script>
+
+<!-- this video's choreography -->
+<script src="app.js?v=1"></script>
+</body>
+</html>

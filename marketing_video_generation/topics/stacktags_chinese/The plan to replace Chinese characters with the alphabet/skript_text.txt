@@ -1,0 +1,122 @@
+VIDEO SCRIPT
+Title options (pick one): The plan to replace Chinese characters with the alphabet
+Topic: Learn Chinese
+Target length: ~95 seconds (fits the 30s–3min window)
+Language of narration: English
+Format: Spoken voiceover narration + [bracketed] visual cues. The brackets are NOT spoken —
+they are stripped before TTS; the spoken text is exactly the un-bracketed words.
+
+==================================================================
+THE CORE IDEA
+==================================================================
+Pinyin (1950s, committee led by Zhou Youguang, adopted 1958) was, for many reformers
+— including Mao — envisioned as a BRIDGE to eventually replace characters with a
+phonetic alphabet. Officially it was framed as an auxiliary (teach pronunciation,
+aid literacy). The replacement goal was never realized and was quietly buried.
+Ironic twist: Pinyin is now how people TYPE characters — the tool meant to kill them
+keeps them alive. Learn: 拼音, Zhou Youguang.
+Punchline: Pinyin missed its target and became the characters' life support.
+
+NOTE (honesty): "kill the characters" is the provocative hook (like the "Mandarin is
+broken" video) — resolve honestly: the abolition aspiration was real (esp. Mao/early
+reformers) but never fully official end-policy, and was abandoned; Pinyin's real role
+became auxiliary + input method.
+
+VISUAL SPINE (anti-slop): TWO recurring heroes carry the whole video — a row of Latin
+letters (the pinyin) and a single Chinese character (汉字). The story is told through their
+changing RELATIONSHIP (size / dominance / who sits under whom), not a new scene per sentence.
+The second half rides ONE metaphor straight from the script: a BRIDGE built of pinyin letters,
+meant to lead AWAY from the characters — which ends up the bridge everyone uses to REACH them
+(paid off literally by the phone IME: type pinyin → land on the character). On-screen text only
+when it ADDS info: the vocab 拼音 (pīnyīn, literally "spell + sound") and 周有光 (Zhōu Yǒuguāng).
+White grid bg, white + turquoise only. Swoosh SFX only when the grid moves / a default element
+animates; a soft pop per vocab word.
+
+==================================================================
+SCRIPT
+==================================================================
+
+--- HOOK (0:00–0:14) — the payoff up front ---
+
+[HERO: one big black character 字 centered on the white grid, the pinyin "zì" small beneath it
+(the helper relationship we know today). Bottom subtitle only.]
+Pinyin — the system that spells Chinese with the Latin alphabet — was originally
+built to do one thing: replace Chinese characters completely.
+[On "replace … completely": the pinyin letters swell up and slide over the character, which
+shrinks and fades toward grey as the alphabet takes its place — the letters now own the frame.]
+The plan was to let the alphabet quietly kill them off.
+[The character is almost gone — a faint grey ghost behind the bold turquoise letters.]
+It failed.
+[Hard beat: the character SNAPS back to full size, solid black and centered; the letters get
+shoved back down small. Springy pop.]
+And today, it does the exact opposite.
+[Settle: 字 big and alive on top, "zì" pinyin resting quietly underneath as its helper. Slow
+camera push-in — grid converges (zoom-in). Swoosh.]
+
+--- WHAT PINYIN IS (≈0:14–0:34) ---
+
+Pinyin is the system that writes Chinese sounds using our familiar A-B-C letters.
+[NOTE: the example words are SHOWN on screen, not spoken. A 拼音 (pīnyīn) header pops, then three
+object vocab cards cascade in — each a real cropped photo + hanzi + pinyin + gloss, stacked above
+one another: 米 mǐ (rice) + a rice-sack photo, 筷子 kuàizi (chopsticks) + a chopsticks photo, and the
+comic punchline 拉肚子 lā dùzi (diarrhea) + a funny cartoon of someone on the toilet. Pop per card.]
+It was created in the 1950s by a committee led by a man named Zhou Youguang, who's
+often called the father of Pinyin.
+[A real PORTRAIT photo of Zhou Youguang (cropped into a soft profile card) appears with a name card:
+周有光 / "Zhōu Yǒuguāng" / "father of Pinyin · 1950s committee".]
+
+--- THE HIDDEN GOAL (≈0:34–1:02) ---
+
+But for many of the reformers behind it — including Mao himself — Pinyin wasn't meant
+to just sit politely beside the characters. It was meant to gradually replace them.
+[Depth transition. The REFORM WALL hero: a row of five real characters — 文 字 书 语 言 (wén zì shū
+yǔ yán, "the written language") — each standing with its pinyin sitting politely BELOW it. On
+"gradually replace them": a takeover wave sweeps left→right — the pinyin swells to the centre and the
+characters are pushed out, cell by cell. An "ABC — an alphabet future" goal sits top-right.]
+The thinking went: the characters were too hard, holding back literacy; the future
+was a simple alphabet, like most of the world used. Pinyin was the bridge to get
+there.
+[On "too hard": the row hides and one monstrously complex character 龘 (48 strokes) zooms in with a
+sweating, overwhelmed cartoon learner — "too many strokes". On "simple alphabet": the ABC goal lights
+turquoise. On "the bridge to get there": the takeover wave pushes on toward ABC.]
+Now, the honest part: that goal was never fully written into law — and it was
+never officially declared dead, either. It was simply... buried.
+[On "written into law": a big turquoise 法 / "make it law" stamp descends and HOVERS over the row —
+but never falls. The takeover freezes with the last character (言) still standing. On "buried": the
+stamp fades and the taken-over pinyin greys and sinks.]
+As literacy rose and the country modernized, the appetite to throw out thousands of
+years of characters faded, and Pinyin got quietly reclassified as a helper — a way to
+teach pronunciation and sound out characters, not to replace them.
+[The characters RESTORE (all five back). On "reclassified as a helper": the pinyin returns small,
+tucked UNDER each character (a furigana wall, glowing turquoise) — exactly where it started, now its
+official helper role.]
+
+--- THE IRONY (≈1:02–1:22) ---
+
+And here's the twist. Pinyin didn't kill the characters. It saved them.
+[Depth transition → swoosh. A clean phone mock-up slides up centre-frame (CSS/SVG, white +
+turquoise), empty chat/text field on top, a pinyin keyboard below.]
+Because today, how do you type Chinese on a phone or a keyboard? You type the
+Pinyin — and pick the character from a list.
+[The IME in action: keys tap out "n-i-h-a-o" (tiny ticks), a candidate row pops up
+你 / 您 / 你好 …, a finger taps 你好, and 你好 lands in the text field. Satisfying, real mechanic.]
+The system built to replace the characters is now the main reason they thrive in the
+digital age.
+[Pay off the bridge: the same letter-bridge re-forms, but now the figure walks ACROSS it the
+other way and ARRIVES at the glowing 汉字 ledge — the path away has become the path back.]
+
+--- PUNCHLINE / OUTRO (≈1:22–1:34) ---
+
+So Pinyin was a weapon aimed straight at Chinese characters — that completely missed,
+and became their life support instead.
+[Callback to the hook: 字 big and alive, the pinyin "zì" beneath it now drawn as a gentle
+turquoise pulse line (a quiet heartbeat) feeding the character — symbolic life support, no
+literal hospital monitor.]
+The bridge meant to lead away from the characters is now the bridge everyone uses to
+reach them.
+[Final beat on the bridge, fully turquoise, traffic flowing TOWARD the 汉字 ledge. Calm settle.]
+
+Wanna actually start learning Chinese?
+Discover thousands of free exercises and more learning content on stacktags.io.
+[Default OUTRO element: stacked-cube logo between turquoise chevrons, "stacktags" wordmark,
+grey "stacktags.io" line. Assemble swoosh.]

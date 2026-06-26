@@ -32,27 +32,14 @@
       <!-- ===== HERO — ONE biáng glyph in a 田字格 practice cell carries the video ===== -->
       <div class="scene" id="sc-hero">
 
-        <!-- simple comparison characters (pop above the cell) -->
-        <div class="compare" id="compare">
-          <div class="cmp" data-i="0"><span class="cmp-ch">永</span><span class="cmp-chip">5</span></div>
-          <div class="cmp" data-i="1"><span class="cmp-ch">家</span><span class="cmp-chip">10</span></div>
-          <div class="cmp" data-i="2"><span class="cmp-ch">影</span><span class="cmp-chip">15</span></div>
-        </div>
+        <!-- the real characters biáng is built from — fly out of it, then cram back in -->
+        <div class="parts" id="parts"></div>
 
         <!-- the practice cell + hero glyph -->
         <div class="cell" id="cell">
           <span class="cell-h"></span><span class="cell-v"></span>
           <div class="glyph-wrap" id="glyph-wrap">
             <img class="biang" id="biang" src="assets/img/biang.svg" alt="biáng" />
-            <!-- component-decomposition highlights (real characters hiding inside) -->
-            <div class="comp-layer" id="comp">
-              <div class="comp-box" style="--cx:50%; --cy:52%; --bw:24%; --bh:22%"><span class="comp-lab" data-side="r">馬 <i>horse</i></span></div>
-              <div class="comp-box" style="--cx:50%; --cy:77%; --bw:22%; --bh:16%"><span class="comp-lab" data-side="b">心 <i>heart</i></span></div>
-              <div class="comp-box" style="--cx:13%; --cy:50%; --bw:14%; --bh:26%"><span class="comp-lab" data-side="l">月 <i>moon</i></span></div>
-              <div class="comp-box" style="--cx:50%; --cy:29%; --bw:20%; --bh:13%"><span class="comp-lab" data-side="t">言 <i>speak</i></span></div>
-              <div class="comp-box" style="--cx:69%; --cy:50%; --bw:13%; --bh:24%"><span class="comp-lab" data-side="r">長 <i>long</i></span></div>
-              <div class="comp-box" style="--cx:24%; --cy:82%; --bw:22%; --bh:14%"><span class="comp-lab" data-side="l">辶 <i>walk</i></span></div>
-            </div>
           </div>
           <!-- stroke counter sits at the cell's top-right corner -->
           <div class="counter" id="counter"><span class="ct-n" id="ct-n">0</span><span class="ct-l">strokes</span></div>
@@ -89,10 +76,9 @@
         </div>
       </div>
 
-      <!-- ===== NOODLE STALL — the name is the slap of the dough ===== -->
+      <!-- ===== NOODLE STALL — the name is the slap of the dough (real photo) ===== -->
       <div class="scene" id="sc-slap">
-        <div class="table" id="table"></div>
-        <div class="dough" id="dough"></div>
+        <div class="stall" id="stall"><img src="assets/img/stall_raw.png" alt="" /></div>
         <div class="slap-word" id="slap-word">biáng!</div>
       </div>
 

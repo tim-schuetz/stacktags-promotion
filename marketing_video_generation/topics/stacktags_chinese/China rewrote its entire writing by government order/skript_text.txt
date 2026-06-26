@@ -25,8 +25,12 @@ centre-stage carries the whole video. Real characters are written into it from R
 makemeahanzi stroke data (stroke-by-stroke, 100% authentic) and are reshaped BY DECREE:
 they shed strokes (round one works), then shed too many (round two breaks), then get
 reverted. Same cell, same layout throughout = consistency, not a new scene per sentence.
-Visual rhyme: a faint TOP-DOWN hand/seal = "by government order"; at the very end the
-people PUSH BACK FROM BELOW. On-screen text only when it ADDS info — the only "words" are
+Visual rhyme: a faint TOP-DOWN turquoise seal = "by government order". A recurring HUMAN
+thread runs underneath the glyph spine — a real archival photo of the 1950s literacy drive
+(generated period image, not a drawn figure): the people are first dwarfed by the wall of
+writing (can't read), then can read it once it's simplified, and at the very end THEY set the
+limit. The mass reform itself is shown as the recreated official 1956 scheme document.
+On-screen text only when it ADDS info — the only "words" are
 the Chinese characters themselves (the viewer actually learns: 愛→爱 lost its heart, 彩→采
 collided) + tiny year stamps (1956 / 1977 / 1986). Grey verbatim subtitles, key word turquoise.
 White grid bg, white + turquoise only; red only as a map pin. Swoosh SFX only when the grid
@@ -60,26 +64,28 @@ Here's the story of how you redesign a language — and how it can backfire.
 
 Back in the mid-1900s, most people in China couldn't read.
 [Faux-3D depth move (grid moves → swoosh). A dense, intimidating WALL of traditional
-characters fills the frame; one small cartoon figure looks up at it with a "?" / "!%$#"
-bubble — the complexity is the barrier. (figure cut-out, no dashed outline)]
+characters looms across the top; BELOW it, a real archival photo of the 1950s mass literacy
+drive (people learning to read) — the people dwarfed by a wall of writing they can't read.
+The barrier IS the writing. (generated period photo, framed; the recurring "the people" motif)]
 The characters were beautiful — but complex, often with dozens of strokes each.
 [Camera dives into ONE busy character in the cell (鬱, yù) and it draws on stroke by stroke
 while a small stroke-counter ticks UP to its true count (~29) — ticking SFX.]
 So to lift literacy, the government decided to simplify the writing itself — officially
 cutting strokes and streamlining thousands of characters.
-[HERO example 愛 → 爱 in the cell: strokes drop away and the 心 ("heart") component is
-highlighted turquoise as it is removed — love literally loses its heart. Then a quick cascade
-龜→龟, 馬→马, 門→门 pops past to show "thousands". Pops on each.]
+[HERO example 愛 → 爱 in the cell: a turquoise 心 ("heart") marker lifts out and fades as the
+strokes simplify — love literally loses its heart. Then for "thousands", cut to the recreated
+official 1956 scheme document (《汉字简化方案》, State Council): rows of 繁→简 pairs reveal and a
+red 印章 seal stamps it = the mass act, by decree (not a literal char cascade).]
 
 --- ROUND ONE: IT WORKED (≈0:38–1:00) ---
 
 That first simplification, through the 1950s and 60s, largely worked. Characters got
 faster to write,
-[Side-by-side in the cell: the many-stroke traditional form draws SLOWLY; beside it the
-few-stroke simplified form is dashed off FAST by a racing pen. Speed contrast is the point.]
+[The 1956 scheme document holds and its red seal stamps "adopted" — the few-stroke 简 forms
+ARE the proof it became faster to write.]
 literacy climbed —
-[A restrained, grounded line rises across 1950→1980 with real-ish % labels (counter ticks,
-faint). Kept minimal and data-grounded — NOT a generic opener chart. (drop in QA if it reads slop.)]
+[Callback to the WHY scene: the SAME wall of writing, now SIMPLIFIED and turquoise (legible),
+and the literacy-drive photo BRIGHTENS — the barrier lowered, the people can finally read.]
 and "Simplified Chinese" is still what the mainland uses today, while Taiwan and Hong
 Kong kept the original, traditional forms.
 [Reusable china-map.js, true-scale: the MAINLAND fills turquoise showing 国 (simplified);
@@ -115,8 +121,9 @@ China engineered its writing by decree — proving you really can redesign a lan
 from the top down...
 [The top-down hand/seal returns and firmly reshapes the glyph from above (clean, deliberate).]
 but only up to the point where the people writing it push back.
-[VISUAL RHYME payoff: many small hands push UP from below against an over-simplified glyph;
-it springs back to the readable form (springy settle). Top-down vs bottom-up resolved.]
+[Payoff of the human thread: the SAME literacy-drive photo (the people) returns beneath the
+glyph, and the over-simplified form springs back to the readable form — the people who were
+given literacy are the ones who set the limit. Decree from above vs. the people below, resolved.]
 
 Wanna actually start learning Chinese?
 Discover thousands of free exercises and more learning content on stacktags.io.

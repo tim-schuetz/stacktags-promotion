@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>thumbnail — Why you can't order two beers in China</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Noto+Sans+SC:wght@700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../video/elements/theme.css">
+<style>
+  html, body { margin: 0; height: 100%; background: #20262b; }
+  .wrap { display: grid; place-items: center; height: 100%; }
+  .thumb { position: relative; width: 1280px; height: 720px; overflow: hidden; background: #fff;
+    background-image:
+      linear-gradient(to right,  rgba(35,43,51,.06) 3px, transparent 3px),
+      linear-gradient(to bottom, rgba(35,43,51,.06) 3px, transparent 3px);
+    background-size: 96px 96px; background-position: center; font-family: 'Inter', sans-serif; }
+
+  /* faint turquoise glow behind the headline */
+  .bg-glow { position: absolute; left: -150px; top: -130px; width: 560px; height: 560px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(53,162,146,.12) 0%, rgba(53,162,146,0) 68%); }
+
+  /* headline (left) */
+  .hl-wrap { position: absolute; left: 84px; top: 132px; width: 600px; }
+  .kicker { font-weight: 800; font-size: 24px; letter-spacing: 4px; color: var(--stk-muted); margin-bottom: 26px; white-space: nowrap; }
+  .hl { margin: 0; font-weight: 900; font-size: 82px; line-height: 1.0; letter-spacing: -3.5px; color: var(--stk-ink); white-space: nowrap; }
+  .hl .accent { color: var(--stk-teal); }
+  .sub { margin-top: 34px; font-weight: 700; font-size: 31px; color: var(--stk-ink-2); letter-spacing: -.3px; line-height: 1.25; }
+  .sub .arrow { color: var(--stk-teal); font-weight: 900; }
+
+  /* right-side prop: the counting equation  2 [ ? ] 啤酒 */
+  .prop { position: absolute; right: 30px; top: 50%; transform: translateY(-50%);
+    display: flex; align-items: center; justify-content: center; gap: 24px; }
+
+  .t-num { width: 130px; height: 130px; border-radius: 26px; background: var(--stk-teal-soft);
+    display: flex; align-items: center; justify-content: center;
+    font: 900 86px/1 'Inter', sans-serif; color: var(--stk-ink); box-shadow: 0 16px 36px rgba(16,50,40,.10); }
+
+  /* the glowing measure-word slot — the mystery the thumbnail teases */
+  .t-slot { position: relative; width: 124px; height: 124px; display: flex; align-items: center; justify-content: center; }
+  .t-slot .glow { position: absolute; inset: -30px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(53,162,146,.34) 0%, rgba(53,162,146,0) 68%); }
+  .t-slot svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+  .t-slot rect { fill: none; stroke: var(--stk-teal); stroke-width: 5; stroke-dasharray: 4 18; stroke-linecap: round; }
+  .t-slot .q { position: relative; font: 900 86px/1 'Inter', sans-serif; color: var(--stk-teal); }
+
+  .t-beers-col { display: flex; flex-direction: column; align-items: center; }
+  .t-beers { display: flex; align-items: flex-end; }
+  .t-beers img { height: 286px; width: auto; display: block; filter: drop-shadow(0 26px 30px rgba(20,40,33,.18)); }
+  .t-beers img:nth-child(2) { margin-left: -30px; height: 268px; }
+  .t-noun-label { margin-top: 12px; text-align: center; }
+  .t-noun-label .z { font: 900 46px/1 'Noto Sans SC', sans-serif; color: var(--stk-teal-d); letter-spacing: 2px; }
+  .t-noun-label .p { display: block; margin-top: 2px; font: 700 23px/1 'Inter', sans-serif; color: var(--stk-muted); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="thumb stk-grid-bg" id="thumb">
+    <div class="bg-glow"></div>
+    <div class="hl-wrap">
+      <div class="kicker">LEARN CHINESE · MEASURE WORDS</div>
+      <h1 class="hl">You can’t order</h1>
+      <h1 class="hl">“<span class="accent">two beers</span>”</h1>
+      <h1 class="hl">in China</h1>
+      <div class="sub">The little word every<br>number secretly needs <span class="arrow">→</span></div>
+    </div>
+
+    <div class="prop">
+      <div class="t-num">2</div>
+      <div class="t-slot">
+        <div class="glow"></div>
+        <svg viewBox="0 0 124 124" preserveAspectRatio="none"><rect x="4" y="4" width="116" height="116" rx="22"/></svg>
+        <div class="q">?</div>
+      </div>
+      <div class="t-beers-col">
+        <div class="t-beers">
+          <img src="../video/assets/photos/beer_dash.png" alt="">
+          <img src="../video/assets/photos/beer_dash.png" alt="">
+        </div>
+        <div class="t-noun-label"><span class="z">啤酒</span><span class="p">píjiǔ</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>window.__ready = true;</script>
+</body>
+</html>

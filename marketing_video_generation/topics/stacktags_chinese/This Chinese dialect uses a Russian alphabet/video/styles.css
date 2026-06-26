@@ -25,42 +25,33 @@ body{ font-family:var(--stk-font); color:var(--stk-ink); }
 }
 .cjk{ font-family:'Noto Sans SC', var(--stk-font); }
 
+/* keep grey subtitles readable over photos (people / mosque) — a soft white halo,
+   invisible on the white background scenes */
+#subs .stk-subs-line{ text-shadow:0 1px 12px #fff, 0 0 7px #fff, 0 0 7px #fff; }
+
 /* ============================================================
    HOOK — 再見 (hanzi) morphs into зэ җян (Cyrillic)
    ============================================================ */
-.hook-wrap{ text-align:center; padding:0 80px; position:relative; }
-.morph{ position:relative; height:340px; }
-.morph-hanzi, .morph-cyr{
-  position:absolute; left:0; right:0; top:50%; transform:translateY(-50%);
-  display:flex; align-items:center; justify-content:center; gap:6px;
-  line-height:1; white-space:nowrap;
+.hook-wrap{ text-align:center; padding:0 80px; }
+/* staged vocab reveal: 再見 (hanzi) → zàijiàn (pinyin) → зэ җян (Cyrillic) */
+.hk-han{
+  font-family:'Noto Sans SC',var(--stk-font); font-weight:900; font-size:248px; line-height:1; color:var(--stk-ink);
+  opacity:0; transform:translateY(22px) scale(.9); transition:opacity .5s ease, transform .6s cubic-bezier(.34,1.56,.64,1);
 }
-.morph-hanzi{
-  font-family:'Noto Sans SC',var(--stk-font); font-weight:900;
-  font-size:300px; letter-spacing:0; color:var(--stk-ink);
+.hk-han.in{ opacity:1; transform:none; }
+.hk-py{
+  margin-top:20px; font-weight:700; font-size:58px; letter-spacing:1px; color:var(--stk-muted);
+  opacity:0; transform:translateY(14px); transition:opacity .5s ease, transform .5s ease;
 }
-.morph-hanzi span{
-  display:inline-block; transition:opacity .5s ease, transform .6s cubic-bezier(.5,.0,.7,.4), filter .5s ease;
+.hk-py.in{ opacity:1; transform:none; }
+.hk-py b{ color:var(--stk-ink-2); }
+.hk-cyr{
+  margin-top:44px; font-weight:800; font-size:196px; letter-spacing:-6px; line-height:1; color:var(--stk-teal-d);
+  opacity:0; transform:translateY(34px) scale(.82); filter:blur(6px);
+  transition:opacity .5s ease, transform .6s cubic-bezier(.34,1.56,.64,1), filter .5s ease, text-shadow .5s ease;
 }
-.morph-hanzi.gone span{ opacity:0; transform:translateY(-40px) scale(.7) rotate(-8deg); filter:blur(8px); }
-.morph-cyr{
-  font-weight:800; font-size:240px; letter-spacing:-6px; color:var(--stk-teal-d);
-  opacity:0;
-}
-.morph-cyr span{
-  display:inline-block; opacity:0; transform:translateY(40px) scale(.6); filter:blur(6px);
-  transition:opacity .42s ease, transform .55s cubic-bezier(.34,1.56,.64,1), filter .42s ease, text-shadow .5s ease;
-}
-.morph-cyr.in{ opacity:1; }
-.morph-cyr.in span{ opacity:1; transform:none; filter:none; }
-.morph-cyr.glow span{ text-shadow:0 0 46px rgba(53,162,146,.55); }
-.morph-cyr .sp{ width:46px; }                 /* the space between зэ and җян */
-.hook-gloss{
-  margin-top:30px; font-weight:700; font-size:46px; letter-spacing:1px; color:var(--stk-muted);
-  opacity:0; transform:translateY(12px); transition:opacity .5s ease, transform .5s ease;
-}
-.hook-gloss.in{ opacity:1; transform:none; }
-.hook-gloss b{ color:var(--stk-teal); }
+.hk-cyr.in{ opacity:1; transform:none; filter:none; }
+.hk-cyr.glow{ text-shadow:0 0 50px rgba(53,162,146,.55); }
 
 /* ============================================================
    MIGRATION — globe + dashed route + docked mosque cut-out
@@ -87,59 +78,49 @@ body{ font-family:var(--stk-font); color:var(--stk-ink); }
 .caravan::after{
   content:''; position:absolute; inset:18px; border-radius:50%; background:#fff;
 }
-/* docked mosque cut-out (a large building → sits along the bottom, no dashed line) */
+/* mosque cut-out — bigger, docked low at the bottom (stays); the two full-body
+   Dungan people flank it left/right and rise above its roof */
 .photo.mosque{
-  position:absolute; left:50%; bottom:360px; transform:translateX(-50%) translateY(60px) scale(.92);
-  width:500px; z-index:9; opacity:0;
+  position:absolute; left:50%; bottom:120px; transform:translateX(-50%) translateY(50px) scale(.94);
+  width:600px; z-index:2; opacity:0;
   transition:opacity .6s ease, transform .8s cubic-bezier(.2,.8,.2,1);
-  filter:drop-shadow(0 30px 50px rgba(16,50,40,.32));
+  filter:drop-shadow(0 30px 50px rgba(16,50,40,.26));
 }
 .photo.mosque img{ width:100%; height:auto; display:block; }
 .photo.mosque.in{ opacity:1; transform:translateX(-50%) translateY(0) scale(1); }
 .mosque-cap{
-  position:absolute; left:0; right:0; bottom:-66px; text-align:center;
-  font-weight:800; font-size:38px; letter-spacing:0; color:var(--stk-muted);
+  position:absolute; left:0; right:0; top:150px; text-align:center; z-index:6;
+  font-weight:800; font-size:34px; letter-spacing:1px; color:var(--stk-muted);
+  opacity:0; transform:translateY(8px); transition:opacity .5s ease, transform .5s ease;
 }
+.mosque-cap.in{ opacity:1; transform:none; }
 .mosque-cap b{ color:var(--stk-teal-d); }
 
 /* ============================================================
-   TWO SPEAKERS — Mandarin (left) ↔ Dungan (right), bubbles
+   TWO DUNGAN PEOPLE — full-body cut-outs with a dashed silhouette outline,
+   left + right above the temple, each with a Cyrillic bubble (+ small Chinese)
    ============================================================ */
-.spk-wrap{ position:absolute; inset:0; }
-.spk{
-  position:absolute; bottom:300px; width:420px; height:auto; z-index:3;
-  opacity:0; filter:drop-shadow(0 22px 34px rgba(16,50,40,.22));
-  transition:opacity .5s ease, transform .7s cubic-bezier(.34,1.4,.5,1);
+.dperson{
+  position:absolute; bottom:110px; width:280px; height:auto; z-index:4; opacity:0;
+  filter:drop-shadow(0 26px 40px rgba(16,50,40,.20));
+  transition:opacity .55s ease, transform .7s cubic-bezier(.34,1.4,.5,1);
 }
-.spk-l{ left:30px; transform:translateX(-180px); }
-.spk-r{ right:30px; transform:translateX(180px) scaleX(-1); }   /* faces left, toward the other */
-.spk-wrap.in .spk-l{ opacity:1; transform:translateX(0); }
-.spk-wrap.in .spk-r{ opacity:1; transform:translateX(0) scaleX(-1); }
-.bub{
-  position:absolute; z-index:5; background:#fff; border-radius:34px;
-  padding:22px 40px; box-shadow:0 18px 40px rgba(20,40,33,.16);
-  font-weight:800; font-size:96px; letter-spacing:-1px; color:var(--stk-ink);
+.dperson-l{ left:14px; transform:translateX(-150px) translateY(30px); }
+.dperson-r{ right:14px; transform:translateX(150px) translateY(30px); }
+.dperson-l.in, .dperson-r.in{ opacity:1; transform:none; }
+.dbub{
+  position:absolute; z-index:6; background:#fff; border-radius:30px; padding:16px 34px;
+  box-shadow:0 18px 42px rgba(20,40,33,.18); text-align:center;
   opacity:0; transform:scale(.4); transform-origin:50% 120%;
   transition:opacity .35s ease, transform .5s cubic-bezier(.34,1.7,.5,1);
 }
-.bub.cjk, .bub .cjk{ font-family:'Noto Sans SC',var(--stk-font); }
-.bub-l{ left:120px; top:520px; }
-.bub-r{ right:120px; top:520px; color:var(--stk-teal-d); }
-.bub::after{   /* tail */
-  content:''; position:absolute; bottom:-26px; width:0; height:0;
-  border-left:22px solid transparent; border-right:22px solid transparent;
-  border-top:30px solid #fff;
-}
-.bub-l::after{ left:70px; }
-.bub-r::after{ right:70px; }
-.bub.in{ opacity:1; transform:none; }
-.spk-link{
-  position:absolute; left:50%; top:560px; transform:translate(-50%,-50%) scale(.4);
-  z-index:6; font-weight:900; font-size:120px; color:var(--stk-teal); opacity:0;
-  transition:opacity .4s ease, transform .55s cubic-bezier(.34,1.7,.5,1);
-  text-shadow:0 0 40px rgba(53,162,146,.4);
-}
-.spk-link.in{ opacity:1; transform:translate(-50%,-50%) scale(1); }
+.dbub.in{ opacity:1; transform:none; }
+.dbub .cy{ display:block; font-weight:800; font-size:76px; letter-spacing:-1px; color:var(--stk-teal-d); line-height:1; }
+.dbub .zh{ display:block; font-family:'Noto Sans SC',var(--stk-font); font-weight:700; font-size:38px; color:var(--stk-muted); margin-top:6px; }
+.dbub::after{ content:''; position:absolute; bottom:-22px; width:0; height:0;
+  border-left:20px solid transparent; border-right:20px solid transparent; border-top:26px solid #fff; }
+.dbub-l{ left:60px; top:850px; } .dbub-l::after{ left:58px; }
+.dbub-r{ right:60px; top:850px; } .dbub-r::after{ right:58px; }
 
 /* ============================================================
    TWIST — wall of hanzi fades → a full Dungan sentence in Cyrillic

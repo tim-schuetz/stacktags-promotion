@@ -1,0 +1,252 @@
+/* ============================================================
+   "How emperors created and deleted characters on a whim" — scenes
+   Spine: the imperial SEAL of decree. It DELETES (a character crumbles
+   stroke by stroke) and CREATES (a character writes itself on). The
+   naming taboo 避讳 drops 世 from 觀世音 → 觀音; empress Wu Zetian mints
+   曌 (sun 日 + moon 月 over sky 空). White + turquoise, Inter; CJK via
+   makemeahanzi stroke data / Noto SC.
+   ============================================================ */
+* { box-sizing: border-box; }
+html, body { margin: 0; height: 100%; background: #0b0e12; }
+.wrap { position: fixed; inset: 0; display: flex; align-items: center; justify-content: center; }
+.stage {
+  position: relative; width: 1080px; height: 1920px; overflow: hidden;
+  transform-origin: center center; font-family: var(--stk-font);
+}
+#grid { z-index: 0; }
+.scenes { position: absolute; inset: 0; z-index: 1; }
+.scene {
+  position: absolute; inset: 0; opacity: 0;
+  transform-origin: 50% 50%;
+  transform: translate(var(--tx,0px), var(--ty,0px)) scale(var(--s,1));
+  will-change: transform, opacity, filter;
+}
+
+/* HUD */
+#hud { position: fixed; left: 50%; bottom: 16px; transform: translateX(-50%);
+  display: flex; gap: 12px; align-items: center; background: #11161b; color: #cfe6dd;
+  padding: 8px 14px; border-radius: 12px; font: 600 14px Inter; z-index: 99; }
+#hud button { background: #35A292; color: #fff; border: 0; border-radius: 8px; padding: 6px 12px; font: 700 14px Inter; cursor: pointer; }
+#hud input[type=range] { width: 360px; }
+body.clean #hud { display: none; }
+
+/* ============================================================
+   Shared: stroke-data glyphs (makeHanzi SVG) + figures + static CJK
+   ============================================================ */
+.hz { display: block; overflow: visible; }
+.hz-ink path {
+  fill: var(--stk-ink); opacity: 0;
+  transform-box: fill-box; transform-origin: 50% 50%;
+  transition: opacity .42s ease, transform .55s cubic-bezier(.4,0,.7,1), fill .35s ease;
+}
+.hz.teal .hz-ink path { fill: var(--stk-teal-d); }
+.pg { display: inline-flex; }
+.fig-svg { display: block; overflow: visible; }
+.portrait, .seal { pointer-events: none; }
+/* realistic cut-out portraits (dashed outline baked in; no runtime drop-shadow —
+   it is GPU-expensive on large images each frame and stretches the headless capture) */
+.portrait { position: absolute; display: block; opacity: 0; z-index: 4;
+  transition: opacity .55s ease, transform .7s cubic-bezier(.2,.8,.2,1); }
+.portrait.in { opacity: 1; }
+
+.zh-static { font-family: 'Noto Sans SC', var(--stk-font); font-weight: 900; color: var(--stk-ink); line-height: 1; }
+
+/* shared word caption block (pinyin + gloss) */
+.word-py { position: absolute; left: 50%; transform: translateX(-50%); font: 800 46px Inter;
+  color: var(--stk-teal-d); letter-spacing: .5px; opacity: 0; transition: opacity .4s ease, transform .4s ease; }
+.word-py.in { opacity: 1; }
+.word-gloss { position: absolute; left: 50%; transform: translateX(-50%); font: 700 34px Inter;
+  color: var(--stk-muted); opacity: 0; transition: opacity .4s ease; }
+.word-gloss.in { opacity: 1; }
+
+/* ============================================================
+   THE SEAL — persistent hero of decree (turquoise chop)
+   ============================================================ */
+.seal { position: absolute; left: 50%; width: 150px; height: 210px; margin-left: -75px;
+  top: var(--seal-top, 380px);
+  transform: translateY(-22px) scale(.9); opacity: 0; z-index: 9;
+  transition: opacity .32s ease, transform .5s cubic-bezier(.34,1.56,.64,1); }
+.seal.in { opacity: 1; transform: translateY(0) scale(1); }
+.seal.big { width: 190px; height: 266px; margin-left: -95px; }
+.seal.jab { animation: sealJab .60s cubic-bezier(.4,0,.3,1); }
+@keyframes sealJab {
+  0% { transform: translateY(0) scale(1); }
+  42% { transform: translateY(56px) scale(1.03); }
+  62% { transform: translateY(40px) scale(1.02); }
+  100% { transform: translateY(0) scale(1); }
+}
+.seal.dim { opacity: .14; transition: opacity .5s ease; }
+.seal-svg { display: block; filter: drop-shadow(0 14px 22px rgba(17,146,113,.22)); }
+#hk-seal { --seal-top: 470px; }
+#rule-seal { --seal-top: 880px; }
+#zh-seal { --seal-top: 380px; }
+#pu-seal { --seal-top: 632px; }
+
+/* ============================================================
+   田字格 cell — a character on the writing grid (hook + rule)
+   ============================================================ */
+.cell { position: absolute; left: 50%; top: 720px; width: 360px; height: 360px; margin-left: -180px;
+  background: #fff; border-radius: 22px; box-shadow: 0 26px 54px rgba(20,40,33,.14), inset 0 0 0 3px rgba(35,43,51,.08); }
+.cell::before, .cell::after { content: ''; position: absolute; background: repeating-linear-gradient(var(--d), rgba(35,43,51,.16) 0 10px, transparent 10px 20px); }
+.cell::before { left: 50%; top: 8%; width: 2px; height: 84%; --d: to bottom; }
+.cell::after  { top: 50%; left: 8%; height: 2px; width: 84%; --d: to right; }
+.cell.sm { width: 250px; height: 250px; margin-left: -125px; }
+.cell.out { opacity: 0; transition: opacity .5s ease; }
+.cell-glyph { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
+
+/* ============================================================
+   HOOK teasers — two payoff cards (goddess / empress)
+   ============================================================ */
+.teasers { position: absolute; left: 50%; top: 1230px; transform: translateX(-50%);
+  display: flex; gap: 40px; }
+.teaser { width: 350px; padding: 28px 22px 22px; background: rgba(255,255,255,.96); border-radius: 26px;
+  box-shadow: 0 18px 40px rgba(20,40,33,.16); display: flex; flex-direction: column; align-items: center; gap: 14px;
+  opacity: 0; transform: translateY(34px) scale(.92); transition: opacity .4s ease, transform .55s cubic-bezier(.34,1.56,.64,1); }
+.teaser.in { opacity: 1; transform: none; }
+.teaser .t-glyph { height: 150px; display: flex; align-items: center; justify-content: center; }
+.teaser .t-glyph.zh-static { font-size: 150px; color: var(--stk-teal-d); }
+.teaser .t-cap { font: 700 28px Inter; color: var(--stk-muted); text-align: center; }
+
+/* ============================================================
+   RULE — 避讳 headline + missing-stroke demo
+   ============================================================ */
+.bigword { position: absolute; left: 50%; top: 470px; transform: translateX(-50%) scale(.6); opacity: 0;
+  display: flex; gap: 10px; transition: opacity .4s ease, transform .55s cubic-bezier(.34,1.56,.64,1); }
+.bigword.in { opacity: 1; transform: translateX(-50%) scale(1); }
+#rule-py { top: 720px; }
+#rule-gloss { top: 786px; }
+#rule-cell { top: 1120px; }
+
+/* ============================================================
+   NAME CARD — empress name (武則天)
+   ============================================================ */
+#wz-fig { left: 50%; top: 150px; height: 520px; transform: translateX(-50%) translateY(46px) scale(.97); }
+#wz-fig.in { transform: translateX(-50%); }
+
+.namecard { position: absolute; left: 50%; top: 760px; transform: translate(-50%,0) scale(.7); opacity: 0;
+  display: flex; flex-direction: column; align-items: center; gap: 16px; z-index: 5;
+  background: rgba(255,255,255,.96); border-radius: 28px; padding: 30px 46px;
+  box-shadow: 0 22px 48px rgba(20,40,33,.16);
+  transition: opacity .4s ease, transform .5s cubic-bezier(.34,1.56,.64,1); }
+.namecard.in { opacity: 1; transform: translate(-50%,0) scale(1); }
+.nc-glyphs { display: flex; gap: 10px; align-items: center; }
+.nc-glyphs .slot { transition: transform .4s ease; }
+.nc-en { font: 800 36px Inter; color: var(--stk-muted); letter-spacing: .3px; }
+
+.shi-py { position: absolute; left: 50%; top: 1190px; transform: translate(-50%,0) scale(.5); opacity: 0;
+  font: 800 44px Inter; color: var(--stk-teal-d); z-index: 6;
+  transition: opacity .35s ease, transform .45s cubic-bezier(.34,1.56,.64,1); }
+.shi-py.in { opacity: 1; transform: translate(-50%,0) scale(1); }
+
+/* taboo strike that the seal stamps onto a forbidden glyph */
+.tabooed .hz-ink path { fill: var(--stk-teal-d); }
+
+/* ============================================================
+   COLLISION — emperor (top) & goddess (bottom) share 世;
+   his claim travels down the link and forces her 世 out → 觀音
+   ============================================================ */
+#co-emp { left: 50%; top: 96px; height: 252px; transform: translateX(-50%) translateY(-26px) scale(.96); }
+#co-emp.in { transform: translateX(-50%) scale(1); }
+#co-god { left: 50%; top: 1300px; height: 296px; transform: translateX(-50%) translateY(28px) scale(.9); }
+#co-god.in { transform: translateX(-50%) scale(1); }
+#co-god.big { transform: translateX(-50%) scale(1.14); }
+
+.cn-name { position: absolute; left: 50%; transform: translate(-50%,-50%) scale(.85); opacity: 0;
+  display: flex; align-items: center; gap: 8px; z-index: 5;
+  transition: opacity .4s ease, transform .5s cubic-bezier(.34,1.56,.64,1); }
+.cn-name.in { opacity: 1; transform: translate(-50%,-50%) scale(1); }
+#co-empname { top: 470px; }
+#co-godname { top: 1060px; }
+.cn-cap { position: absolute; left: 50%; transform: translateX(-50%); font: 800 32px Inter; color: var(--stk-muted);
+  letter-spacing: .3px; opacity: 0; transition: opacity .4s ease; z-index: 5; }
+.cn-cap.in { opacity: 1; }
+#co-empcap { top: 360px; }
+#co-py { top: 1175px; }
+#co-gloss { top: 1238px; }
+
+.gslot { display: inline-flex; align-items: center; justify-content: center; width: 150px; overflow: visible;
+  transition: width .55s cubic-bezier(.5,0,.2,1), opacity .4s ease, transform .4s ease; }
+.gslot.collapsed { width: 0; opacity: 0; }
+
+.link-wrap { position: absolute; left: 50%; top: 545px; width: 6px; height: 470px; margin-left: -3px; z-index: 3;
+  background: linear-gradient(180deg, var(--stk-teal-d), var(--stk-teal)); border-radius: 3px;
+  opacity: 0; transform: scaleY(0); transform-origin: top center;
+  transition: opacity .3s ease, transform .6s cubic-bezier(.5,0,.2,1); }
+.link-wrap.in { opacity: .8; transform: scaleY(1); }
+.link-wrap.charge { box-shadow: 0 0 18px rgba(53,162,146,.7); }
+.link-pulse { position: absolute; left: 50%; top: 0; width: 26px; height: 26px; margin-left: -13px; border-radius: 50%;
+  background: var(--stk-teal); box-shadow: 0 0 22px rgba(53,162,146,.9); opacity: 0; }
+.link-wrap.charge .link-pulse { animation: pulseDown 1.0s ease-in forwards; }
+@keyframes pulseDown { 0% { top: 0; opacity: 1; } 85% { opacity: 1; } 100% { top: 446px; opacity: 0; } }
+
+/* ============================================================
+   曌 ASSEMBLY — sun 日 + moon 月 over sky 空 → the single glyph
+   ============================================================ */
+.assembly { position: absolute; left: 50%; top: 760px; transform: translate(-50%,-50%);
+  display: flex; flex-direction: column; align-items: center; gap: 6px; z-index: 4;
+  transition: opacity .5s ease, transform .6s ease; }
+.assembly.merge { opacity: 0; transform: translate(-50%,-50%) scale(.8); }
+.asm-top { display: flex; gap: 14px; }
+.asm-part { display: flex; flex-direction: column; align-items: center; gap: 6px; }
+.ap-host { display: flex; align-items: center; justify-content: center; }
+.ap-lab { font: 700 24px Inter; color: var(--stk-muted); opacity: 0; transition: opacity .35s ease; }
+.asm-part.lit .ap-lab { opacity: 1; }
+
+.zh-final { position: absolute; left: 50%; top: 760px; transform: translate(-50%,-50%) scale(.5); opacity: 0;
+  font-size: 300px; color: var(--stk-teal-d); z-index: 5;
+  text-shadow: 0 22px 46px rgba(17,146,113,.22);
+  transition: opacity .5s ease, transform .6s cubic-bezier(.34,1.56,.64,1); }
+.zh-final.in { opacity: 1; transform: translate(-50%,-50%) scale(1); }
+#zh-py { top: 1010px; }
+#zh-gloss { top: 1086px; }
+
+.vanish-row { position: absolute; left: 50%; top: 1320px; transform: translateX(-50%);
+  display: flex; gap: 40px; z-index: 3; }
+.vanish-row .vg { font-size: 110px; color: var(--stk-ink); opacity: 0; transform: translateY(20px) scale(.9);
+  transition: opacity .5s ease, transform .6s cubic-bezier(.5,1.4,.5,1); }
+.vanish-row .vg.in { opacity: .9; transform: none; }
+.vanish-row .vg.gone { opacity: 0; transform: translateY(-46px) rotate(12deg) scale(.6); }
+
+/* ============================================================
+   PUNCHLINE — throne erases (left) / mints (right); Guanyin endures
+   ============================================================ */
+.pu-side { position: absolute; top: 760px; transform: translateY(-50%); z-index: 4; opacity: 0;
+  transition: opacity .5s ease, transform .5s ease, filter .5s ease; }
+.pu-side.in { opacity: 1; }
+.pu-side.left { left: 150px; }
+.pu-side.right { right: 150px; }
+.pu-side.right .zh-static { font-size: 180px; color: var(--stk-ink); transition: color .5s ease, text-shadow .5s ease; }
+.pu-side.right.minted .zh-static { color: var(--stk-teal); text-shadow: 0 0 34px rgba(53,162,146,.55), 0 16px 34px rgba(17,146,113,.30); }
+.pu-side.right.minted { animation: mintPulse .7s cubic-bezier(.34,1.56,.64,1); }
+@keyframes mintPulse { 0%{transform:translateY(-50%) scale(1)} 45%{transform:translateY(-50%) scale(1.12)} 100%{transform:translateY(-50%) scale(1)} }
+.pu-side.dim { opacity: .12; transition: opacity .5s ease; }
+.pu-side.hide, .seal.hide { opacity: 0 !important; transition: opacity .5s ease; }
+.pu-side.left.erased { opacity: .12; filter: grayscale(1); }
+.pu-side.left.erased.hide { opacity: 0 !important; }
+#pu-statue { left: 50%; top: 700px; height: 430px; transform: translateX(-50%) translateY(30px) scale(.9); z-index: 6; }
+#pu-statue.in { transform: translateX(-50%) scale(1); }
+.pu-guanyin { position: absolute; left: 50%; top: 1250px; transform: translate(-50%,-50%) scale(.6);
+  display: flex; gap: 6px; z-index: 6; opacity: 0;
+  transition: opacity .45s ease, transform .55s cubic-bezier(.34,1.56,.64,1); }
+.pu-guanyin.in { opacity: 1; transform: translate(-50%,-50%) scale(1); }
+.pu-guanyin.pulse { animation: gyPulse 1.1s cubic-bezier(.34,1.56,.64,1); }
+@keyframes gyPulse { 0%{transform:translate(-50%,-50%) scale(1)} 40%{transform:translate(-50%,-50%) scale(1.12)} 100%{transform:translate(-50%,-50%) scale(1)} }
+#pu-py { top: 1400px; opacity: 0; }
+
+/* ============================================================
+   OUTRO endcard
+   ============================================================ */
+.ec { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); text-align: center; }
+.ec #outro-logo svg { display: block; margin: 0 auto; }
+.ec .lyr { opacity: 0; transform: translateY(28px) scale(.92);
+  transition: opacity .5s ease, transform .6s cubic-bezier(.34,1.56,.64,1); transition-delay: var(--d, 0s); }
+.ec.play .lyr { opacity: 1; transform: none; }
+.ec .chev { opacity: 0; transition: opacity .5s ease .42s; }
+.ec.play .chev { opacity: 1; }
+.ec .wm { margin-top: 18px; font: 900 96px Inter; letter-spacing: -3px;
+  opacity: 0; transform: translateY(20px); transition: opacity .5s ease .5s, transform .5s ease .5s; }
+.ec .wm .s { color: var(--stk-ink); } .ec .wm .t { color: var(--stk-teal); }
+.ec.play .wm { opacity: 1; transform: none; }
+.ec .url { margin-top: 14px; font: 600 42px Inter; color: var(--stk-muted);
+  opacity: 0; transition: opacity .5s ease .66s; }
+.ec.play .url { opacity: 1; }

@@ -61,8 +61,34 @@
       </div>
     </div>`;
   }
-  $('#sc-misfit').innerHTML = misfitHTML();
   $('#sc-resolve').innerHTML = misfitHTML();
+
+  // BORROW scene — China & Japan side by side; a Chinese figure speaks 氣, the nearest
+  // Japanese figure takes the bubble (tail flips L→R), the others echo it slightly
+  // modified into the Japanese form 気 (米 → メ).
+  (function buildBorrow() {
+    const P = window.makePerson || (() => '');
+    const scholar = P({ robe: '#119271', collar: '#eaf5f1', obi: '#0c5f4b', skin: '#f1c49a', hair: '#241f1b', style: 'scholar', arm: 'up', w: 232 });
+    const j1 = P({ robe: '#e6ebe9', collar: '#ffffff', obi: '#35A292', skin: '#f6cfa6', hair: '#2c2622', style: 'short', w: 206 });
+    const j2 = P({ robe: '#cfe6dd', collar: '#ffffff', obi: '#232B33', skin: '#efc197', hair: '#34291f', style: 'side', w: 198 });
+    const j3 = P({ robe: '#ffffff', collar: '#e7f4ef', obi: '#35A292', skin: '#f3c79e', hair: '#241f1b', style: 'headband', w: 190 });
+    $('#sc-borrow').innerHTML = `
+      <div class="borrow" id="borrow">
+        <svg class="bw-map" viewBox="0 0 1080 1920" preserveAspectRatio="xMidYMid meet">
+          <path class="bw-land china" d="M150,1010 C260,965 380,975 440,1035 C475,1070 470,1180 458,1265 C444,1370 270,1405 175,1360 C100,1325 95,1215 108,1150 C118,1095 95,1050 150,1010 Z"/>
+          <path class="bw-land japan" d="M650,1050 C760,1010 900,1015 958,1075 C1000,1118 995,1228 978,1300 C958,1392 780,1422 690,1374 C625,1340 622,1232 632,1172 C640,1122 615,1085 650,1050 Z"/>
+        </svg>
+        <div class="bw-label cn">中国<small>China</small></div>
+        <div class="bw-label jp">日本<small>Japan</small></div>
+        <div class="bw-fig cnf">${scholar}</div>
+        <div class="bw-fig j1">${j1}</div>
+        <div class="bw-fig j2">${j2}</div>
+        <div class="bw-fig j3">${j3}</div>
+        <div class="bw-bub shared" id="bw-shared"><span class="bw-char cjk">氣</span><span class="tail"></span></div>
+        <div class="bw-bub jp j2b" id="bw-jp2"><span class="bw-char cjk">気</span><span class="tail c"></span></div>
+        <div class="bw-bub jp j3b" id="bw-jp3"><span class="bw-char cjk">気</span><span class="tail c"></span></div>
+      </div>`;
+  })();
 
   // SCROLL — figure talks beside a blank scroll that then fills with pictograph characters
   $('#sc-scroll').innerHTML = `
@@ -342,6 +368,19 @@
 
   function hookSplit(i) { cls('#hook', 'split'); }
   function hookInvented(i) { cls('#hook', 'invented'); }
+  // BORROW scene
+  function borrowTalk(sel) { const e = $(sel); if (!e) return; e.classList.remove('talk'); void e.offsetWidth; e.classList.add('talk'); }
+  function borrowStart(i) {
+    const b = $('#borrow'); if (b) b.classList.add('show');
+    const sh = $('#bw-shared'); if (sh) sh.classList.add('in');
+    if (!i) setTimeout(() => borrowTalk('.bw-fig.cnf'), 120);   // China speaks 氣
+  }
+  function borrowHandoff(i) {            // nearest Japanese figure takes the bubble: tail flips L→R, goes teal
+    const sh = $('#bw-shared'); if (sh) sh.classList.add('flip');
+    if (!i) borrowTalk('.bw-fig.j1');
+  }
+  function borrowJP2(i) { const e = $('#bw-jp2'); if (e) e.classList.add('in'); if (!i) borrowTalk('.bw-fig.j2'); }
+  function borrowJP3(i) { const e = $('#bw-jp3'); if (e) e.classList.add('in'); if (!i) borrowTalk('.bw-fig.j3'); }
   function scrollShow(i) { cls('#scroll-scene', 'show'); }
   function scrollFill(i) { cls('#scroll-scene', 'filled'); }
   function mapSail(i) { const m = $('#map-scene'); if (!m) return; if (i) m.classList.add('instant'); m.classList.add('sail'); cls('.map-svg .china', 'lit'); }
@@ -449,7 +488,10 @@
     [0.00, (i) => enter($('#sc-hook'), 'fade', 650, i)],
     [3.88, (i) => hookSplit(i)],
     [4.70, (i) => hookInvented(i)],
-    [7.80, (i) => enter($('#sc-misfit'), 'zoom-in', 1050, i)],
+    [5.28, (i) => enter($('#sc-borrow'), 'zoom-out', 700, i, () => borrowStart(i))],
+    [6.95, (i) => borrowHandoff(i)],
+    [7.95, (i) => borrowJP2(i)],
+    [8.85, (i) => borrowJP3(i)],
     [11.36, (i) => { enter($('#sc-scroll'), 'drop', 1050, i, () => scrollShow(i)); if (i) scrollShow(i); }],
     [16.20, (i) => scrollFill(i)],
     [18.56, (i) => enter($('#sc-import'), 'zoom-out', 1100, i, () => mapSail(i))],
@@ -481,7 +523,10 @@
   const SFX = [
     [3.88, 'swoosh', 0.42],                       // hook split (grid zoom-out)
     [4.05, 'pop', 0.45], [4.18, 'pop', 0.45], [4.31, 'pop', 0.45],
-    [7.80, 'swoosh', 0.50],                       // misfit zoom-in
+    [5.28, 'swoosh', 0.50],                       // borrow scene zoom-out (grid moves)
+    [5.75, 'pop', 0.50],                          // China speaks 氣
+    [6.95, 'swoosh', 0.34],                       // bubble handed to Japan (tail flips)
+    [7.95, 'pop', 0.50], [8.85, 'pop', 0.50],     // the two Japanese echoes 気
     [11.36, 'swoosh', 0.50],                      // scroll drop
     [16.20, 'pop', 0.5], [16.62, 'pop', 0.5], [17.04, 'pop', 0.5],   // scroll fills
     [18.56, 'swoosh', 0.50],                      // map zoom-out + sail
@@ -525,6 +570,9 @@
     gcam.s = 1; gcam.x = 0; gcam.y = 0; gdisp.s = 1; gdisp.x = 0; gdisp.y = 0;
     // clear all scene states
     ['#hook'].forEach((s) => { const e = $(s); if (e) e.classList.remove('split', 'invented'); });
+    const bw = $('#borrow'); if (bw) bw.classList.remove('show');
+    ['#bw-shared', '#bw-jp2', '#bw-jp3'].forEach((s) => { const e = $(s); if (e) e.classList.remove('in', 'flip'); });
+    document.querySelectorAll('.bw-fig').forEach((e) => e.classList.remove('talk'));
     const ss = $('#scroll-scene'); if (ss) ss.classList.remove('show', 'filled');
     const mp = $('#map-scene'); if (mp) { mp.classList.remove('sail', 'instant'); const c = $('.map-svg .china'); if (c) c.classList.remove('lit'); }
     const us = $('#unrel-scene'); if (us) us.classList.remove('speak');

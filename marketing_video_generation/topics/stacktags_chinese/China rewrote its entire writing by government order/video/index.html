@@ -10,7 +10,7 @@
 <!-- Inter (full latin) for all UI/English text -->
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <!-- Noto Sans SC, subsetted to the CJK glyphs we show as static TEXT (wall + labels) -->
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@500;700;900&text=国國简繁體龍龙鬱郁愛爱龜龟馬马門门彩采蛋旦餐歺書學藝鐵聲廳灣黨憂豐豔籠羅關難繼續舊歲衛醫嚴屬廣麗&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@500;700;900&text=龍龙鬱郁書书學学藝艺鐵铁聲声廳厅灣湾黨党憂忧豐丰豔艳籠笼羅罗關关難难繼继續续舊旧歲岁衛卫醫医嚴严屬属廣广麗丽龜龟國国彩采蛋旦餐歺心愛爱馬马門门汉字简化方案&display=swap" rel="stylesheet">
 
 <!-- shared theme tokens + grid + subtitles (the design system) -->
 <link rel="stylesheet" href="elements/theme.css">
@@ -45,16 +45,10 @@
         <div class="yearstamp" id="hk-year">1956</div>
       </div>
 
-      <!-- ===== WHY — a wall of dense characters most people couldn't read ===== -->
+      <!-- ===== WHY — writing as a barrier looming over the people who can't read it ===== -->
       <div class="scene" id="sc-wall">
         <div class="wall" id="wall"></div>
-        <div class="reader" id="wall-reader">
-          <svg viewBox="0 0 200 150" width="200" height="150" aria-hidden="true">
-            <circle cx="100" cy="44" r="34" fill="#232B33"/>
-            <path d="M40 150 Q40 86 100 86 Q160 86 160 150 Z" fill="#232B33"/>
-          </svg>
-        </div>
-        <div class="bub bub-q" id="wall-bub">?</div>
+        <div class="photocard" id="wall-people"><img src="assets/img/people.png" alt="" /><span class="pc-cap">the literacy drive, 1950s</span></div>
       </div>
 
       <!-- ===== WHY 2 — one genuinely complex character + a stroke counter ===== -->
@@ -74,7 +68,17 @@
           <div class="glyph" id="cut-simp"></div>
           <div class="glyph heart" id="cut-heart"></div>
         </div>
-        <div class="cascade" id="cut-cascade"></div>
+      </div>
+
+      <!-- ===== SCHEME — the official 1956 simplification document (the mass act) ===== -->
+      <div class="scene" id="sc-doc">
+        <div class="doc" id="doc">
+          <div class="doc-band">STATE COUNCIL OF THE P.R.C. · 1956</div>
+          <div class="doc-title">汉字简化方案</div>
+          <div class="doc-sub">the character simplification scheme</div>
+          <div class="doc-rows" id="doc-rows"></div>
+          <div class="doc-seal" id="doc-seal"><span>简</span></div>
+        </div>
       </div>
 
       <!-- ===== FASTER — slow many-stroke vs fast few-stroke (a racing pen) ===== -->
@@ -131,14 +135,14 @@
         <div class="yearstamp" id="sp-year">1986</div>
       </div>
 
-      <!-- ===== PUNCHLINE — top-down decree vs the people pushing back ===== -->
+      <!-- ===== PUNCHLINE — the people who write it set the limit ===== -->
       <div class="scene" id="sc-punch">
         <div class="cell">
           <div class="tzg"><span class="tzg-h"></span><span class="tzg-v"></span></div>
           <div class="glyph" id="pn-char"></div>
         </div>
         <div class="decree" id="pn-decree"><span class="seal"></span></div>
-        <div class="handsup" id="pn-hands"></div>
+        <div class="photocard" id="pn-people"><img src="assets/img/people.png" alt="" /></div>
       </div>
 
       <!-- ===== OUTRO ===== -->

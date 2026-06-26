@@ -1,0 +1,59 @@
+/* ============================================================
+   Stacktags video element — ZODIAC WHEEL (styles)
+   Positioning + states for mountZodiacWheel(). Import after theme.css.
+   White + turquoise, Noto Sans SC glyphs, no borders.
+   ============================================================ */
+.zw {
+  position: absolute; left: 50%; top: 50%;
+  width: calc(var(--R) * 2 + var(--zwg)); height: calc(var(--R) * 2 + var(--zwg));
+  transform: translate(-50%, -50%);
+}
+.zw-ring, .zw-hub, .zw-hand { position: absolute; inset: 0; }
+
+.zw-g {
+  position: absolute; left: 50%; top: 50%;
+  width: var(--zwg); height: var(--zwg);
+  margin-left: calc(var(--zwg) / -2); margin-top: calc(var(--zwg) / -2);
+  display: grid; place-items: center;
+  transform-origin: center center;
+  transform:
+    rotate(calc(var(--a) + var(--rot, 0deg)))
+    translate(0, calc(-1 * var(--R)))
+    rotate(calc(-1 * (var(--a) + var(--rot, 0deg))));
+  transition: transform 1.15s cubic-bezier(.2, .8, .2, 1);
+}
+.zw-gi {
+  display: inline-block; font-weight: 700; font-size: var(--zwg); line-height: 1;
+  font-family: 'Noto Sans SC', 'Inter', sans-serif; color: var(--stk-ink);
+  opacity: 0; transform: scale(.3); filter: blur(5px);
+  transition: opacity .26s ease, transform .5s cubic-bezier(.34, 1.7, .5, 1), color .5s ease, filter .26s ease;
+}
+.zw-g.in .zw-gi { opacity: 1; transform: scale(1); filter: none; }
+.zw-g.lit .zw-gi { color: var(--stk-teal); transform: scale(1.16); }
+.zw-g.glow .zw-gi { color: var(--stk-teal-d); transform: scale(1.36); filter: drop-shadow(0 0 26px rgba(53, 162, 146, .55)); }
+.zw-ring.gray .zw-g:not(.dragon) .zw-gi { color: #c6ced4; opacity: .5; transform: scale(.92); }
+.zw-ring.gray .zw-g.dragon .zw-gi { color: var(--stk-teal-d); }
+
+.zw-hub { display: grid; place-items: center; pointer-events: none;
+  opacity: 0; transform: scale(.9);
+  transition: opacity .35s ease, transform .45s cubic-bezier(.34, 1.6, .5, 1); }
+.zw-hub.in { opacity: 1; transform: none; }
+.zw-hub .hb-stack { display: flex; flex-direction: column; align-items: center; gap: 4px; text-align: center; }
+.zw-hub .hb-big { font: 900 168px/1 'Noto Sans SC', 'Inter'; color: var(--stk-teal-d);
+  filter: drop-shadow(0 0 30px rgba(53, 162, 146, .35)); display: flex; align-items: center; gap: 8px; }
+.zw-hub .hb-zh { font: 900 96px/1 'Noto Sans SC', 'Inter'; color: var(--stk-ink); letter-spacing: 2px; }
+.zw-hub .hb-py { font: 700 42px/1 'Inter'; color: var(--stk-teal-d); letter-spacing: .4px; }
+.zw-hub .hb-en { font: 600 34px/1.1 'Inter'; color: var(--stk-muted); }
+.zw-hub .hb-n  { font: 900 150px/1 'Inter'; color: var(--stk-teal); }
+.hb-babymark { width: 84px; height: 84px; }
+
+.zw-hand { opacity: 0; transition: opacity .4s ease; }
+.zw.clockmode .zw-hand { opacity: 1; }
+.zw-hand-line {
+  position: absolute; left: 50%; bottom: 50%; width: 12px; height: calc(var(--R) - 26px);
+  margin-left: -6px; background: var(--stk-teal-d); border-radius: 7px;
+  transform-origin: 50% 100%; transform: rotate(var(--h, 0deg));
+  transition: transform .9s cubic-bezier(.2, .8, .2, 1);
+}
+.zw-hand-cap { position: absolute; left: 50%; top: 50%; width: 30px; height: 30px; margin: -15px;
+  border-radius: 50%; background: var(--stk-teal-d); }

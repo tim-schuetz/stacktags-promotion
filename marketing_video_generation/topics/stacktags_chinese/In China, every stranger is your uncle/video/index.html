@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>In China, every stranger is your uncle</title>
+<link rel="icon" href="data:," />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@500;700;900&display=swap" rel="stylesheet">
+
+<!-- shared design system: tokens + grid + subtitles -->
+<link rel="stylesheet" href="elements/theme.css">
+<!-- dynamic depth-grid look (the camera grid styling reused by app.js) -->
+<link rel="stylesheet" href="elements/depth-transitions.css">
+<!-- this video's own scene styling -->
+<link rel="stylesheet" href="styles.css?v=1">
+</head>
+<body>
+<div class="wrap">
+  <div class="stage stk-grid-bg" id="stage">
+
+    <!-- persistent dynamic grid: the camera (zoom/pan) lives here -->
+    <div class="stk-depth2-grid" id="grid"></div>
+
+    <div class="scenes" id="scenes">
+
+      <!-- ============================================================
+           PEOPLE — three ordinary strangers on the street. Used TWICE:
+           the hook (everyone gets a family title) and the flip-side
+           (the same scene returns → visual rhyme). Each figure is a flat
+           cartoon (inline SVG); a turquoise kinship chip pops above it.
+           ============================================================ -->
+      <div class="scene" id="sc-people">
+        <div class="people" id="people">
+
+          <!-- LEFT — the shopkeeper (older man) : 叔叔 in both halves (the rhyme star) -->
+          <div class="person p-shop" id="p-shop">
+            <div class="prop prop-counter" aria-hidden="true">
+              <span class="goods g1"></span><span class="goods g2"></span><span class="goods g3"></span>
+            </div>
+            <svg class="fig" viewBox="0 0 200 300" aria-hidden="true">
+              <ellipse class="sh" cx="100" cy="288" rx="64" ry="13"/>
+              <path class="body bodyA" d="M44 300 V214 q0-56 56-56 t56 56 V300 Z"/>
+              <rect class="apron" x="74" y="206" width="52" height="92" rx="14"/>
+              <circle class="head" cx="100" cy="120" r="46"/>
+              <path class="hair hairGrey" d="M55 116 q-4-58 45-58 t45 58 q-12-26-45-26 t-45 26 Z"/>
+              <circle class="eye" cx="84" cy="120" r="5"/><circle class="eye" cx="116" cy="120" r="5"/>
+              <path class="smile" d="M82 140 q18 16 36 0"/>
+            </svg>
+          </div>
+
+          <!-- CENTER (hook) — the bus driver (older man) : 叔叔 -->
+          <div class="person p-bus" id="p-bus">
+            <svg class="fig" viewBox="0 0 200 300" aria-hidden="true">
+              <ellipse class="sh" cx="100" cy="288" rx="64" ry="13"/>
+              <path class="body bodyB" d="M44 300 V214 q0-56 56-56 t56 56 V300 Z"/>
+              <circle class="head" cx="100" cy="120" r="46"/>
+              <path class="cap" d="M55 116 A 46 46 0 0 1 145 116 L 145 122 L 55 122 Z"/>
+              <rect class="cap-brim" x="40" y="116" width="120" height="13" rx="6"/>
+              <circle class="eye" cx="84" cy="135" r="5"/><circle class="eye" cx="116" cy="135" r="5"/>
+              <path class="smile" d="M82 152 q18 15 36 0"/>
+            </svg>
+          </div>
+
+          <!-- CENTER (flip) — a young woman : 大姐 (revealed only in the flip-side) -->
+          <div class="person p-young" id="p-young">
+            <svg class="fig" viewBox="0 0 200 300" aria-hidden="true">
+              <ellipse class="sh" cx="100" cy="288" rx="60" ry="12"/>
+              <path class="body bodyC" d="M48 300 V218 q0-52 52-52 t52 52 V300 Z"/>
+              <path class="hair hairDark" d="M52 118 q-6-60 48-60 t48 60 q4 40-8 70 q-6-46-40-46 t-40 46 q-12-30-8-70 Z"/>
+              <circle class="head" cx="100" cy="122" r="44"/>
+              <path class="hair hairDark" d="M54 112 q4-52 46-52 t46 52 q-12-30-46-30 t-46 30 Z"/>
+              <circle class="eye" cx="85" cy="124" r="5"/><circle class="eye" cx="115" cy="124" r="5"/>
+              <path class="smile" d="M84 142 q16 15 32 0"/>
+            </svg>
+          </div>
+
+          <!-- RIGHT — the neighbor (older woman) : 阿姨 in both halves -->
+          <div class="person p-old" id="p-old">
+            <div class="prop prop-door" aria-hidden="true"></div>
+            <svg class="fig" viewBox="0 0 200 300" aria-hidden="true">
+              <ellipse class="sh" cx="100" cy="288" rx="60" ry="12"/>
+              <path class="body bodyD" d="M48 300 V218 q0-52 52-52 t52 52 V300 Z"/>
+              <circle class="head" cx="100" cy="122" r="44"/>
+              <path class="hair hairGrey" d="M54 122 q-6-64 46-64 t46 64 q-10-30-46-30 t-46 30 Z"/>
+              <circle class="bun" cx="100" cy="74" r="16"/>
+              <circle class="eye" cx="85" cy="124" r="5"/><circle class="eye" cx="115" cy="124" r="5"/>
+              <path class="smile" d="M84 142 q16 15 32 0"/>
+            </svg>
+          </div>
+
+          <!-- kinship chips that pop above the figures -->
+          <div class="pchip" id="chip-shop"><span class="zh">叔叔</span><span class="py">shūshu</span></div>
+          <div class="pchip" id="chip-bus"><span class="zh">叔叔</span><span class="py">shūshu</span></div>
+          <div class="pchip" id="chip-young"><span class="zh">大姐</span><span class="py">dàjiě</span></div>
+          <div class="pchip" id="chip-old"><span class="zh">阿姨</span><span class="py">āyí</span></div>
+
+          <!-- branches that sketch the strangers into a family tree (punchline) -->
+          <svg class="branches" id="branches" viewBox="0 0 1080 1920" preserveAspectRatio="none" aria-hidden="true">
+            <path class="branch" d="M250 760 C250 600 540 600 540 470"/>
+            <path class="branch" d="M540 740 C540 600 540 560 540 470"/>
+            <path class="branch" d="M830 760 C830 600 540 600 540 470"/>
+          </svg>
+
+          <!-- the three titles fuse into ONE lazy English word -->
+          <div class="uncbox" id="uncbox-people"><span class="w">uncle</span><b class="q">?</b></div>
+
+        </div>
+      </div>
+
+      <!-- ============================================================
+           MAP — the kinship map (persistent hero). The "uncle?" box
+           cracks open into a structured family tree; real Hanzi nodes
+           light up as they are named. The empty centre = "no neutral
+           uncle". Axis labels sweep across for the WHY beat.
+           ============================================================ -->
+      <div class="scene" id="sc-map">
+        <div class="map" id="map">
+
+          <svg class="map-links" id="map-links" viewBox="0 0 1080 1920" preserveAspectRatio="none" aria-hidden="true">
+            <!-- spine from the box down, then a fork to the two sides -->
+            <path class="lk" d="M540 372 V470"/>
+            <path class="lk" d="M300 470 H780"/>
+            <path class="lk" d="M300 470 V548"/>
+            <path class="lk" d="M780 470 V548"/>
+            <!-- father's side drops -->
+            <path class="lk" d="M300 620 V700"/>
+            <path class="lk" d="M300 620 V900 M300 900 H300"/>
+            <path class="lk" d="M300 700 V1100"/>
+            <path class="lk" d="M300 760 H236 M300 960 H236 M300 1160 H236"/>
+            <!-- mother's side drops -->
+            <path class="lk" d="M780 620 V760"/>
+            <path class="lk" d="M780 760 H844 M780 960 H844"/>
+            <path class="lk" d="M780 620 V960"/>
+          </svg>
+
+          <!-- the lumped English word -->
+          <div class="uncbox big" id="uncbox-map"><span class="w">uncle</span><b class="q">?</b></div>
+
+          <!-- the crowd English crams into one word -->
+          <div class="crowd" id="crowd" aria-hidden="true">
+            <span class="sm"></span><span class="sm"></span><span class="sm"></span>
+            <span class="sm"></span><span class="sm"></span><span class="sm"></span>
+          </div>
+
+          <!-- column headers -->
+          <div class="colhead left" id="col-fu"><span class="cz">父</span><span class="cl">father's side</span></div>
+          <div class="colhead right" id="col-mu"><span class="cz">母</span><span class="cl">mother's side</span></div>
+
+          <!-- the empty centre where a neutral "uncle" would sit -->
+          <div class="neutral" id="neutral"><span class="nq">uncle</span><span class="nx">✕</span></div>
+
+          <!-- father's-side nodes -->
+          <div class="node" id="n-bobo" style="--x:300px;--y:760px">
+            <span class="zh">伯伯</span><span class="py">bóbo</span><span class="en">father's older brother</span></div>
+          <div class="node" id="n-shushu" style="--x:300px;--y:960px">
+            <span class="zh">叔叔</span><span class="py">shūshu</span><span class="en">father's younger brother</span></div>
+          <div class="node" id="n-gufu" style="--x:300px;--y:1160px">
+            <span class="zh">姑父</span><span class="py">gūfu</span><span class="en">husband of father's sister</span></div>
+          <!-- mother's-side nodes -->
+          <div class="node" id="n-jiujiu" style="--x:780px;--y:760px">
+            <span class="zh">舅舅</span><span class="py">jiùjiu</span><span class="en">mother's brother</span></div>
+          <div class="node" id="n-yifu" style="--x:780px;--y:960px">
+            <span class="zh">姨父</span><span class="py">yífu</span><span class="en">husband of mother's sister</span></div>
+          <!-- faint extra nodes — make "at least eight" honest -->
+          <div class="node faint" id="n-gugu" style="--x:124px;--y:760px"><span class="zh">姑姑</span><span class="py">gūgu</span></div>
+          <div class="node faint" id="n-shen" style="--x:124px;--y:960px"><span class="zh">婶婶</span><span class="py">shěnshen</span></div>
+          <div class="node faint" id="n-bomu" style="--x:124px;--y:1160px"><span class="zh">伯母</span><span class="py">bómǔ</span></div>
+          <div class="node faint" id="n-yi" style="--x:956px;--y:760px"><span class="zh">姨</span><span class="py">yí</span></div>
+          <div class="node faint" id="n-jiuma" style="--x:956px;--y:960px"><span class="zh">舅妈</span><span class="py">jiùmā</span></div>
+
+          <!-- axis labels for the WHY beat -->
+          <div class="axis" id="ax-side"><span class="az">哪边</span><span class="al">which side</span></div>
+          <div class="axis" id="ax-gen"><span class="az">哪辈</span><span class="al">which generation</span></div>
+          <div class="axis" id="ax-order"><span class="az">排行</span><span class="al">birth order</span></div>
+
+        </div>
+      </div>
+
+      <!-- ============================================================
+           OUTRO endcard
+           ============================================================ -->
+      <div class="scene" id="sc-outro">
+        <div class="ec" id="outro-ec">
+          <div id="outro-logo"></div>
+          <div class="wm"><span class="s">stack</span><span class="t">tags</span></div>
+          <div class="url">stacktags.io</div>
+        </div>
+      </div>
+
+    </div><!-- /scenes -->
+
+    <!-- subtitles mirror the narration (grey; key words turquoise) -->
+    <div class="stk-subs" id="subs"><span class="stk-subs-line" id="subs-line"></span></div>
+
+  </div><!-- /stage -->
+</div>
+
+<!-- HUD (hidden in clean/capture mode) -->
+<div id="hud">
+  <button id="btn-play">▶ Play</button>
+  <input id="seek" type="range" min="0" max="84" step="0.01" value="0" />
+  <span id="tcode">0.0</span>
+</div>
+
+<audio id="vo" src="../script_voice.mp3" preload="auto"></audio>
+
+<!-- elements -->
+<script src="elements/outro.js"></script>
+
+<!-- this video's choreography -->
+<script src="app.js?v=1"></script>
+</body>
+</html>

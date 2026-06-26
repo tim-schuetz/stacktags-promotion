@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>thumbnail — The plan to replace Chinese characters with the alphabet</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Noto+Sans+SC:wght@700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../video/elements/theme.css">
+<style>
+  html, body { margin: 0; height: 100%; background: #20262b; }
+  .wrap { display: grid; place-items: center; height: 100%; }
+  .thumb { position: relative; width: 1280px; height: 720px; overflow: hidden; background: #fff;
+    background-image:
+      linear-gradient(to right,  rgba(35,43,51,.06) 3px, transparent 3px),
+      linear-gradient(to bottom, rgba(35,43,51,.06) 3px, transparent 3px);
+    background-size: 96px 96px; background-position: center; font-family: 'Inter', sans-serif; }
+
+  /* faint turquoise glow behind the headline */
+  .bg-glow { position: absolute; left: -140px; top: -120px; width: 560px; height: 560px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(53,162,146,.12) 0%, rgba(53,162,146,0) 68%); }
+
+  /* headline (left) */
+  .hl-wrap { position: absolute; left: 84px; top: 96px; width: 690px; }
+  .kicker { font-weight: 800; font-size: 25px; letter-spacing: 4px; color: var(--stk-muted); margin-bottom: 24px; white-space: nowrap; }
+  .hl { margin: 0; font-weight: 900; font-size: 92px; line-height: .98; letter-spacing: -3.5px; color: var(--stk-ink); }
+  .hl .accent { color: var(--stk-teal); }
+  .sub { margin-top: 36px; font-weight: 700; font-size: 32px; color: var(--stk-ink-2); letter-spacing: -.3px; line-height: 1.2; }
+  .sub .zh { font-family: 'Noto Sans SC', sans-serif; font-weight: 900; color: var(--stk-ink); }
+  .sub .k { color: var(--stk-teal-d); }
+
+  /* right-side prop: the character on "life support" — a heartbeat fed by pinyin */
+  .prop { position: absolute; right: 70px; top: 50%; transform: translateY(-50%);
+    display: flex; flex-direction: column; align-items: center; gap: 30px; }
+  .hero-card { position: relative; width: 432px; height: 432px; border-radius: 52px; background: #fff;
+    box-shadow: 0 40px 80px rgba(20,40,33,.16), 0 8px 26px rgba(20,40,33,.07);
+    display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; }
+  .t-char { font-family: 'Noto Sans SC', sans-serif; font-weight: 900; font-size: 244px; line-height: 1; color: var(--stk-ink); margin-top: -8px; }
+  .t-pulse { width: 348px; height: 72px; display: block; }
+  .t-pulse path { fill: none; stroke: var(--stk-teal); stroke-width: 9; stroke-linecap: round; stroke-linejoin: round; }
+  .t-py { display: flex; align-items: baseline; gap: 16px; }
+  .t-py .zh { font-family: 'Noto Sans SC', sans-serif; font-weight: 900; font-size: 66px; color: var(--stk-teal-d); letter-spacing: 2px; }
+  .t-py .rom { font-weight: 800; font-size: 40px; color: var(--stk-muted); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="thumb stk-grid-bg" id="thumb">
+    <div class="bg-glow"></div>
+    <div class="hl-wrap">
+      <div class="kicker">LEARN CHINESE · PINYIN</div>
+      <h1 class="hl">Built to kill</h1>
+      <h1 class="hl">the characters.</h1>
+      <h1 class="hl"><span class="accent">It saved them.</span></h1>
+      <div class="sub">Pinyin was meant to replace <span class="zh">汉字</span> —<br>now it's their <span class="k">life support</span>.</div>
+    </div>
+    <div class="prop">
+      <div class="hero-card">
+        <div class="t-char">字</div>
+        <svg class="t-pulse" viewBox="0 0 360 72"><path d="M0 38 H120 l13 -26 l18 50 l15 -40 l11 16 H360"/></svg>
+      </div>
+      <div class="t-py"><span class="zh">拼音</span><span class="rom">pīnyīn</span></div>
+    </div>
+  </div>
+</div>
+<script>window.__ready = true;</script>
+</body>
+</html>

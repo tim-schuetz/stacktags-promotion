@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Thumbnail — How emperors created and deleted characters</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@700;900&text=曌&display=swap" rel="stylesheet">
+<style>
+  :root { --ink:#232B33; --ink2:#4a5560; --muted:#8a949d; --teal:#35A292; --teal-d:#119271; }
+  html, body { margin:0; padding:0; background:#0b0e12; }
+  #thumb { position:relative; width:1280px; height:720px; overflow:hidden;
+    font-family:'Inter',system-ui,sans-serif; -webkit-font-smoothing:antialiased;
+    background-color:#fbfcfc;
+    background-image:
+      linear-gradient(rgba(35,43,51,0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(35,43,51,0.05) 1px, transparent 1px);
+    background-size:92px 92px; background-position:center; }
+
+  /* headline */
+  .hl { position:absolute; left:80px; top:120px; z-index:3; }
+  .hl .ln { font-weight:900; font-size:146px; line-height:0.92; letter-spacing:-6px; color:var(--ink); }
+  .hl .ln.teal { color:var(--teal-d); }
+  .hl .sub { margin-top:32px; max-width:540px; font-weight:700; font-size:35px; line-height:1.25; color:var(--muted); letter-spacing:-0.4px; }
+  .hl .sub b { color:var(--teal-d); }
+
+  /* visual: the empress who minted her own name 曌 */
+  .fig { position:absolute; right:8px; bottom:0; height:690px; z-index:1;
+    filter:drop-shadow(0 18px 34px rgba(20,40,33,.18)); }
+  .glow { position:absolute; right:288px; bottom:118px; width:400px; height:400px; border-radius:50%;
+    background:radial-gradient(circle, rgba(53,162,146,.30) 0%, rgba(53,162,146,.07) 55%, transparent 72%); z-index:1; }
+  .zhao { position:absolute; right:352px; bottom:150px; z-index:2;
+    font-family:'Noto Sans SC',sans-serif; font-weight:900; font-size:300px; line-height:1; color:var(--teal-d);
+    text-shadow:0 0 48px rgba(53,162,146,.55), 0 20px 40px rgba(17,146,113,.32); }
+</style>
+</head>
+<body>
+<div id="thumb">
+  <div class="glow"></div>
+  <img class="fig" src="../video/assets/img/wuzetian_dashed.png" alt="" />
+  <div class="zhao">曌</div>
+  <div class="hl">
+    <div class="ln">Delete.</div>
+    <div class="ln teal">Invent.</div>
+    <div class="ln">Decree.</div>
+    <div class="sub">How Chinese emperors <b>rewrote their own language</b> — one character at a time.</div>
+  </div>
+</div>
+<script>
+  (async () => { try { await document.fonts.ready; } catch (e) {} window.__ready = true; })();
+</script>
+</body>
+</html>

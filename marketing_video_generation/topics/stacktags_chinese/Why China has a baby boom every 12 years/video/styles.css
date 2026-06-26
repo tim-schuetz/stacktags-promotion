@@ -1,0 +1,299 @@
+/* ===========================================================================
+   "Why China has a baby boom every 12 years" — scene styling.
+   Hero device: a ZODIAC WHEEL that behaves like a clock. It locks on the
+   Dragon 龙 every twelve notches and drives the birth pulse. White + turquoise,
+   Inter (CJK in Noto Sans SC), thin grey grid, no borders. The only serif is
+   the recreated newspaper clipping (a deliberate realistic artefact).
+   =========================================================================== */
+
+* { box-sizing: border-box; }
+html, body { margin: 0; height: 100%; background: #0c0f12; overflow: hidden; }
+.wrap { position: fixed; inset: 0; display: grid; place-items: center; }
+.stage {
+  position: relative; width: 1080px; height: 1920px; overflow: hidden;
+  transform-origin: center center; background: #fff;
+}
+#grid { z-index: 0; }
+.scenes { position: absolute; inset: 0; z-index: 1; }
+.scene {
+  position: absolute; inset: 0; opacity: 0;
+  display: flex; align-items: center; justify-content: center;
+  transform: scale(1.06);
+  transform-origin: center center;
+  will-change: transform, opacity, filter;
+  transition: opacity .6s ease, transform .85s cubic-bezier(.2,.8,.2,1);
+}
+.scene.active { opacity: 1; transform: scale(1); }
+.cjk { font-family: 'Noto Sans SC', 'Inter', sans-serif; }
+
+/* ---- HUD (hidden in clean/capture mode) ---- */
+#hud {
+  position: fixed; left: 50%; bottom: 18px; transform: translateX(-50%);
+  display: flex; align-items: center; gap: 12px; z-index: 99;
+  background: #11171d; color: #cfe; padding: 8px 14px; border-radius: 12px;
+  font: 600 14px/1 'Inter', sans-serif;
+}
+#hud button { background: var(--stk-teal); color: #fff; border: 0; border-radius: 8px; padding: 8px 12px; font-weight: 800; cursor: pointer; }
+#hud input[type=range] { width: 520px; }
+body.clean #hud { display: none; }
+body.clean { background: #fff; }
+
+/* generic reveal helper */
+.r { opacity: 0; transform: translateY(22px); transition: opacity .34s ease, transform .5s cubic-bezier(.2,.8,.2,1); }
+.r.show, .r.pop { opacity: 1; transform: none; }
+
+/* ===========================================================================
+   ZODIAC WHEEL  (the hero device)
+   =========================================================================== */
+.wheel-host { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); }
+.zw {
+  position: absolute; left: 50%; top: 50%;
+  width: calc(var(--R) * 2 + var(--zwg)); height: calc(var(--R) * 2 + var(--zwg));
+  transform: translate(-50%, -50%);
+}
+.zw-ring, .zw-hub, .zw-hand { position: absolute; inset: 0; }
+
+.zw-g {
+  position: absolute; left: 50%; top: 50%;
+  width: var(--zwg); height: var(--zwg);
+  margin-left: calc(var(--zwg) / -2); margin-top: calc(var(--zwg) / -2);
+  display: grid; place-items: center;
+  transform-origin: center center;
+  transform:
+    rotate(calc(var(--a) + var(--rot, 0deg)))
+    translate(0, calc(-1 * var(--R)))
+    rotate(calc(-1 * (var(--a) + var(--rot, 0deg))));
+  transition: transform 1.15s cubic-bezier(.2, .8, .2, 1);
+}
+.zw-gi {
+  display: inline-block; font-weight: 700; font-size: var(--zwg); line-height: 1;
+  font-family: 'Noto Sans SC', 'Inter', sans-serif; color: var(--stk-ink);
+  opacity: 0; transform: scale(.3); filter: blur(5px);
+  transition: opacity .26s ease, transform .5s cubic-bezier(.34, 1.7, .5, 1), color .5s ease, filter .26s ease;
+}
+.zw-g.in .zw-gi { opacity: 1; transform: scale(1); filter: none; }
+.zw-g.lit .zw-gi { color: var(--stk-teal); transform: scale(1.16); }
+.zw-g.glow .zw-gi { color: var(--stk-teal-d); transform: scale(1.36); filter: drop-shadow(0 0 26px rgba(53, 162, 146, .55)); }
+.zw-ring.gray .zw-g:not(.dragon) .zw-gi { color: #c6ced4; opacity: .5; transform: scale(.92); }
+.zw-ring.gray .zw-g.dragon .zw-gi { color: var(--stk-teal-d); }
+
+/* centre hub (labels / hero glyph) */
+.zw-hub { display: grid; place-items: center; pointer-events: none;
+  opacity: 0; transform: scale(.9);
+  transition: opacity .35s ease, transform .45s cubic-bezier(.34, 1.6, .5, 1); }
+.zw-hub.in { opacity: 1; transform: none; }
+.zw-hub .hb-stack { display: flex; flex-direction: column; align-items: center; gap: 4px; text-align: center; }
+.zw-hub .hb-big { font: 900 168px/1 'Noto Sans SC', 'Inter'; color: var(--stk-teal-d);
+  filter: drop-shadow(0 0 30px rgba(53, 162, 146, .35)); display: flex; align-items: center; gap: 8px; }
+.zw-hub .hb-zh { font: 900 96px/1 'Noto Sans SC', 'Inter'; color: var(--stk-ink); letter-spacing: 2px; }
+.zw-hub .hb-py { font: 700 42px/1 'Inter'; color: var(--stk-teal-d); letter-spacing: .4px; }
+.zw-hub .hb-en { font: 600 34px/1.1 'Inter'; color: var(--stk-muted); }
+.zw-hub .hb-n  { font: 900 150px/1 'Inter'; color: var(--stk-teal); }
+/* the little swaddled-baby mark that grows beside 龙 for 龙宝宝 */
+.hb-babymark { width: 84px; height: 84px; }
+
+/* clock hand (outro) */
+.zw-hand { opacity: 0; transition: opacity .4s ease; }
+.zw.clockmode .zw-hand { opacity: 1; }
+.zw-hand-line {
+  position: absolute; left: 50%; bottom: 50%; width: 12px; height: calc(var(--R) - 26px);
+  margin-left: -6px; background: var(--stk-teal-d); border-radius: 7px;
+  transform-origin: 50% 100%; transform: rotate(var(--h, 0deg));
+  transition: transform .9s cubic-bezier(.2, .8, .2, 1);
+}
+.zw-hand-cap { position: absolute; left: 50%; top: 50%; width: 30px; height: 30px; margin: -15px;
+  border-radius: 50%; background: var(--stk-teal-d); }
+
+/* ===========================================================================
+   SCENE 1 — HOOK: year-ticker (12-year rhythm of baby booms)
+   =========================================================================== */
+.ticker {
+  position: absolute; left: 50%; top: 50%; transform: translate(-50%, -56%);
+  width: 940px; height: 420px;
+  opacity: 0; transition: opacity .5s ease, transform .7s cubic-bezier(.2, .8, .2, 1);
+}
+.ticker.on { opacity: 1; }
+.ticker.out { opacity: 0; transform: translate(-50%, -74%) scale(.86); }
+.tk-line { position: absolute; left: 0; right: 0; bottom: 150px; height: 6px; background: #e2e7ea; border-radius: 3px; }
+.tk-years { position: absolute; left: 0; right: 0; bottom: 96px; height: 40px; }
+.tk-year { position: absolute; transform: translateX(-50%); font: 600 30px/1 'Inter'; color: #b8c0c6; }
+.tk-year.dragon { color: var(--stk-teal-d); font-weight: 900; font-size: 36px; }
+.tk-bursts { position: absolute; inset: 0; }
+.burst { position: absolute; bottom: 156px; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; }
+.burst .stem { width: 6px; height: 46px; background: var(--stk-teal); border-radius: 3px; opacity: 0; transition: opacity .25s ease, height .4s cubic-bezier(.2,.8,.2,1); }
+.burst.pop .stem { opacity: 1; }
+.burst .babies { display: flex; gap: 10px; margin-bottom: 10px; }
+.burst .baby { width: 50px; height: 50px; opacity: 0; transform: scale(.2) translateY(24px);
+  transition: opacity .26s ease, transform .55s cubic-bezier(.34, 1.7, .5, 1); }
+.burst.pop .baby { opacity: 1; transform: none; }
+.burst .baby:nth-child(2) { transition-delay: .06s; }
+.burst .baby:nth-child(3) { transition-delay: .12s; }
+.burst .baby svg { width: 100%; height: 100%; }
+.tk-gap { position: absolute; bottom: 196px; transform: translateX(-50%);
+  font: 700 26px/1 'Inter'; color: var(--stk-muted); white-space: nowrap;
+  opacity: 0; transition: opacity .4s ease; }
+.tk-gap.show { opacity: 1; }
+
+/* ===========================================================================
+   SCENE 1 — HOOK: elimination (not the economy, not policy)
+   =========================================================================== */
+.elim {
+  position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+  display: flex; gap: 150px; opacity: 0; transition: opacity .4s ease;
+}
+.elim.on { opacity: 1; }
+.elim-item { position: relative; display: flex; flex-direction: column; align-items: center; gap: 22px;
+  opacity: 0; transform: translateY(46px) scale(.9);
+  transition: opacity .4s ease, transform .55s cubic-bezier(.34, 1.6, .5, 1); }
+.elim-item.show { opacity: 1; transform: none; }
+.elim-item.struck { opacity: .42; }
+.elim-ic { width: 190px; height: 190px; border-radius: 44px; background: #fff;
+  box-shadow: 0 18px 44px rgba(20, 40, 33, .12); display: grid; place-items: center; }
+.elim-ic svg { width: 104px; height: 104px; }
+.elim-lab { font: 800 46px/1 'Inter'; color: var(--stk-ink-2); }
+.elim-x { position: absolute; left: -16px; right: -16px; top: 95px; height: 11px; background: var(--stk-muted);
+  border-radius: 6px; transform: rotate(-11deg) scaleX(0); transform-origin: left center;
+  transition: transform .34s cubic-bezier(.4, 0, .2, 1); }
+.elim-item.struck .elim-x { transform: rotate(-11deg) scaleX(1); }
+
+/* ===========================================================================
+   SCENE 1 — BELIEF: the parents who plan around it
+   =========================================================================== */
+.parents {
+  position: absolute; left: 50%; bottom: 232px; transform: translateX(-50%);
+  display: flex; align-items: flex-end; gap: 26px;
+  opacity: 0; transition: opacity .5s ease;
+}
+.parents.on { opacity: 1; }
+.parent { width: 150px; opacity: 0; transform: translateY(54px);
+  transition: opacity .45s ease, transform .6s cubic-bezier(.2, .8, .2, 1); }
+.parents.on .parent { opacity: 1; transform: none; }
+.parent:nth-child(2) { transition-delay: .1s; }
+.parent svg { width: 100%; height: auto; display: block; filter: drop-shadow(0 14px 24px rgba(20, 40, 33, .16)); }
+.pthought {
+  position: absolute; left: 50%; bottom: 250px; transform: translateX(-50%) scale(.4);
+  width: 150px; height: 150px; border-radius: 50%; background: #fff;
+  box-shadow: 0 16px 34px rgba(20, 40, 33, .16); display: grid; place-items: center;
+  opacity: 0; transition: opacity .3s ease, transform .5s cubic-bezier(.34, 1.7, .5, 1);
+}
+.parents.think .pthought { opacity: 1; transform: translateX(-50%) scale(1); }
+.pthought .cjk { font: 900 92px/1 'Noto Sans SC'; color: var(--stk-teal-d); }
+.pthought::before, .pthought::after { content: ''; position: absolute; bottom: -22px; left: 30px;
+  width: 34px; height: 34px; border-radius: 50%; background: #fff; box-shadow: 0 8px 16px rgba(20, 40, 33, .12); }
+.pthought::after { bottom: -46px; left: 12px; width: 20px; height: 20px; }
+
+/* ===========================================================================
+   SCENE 2 — DATA: births chart + recreated news clipping
+   =========================================================================== */
+.data-title { position: absolute; left: 50%; top: 320px; transform: translateX(-50%);
+  font: 800 46px/1 'Inter'; letter-spacing: -.6px; color: var(--stk-ink); text-align: center; white-space: nowrap;
+  opacity: 0; transition: opacity .4s ease, transform .5s ease; }
+.data-title.show { opacity: 1; }
+.data-title .dt-zh { color: var(--stk-teal-d); }
+.chart-host { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 940px; height: 720px; }
+.bc-svg { width: 100%; height: 100%; overflow: visible; display: block; }
+.bc-grid line { stroke: rgba(35, 43, 51, .10); stroke-width: 2; }
+.bc-band { fill: rgba(53, 162, 146, .10); }
+.bc-band.hot { fill: rgba(53, 162, 146, .20); }
+.bc-line { fill: none; stroke: var(--stk-teal); stroke-width: 7; stroke-linecap: round; stroke-linejoin: round; }
+.bc-dot { fill: var(--stk-teal-d); }
+.bc-dot-halo { fill: var(--stk-teal); opacity: .22; }
+.bc-tick { font: 700 42px/1 'Noto Sans SC', 'Inter'; fill: var(--stk-teal-d); text-anchor: middle;
+  opacity: 0; transition: opacity .3s ease; }
+.bc-tick.show { opacity: 1; }
+.bc-xlab { font: 600 26px/1 'Inter'; fill: var(--stk-muted); text-anchor: middle; }
+
+.newscard {
+  position: absolute; left: 50%; top: 50%; transform: translate(-50%, 70px) rotate(-3deg) scale(.86);
+  width: 700px; background: #fbfaf6; padding: 34px 40px 40px; border-radius: 6px;
+  box-shadow: 0 34px 64px rgba(20, 40, 33, .26);
+  opacity: 0; transition: opacity .4s ease, transform .6s cubic-bezier(.2, .8, .2, 1);
+}
+.newscard.show { opacity: 1; transform: translate(-50%, 70px) rotate(-3deg) scale(1); }
+.nc-masthead { display: flex; justify-content: space-between; align-items: baseline;
+  border-bottom: 3px solid #232B33; padding-bottom: 10px; }
+.nc-name { font: 900 40px/1 'Noto Serif', serif; letter-spacing: .5px; color: #232B33; }
+.nc-date { font: 600 22px/1 'Inter'; color: var(--stk-muted); }
+.nc-kicker { font: 800 20px/1 'Inter'; letter-spacing: 2.5px; color: var(--stk-teal-d); margin-top: 16px; }
+.nc-head { font: 900 44px/1.14 'Noto Serif', serif; color: #1b2228; margin-top: 8px; }
+.nc-head em { font-style: italic; color: var(--stk-teal-d); }
+.nc-body { display: flex; gap: 16px; margin-top: 22px; }
+.nc-col { flex: 1; height: 150px; border-radius: 2px;
+  background: repeating-linear-gradient(#e6e2d8 0 2px, transparent 2px 15px); }
+
+.data-cap { position: absolute; left: 50%; bottom: 360px; transform: translateX(-50%) translateY(14px);
+  font: 900 52px/1 'Inter'; letter-spacing: -.6px; color: var(--stk-teal-d);
+  opacity: 0; transition: opacity .4s ease, transform .5s cubic-bezier(.2, .8, .2, 1); }
+.data-cap.show { opacity: 1; transform: translateX(-50%); }
+
+/* ===========================================================================
+   SCENE 3 — TWIST: one dragon-baby multiplies into a crowd
+   =========================================================================== */
+.twist-stage { position: absolute; inset: 0; }
+.crowd { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+  display: grid; grid-template-columns: repeat(6, 116px); gap: 8px 6px; justify-content: center; align-content: center;
+  transition: transform .6s cubic-bezier(.2, .8, .2, 1); }
+.crowd.lean { transform: translate(-50%, -54%) scale(1.03); }
+.kid { width: 116px; opacity: 0; transform: translateY(26px) scale(.5);
+  transition: opacity .3s ease, transform .5s cubic-bezier(.34, 1.6, .5, 1); }
+.kid.in { opacity: 1; transform: none; }
+.kid svg { width: 100%; height: auto; display: block; }
+.crowd.shine .kid svg { filter: drop-shadow(0 0 12px rgba(53, 162, 146, .55)); }
+
+/* the single hero dragon-baby that opens the twist, then multiplies */
+.twist-hero { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+  display: flex; flex-direction: column; align-items: center; gap: 18px;
+  opacity: 0; transition: opacity .4s ease, transform .5s cubic-bezier(.34, 1.6, .5, 1); }
+.twist-hero.show { opacity: 1; }
+.twist-hero.gone { opacity: 0; transform: translate(-50%, -50%) scale(.6); }
+.th-kid { width: 220px; }
+.th-kid svg { width: 100%; height: auto; display: block; filter: drop-shadow(0 18px 30px rgba(20, 40, 33, .18)); }
+.th-label { display: flex; flex-direction: column; align-items: center; gap: 4px; text-align: center; }
+.th-label .kl-zh { font: 900 78px/1 'Noto Sans SC', 'Inter'; color: var(--stk-teal-d); }
+.th-label .kl-py { font: 700 38px/1 'Inter'; color: var(--stk-teal-d); }
+.th-label .kl-en { font: 600 34px/1 'Inter'; color: var(--stk-muted); }
+
+.seat { position: absolute; left: 50%; bottom: 250px; transform: translateX(-50%) translateY(30px);
+  display: flex; flex-direction: column; align-items: center; gap: 10px;
+  opacity: 0; transition: opacity .4s ease, transform .5s cubic-bezier(.34, 1.6, .5, 1); }
+.seat.show { opacity: 1; transform: translateX(-50%); }
+.seat-ic { width: 140px; height: 140px; border-radius: 34px; background: var(--stk-teal-soft);
+  display: grid; place-items: center; }
+.seat-ic svg { width: 86px; height: 86px; }
+.seat-lab { font: 800 38px/1 'Inter'; color: var(--stk-teal-d); }
+
+/* ===========================================================================
+   SCENE 4 — PUNCHLINE: wheel-as-clock over China, line pulses
+   =========================================================================== */
+.china-bg { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -54%); width: 1020px;
+  opacity: 0; transition: opacity .9s ease; }
+.china-bg.show { opacity: .12; }
+.china-bg svg { width: 100%; height: auto; display: block; }
+.china-bg svg path { fill: var(--stk-teal); }
+.punch-clock { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -54%); }
+.pulse-line { position: absolute; left: 50%; bottom: 388px; transform: translateX(-50%); width: 780px; height: 200px;
+  opacity: 0; transition: opacity .5s ease; }
+.pulse-line.show { opacity: 1; }
+.pl-base { stroke: #dfe4e7; stroke-width: 5; fill: none; }
+.pl-line { stroke: var(--stk-teal); stroke-width: 7; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+.pl-area { fill: rgba(53, 162, 146, .12); }
+
+/* ===========================================================================
+   OUTRO endcard  (default outro element)
+   =========================================================================== */
+#sc-outro .ec { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; }
+#sc-outro #outro-logo svg { display: block; }
+#sc-outro #outro-logo .lyr { opacity: 0; transform: translateY(40px) scale(.9); transform-origin: center;
+  transition: opacity .5s ease, transform .6s cubic-bezier(.34, 1.6, .5, 1); }
+#sc-outro #outro-logo .chev { opacity: 0; transition: opacity .5s ease .2s; }
+#sc-outro.go #outro-logo .lyr { opacity: 1; transform: none; }
+#sc-outro.go #outro-logo .lyr:nth-child(1) { transition-delay: .05s } #sc-outro.go #outro-logo .lyr:nth-child(2) { transition-delay: .14s }
+#sc-outro.go #outro-logo .lyr:nth-child(3) { transition-delay: .23s } #sc-outro.go #outro-logo .lyr:nth-child(4) { transition-delay: .32s }
+#sc-outro.go #outro-logo .chev { opacity: 1; }
+#sc-outro .wm { font: 900 92px/1 'Inter'; letter-spacing: -2px; margin-top: 18px;
+  opacity: 0; transform: translateY(20px); transition: opacity .5s ease .4s, transform .5s ease .4s; }
+#sc-outro.go .wm { opacity: 1; transform: none; }
+#sc-outro .wm .s { color: var(--stk-ink); } #sc-outro .wm .t { color: var(--stk-teal); }
+#sc-outro .url { font: 700 40px/1 'Inter'; color: var(--stk-muted); margin-top: 14px;
+  opacity: 0; transition: opacity .5s ease .6s; }
+#sc-outro.go .url { opacity: 1; }

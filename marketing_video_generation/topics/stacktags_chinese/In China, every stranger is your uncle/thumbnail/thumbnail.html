@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>thumbnail — In China, every stranger is your uncle</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Noto+Sans+SC:wght@700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../video/elements/theme.css">
+<style>
+  html, body { margin: 0; height: 100%; background: #20262b; }
+  .wrap { display: grid; place-items: center; height: 100%; }
+  .thumb { position: relative; width: 1280px; height: 720px; overflow: hidden; background: #fff;
+    background-image:
+      linear-gradient(to right,  rgba(35,43,51,.06) 3px, transparent 3px),
+      linear-gradient(to bottom, rgba(35,43,51,.06) 3px, transparent 3px);
+    background-size: 96px 96px; background-position: center; font-family: 'Inter', sans-serif; }
+
+  /* faint turquoise glow behind the headline */
+  .bg-glow { position: absolute; left: -140px; top: -120px; width: 560px; height: 560px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(53,162,146,.13) 0%, rgba(53,162,146,0) 68%); }
+
+  /* headline (left) */
+  .hl-wrap { position: absolute; left: 84px; top: 120px; width: 600px; }
+  .kicker { font-weight: 800; font-size: 25px; letter-spacing: 4px; color: var(--stk-muted); margin-bottom: 22px; white-space: nowrap; }
+  .hl { margin: 0; font-weight: 900; font-size: 100px; line-height: .96; letter-spacing: -4px; color: var(--stk-ink); }
+  .hl .accent { color: var(--stk-teal); }
+  .hl .accent-d { color: var(--stk-teal-d); }
+  .sub { margin-top: 34px; font-weight: 700; font-size: 33px; color: var(--stk-ink-2); letter-spacing: -.3px; line-height: 1.2; }
+
+  /* right-side prop: a stranger + a fan of "uncle" words */
+  .prop { position: absolute; right: 40px; top: 0; width: 540px; height: 720px; }
+
+  /* the fanned cluster of kinship terms (turquoise pills) above the stranger */
+  .chips { position: absolute; left: 50%; top: 188px; transform: translateX(-50%); width: 0; height: 0; }
+  .chip { position: absolute; left: 0; top: 0; transform-origin: 50% 50%; text-align: center;
+    margin-left: -90px; margin-top: -55px;
+    padding: 14px 30px 16px; background: var(--stk-teal-soft); border-radius: 24px;
+    box-shadow: 0 18px 34px rgba(20,40,33,.12); white-space: nowrap; }
+  .chip .zh { display: block; font: 900 60px/1 'Noto Sans SC', sans-serif; color: var(--stk-teal-d); letter-spacing: 2px; }
+  .chip .py { display: block; margin-top: 7px; font: 800 26px/1 'Inter', sans-serif; color: var(--stk-ink-2); }
+  /* fanned around, dimmer + smaller toward the back */
+  .chip.d { transform: translate(-176px, -74px) rotate(-9deg) scale(.78); opacity: .85; }
+  .chip.e { transform: translate(168px, -82px) rotate(9deg) scale(.78); opacity: .85; }
+  .chip.b { transform: translate(-150px, 96px) rotate(-11deg) scale(.68); opacity: .5; }
+  .chip.c { transform: translate(166px, 88px) rotate(11deg) scale(.68); opacity: .5; }
+  /* the hero chip in front */
+  .chip.a { transform: translate(0, 0) scale(1.12); z-index: 5;
+    box-shadow: 0 24px 46px rgba(20,40,33,.18); }
+
+  /* the stranger being greeted (flat cartoon, reused from the video) */
+  .fig-wrap { position: absolute; left: 50%; bottom: 18px; transform: translateX(-50%); width: 320px; }
+  .fig { width: 100%; height: auto; display: block; overflow: visible;
+    filter: drop-shadow(0 22px 30px rgba(20,40,33,.16)); }
+  .fig .sh    { fill: rgba(20,40,33,.10); }
+  .fig .body  { fill: var(--stk-teal); }
+  .fig .head  { fill: #fff; stroke: var(--stk-ink); stroke-width: 6; }
+  .fig .eye   { fill: var(--stk-ink); }
+  .fig .smile { fill: none; stroke: var(--stk-ink); stroke-width: 5; stroke-linecap: round; }
+  .fig .hairGrey { fill: #aeb7bf; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="thumb stk-grid-bg" id="thumb">
+    <div class="bg-glow"></div>
+    <div class="hl-wrap">
+      <div class="kicker">LEARN CHINESE · FAMILY</div>
+      <h1 class="hl">8 words</h1>
+      <h1 class="hl">for one</h1>
+      <h1 class="hl"><span class="accent">“uncle.”</span></h1>
+      <div class="sub">Yet every stranger in China<br>is your uncle.</div>
+    </div>
+    <div class="prop">
+      <div class="chips">
+        <div class="chip b"><span class="zh">姑父</span><span class="py">gūfu</span></div>
+        <div class="chip c"><span class="zh">姨父</span><span class="py">yífu</span></div>
+        <div class="chip d"><span class="zh">伯伯</span><span class="py">bóbo</span></div>
+        <div class="chip e"><span class="zh">舅舅</span><span class="py">jiùjiu</span></div>
+        <div class="chip a"><span class="zh">叔叔</span><span class="py">shūshu</span></div>
+      </div>
+      <div class="fig-wrap">
+        <svg class="fig" viewBox="0 0 200 300" aria-hidden="true">
+          <ellipse class="sh" cx="100" cy="290" rx="66" ry="13"/>
+          <path class="body" d="M44 300 V214 q0-56 56-56 t56 56 V300 Z"/>
+          <circle class="head" cx="100" cy="120" r="46"/>
+          <path class="hairGrey" d="M55 116 q-4-58 45-58 t45 58 q-12-26-45-26 t-45 26 Z"/>
+          <circle class="eye" cx="84" cy="120" r="5"/><circle class="eye" cx="116" cy="120" r="5"/>
+          <path class="smile" d="M82 140 q18 16 36 0"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>
+<script>window.__ready = true;</script>
+</body>
+</html>

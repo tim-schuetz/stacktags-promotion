@@ -46,11 +46,17 @@ zoom-out as the columns separate (swoosh).]
 Japan borrowed China's writing for a language it simply didn't fit — and then spent
 centuries duct-taping it together. Here's how.
 
-[On “didn't fit … duct-taping”: the three columns collapse back toward one character
-that is visibly the wrong shape for its slot — a single kanji wedged into a
-Japanese-shaped outline with a strip of cartoon duct-tape slapped across it (humor, sets
-the running “misfit/patch” metaphor). On “Here's how” → hard depth zoom-IN through that
-character into the story.]
+[On “Japan borrowed China's writing”: zoom-out to CHINA and JAPAN as two landmasses side
+by side on the grid (China tinted teal, labelled 中国; Japan grey, 日本). A Chinese figure
+stands on China and speaks a character in a speech bubble: 氣 (the Chinese form of
+“spirit/energy”), the bubble's tail pointing down-LEFT to him. Three distinct Japanese
+figures stand on Japan. On “for a language it simply didn't fit” the NEAREST Japanese
+figure takes the bubble over — the bubble does NOT move, only its tail flips from down-left
+to down-RIGHT and the outline turns turquoise (Japan now owns it). Then, on “duct-taping it
+together”, the two figures to the right pop their own bubbles a beat apart, looking almost
+the same but slightly modified into the Japanese form 気 (the inner 米 simplified to メ) —
+氣 → 気 → 気, the character visibly drifting as it crosses into Japan. On “Here's how” →
+depth transition into the story.]
 
 --- THE BORROWING (≈0:14–0:38) ---
 

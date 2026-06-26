@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>thumbnail — For 2,000 years, Chinese wrote in a dead language</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@500;700;900&text=我不知道吾&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#232B33; --ink2:#4a5560; --muted:#8a949d;
+    --teal:#35A292; --teal-d:#119271; --teal-soft:#e7f4ef;
+    --grid:rgba(35,43,51,0.06);
+  }
+  html,body{margin:0;padding:0;height:100%;background:#1b1f23;}
+  #thumb{position:relative;width:1280px;height:720px;overflow:hidden;background:#fff;
+    font-family:'Inter',system-ui,sans-serif;-webkit-font-smoothing:antialiased;}
+  /* grid */
+  #thumb::before{content:'';position:absolute;inset:0;
+    background-image:
+      linear-gradient(to right, var(--grid) 3px, transparent 3px),
+      linear-gradient(to bottom, var(--grid) 3px, transparent 3px);
+    background-size:120px 120px;background-position:center center;}
+  .wrap{position:absolute;inset:0;display:flex;align-items:center;}
+  /* left headline block */
+  .left{position:absolute;left:84px;top:0;bottom:0;width:700px;display:flex;flex-direction:column;justify-content:center;}
+  .kicker{font-weight:800;font-size:34px;letter-spacing:6px;color:var(--muted);text-transform:uppercase;margin-bottom:26px;}
+  .hl{font-weight:900;letter-spacing:-0.04em;line-height:0.98;margin:0;color:var(--ink);font-size:118px;}
+  .hl .l1{white-space:nowrap;}
+  .hl .teal{color:var(--teal-d);}
+  /* right visual: spoken bubble  ≠  written scroll */
+  .right{position:absolute;right:70px;top:0;bottom:0;width:430px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;}
+  .tag{font-weight:800;font-size:26px;letter-spacing:3px;color:var(--muted);text-transform:uppercase;}
+  .bubble{position:relative;background:#fff;border-radius:34px;padding:24px 46px;
+    box-shadow:inset 0 0 0 8px var(--ink), 0 24px 48px rgba(20,40,33,.16);}
+  .bubble .zh{font-family:'Noto Sans SC',sans-serif;font-weight:700;font-size:78px;line-height:1;color:var(--ink);white-space:nowrap;}
+  .bubble::after{content:'';position:absolute;bottom:-30px;left:70px;width:0;height:0;
+    border-top:34px solid var(--ink);border-left:22px solid transparent;border-right:22px solid transparent;}
+  .neq{font-weight:900;font-size:150px;line-height:.8;color:var(--teal-d);text-shadow:0 18px 36px rgba(17,146,113,.20);margin:-4px 0;}
+  .paper{position:relative;background:#fff;border-radius:16px;padding:26px 54px;
+    box-shadow:0 24px 50px rgba(20,40,33,.18), inset 0 0 0 3px rgba(35,43,51,.10);}
+  .paper .zh{font-family:'Noto Sans SC',sans-serif;font-weight:700;font-size:78px;line-height:1;color:var(--ink);white-space:nowrap;letter-spacing:6px;}
+  .row{display:flex;flex-direction:column;align-items:center;gap:8px;}
+</style>
+</head>
+<body>
+<div id="thumb">
+  <div class="left">
+    <div class="kicker">For 2,000 years</div>
+    <h1 class="hl"><span class="l1">Spoke one.</span><br><span class="teal">Wrote<br>another.</span></h1>
+  </div>
+  <div class="right">
+    <div class="row">
+      <span class="tag">spoken</span>
+      <div class="bubble"><span class="zh">我不知道</span></div>
+    </div>
+    <div class="neq">&ne;</div>
+    <div class="row">
+      <div class="paper"><span class="zh">吾不知</span></div>
+      <span class="tag">written</span>
+    </div>
+  </div>
+</div>
+<script>
+  (async () => { try { await document.fonts.ready; } catch (e) {} setTimeout(() => { window.__ready = true; }, 200); })();
+</script>
+</body>
+</html>

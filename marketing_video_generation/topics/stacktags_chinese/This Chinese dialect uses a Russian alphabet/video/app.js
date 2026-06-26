@@ -16,27 +16,13 @@
   // ============================================================
   // SCENE BUILDERS (authentic Dungan content)
   // ============================================================
-  // HOOK: 再見 (zàijiàn, "goodbye") morphs into зэ җян — the real Dungan spelling.
+  // HOOK: staged vocab reveal — 再見 (hanzi) → zàijiàn (pinyin) → зэ җян (the
+  // real Dungan spelling). Same word, shown in three layers.
   $('#sc-hook').innerHTML =
     `<div class="hook-wrap">
-       <div class="morph">
-         <div class="morph-hanzi cjk" id="hk-hanzi"><span>再</span><span>見</span></div>
-         <div class="morph-cyr" id="hk-cyr">
-           <span>з</span><span>э</span><span class="sp"></span><span>җ</span><span>я</span><span>н</span>
-         </div>
-       </div>
-       <div class="hook-gloss" id="hk-gloss">“goodbye”</div>
-     </div>`;
-
-  // TWO SPEAKERS: a Mandarin speaker (left) and a Dungan speaker (right). Same
-  // word, two scripts — 皇帝 / хуаңды — and they understand each other.
-  $('#sc-speakers').innerHTML =
-    `<div class="spk-wrap" id="spk-wrap">
-       <img class="spk spk-l" src="assets/figure/figure_a_cut.png" alt="" onerror="this.style.display='none'">
-       <img class="spk spk-r" src="assets/figure/figure_b_cut.png" alt="" onerror="this.style.display='none'">
-       <div class="bub bub-l cjk" id="bub-l">皇帝</div>
-       <div class="bub bub-r" id="bub-r">хуаңды</div>
-       <div class="spk-link" id="spk-link">≈</div>
+       <div class="hk-han cjk" id="hk-han">再見</div>
+       <div class="hk-py" id="hk-py">zàijiàn &middot; <b>goodbye</b></div>
+       <div class="hk-cyr" id="hk-cyr">зэ җян</div>
      </div>`;
 
   // TWIST: a wall of hanzi fades away → a complete authentic Dungan sentence in
@@ -120,10 +106,10 @@
     if (!(window.THREE && window.earcut && window.topojson) || !window.mountStacktagsGlobe) { setTimeout(mountGlobe, 80); return; }
     try {
       window.mountStacktagsGlobe(globeHost, {
-        focus: { lat: 39.5, lon: 92, cam: 1.95 },
-        startCam: 2.7,
+        focus: { lat: 38, lon: 93, cam: 2.75 },   // zoomed out: the route's east origin is in frame from the start
+        startCam: 3.3,
         highlight: 'China',
-        marker: { lat: 42.49, lon: 78.39 },     // Karakol
+        marker: { lat: 42.49, lon: 78.39 },     // Karakol (the dive-in endpoint)
         autoReveal: false,
         onReady: (c) => { globeCtrl = c; c.halt(); c.setRoute(ROUTE); c.attachShip(caravan); },
       });
@@ -231,19 +217,16 @@
   // ============================================================
   // IN-SCENE HELPERS
   // ============================================================
-  function hookMorph(instant) {
-    const hz = $('#hk-hanzi'), cy = $('#hk-cyr'), gl = $('#hk-gloss');
-    if (instant) { hz.classList.add('gone'); cy.classList.add('in', 'glow'); gl.classList.add('in'); return; }
-    gl.classList.add('in');
+  function hookAll() { $('#hk-han').classList.add('in'); $('#hk-py').classList.add('in'); $('#hk-cyr').classList.add('in', 'glow'); }
+
+  function peopleIn() { $('#dperson-l').classList.add('in'); $('#dperson-r').classList.add('in'); }
+
+  function showMosque() {
+    globeHost.classList.add('gone');
+    $('#mosque-photo').classList.add('in'); $('#mosque-cap').classList.add('in');
+    $('#mig-origin').classList.remove('in'); caravan.classList.remove('in');
+    if (globeCtrl) globeCtrl.halt();
   }
-  function hookDissolve(i) { $('#hk-hanzi').classList.add('gone'); }
-  function hookCyrillic(i) { $('#hk-cyr').classList.add('in'); }
-  function hookGlow(i) { $('#hk-cyr').classList.add('glow'); }
-
-  function speakersIn(i) { $('#spk-wrap').classList.add('in'); setTimeout(() => { $('#bub-l').classList.add('in'); }, i ? 0 : 350); setTimeout(() => { $('#bub-r').classList.add('in'); }, i ? 0 : 650); }
-  function speakersLink(i) { $('#spk-link').classList.add('in'); }
-
-  function showMosque() { globeHost.classList.add('gone'); $('#mosque-photo').classList.add('in'); $('#mig-origin').classList.remove('in'); caravan.classList.remove('in'); }
 
   function twistWallGone(i) { $('#hanzi-wall').classList.add('gone'); }
   function twistLineIn(i) { $('#dungan-line').classList.add('in'); }
@@ -312,28 +295,26 @@
   // CUES — scene actions on the narration timeline
   // ============================================================
   const CUES = [
-    // HOOK — 再見 → зэ җян morph
-    [0.0,  (i) => enter($('#sc-hook'), 'fade', 650, i, () => hookMorph(i))],
-    [2.30, (i) => { if (!i) hookDissolve(i); }],
-    [3.20, (i) => { if (!i) hookCyrillic(i); }],
-    [4.00, (i) => { if (!i) hookGlow(i); }],
-    [5.40, (i) => { if (!i) $('#hk-gloss').classList.add('in'); }],
+    // HOOK — 再見 → zàijiàn (pinyin) → зэ җян (Cyrillic), staged
+    [0.0,  (i) => enter($('#sc-hook'), 'fade', 650, i, () => { if (i) hookAll(); else $('#hk-han').classList.add('in'); })],
+    [1.40, (i) => { if (!i) $('#hk-py').classList.add('in'); }],    // pinyin appears underneath
+    [3.20, (i) => { if (!i) $('#hk-cyr').classList.add('in'); }],   // Cyrillic appears ("same alphabet as Russian")
+    [4.20, (i) => { if (!i) $('#hk-cyr').classList.add('glow'); }],
 
-    // MIGRATION — pre-warm the globe behind the hook so it's already rendered +
-    // revealed when the scene fades in (a cold resume takes ~1.5s to first paint)
+    // MIGRATION — pre-warm the globe behind the hook so it's painted on arrival
     [9.1, (i) => { if (!i && globeCtrl) { globeCtrl.resume(); globeCtrl.reveal(); } }],
-    // globe + dashed route + mosque
+    // zoomed-OUT globe (route's east origin visible) + dashed route west
     [10.48, (i) => enter($('#sc-migration'), 'zoom-out', 1150, i, () => {
       if (globeCtrl) { globeCtrl.resume(); globeCtrl.reveal(); }
-      if (i) { showMosque(); return; }
-      $('#mig-origin').classList.add('in');
+      if (i) { showMosque(); peopleIn(); $('#dbub-l').classList.add('in'); $('#dbub-r').classList.add('in'); }
     })],
     [13.90, (i) => { if (i) return; caravan.classList.add('in'); if (globeCtrl) globeCtrl.revealRoute(3000); }],
-    [17.60, (i) => { if (i) return; showMosque(); }],
-
-    // TWO SPEAKERS
-    [20.54, (i) => enter($('#sc-speakers'), 'rise', 1050, i, () => speakersIn(i))],
-    [23.82, (i) => speakersLink(i)],
+    // dive INTO the endpoint (Karakol), then hand off to the mosque
+    [17.10, (i) => { if (i) return; if (globeCtrl) globeCtrl.zoomToMarker({ cam: 1.05, duration: 1600 }, { onArrive: showMosque }); else showMosque(); }],
+    // two real Dungan people speak — the mosque STAYS behind them
+    [20.54, (i) => { if (!i) peopleIn(); }],
+    [21.30, (i) => { if (!i) $('#dbub-l').classList.add('in'); }],
+    [23.40, (i) => { if (!i) $('#dbub-r').classList.add('in'); }],
 
     // TWIST — hanzi wall fades → Dungan sentence
     [26.56, (i) => enter($('#sc-twist'), 'zoom-in', 1100, i, () => { if (i) { twistWallGone(i); twistLineIn(i); twistGlossIn(i); } })],
@@ -365,10 +346,10 @@
     [3.25, 'pop', 0.5], [3.5, 'pop', 0.5], [3.8, 'pop', 0.5], [4.05, 'pop', 0.5], [4.3, 'pop', 0.5],
     [10.48, 'swoosh', 0.5],                          // migration scene (grid moves)
     [13.90, 'swoosh', 0.45],                         // route reveals on the globe
-    [17.60, 'pop', 0.5],                             // mosque settles
-    [20.54, 'swoosh', 0.5],                          // speakers scene (grid moves)
-    [21.0, 'pop', 0.5], [21.4, 'pop', 0.5],          // two bubbles
-    [23.82, 'pop', 0.5],                             // ≈ understanding
+    [17.10, 'swoosh', 0.5],                          // globe dives into Karakol (default element)
+    [18.7, 'pop', 0.45],                             // mosque settles
+    [20.54, 'pop', 0.45],                            // people slide in
+    [21.30, 'pop', 0.5], [23.40, 'pop', 0.5],        // two Cyrillic bubbles
     [26.56, 'swoosh', 0.5],                          // twist scene
     [30.40, 'swoosh', 0.45],                         // hanzi wall whooshes away
     [31.90, 'swoosh', 0.45],                         // Dungan sentence builds in
@@ -395,12 +376,11 @@
     current = null;
     gcam.s = 1; gcam.x = 0; gcam.y = 0; gdisp.s = 1; gdisp.x = 0; gdisp.y = 0;
     // hook
-    $('#hk-hanzi').classList.remove('gone'); $('#hk-cyr').classList.remove('in', 'glow'); $('#hk-gloss').classList.remove('in');
-    // migration
-    globeHost.classList.remove('gone'); $('#mosque-photo').classList.remove('in'); $('#mig-origin').classList.remove('in'); caravan.classList.remove('in');
+    $('#hk-han').classList.remove('in'); $('#hk-py').classList.remove('in'); $('#hk-cyr').classList.remove('in', 'glow');
+    // migration + Dungan people
+    globeHost.classList.remove('gone'); $('#mosque-photo').classList.remove('in'); $('#mosque-cap').classList.remove('in'); $('#mig-origin').classList.remove('in'); caravan.classList.remove('in');
+    $('#dperson-l').classList.remove('in'); $('#dperson-r').classList.remove('in'); $('#dbub-l').classList.remove('in'); $('#dbub-r').classList.remove('in');
     if (globeCtrl) globeCtrl.halt();
-    // speakers
-    $('#spk-wrap').classList.remove('in'); $('#bub-l').classList.remove('in'); $('#bub-r').classList.remove('in'); $('#spk-link').classList.remove('in');
     // twist
     $('#hanzi-wall').classList.remove('gone'); $('#dungan-line').classList.remove('in'); $('#dungan-gloss').classList.remove('in');
     // homophone

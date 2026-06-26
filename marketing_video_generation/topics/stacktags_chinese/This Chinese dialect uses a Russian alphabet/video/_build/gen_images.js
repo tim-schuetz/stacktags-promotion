@@ -16,13 +16,19 @@ const SHOTS = [
   // Buddhist temple (upturned painted eaves, no nails). A genuine, surprising
   // landmark of the Dungan, on a plain background so it cuts out cleanly.
   { key: 'karakol_mosque', ratio: '4:3', prompt: 'The Dungan Mosque of Karakol in Kyrgyzstan: an ornate single-storey wooden mosque built in the style of a Chinese Buddhist temple, with multi-tiered upturned eaves and a roof painted in bright red, green and yellow, carved wooden pillars and decorative brackets, isolated as a single building on a plain pale background, soft even daylight, full building visible and centered.' },
+  // two realistic Dungan people (Hui Chinese Muslims of Central Asia) for the speakers scene
+  { key: 'dungan_man', ratio: '3:4', person: true, prompt: 'A warm, friendly Dungan man in his fifties — a Hui Chinese Muslim living in Kyrgyzstan, East Asian facial features, weathered kind face, short grey-flecked hair under a small white embroidered skullcap (taqiyah), wearing a simple earth-toned buttoned shirt, gentle natural smile, relaxed waist-up portrait facing slightly toward the viewer, evenly lit, isolated on a plain solid light grey studio background.' },
+  { key: 'dungan_woman', ratio: '3:4', person: true, prompt: 'A warm, friendly Dungan woman in her thirties — a Hui Chinese Muslim from Kyrgyzstan, clearly East Asian facial features, wearing a simple plain pastel headscarf loosely covering her hair, an ordinary modest knit sweater, NO jewelry, no makeup, natural everyday look, gentle genuine smile, relaxed waist-up portrait facing slightly toward the viewer, bright soft even studio lighting, isolated on a plain solid light grey background.' },
+  // FULL-BODY versions (head to feet) for the dashed-outline cut-outs
+  { key: 'dungan_man_full', ratio: '9:16', person: true, prompt: 'A complete full-body standing portrait, head to feet entirely visible, of a friendly Dungan man in his fifties — a Hui Chinese Muslim from Kyrgyzstan, East Asian features, small white embroidered skullcap, an earth-toned buttoned shirt, dark trousers and plain shoes, relaxed natural standing pose with a gentle smile, the whole figure in frame with empty margin above the head and below the feet, isolated on a plain solid light grey background, even soft studio lighting.' },
+  { key: 'dungan_woman_full', ratio: '9:16', person: true, prompt: 'A complete full-body standing portrait, head to feet entirely visible, of a friendly Dungan woman in her thirties — a Hui Chinese Muslim from Kyrgyzstan, East Asian features, simple plain pastel headscarf, a modest knit sweater and a long plain skirt with flat shoes, relaxed natural standing pose with a gentle smile, the whole figure in frame with empty margin above the head and below the feet, isolated on a plain solid light grey background, even soft studio lighting.' },
 ];
 
 async function gen(shot, attempt = 1) {
   const url = `https://generativelanguage.googleapis.com/v1beta/models/imagen-4.0-generate-001:predict?key=${KEY}`;
   const body = {
     instances: [{ prompt: `${shot.prompt} ${STYLE}` }],
-    parameters: { sampleCount: 1, aspectRatio: shot.ratio || '1:1', personGeneration: 'dont_allow' },
+    parameters: { sampleCount: 1, aspectRatio: shot.ratio || '1:1', personGeneration: shot.person ? 'allow_adult' : 'dont_allow' },
   };
   const r = await fetch(url, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(body) });
   if (!r.ok) {

@@ -3,7 +3,9 @@ Title options (pick one): Why you can't order "two beers" in China
 Topic: Learn Chinese
 Target length: ~90 seconds (fits the 30s–3min window)
 Language of narration: English
-Format: Spoken voiceover narration only — no on-screen/visual cues.
+Format: Spoken voiceover narration + [bracketed] storyboard / on-screen direction.
+        The [bracket] lines are visual cues only — they are STRIPPED before TTS; the
+        spoken voiceover is every non-bracketed narration line, verbatim.
 
 ==================================================================
 THE CORE IDEA
@@ -16,41 +18,114 @@ Punchline: in Chinese you must know WHAT KIND of thing you're counting before yo
 count it.
 
 ==================================================================
+VISUAL CONCEPT — "THE COUNTING GAP" (persistent hero)
+==================================================================
+One equation lives in the centre of the frame the whole video:  [ 2 ] [ □ ] [ 啤酒 ].
+The empty measure-word SLOT (□) is the hero. We fill it, multiply it, and re-fill it
+through every section. White grid background, turquoise accents, Inter + Noto Sans SC,
+grey subtitles with turquoise keywords. Two real cut-out beer bottles (dashed outline)
+are the noun 啤酒. Camera = faux-3D grid push/zoom; swoosh only when the grid moves,
+pop on tiles/vocab.
+
+==================================================================
 SCRIPT
 ==================================================================
 
 --- HOOK (0:00–0:12) — the payoff up front ---
 
-Try to order "two beers" in Chinese, and you've just made a grammar mistake. You
-literally cannot say "two beer." You need a special little word in between — and
-Chinese has more than a hundred of them. Here's the rule.
+[OPEN on the centre equation, English proof first: a tile "2" and a tile "beers" slide
+together and SNAP — a soft turquoise ✓ ticks. English works.]
+Try to order "two beers" in Chinese, and you've just made a grammar mistake.
+[Hard switch to Chinese: the "beers" tile becomes 啤酒 with two real cut-out beer
+bottles (dashed turquoise outline) sitting behind it. The number tile "2" lunges toward
+啤酒 but RECOILS — they refuse to touch. The gap between them flashes as an empty dashed
+SLOT □ that pulses turquoise, demanding a word.]
+You literally cannot say "two beer."
+[The "2" tries again and bounces off the empty slot; tiny shake.]
+You need a special little word in between —
+[The empty slot □ glows; a faint stack of many ghost-tiles fans out behind it for a beat
+(hinting "100+") then collapses back into the one slot.]
+and Chinese has more than a hundred of them.
+Here's the rule.
+[Grid push-in (swoosh) to settle on the clean three-part equation: 2  [ □ ]  啤酒.]
 
 --- THE RULE (≈0:12–0:38) ---
 
-In Chinese, you can't stick a number straight onto a noun. No "two beer," no "three
-dog," no "five book." Between the number and the thing, you need a "measure word" —
-a classifier. So "two beers" becomes, literally, "two bottles beer" — 两瓶啤酒. That
-little 瓶, "bottle," is the measure word. Leave it out, and it's broken Chinese.
+[The equation is centred and steady. Highlight the impossible adjacency: the "2" and
+啤酒 lean toward each other across the empty slot, repelling like same-pole magnets.]
+In Chinese, you can't stick a number straight onto a noun.
+[Three quick attempts pop in a vertical stack to the side, each with the empty slot and
+a grey strike-through (NO red): "2 □ 啤酒"… "3 □ 狗 (dog)"… "5 □ 书 (book)". Each noun
+shows a tiny inline-SVG icon. They all read as broken — the slot is empty.]
+No "two beer," no "three dog," no "five book."
+[The stack fades; camera returns to the hero equation. The empty slot □ pulses and a
+label "量词 / measure word / classifier" rises under it.]
+Between the number and the thing, you need a "measure word" — a classifier.
+[瓶 (píng) drops from the top INTO the slot (pop). The slot snaps shut around it; the
+"2" relaxes to 两 and the whole line locks: 两 瓶 啤酒. Soft turquoise ✓.]
+So "two beers" becomes, literally, "two bottles beer" — 两瓶啤酒.
+[Zoom the middle tile: 瓶 enlarges; a vocab chip pops — 瓶 / píng / "bottle (measure
+word)". The two beer bottles nod/clink lightly.]
+That little 瓶, "bottle," is the measure word.
+[Pull 瓶 back OUT of the slot — the slot goes empty again, the line breaks apart and the
+bottles dim. "broken Chinese" = grey, lifeless.]
+Leave it out, and it's broken Chinese.
+[瓶 slots back in; line re-locks 两 瓶 啤酒, bottles brighten.]
 
 --- IT GETS TRICKIER (≈0:38–1:05) ---
 
-And it goes deeper. Even the word "two" is special here. Normally "two" is 二, èr —
-but right before a measure word, it changes to a different word, 两, liǎng. So even
-counting to two trips people up. And then there's the real mountain: there are over
-150 of these measure words — and which one you use depends on the shape or type of
-thing. Flat things, long things, animals, books, machines — many have their own.
+[Camera zooms to the LEFT tile only (number). It currently reads 二 (èr) with pinyin.]
+And it goes deeper. Even the word "two" is special here.
+[Show 二 alone, big, with "èr" — a neutral "normal two".]
+Normally "two" is 二, èr —
+[A measure word (瓶) re-appears to the right of the slot. The instant it does, 二 FLIPS
+/ morphs into 两 (a quick card-flip), pinyin èr → liǎng. The change is the star.]
+but right before a measure word, it changes to a different word, 两, liǎng.
+[A tiny stumble beat: a little figure/number trips over the 二→两 swap (light humor),
+then 两 settles.]
+So even counting to two trips people up.
+[Camera ZOOMS OUT of the single slot (swoosh). The one slot multiplies into a WALL/shelf
+of many distinct measure-word tiles that cascade/pop in, each paired with a small
+inline-SVG icon of its category — a counter "150+" ticks up (ticking):
+本 (book) 📖, 只 (animal) 🐾, 张 (flat) ▭, 台 (machine) ▢, 条 (long) 〜 … Use clean
+inline SVG icons, NEVER OS emoji.]
+And then there's the real mountain: there are over 150 of these measure words —
+[Each tile briefly snaps onto its matching object type to show "depends on shape/type"
+(本→book, 张→sheet, 只→cat, 条→fish, 台→TV).]
+and which one you use depends on the shape or type of thing.
+[A row of the categories lights one by one as named.]
+Flat things, long things, animals, books, machines — many have their own.
 
 --- THE SHORTCUT (≈1:05–1:22) ---
 
-But here's the relief. One general measure word — 个, gè — works for the huge
-majority of cases. By some counts, around 94% of the time. So if you blank on the
-exact one, 个 will usually save you. Not always perfect — but understood.
+[Relief beat: the busy wall of 150 tiles fades/recedes; the grid settles. Calm.]
+But here's the relief.
+[One big 个 (gè) glides up the centre and drops into the slot (pop). It glows turquoise.]
+One general measure word — 个, gè — works for the huge majority of cases.
+[个 rapidly snaps into a series of different noun slots in turn — 个 啤酒, 个 狗, 个 书,
+个 人 … each gets a quick turquoise ✓. A subtle "≈94%" stamp slams in (no bar chart),
+optional thin turquoise fill ring behind it.]
+By some counts, around 94% of the time.
+[个 sits comfortably in the slot; the equation reads 两 个 啤酒 as a safe fallback.]
+So if you blank on the exact one, 个 will usually save you.
+[A faint "good enough" tick — not a perfect ✓, a slightly smaller one — honest nuance.]
+Not always perfect — but understood.
 
 --- PUNCHLINE / OUTRO (≈1:22–1:34) ---
 
-In English, "two" just works on everything. In Chinese, you have to know what kind
-of thing you're counting before you can count it. Which is why ordering two beers is
-secretly a grammar exam.
+[Split the frame for one clean contrast (consistent layout, no clutter): LEFT = English
+"2 → anything" with the "2" tile snapping freely onto beer / dog / book; RIGHT = Chinese
+where the "2" must pass through the slot first.]
+In English, "two" just works on everything.
+[Camera favors the Chinese side; the slot □ pulses with a small "?" — you must choose
+the KIND before you can count.]
+In Chinese, you have to know what kind of thing you're counting before you can count it.
+[Return to the hero line 两 瓶 啤酒 with the two bottles. The empty-slot □ morphs for a
+beat into a little exam checkbox / "PASS" stamp over the order — "grammar exam".]
+Which is why ordering two beers is secretly a grammar exam.
+[Lift transition (swoosh) into the OUTRO default element.]
 
+[OUTRO default element: stacktags stacked-cube logo between two turquoise chevrons,
+"stacktags" wordmark, grey "stacktags.io" line.]
 Wanna actually start learning Chinese?
 Discover thousands of free exercises and more learning content on stacktags.io.

@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>The plan to replace Chinese characters with the alphabet</title>
+<link rel="icon" href="data:," />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@500;700;900&display=swap" rel="stylesheet">
+
+<!-- shared design system: tokens + grid + subtitles -->
+<link rel="stylesheet" href="elements/theme.css">
+<!-- dynamic depth-grid look (the camera grid styling reused by app.js) -->
+<link rel="stylesheet" href="elements/depth-transitions.css">
+<!-- this video's own scene styling -->
+<link rel="stylesheet" href="styles.css?v=2">
+</head>
+<body>
+<div class="wrap">
+  <div class="stage stk-grid-bg" id="stage">
+
+    <!-- persistent dynamic grid: the camera (zoom/pan) lives here -->
+    <div class="stk-depth2-grid" id="grid"></div>
+
+    <div class="scenes" id="scenes">
+
+      <!-- ============================================================
+           GLYPH HERO — the alphabet tries to replace 字 (hook), and the
+           "life support" callback (pulse line feeds the character).
+           ============================================================ -->
+      <div class="scene" id="sc-glyph">
+        <div class="glyph-stage" id="glyph-stage">
+          <div class="duo" id="duo">
+            <div class="char cjk" id="duo-char">字</div>
+            <div class="alpha" id="duo-alpha"></div>
+            <div class="pulse" id="duo-pulse"><svg viewBox="0 0 360 72" preserveAspectRatio="none">
+              <path id="pulse-path" d="M0 38 H120 l13 -26 l18 50 l15 -40 l11 16 H360"></path>
+            </svg></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ============================================================
+           VOCAB — pinyin writes Chinese SOUNDS: 3 object words, each with
+           a real cropped photo. Shown on screen (not spoken).
+           ============================================================ -->
+      <div class="scene" id="sc-vocab">
+        <div class="vocab-stage" id="vocab-stage">
+          <div class="vrow" id="vrow-rice">
+            <div class="vimg"><img src="assets/photos/ricesack_dash.png" alt=""></div>
+            <div class="vtext"><div class="zh cjk">米</div><div class="rom">mǐ</div><div class="en">rice</div></div>
+          </div>
+          <div class="vrow" id="vrow-sauce">
+            <div class="vimg"><img src="assets/photos/fishsauce_dash.png" alt=""></div>
+            <div class="vtext"><div class="zh cjk">鱼露</div><div class="rom">yúlù</div><div class="en">fish sauce</div></div>
+          </div>
+          <div class="vrow" id="vrow-poo">
+            <div class="vimg"><img src="assets/photos/toilet.png" alt=""></div>
+            <div class="vtext"><div class="zh cjk">拉肚子</div><div class="rom">lā dùzi</div><div class="en">diarrhea</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ============================================================
+           ZHOU YOUGUANG — the father of Pinyin (real portrait).
+           ============================================================ -->
+      <div class="scene" id="sc-zhou">
+        <div class="zhou-stage" id="zhou-stage">
+          <div class="zhou-photo"><img src="assets/photos/zhou.png" alt=""></div>
+          <div class="zhou-card">
+            <div class="zh cjk">周有光</div>
+            <div class="rom">Zhōu Yǒuguāng</div>
+            <div class="en">father of Pinyin · 1950s committee</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ============================================================
+           REFORM WALL — pinyin tries to REPLACE a row of characters
+           (文字书语言), a "too hard" gag, a LAW stamp that never falls,
+           the plan is buried, the characters restore, and pinyin ends up
+           tucked under them as a helper. Cells built by app.js.
+           ============================================================ -->
+      <div class="scene" id="sc-reform">
+        <div class="reform-stage" id="reform-stage">
+          <div class="charrow" id="charrow"></div>
+          <div class="toohard" id="toohard">
+            <div class="th-char cjk">龘</div>
+            <div class="th-learner" id="th-learner"></div>
+            <div class="th-cap">too many strokes</div>
+          </div>
+          <div class="lawstamp" id="lawstamp"><div class="stampface"><span class="zh cjk">法</span><span class="en">make it law</span></div></div>
+        </div>
+      </div>
+
+      <!-- ============================================================
+           MODERN — "literacy rose & the country modernized": a rising
+           literacy-rate chart + three skyscrapers sliding up from below.
+           ============================================================ -->
+      <div class="scene" id="sc-modern">
+        <div class="modern-stage" id="modern-stage">
+          <div class="skyline" id="skyline">
+            <div class="tower t1"><img src="assets/photos/tower2.png" alt=""></div>
+            <div class="tower t2"><img src="assets/photos/tower1.png" alt=""></div>
+            <div class="tower t3"><img src="assets/photos/tower3.png" alt=""></div>
+          </div>
+          <div class="litchart" id="litchart">
+            <div class="lc-title">China · literacy rate</div>
+            <svg class="lc-svg" viewBox="0 0 680 380" preserveAspectRatio="xMidYMid meet">
+              <line class="lc-axis" x1="64" y1="330" x2="650" y2="330"/>
+              <line class="lc-axis" x1="64" y1="40" x2="64" y2="330"/>
+              <path class="lc-area" id="lc-area" d="M64 300 L196 276 L330 214 L470 120 L632 58 L632 330 L64 330 Z"/>
+              <path class="lc-line" id="lc-line" d="M64 300 L196 276 L330 214 L470 120 L632 58"/>
+              <circle class="lc-dot" id="lc-dot" cx="632" cy="58" r="11"/>
+            </svg>
+            <div class="lc-val"><span id="lc-num">20</span>%</div>
+            <div class="lc-years"><span>1950</span><span>today</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ============================================================
+           PHONE IME — the irony: type pinyin, pick the character.
+           ============================================================ -->
+      <div class="scene" id="sc-phone">
+        <div class="phone-cam" id="phone-cam">
+          <div class="phone" id="phone">
+            <div class="phone-top">
+              <span class="back"></span>
+              <span class="who">
+                <span class="nm">Pinyin keyboard</span>
+                <span class="st">type to find the character</span>
+              </span>
+            </div>
+            <div class="ime" id="ime">
+              <div class="ime-field" id="ime-field"><span class="caret"></span></div>
+              <div class="ime-cands" id="ime-cands"></div>
+              <div class="ime-keys" id="ime-keys"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ============================================================
+           OUTRO endcard
+           ============================================================ -->
+      <div class="scene" id="sc-outro">
+        <div class="ec" id="outro-ec">
+          <div id="outro-logo"></div>
+          <div class="wm"><span class="s">stack</span><span class="t">tags</span></div>
+          <div class="url">stacktags.io</div>
+        </div>
+      </div>
+
+    </div><!-- /scenes -->
+
+    <!-- subtitles mirror the narration (grey; key words turquoise) -->
+    <div class="stk-subs" id="subs"><span class="stk-subs-line" id="subs-line"></span></div>
+
+  </div><!-- /stage -->
+</div>
+
+<!-- HUD (hidden in clean/capture mode) -->
+<div id="hud">
+  <button id="btn-play">▶ Play</button>
+  <input id="seek" type="range" min="0" max="95" step="0.01" value="0" />
+  <span id="tcode">0.0</span>
+</div>
+
+<audio id="vo" src="../script_voice.mp3" preload="auto"></audio>
+
+<!-- elements -->
+<script src="elements/outro.js"></script>
+
+<!-- this video's choreography -->
+<script src="app.js?v=2"></script>
+</body>
+</html>
