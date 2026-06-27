@@ -48,16 +48,14 @@ But "250" means "you idiot."
 [A grey INCOMING bubble pops in below (pop sfx): "250" → morphs to 二百五 with a small
 grumpy-face SVG. The mood between the two bubbles is visibly opposite.]
 
-Numbers there aren't just numbers — they're a whole secret language.
+And there is a lot more hidden in the language
 [The two bubbles sit in the thread; the bare digits 5·2·0 and 2·5·0 briefly glow
 turquoise, as if "decoding". The chat title "secret code" underlines.]
 
-Here's how to read it.
-[DEPTH zoom-in toward the chat (grid moves → swoosh) to start the mechanic.]
 
 --- WHY IT WORKS (≈0:12–0:32) ---
 
-It works because Chinese is full of words that sound almost exactly like numbers.
+Why does that work? Because Chinese is full of words that sound almost exactly like numbers.
 [A compact HOMOPHONE STRIP on the chat: three digits each ghost into a near-homophone
 character, popping one by one (pop sfx each): 4 → 死 sǐ "death", 8 → 发 fā "wealth",
 9 → 久 jiǔ "lasting". Small wink on 4=death.]

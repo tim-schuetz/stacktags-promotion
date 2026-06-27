@@ -57,7 +57,7 @@ In Chinese, you can't stick a number straight onto a noun.
 [Three quick attempts pop in a vertical stack to the side, each with the empty slot and
 a grey strike-through (NO red): "2 □ 啤酒"… "3 □ 狗 (dog)"… "5 □ 书 (book)". Each noun
 shows a tiny inline-SVG icon. They all read as broken — the slot is empty.]
-No "two beer," no "three dog," no "five book."
+No "two beers," no "three dogs," no "five books."
 [The stack fades; camera returns to the hero equation. The empty slot □ pulses and a
 label "量词 / measure word / classifier" rises under it.]
 Between the number and the thing, you need a "measure word" — a classifier.
@@ -101,13 +101,13 @@ Flat things, long things, animals, books, machines — many have their own.
 [Relief beat: the busy wall of 150 tiles fades/recedes; the grid settles. Calm.]
 But here's the relief.
 [One big 个 (gè) glides up the centre and drops into the slot (pop). It glows turquoise.]
-One general measure word — 个, gè — works for the huge majority of cases.
+One general measure word, ge, works for the huge majority of cases.
 [个 rapidly snaps into a series of different noun slots in turn — 个 啤酒, 个 狗, 个 书,
 个 人 … each gets a quick turquoise ✓. A subtle "≈94%" stamp slams in (no bar chart),
 optional thin turquoise fill ring behind it.]
 By some counts, around 94% of the time.
 [个 sits comfortably in the slot; the equation reads 两 个 啤酒 as a safe fallback.]
-So if you blank on the exact one, 个 will usually save you.
+So if you blank on the exact one, ge will usually save you.
 [A faint "good enough" tick — not a perfect ✓, a slightly smaller one — honest nuance.]
 Not always perfect — but understood.
 

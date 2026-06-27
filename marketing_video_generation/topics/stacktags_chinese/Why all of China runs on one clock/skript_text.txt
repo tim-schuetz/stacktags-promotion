@@ -49,6 +49,6 @@ Ask someone the time, and you might have to ask back: Beijing time, or our time?
 
 A single time zone keeps the country on the same page. But the sun doesn't take
 orders from Beijing — so half a continent away, people just quietly made their own
-time anyway.
+time anyway...
 
 Want more places that break the map? Follow Stacktags.

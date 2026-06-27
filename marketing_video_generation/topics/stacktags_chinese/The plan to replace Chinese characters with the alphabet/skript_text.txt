@@ -44,7 +44,6 @@ Pinyin — the system that spells Chinese with the Latin alphabet — was origin
 built to do one thing: replace Chinese characters completely.
 [On "replace … completely": the pinyin letters swell up and slide over the character, which
 shrinks and fades toward grey as the alphabet takes its place — the letters now own the frame.]
-The plan was to let the alphabet quietly kill them off.
 [The character is almost gone — a faint grey ghost behind the bold turquoise letters.]
 It failed.
 [Hard beat: the character SNAPS back to full size, solid black and centered; the letters get
@@ -100,21 +99,12 @@ Because today, how do you type Chinese on a phone or a keyboard? You type the
 Pinyin — and pick the character from a list.
 [The IME in action: keys tap out "n-i-h-a-o" (tiny ticks), a candidate row pops up
 你 / 您 / 你好 …, a finger taps 你好, and 你好 lands in the text field. Satisfying, real mechanic.]
-The system built to replace the characters is now the main reason they thrive in the
+The system built to replace the characters is now the main reason they now thrive in the
 digital age.
 [Pay off the bridge: the same letter-bridge re-forms, but now the figure walks ACROSS it the
 other way and ARRIVES at the glowing 汉字 ledge — the path away has become the path back.]
 
 --- PUNCHLINE / OUTRO (≈1:22–1:34) ---
-
-So Pinyin was a weapon aimed straight at Chinese characters — that completely missed,
-and became their life support instead.
-[Callback to the hook: 字 big and alive, the pinyin "zì" beneath it now drawn as a gentle
-turquoise pulse line (a quiet heartbeat) feeding the character — symbolic life support, no
-literal hospital monitor.]
-The bridge meant to lead away from the characters is now the bridge everyone uses to
-reach them.
-[Final beat on the bridge, fully turquoise, traffic flowing TOWARD the 汉字 ledge. Calm settle.]
 
 Wanna actually start learning Chinese?
 Discover thousands of free exercises and more learning content on stacktags.io.

@@ -69,25 +69,14 @@ Father's older brother, father's younger brother, mother's brother,
 [each phrase lights its node with Hanzi + pinyin + tiny English gloss, in order:
  伯伯 bóbo (father's older brother) → 叔叔 shūshu (father's younger brother) →
  舅舅 jiùjiu (mother's brother). Springy pop each.]
-the husband of your father's sister — all completely separate terms.
+the husband of your father's sister, you get the idea.
 [node 姑父 gūfu (husband of father's sister) lights up. Other faint nodes already on the map
 (姨父 yífu, 姑姑 gūgu, 姨 yí, 婶婶 shěnshen) make the "at least eight" honest.]
 There's no neutral "uncle" to fall back on.
 [the empty CENTRE slot — where a generic "uncle" would sit — shows a turquoise ✗ / stays struck-through empty.]
 The word itself tells you the exact relationship.
 
---- WHY (≈0:48–1:05) ---
-
-[stay on #sc-map, the full tree now visible.]
-It's because family structure mattered so much that the language baked it right in —
-which side, which generation, which order of birth.
-[three small axis labels sweep across the map one at a time as they're spoken:
- 哪边 which side · 哪辈 which generation · 排行 birth order.]
-You don't just say "uncle."
-You say precisely where he sits in the family.
-[a single node on the tree pulses to show "his exact seat".]
-
---- THE FLIP SIDE (≈1:05–1:25) ---
+--- THE FLIP SIDE ---
 
 [DEPTH transition BACK to SCENE #sc-people (swoosh) — the SAME three strangers return (visual rhyme).]
 And yet — Chinese uses these very same family words for total strangers.
@@ -98,14 +87,9 @@ You call an older man "uncle," an older woman "aunty," a young woman "big sister
 as a sign of warmth and respect. Everyone gets slotted into the family.
 [faint family-tree branches sketch outward from each stranger — they get pulled into the tree.]
 
---- PUNCHLINE / OUTRO (≈1:25–1:38) ---
+--- PUNCHLINE / OUTRO ---
 
-So Chinese can't translate "uncle" with a single word — it has a whole map of them.
-[left: a compact precise mini-map of the nodes.]
-But it'll happily call a stranger on the street your uncle.
-[right: the strangers/crowd. The map's branches reach out and gently wrap the strangers.]
 A language incredibly precise about family... that treats the entire world like one.
-[the precise map and the wrapped strangers settle side by side — the contrast holds for a beat.]
 
 [DEPTH lift to SCENE #sc-outro: default brand outro element.]
 Wanna actually start learning Chinese?
