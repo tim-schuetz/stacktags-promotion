@@ -1,7 +1,7 @@
 VIDEO SCRIPT
 Title options (pick one): How emperors created and deleted characters on a whim
 Topic: Learn Chinese
-Target length: ~105 seconds (fits the 30s–3min window)
+Target length: ~100 seconds (fits the 30s–3min window)
 Language of narration: English
 Format: Spoken voiceover narration + [bracket] visual-direction cues (cues are stripped before TTS).
 
@@ -14,11 +14,9 @@ Shimin (李世民), so the bodhisattva 觀世音 (Guanshiyin) dropped the 世 �
 the name of the goddess of mercy to this day. (2) CREATE — Wu Zetian, China's only
 female emperor, invented new "Zetian characters," most famously her own name 曌 (zhào)
 = sun 日 + moon 月 over sky 空. Learn: 避讳; 觀世音→觀音; 曌.
-Punchline: for much of history the language belonged to whoever sat on the throne.
 
 NOTE (honesty): the Guanyin renaming is the traditional, widely-cited explanation
-(naming taboo) — say "largely." Most of Wu Zetian's characters fell out of use except
-曌.
+(naming taboo). Most of Wu Zetian's characters fell out of use except 曌.
 
 ==================================================================
 VISUAL SYSTEM (read first — applies to every scene)
@@ -26,120 +24,106 @@ VISUAL SYSTEM (read first — applies to every scene)
 - White background + thin grey checkered grid (stk-grid-bg), Inter + Noto Sans SC for
   CJK, brand colours white / turquoise (#35A292 / #119271). No borders.
 - PERSISTENT HERO = the imperial SEAL of decree: a turquoise rounded-square chop (印,
-  NOT red) that presses down from the top (auto-retracts). It does exactly two things
-  that bind the whole video: DELETE (a character crumbles away, stroke by stroke) and
-  CREATE (a new character writes itself on, stroke by stroke). Every act is one of these.
-- All Chinese is rendered from real per-stroke vector data (makeHanzi: write-on / shed)
-  so characters animate; specific rulers are flat vector figures (figSVG), turquoise
-  accent + headgear. NO realistic stock-photo people.
+  NOT red) that presses down from the top. DELETE (a character crumbles away) and CREATE
+  (a new character writes itself on) bind the video.
+- Chinese is rendered from real per-stroke vector data (makeHanzi: write-on / shed) so
+  characters animate; the FIGURES are REAL generated images — classical Chinese court
+  portraits (Tang Taizong, Wu Zetian) and a Guanyin statue — cut out + turquoise dashed
+  outline. (No flat vector people, no generic stock photos.)
 - Subtitles mirror the narration exactly (grey, key words turquoise). On-screen TEXT is
-  kept to a minimum: ONLY the taught vocab (避讳, 觀世音/觀音, 曌, 日/月/空), their pinyin
-  and a short gloss, plus name cards. No floating word-pills that merely re-state the VO.
-- Swoosh SFX only when the grid actually moves / a default element animates; pop per
-  character/object appearing.
+  kept to taught vocab + short example words + pinyin/gloss + name cards.
 
 ==================================================================
 SCRIPT
 ==================================================================
 
---- HOOK (0:00–0:16) — the payoff up front ---
+--- HOOK (0:00–0:08) — the payoff up front ---
 
-[SCENE 1 — HOOK / establish the seal. Open on a single hanzi resting in a 田字格 cell on
-the grid.]
+[SCENE 1 — HOOK / establish the seal. Open on a single hanzi in a 田字格 cell.]
 In imperial China, a ruler could delete a word from the language —
-[The turquoise imperial SEAL presses down from the top; on the word "delete" the
-character crumbles away stroke by stroke (shedAll), leaving an empty cell. Grid kicks +
-swoosh.]
+[The turquoise imperial SEAL presses down; on "delete" the character crumbles away
+(shedAll), leaving an empty cell. Grid kick + swoosh.]
 or invent a brand-new one —
-[The seal presses again; a brand-new character writes itself on, stroke by stroke
-(writeOn). Pop on the strokes.]
+[The seal presses again; a brand-new character writes itself on (writeOn). Pop.]
 just by decree.
-[The seal settles; a small "印 / by decree" feel — seal stays as the recurring hero.]
-One emperor's name quietly renamed China's most beloved goddess forever.
-[Quick teaser card slides in (ghosted): a small goddess silhouette + the glyph 觀音.]
-And an empress designed a character for herself that still exists today.
-[Second teaser card slides in beside it: an empress silhouette + the glyph 曌. Both fade
-as we dive into Act 1.]
+[The seal settles — the recurring hero.]
 
---- DELETE: THE NAMING TABOO (≈0:16–0:52) ---
+--- DELETE: THE NAMING TABOO (≈0:08–0:46) ---
 
 [SCENE 2 — THE RULE. Zoom-out transition.]
 For centuries, there was a strict rule called the naming taboo — 避讳.
-[避讳 writes on big (stroke animation), pinyin "bìhuì" + gloss "naming taboo" below.]
+[避讳 writes on big, pinyin "bìhuì" + gloss "naming taboo" below.]
 You were not allowed to write the characters that appeared in the emperor's personal
 name.
 [The seal hovers over a sample character = "forbidden".]
 Out of respect, they had to be avoided, swapped, or left with a missing stroke.
-[SHOW the mechanism: on "missing stroke" the sample character loses ONE stroke (shed a
-single stroke) and sits there visibly incomplete — not just stated, demonstrated.]
+[SHOW the mechanism: the sample character loses ONE stroke (shed a single stroke) and
+sits visibly incomplete.]
 The emperor's name literally edited the language.
-[The seal presses over the character once more (edit motion).]
+[The seal presses once more (edit motion).]
 
-[SCENE 3 — TAIZONG. Drop-in transition.]
+[SCENE 3 — TAIZONG + example words. Real court portrait of Tang Taizong (cut-out, dashed).]
 Take the most famous case. The Tang emperor Taizong was named Li Shimin — 李世民 —
-[Emperor figure (figSVG, cap, teal accent) enters; name card 李世民 writes on, "Li
-Shimin / Tang Taizong" caption.]
+[Taizong portrait (top) + name card 李世民. Each character is an everyday character —
+example-word chips cascade in and STAY: 李 → 李子 ("plum"), 世 → 世界 ("world"),
+民 → 人民 ("people"); the shared character in each is turquoise.]
 and his name contained the character 世, shì.
-[The middle character 世 lifts out / pulses turquoise; pinyin "shì" appears under it. The
-seal stamps 世 as forbidden (a turquoise "taboo" mark).]
+[世 in 李世民 lights up turquoise (pinyin "shì"); the 世 in 世界 pulses too — it is the
+forbidden one.]
 
-[SCENE 4 — GUANYIN RENAME. The key transformation.]
+[SCENE 4 — GUANYIN RENAME = the LAST example. Real Guanyin statue (cut-out, dashed) below.]
 Now, there was a hugely beloved figure of Buddhist mercy, called 觀世音 — Guanshiyin.
-[觀世音 writes on (3 glyphs), pinyin "Guānshìyīn", gloss "goddess of mercy".]
+[觀世音 writes on as the final example chip (pinyin "Guānshìyīn", gloss "goddess of
+mercy") — another famous word carrying the forbidden 世.]
 But her name contained that forbidden 世.
-[The middle 世 lights up as the same forbidden glyph from Scene 3 (visual rhyme).]
+[Its middle 世 lights up as the same forbidden glyph (visual rhyme with the others).]
 So it was dropped.
-[The middle 世 crumbles away (shedAll) and is gone.]
+[The middle 世 crumbles away (shedAll).]
 觀世音 became 觀音 — Guanyin.
 [觀 and 音 slide together into 觀音; pinyin morphs "Guānshìyīn" → "Guānyīn".]
 And the shortened name stuck.
 To this day, the goddess of mercy worshipped across China is called Guanyin —
-[OPTIONAL anti-slop anchor: a real, cut-out Guanyin statue photo (dashed outline) rises
-at the lower frame — authentic artifact, cuttable. Otherwise keep 觀音 + a soft halo.]
+[The Guanyin statue scales up / glows — still worshipped today.]
 renamed, essentially, by an emperor's name, over a thousand years ago.
 
---- CREATE: AN EMPRESS'S CHARACTERS (≈0:52–1:24) ---
+--- CREATE: AN EMPRESS'S CHARACTERS (≈0:46–1:22) ---
 
-[SCENE 5 — WU ZETIAN. The seal "flips" from delete- to create-mode (grid kick).]
+[SCENE 5 — WU ZETIAN. Real court portrait of Wu Zetian (cut-out, dashed) + name 武則天.]
 And it ran the other way, too — rulers could invent characters.
-[The seal mints a tiny new glyph to signal the mode flip.]
-The boldest case: Wu Zetian, the only woman ever to rule China as emperor in her own
-right.
-[Empress figure (figSVG, distinct headdress, teal) enters; name card 武則天 writes on,
-"Wu Zetian" caption. Quick beat: a row of ink emperor silhouettes, only hers is teal —
-the lone woman.]
-She created a whole set of brand-new characters.
+You might wonder: there was a female emperor?
+[Wu Zetian portrait enters; a playful "?" beat.]
+Yes — and it was the only one in China's five-thousand-year history of dynasties: Wu
+Zetian.
+[Name card 武則天 writes on, "Wu Zetian" caption.]
+And as women are creative in design, she used her powers to invent a whole set of new
+characters.
+[A few of her real invented characters (圀, 埊, 瞾, …) pop on across the TOP of the frame
+and STAY there — her "whole set". On-screen only, not spoken.]
 
-[SCENE 6 — 曌 ASSEMBLY. Component build = the create counterpart to the rename.]
+[SCENE 6 — 曌 ASSEMBLY appears BELOW the row of inventions.]
 The most famous was her own name: 曌, zhào —
-[Component assembly: 日 (sun) writes on top-left, 月 (moon) writes on top-right (they dock
-as the upper half), 空 (sky) writes on below. Tiny glosses 日 sun / 月 moon / 空 sky.]
+[Below the row of inventions: 日 (sun) + 月 (moon) dock as the upper half, 空 (sky) writes
+on below; tiny glosses sun / moon / sky.]
 built from the characters for sun and moon, shining over the sky.
-[The three parts merge/scale into the single glyph 曌 (static Noto SC for the unified
-form). Pinyin "zhào".]
+[The parts merge into the single glyph 曌 (static Noto SC), pinyin "zhào".]
 "Sun and moon in the heavens."
-[Gloss settles: "曌 — sun & moon over the sky".]
+[Gloss: "曌 — sun & moon over the sky".]
 A character she designed, for herself.
-[The seal stamps 曌 = minted. Gloss "she designed it for herself".]
+[The seal stamps 曌 = minted.]
 Most of her inventions vanished after she died —
-[SCENE 7: several of her invented glyphs appear in a row, then most crumble away
-(shedAll); only 曌 remains standing.]
+[The whole top row of invented characters now crumbles away (shedAll); only 曌 remains.]
 but the idea behind them was very real: the writing itself was the ruler's to shape.
 [曌 holds, the seal hovers above it.]
 
---- PUNCHLINE / OUTRO (≈1:24–1:40) ---
+--- PUNCHLINE / OUTRO (≈1:22–1:36) ---
 
-[SCENE 8 — PUNCHLINE. The seal/throne motif centred; dual recap.]
-We tend to think a language belongs to its people.
-For much of Chinese history, it also belonged to whoever sat on the throne —
-someone who could erase a character, or mint one, with a word.
-[Dual recap around the seal: on "erase" 世 dims out on the left; on "mint" 曌 glows on
-the right.]
+[SCENE 7 — PUNCHLINE. The enduring Guanyin.]
 And sometimes, like with Guanyin, that royal edit is still on everyone's lips,
-[觀音 / Guanyin returns to centre and pulses — still here.]
+[The Guanyin statue returns, centred + prominent, with 觀音 / Guānyīn beneath it — the
+edit that's still alive today.]
 a thousand years later.
 
-[SCENE 9 — OUTRO endcard.]
+[SCENE 8 — OUTRO endcard.]
 Wanna actually start learning Chinese?
 Discover thousands of free exercises and more learning content on stacktags.io.
 [Default outro: stacked-cube logo between turquoise chevrons, "stacktags" wordmark,

@@ -11,7 +11,7 @@ const exe = CHROME_CANDIDATES.find(p => fs.existsSync(p));
 const OUTDIR = path.resolve(__dirname, 'capture');
 fs.mkdirSync(OUTDIR, { recursive: true });
 
-const END = 99.3;   // narration length (script_voice.mp3 ≈ 99.61s)
+const END = 105.6;   // narration length (script_voice.mp3 ≈ 105.88s)
 
 (async () => {
   const browser = await chromium.launch({

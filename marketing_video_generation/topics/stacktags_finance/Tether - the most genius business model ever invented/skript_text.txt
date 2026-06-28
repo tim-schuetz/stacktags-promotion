@@ -1,0 +1,171 @@
+VIDEO SCRIPT
+Title: Tether — the most genius business model ever invented
+Topic: Investing / finance
+Target length: ~2 minutes (fits the 30s–3min window)
+Language of narration: English
+Format: Voiceover script. Spoken lines are plain text. [Bracketed lines] describe
+what is on screen AT THE SAME TIME as the narration next to them.
+
+Style: continuous faux-3D camera over the persistent grey grid (depth transitions
+between beats — never hard cuts). White + turquoise (#35A292) only, Inter only, no
+borders. Subtitles mirror the narration verbatim (grey, key words turquoise).
+Swoosh only when the grid moves or a default element animates.
+
+RECURRING MOTIF (establish once, reuse so scenes chain): the USDT token (clean
+turquoise CSS coin, "₮ / USDT"), the $1 bill (cropped photo, dashed outline), the
+VAULT (cropped photo of a cash-stuffed safe, dashed outline), the US T-BILL (cropped
+Treasury-bill doc, dashed outline). Two cartoon characters (NO dashed outline): a
+crypto TRADER and the Tether FOUNDER. Reconstructed news HEADLINE cards (realistic
+styling, generic outlets — no real logos) are a motif, reused in the hook and the
+"fined before" beat.
+
+==================================================================
+THE CORE IDEA
+==================================================================
+Tether issues USDT, a "stablecoin" pegged 1:1 to the US dollar. You give them a
+real dollar, they mint you a token, and they KEEP the dollar — which they invest
+(mostly in US Treasury bills, ~4-5% yield) while paying token holders 0%. With
+100B+ dollars of USDT out there, that's an interest-free, ever-growing pile of
+other people's money, and Tether keeps 100% of the return. It's "float" — the
+holy grail of finance.
+Punchline: if you get to issue the dollar, you get to keep the interest.
+
+NOTE (honesty — keep one short "catch" beat):
+- Figures are as REPORTED by Tether (attestations, not full independent audits).
+- Reserves are MOSTLY T-bills + other assets — say "mostly."
+- Tether has been FINED before (CFTC/NYAG) for overstating reserves.
+- The model depends on TRUST: a mass redemption / bank-run is the failure mode.
+- "Infinite leverage" is hyperbole → frame as free, growing, interest-free float.
+
+==================================================================
+SCRIPT
+==================================================================
+
+--- HOOK (0:00–0:12) — the payoff up front ---
+
+There's a company that makes more money per employee than almost anyone on Earth.
+[Open on the GRID. Two–three reconstructed news HEADLINE cards cascade in from the
+top, one after another (each lands with a soft swoosh + a faint shadow, no border):
+  • "Tether reports record ~$13B profit in 2024"
+  • "~100 employees. Billions in profit."
+  • "More profit per head than Wall-Street giants"
+Realistic finance-press styling (generic outlet name, small dateline, thin rule),
+NOT a chart. The third card's phrase "per head" gets a quiet turquoise underline.]
+Around a hundred staff. Billions in annual profit. And the entire business model
+is this: you give them a dollar, they hand you a token — and they keep the dollar.
+[Headlines recede via a depth zoom-out. The MOTIF assembles on the grid: a tiny
+"TETHER" office sits front-left; on "you give them a dollar" the $1 bill slides in
+from the left → on "they hand you a token" the turquoise USDT token pops out to the
+right (pop) → on "they keep the dollar" the $1 tips and drops into a huge VAULT that
+fills the right of the frame (swoosh). Size gag: the office is tiny, the vault is
+enormous.]
+That's Tether. And it's completely legal. Here's why it might be the most genius
+business model ever invented.
+[The vault gives one confident shut/clink; the USDT token settles, gently glints.
+"completely legal" — a tiny turquoise check badge ticks onto the token.]
+
+--- WHAT IT ACTUALLY IS (≈0:12–0:35) ---
+
+Tether runs USDT — a "stablecoin." One USDT is always meant to equal one US dollar.
+[THE PEG: the USDT token and the $1 bill drift to centre and lock together with a
+small turquoise link/clasp; a clean "1 USDT = 1 USD" reads between them (data, not a
+spoken-sentence dump). They bob up and down in perfect sync to sell "locked."]
+Crypto traders love it: it's a dollar that lives on the blockchain, so they can
+jump in and out of trades instantly.
+[The crypto TRADER (cartoon, no outline) slides in from the left. The token rides a
+short chain of little blocks; the trader taps and hops the token between two faint
+market panels (in / out), quick and snappy — "jump in and out."]
+To get one, you hand Tether a real dollar, and they mint you a token.
+[THE SWAP (same objects as the hook, consistency): trader hands the $1 across → it
+crosses to the TETHER office → a fresh USDT token mints out and slides back to the
+trader (pop). Simple, clean, one motion.]
+Simple. But the magic isn't the token — it's what happens to your dollar.
+["the token" dims/greys out for a beat; the camera pushes past it and follows the
+$1 bill as it falls down into the VAULT — a continuous move that sets up the next
+scene (no cut).]
+
+--- THE TRICK (≈0:35–1:00) ---
+
+Because Tether doesn't just let your dollar sit in a drawer.
+[Inside/atop the VAULT: a lone $1 sits in an open drawer; the drawer is given a
+small "boring" zzz — then it's yanked shut. The dollars don't stay still.]
+It takes all those billions and parks them mostly in US Treasury bills — basically
+the safest loan on the planet — earning around 4 to 5% a year.
+[A stream of dollars pours out of the VAULT into a stack of US T-BILLS (cropped
+Treasury-bill doc, dashed outline) — "mostly" kept honest (one small "+ other
+assets" chip beside the stack). A graph-chart-v2 YIELD METER draws up on the right
+with a vertical scale, ticking, and lands on ~4–5% (counter ticks 0 → ~5%).]
+And how much of that interest do they pass back to you, the token holder?
+[Camera pans to the holder's side — the TRADER holds the USDT token, looking up
+expectantly, an empty open palm held out.]
+[A big fat 0% stamps onto the screen.]
+Zero. You're holding a dollar that pays you nothing — and Tether keeps every cent
+of the yield.
+[A huge turquoise 0% hard-STAMPS over the trader's empty palm (pop/thud, slight
+screen shake). Then the FOUNDER (cartoon) on the other side calmly rakes the ~5%
+yield coins toward himself and pockets them — the 5%-in / 0%-out asymmetry, with a
+wink of humor. Tiny labels: "earns ~5%" by the founder, "earns 0%" by the trader.]
+
+--- THE SCALE: FREE MONEY (≈1:00–1:25) ---
+
+Now multiply it. There's well over a hundred billion dollars of USDT out there —
+which means well over a hundred billion of other people's money, working for
+Tether, for free.
+[A big ODOMETER counter spins UP and rolls past $100,000,000,000 (ticking, digits
+blurring then settling). As it climbs, lots of small USDT tokens stream from a crowd
+of faceless little users toward the VAULT — "other people's money, working for free."
+The word "float" pops on quietly (text-popup) and tucks beside the counter.]
+And normally, getting capital is expensive: a bank pays interest to its
+depositors, a company pays interest on its bonds. Everyone pays for money.
+[Framed as characters, not a cold chart: a little BANK figure hands interest coins
+DOWN to a row of depositors; a COMPANY figure hands coins to bondholders. Coins
+visibly leave their hands each time — "everyone pays."]
+Tether's cost? Nothing.
+[Cut to the FOUNDER beside the same flow — he holds his coins, hands out NOTHING;
+his stack only grows. A small "cost of capital" tag: Bank ~4% · Company ~5% ·
+Tether 0% (the 0% in turquoise) — comparison as a light caption, not a bar wall.]
+It's an interest-free loan from millions of users — and it keeps 100% of the return.
+In 2024, the company reported around 13 billion dollars in profit, with a team you
+could fit in a single room.
+[CALLBACK GAG: pull back to reveal a vast, near-empty office room with only ~100
+tiny dots of people huddled in one corner, dwarfed by a towering stack of profit
+($13B label) climbing out of frame beside them. Humor: the scale mismatch.]
+
+--- THE CATCH (≈1:25–1:48) ---
+
+So what's the catch? Trust.
+[The whole MOTIF stacks into one precarious TOWER: vault → T-bill stack → and the
+USDT token balanced right on the very top, wobbling slightly. "Trust" is the only
+thing holding it up — a thin turquoise line/thread the token hangs by.]
+The whole thing holds up only as long as people believe every token is really
+backed by a real dollar — and don't all rush to cash out at once.
+[A reconstructed RESERVE REPORT document appears; a magnifying glass (cropped photo,
+dashed outline) slides over it and a "?" hovers where the numbers should add up.]
+Tether has been fined before for overstating what was actually in its reserves, and
+it publishes "attestations," not full independent audits.
+[Reuse the HEADLINE motif: one reconstructed card slides in — "Regulators fine
+Tether over reserve claims" (generic outlet). Under the magnifier, "ATTESTATION" is
+stamped on the doc, with "≠ full audit" noted small beside it.]
+The model is brilliant. But it runs entirely on confidence.
+[The depositor CROWD suddenly rushes the VAULT (a small run); the precarious tower
+wobbles hard and the token teeters — held, but only just. Tension, then it steadies.]
+
+--- PUNCHLINE / OUTRO (≈1:48–2:02) ---
+
+Still — it cracked something most people never even see. The most profitable
+trade in finance wasn't picking the right stock, or the right coin.
+[A scatter of generic stock charts and crypto coin logos fade/blur away and drift
+off-frame — the "obvious" trades dismissed.]
+It was realizing that if you get to issue the dollar... you get to keep the
+interest.
+[PUNCHLINE final state: the camera settles as the USDT token rises and glows on a
+THRONE built of stacked T-bills (the motif's payoff). Warm turquoise glow; the token
+sits like a crown jewel. A short beat of stillness lets it land.]
+[The USDT token glows on a throne built of T-bills.]
+
+Want more business models that sound illegal but aren't?
+[Outro default element assembles (lift + swoosh): the stacked-cube stacktags logo
+between two turquoise chevrons.]
+Follow Stacktags.
+[stacktags wordmark + grey "stacktags.io" line; a "Follow" prompt pulses in. Lands
+on the closing word.]

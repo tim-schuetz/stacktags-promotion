@@ -8,7 +8,7 @@ const SHOTS = path.resolve(__dirname, 'shots');
 fs.mkdirSync(SHOTS, { recursive: true });
 
 const TIMES = process.argv.slice(2).length ? process.argv.slice(2).map(Number)
-  : [16, 17.5, 21, 33.5, 36.5, 39, 46, 49.5, 52, 54, 58, 85.5];
+  : [16.5, 21, 26, 30, 33.5, 36.5, 46, 52, 54, 58, 85.5];
 
 (async () => {
   const browser = await chromium.launch({ executablePath: exe, headless: true, args: ['--autoplay-policy=no-user-gesture-required', '--ignore-gpu-blocklist', '--enable-gpu-rasterization', '--force-device-scale-factor=1', '--mute-audio'] });

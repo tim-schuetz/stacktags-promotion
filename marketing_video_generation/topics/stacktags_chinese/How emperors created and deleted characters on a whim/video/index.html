@@ -10,7 +10,7 @@
 <!-- Inter (full latin) for all UI/English text -->
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <!-- Noto Sans SC, subsetted to the CJK glyphs shown as static TEXT (subs + labels) -->
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@500;700;900&text=避讳李世民觀世音曌圀埊瞾&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@500;700;900&text=避讳李世民觀世音曌圀埊瞾子界人〇&display=swap" rel="stylesheet">
 
 <!-- shared theme tokens + grid + subtitles (the design system) -->
 <link rel="stylesheet" href="elements/theme.css">
@@ -31,17 +31,13 @@
     <!-- all scene layers stack here -->
     <div class="scenes" id="scenes">
 
-      <!-- ===== HOOK — the seal deletes a char, then mints one; two teasers ===== -->
+      <!-- ===== HOOK — the seal deletes a char, then mints one ===== -->
       <div class="scene" id="sc-hook">
         <div class="cell" id="hk-cell">
           <div class="cell-glyph" id="hk-del"></div>
           <div class="cell-glyph" id="hk-new"></div>
         </div>
         <div class="seal" id="hk-seal"></div>
-        <div class="teasers" id="hk-teasers">
-          <div class="teaser" id="hk-t1"><div class="t-glyph" id="hk-t1g"></div></div>
-          <div class="teaser" id="hk-t2"><div class="t-glyph zh-static" id="hk-t2g">曌</div></div>
-        </div>
       </div>
 
       <!-- ===== RULE — the naming taboo 避讳, + a "missing stroke" demo ===== -->
@@ -53,7 +49,7 @@
         <div class="seal" id="rule-seal"></div>
       </div>
 
-      <!-- ===== COLLISION — emperor & goddess share 世; his claim forces hers out ===== -->
+      <!-- ===== TAIZONG + example words; 觀世音→觀音 is the LAST example ===== -->
       <div class="scene" id="sc-collide">
         <img class="portrait emp" id="co-emp" src="assets/img/taizong_dashed.png" alt="" />
         <div class="cn-name" id="co-empname">
@@ -61,7 +57,12 @@
         </div>
         <div class="cn-cap" id="co-empcap">Tang Taizong</div>
 
-        <div class="link-wrap" id="co-link"><span class="link-pulse" id="co-pulse"></span></div>
+        <!-- each character of 李世民 in an everyday word (shared char turquoise) -->
+        <div class="ex-row" id="co-ex">
+          <div class="ex-chip" id="co-ex0"><span class="hl">李</span>子</div>
+          <div class="ex-chip" id="co-ex1"><span class="hl">世</span>界</div>
+          <div class="ex-chip" id="co-ex2">人<span class="hl">民</span></div>
+        </div>
 
         <div class="cn-name god" id="co-godname">
           <span class="gslot" id="co-g0s"><span class="pg" id="co-g0"></span></span>
@@ -83,8 +84,14 @@
         <div class="seal" id="wz-seal"></div>
       </div>
 
-      <!-- ===== 曌 — built from sun 日 + moon 月 over sky 空 ===== -->
+      <!-- ===== 曌 — her "whole set" of inventions (top, stays) + 曌 built below ===== -->
       <div class="scene" id="sc-zhao">
+        <div class="invent-row" id="zh-inv">
+          <span class="zh-static iv" id="ziv0">圀</span>
+          <span class="zh-static iv" id="ziv1">埊</span>
+          <span class="zh-static iv" id="ziv2">瞾</span>
+          <span class="zh-static iv" id="ziv3">〇</span>
+        </div>
         <div class="assembly" id="zh-asm">
           <div class="asm-top">
             <div class="asm-part" id="zh-sun-wrap"><div class="ap-host" id="zh-sun"></div><div class="ap-lab">sun</div></div>
@@ -97,19 +104,11 @@
         <div class="zh-final zh-static" id="zh-final">曌</div>
         <div class="word-py" id="zh-py">zhào</div>
         <div class="word-gloss" id="zh-gloss">sun &amp; moon over the sky</div>
-        <div class="vanish-row" id="zh-others">
-          <span class="zh-static vg" id="zo0">圀</span>
-          <span class="zh-static vg" id="zo1">埊</span>
-          <span class="zh-static vg" id="zo2">瞾</span>
-        </div>
         <div class="seal" id="zh-seal"></div>
       </div>
 
-      <!-- ===== PUNCHLINE — the throne erases / mints; Guanyin endures ===== -->
+      <!-- ===== PUNCHLINE — the enduring Guanyin (statue + 觀音) ===== -->
       <div class="scene" id="sc-punchline">
-        <div class="pu-side left" id="pu-del"><span class="pg" id="pu-delg"></span></div>
-        <div class="seal big" id="pu-seal"></div>
-        <div class="pu-side right" id="pu-mint"><span class="zh-static" id="pu-mintg">曌</span></div>
         <img class="portrait statue" id="pu-statue" src="assets/img/guanyin_dashed.png" alt="" />
         <div class="pu-guanyin" id="pu-guanyin"><span class="pg" id="pu-gy0"></span><span class="pg" id="pu-gy1"></span></div>
         <div class="word-py" id="pu-py">Guānyīn</div>

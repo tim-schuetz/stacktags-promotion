@@ -1,7 +1,7 @@
 VIDEO SCRIPT
 Title options (pick one): For 2,000 years, Chinese wrote in a dead language
 Topic: Learn Chinese
-Target length: ~100 seconds (fits the 30s–3min window)
+Target length: ~115 seconds (fits the 30s–3min window)
 Language of narration: English
 Format: Spoken voiceover narration (verbatim below) + [bracketed] on-screen storyboard cues.
   The narration lines are the TTS source; every [ ... ] line and this header are stripped before TTS.
@@ -16,141 +16,118 @@ movement (from 1917) made spoken baihua the written norm within ~a decade. Learn
 文言文, 白话, diglossia.
 Punchline: it took a 20th-century revolution just to let people write the way they talk.
 
+REWRITE NOTE (2026-06-28): the previous cut stated the gap but never EXPLAINED it, so viewers
+asked "how can writing freeze while speech changes?". This version grounds it with a concrete
+example (the everyday word for "you" kept shifting in speech, but writing kept the ancient form)
+and spells out that 文言文 differed in words AND grammar, not just in being "hard characters".
+
 NOTE (honesty): "nobody spoke it for 2,000 years" is the hook's hyperbole — Classical
 Chinese was based on speech from ~2,000+ years earlier and hadn't matched everyday
-speech for many centuries. Resolve honestly in the body.
+speech for many centuries. Resolved honestly in the body.
 
 ==================================================================
 VISUAL SPINE (read before the cues)
 ==================================================================
-Persistent hero = ONE cartoon figure (figure kit) + the "speaks ↔ writes" split.
-Core teaching diagram = TWO horizontal lanes, SPOKEN (bottom) vs WRITTEN (top), that
-start fused in antiquity, DRIFT apart (written freezes ❄/🔒, spoken keeps evolving via
-morphing hanzi), then SNAP BACK TOGETHER under Hu Shi. The hook's big turquoise "≠"
-between mouth and hand resolves to "=" in the outro (visual rhyme / payoff).
-Anti-slop rule: NO on-screen text that just echoes the narration. On-screen text only
-for genuine new info = the learned vocab 文言文 / 白话 / diglossia (with pinyin + gloss).
-White grid bg, Inter, only white + turquoise (#35A292 / #119271), grey subtitles
-(#8a949d) with turquoise keywords. swoosh only when the grid moves or a default element
-animates; pop on word/bubble appearance; ticking on the decade counter.
+Persistent hero = ONE real person (generated photo cut-out) + the "speaks ↔ writes" split.
+Core teaching scene = the DRIFT: ONE example word ("you"), written 文言文 stays frozen (汝 top
+AND bottom, unchanged) while spoken 白话 evolves down a line (汝→爾→你); Hu Shi reunites them.
+Figures are GENERATED photos (hero, Hu Shi portrait, scholar-official, commoner crowd), not drawings.
+The hook's big turquoise "≠" resolves to "=" in the payoff. White grid, Inter, white+turquoise
+(#35A292 / #119271), grey subtitles (#8a949d) with turquoise keywords. swoosh only when the grid
+moves or a default element animates; pop on word/object appearance; ticking on the decade counter.
 
 ==================================================================
 SCRIPT
 ==================================================================
 
---- HOOK (0:00–0:14) — the payoff up front ---
+--- HOOK (0:00–0:18) — the payoff up front, now grounded ---
 
-[SCENE: HOOK — persistent hero figure (figure kit) centered on the white grid, a brush
-in hand, a blank paper/scroll in front of it. Faint, friendly idle.]
+[SCENE: HOOK — the hero (generated photo of an ordinary person) centered on the white grid.]
 
-For most of its history, China wrote in a language that nobody actually spoke — and
-hadn't spoken for well over a thousand years. You'd speak one kind of Chinese... and
-write a completely different one.
+For most of its history, China wrote in a language that almost nobody actually spoke. You'd say
+something out loud... and then write it down in a completely different language. Same meaning — but
+different words, and different grammar.
 
-[ON "speak one kind of Chinese": a SPEECH BUBBLE pops from the figure's mouth (pop SFX)
-with plain modern 白话 → 他在哪里? (light, rounded, everyday). ON "write a completely
-different one": the brush draws DENSE, different 文言文 onto the scroll via hanzi
-write-on → 安在哉? (same meaning, terser, archaic 哉 particle). A large turquoise "≠"
-snaps in between the mouth-bubble and the hand-scroll. Hero's face = mild confusion.
-Hold this mouth≠hand frame as the hook's punch — this exact "≠" is paid off at the end.]
+[ON "say something out loud": a SPEECH BUBBLE pops with plain spoken 白话 → 我不知道 ("I don't
+know"). ON "write it down in a completely different language": a brush writes the terse classical
+文言文 → 吾不知 onto paper (hanzi write-on). ON "different words, different grammar": a big turquoise
+"≠" snaps in between the bubble and the paper, tiny SPOKEN / WRITTEN tags. Hold this as the hook.]
 
---- THE SPLIT (≈0:14–0:48) ---
+--- THE SPLIT (≈0:18–0:58) — explain HOW the gap opened ---
 
-[SCENE: DRIFT DIAGRAM (custom hero element). Camera depth-moves out from the hook into a
-two-lane track. Both lanes START FUSED at a single left origin dot labelled "antiquity
-~2,000 yrs ago". swoosh on the depth move.]
+[SCENE: DRIFT (teaching spine). Two columns under a small kicker "the everyday word for ‘you’":
+LEFT = 文言文 (written), RIGHT = 白话 (spoken). Both start with the SAME card 汝 (rǔ).]
 
-Until about a century ago, written Chinese was 文言文 — Classical, or Literary,
-Chinese. It was based on the language of the ancient classics, from over two thousand
-years ago. And it basically froze there.
+Here's how that happened. The written language was called 文言文 — classical Chinese — and it was
+based on the way people spoke more than two thousand years ago. Then it basically froze. Scholars
+kept writing in that same ancient style, century after century. But the spoken language never stopped
+changing.
 
-[ON "written Chinese was 文言文": the TOP (written) lane gets its marker — hanzi 文言文
-writes on (text-popup) with pinyin "wényánwén" + small gloss "literary Chinese". ON "it
-basically froze there": the top lane FREEZES — frost tint + a small 🔒/ice glaze creeps
-over the 文言文 marker, and it STOPS advancing while a faint year-ticker keeps counting
-up past it. No swoosh (grid still); soft frost tick.]
+[ON "based on the way people spoke 2,000 years ago" / "froze": establish the LEFT column — 文言文
+label + card 汝 (rǔ) — and a plain grey track dropping straight down (frozen). Establish the RIGHT
+column — 白话 label + the same card 汝 — with a teal track.]
 
-Meanwhile, spoken Chinese kept evolving, century after century. So the written language
-and the spoken language drifted further and further apart — until they were effectively
-two different languages.
+Take a simple, everyday word — like the word for "you." Over the centuries, the way people said it
+slowly shifted. But to write it, you were still expected to use the ancient form.
 
-[ON "spoken Chinese kept evolving": the BOTTOM (spoken) lane keeps MOVING forward, its
-glyph morphing through 2–3 evolving forms (hanzi morph) = the living language changing.
-ON "drifted further and further apart": the two lanes visibly SEPARATE vertically, the
-gap between frozen-top and moving-bottom widening; a thin dashed "gap" measure grows.]
+[ON "the way people said it slowly shifted": down the RIGHT teal line, cards pop in turn — 汝 (rǔ) →
+爾 (ěr) → 你 (nǐ), the modern spoken form. ON "you were still expected to use the ancient form": the
+LEFT bottom card pops — still 汝 (rǔ), unchanged — directly across from the evolved 你.]
 
-You spoke everyday Chinese — 白话, "plain speech" — but to write, you had to use this
-ancient, compressed, classical form almost no one actually spoke.
+Do that across the whole language, and the Chinese people spoke and the Chinese they wrote drifted
+into two different worlds — one alive and changing, the other frozen in time.
 
-[ON "白话, plain speech": the bottom lane gets its label — hanzi 白话 (text-popup) +
-pinyin "báihuà" + gloss "plain speech". End state held: TOP = frozen 文言文 (iced,
-locked), BOTTOM = living 白话. This split diagram is the anchor the rest references.]
+[Hold the contrast: RIGHT column 汝→爾→你 (alive), LEFT column 汝…汝 (frozen). This is the answer to
+"how can writing freeze while speech changes".]
 
---- WHAT THAT MEANT (≈0:48–1:14) ---
+--- WHAT THAT MEANT (≈0:58–1:24) — why it was so costly ---
 
-[SCENE: DIGLOSSIA. The two lanes reframe into two domains: STREET (left, a couple of
-small everyday people figures = 白话) and PAGE (right, a scroll/book = 文言文). The word
-"diglossia" pops in centered (text-popup) — this is the linguistics term we teach.]
+[SCENE: DIGLOSSIA — the term "diglossia" pops; STREET (generated commoner crowd) with 白话 vs PAGE
+(a scroll) with 文言文, a dashed divide between them.]
 
-Linguists have a name for this: diglossia — one language for the street, another for
-the page.
+Linguists have a name for this: diglossia — one language for talking, another for writing. And it
+made being literate brutally hard.
 
-[ON "one language for the street, another for the page": briefly tag the STREET side
-with the living 白话 glyph and the PAGE side with the frozen 文言文 glyph (reuse the two
-markers, no new prose text).]
+[ON "diglossia": term pops centered, then the two domains slide in — crowd + 白话 (the street),
+scroll + 文言文 (the page).]
 
-And it meant that being literate didn't just mean knowing the characters. It meant
-mastering a near-dead language on top of your own.
+You didn't just have to learn the characters — you had to master what was almost a dead language, on
+top of the one you already spoke. So reading and writing stayed locked to a small, educated elite.
+For everyone else, the way they actually talked just wasn't considered proper to write down.
 
-[ON "mastering a near-dead language on top of your own": one ordinary figure has to
-carry a SECOND heavy scroll (the dead language) stacked on top — visible strain / humor.]
+[SCENE: ELITE — a single scholar-official (generated photo) raised high holding 文言文; far below, a
+big crowd (generated photo) with 白话; a dashed divide between high and low = literacy locked to a
+tiny elite. No padlock.]
 
-Which made reading and writing brutally hard, and kept them locked to a small,
-scholarly elite. Everyday speech simply wasn't considered "proper" to write down.
+--- THE REVOLUTION (≈1:24–1:46) ---
 
-[ON "locked to a small, scholarly elite": the PAGE sits behind a closed GATE with the
-same 🔒 lock from the frozen lane (callback). Only ONE scholar figure (robe + cap) passes
-through; the ordinary STREET figures walk up and BOUNCE off the gate (light humor). swoosh
-on the gate slam.]
+[SCENE: HU SHI — a generated vintage portrait of Hu Shi slides in; label 胡适 "Hu Shi"; a turquoise
+1917 seal presses in.]
 
---- THE REVOLUTION (≈1:14–1:34) ---
+Then, around 1917, a scholar named Hu Shi pushed a radical idea: simply write the way you speak. Use
+the living, spoken language — baihua — as the written standard.
 
-[SCENE: HU SHI. A stylized reformer figure SLIDES IN from the top (like the "official"
-entrance), the bouncing figures settle below. Label appears: 胡适 "Hu Shi". A turquoise
-1917 STAMP slams down (stamp SFX = swoosh). No photo — stylized vector figure.]
+[ON "write the way you speak": the brush now writes 白话 directly. ON "as the written standard":
+cut back to the DRIFT — the frozen written card 汝 sheds and rewrites to 你, matching the spoken
+form (the two columns reunite).]
 
-Then, starting around 1917, a scholar named Hu Shi led a movement with a radical
-idea: write the way you actually speak. Use the living, spoken language — baihua — as
-the written standard.
+And it caught on fast. Within about a decade, schools and newspapers had traded classical Chinese
+for the language people actually used.
 
-[ON "write the way you actually speak": the brush now writes 白话 DIRECTLY onto the page;
-the GATE's lock pops open. ON "as the written standard": the two drifted lanes SNAP BACK
-TOGETHER — the iced 文言文 lane THAWS and merges down into the living 白话 lane (the big
-payoff of the drift diagram). swoosh on the reconverge.]
+[ON "within about a decade": a quick 1917 → 1927 counter (ticking). ON "schools and newspapers": a
+recreated 新青年 (New Youth) masthead flips its body from cramped classical columns to clean
+vernacular lines.]
 
-It caught on fast. Within about a decade, the vernacular had replaced classical Chinese
-in schools and newspapers.
+--- PUNCHLINE / OUTRO (≈1:46–2:00) ---
 
-[ON "within about a decade": a quick 1917 → 1927 counter ticks (ticking SFX). ON "schools
-and newspapers": a recreated NEWSPAPER masthead (built in HTML, period look) flips its
-body text from dense 文言文 columns to clean 白话 — one crisp before→after switch, not a
-montage.]
+[SCENE: PAYOFF — back to the hero; now the spoken bubble (我不知道) and the written paper (我不知道)
+MATCH, and the hook's "≠" flips to a turquoise "=".]
 
---- PUNCHLINE / OUTRO (≈1:34–1:48) ---
+So for two thousand years, China wrote in a language that time had left behind — and it took a
+twentieth-century revolution just to let people write the way they talk. We take it for granted that
+we write our own language. For most of Chinese history, that simply wasn't allowed.
 
-[SCENE: PAYOFF — return to the hero figure. Now the speech bubble (白话) and the written
-scroll (白话) MATCH, and the hook's "≠" flips to a turquoise "=". Brief, satisfying.]
-
-So for two thousand years, China wrote in a language that time had left behind — and
-it took a twentieth-century revolution just to let people write the way they talk. We
-take it for granted that we write our own language. For most of Chinese history, that
-wasn't even allowed.
-
-[Optional tiny vocab recap as the two learned markers (文言文 / 白话) sit briefly beside
-the hero — no extra prose. Then depth-move into the OUTRO.]
-
-[SCENE: OUTRO — default outro element: stacked-cube logo between two turquoise chevrons,
-"stacktags" wordmark, grey "stacktags.io" line. swoosh on assemble.]
+[SCENE: OUTRO — default outro element: stacked-cube logo, "stacktags" wordmark, grey "stacktags.io".]
 
 Wanna actually start learning Chinese?
 Discover thousands of free exercises and more learning content on stacktags.io.

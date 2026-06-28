@@ -100,26 +100,37 @@ body.clean { background: #fff; }
 .vtext .en { margin-top: 6px; font: 700 34px/1 'Inter', sans-serif; color: var(--stk-muted); }
 
 /* ===========================================================================
-   ZHOU YOUGUANG  (real portrait in a soft profile card + name)
+   REFORMERS  (Zhou solo, then the committee — incl. a Mao-suit figure —
+   slides up from below while Zhou rises a little and stays visible)
    =========================================================================== */
-.zhou-stage { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; gap: 26px; padding-bottom: 296px; }
-.zhou-photo { width: 430px; opacity: 0; transform: scale(.88) translateY(24px);
-  transition: opacity .4s ease, transform .6s cubic-bezier(.2,.8,.2,1); }
-.zhou-photo img { width: 100%; height: auto; display: block; filter: drop-shadow(0 26px 42px rgba(20,40,33,.24)); }
-.zhou-stage.in .zhou-photo { opacity: 1; transform: none; }
-.zhou-card { text-align: center; opacity: 0; transform: translateY(16px);
-  transition: opacity .4s ease .15s, transform .5s ease .15s; }
-.zhou-stage.in .zhou-card { opacity: 1; transform: none; }
-.zhou-card .zh { font: 900 100px/1 'Noto Sans SC', sans-serif; color: var(--stk-ink); letter-spacing: 4px; }
-.zhou-card .rom { margin-top: 12px; font: 800 46px/1 'Inter', sans-serif; color: var(--stk-teal-d); }
-.zhou-card .en { margin-top: 10px; font: 700 32px/1 'Inter', sans-serif; color: var(--stk-muted); }
+.reformers { position: absolute; left: 50%; bottom: 520px; transform: translateX(-50%); display: flex; align-items: flex-end; gap: 16px; }
+.person { width: 152px; opacity: 0; transform: translateY(540px);
+  transition: transform .75s cubic-bezier(.2,.8,.2,1), opacity .55s ease; }
+.person img { width: 100%; height: auto; display: block; filter: drop-shadow(0 14px 24px rgba(20,40,33,.16)); }
+.person.zhou { opacity: 1; transform: none; }
+/* solo: only Zhou — big, centred, a little lower */
+.reform-stage.solo .person.zhou { transform: translate(84px, 150px) scale(1.7); }
+.reform-stage.solo .person.zhou img { filter: drop-shadow(0 30px 50px rgba(20,40,33,.22)); }
+/* crowd / payoff: everyone in the row, Zhou risen + normal size */
+.reform-stage.crowd .person, .reform-stage.payoff .person { transform: none; opacity: 1; }
+.reform-stage.crowd .person:nth-child(1) { transition-delay: .04s; }
+.reform-stage.crowd .person:nth-child(2) { transition-delay: .12s; }
+.reform-stage.crowd .person:nth-child(4) { transition-delay: .20s; }
+.reform-stage.crowd .person:nth-child(5) { transition-delay: .28s; }
+.reform-stage.crowd .person:nth-child(6) { transition-delay: .36s; }
+.zhou-card { position: absolute; left: 50%; top: 900px; transform: translateX(-50%); text-align: center; opacity: 0; transition: opacity .4s ease; }
+.reform-stage.solo .zhou-card { opacity: 1; }
+.zhou-card .zh { font: 900 86px/1 'Noto Sans SC', sans-serif; color: var(--stk-ink); letter-spacing: 3px; }
+.zhou-card .rom { margin-top: 10px; font: 800 42px/1 'Inter', sans-serif; color: var(--stk-teal-d); }
+.zhou-card .en { margin-top: 8px; font: 700 30px/1 'Inter', sans-serif; color: var(--stk-muted); }
 
 /* ===========================================================================
    REFORM WALL  (pinyin tries to replace a row of characters, fails, becomes
    a helper tucked under them)
    =========================================================================== */
 .reform-stage { position: absolute; inset: 0; }
-.charrow { position: absolute; left: 50%; top: 52%; transform: translate(-50%, -50%); display: flex; gap: 30px; transition: opacity .4s ease; }
+.charrow { position: absolute; left: 50%; top: 40%; transform: translate(-50%, -50%); display: flex; gap: 30px; opacity: 0; transition: opacity .4s ease; }
+.charrow.show { opacity: 1; }
 .charrow.gag { opacity: 0; }
 .cell { position: relative; width: 168px; height: 268px; }
 .cell .hz { position: absolute; left: 50%; top: 80px; transform: translate(-50%, -50%) scale(1);
@@ -144,7 +155,7 @@ body.clean { background: #fff; }
 .abc-future.lit .lab { color: var(--stk-teal-d); }
 .abc-future .cap { margin-top: 8px; font: 700 26px/1 'Inter', sans-serif; color: var(--stk-muted); letter-spacing: .4px; }
 
-.toohard { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%) scale(.6);
+.toohard { position: absolute; left: 50%; top: 40%; transform: translate(-50%, -50%) scale(.6);
   opacity: 0; transition: opacity .35s ease, transform .5s cubic-bezier(.34,1.6,.5,1);
   display: flex; flex-direction: column; align-items: center; gap: 14px; z-index: 8; }
 .toohard.in { opacity: 1; transform: translate(-50%, -50%) scale(1); }
@@ -168,34 +179,36 @@ body.clean { background: #fff; }
    MODERN  (literacy rate chart + skyscrapers sliding up from below)
    =========================================================================== */
 .modern-stage { position: absolute; inset: 0; }
-.skyline { position: absolute; left: 0; right: 0; bottom: 0; height: 1100px;
-  display: flex; align-items: flex-end; justify-content: center; gap: 18px; pointer-events: none; }
-.tower { transform: translateY(760px); opacity: 0;
-  transition: transform .75s cubic-bezier(.2,.8,.2,1), opacity .45s ease; }
-.tower img { display: block; width: auto; filter: drop-shadow(0 18px 28px rgba(20,40,33,.13)); }
-.tower.t1 img { height: 660px; } .tower.t2 img { height: 800px; } .tower.t3 img { height: 600px; }
+.skyline { position: absolute; left: 0; right: 0; bottom: 0; height: 1200px;
+  display: flex; align-items: flex-end; justify-content: center; gap: 8px; pointer-events: none; }
+.tower { transform: translateY(840px); opacity: 0;
+  transition: transform .8s cubic-bezier(.2,.8,.2,1), opacity .45s ease; }
+.tower img { display: block; width: auto; filter: drop-shadow(0 16px 30px rgba(20,40,33,.12)); }
+.tower.t1 img { height: 700px; } .tower.t2 img { height: 880px; } .tower.t3 img { height: 740px; }
 .skyline.in .tower { transform: none; opacity: 1; }
 .skyline.in .tower.t1 { transition-delay: .05s; }
 .skyline.in .tower.t2 { transition-delay: .20s; }
 .skyline.in .tower.t3 { transition-delay: .34s; }
 
-.litchart { position: absolute; left: 50%; top: 300px; transform: translateX(-50%); width: 768px;
-  background: rgba(255,255,255,.86); border-radius: 34px; padding: 34px 44px 26px;
-  box-shadow: 0 28px 64px rgba(20,40,33,.14); opacity: 0; transition: opacity .4s ease; }
+/* big, box-less literacy chart with dashed gridlines */
+.litchart { position: absolute; left: 50%; top: 248px; transform: translateX(-50%); width: 944px;
+  opacity: 0; transition: opacity .4s ease; }
 .litchart.in { opacity: 1; }
-.lc-title { font: 800 38px/1 'Inter', sans-serif; color: var(--stk-ink); letter-spacing: -.5px; margin-bottom: 6px; }
+.lc-title { font: 800 48px/1 'Inter', sans-serif; color: var(--stk-ink); letter-spacing: -.6px; margin: 0 0 4px 24px; }
 .lc-svg { width: 100%; height: auto; display: block; overflow: visible; }
-.lc-axis { stroke: rgba(35,43,51,.16); stroke-width: 3; }
-.lc-area { fill: rgba(53,162,146,.12); opacity: 0; transition: opacity .6s ease .6s; }
+.lc-grid line { stroke: rgba(35,43,51,.24); stroke-width: 2.5; stroke-dasharray: 9 10; }
+.lc-grid text { font: 700 28px 'Inter', sans-serif; fill: var(--stk-muted); text-anchor: end; }
+.lc-axis { stroke: rgba(35,43,51,.32); stroke-width: 3; }
+.lc-xlab { font: 700 28px 'Inter', sans-serif; fill: var(--stk-muted); }
+.lc-area { fill: rgba(53,162,146,.13); opacity: 0; transition: opacity .6s ease .6s; }
 .litchart.in .lc-area { opacity: 1; }
-.lc-line { fill: none; stroke: var(--stk-teal); stroke-width: 9; stroke-linecap: round; stroke-linejoin: round;
-  stroke-dasharray: 720; stroke-dashoffset: 720; }
-.litchart.in .lc-line { animation: draw 1.7s cubic-bezier(.4,0,.3,1) forwards; }
+.lc-line { fill: none; stroke: var(--stk-teal); stroke-width: 12; stroke-linecap: round; stroke-linejoin: round;
+  stroke-dasharray: 1150; stroke-dashoffset: 1150; }
+.litchart.in .lc-line { animation: draw 1.8s cubic-bezier(.4,0,.3,1) forwards; }
 @keyframes draw { to { stroke-dashoffset: 0; } }
-.lc-dot { fill: var(--stk-teal-d); opacity: 0; transition: opacity .3s ease 1.6s; }
+.lc-dot { fill: var(--stk-teal-d); opacity: 0; transition: opacity .3s ease 1.7s; }
 .litchart.in .lc-dot { opacity: 1; }
-.lc-val { position: absolute; right: 60px; top: 70px; font: 900 96px/1 'Inter', sans-serif; color: var(--stk-teal-d); letter-spacing: -3px; }
-.lc-years { display: flex; justify-content: space-between; padding: 6px 30px 0; font: 700 27px/1 'Inter', sans-serif; color: var(--stk-muted); }
+.lc-val { position: absolute; right: 0; top: 8px; font: 900 124px/1 'Inter', sans-serif; color: var(--stk-teal-d); letter-spacing: -4px; }
 
 /* ===========================================================================
    PHONE IME  (type pinyin → pick the character)

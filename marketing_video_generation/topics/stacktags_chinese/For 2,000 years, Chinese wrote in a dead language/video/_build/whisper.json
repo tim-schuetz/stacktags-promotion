@@ -1,5 +1,5 @@
 {
- "duration": 99.614,
+ "duration": 105.883,
  "words": [
   {
    "word": " For",
@@ -9,1523 +9,1708 @@
   {
    "word": " most",
    "start": 0.18,
-   "end": 0.36
+   "end": 0.4
   },
   {
    "word": " of",
-   "start": 0.36,
-   "end": 0.52
+   "start": 0.4,
+   "end": 0.54
   },
   {
    "word": " its",
-   "start": 0.52,
-   "end": 0.62
+   "start": 0.54,
+   "end": 0.7
   },
   {
    "word": " history,",
-   "start": 0.62,
-   "end": 0.94
+   "start": 0.7,
+   "end": 1.02
   },
   {
    "word": " China",
-   "start": 1.1,
-   "end": 1.22
+   "start": 1.2,
+   "end": 1.36
   },
   {
    "word": " wrote",
-   "start": 1.22,
-   "end": 1.46
+   "start": 1.36,
+   "end": 1.62
   },
   {
    "word": " in",
-   "start": 1.46,
-   "end": 1.8
+   "start": 1.62,
+   "end": 2.0
   },
   {
    "word": " a",
-   "start": 1.8,
-   "end": 1.94
+   "start": 2.0,
+   "end": 2.14
   },
   {
    "word": " language",
-   "start": 1.94,
-   "end": 2.16
+   "start": 2.14,
+   "end": 2.34
   },
   {
    "word": " that",
-   "start": 2.16,
-   "end": 2.42
-  },
-  {
-   "word": " nobody",
-   "start": 2.42,
-   "end": 2.66
-  },
-  {
-   "word": " actually",
-   "start": 2.66,
-   "end": 3.14
-  },
-  {
-   "word": " spoke,",
-   "start": 3.14,
-   "end": 3.5
-  },
-  {
-   "word": " and",
-   "start": 4.0,
-   "end": 4.16
-  },
-  {
-   "word": " hadn't",
-   "start": 4.16,
-   "end": 4.46
-  },
-  {
-   "word": " spoken",
-   "start": 4.46,
-   "end": 4.64
-  },
-  {
-   "word": " for",
-   "start": 4.64,
-   "end": 4.94
-  },
-  {
-   "word": " well",
-   "start": 4.94,
-   "end": 5.08
-  },
-  {
-   "word": " over",
-   "start": 5.08,
-   "end": 5.32
-  },
-  {
-   "word": " a",
-   "start": 5.32,
-   "end": 5.46
-  },
-  {
-   "word": " thousand",
-   "start": 5.46,
-   "end": 5.76
-  },
-  {
-   "word": " years.",
-   "start": 5.76,
-   "end": 6.1
-  },
-  {
-   "word": " You'd",
-   "start": 6.62,
-   "end": 6.84
-  },
-  {
-   "word": " speak",
-   "start": 6.84,
-   "end": 7.02
-  },
-  {
-   "word": " one",
-   "start": 7.02,
-   "end": 7.3
-  },
-  {
-   "word": " kind",
-   "start": 7.3,
-   "end": 7.48
-  },
-  {
-   "word": " of",
-   "start": 7.48,
-   "end": 7.66
-  },
-  {
-   "word": " Chinese,",
-   "start": 7.66,
-   "end": 7.94
-  },
-  {
-   "word": " and",
-   "start": 8.42,
-   "end": 8.6
-  },
-  {
-   "word": " write",
-   "start": 8.6,
-   "end": 8.72
-  },
-  {
-   "word": " a",
-   "start": 8.72,
-   "end": 8.84
-  },
-  {
-   "word": " completely",
-   "start": 8.84,
-   "end": 9.18
-  },
-  {
-   "word": " different",
-   "start": 9.18,
-   "end": 9.64
-  },
-  {
-   "word": " one.",
-   "start": 9.64,
-   "end": 9.86
-  },
-  {
-   "word": " Until",
-   "start": 10.32,
-   "end": 10.6
-  },
-  {
-   "word": " about",
-   "start": 10.6,
-   "end": 10.82
-  },
-  {
-   "word": " a",
-   "start": 10.82,
-   "end": 10.96
-  },
-  {
-   "word": " century",
-   "start": 10.96,
-   "end": 11.18
-  },
-  {
-   "word": " ago,",
-   "start": 11.18,
-   "end": 11.56
-  },
-  {
-   "word": " written",
-   "start": 12.04,
-   "end": 12.18
-  },
-  {
-   "word": " Chinese",
-   "start": 12.18,
-   "end": 12.6
-  },
-  {
-   "word": " was",
-   "start": 12.6,
-   "end": 12.8
-  },
-  {
-   "word": " winyanwin,",
-   "start": 12.8,
-   "end": 13.38
-  },
-  {
-   "word": " classical",
-   "start": 13.78,
-   "end": 14.16
-  },
-  {
-   "word": " or",
-   "start": 14.16,
-   "end": 14.64
-  },
-  {
-   "word": " literary,",
-   "start": 14.64,
-   "end": 15.04
-  },
-  {
-   "word": " Chinese.",
-   "start": 15.38,
-   "end": 15.68
-  },
-  {
-   "word": " It",
-   "start": 16.22,
-   "end": 16.3
-  },
-  {
-   "word": " was",
-   "start": 16.3,
-   "end": 16.4
-  },
-  {
-   "word": " based",
-   "start": 16.4,
-   "end": 16.6
-  },
-  {
-   "word": " on",
-   "start": 16.6,
-   "end": 16.82
-  },
-  {
-   "word": " the",
-   "start": 16.82,
-   "end": 16.88
-  },
-  {
-   "word": " language",
-   "start": 16.88,
-   "end": 17.1
-  },
-  {
-   "word": " of",
-   "start": 17.1,
-   "end": 17.26
-  },
-  {
-   "word": " the",
-   "start": 17.26,
-   "end": 17.34
-  },
-  {
-   "word": " ancient",
-   "start": 17.34,
-   "end": 17.58
-  },
-  {
-   "word": " classics,",
-   "start": 17.58,
-   "end": 18.02
-  },
-  {
-   "word": " from",
-   "start": 18.36,
-   "end": 18.56
-  },
-  {
-   "word": " over",
-   "start": 18.56,
-   "end": 18.78
-  },
-  {
-   "word": " two",
-   "start": 18.78,
-   "end": 19.0
-  },
-  {
-   "word": " thousand",
-   "start": 19.0,
-   "end": 19.28
-  },
-  {
-   "word": " years",
-   "start": 19.28,
-   "end": 19.52
-  },
-  {
-   "word": " ago,",
-   "start": 19.52,
-   "end": 19.8
-  },
-  {
-   "word": " and",
-   "start": 20.1,
-   "end": 20.32
-  },
-  {
-   "word": " it",
-   "start": 20.32,
-   "end": 20.44
-  },
-  {
-   "word": " basically",
-   "start": 20.44,
-   "end": 20.84
-  },
-  {
-   "word": " froze",
-   "start": 20.84,
-   "end": 21.14
-  },
-  {
-   "word": " there.",
-   "start": 21.14,
-   "end": 21.46
-  },
-  {
-   "word": " Meanwhile,",
-   "start": 22.0,
-   "end": 22.32
-  },
-  {
-   "word": " spoken",
-   "start": 22.74,
-   "end": 23.02
-  },
-  {
-   "word": " Chinese",
-   "start": 23.02,
-   "end": 23.5
-  },
-  {
-   "word": " kept",
-   "start": 23.5,
-   "end": 24.02
-  },
-  {
-   "word": " evolving,",
-   "start": 24.02,
-   "end": 24.44
-  },
-  {
-   "word": " century",
-   "start": 24.74,
-   "end": 25.04
-  },
-  {
-   "word": " after",
-   "start": 25.04,
-   "end": 25.28
-  },
-  {
-   "word": " century,",
-   "start": 25.28,
-   "end": 25.7
-  },
-  {
-   "word": " so",
-   "start": 26.0,
-   "end": 26.24
-  },
-  {
-   "word": " the",
-   "start": 26.24,
-   "end": 26.38
-  },
-  {
-   "word": " written",
-   "start": 26.38,
-   "end": 26.58
-  },
-  {
-   "word": " language",
-   "start": 26.58,
-   "end": 26.94
-  },
-  {
-   "word": " and",
-   "start": 26.94,
-   "end": 27.14
-  },
-  {
-   "word": " the",
-   "start": 27.14,
-   "end": 27.24
-  },
-  {
-   "word": " spoken",
-   "start": 27.24,
-   "end": 27.5
-  },
-  {
-   "word": " language",
-   "start": 27.5,
-   "end": 27.82
-  },
-  {
-   "word": " drifted",
-   "start": 27.82,
-   "end": 28.12
-  },
-  {
-   "word": " further",
-   "start": 28.12,
-   "end": 28.54
-  },
-  {
-   "word": " and",
-   "start": 28.54,
-   "end": 28.82
-  },
-  {
-   "word": " further",
-   "start": 28.82,
-   "end": 29.08
-  },
-  {
-   "word": " apart,",
-   "start": 29.08,
-   "end": 29.48
-  },
-  {
-   "word": " until",
-   "start": 30.0,
-   "end": 30.24
-  },
-  {
-   "word": " they",
-   "start": 30.24,
-   "end": 30.38
-  },
-  {
-   "word": " were",
-   "start": 30.38,
-   "end": 30.48
-  },
-  {
-   "word": " effectively",
-   "start": 30.48,
-   "end": 30.88
-  },
-  {
-   "word": " two",
-   "start": 30.88,
-   "end": 31.22
-  },
-  {
-   "word": " different",
-   "start": 31.22,
-   "end": 31.52
-  },
-  {
-   "word": " languages.",
-   "start": 31.52,
-   "end": 31.86
-  },
-  {
-   "word": " You",
-   "start": 32.28,
-   "end": 32.4
-  },
-  {
-   "word": " spoke",
-   "start": 32.4,
-   "end": 32.58
-  },
-  {
-   "word": " everyday",
-   "start": 32.58,
-   "end": 32.92
-  },
-  {
-   "word": " Chinese,",
-   "start": 32.92,
-   "end": 33.42
-  },
-  {
-   "word": " baihua,",
-   "start": 33.86,
-   "end": 34.2
-  },
-  {
-   "word": " plain",
-   "start": 34.62,
-   "end": 34.82
-  },
-  {
-   "word": " speech,",
-   "start": 34.82,
-   "end": 35.2
-  },
-  {
-   "word": " but",
-   "start": 35.56,
-   "end": 35.7
-  },
-  {
-   "word": " to",
-   "start": 35.7,
-   "end": 35.88
-  },
-  {
-   "word": " write,",
-   "start": 35.88,
-   "end": 36.08
-  },
-  {
-   "word": " you",
-   "start": 36.54,
-   "end": 36.64
-  },
-  {
-   "word": " had",
-   "start": 36.64,
-   "end": 36.76
-  },
-  {
-   "word": " to",
-   "start": 36.76,
-   "end": 36.9
-  },
-  {
-   "word": " use",
-   "start": 36.9,
-   "end": 37.06
-  },
-  {
-   "word": " this",
-   "start": 37.06,
-   "end": 37.24
-  },
-  {
-   "word": " ancient,",
-   "start": 37.24,
-   "end": 37.66
-  },
-  {
-   "word": " compressed,",
-   "start": 37.9,
-   "end": 38.32
-  },
-  {
-   "word": " classical",
-   "start": 38.6,
-   "end": 38.88
-  },
-  {
-   "word": " form",
-   "start": 38.88,
-   "end": 39.32
+   "start": 2.34,
+   "end": 2.56
   },
   {
    "word": " almost",
-   "start": 39.32,
-   "end": 39.76
+   "start": 2.56,
+   "end": 2.82
   },
   {
-   "word": " no",
-   "start": 39.76,
-   "end": 40.04
-  },
-  {
-   "word": " one",
-   "start": 40.04,
-   "end": 40.18
+   "word": " nobody",
+   "start": 2.82,
+   "end": 3.34
   },
   {
    "word": " actually",
-   "start": 40.18,
-   "end": 40.64
+   "start": 3.34,
+   "end": 3.9
   },
   {
    "word": " spoke.",
-   "start": 40.64,
-   "end": 41.02
+   "start": 3.9,
+   "end": 4.32
   },
   {
-   "word": " Linguists",
-   "start": 41.72,
-   "end": 42.0
+   "word": " You'd",
+   "start": 4.94,
+   "end": 5.14
   },
   {
-   "word": " have",
-   "start": 42.0,
-   "end": 42.16
+   "word": " say",
+   "start": 5.14,
+   "end": 5.26
   },
   {
-   "word": " a",
-   "start": 42.16,
-   "end": 42.3
+   "word": " something",
+   "start": 5.26,
+   "end": 5.56
   },
   {
-   "word": " name",
-   "start": 42.3,
-   "end": 42.42
+   "word": " out",
+   "start": 5.56,
+   "end": 5.76
   },
   {
-   "word": " for",
-   "start": 42.42,
-   "end": 42.62
-  },
-  {
-   "word": " this,",
-   "start": 42.62,
-   "end": 42.88
-  },
-  {
-   "word": " deglossia,",
-   "start": 43.28,
-   "end": 43.86
-  },
-  {
-   "word": " one",
-   "start": 44.38,
-   "end": 44.68
-  },
-  {
-   "word": " language",
-   "start": 44.68,
-   "end": 44.96
-  },
-  {
-   "word": " for",
-   "start": 44.96,
-   "end": 45.2
-  },
-  {
-   "word": " the",
-   "start": 45.2,
-   "end": 45.34
-  },
-  {
-   "word": " street,",
-   "start": 45.34,
-   "end": 45.62
-  },
-  {
-   "word": " another",
-   "start": 45.9,
-   "end": 46.04
-  },
-  {
-   "word": " for",
-   "start": 46.04,
-   "end": 46.3
-  },
-  {
-   "word": " the",
-   "start": 46.3,
-   "end": 46.42
-  },
-  {
-   "word": " page,",
-   "start": 46.42,
-   "end": 46.78
+   "word": " loud,",
+   "start": 5.76,
+   "end": 6.04
   },
   {
    "word": " and",
-   "start": 47.18,
-   "end": 47.36
+   "start": 6.3,
+   "end": 6.48
+  },
+  {
+   "word": " then",
+   "start": 6.48,
+   "end": 6.58
+  },
+  {
+   "word": " write",
+   "start": 6.58,
+   "end": 6.78
   },
   {
    "word": " it",
-   "start": 47.36,
-   "end": 47.48
+   "start": 6.78,
+   "end": 6.92
   },
   {
-   "word": " meant",
-   "start": 47.48,
-   "end": 47.66
+   "word": " down",
+   "start": 6.92,
+   "end": 7.12
+  },
+  {
+   "word": " in",
+   "start": 7.12,
+   "end": 7.28
+  },
+  {
+   "word": " a",
+   "start": 7.28,
+   "end": 7.38
+  },
+  {
+   "word": " completely",
+   "start": 7.38,
+   "end": 7.74
+  },
+  {
+   "word": " different",
+   "start": 7.74,
+   "end": 8.18
+  },
+  {
+   "word": " language.",
+   "start": 8.18,
+   "end": 8.54
+  },
+  {
+   "word": " Same",
+   "start": 9.08,
+   "end": 9.26
+  },
+  {
+   "word": " meaning,",
+   "start": 9.26,
+   "end": 9.54
+  },
+  {
+   "word": " but",
+   "start": 9.8,
+   "end": 9.88
+  },
+  {
+   "word": " different",
+   "start": 9.88,
+   "end": 10.16
+  },
+  {
+   "word": " words,",
+   "start": 10.16,
+   "end": 10.46
+  },
+  {
+   "word": " and",
+   "start": 10.8,
+   "end": 10.9
+  },
+  {
+   "word": " different",
+   "start": 10.9,
+   "end": 11.18
+  },
+  {
+   "word": " grammar.",
+   "start": 11.18,
+   "end": 11.4
+  },
+  {
+   "word": " Here's",
+   "start": 11.92,
+   "end": 12.24
+  },
+  {
+   "word": " how",
+   "start": 12.24,
+   "end": 12.5
   },
   {
    "word": " that",
-   "start": 47.66,
-   "end": 48.14
+   "start": 12.5,
+   "end": 12.66
   },
   {
-   "word": " being",
-   "start": 48.14,
-   "end": 48.36
+   "word": " happened.",
+   "start": 12.66,
+   "end": 12.98
   },
   {
-   "word": " literate",
-   "start": 48.36,
-   "end": 48.76
-  },
-  {
-   "word": " didn't",
-   "start": 48.76,
-   "end": 49.0
-  },
-  {
-   "word": " just",
-   "start": 49.0,
-   "end": 49.14
-  },
-  {
-   "word": " mean",
-   "start": 49.14,
-   "end": 49.32
-  },
-  {
-   "word": " knowing",
-   "start": 49.32,
-   "end": 49.6
-  },
-  {
-   "word": " the",
-   "start": 49.6,
-   "end": 49.82
-  },
-  {
-   "word": " characters,",
-   "start": 49.82,
-   "end": 50.22
-  },
-  {
-   "word": " it",
-   "start": 50.54,
-   "end": 50.66
-  },
-  {
-   "word": " meant",
-   "start": 50.66,
-   "end": 50.8
-  },
-  {
-   "word": " mastering",
-   "start": 50.8,
-   "end": 51.2
-  },
-  {
-   "word": " a",
-   "start": 51.2,
-   "end": 51.4
-  },
-  {
-   "word": " near",
-   "start": 51.4,
-   "end": 51.56
-  },
-  {
-   "word": " dead",
-   "start": 51.56,
-   "end": 51.76
-  },
-  {
-   "word": " language",
-   "start": 51.76,
-   "end": 52.08
-  },
-  {
-   "word": " on",
-   "start": 52.08,
-   "end": 52.3
-  },
-  {
-   "word": " top",
-   "start": 52.3,
-   "end": 52.52
-  },
-  {
-   "word": " of",
-   "start": 52.52,
-   "end": 52.7
-  },
-  {
-   "word": " your",
-   "start": 52.7,
-   "end": 52.84
-  },
-  {
-   "word": " own,",
-   "start": 52.84,
-   "end": 53.12
-  },
-  {
-   "word": " which",
-   "start": 53.5,
-   "end": 53.8
-  },
-  {
-   "word": " made",
-   "start": 53.8,
-   "end": 54.02
-  },
-  {
-   "word": " reading",
-   "start": 54.02,
-   "end": 54.34
-  },
-  {
-   "word": " and",
-   "start": 54.34,
-   "end": 54.5
-  },
-  {
-   "word": " writing",
-   "start": 54.5,
-   "end": 54.78
-  },
-  {
-   "word": " brutally",
-   "start": 54.78,
-   "end": 55.1
-  },
-  {
-   "word": " hard,",
-   "start": 55.1,
-   "end": 55.5
-  },
-  {
-   "word": " and",
-   "start": 55.8,
-   "end": 55.86
-  },
-  {
-   "word": " kept",
-   "start": 55.86,
-   "end": 56.02
-  },
-  {
-   "word": " them",
-   "start": 56.02,
-   "end": 56.2
-  },
-  {
-   "word": " locked",
-   "start": 56.2,
-   "end": 56.44
-  },
-  {
-   "word": " to",
-   "start": 56.44,
-   "end": 56.62
-  },
-  {
-   "word": " a",
-   "start": 56.62,
-   "end": 56.74
-  },
-  {
-   "word": " small,",
-   "start": 56.74,
-   "end": 57.1
-  },
-  {
-   "word": " scholarly",
-   "start": 57.44,
-   "end": 57.82
-  },
-  {
-   "word": " elite.",
-   "start": 57.82,
-   "end": 58.28
-  },
-  {
-   "word": " Everyday",
-   "start": 58.92,
-   "end": 59.26
-  },
-  {
-   "word": " speech",
-   "start": 59.26,
-   "end": 59.62
-  },
-  {
-   "word": " simply",
-   "start": 59.62,
-   "end": 59.94
-  },
-  {
-   "word": " wasn't",
-   "start": 59.94,
-   "end": 60.3
-  },
-  {
-   "word": " considered",
-   "start": 60.3,
-   "end": 60.66
-  },
-  {
-   "word": " proper,",
-   "start": 60.66,
-   "end": 61.04
-  },
-  {
-   "word": " to",
-   "start": 61.34,
-   "end": 61.5
-  },
-  {
-   "word": " write",
-   "start": 61.5,
-   "end": 61.68
-  },
-  {
-   "word": " down.",
-   "start": 61.68,
-   "end": 61.98
-  },
-  {
-   "word": " Then,",
-   "start": 62.54,
-   "end": 62.86
-  },
-  {
-   "word": " starting",
-   "start": 63.28,
-   "end": 63.56
-  },
-  {
-   "word": " around",
-   "start": 63.56,
-   "end": 63.8
-  },
-  {
-   "word": " 1917,",
-   "start": 63.8,
-   "end": 64.56
-  },
-  {
-   "word": " a",
-   "start": 64.96,
-   "end": 65.04
-  },
-  {
-   "word": " scholar",
-   "start": 65.04,
-   "end": 65.26
-  },
-  {
-   "word": " named",
-   "start": 65.26,
-   "end": 65.56
-  },
-  {
-   "word": " Hu",
-   "start": 65.56,
-   "end": 65.76
-  },
-  {
-   "word": " Shi",
-   "start": 65.76,
-   "end": 66.06
-  },
-  {
-   "word": " led",
-   "start": 66.06,
-   "end": 66.24
-  },
-  {
-   "word": " a",
-   "start": 66.24,
-   "end": 66.38
-  },
-  {
-   "word": " movement",
-   "start": 66.38,
-   "end": 66.56
-  },
-  {
-   "word": " with",
-   "start": 66.56,
-   "end": 66.76
-  },
-  {
-   "word": " a",
-   "start": 66.76,
-   "end": 66.9
-  },
-  {
-   "word": " radical",
-   "start": 66.9,
-   "end": 67.2
-  },
-  {
-   "word": " idea,",
-   "start": 67.2,
-   "end": 67.62
-  },
-  {
-   "word": " write",
-   "start": 68.16,
-   "end": 68.28
-  },
-  {
-   "word": " the",
-   "start": 68.28,
-   "end": 68.46
-  },
-  {
-   "word": " way",
-   "start": 68.46,
-   "end": 68.62
-  },
-  {
-   "word": " you",
-   "start": 68.62,
-   "end": 68.84
-  },
-  {
-   "word": " actually",
-   "start": 68.84,
-   "end": 69.24
-  },
-  {
-   "word": " speak,",
-   "start": 69.24,
-   "end": 69.62
-  },
-  {
-   "word": " use",
-   "start": 70.08,
-   "end": 70.26
-  },
-  {
-   "word": " the",
-   "start": 70.26,
-   "end": 70.46
-  },
-  {
-   "word": " living,",
-   "start": 70.46,
-   "end": 70.74
-  },
-  {
-   "word": " spoken",
-   "start": 71.0,
-   "end": 71.28
-  },
-  {
-   "word": " language,",
-   "start": 71.28,
-   "end": 71.84
-  },
-  {
-   "word": " baihua,",
-   "start": 72.32,
-   "end": 72.56
-  },
-  {
-   "word": " as",
-   "start": 72.88,
-   "end": 73.06
-  },
-  {
-   "word": " the",
-   "start": 73.06,
-   "end": 73.22
+   "word": " The",
+   "start": 13.38,
+   "end": 13.48
   },
   {
    "word": " written",
-   "start": 73.22,
-   "end": 73.42
-  },
-  {
-   "word": " standard.",
-   "start": 73.42,
-   "end": 73.86
-  },
-  {
-   "word": " It",
-   "start": 74.22,
-   "end": 74.42
-  },
-  {
-   "word": " caught",
-   "start": 74.42,
-   "end": 74.64
-  },
-  {
-   "word": " on",
-   "start": 74.64,
-   "end": 74.86
-  },
-  {
-   "word": " fast,",
-   "start": 74.86,
-   "end": 75.14
-  },
-  {
-   "word": " within",
-   "start": 75.68,
-   "end": 75.88
-  },
-  {
-   "word": " about",
-   "start": 75.88,
-   "end": 76.12
-  },
-  {
-   "word": " a",
-   "start": 76.12,
-   "end": 76.3
-  },
-  {
-   "word": " decade,",
-   "start": 76.3,
-   "end": 76.62
-  },
-  {
-   "word": " the",
-   "start": 76.78,
-   "end": 76.84
-  },
-  {
-   "word": " vernacular",
-   "start": 76.84,
-   "end": 77.28
-  },
-  {
-   "word": " had",
-   "start": 77.28,
-   "end": 77.46
-  },
-  {
-   "word": " replaced",
-   "start": 77.46,
-   "end": 77.82
-  },
-  {
-   "word": " classical",
-   "start": 77.82,
-   "end": 78.24
-  },
-  {
-   "word": " Chinese",
-   "start": 78.24,
-   "end": 78.6
-  },
-  {
-   "word": " in",
-   "start": 78.6,
-   "end": 79.22
-  },
-  {
-   "word": " schools",
-   "start": 79.22,
-   "end": 79.5
-  },
-  {
-   "word": " and",
-   "start": 79.5,
-   "end": 79.82
-  },
-  {
-   "word": " newspapers,",
-   "start": 79.82,
-   "end": 80.18
-  },
-  {
-   "word": " so",
-   "start": 80.62,
-   "end": 80.9
-  },
-  {
-   "word": " for",
-   "start": 80.9,
-   "end": 81.06
-  },
-  {
-   "word": " two",
-   "start": 81.06,
-   "end": 81.28
-  },
-  {
-   "word": " thousand",
-   "start": 81.28,
-   "end": 81.58
-  },
-  {
-   "word": " years,",
-   "start": 81.58,
-   "end": 81.9
-  },
-  {
-   "word": " China",
-   "start": 81.98,
-   "end": 82.22
-  },
-  {
-   "word": " wrote",
-   "start": 82.22,
-   "end": 82.44
-  },
-  {
-   "word": " in",
-   "start": 82.44,
-   "end": 82.58
-  },
-  {
-   "word": " a",
-   "start": 82.58,
-   "end": 82.7
+   "start": 13.48,
+   "end": 13.66
   },
   {
    "word": " language",
-   "start": 82.7,
-   "end": 82.92
+   "start": 13.66,
+   "end": 13.96
   },
   {
-   "word": " the",
-   "start": 82.92,
-   "end": 83.16
+   "word": " was",
+   "start": 13.96,
+   "end": 14.14
   },
   {
-   "word": " time",
-   "start": 83.16,
-   "end": 83.42
+   "word": " called",
+   "start": 14.14,
+   "end": 14.34
   },
   {
-   "word": " had",
-   "start": 83.42,
-   "end": 83.58
+   "word": " Wenyanwen,",
+   "start": 14.34,
+   "end": 14.92
   },
   {
-   "word": " left",
-   "start": 83.58,
-   "end": 83.78
+   "word": " classical",
+   "start": 15.34,
+   "end": 15.72
   },
   {
-   "word": " behind,",
-   "start": 83.78,
-   "end": 84.24
-  },
-  {
-   "word": " and",
-   "start": 84.7,
-   "end": 84.84
-  },
-  {
-   "word": " it",
-   "start": 84.84,
-   "end": 84.96
-  },
-  {
-   "word": " took",
-   "start": 84.96,
-   "end": 85.08
-  },
-  {
-   "word": " a",
-   "start": 85.08,
-   "end": 85.26
-  },
-  {
-   "word": " 20th",
-   "start": 85.26,
-   "end": 85.66
-  },
-  {
-   "word": " century",
-   "start": 85.66,
-   "end": 85.84
-  },
-  {
-   "word": " revolution",
-   "start": 85.84,
-   "end": 86.32
-  },
-  {
-   "word": " just",
-   "start": 86.32,
-   "end": 87.1
-  },
-  {
-   "word": " to",
-   "start": 87.1,
-   "end": 87.28
-  },
-  {
-   "word": " let",
-   "start": 87.28,
-   "end": 87.4
-  },
-  {
-   "word": " people",
-   "start": 87.4,
-   "end": 87.64
-  },
-  {
-   "word": " write",
-   "start": 87.64,
-   "end": 87.9
-  },
-  {
-   "word": " the",
-   "start": 87.9,
-   "end": 88.0
-  },
-  {
-   "word": " way",
-   "start": 88.0,
-   "end": 88.12
-  },
-  {
-   "word": " they",
-   "start": 88.12,
-   "end": 88.28
-  },
-  {
-   "word": " talk.",
-   "start": 88.28,
-   "end": 88.56
-  },
-  {
-   "word": " We",
-   "start": 88.88,
-   "end": 88.92
-  },
-  {
-   "word": " take",
-   "start": 88.92,
-   "end": 89.08
-  },
-  {
-   "word": " it",
-   "start": 89.08,
-   "end": 89.18
-  },
-  {
-   "word": " for",
-   "start": 89.18,
-   "end": 89.32
-  },
-  {
-   "word": " granted",
-   "start": 89.32,
-   "end": 89.58
-  },
-  {
-   "word": " that",
-   "start": 89.58,
-   "end": 89.76
-  },
-  {
-   "word": " we",
-   "start": 89.76,
-   "end": 89.88
-  },
-  {
-   "word": " write",
-   "start": 89.88,
-   "end": 90.04
-  },
-  {
-   "word": " our",
-   "start": 90.04,
-   "end": 90.14
-  },
-  {
-   "word": " own",
-   "start": 90.14,
-   "end": 90.3
-  },
-  {
-   "word": " language,",
-   "start": 90.3,
-   "end": 90.58
-  },
-  {
-   "word": " for",
-   "start": 90.78,
-   "end": 90.94
-  },
-  {
-   "word": " most",
-   "start": 90.94,
-   "end": 91.14
-  },
-  {
-   "word": " of",
-   "start": 91.14,
-   "end": 91.34
-  },
-  {
-   "word": " Chinese",
-   "start": 91.34,
-   "end": 91.6
-  },
-  {
-   "word": " history,",
-   "start": 91.6,
-   "end": 91.98
-  },
-  {
-   "word": " that",
-   "start": 92.18,
-   "end": 92.2
-  },
-  {
-   "word": " wasn't",
-   "start": 92.2,
-   "end": 92.46
-  },
-  {
-   "word": " even",
-   "start": 92.46,
-   "end": 92.6
-  },
-  {
-   "word": " allowed.",
-   "start": 92.6,
-   "end": 92.92
-  },
-  {
-   "word": " Want",
-   "start": 93.44,
-   "end": 93.58
-  },
-  {
-   "word": " to",
-   "start": 93.58,
-   "end": 93.66
-  },
-  {
-   "word": " actually",
-   "start": 93.66,
-   "end": 93.92
-  },
-  {
-   "word": " start",
-   "start": 93.92,
-   "end": 94.12
-  },
-  {
-   "word": " learning",
-   "start": 94.12,
-   "end": 94.36
-  },
-  {
-   "word": " Chinese?",
-   "start": 94.36,
-   "end": 94.7
-  },
-  {
-   "word": " Discover",
-   "start": 95.3,
-   "end": 95.56
-  },
-  {
-   "word": " thousands",
-   "start": 95.56,
-   "end": 95.96
-  },
-  {
-   "word": " of",
-   "start": 95.96,
-   "end": 96.24
-  },
-  {
-   "word": " free",
-   "start": 96.24,
-   "end": 96.4
-  },
-  {
-   "word": " exercises",
-   "start": 96.4,
-   "end": 96.88
+   "word": " Chinese,",
+   "start": 15.72,
+   "end": 16.14
   },
   {
    "word": " and",
-   "start": 96.88,
-   "end": 97.28
+   "start": 16.76,
+   "end": 16.8
   },
   {
-   "word": " more",
-   "start": 97.28,
-   "end": 97.48
+   "word": " it",
+   "start": 16.8,
+   "end": 16.88
   },
   {
-   "word": " learning",
-   "start": 97.48,
-   "end": 97.74
+   "word": " was",
+   "start": 16.88,
+   "end": 17.0
   },
   {
-   "word": " content",
-   "start": 97.74,
-   "end": 98.1
+   "word": " based",
+   "start": 17.0,
+   "end": 17.22
   },
   {
    "word": " on",
-   "start": 98.1,
-   "end": 98.24
+   "start": 17.22,
+   "end": 17.44
+  },
+  {
+   "word": " the",
+   "start": 17.44,
+   "end": 17.5
+  },
+  {
+   "word": " way",
+   "start": 17.5,
+   "end": 17.64
+  },
+  {
+   "word": " people",
+   "start": 17.64,
+   "end": 17.88
+  },
+  {
+   "word": " spoke",
+   "start": 17.88,
+   "end": 18.18
+  },
+  {
+   "word": " more",
+   "start": 18.18,
+   "end": 18.38
+  },
+  {
+   "word": " than",
+   "start": 18.38,
+   "end": 18.56
+  },
+  {
+   "word": " 2",
+   "start": 18.56,
+   "end": 18.8
+  },
+  {
+   "word": ",000",
+   "start": 18.8,
+   "end": 19.18
+  },
+  {
+   "word": " years",
+   "start": 19.18,
+   "end": 19.36
+  },
+  {
+   "word": " ago.",
+   "start": 19.36,
+   "end": 19.68
+  },
+  {
+   "word": " Then",
+   "start": 20.1,
+   "end": 20.22
+  },
+  {
+   "word": " it",
+   "start": 20.22,
+   "end": 20.34
+  },
+  {
+   "word": " basically",
+   "start": 20.34,
+   "end": 20.8
+  },
+  {
+   "word": " froze.",
+   "start": 20.8,
+   "end": 21.12
+  },
+  {
+   "word": " Scholars",
+   "start": 21.98,
+   "end": 21.98
+  },
+  {
+   "word": " kept",
+   "start": 21.98,
+   "end": 22.2
+  },
+  {
+   "word": " writing",
+   "start": 22.2,
+   "end": 22.46
+  },
+  {
+   "word": " in",
+   "start": 22.46,
+   "end": 22.62
+  },
+  {
+   "word": " that",
+   "start": 22.62,
+   "end": 22.76
+  },
+  {
+   "word": " same",
+   "start": 22.76,
+   "end": 23.12
+  },
+  {
+   "word": " ancient",
+   "start": 23.12,
+   "end": 23.44
+  },
+  {
+   "word": " style",
+   "start": 23.44,
+   "end": 23.84
+  },
+  {
+   "word": " century",
+   "start": 23.84,
+   "end": 24.24
+  },
+  {
+   "word": " after",
+   "start": 24.24,
+   "end": 24.54
+  },
+  {
+   "word": " century,",
+   "start": 24.54,
+   "end": 25.08
+  },
+  {
+   "word": " but",
+   "start": 25.36,
+   "end": 25.6
+  },
+  {
+   "word": " the",
+   "start": 25.6,
+   "end": 25.7
+  },
+  {
+   "word": " spoken",
+   "start": 25.7,
+   "end": 25.96
+  },
+  {
+   "word": " language",
+   "start": 25.96,
+   "end": 26.3
+  },
+  {
+   "word": " never",
+   "start": 26.3,
+   "end": 26.56
+  },
+  {
+   "word": " stopped",
+   "start": 26.56,
+   "end": 26.84
+  },
+  {
+   "word": " changing.",
+   "start": 26.84,
+   "end": 27.26
+  },
+  {
+   "word": " Take",
+   "start": 27.26,
+   "end": 27.98
+  },
+  {
+   "word": " a",
+   "start": 27.98,
+   "end": 28.16
+  },
+  {
+   "word": " simple,",
+   "start": 28.16,
+   "end": 28.52
+  },
+  {
+   "word": " everyday",
+   "start": 28.74,
+   "end": 29.0
+  },
+  {
+   "word": " word,",
+   "start": 29.0,
+   "end": 29.4
+  },
+  {
+   "word": " like",
+   "start": 29.7,
+   "end": 29.8
+  },
+  {
+   "word": " the",
+   "start": 29.8,
+   "end": 29.94
+  },
+  {
+   "word": " word",
+   "start": 29.94,
+   "end": 30.12
+  },
+  {
+   "word": " for",
+   "start": 30.12,
+   "end": 30.36
+  },
+  {
+   "word": " you.",
+   "start": 30.36,
+   "end": 30.64
+  },
+  {
+   "word": " Over",
+   "start": 31.18,
+   "end": 31.48
+  },
+  {
+   "word": " the",
+   "start": 31.48,
+   "end": 31.66
+  },
+  {
+   "word": " centuries,",
+   "start": 31.66,
+   "end": 31.9
+  },
+  {
+   "word": " the",
+   "start": 32.08,
+   "end": 32.14
+  },
+  {
+   "word": " way",
+   "start": 32.14,
+   "end": 32.28
+  },
+  {
+   "word": " people",
+   "start": 32.28,
+   "end": 32.52
+  },
+  {
+   "word": " said",
+   "start": 32.52,
+   "end": 32.78
+  },
+  {
+   "word": " it",
+   "start": 32.78,
+   "end": 32.96
+  },
+  {
+   "word": " slowly",
+   "start": 32.96,
+   "end": 33.16
+  },
+  {
+   "word": " shifted,",
+   "start": 33.16,
+   "end": 33.62
+  },
+  {
+   "word": " but",
+   "start": 34.06,
+   "end": 34.2
+  },
+  {
+   "word": " to",
+   "start": 34.2,
+   "end": 34.38
+  },
+  {
+   "word": " write",
+   "start": 34.38,
+   "end": 34.58
+  },
+  {
+   "word": " it,",
+   "start": 34.58,
+   "end": 34.74
+  },
+  {
+   "word": " you",
+   "start": 34.9,
+   "end": 35.02
+  },
+  {
+   "word": " were",
+   "start": 35.02,
+   "end": 35.16
+  },
+  {
+   "word": " still",
+   "start": 35.16,
+   "end": 35.34
+  },
+  {
+   "word": " expected",
+   "start": 35.34,
+   "end": 35.66
+  },
+  {
+   "word": " to",
+   "start": 35.66,
+   "end": 35.9
+  },
+  {
+   "word": " use",
+   "start": 35.9,
+   "end": 36.1
+  },
+  {
+   "word": " the",
+   "start": 36.1,
+   "end": 36.26
+  },
+  {
+   "word": " ancient",
+   "start": 36.26,
+   "end": 36.54
+  },
+  {
+   "word": " form.",
+   "start": 36.54,
+   "end": 36.86
+  },
+  {
+   "word": " Do",
+   "start": 37.3,
+   "end": 37.44
+  },
+  {
+   "word": " that",
+   "start": 37.44,
+   "end": 37.56
+  },
+  {
+   "word": " across",
+   "start": 37.56,
+   "end": 37.86
+  },
+  {
+   "word": " the",
+   "start": 37.86,
+   "end": 38.08
+  },
+  {
+   "word": " whole",
+   "start": 38.08,
+   "end": 38.28
+  },
+  {
+   "word": " language,",
+   "start": 38.28,
+   "end": 38.6
+  },
+  {
+   "word": " and",
+   "start": 38.78,
+   "end": 38.9
+  },
+  {
+   "word": " the",
+   "start": 38.9,
+   "end": 39.04
+  },
+  {
+   "word": " Chinese",
+   "start": 39.04,
+   "end": 39.36
+  },
+  {
+   "word": " people",
+   "start": 39.36,
+   "end": 39.64
+  },
+  {
+   "word": " spoke,",
+   "start": 39.64,
+   "end": 39.98
+  },
+  {
+   "word": " and",
+   "start": 40.26,
+   "end": 40.3
+  },
+  {
+   "word": " the",
+   "start": 40.3,
+   "end": 40.44
+  },
+  {
+   "word": " Chinese",
+   "start": 40.44,
+   "end": 40.7
+  },
+  {
+   "word": " they",
+   "start": 40.7,
+   "end": 40.96
+  },
+  {
+   "word": " wrote",
+   "start": 40.96,
+   "end": 41.2
+  },
+  {
+   "word": " drifted",
+   "start": 41.2,
+   "end": 41.56
+  },
+  {
+   "word": " into",
+   "start": 41.56,
+   "end": 41.82
+  },
+  {
+   "word": " two",
+   "start": 41.82,
+   "end": 42.1
+  },
+  {
+   "word": " different",
+   "start": 42.1,
+   "end": 42.42
+  },
+  {
+   "word": " worlds,",
+   "start": 42.42,
+   "end": 42.74
+  },
+  {
+   "word": " one",
+   "start": 43.3,
+   "end": 43.46
+  },
+  {
+   "word": " alive",
+   "start": 43.46,
+   "end": 43.78
+  },
+  {
+   "word": " and",
+   "start": 43.78,
+   "end": 44.08
+  },
+  {
+   "word": " changing,",
+   "start": 44.08,
+   "end": 44.36
+  },
+  {
+   "word": " the",
+   "start": 44.7,
+   "end": 44.8
+  },
+  {
+   "word": " other",
+   "start": 44.8,
+   "end": 45.0
+  },
+  {
+   "word": " frozen",
+   "start": 45.0,
+   "end": 45.36
+  },
+  {
+   "word": " in",
+   "start": 45.36,
+   "end": 45.6
+  },
+  {
+   "word": " time.",
+   "start": 45.6,
+   "end": 45.88
+  },
+  {
+   "word": " Linguists",
+   "start": 46.5,
+   "end": 46.76
+  },
+  {
+   "word": " have",
+   "start": 46.76,
+   "end": 46.92
+  },
+  {
+   "word": " a",
+   "start": 46.92,
+   "end": 47.08
+  },
+  {
+   "word": " name",
+   "start": 47.08,
+   "end": 47.18
+  },
+  {
+   "word": " for",
+   "start": 47.18,
+   "end": 47.4
+  },
+  {
+   "word": " this,",
+   "start": 47.4,
+   "end": 47.66
+  },
+  {
+   "word": " Deglossia.",
+   "start": 47.94,
+   "end": 48.54
+  },
+  {
+   "word": " One",
+   "start": 49.06,
+   "end": 49.36
+  },
+  {
+   "word": " language",
+   "start": 49.36,
+   "end": 49.62
+  },
+  {
+   "word": " for",
+   "start": 49.62,
+   "end": 49.86
+  },
+  {
+   "word": " talking,",
+   "start": 49.86,
+   "end": 50.24
+  },
+  {
+   "word": " another",
+   "start": 50.48,
+   "end": 50.7
+  },
+  {
+   "word": " for",
+   "start": 50.7,
+   "end": 50.96
+  },
+  {
+   "word": " writing,",
+   "start": 50.96,
+   "end": 51.26
+  },
+  {
+   "word": " and",
+   "start": 51.72,
+   "end": 51.88
+  },
+  {
+   "word": " it",
+   "start": 51.88,
+   "end": 51.98
+  },
+  {
+   "word": " made",
+   "start": 51.98,
+   "end": 52.18
+  },
+  {
+   "word": " being",
+   "start": 52.18,
+   "end": 52.44
+  },
+  {
+   "word": " literate",
+   "start": 52.44,
+   "end": 52.88
+  },
+  {
+   "word": " brutally",
+   "start": 52.88,
+   "end": 53.14
+  },
+  {
+   "word": " hard.",
+   "start": 53.14,
+   "end": 53.54
+  },
+  {
+   "word": " You",
+   "start": 54.04,
+   "end": 54.2
+  },
+  {
+   "word": " didn't",
+   "start": 54.2,
+   "end": 54.34
+  },
+  {
+   "word": " just",
+   "start": 54.34,
+   "end": 54.52
+  },
+  {
+   "word": " have",
+   "start": 54.52,
+   "end": 54.96
+  },
+  {
+   "word": " to",
+   "start": 54.96,
+   "end": 55.1
+  },
+  {
+   "word": " learn",
+   "start": 55.1,
+   "end": 55.24
+  },
+  {
+   "word": " the",
+   "start": 55.24,
+   "end": 55.42
+  },
+  {
+   "word": " characters.",
+   "start": 55.42,
+   "end": 55.74
+  },
+  {
+   "word": " You",
+   "start": 55.74,
+   "end": 56.62
+  },
+  {
+   "word": " had",
+   "start": 56.62,
+   "end": 56.78
+  },
+  {
+   "word": " to",
+   "start": 56.78,
+   "end": 56.94
+  },
+  {
+   "word": " master",
+   "start": 56.94,
+   "end": 57.24
+  },
+  {
+   "word": " what",
+   "start": 57.24,
+   "end": 57.38
+  },
+  {
+   "word": " was",
+   "start": 57.38,
+   "end": 57.52
+  },
+  {
+   "word": " almost",
+   "start": 57.52,
+   "end": 57.82
+  },
+  {
+   "word": " a",
+   "start": 57.82,
+   "end": 58.0
+  },
+  {
+   "word": " dead",
+   "start": 58.0,
+   "end": 58.16
+  },
+  {
+   "word": " language,",
+   "start": 58.16,
+   "end": 58.48
+  },
+  {
+   "word": " on",
+   "start": 58.66,
+   "end": 58.84
+  },
+  {
+   "word": " top",
+   "start": 58.84,
+   "end": 59.04
+  },
+  {
+   "word": " of",
+   "start": 59.04,
+   "end": 59.22
+  },
+  {
+   "word": " the",
+   "start": 59.22,
+   "end": 59.28
+  },
+  {
+   "word": " one",
+   "start": 59.28,
+   "end": 59.44
+  },
+  {
+   "word": " you",
+   "start": 59.44,
+   "end": 59.58
+  },
+  {
+   "word": " already",
+   "start": 59.58,
+   "end": 59.82
+  },
+  {
+   "word": " spoke,",
+   "start": 59.82,
+   "end": 60.16
+  },
+  {
+   "word": " so",
+   "start": 60.42,
+   "end": 60.58
+  },
+  {
+   "word": " reading",
+   "start": 60.58,
+   "end": 60.82
+  },
+  {
+   "word": " and",
+   "start": 60.82,
+   "end": 61.0
+  },
+  {
+   "word": " writing",
+   "start": 61.0,
+   "end": 61.26
+  },
+  {
+   "word": " stayed",
+   "start": 61.26,
+   "end": 61.5
+  },
+  {
+   "word": " locked",
+   "start": 61.5,
+   "end": 61.8
+  },
+  {
+   "word": " to",
+   "start": 61.8,
+   "end": 61.98
+  },
+  {
+   "word": " a",
+   "start": 61.98,
+   "end": 62.12
+  },
+  {
+   "word": " small,",
+   "start": 62.12,
+   "end": 62.42
+  },
+  {
+   "word": " educated",
+   "start": 62.74,
+   "end": 63.18
+  },
+  {
+   "word": " elite.",
+   "start": 63.18,
+   "end": 63.52
+  },
+  {
+   "word": " For",
+   "start": 64.04,
+   "end": 64.16
+  },
+  {
+   "word": " everyone",
+   "start": 64.16,
+   "end": 64.46
+  },
+  {
+   "word": " else,",
+   "start": 64.46,
+   "end": 64.68
+  },
+  {
+   "word": " the",
+   "start": 64.88,
+   "end": 64.96
+  },
+  {
+   "word": " way",
+   "start": 64.96,
+   "end": 65.1
+  },
+  {
+   "word": " they",
+   "start": 65.1,
+   "end": 65.24
+  },
+  {
+   "word": " actually",
+   "start": 65.24,
+   "end": 65.56
+  },
+  {
+   "word": " talked",
+   "start": 65.56,
+   "end": 65.8
+  },
+  {
+   "word": " just",
+   "start": 65.8,
+   "end": 65.98
+  },
+  {
+   "word": " wasn't",
+   "start": 65.98,
+   "end": 66.32
+  },
+  {
+   "word": " considered",
+   "start": 66.32,
+   "end": 66.64
+  },
+  {
+   "word": " proper",
+   "start": 66.64,
+   "end": 66.98
+  },
+  {
+   "word": " to",
+   "start": 66.98,
+   "end": 67.18
+  },
+  {
+   "word": " write",
+   "start": 67.18,
+   "end": 67.34
+  },
+  {
+   "word": " down.",
+   "start": 67.34,
+   "end": 67.66
+  },
+  {
+   "word": " Then,",
+   "start": 68.14,
+   "end": 68.38
+  },
+  {
+   "word": " around",
+   "start": 68.54,
+   "end": 68.76
+  },
+  {
+   "word": " 1917,",
+   "start": 68.76,
+   "end": 69.44
+  },
+  {
+   "word": " a",
+   "start": 69.76,
+   "end": 69.9
+  },
+  {
+   "word": " scholar",
+   "start": 69.9,
+   "end": 70.08
+  },
+  {
+   "word": " named",
+   "start": 70.08,
+   "end": 70.34
+  },
+  {
+   "word": " Hu",
+   "start": 70.34,
+   "end": 70.52
+  },
+  {
+   "word": " Shi",
+   "start": 70.52,
+   "end": 70.78
+  },
+  {
+   "word": " pushed",
+   "start": 70.78,
+   "end": 71.04
+  },
+  {
+   "word": " a",
+   "start": 71.04,
+   "end": 71.24
+  },
+  {
+   "word": " radical",
+   "start": 71.24,
+   "end": 71.6
+  },
+  {
+   "word": " idea,",
+   "start": 71.6,
+   "end": 72.04
+  },
+  {
+   "word": " simply",
+   "start": 72.48,
+   "end": 72.74
+  },
+  {
+   "word": " write",
+   "start": 72.74,
+   "end": 73.0
+  },
+  {
+   "word": " the",
+   "start": 73.0,
+   "end": 73.38
+  },
+  {
+   "word": " way",
+   "start": 73.38,
+   "end": 73.52
+  },
+  {
+   "word": " you",
+   "start": 73.52,
+   "end": 73.7
+  },
+  {
+   "word": " speak.",
+   "start": 73.7,
+   "end": 74.0
+  },
+  {
+   "word": " Use",
+   "start": 74.4,
+   "end": 74.64
+  },
+  {
+   "word": " the",
+   "start": 74.64,
+   "end": 74.82
+  },
+  {
+   "word": " living,",
+   "start": 74.82,
+   "end": 75.14
+  },
+  {
+   "word": " spoken",
+   "start": 75.36,
+   "end": 75.66
+  },
+  {
+   "word": " language,",
+   "start": 75.66,
+   "end": 76.14
+  },
+  {
+   "word": " baihua,",
+   "start": 76.48,
+   "end": 76.76
+  },
+  {
+   "word": " as",
+   "start": 77.08,
+   "end": 77.32
+  },
+  {
+   "word": " the",
+   "start": 77.32,
+   "end": 77.48
+  },
+  {
+   "word": " written",
+   "start": 77.48,
+   "end": 77.66
+  },
+  {
+   "word": " standard,",
+   "start": 77.66,
+   "end": 78.1
+  },
+  {
+   "word": " and",
+   "start": 78.32,
+   "end": 78.62
+  },
+  {
+   "word": " it",
+   "start": 78.62,
+   "end": 78.74
+  },
+  {
+   "word": " caught",
+   "start": 78.74,
+   "end": 78.96
+  },
+  {
+   "word": " on",
+   "start": 78.96,
+   "end": 79.18
+  },
+  {
+   "word": " fast.",
+   "start": 79.18,
+   "end": 79.48
+  },
+  {
+   "word": " Within",
+   "start": 80.06,
+   "end": 80.22
+  },
+  {
+   "word": " about",
+   "start": 80.22,
+   "end": 80.48
+  },
+  {
+   "word": " a",
+   "start": 80.48,
+   "end": 80.66
+  },
+  {
+   "word": " decade,",
+   "start": 80.66,
+   "end": 80.96
+  },
+  {
+   "word": " schools",
+   "start": 81.26,
+   "end": 81.4
+  },
+  {
+   "word": " and",
+   "start": 81.4,
+   "end": 81.58
+  },
+  {
+   "word": " newspapers",
+   "start": 81.58,
+   "end": 81.88
+  },
+  {
+   "word": " had",
+   "start": 81.88,
+   "end": 82.18
+  },
+  {
+   "word": " traded",
+   "start": 82.18,
+   "end": 82.46
+  },
+  {
+   "word": " classical",
+   "start": 82.46,
+   "end": 82.86
+  },
+  {
+   "word": " Chinese",
+   "start": 82.86,
+   "end": 83.3
+  },
+  {
+   "word": " for",
+   "start": 83.3,
+   "end": 83.88
+  },
+  {
+   "word": " the",
+   "start": 83.88,
+   "end": 84.02
+  },
+  {
+   "word": " language",
+   "start": 84.02,
+   "end": 84.3
+  },
+  {
+   "word": " people",
+   "start": 84.3,
+   "end": 84.54
+  },
+  {
+   "word": " actually",
+   "start": 84.54,
+   "end": 84.88
+  },
+  {
+   "word": " used.",
+   "start": 84.88,
+   "end": 85.32
+  },
+  {
+   "word": " So",
+   "start": 85.86,
+   "end": 85.98
+  },
+  {
+   "word": " for",
+   "start": 85.98,
+   "end": 86.12
+  },
+  {
+   "word": " two",
+   "start": 86.12,
+   "end": 86.34
+  },
+  {
+   "word": " thousand",
+   "start": 86.34,
+   "end": 86.66
+  },
+  {
+   "word": " years,",
+   "start": 86.66,
+   "end": 87.02
+  },
+  {
+   "word": " China",
+   "start": 87.46,
+   "end": 87.58
+  },
+  {
+   "word": " wrote",
+   "start": 87.58,
+   "end": 87.82
+  },
+  {
+   "word": " in",
+   "start": 87.82,
+   "end": 87.94
+  },
+  {
+   "word": " a",
+   "start": 87.94,
+   "end": 88.08
+  },
+  {
+   "word": " language",
+   "start": 88.08,
+   "end": 88.28
+  },
+  {
+   "word": " that",
+   "start": 88.28,
+   "end": 88.52
+  },
+  {
+   "word": " time",
+   "start": 88.52,
+   "end": 88.74
+  },
+  {
+   "word": " had",
+   "start": 88.74,
+   "end": 88.9
+  },
+  {
+   "word": " left",
+   "start": 88.9,
+   "end": 89.08
+  },
+  {
+   "word": " behind,",
+   "start": 89.08,
+   "end": 89.46
+  },
+  {
+   "word": " and",
+   "start": 89.88,
+   "end": 90.08
+  },
+  {
+   "word": " it",
+   "start": 90.08,
+   "end": 90.16
+  },
+  {
+   "word": " took",
+   "start": 90.16,
+   "end": 90.3
+  },
+  {
+   "word": " a",
+   "start": 90.3,
+   "end": 90.46
+  },
+  {
+   "word": " 20th",
+   "start": 90.46,
+   "end": 90.86
+  },
+  {
+   "word": " century",
+   "start": 90.86,
+   "end": 91.12
+  },
+  {
+   "word": " revolution",
+   "start": 91.12,
+   "end": 91.52
+  },
+  {
+   "word": " just",
+   "start": 91.52,
+   "end": 92.02
+  },
+  {
+   "word": " to",
+   "start": 92.02,
+   "end": 92.22
+  },
+  {
+   "word": " let",
+   "start": 92.22,
+   "end": 92.34
+  },
+  {
+   "word": " people",
+   "start": 92.34,
+   "end": 92.6
+  },
+  {
+   "word": " write",
+   "start": 92.6,
+   "end": 92.86
+  },
+  {
+   "word": " the",
+   "start": 92.86,
+   "end": 93.0
+  },
+  {
+   "word": " way",
+   "start": 93.0,
+   "end": 93.14
+  },
+  {
+   "word": " they",
+   "start": 93.14,
+   "end": 93.28
+  },
+  {
+   "word": " talk.",
+   "start": 93.28,
+   "end": 93.62
+  },
+  {
+   "word": " We",
+   "start": 94.12,
+   "end": 94.24
+  },
+  {
+   "word": " take",
+   "start": 94.24,
+   "end": 94.44
+  },
+  {
+   "word": " it",
+   "start": 94.44,
+   "end": 94.56
+  },
+  {
+   "word": " for",
+   "start": 94.56,
+   "end": 94.7
+  },
+  {
+   "word": " granted",
+   "start": 94.7,
+   "end": 94.96
+  },
+  {
+   "word": " that",
+   "start": 94.96,
+   "end": 95.18
+  },
+  {
+   "word": " we",
+   "start": 95.18,
+   "end": 95.28
+  },
+  {
+   "word": " write",
+   "start": 95.28,
+   "end": 95.44
+  },
+  {
+   "word": " our",
+   "start": 95.44,
+   "end": 95.56
+  },
+  {
+   "word": " own",
+   "start": 95.56,
+   "end": 95.74
+  },
+  {
+   "word": " language.",
+   "start": 95.74,
+   "end": 96.06
+  },
+  {
+   "word": " For",
+   "start": 96.32,
+   "end": 96.44
+  },
+  {
+   "word": " most",
+   "start": 96.44,
+   "end": 96.64
+  },
+  {
+   "word": " of",
+   "start": 96.64,
+   "end": 96.84
+  },
+  {
+   "word": " Chinese",
+   "start": 96.84,
+   "end": 97.02
+  },
+  {
+   "word": " history,",
+   "start": 97.02,
+   "end": 97.4
+  },
+  {
+   "word": " that",
+   "start": 97.5,
+   "end": 97.6
+  },
+  {
+   "word": " simply",
+   "start": 97.6,
+   "end": 97.92
+  },
+  {
+   "word": " wasn't",
+   "start": 97.92,
+   "end": 98.26
+  },
+  {
+   "word": " allowed.",
+   "start": 98.26,
+   "end": 98.6
+  },
+  {
+   "word": " Want",
+   "start": 99.18,
+   "end": 99.26
+  },
+  {
+   "word": " to",
+   "start": 99.26,
+   "end": 99.34
+  },
+  {
+   "word": " actually",
+   "start": 99.34,
+   "end": 99.62
+  },
+  {
+   "word": " start",
+   "start": 99.62,
+   "end": 99.84
+  },
+  {
+   "word": " learning",
+   "start": 99.84,
+   "end": 100.08
+  },
+  {
+   "word": " Chinese?",
+   "start": 100.08,
+   "end": 100.48
+  },
+  {
+   "word": " Discover",
+   "start": 101.12,
+   "end": 101.42
+  },
+  {
+   "word": " thousands",
+   "start": 101.42,
+   "end": 101.9
+  },
+  {
+   "word": " of",
+   "start": 101.9,
+   "end": 102.16
+  },
+  {
+   "word": " free",
+   "start": 102.16,
+   "end": 102.34
+  },
+  {
+   "word": " exercises",
+   "start": 102.34,
+   "end": 102.88
+  },
+  {
+   "word": " and",
+   "start": 102.88,
+   "end": 103.24
+  },
+  {
+   "word": " more",
+   "start": 103.24,
+   "end": 103.44
+  },
+  {
+   "word": " learning",
+   "start": 103.44,
+   "end": 103.74
+  },
+  {
+   "word": " content",
+   "start": 103.74,
+   "end": 104.16
+  },
+  {
+   "word": " on",
+   "start": 104.16,
+   "end": 104.38
   },
   {
    "word": " stacktags",
-   "start": 98.24,
-   "end": 98.74
+   "start": 104.38,
+   "end": 104.94
   },
   {
-   "word": ".io",
-   "start": 98.74,
-   "end": 99.2
+   "word": ".io.",
+   "start": 104.94,
+   "end": 105.5
   }
  ],
- "text": "For most of its history, China wrote in a language that nobody actually spoke, and hadn't spoken for well over a thousand years. You'd speak one kind of Chinese, and write a completely different one. Until about a century ago, written Chinese was winyanwin, classical or literary, Chinese. It was based on the language of the ancient classics, from over two thousand years ago, and it basically froze there. Meanwhile, spoken Chinese kept evolving, century after century, so the written language and the spoken language drifted further and further apart, until they were effectively two different languages. You spoke everyday Chinese, baihua, plain speech, but to write, you had to use this ancient, compressed, classical form almost no one actually spoke. Linguists have a name for this, deglossia, one language for the street, another for the page, and it meant that being literate didn't just mean knowing the characters, it meant mastering a near dead language on top of your own, which made reading and writing brutally hard, and kept them locked to a small, scholarly elite. Everyday speech simply wasn't considered proper, to write down. Then, starting around 1917, a scholar named Hu Shi led a movement with a radical idea, write the way you actually speak, use the living, spoken language, baihua, as the written standard. It caught on fast, within about a decade, the vernacular had replaced classical Chinese in schools and newspapers, so for two thousand years, China wrote in a language the time had left behind, and it took a 20th century revolution just to let people write the way they talk. We take it for granted that we write our own language, for most of Chinese history, that wasn't even allowed. Want to actually start learning Chinese? Discover thousands of free exercises and more learning content on stacktags.io"
+ "text": "For most of its history, China wrote in a language that almost nobody actually spoke. You'd say something out loud, and then write it down in a completely different language. Same meaning, but different words, and different grammar. Here's how that happened. The written language was called Wenyanwen, classical Chinese, and it was based on the way people spoke more than 2,000 years ago. Then it basically froze. Scholars kept writing in that same ancient style century after century, but the spoken language never stopped changing. Take a simple, everyday word, like the word for you. Over the centuries, the way people said it slowly shifted, but to write it, you were still expected to use the ancient form. Do that across the whole language, and the Chinese people spoke, and the Chinese they wrote drifted into two different worlds, one alive and changing, the other frozen in time. Linguists have a name for this, Deglossia. One language for talking, another for writing, and it made being literate brutally hard. You didn't just have to learn the characters. You had to master what was almost a dead language, on top of the one you already spoke, so reading and writing stayed locked to a small, educated elite. For everyone else, the way they actually talked just wasn't considered proper to write down. Then, around 1917, a scholar named Hu Shi pushed a radical idea, simply write the way you speak. Use the living, spoken language, baihua, as the written standard, and it caught on fast. Within about a decade, schools and newspapers had traded classical Chinese for the language people actually used. So for two thousand years, China wrote in a language that time had left behind, and it took a 20th century revolution just to let people write the way they talk. We take it for granted that we write our own language. For most of Chinese history, that simply wasn't allowed. Want to actually start learning Chinese? Discover thousands of free exercises and more learning content on stacktags.io."
 }

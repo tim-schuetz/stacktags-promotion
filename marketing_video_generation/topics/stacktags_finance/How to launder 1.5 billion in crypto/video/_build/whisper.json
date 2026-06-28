@@ -1,0 +1,1721 @@
+{
+ "duration": 101.285,
+ "words": [
+  {
+   "word": " When",
+   "start": 0.0,
+   "end": 0.2
+  },
+  {
+   "word": " North",
+   "start": 0.2,
+   "end": 0.4
+  },
+  {
+   "word": " Korean",
+   "start": 0.4,
+   "end": 0.68
+  },
+  {
+   "word": " hackers",
+   "start": 0.68,
+   "end": 1.02
+  },
+  {
+   "word": " pulled",
+   "start": 1.02,
+   "end": 1.3
+  },
+  {
+   "word": " off",
+   "start": 1.3,
+   "end": 1.44
+  },
+  {
+   "word": " the",
+   "start": 1.44,
+   "end": 1.62
+  },
+  {
+   "word": " biggest",
+   "start": 1.62,
+   "end": 1.9
+  },
+  {
+   "word": " crypto",
+   "start": 1.9,
+   "end": 2.26
+  },
+  {
+   "word": " heist",
+   "start": 2.26,
+   "end": 2.5
+  },
+  {
+   "word": " in",
+   "start": 2.5,
+   "end": 2.66
+  },
+  {
+   "word": " history,",
+   "start": 2.66,
+   "end": 3.0
+  },
+  {
+   "word": " around",
+   "start": 3.34,
+   "end": 3.48
+  },
+  {
+   "word": " 1",
+   "start": 3.48,
+   "end": 3.76
+  },
+  {
+   "word": ".5",
+   "start": 3.76,
+   "end": 4.26
+  },
+  {
+   "word": " billion",
+   "start": 4.26,
+   "end": 4.46
+  },
+  {
+   "word": " dollars,",
+   "start": 4.46,
+   "end": 4.92
+  },
+  {
+   "word": " they",
+   "start": 5.32,
+   "end": 5.46
+  },
+  {
+   "word": " ran",
+   "start": 5.46,
+   "end": 5.62
+  },
+  {
+   "word": " straight",
+   "start": 5.62,
+   "end": 5.94
+  },
+  {
+   "word": " into",
+   "start": 5.94,
+   "end": 6.18
+  },
+  {
+   "word": " a",
+   "start": 6.18,
+   "end": 6.36
+  },
+  {
+   "word": " problem",
+   "start": 6.36,
+   "end": 6.6
+  },
+  {
+   "word": " most",
+   "start": 6.6,
+   "end": 6.84
+  },
+  {
+   "word": " people",
+   "start": 6.84,
+   "end": 7.06
+  },
+  {
+   "word": " never",
+   "start": 7.06,
+   "end": 7.32
+  },
+  {
+   "word": " expect.",
+   "start": 7.32,
+   "end": 7.76
+  },
+  {
+   "word": " In",
+   "start": 8.22,
+   "end": 8.42
+  },
+  {
+   "word": " crypto,",
+   "start": 8.42,
+   "end": 8.64
+  },
+  {
+   "word": " you",
+   "start": 9.0,
+   "end": 9.1
+  },
+  {
+   "word": " can't",
+   "start": 9.1,
+   "end": 9.38
+  },
+  {
+   "word": " actually",
+   "start": 9.38,
+   "end": 9.66
+  },
+  {
+   "word": " hide",
+   "start": 9.66,
+   "end": 9.92
+  },
+  {
+   "word": " the",
+   "start": 9.92,
+   "end": 10.08
+  },
+  {
+   "word": " money.",
+   "start": 10.08,
+   "end": 10.24
+  },
+  {
+   "word": " Most",
+   "start": 10.82,
+   "end": 11.0
+  },
+  {
+   "word": " people",
+   "start": 11.0,
+   "end": 11.22
+  },
+  {
+   "word": " think",
+   "start": 11.22,
+   "end": 11.46
+  },
+  {
+   "word": " crypto",
+   "start": 11.46,
+   "end": 11.72
+  },
+  {
+   "word": " is",
+   "start": 11.72,
+   "end": 11.88
+  },
+  {
+   "word": " anonymous,",
+   "start": 11.88,
+   "end": 12.28
+  },
+  {
+   "word": " perfect",
+   "start": 12.76,
+   "end": 12.88
+  },
+  {
+   "word": " for",
+   "start": 12.88,
+   "end": 13.22
+  },
+  {
+   "word": " crime,",
+   "start": 13.22,
+   "end": 13.52
+  },
+  {
+   "word": " it's",
+   "start": 13.92,
+   "end": 14.1
+  },
+  {
+   "word": " almost",
+   "start": 14.1,
+   "end": 14.28
+  },
+  {
+   "word": " the",
+   "start": 14.28,
+   "end": 14.44
+  },
+  {
+   "word": " exact",
+   "start": 14.44,
+   "end": 14.78
+  },
+  {
+   "word": " opposite,",
+   "start": 14.78,
+   "end": 15.16
+  },
+  {
+   "word": " and",
+   "start": 15.6,
+   "end": 15.78
+  },
+  {
+   "word": " it",
+   "start": 15.78,
+   "end": 15.88
+  },
+  {
+   "word": " comes",
+   "start": 15.88,
+   "end": 16.08
+  },
+  {
+   "word": " down",
+   "start": 16.08,
+   "end": 16.28
+  },
+  {
+   "word": " to",
+   "start": 16.28,
+   "end": 16.44
+  },
+  {
+   "word": " every",
+   "start": 16.44,
+   "end": 16.78
+  },
+  {
+   "word": " blockchain's",
+   "start": 16.78,
+   "end": 17.34
+  },
+  {
+   "word": " most",
+   "start": 17.34,
+   "end": 17.48
+  },
+  {
+   "word": " innate",
+   "start": 17.48,
+   "end": 17.8
+  },
+  {
+   "word": " structure.",
+   "start": 17.8,
+   "end": 18.22
+  },
+  {
+   "word": " The",
+   "start": 18.64,
+   "end": 18.84
+  },
+  {
+   "word": " ledger",
+   "start": 18.84,
+   "end": 19.04
+  },
+  {
+   "word": " isn't",
+   "start": 19.04,
+   "end": 19.38
+  },
+  {
+   "word": " kept",
+   "start": 19.38,
+   "end": 19.52
+  },
+  {
+   "word": " in",
+   "start": 19.52,
+   "end": 19.72
+  },
+  {
+   "word": " one",
+   "start": 19.72,
+   "end": 19.92
+  },
+  {
+   "word": " place.",
+   "start": 19.92,
+   "end": 20.24
+  },
+  {
+   "word": " An",
+   "start": 20.64,
+   "end": 20.82
+  },
+  {
+   "word": " identical",
+   "start": 20.82,
+   "end": 21.16
+  },
+  {
+   "word": " copy",
+   "start": 21.16,
+   "end": 21.56
+  },
+  {
+   "word": " of",
+   "start": 21.56,
+   "end": 21.7
+  },
+  {
+   "word": " it",
+   "start": 21.7,
+   "end": 21.82
+  },
+  {
+   "word": " lives",
+   "start": 21.82,
+   "end": 22.0
+  },
+  {
+   "word": " on",
+   "start": 22.0,
+   "end": 22.22
+  },
+  {
+   "word": " thousands",
+   "start": 22.22,
+   "end": 22.52
+  },
+  {
+   "word": " of",
+   "start": 22.52,
+   "end": 22.8
+  },
+  {
+   "word": " computers",
+   "start": 22.8,
+   "end": 23.16
+  },
+  {
+   "word": " all",
+   "start": 23.16,
+   "end": 23.56
+  },
+  {
+   "word": " around",
+   "start": 23.56,
+   "end": 23.82
+  },
+  {
+   "word": " the",
+   "start": 23.82,
+   "end": 23.94
+  },
+  {
+   "word": " world.",
+   "start": 23.94,
+   "end": 24.22
+  },
+  {
+   "word": " Every",
+   "start": 24.76,
+   "end": 25.02
+  },
+  {
+   "word": " single",
+   "start": 25.02,
+   "end": 25.3
+  },
+  {
+   "word": " transaction",
+   "start": 25.3,
+   "end": 25.74
+  },
+  {
+   "word": " is",
+   "start": 25.74,
+   "end": 26.04
+  },
+  {
+   "word": " broadcast",
+   "start": 26.04,
+   "end": 26.28
+  },
+  {
+   "word": " to",
+   "start": 26.28,
+   "end": 26.6
+  },
+  {
+   "word": " all",
+   "start": 26.6,
+   "end": 26.84
+  },
+  {
+   "word": " of",
+   "start": 26.84,
+   "end": 26.98
+  },
+  {
+   "word": " them,",
+   "start": 26.98,
+   "end": 27.14
+  },
+  {
+   "word": " and",
+   "start": 27.36,
+   "end": 27.64
+  },
+  {
+   "word": " locked",
+   "start": 27.64,
+   "end": 27.84
+  },
+  {
+   "word": " into",
+   "start": 27.84,
+   "end": 28.04
+  },
+  {
+   "word": " the",
+   "start": 28.04,
+   "end": 28.24
+  },
+  {
+   "word": " very",
+   "start": 28.24,
+   "end": 28.44
+  },
+  {
+   "word": " same",
+   "start": 28.44,
+   "end": 28.74
+  },
+  {
+   "word": " shared",
+   "start": 28.74,
+   "end": 29.02
+  },
+  {
+   "word": " record.",
+   "start": 29.02,
+   "end": 29.4
+  },
+  {
+   "word": " So",
+   "start": 29.86,
+   "end": 30.04
+  },
+  {
+   "word": " the",
+   "start": 30.04,
+   "end": 30.18
+  },
+  {
+   "word": " instant",
+   "start": 30.18,
+   "end": 30.42
+  },
+  {
+   "word": " these",
+   "start": 30.42,
+   "end": 30.74
+  },
+  {
+   "word": " hackers",
+   "start": 30.74,
+   "end": 31.02
+  },
+  {
+   "word": " moved",
+   "start": 31.02,
+   "end": 31.28
+  },
+  {
+   "word": " a",
+   "start": 31.28,
+   "end": 31.5
+  },
+  {
+   "word": " coin,",
+   "start": 31.5,
+   "end": 31.7
+  },
+  {
+   "word": " every",
+   "start": 32.26,
+   "end": 32.38
+  },
+  {
+   "word": " one",
+   "start": 32.38,
+   "end": 32.6
+  },
+  {
+   "word": " of",
+   "start": 32.6,
+   "end": 32.68
+  },
+  {
+   "word": " those",
+   "start": 32.68,
+   "end": 32.86
+  },
+  {
+   "word": " machines",
+   "start": 32.86,
+   "end": 33.2
+  },
+  {
+   "word": " saw",
+   "start": 33.2,
+   "end": 33.54
+  },
+  {
+   "word": " it,",
+   "start": 33.54,
+   "end": 33.8
+  },
+  {
+   "word": " and",
+   "start": 34.04,
+   "end": 34.28
+  },
+  {
+   "word": " kept",
+   "start": 34.28,
+   "end": 34.46
+  },
+  {
+   "word": " it",
+   "start": 34.46,
+   "end": 34.8
+  },
+  {
+   "word": " forever.",
+   "start": 34.8,
+   "end": 35.24
+  },
+  {
+   "word": " So",
+   "start": 35.9,
+   "end": 36.08
+  },
+  {
+   "word": " when",
+   "start": 36.08,
+   "end": 36.2
+  },
+  {
+   "word": " the",
+   "start": 36.2,
+   "end": 36.34
+  },
+  {
+   "word": " group",
+   "start": 36.34,
+   "end": 36.52
+  },
+  {
+   "word": " known",
+   "start": 36.52,
+   "end": 36.7
+  },
+  {
+   "word": " as",
+   "start": 36.7,
+   "end": 36.94
+  },
+  {
+   "word": " Lazarus",
+   "start": 36.94,
+   "end": 37.24
+  },
+  {
+   "word": " drained",
+   "start": 37.24,
+   "end": 37.54
+  },
+  {
+   "word": " that",
+   "start": 37.54,
+   "end": 37.74
+  },
+  {
+   "word": " exchange,",
+   "start": 37.74,
+   "end": 38.06
+  },
+  {
+   "word": " the",
+   "start": 38.3,
+   "end": 38.34
+  },
+  {
+   "word": " whole",
+   "start": 38.34,
+   "end": 38.58
+  },
+  {
+   "word": " world",
+   "start": 38.58,
+   "end": 38.8
+  },
+  {
+   "word": " could",
+   "start": 38.8,
+   "end": 38.98
+  },
+  {
+   "word": " watch",
+   "start": 38.98,
+   "end": 39.18
+  },
+  {
+   "word": " the",
+   "start": 39.18,
+   "end": 39.4
+  },
+  {
+   "word": " stolen",
+   "start": 39.4,
+   "end": 39.6
+  },
+  {
+   "word": " funds",
+   "start": 39.6,
+   "end": 39.9
+  },
+  {
+   "word": " sitting",
+   "start": 39.9,
+   "end": 40.14
+  },
+  {
+   "word": " in",
+   "start": 40.14,
+   "end": 40.36
+  },
+  {
+   "word": " their",
+   "start": 40.36,
+   "end": 40.48
+  },
+  {
+   "word": " wallets.",
+   "start": 40.48,
+   "end": 40.76
+  },
+  {
+   "word": " Stealing",
+   "start": 41.4,
+   "end": 41.68
+  },
+  {
+   "word": " it",
+   "start": 41.68,
+   "end": 41.86
+  },
+  {
+   "word": " was",
+   "start": 41.86,
+   "end": 42.04
+  },
+  {
+   "word": " the",
+   "start": 42.04,
+   "end": 42.2
+  },
+  {
+   "word": " easy",
+   "start": 42.2,
+   "end": 42.46
+  },
+  {
+   "word": " part,",
+   "start": 42.46,
+   "end": 42.74
+  },
+  {
+   "word": " spending",
+   "start": 43.1,
+   "end": 43.38
+  },
+  {
+   "word": " it",
+   "start": 43.38,
+   "end": 43.62
+  },
+  {
+   "word": " is",
+   "start": 43.62,
+   "end": 43.8
+  },
+  {
+   "word": " the",
+   "start": 43.8,
+   "end": 43.94
+  },
+  {
+   "word": " hard",
+   "start": 43.94,
+   "end": 44.16
+  },
+  {
+   "word": " part,",
+   "start": 44.16,
+   "end": 44.46
+  },
+  {
+   "word": " because",
+   "start": 44.76,
+   "end": 45.02
+  },
+  {
+   "word": " the",
+   "start": 45.02,
+   "end": 45.22
+  },
+  {
+   "word": " moment",
+   "start": 45.22,
+   "end": 45.36
+  },
+  {
+   "word": " they",
+   "start": 45.36,
+   "end": 45.58
+  },
+  {
+   "word": " try",
+   "start": 45.58,
+   "end": 45.74
+  },
+  {
+   "word": " to",
+   "start": 45.74,
+   "end": 45.86
+  },
+  {
+   "word": " send",
+   "start": 45.86,
+   "end": 46.0
+  },
+  {
+   "word": " that",
+   "start": 46.0,
+   "end": 46.18
+  },
+  {
+   "word": " money",
+   "start": 46.18,
+   "end": 46.32
+  },
+  {
+   "word": " to",
+   "start": 46.32,
+   "end": 46.52
+  },
+  {
+   "word": " an",
+   "start": 46.52,
+   "end": 46.6
+  },
+  {
+   "word": " exchange",
+   "start": 46.6,
+   "end": 46.88
+  },
+  {
+   "word": " to",
+   "start": 46.88,
+   "end": 47.12
+  },
+  {
+   "word": " cash",
+   "start": 47.12,
+   "end": 47.36
+  },
+  {
+   "word": " out,",
+   "start": 47.36,
+   "end": 47.64
+  },
+  {
+   "word": " it",
+   "start": 47.96,
+   "end": 48.1
+  },
+  {
+   "word": " gets",
+   "start": 48.1,
+   "end": 48.26
+  },
+  {
+   "word": " flagged",
+   "start": 48.26,
+   "end": 48.6
+  },
+  {
+   "word": " and",
+   "start": 48.6,
+   "end": 48.82
+  },
+  {
+   "word": " frozen.",
+   "start": 48.82,
+   "end": 49.08
+  },
+  {
+   "word": " So",
+   "start": 49.6,
+   "end": 49.84
+  },
+  {
+   "word": " to",
+   "start": 49.84,
+   "end": 49.92
+  },
+  {
+   "word": " have",
+   "start": 49.92,
+   "end": 50.1
+  },
+  {
+   "word": " any",
+   "start": 50.1,
+   "end": 50.3
+  },
+  {
+   "word": " hope",
+   "start": 50.3,
+   "end": 50.5
+  },
+  {
+   "word": " of",
+   "start": 50.5,
+   "end": 50.64
+  },
+  {
+   "word": " using",
+   "start": 50.64,
+   "end": 50.9
+  },
+  {
+   "word": " it,",
+   "start": 50.9,
+   "end": 51.08
+  },
+  {
+   "word": " they",
+   "start": 51.2,
+   "end": 51.3
+  },
+  {
+   "word": " try",
+   "start": 51.3,
+   "end": 51.44
+  },
+  {
+   "word": " to",
+   "start": 51.44,
+   "end": 51.58
+  },
+  {
+   "word": " break",
+   "start": 51.58,
+   "end": 51.78
+  },
+  {
+   "word": " the",
+   "start": 51.78,
+   "end": 51.98
+  },
+  {
+   "word": " trail,",
+   "start": 51.98,
+   "end": 52.28
+  },
+  {
+   "word": " they",
+   "start": 52.7,
+   "end": 52.86
+  },
+  {
+   "word": " do",
+   "start": 52.86,
+   "end": 52.98
+  },
+  {
+   "word": " it",
+   "start": 52.98,
+   "end": 53.1
+  },
+  {
+   "word": " three",
+   "start": 53.1,
+   "end": 53.32
+  },
+  {
+   "word": " ways.",
+   "start": 53.32,
+   "end": 53.56
+  },
+  {
+   "word": " One,",
+   "start": 53.56,
+   "end": 54.38
+  },
+  {
+   "word": " chain",
+   "start": 54.94,
+   "end": 55.08
+  },
+  {
+   "word": " hopping.",
+   "start": 55.08,
+   "end": 55.4
+  },
+  {
+   "word": " They",
+   "start": 55.9,
+   "end": 56.06
+  },
+  {
+   "word": " bounce",
+   "start": 56.06,
+   "end": 56.3
+  },
+  {
+   "word": " the",
+   "start": 56.3,
+   "end": 56.5
+  },
+  {
+   "word": " money",
+   "start": 56.5,
+   "end": 56.64
+  },
+  {
+   "word": " across",
+   "start": 56.64,
+   "end": 56.94
+  },
+  {
+   "word": " different",
+   "start": 56.94,
+   "end": 57.3
+  },
+  {
+   "word": " blockchains,",
+   "start": 57.3,
+   "end": 57.8
+  },
+  {
+   "word": " again",
+   "start": 57.98,
+   "end": 58.3
+  },
+  {
+   "word": " and",
+   "start": 58.3,
+   "end": 58.44
+  },
+  {
+   "word": " again,",
+   "start": 58.44,
+   "end": 58.74
+  },
+  {
+   "word": " so",
+   "start": 59.06,
+   "end": 59.26
+  },
+  {
+   "word": " the",
+   "start": 59.26,
+   "end": 59.4
+  },
+  {
+   "word": " trail",
+   "start": 59.4,
+   "end": 59.58
+  },
+  {
+   "word": " has",
+   "start": 59.58,
+   "end": 59.76
+  },
+  {
+   "word": " to",
+   "start": 59.76,
+   "end": 59.92
+  },
+  {
+   "word": " keep",
+   "start": 59.92,
+   "end": 60.06
+  },
+  {
+   "word": " jumping",
+   "start": 60.06,
+   "end": 60.32
+  },
+  {
+   "word": " networks.",
+   "start": 60.32,
+   "end": 60.68
+  },
+  {
+   "word": " Two,",
+   "start": 61.08,
+   "end": 61.3
+  },
+  {
+   "word": " mixers.",
+   "start": 61.76,
+   "end": 62.16
+  },
+  {
+   "word": " They",
+   "start": 62.62,
+   "end": 62.72
+  },
+  {
+   "word": " throw",
+   "start": 62.72,
+   "end": 62.9
+  },
+  {
+   "word": " the",
+   "start": 62.9,
+   "end": 63.08
+  },
+  {
+   "word": " coins",
+   "start": 63.08,
+   "end": 63.3
+  },
+  {
+   "word": " into",
+   "start": 63.3,
+   "end": 63.52
+  },
+  {
+   "word": " a",
+   "start": 63.52,
+   "end": 63.68
+  },
+  {
+   "word": " pot",
+   "start": 63.68,
+   "end": 63.84
+  },
+  {
+   "word": " with",
+   "start": 63.84,
+   "end": 64.0
+  },
+  {
+   "word": " the",
+   "start": 64.0,
+   "end": 64.14
+  },
+  {
+   "word": " coins",
+   "start": 64.14,
+   "end": 64.32
+  },
+  {
+   "word": " of",
+   "start": 64.32,
+   "end": 64.5
+  },
+  {
+   "word": " thousands",
+   "start": 64.5,
+   "end": 64.8
+  },
+  {
+   "word": " of",
+   "start": 64.8,
+   "end": 65.02
+  },
+  {
+   "word": " other",
+   "start": 65.02,
+   "end": 65.18
+  },
+  {
+   "word": " users",
+   "start": 65.18,
+   "end": 65.4
+  },
+  {
+   "word": " who",
+   "start": 65.4,
+   "end": 65.62
+  },
+  {
+   "word": " also",
+   "start": 65.62,
+   "end": 65.9
+  },
+  {
+   "word": " aim",
+   "start": 65.9,
+   "end": 66.1
+  },
+  {
+   "word": " to",
+   "start": 66.1,
+   "end": 66.26
+  },
+  {
+   "word": " obscure",
+   "start": 66.26,
+   "end": 66.56
+  },
+  {
+   "word": " their",
+   "start": 66.56,
+   "end": 66.74
+  },
+  {
+   "word": " traces.",
+   "start": 66.74,
+   "end": 67.08
+  },
+  {
+   "word": " May",
+   "start": 67.6,
+   "end": 67.72
+  },
+  {
+   "word": " it",
+   "start": 67.72,
+   "end": 67.78
+  },
+  {
+   "word": " be",
+   "start": 67.78,
+   "end": 67.88
+  },
+  {
+   "word": " because",
+   "start": 67.88,
+   "end": 68.18
+  },
+  {
+   "word": " of",
+   "start": 68.18,
+   "end": 68.52
+  },
+  {
+   "word": " criminal",
+   "start": 68.52,
+   "end": 68.7
+  },
+  {
+   "word": " activities,",
+   "start": 68.7,
+   "end": 69.16
+  },
+  {
+   "word": " or",
+   "start": 69.34,
+   "end": 69.44
+  },
+  {
+   "word": " just",
+   "start": 69.44,
+   "end": 69.6
+  },
+  {
+   "word": " because",
+   "start": 69.6,
+   "end": 69.88
+  },
+  {
+   "word": " they",
+   "start": 69.88,
+   "end": 70.06
+  },
+  {
+   "word": " want",
+   "start": 70.06,
+   "end": 70.24
+  },
+  {
+   "word": " to",
+   "start": 70.24,
+   "end": 70.38
+  },
+  {
+   "word": " uphold",
+   "start": 70.38,
+   "end": 70.74
+  },
+  {
+   "word": " privacy.",
+   "start": 70.74,
+   "end": 71.18
+  },
+  {
+   "word": " Three,",
+   "start": 71.74,
+   "end": 72.04
+  },
+  {
+   "word": " splitting.",
+   "start": 72.5,
+   "end": 72.7
+  },
+  {
+   "word": " They",
+   "start": 73.28,
+   "end": 73.42
+  },
+  {
+   "word": " chop",
+   "start": 73.42,
+   "end": 73.68
+  },
+  {
+   "word": " the",
+   "start": 73.68,
+   "end": 73.86
+  },
+  {
+   "word": " hall",
+   "start": 73.86,
+   "end": 74.02
+  },
+  {
+   "word": " into",
+   "start": 74.02,
+   "end": 74.28
+  },
+  {
+   "word": " thousands",
+   "start": 74.28,
+   "end": 74.58
+  },
+  {
+   "word": " of",
+   "start": 74.58,
+   "end": 74.96
+  },
+  {
+   "word": " tiny",
+   "start": 74.96,
+   "end": 75.2
+  },
+  {
+   "word": " transfers",
+   "start": 75.2,
+   "end": 75.64
+  },
+  {
+   "word": " across",
+   "start": 75.64,
+   "end": 75.98
+  },
+  {
+   "word": " countless",
+   "start": 75.98,
+   "end": 76.44
+  },
+  {
+   "word": " wallets,",
+   "start": 76.44,
+   "end": 76.84
+  },
+  {
+   "word": " so",
+   "start": 77.12,
+   "end": 77.32
+  },
+  {
+   "word": " there's",
+   "start": 77.32,
+   "end": 77.52
+  },
+  {
+   "word": " no",
+   "start": 77.52,
+   "end": 77.72
+  },
+  {
+   "word": " single",
+   "start": 77.72,
+   "end": 78.04
+  },
+  {
+   "word": " stream",
+   "start": 78.04,
+   "end": 78.28
+  },
+  {
+   "word": " left",
+   "start": 78.28,
+   "end": 78.5
+  },
+  {
+   "word": " to",
+   "start": 78.5,
+   "end": 78.66
+  },
+  {
+   "word": " follow,",
+   "start": 78.66,
+   "end": 78.88
+  },
+  {
+   "word": " and",
+   "start": 79.3,
+   "end": 79.5
+  },
+  {
+   "word": " that's",
+   "start": 79.5,
+   "end": 79.8
+  },
+  {
+   "word": " the",
+   "start": 79.8,
+   "end": 79.92
+  },
+  {
+   "word": " irony.",
+   "start": 79.92,
+   "end": 80.18
+  },
+  {
+   "word": " The",
+   "start": 80.52,
+   "end": 80.76
+  },
+  {
+   "word": " only",
+   "start": 80.76,
+   "end": 80.94
+  },
+  {
+   "word": " reason",
+   "start": 80.94,
+   "end": 81.22
+  },
+  {
+   "word": " they",
+   "start": 81.22,
+   "end": 81.4
+  },
+  {
+   "word": " need",
+   "start": 81.4,
+   "end": 81.58
+  },
+  {
+   "word": " all",
+   "start": 81.58,
+   "end": 81.78
+  },
+  {
+   "word": " of",
+   "start": 81.78,
+   "end": 81.92
+  },
+  {
+   "word": " this",
+   "start": 81.92,
+   "end": 82.08
+  },
+  {
+   "word": " is",
+   "start": 82.08,
+   "end": 82.26
+  },
+  {
+   "word": " that",
+   "start": 82.26,
+   "end": 82.44
+  },
+  {
+   "word": " crypto",
+   "start": 82.44,
+   "end": 82.64
+  },
+  {
+   "word": " isn't",
+   "start": 82.64,
+   "end": 82.98
+  },
+  {
+   "word": " anonymous",
+   "start": 82.98,
+   "end": 83.44
+  },
+  {
+   "word": " at",
+   "start": 83.44,
+   "end": 83.62
+  },
+  {
+   "word": " all,",
+   "start": 83.62,
+   "end": 83.82
+  },
+  {
+   "word": " it's",
+   "start": 84.02,
+   "end": 84.2
+  },
+  {
+   "word": " the",
+   "start": 84.2,
+   "end": 84.32
+  },
+  {
+   "word": " most",
+   "start": 84.32,
+   "end": 84.46
+  },
+  {
+   "word": " transparent",
+   "start": 84.46,
+   "end": 84.92
+  },
+  {
+   "word": " money",
+   "start": 84.92,
+   "end": 85.18
+  },
+  {
+   "word": " ever",
+   "start": 85.18,
+   "end": 85.44
+  },
+  {
+   "word": " made,",
+   "start": 85.44,
+   "end": 85.72
+  },
+  {
+   "word": " a",
+   "start": 85.96,
+   "end": 86.12
+  },
+  {
+   "word": " permanent",
+   "start": 86.12,
+   "end": 86.42
+  },
+  {
+   "word": " record,",
+   "start": 86.42,
+   "end": 86.88
+  },
+  {
+   "word": " copied",
+   "start": 87.28,
+   "end": 87.56
+  },
+  {
+   "word": " across",
+   "start": 87.56,
+   "end": 87.86
+  },
+  {
+   "word": " the",
+   "start": 87.86,
+   "end": 88.02
+  },
+  {
+   "word": " entire",
+   "start": 88.02,
+   "end": 88.38
+  },
+  {
+   "word": " world.",
+   "start": 88.38,
+   "end": 88.76
+  },
+  {
+   "word": " So",
+   "start": 89.28,
+   "end": 89.38
+  },
+  {
+   "word": " stealing",
+   "start": 89.38,
+   "end": 89.64
+  },
+  {
+   "word": " a",
+   "start": 89.64,
+   "end": 89.86
+  },
+  {
+   "word": " billion",
+   "start": 89.86,
+   "end": 90.02
+  },
+  {
+   "word": " is",
+   "start": 90.02,
+   "end": 90.22
+  },
+  {
+   "word": " the",
+   "start": 90.22,
+   "end": 90.34
+  },
+  {
+   "word": " easy",
+   "start": 90.34,
+   "end": 90.54
+  },
+  {
+   "word": " part,",
+   "start": 90.54,
+   "end": 90.84
+  },
+  {
+   "word": " actually",
+   "start": 91.26,
+   "end": 91.58
+  },
+  {
+   "word": " spending",
+   "start": 91.58,
+   "end": 91.86
+  },
+  {
+   "word": " it",
+   "start": 91.86,
+   "end": 92.04
+  },
+  {
+   "word": " is",
+   "start": 92.04,
+   "end": 92.26
+  },
+  {
+   "word": " a",
+   "start": 92.26,
+   "end": 92.4
+  },
+  {
+   "word": " problem",
+   "start": 92.4,
+   "end": 92.62
+  },
+  {
+   "word": " most",
+   "start": 92.62,
+   "end": 92.86
+  },
+  {
+   "word": " criminals",
+   "start": 92.86,
+   "end": 93.18
+  },
+  {
+   "word": " never",
+   "start": 93.18,
+   "end": 93.52
+  },
+  {
+   "word": " saw",
+   "start": 93.52,
+   "end": 93.78
+  },
+  {
+   "word": " coming.",
+   "start": 93.78,
+   "end": 94.1
+  },
+  {
+   "word": " Want",
+   "start": 94.6,
+   "end": 94.78
+  },
+  {
+   "word": " more",
+   "start": 94.78,
+   "end": 94.96
+  },
+  {
+   "word": " of",
+   "start": 94.96,
+   "end": 95.1
+  },
+  {
+   "word": " how",
+   "start": 95.1,
+   "end": 95.24
+  },
+  {
+   "word": " crypto",
+   "start": 95.24,
+   "end": 95.52
+  },
+  {
+   "word": " really",
+   "start": 95.52,
+   "end": 95.76
+  },
+  {
+   "word": " works?",
+   "start": 95.76,
+   "end": 96.12
+  },
+  {
+   "word": " Discover",
+   "start": 96.66,
+   "end": 96.88
+  },
+  {
+   "word": " millions",
+   "start": 96.88,
+   "end": 97.2
+  },
+  {
+   "word": " of",
+   "start": 97.2,
+   "end": 97.5
+  },
+  {
+   "word": " ideas,",
+   "start": 97.5,
+   "end": 97.88
+  },
+  {
+   "word": " exercises,",
+   "start": 98.24,
+   "end": 98.52
+  },
+  {
+   "word": " and",
+   "start": 98.92,
+   "end": 98.94
+  },
+  {
+   "word": " more",
+   "start": 98.94,
+   "end": 99.1
+  },
+  {
+   "word": " learning",
+   "start": 99.1,
+   "end": 99.34
+  },
+  {
+   "word": " content",
+   "start": 99.34,
+   "end": 99.7
+  },
+  {
+   "word": " on",
+   "start": 99.7,
+   "end": 99.88
+  },
+  {
+   "word": " stacktags",
+   "start": 99.88,
+   "end": 100.4
+  },
+  {
+   "word": ".io",
+   "start": 100.4,
+   "end": 100.9
+  }
+ ],
+ "text": "When North Korean hackers pulled off the biggest crypto heist in history, around 1.5 billion dollars, they ran straight into a problem most people never expect. In crypto, you can't actually hide the money. Most people think crypto is anonymous, perfect for crime, it's almost the exact opposite, and it comes down to every blockchain's most innate structure. The ledger isn't kept in one place. An identical copy of it lives on thousands of computers all around the world. Every single transaction is broadcast to all of them, and locked into the very same shared record. So the instant these hackers moved a coin, every one of those machines saw it, and kept it forever. So when the group known as Lazarus drained that exchange, the whole world could watch the stolen funds sitting in their wallets. Stealing it was the easy part, spending it is the hard part, because the moment they try to send that money to an exchange to cash out, it gets flagged and frozen. So to have any hope of using it, they try to break the trail, they do it three ways. One, chain hopping. They bounce the money across different blockchains, again and again, so the trail has to keep jumping networks. Two, mixers. They throw the coins into a pot with the coins of thousands of other users who also aim to obscure their traces. May it be because of criminal activities, or just because they want to uphold privacy. Three, splitting. They chop the hall into thousands of tiny transfers across countless wallets, so there's no single stream left to follow, and that's the irony. The only reason they need all of this is that crypto isn't anonymous at all, it's the most transparent money ever made, a permanent record, copied across the entire world. So stealing a billion is the easy part, actually spending it is a problem most criminals never saw coming. Want more of how crypto really works? Discover millions of ideas, exercises, and more learning content on stacktags.io"
+}

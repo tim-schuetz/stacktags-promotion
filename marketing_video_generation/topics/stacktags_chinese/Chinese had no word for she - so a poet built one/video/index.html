@@ -31,50 +31,60 @@
     <!-- all scene layers stack here -->
     <div class="scenes" id="scenes">
 
-      <!-- ===== INTRO (HOOK + OLD WAY) — a real "she" who could only be written 他 ===== -->
+      <!-- ===== INTRO — 他 flies in (top) + the poet ; then he/she/it = man, woman, cat ===== -->
       <div class="scene" id="sc-intro">
-        <!-- the recurring "she": a 1920s woman with no word of her own -->
-        <div class="person" id="in-woman"><div class="person-photo woman"></div></div>
-        <div class="say-bubble" id="in-say">tā</div>
-
-        <!-- to write her, you wrote 他 (the brush links her to the only character) -->
-        <div class="conn" id="in-conn"><span class="conn-arrow"></span></div>
-        <div class="cell hero-cell" id="in-cell">
+        <!-- the poet, flying in from the top-left, to the left of 他 -->
+        <div class="poet" id="in-poet"><div class="poet-photo"></div></div>
+        <!-- the one character, flying in from the top -->
+        <div class="cell" id="in-cell">
           <span class="cell-cross"></span>
           <span class="cell-glyph" id="in-he"></span>
         </div>
         <div class="cell-py" id="in-py">tā</div>
 
-        <!-- her own word: still missing -->
-        <div class="newcell" id="in-newcell">
-          <span class="cell-cross"></span>
-          <span class="newq">?</span>
-          <div class="brush sm" id="in-brush"><span class="b-body"></span><span class="b-nib"></span></div>
+        <!-- arrows from 他 down to the three referents -->
+        <svg class="trio-arrows" id="in-arrows" viewBox="0 0 1080 1920" aria-hidden="true">
+          <defs><marker id="ah" markerWidth="9" markerHeight="9" refX="5.5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#8a949d"/></marker></defs>
+          <path class="ta" id="ta-man"   d="M475,515 C 400,650 320,765 232,864" marker-end="url(#ah)"/>
+          <path class="ta" id="ta-woman" d="M540,520 L 540,864" marker-end="url(#ah)"/>
+          <path class="ta" id="ta-cat"   d="M605,515 C 680,650 760,765 848,864" marker-end="url(#ah)"/>
+        </svg>
+        <!-- he / she / it -->
+        <div class="trio" id="in-trio">
+          <div class="ti" id="ti-man"><div class="ti-photo man"></div></div>
+          <div class="ti" id="ti-woman"><div class="ti-photo woman"></div></div>
+          <div class="ti" id="ti-cat"><div class="ti-photo cat"></div></div>
         </div>
       </div>
 
-      <!-- ===== PRESSURE — translating Western novels: he said / she said collide on 他 ===== -->
+      <!-- ===== PRESSURE — a flood of Western books → the same books, Chinese covers ; he/she → 他 ===== -->
       <div class="scene" id="sc-pressure">
-        <div class="novel" id="pr-novel">
-          <div class="novel-head">— a novel, in translation —</div>
-          <div class="novel-lines" id="pr-lines"></div>
+        <!-- a flood of Western books -->
+        <div class="bookrow" id="pr-western">
+          <div class="book k1"><span class="bk-sp"></span><span class="bk-h"></span></div>
+          <div class="book k2"><span class="bk-sp"></span><span class="bk-h"></span></div>
+          <div class="book k3"><span class="bk-sp"></span><span class="bk-h"></span></div>
+        </div>
+        <div class="trans-arrow" id="pr-trans"><span class="conn-arrow"></span></div>
+        <!-- ...translated: the same books with Chinese covers -->
+        <div class="bookrow cn" id="pr-chinese">
+          <div class="book k1"><span class="bk-sp"></span><span class="bk-v"></span></div>
+          <div class="book k2"><span class="bk-sp"></span><span class="bk-v"></span></div>
+          <div class="book k3"><span class="bk-sp"></span><span class="bk-v"></span></div>
         </div>
 
+        <!-- the he/she problem: both lines map to the SAME 他 -->
+        <div class="saidchip he" id="pr-he-tag">“…,” he said.</div>
+        <div class="saidchip she" id="pr-she-tag">“…,” she said.</div>
         <svg class="pr-links" id="pr-arrows" viewBox="0 0 1080 1920" aria-hidden="true">
-          <path class="pl" id="pl-he"  d="M300,560 C 380,760 470,900 528,1010" />
-          <path class="pl" id="pl-she" d="M300,640 C 360,800 470,920 540,1010" />
+          <path class="pl" id="pl-he"  d="M250,902 C 360,965 450,996 520,1020" />
+          <path class="pl" id="pl-she" d="M828,902 C 720,965 630,996 560,1020" />
         </svg>
-
-        <div class="cell hero-cell sm" id="pr-cell">
+        <div class="cell sm" id="pr-cell">
           <span class="cell-cross"></span>
           <span class="cell-glyph" id="pr-he"></span>
           <span class="clash" id="pr-clash"></span>
         </div>
-        <div class="newcell solo" id="pr-newcell">
-          <span class="cell-cross"></span>
-          <span class="newq">?</span>
-        </div>
-        <div class="pr-need" id="pr-need">tell them apart?</div>
       </div>
 
       <!-- ===== INVENTION — the radical swap 亻→女 ; slot equation ; Liu Bannong ===== -->

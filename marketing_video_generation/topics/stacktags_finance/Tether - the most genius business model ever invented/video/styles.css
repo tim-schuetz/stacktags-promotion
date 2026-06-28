@@ -1,0 +1,396 @@
+/* ============================================================
+   "Tether — the most genius business model ever invented"
+   Continuous faux-3D camera over a dynamic grid. White + turquoise
+   (#35A292), Inter only, no borders, grey subtitles at the bottom.
+   Scene wrappers are posed by app.js (transform/opacity/blur via JS);
+   in-scene micro-animation is CSS.
+   ============================================================ */
+*{ box-sizing:border-box; }
+html,body{ margin:0; padding:0; height:100%; overflow:hidden; background:#070b0a; }
+body{ font-family:var(--stk-font); color:var(--stk-ink); }
+
+.wrap{ position:fixed; inset:0; display:flex; align-items:center; justify-content:center; }
+.stage{
+  position:relative; width:1080px; height:1920px; flex-shrink:0;
+  transform-origin:center center; overflow:hidden; background:#fff;
+}
+#grid{ z-index:0; }
+.scenes{ position:absolute; inset:0; z-index:1; }
+
+/* base scene: app.js sets --tx/--ty/--s + opacity/filter/zIndex */
+.scene{
+  position:absolute; inset:0;
+  display:flex; align-items:center; justify-content:center;
+  opacity:0; transform-origin:center center;
+  will-change:transform, opacity, filter;
+  transform: translate(var(--tx,0px), var(--ty,0px)) scale(var(--s,1));
+}
+/* every scene's inner wrapper is a full 1080x1920 positioning context */
+.scene > div{ position:relative; width:1080px; height:1920px; }
+
+/* ============================================================
+   BRAND OBJECT — the USDT token (clean turquoise coin)
+   ============================================================ */
+.usdt{
+  --d:240px;
+  width:var(--d); height:var(--d); border-radius:50%;
+  background:radial-gradient(circle at 36% 30%, #74d3c2 0%, #35A292 52%, #119271 100%);
+  box-shadow:inset 0 8px 22px rgba(255,255,255,.5), inset 0 -16px 32px rgba(6,58,44,.32),
+             0 22px 48px rgba(53,162,146,.42);
+  display:flex; align-items:center; justify-content:center; position:relative; flex:none;
+}
+.usdt::after{
+  content:''; position:absolute; inset:calc(var(--d)*0.09); border-radius:50%;
+  box-shadow:inset 0 0 0 calc(var(--d)*0.018) rgba(255,255,255,.6);
+}
+.usdt .tk{
+  font-family:var(--stk-font); font-weight:900; color:#fff; line-height:1;
+  font-size:calc(var(--d)*0.52); text-shadow:0 3px 12px rgba(6,58,44,.4);
+}
+.usdt.sm{ --d:150px; }
+
+/* ============================================================
+   BRAND OBJECT — reconstructed news headline card
+   ============================================================ */
+.headline{
+  background:#fff; border-radius:28px; padding:34px 44px;
+  box-shadow:0 28px 60px rgba(16,50,40,.16);
+}
+.hl-src{
+  display:flex; align-items:center; gap:13px; margin-bottom:15px;
+  font-weight:800; font-size:26px; letter-spacing:2.5px; color:var(--stk-muted);
+}
+.hl-src .dot{ width:20px; height:20px; border-radius:50%; background:var(--stk-teal); flex:none; }
+.hl-src .dot.ink{ background:var(--stk-ink); }
+.hl-src .dot.red{ background:var(--stk-red); }
+.hl-src .date{ font-weight:700; letter-spacing:1px; color:#c4cdd3; }
+.hl-head{ font-weight:900; font-size:50px; line-height:1.1; letter-spacing:-1.6px; color:var(--stk-ink); }
+.hl-head b{ color:var(--stk-teal-d); }
+.hl-head u{ text-decoration-color:var(--stk-teal); text-underline-offset:8px; text-decoration-thickness:6px; }
+
+/* ============================================================
+   BRAND OBJECT — clean U.S. Treasury-bill card (legible, no gibberish)
+   ============================================================ */
+.tbill{
+  width:340px; background:#fff; border-radius:20px; overflow:hidden;
+  box-shadow:0 20px 46px rgba(16,50,40,.18);
+}
+.tbill-top{
+  background:var(--stk-teal); color:#fff; font-weight:900; font-size:26px;
+  letter-spacing:1px; padding:18px 22px; text-align:center;
+}
+.tbill-body{ padding:24px 22px 26px; display:flex; flex-direction:column; gap:13px; }
+.tbill-body span{ height:13px; border-radius:7px; background:#e7edf1; }
+.tbill-body span:nth-child(1){ width:80%; } .tbill-body span:nth-child(2){ width:62%; }
+.tbill-body span:nth-child(3){ width:72%; }
+.tbill-body .rate{
+  height:auto; background:var(--stk-teal-soft); color:var(--stk-teal-d);
+  font-weight:900; font-size:34px; letter-spacing:-1px; padding:10px 16px;
+  border-radius:12px; width:auto; margin-top:6px; text-align:center;
+}
+
+/* ============================================================
+   1 · HOOK — corner stat texts
+   ============================================================ */
+.hook2{ position:absolute; inset:0; }
+.stat{ position:absolute; opacity:0; transform:translateY(-26px) scale(.92);
+  transition:opacity .5s ease, transform .55s cubic-bezier(.34,1.56,.5,1); }
+.stat.in{ opacity:1; transform:none; }
+.stat.tl{ left:96px; top:160px; }
+.stat.tr{ right:96px; top:160px; text-align:right; }
+.stat .s-big{ font-weight:900; font-size:250px; line-height:.84; letter-spacing:-12px; color:var(--stk-ink); }
+.stat.tr .s-big{ color:var(--stk-teal-d); }
+.stat .s-small{ font-weight:800; color:var(--stk-ink-2); }
+.stat.tl .s-small{ font-size:82px; letter-spacing:-1.5px; }   /* "Employees" ≈ width of "100" */
+.stat.tr .s-small{ font-size:64px; color:var(--stk-muted); letter-spacing:-.5px; }
+
+/* ============================================================
+   2 · MECHANIC — $1 → USDT → vault
+   ============================================================ */
+/* the trader (= "you") on the left; vault (= Tether keeps it) on the right */
+.mech-figure{ position:absolute; left:70px; bottom:430px; width:300px; z-index:3;
+  filter:drop-shadow(0 22px 30px rgba(16,50,40,.25)); }
+.mech-vault{ position:absolute; right:54px; top:600px; width:470px; z-index:2;
+  filter:drop-shadow(0 24px 34px rgba(16,50,40,.28)); transform-origin:60% 60%;
+  transition:transform .3s cubic-bezier(.34,1.7,.5,1); }
+.mech.clink .mech-vault{ animation:vault-clink .45s ease; }
+@keyframes vault-clink{ 0%,100%{ transform:none; } 40%{ transform:scale(1.05) rotate(-1deg); } }
+
+/* bill: appears at the person and flies RIGHT into the vault — one motion */
+.mech-bill{ position:absolute; left:330px; top:1010px; width:240px; z-index:5; opacity:0;
+  transform:translate(-50%,-50%) scale(.5);
+  filter:drop-shadow(0 18px 26px rgba(16,50,40,.26)); }
+.mech.bill-go .mech-bill{ animation:billfly .95s cubic-bezier(.3,.7,.3,1) forwards; }
+@keyframes billfly{
+  0%{ opacity:0; transform:translate(-50%,-50%) scale(.55); }
+  22%{ opacity:1; transform:translate(-50%,-50%) scale(1); }
+  100%{ opacity:0; transform:translate(-50%,-50%) translate(430px,-185px) scale(.22) rotate(16deg); } }
+
+/* token: appears at the vault and flies LEFT to land right of the person — one motion */
+.mech-token{ position:absolute; left:515px; top:900px; --d:200px; z-index:6; opacity:0;
+  transform:translate(-50%,-50%) translate(290px,-55px) scale(.3); }
+.mech.token-go .mech-token{ animation:tokenfly .9s cubic-bezier(.3,.7,.3,1) forwards; }
+@keyframes tokenfly{
+  0%{ opacity:0; transform:translate(-50%,-50%) translate(290px,-55px) scale(.3); }
+  22%{ opacity:1; }
+  100%{ opacity:1; transform:translate(-50%,-50%) scale(1); } }
+
+/* ============================================================
+   3 · WHAT IT IS — peg + trader + swap
+   ============================================================ */
+.peg{ position:absolute; left:50%; top:620px; transform:translateX(-50%);
+  display:flex; align-items:center; gap:40px; z-index:4;
+  opacity:0; transition:opacity .5s ease, transform .6s cubic-bezier(.2,.8,.2,1); }
+.usdtwrap.peg-in .peg{ opacity:1; }
+.peg-token{ --d:230px; animation:bob 2.6s ease-in-out infinite; }
+.peg-bill{ width:300px; filter:drop-shadow(0 18px 26px rgba(16,50,40,.26)); animation:bob 2.6s ease-in-out infinite; }
+@keyframes bob{ 0%,100%{ transform:translateY(-10px); } 50%{ transform:translateY(10px); } }
+.peg-link{ font-weight:900; font-size:90px; color:var(--stk-muted); opacity:0; transform:scale(.4);
+  transition:opacity .4s ease, transform .5s cubic-bezier(.34,1.7,.5,1); }
+.usdtwrap.peg-locked .peg-link{ opacity:1; transform:none; }
+.peg-eq{ position:absolute; left:50%; top:300px; transform:translateX(-50%) translateY(14px);
+  white-space:nowrap; font-weight:900; font-size:64px; letter-spacing:-2px; color:var(--stk-ink); opacity:0;
+  transition:opacity .4s ease, transform .4s ease; }
+.peg-eq b{ color:var(--stk-teal-d); }
+.usdtwrap.peg-locked .peg-eq{ opacity:1; transform:translateX(-50%); }
+
+.ux-trader{ position:absolute; left:80px; bottom:300px; width:330px; z-index:5;
+  opacity:0; transform:translateX(-380px);
+  filter:drop-shadow(0 22px 30px rgba(16,50,40,.25));
+  transition:opacity .5s ease, transform .7s cubic-bezier(.34,1.4,.5,1); }
+.usdtwrap.trader-in .ux-trader{ opacity:1; transform:none; }
+/* Tether <-> BTC swap cycle (right of the trader) */
+.ux-cycle{ position:absolute; left:540px; bottom:500px; width:300px; height:300px; z-index:6;
+  opacity:0; transform:scale(.7); transition:opacity .45s ease, transform .5s cubic-bezier(.34,1.6,.5,1); }
+.usdtwrap.cycle-in .ux-cycle{ opacity:1; transform:scale(1); }
+.cyc-arrows{ position:absolute; inset:0; width:100%; height:100%; }
+.cyc-rot{ position:absolute; inset:0; transition:transform .7s cubic-bezier(.5,0,.5,1); }
+.usdtwrap.cyc-spin .cyc-rot{ transform:rotate(180deg); }
+.cyc-coin{ position:absolute; top:50%; --d:104px; margin-top:-52px; }
+.cyc-coin.c-left{ left:-10px; } .cyc-coin.c-right{ right:-10px; }
+.cyc-coin .tk{ transition:transform .7s cubic-bezier(.5,0,.5,1); }
+.usdtwrap.cyc-spin .cyc-coin .tk{ transform:rotate(-180deg); }
+.btc{ background:radial-gradient(circle at 36% 30%, #ffc25a 0%, #f7931a 55%, #b8650a 100%) !important;
+  box-shadow:inset 0 8px 22px rgba(255,255,255,.42), inset 0 -16px 32px rgba(90,45,0,.35), 0 18px 40px rgba(247,147,26,.4) !important; }
+
+/* swap pops: hand a dollar (pops), it becomes a minted token (pops) */
+.ux-swapbill{ position:absolute; left:600px; top:1010px; width:215px; z-index:7;
+  transform:translate(-50%,-50%) scale(0); opacity:0;
+  filter:drop-shadow(0 16px 24px rgba(16,50,40,.26));
+  transition:opacity .3s ease, transform .5s cubic-bezier(.34,1.7,.5,1); }
+.usdtwrap.swap-bill .ux-swapbill{ transform:translate(-50%,-50%) scale(1); opacity:1; }
+.usdtwrap.swap-token .ux-swapbill{ opacity:0; transform:translate(-50%,-50%) scale(.6); }
+.ux-swaptoken{ position:absolute; left:600px; top:1010px; --d:185px; z-index:8;
+  transform:translate(-50%,-50%) scale(0); opacity:0;
+  transition:opacity .3s ease, transform .5s cubic-bezier(.34,1.7,.5,1); }
+.usdtwrap.swap-token .ux-swaptoken{ transform:translate(-50%,-50%) scale(1); opacity:1; }
+
+/* ============================================================
+   4 · THE TRICK — vault + realistic T-bill, cash arc, 0% holder
+   ============================================================ */
+.tr-vault{ position:absolute; left:80px; top:430px; width:430px; z-index:4;
+  filter:drop-shadow(0 24px 34px rgba(16,50,40,.28)); }
+.tr-tbill{ position:absolute; right:70px; top:560px; width:440px; z-index:3;
+  opacity:0; transform:translateX(80px); transition:opacity .5s ease, transform .6s cubic-bezier(.2,.8,.2,1);
+  filter:drop-shadow(0 22px 30px rgba(16,50,40,.26)); }
+.trick.tbill-in .tr-tbill{ opacity:1; transform:none; }
+/* cash flows in an arc from the T-bill (right) down and up into the vault (left) */
+.tr-cash{ position:absolute; left:0; top:0; width:150px; z-index:5; opacity:0;
+  offset-path:path('M 800 800 C 770 1230, 360 1230, 300 700'); offset-distance:0%; offset-rotate:0deg;
+  filter:drop-shadow(0 14px 20px rgba(16,50,40,.25)); }
+.trick.cash .tr-cash{ animation:cashflow 2.1s ease-in-out infinite; }
+@keyframes cashflow{ 0%{ offset-distance:0%; opacity:0; } 12%{ opacity:1; } 86%{ opacity:1; } 100%{ offset-distance:100%; opacity:0; } }
+/* the holder (gets 0%) flies in below the vault */
+.tr-holder{ position:absolute; left:140px; bottom:230px; z-index:6;
+  opacity:0; transform:translateY(140px); transition:opacity .5s ease, transform .6s cubic-bezier(.2,.8,.2,1); }
+.trick.holder-in .tr-holder{ opacity:1; transform:none; }
+.tr-person{ width:260px; filter:drop-shadow(0 20px 28px rgba(16,50,40,.25)); }
+.tr-zero{ position:absolute; left:250px; top:30px; display:flex; align-items:center; gap:16px;
+  opacity:0; transform:scale(.5); transform-origin:left center;
+  transition:opacity .35s ease, transform .45s cubic-bezier(.34,1.7,.5,1); }
+.trick.zero .tr-zero{ opacity:1; transform:scale(1); }
+.tz-arrow{ width:80px; height:14px; background:var(--stk-red); border-radius:7px; position:relative; }
+.tz-arrow::after{ content:''; position:absolute; left:-8px; top:50%; transform:translateY(-50%);
+  border-top:17px solid transparent; border-bottom:17px solid transparent; border-right:24px solid var(--stk-red); }
+.tz-pct{ font-weight:900; font-size:140px; line-height:1; letter-spacing:-5px; color:var(--stk-red);
+  text-shadow:0 10px 26px rgba(216,68,59,.3); }
+
+/* ============================================================
+   6 · SCALE — $100B odometer + crowd of users
+   ============================================================ */
+.sc-odo{ position:absolute; left:0; right:0; top:580px; text-align:center; z-index:4;
+  font-weight:900; font-size:92px; letter-spacing:-3px; color:var(--stk-ink);
+  font-variant-numeric:tabular-nums; white-space:nowrap; }
+.sc-sub{ position:absolute; left:0; right:0; top:740px; text-align:center; z-index:4;
+  font-weight:800; font-size:40px; letter-spacing:-.5px; color:var(--stk-ink-2);
+  opacity:0; transition:opacity .5s ease; }
+.scale.sub-in .sc-sub{ opacity:1; }
+/* a rain of real USDT coins falling down and STACKING at varying heights */
+.sc-crowd{ position:absolute; inset:0; z-index:3; overflow:hidden; }
+.sc-crowd .u{ position:absolute; top:-120px; --d:92px; opacity:0; }
+.sc-crowd .u.go{ animation:tokfall var(--dur,2s) cubic-bezier(.45,0,.75,.6) forwards; }
+@keyframes tokfall{ 0%{ opacity:0; transform:translateY(0); } 12%{ opacity:1; } 100%{ opacity:1; transform:translateY(var(--endy,1500px)); } }
+
+/* ============================================================
+   7 · COST OF CAPITAL — bank→depositors, company→bonds (cash flows out); Tether keeps it
+   ============================================================ */
+.cost{ padding-top:0; }
+.cost-row{ position:absolute; left:80px; right:70px; height:300px; display:flex; align-items:center; gap:18px;
+  opacity:0; transform:translateY(40px); transition:opacity .5s ease, transform .5s cubic-bezier(.2,.8,.2,1); }
+.cost-row.in{ opacity:1; transform:none; }
+.r-bank{ top:380px; } .r-co{ top:760px; } .r-tether{ top:1140px; }
+.cost-ent{ display:flex; flex-direction:column; align-items:center; width:300px; flex:none; }
+.cost-fig{ width:280px; height:230px; object-fit:contain; object-position:center bottom; flex:none;
+  filter:drop-shadow(0 16px 22px rgba(16,50,40,.2)); }
+.cost-fig.dst{ height:210px; }
+.cost-lab{ margin-top:12px; font-weight:900; font-size:50px; letter-spacing:-1.2px; color:var(--stk-ink); }
+.cost-lab.sub{ font-weight:800; font-size:40px; color:var(--stk-muted); }
+.cost-arrow{ position:relative; flex:1; height:80px; }
+.cost-arrow::before{ content:''; position:absolute; left:0; right:30px; top:50%; height:11px; transform:translateY(-50%);
+  background:var(--stk-teal); border-radius:6px; }
+.cost-arrow::after{ content:''; position:absolute; right:0; top:50%; transform:translateY(-50%);
+  border-top:26px solid transparent; border-bottom:26px solid transparent; border-left:36px solid var(--stk-teal); }
+.cost-cash{ position:absolute; left:0; top:50%; width:96px; transform:translateY(-50%); opacity:0; z-index:2; }
+.cost-cash img{ width:100%; display:block; filter:drop-shadow(0 8px 14px rgba(16,50,40,.25)); }
+.cost-row.in .cost-cash{ animation:cashrun 1.5s ease-in-out .35s infinite; }
+@keyframes cashrun{ 0%{ left:0; opacity:0; } 14%{ opacity:1; } 82%{ opacity:1; } 100%{ left:calc(100% - 96px); opacity:0; } }
+/* Tether row: nothing flows out */
+.cost-arrow.none::before{ background:#dfe5e9; } .cost-arrow.none::after{ border-left-color:#dfe5e9; }
+.cost-x{ position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); font-weight:900; font-size:78px; color:var(--stk-red); }
+.cost-nothing{ width:280px; height:1px; }
+
+/* ============================================================
+   8 · ROOM GAG — $13B profit, tiny team in a vast room
+   ============================================================ */
+.room-floor{ position:absolute; left:0; right:0; bottom:300px; height:6px; background:#e7edf1; z-index:1; }
+.room-team{ position:absolute; right:150px; bottom:306px; width:280px; height:120px; z-index:3; }
+.room-team i{ position:absolute; bottom:0; width:16px; height:30px; border-radius:8px 8px 3px 3px;
+  background:var(--stk-ink-2); opacity:0; transition:opacity .4s ease; }
+.room.team-in .room-team i{ opacity:.85; }
+.room-team .lbl{ position:absolute; bottom:-58px; left:0; width:280px; text-align:center; font-weight:800;
+  font-size:28px; color:var(--stk-muted); opacity:0; transition:opacity .4s ease; }
+.room.team-in .room-team .lbl{ opacity:1; }
+.room-stack{ position:absolute; left:210px; bottom:306px; width:330px; z-index:4;
+  display:flex; flex-direction:column; align-items:center; justify-content:flex-end; }
+.room-stack .bar{ width:300px; background:linear-gradient(180deg,var(--stk-teal),var(--stk-teal-d));
+  border-radius:18px 18px 0 0; height:0; box-shadow:0 -10px 40px rgba(53,162,146,.35); }
+.room-amt{ position:absolute; top:-188px; left:50%; transform:translateX(-50%);
+  font-weight:900; font-size:120px; letter-spacing:-4px; color:var(--stk-teal-d); opacity:0;
+  transition:opacity .5s ease, transform .5s ease; }
+.room.bar-in .room-amt{ opacity:1; }
+.room-amt-sub{ position:absolute; top:-48px; left:50%; transform:translateX(-50%); white-space:nowrap;
+  font-weight:800; font-size:30px; color:var(--stk-muted); opacity:0; transition:opacity .5s ease .15s; }
+.room.bar-in .room-amt-sub{ opacity:1; }
+
+/* ============================================================
+   9 · THE CATCH — the trust tower
+   ============================================================ */
+.tower{ position:absolute; left:50%; bottom:330px; transform:translateX(-50%);
+  display:flex; flex-direction:column; align-items:center; z-index:3; transform-origin:50% 100%; }
+.catch.wobble .tower{ animation:wobble 1.5s ease-in-out; }
+@keyframes wobble{ 0%,100%{ transform:translateX(-50%) rotate(0); } 20%{ transform:translateX(-50%) rotate(2.2deg); }
+  45%{ transform:translateX(-50%) rotate(-2deg); } 70%{ transform:translateX(-50%) rotate(1.2deg); } }
+.tw-token{ --d:170px; margin-bottom:6px; z-index:5; opacity:0; transform:translateY(-30px);
+  transition:opacity .5s ease, transform .6s cubic-bezier(.34,1.6,.5,1); }
+.catch.build .tw-token{ opacity:1; transform:none; }
+.tw-tbills{ display:flex; flex-direction:column; align-items:center; gap:-4px; }
+.tw-tbills .tb{ width:300px; height:64px; border-radius:12px; background:#fff; margin-top:-6px;
+  box-shadow:0 10px 22px rgba(16,50,40,.14); display:flex; align-items:center; justify-content:center;
+  font-weight:800; font-size:22px; letter-spacing:1px; color:var(--stk-teal-d);
+  opacity:0; transform:translateY(20px); transition:opacity .4s ease, transform .4s ease; }
+.catch.build .tw-tbills .tb{ opacity:1; transform:none; }
+.tw-vault{ width:360px; margin-top:6px; filter:drop-shadow(0 24px 34px rgba(16,50,40,.28)); }
+.tw-thread{ position:absolute; left:50%; top:300px; width:4px; height:240px; transform:translateX(-50%);
+  background:linear-gradient(180deg, transparent, var(--stk-teal)); opacity:0; transition:opacity .5s ease; z-index:2; }
+.catch.build .tw-thread{ opacity:.8; }
+.tw-trust{ position:absolute; left:50%; top:250px; transform:translateX(-50%) scale(.5);
+  font-weight:900; font-size:60px; letter-spacing:4px; color:var(--stk-teal-d); opacity:0; z-index:6;
+  transition:opacity .4s ease, transform .5s cubic-bezier(.34,1.7,.5,1); }
+.catch.build .tw-trust{ opacity:1; transform:translateX(-50%) scale(1); }
+
+/* ============================================================
+   10 · ATTESTATIONS — grinning Tether founder w/ list, cash pile, dashed dollars rain
+   ============================================================ */
+.au-founder{ position:absolute; left:130px; bottom:300px; width:440px; z-index:4;
+  opacity:0; transform:translateY(70px) scale(.96);
+  filter:drop-shadow(0 24px 32px rgba(16,50,40,.26));
+  transition:opacity .5s ease, transform .6s cubic-bezier(.2,.8,.2,1); }
+.audit.in .au-founder{ opacity:1; transform:none; }
+.audit.glee .au-founder{ animation:glee .7s cubic-bezier(.34,1.6,.5,1); }
+@keyframes glee{ 0%,100%{ transform:translateY(0) scale(1); } 45%{ transform:translateY(-30px) scale(1.05); } }
+.au-cash{ position:absolute; right:150px; bottom:300px; width:360px; z-index:3;
+  opacity:0; transform:translateY(40px); transition:opacity .5s ease, transform .6s ease;
+  filter:drop-shadow(0 20px 28px rgba(16,50,40,.26)); }
+.audit.in .au-cash{ opacity:1; transform:none; }
+.au-rain{ position:absolute; right:150px; bottom:560px; width:360px; height:560px; z-index:5; }
+.au-rain img{ position:absolute; left:50%; top:-130px; width:150px; opacity:0;
+  filter:drop-shadow(0 12px 18px rgba(16,50,40,.22)); }
+.au-rain img.drop{ animation:dropdollar 1.1s ease-in forwards; }
+@keyframes dropdollar{ 0%{ opacity:0; transform:translate(-50%,0) rotate(var(--r,0deg)); }
+  16%{ opacity:1; } 100%{ opacity:1; transform:translate(-50%,var(--dy,560px)) rotate(var(--r,0deg)); } }
+
+/* ============================================================
+   11 · PUNCHLINE — charts/coins fade → token on throne of T-bills
+   ============================================================ */
+/* the "obvious trades" — black words that get struck through, then slide up */
+.pu-noise{ position:absolute; left:0; right:0; top:380px; z-index:4;
+  display:flex; flex-direction:column; align-items:center; gap:14px;
+  transition:transform .7s cubic-bezier(.2,.8,.2,1); }
+.punch.lift .pu-noise{ transform:translateY(-170px); }
+.pu-noise .chip{ position:relative; font-weight:900; font-size:58px; letter-spacing:-1px; color:#1b1f23;
+  opacity:0; transform:translateY(24px); transition:opacity .4s ease, transform .45s cubic-bezier(.34,1.56,.5,1); }
+.pu-noise .chip.show{ opacity:1; transform:none; }
+.pu-noise .chip::after{ content:''; position:absolute; left:-14px; right:-14px; top:52%; height:7px;
+  border-radius:4px; background:var(--stk-teal); transform:scaleX(0); transform-origin:left center;
+  transition:transform .45s cubic-bezier(.4,0,.2,1); }
+.punch.strike .pu-noise .chip::after{ transform:scaleX(1); }
+
+/* the token rises from below onto the podium */
+.throne{ position:absolute; left:50%; bottom:300px; transform:translateX(-50%);
+  display:flex; flex-direction:column; align-items:center; z-index:5; }
+.th-token{ --d:280px; z-index:6; opacity:0; transform:translateY(540px) scale(.92);
+  transition:opacity .5s ease, transform .9s cubic-bezier(.34,1.5,.5,1); }
+.punch.crown .th-token{ opacity:1; transform:translateY(0) scale(1); }
+.th-stack{ display:flex; flex-direction:column; align-items:center; margin-top:-10px; z-index:4; }
+.th-stack .tb{ width:0; height:54px; border-radius:10px; margin-top:-4px; overflow:hidden;
+  background:linear-gradient(180deg, var(--stk-teal) 0 12px, #fff 12px);
+  box-shadow:0 10px 22px rgba(16,50,40,.16); transition:width .42s cubic-bezier(.2,.8,.2,1); }
+.th-glow{ position:absolute; left:50%; top:40px; width:560px; height:560px; transform:translate(-50%,-50%);
+  background:radial-gradient(circle, rgba(53,162,146,.4), transparent 62%); z-index:1; opacity:0;
+  transition:opacity .8s ease; }
+.punch.crown .th-glow{ opacity:1; }
+
+/* ============================================================
+   12 · OUTRO endcard — default element (makeStacktagsLogo + .ec)
+   ============================================================ */
+#sc-outro .ec{ position:absolute; inset:0; display:flex; flex-direction:column;
+  align-items:center; justify-content:center; gap:30px; }
+#sc-outro #outro-logo{ display:flex; }
+#sc-outro #outro-logo svg{ width:560px; height:auto; display:block; }
+#sc-outro .lyr{ opacity:0; transform:translateY(-52px) scale(.78);
+  transform-box:fill-box; transform-origin:50% 50%;
+  transition:transform .58s cubic-bezier(.34,1.56,.5,1) var(--d), opacity .42s ease var(--d); }
+#sc-outro .ec.play .lyr{ opacity:1; transform:none; }
+#sc-outro .chev path{ stroke-dasharray:300; stroke-dashoffset:300; transition:stroke-dashoffset .55s ease .40s; }
+#sc-outro .ec.play .chev path{ stroke-dashoffset:0; }
+#sc-outro .wm{ font-family:'Nunito',system-ui,sans-serif; font-weight:900; font-size:150px;
+  letter-spacing:-3px; line-height:1; opacity:0; transform:translateY(30px);
+  transition:opacity .5s ease .52s, transform .62s cubic-bezier(.2,.8,.2,1) .52s; }
+#sc-outro .ec.play .wm{ opacity:1; transform:none; }
+#sc-outro .wm .s{ color:#232B33; } #sc-outro .wm .t{ color:#3EAE93; }
+#sc-outro .url{ font-family:'Nunito',system-ui,sans-serif; font-weight:700; font-size:42px;
+  letter-spacing:7px; color:#8a949d; opacity:0; transform:translateY(16px);
+  transition:opacity .5s ease .74s, transform .5s ease .74s, letter-spacing .7s ease .74s; }
+#sc-outro .ec.play .url{ opacity:1; transform:none; letter-spacing:4px; }
+
+/* ============================================================
+   HUD (hidden in clean / capture mode)
+   ============================================================ */
+#hud{ position:fixed; left:50%; bottom:22px; transform:translateX(-50%);
+  display:flex; align-items:center; gap:14px; z-index:9999;
+  background:rgba(8,14,12,.78); padding:10px 18px; border-radius:999px;
+  font-family:Inter,system-ui,sans-serif; color:#fff; }
+#hud button{ border:0; cursor:pointer; background:var(--stk-teal); color:#fff; font-weight:700; font-size:15px; padding:9px 18px; border-radius:999px; }
+#hud #seek{ width:360px; }
+#hud #tcode{ font-variant-numeric:tabular-nums; font-size:14px; opacity:.85; min-width:54px; text-align:right; }
+body.clean #hud{ display:none; }

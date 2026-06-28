@@ -1,0 +1,2256 @@
+{
+ "words": [
+  {
+   "word": "There's",
+   "start": 0.0,
+   "end": 0.26
+  },
+  {
+   "word": "a",
+   "start": 0.26,
+   "end": 0.38
+  },
+  {
+   "word": "company",
+   "start": 0.38,
+   "end": 0.58
+  },
+  {
+   "word": "that",
+   "start": 0.58,
+   "end": 0.86
+  },
+  {
+   "word": "makes",
+   "start": 0.86,
+   "end": 1.02
+  },
+  {
+   "word": "more",
+   "start": 1.02,
+   "end": 1.28
+  },
+  {
+   "word": "money",
+   "start": 1.28,
+   "end": 1.48
+  },
+  {
+   "word": "per",
+   "start": 1.48,
+   "end": 1.7
+  },
+  {
+   "word": "employee",
+   "start": 1.7,
+   "end": 2.02
+  },
+  {
+   "word": "than",
+   "start": 2.02,
+   "end": 2.24
+  },
+  {
+   "word": "almost",
+   "start": 2.24,
+   "end": 2.46
+  },
+  {
+   "word": "anyone",
+   "start": 2.46,
+   "end": 2.84
+  },
+  {
+   "word": "on",
+   "start": 2.84,
+   "end": 3.1
+  },
+  {
+   "word": "earth,",
+   "start": 3.1,
+   "end": 3.32
+  },
+  {
+   "word": "around",
+   "start": 3.78,
+   "end": 3.8
+  },
+  {
+   "word": "100",
+   "start": 3.8,
+   "end": 4.22
+  },
+  {
+   "word": "staff,",
+   "start": 4.22,
+   "end": 4.6
+  },
+  {
+   "word": "billions",
+   "start": 5.16,
+   "end": 5.38
+  },
+  {
+   "word": "in",
+   "start": 5.38,
+   "end": 5.6
+  },
+  {
+   "word": "annual",
+   "start": 5.6,
+   "end": 5.92
+  },
+  {
+   "word": "profit,",
+   "start": 5.92,
+   "end": 6.34
+  },
+  {
+   "word": "and",
+   "start": 6.7,
+   "end": 6.88
+  },
+  {
+   "word": "the",
+   "start": 6.88,
+   "end": 6.98
+  },
+  {
+   "word": "entire",
+   "start": 6.98,
+   "end": 7.32
+  },
+  {
+   "word": "business",
+   "start": 7.32,
+   "end": 7.68
+  },
+  {
+   "word": "model",
+   "start": 7.68,
+   "end": 7.96
+  },
+  {
+   "word": "is",
+   "start": 7.96,
+   "end": 8.16
+  },
+  {
+   "word": "this.",
+   "start": 8.16,
+   "end": 8.4
+  },
+  {
+   "word": "You",
+   "start": 8.84,
+   "end": 9.04
+  },
+  {
+   "word": "give",
+   "start": 9.04,
+   "end": 9.18
+  },
+  {
+   "word": "them",
+   "start": 9.18,
+   "end": 9.32
+  },
+  {
+   "word": "a",
+   "start": 9.32,
+   "end": 9.44
+  },
+  {
+   "word": "dollar,",
+   "start": 9.44,
+   "end": 9.68
+  },
+  {
+   "word": "they",
+   "start": 9.98,
+   "end": 10.1
+  },
+  {
+   "word": "hand",
+   "start": 10.1,
+   "end": 10.26
+  },
+  {
+   "word": "you",
+   "start": 10.26,
+   "end": 10.4
+  },
+  {
+   "word": "a",
+   "start": 10.4,
+   "end": 10.52
+  },
+  {
+   "word": "token,",
+   "start": 10.52,
+   "end": 10.74
+  },
+  {
+   "word": "and",
+   "start": 11.14,
+   "end": 11.3
+  },
+  {
+   "word": "they",
+   "start": 11.3,
+   "end": 11.44
+  },
+  {
+   "word": "keep",
+   "start": 11.44,
+   "end": 11.58
+  },
+  {
+   "word": "the",
+   "start": 11.58,
+   "end": 11.78
+  },
+  {
+   "word": "dollar,",
+   "start": 11.78,
+   "end": 12.04
+  },
+  {
+   "word": "that's",
+   "start": 12.28,
+   "end": 12.52
+  },
+  {
+   "word": "Tether,",
+   "start": 12.52,
+   "end": 12.76
+  },
+  {
+   "word": "and",
+   "start": 12.98,
+   "end": 13.08
+  },
+  {
+   "word": "it's",
+   "start": 13.08,
+   "end": 13.26
+  },
+  {
+   "word": "completely",
+   "start": 13.26,
+   "end": 13.64
+  },
+  {
+   "word": "legal.",
+   "start": 13.64,
+   "end": 14.08
+  },
+  {
+   "word": "Here's",
+   "start": 14.58,
+   "end": 14.84
+  },
+  {
+   "word": "why",
+   "start": 14.84,
+   "end": 14.98
+  },
+  {
+   "word": "it",
+   "start": 14.98,
+   "end": 15.08
+  },
+  {
+   "word": "might",
+   "start": 15.08,
+   "end": 15.22
+  },
+  {
+   "word": "be",
+   "start": 15.22,
+   "end": 15.4
+  },
+  {
+   "word": "the",
+   "start": 15.4,
+   "end": 15.52
+  },
+  {
+   "word": "most",
+   "start": 15.52,
+   "end": 15.78
+  },
+  {
+   "word": "genius",
+   "start": 15.78,
+   "end": 16.04
+  },
+  {
+   "word": "business",
+   "start": 16.04,
+   "end": 16.38
+  },
+  {
+   "word": "model",
+   "start": 16.38,
+   "end": 16.68
+  },
+  {
+   "word": "ever",
+   "start": 16.68,
+   "end": 17.02
+  },
+  {
+   "word": "invented.",
+   "start": 17.02,
+   "end": 17.46
+  },
+  {
+   "word": "Tether",
+   "start": 17.86,
+   "end": 18.12
+  },
+  {
+   "word": "runs",
+   "start": 18.12,
+   "end": 18.34
+  },
+  {
+   "word": "USDT,",
+   "start": 18.34,
+   "end": 19.06
+  },
+  {
+   "word": "a",
+   "start": 19.36,
+   "end": 19.46
+  },
+  {
+   "word": "stablecoin.",
+   "start": 19.46,
+   "end": 20.06
+  },
+  {
+   "word": "One",
+   "start": 20.54,
+   "end": 20.78
+  },
+  {
+   "word": "USDT",
+   "start": 20.78,
+   "end": 21.4
+  },
+  {
+   "word": "is",
+   "start": 21.4,
+   "end": 21.54
+  },
+  {
+   "word": "always",
+   "start": 21.54,
+   "end": 21.9
+  },
+  {
+   "word": "meant",
+   "start": 21.9,
+   "end": 22.06
+  },
+  {
+   "word": "to",
+   "start": 22.06,
+   "end": 22.22
+  },
+  {
+   "word": "equal",
+   "start": 22.22,
+   "end": 22.44
+  },
+  {
+   "word": "one",
+   "start": 22.44,
+   "end": 22.78
+  },
+  {
+   "word": "US",
+   "start": 22.78,
+   "end": 23.08
+  },
+  {
+   "word": "dollar.",
+   "start": 23.08,
+   "end": 23.44
+  },
+  {
+   "word": "Crypto",
+   "start": 23.94,
+   "end": 24.16
+  },
+  {
+   "word": "traders",
+   "start": 24.16,
+   "end": 24.42
+  },
+  {
+   "word": "love",
+   "start": 24.42,
+   "end": 24.8
+  },
+  {
+   "word": "it,",
+   "start": 24.8,
+   "end": 24.96
+  },
+  {
+   "word": "it's",
+   "start": 25.12,
+   "end": 25.3
+  },
+  {
+   "word": "a",
+   "start": 25.3,
+   "end": 25.46
+  },
+  {
+   "word": "dollar",
+   "start": 25.46,
+   "end": 25.62
+  },
+  {
+   "word": "that",
+   "start": 25.62,
+   "end": 25.82
+  },
+  {
+   "word": "lives",
+   "start": 25.82,
+   "end": 26.04
+  },
+  {
+   "word": "on",
+   "start": 26.04,
+   "end": 26.24
+  },
+  {
+   "word": "the",
+   "start": 26.24,
+   "end": 26.34
+  },
+  {
+   "word": "blockchain",
+   "start": 26.34,
+   "end": 26.7
+  },
+  {
+   "word": "so",
+   "start": 26.7,
+   "end": 27.08
+  },
+  {
+   "word": "they",
+   "start": 27.08,
+   "end": 27.22
+  },
+  {
+   "word": "can",
+   "start": 27.22,
+   "end": 27.38
+  },
+  {
+   "word": "jump",
+   "start": 27.38,
+   "end": 27.62
+  },
+  {
+   "word": "in",
+   "start": 27.62,
+   "end": 27.86
+  },
+  {
+   "word": "and",
+   "start": 27.86,
+   "end": 27.96
+  },
+  {
+   "word": "out",
+   "start": 27.96,
+   "end": 28.12
+  },
+  {
+   "word": "of",
+   "start": 28.12,
+   "end": 28.22
+  },
+  {
+   "word": "trades",
+   "start": 28.22,
+   "end": 28.48
+  },
+  {
+   "word": "instantly.",
+   "start": 28.48,
+   "end": 29.0
+  },
+  {
+   "word": "To",
+   "start": 29.6,
+   "end": 29.82
+  },
+  {
+   "word": "get",
+   "start": 29.82,
+   "end": 30.0
+  },
+  {
+   "word": "one,",
+   "start": 30.0,
+   "end": 30.2
+  },
+  {
+   "word": "you",
+   "start": 30.54,
+   "end": 30.68
+  },
+  {
+   "word": "hand",
+   "start": 30.68,
+   "end": 30.86
+  },
+  {
+   "word": "Tether",
+   "start": 30.86,
+   "end": 31.06
+  },
+  {
+   "word": "a",
+   "start": 31.06,
+   "end": 31.24
+  },
+  {
+   "word": "real",
+   "start": 31.24,
+   "end": 31.48
+  },
+  {
+   "word": "dollar",
+   "start": 31.48,
+   "end": 31.72
+  },
+  {
+   "word": "and",
+   "start": 31.72,
+   "end": 32.04
+  },
+  {
+   "word": "they",
+   "start": 32.04,
+   "end": 32.16
+  },
+  {
+   "word": "mint",
+   "start": 32.16,
+   "end": 32.38
+  },
+  {
+   "word": "you",
+   "start": 32.38,
+   "end": 32.56
+  },
+  {
+   "word": "a",
+   "start": 32.56,
+   "end": 32.68
+  },
+  {
+   "word": "token.",
+   "start": 32.68,
+   "end": 32.96
+  },
+  {
+   "word": "Simple,",
+   "start": 33.36,
+   "end": 33.7
+  },
+  {
+   "word": "but",
+   "start": 34.12,
+   "end": 34.34
+  },
+  {
+   "word": "the",
+   "start": 34.34,
+   "end": 34.48
+  },
+  {
+   "word": "magic",
+   "start": 34.48,
+   "end": 34.82
+  },
+  {
+   "word": "isn't",
+   "start": 34.82,
+   "end": 35.12
+  },
+  {
+   "word": "the",
+   "start": 35.12,
+   "end": 35.28
+  },
+  {
+   "word": "token,",
+   "start": 35.28,
+   "end": 35.58
+  },
+  {
+   "word": "it's",
+   "start": 35.8,
+   "end": 36.0
+  },
+  {
+   "word": "what",
+   "start": 36.0,
+   "end": 36.1
+  },
+  {
+   "word": "happens",
+   "start": 36.1,
+   "end": 36.4
+  },
+  {
+   "word": "to",
+   "start": 36.4,
+   "end": 36.6
+  },
+  {
+   "word": "your",
+   "start": 36.6,
+   "end": 36.72
+  },
+  {
+   "word": "dollar.",
+   "start": 36.72,
+   "end": 36.98
+  },
+  {
+   "word": "Because",
+   "start": 37.4,
+   "end": 37.68
+  },
+  {
+   "word": "Tether",
+   "start": 37.68,
+   "end": 37.96
+  },
+  {
+   "word": "doesn't",
+   "start": 37.96,
+   "end": 38.2
+  },
+  {
+   "word": "just",
+   "start": 38.2,
+   "end": 38.4
+  },
+  {
+   "word": "let",
+   "start": 38.4,
+   "end": 38.56
+  },
+  {
+   "word": "your",
+   "start": 38.56,
+   "end": 38.74
+  },
+  {
+   "word": "dollar",
+   "start": 38.74,
+   "end": 38.94
+  },
+  {
+   "word": "sit",
+   "start": 38.94,
+   "end": 39.18
+  },
+  {
+   "word": "in",
+   "start": 39.18,
+   "end": 39.3
+  },
+  {
+   "word": "a",
+   "start": 39.3,
+   "end": 39.44
+  },
+  {
+   "word": "drawer,",
+   "start": 39.44,
+   "end": 39.64
+  },
+  {
+   "word": "it",
+   "start": 40.02,
+   "end": 40.24
+  },
+  {
+   "word": "takes",
+   "start": 40.24,
+   "end": 40.4
+  },
+  {
+   "word": "all",
+   "start": 40.4,
+   "end": 40.7
+  },
+  {
+   "word": "those",
+   "start": 40.7,
+   "end": 40.92
+  },
+  {
+   "word": "billions",
+   "start": 40.92,
+   "end": 41.2
+  },
+  {
+   "word": "in",
+   "start": 41.2,
+   "end": 41.44
+  },
+  {
+   "word": "parks,",
+   "start": 41.44,
+   "end": 41.68
+  },
+  {
+   "word": "the",
+   "start": 41.84,
+   "end": 41.88
+  },
+  {
+   "word": "mostly",
+   "start": 41.88,
+   "end": 42.14
+  },
+  {
+   "word": "in",
+   "start": 42.14,
+   "end": 42.36
+  },
+  {
+   "word": "US",
+   "start": 42.36,
+   "end": 42.6
+  },
+  {
+   "word": "treasury",
+   "start": 42.6,
+   "end": 42.9
+  },
+  {
+   "word": "bills.",
+   "start": 42.9,
+   "end": 43.34
+  },
+  {
+   "word": "Basically",
+   "start": 43.86,
+   "end": 44.16
+  },
+  {
+   "word": "the",
+   "start": 44.16,
+   "end": 44.46
+  },
+  {
+   "word": "safest",
+   "start": 44.46,
+   "end": 44.74
+  },
+  {
+   "word": "loan",
+   "start": 44.74,
+   "end": 44.98
+  },
+  {
+   "word": "on",
+   "start": 44.98,
+   "end": 45.14
+  },
+  {
+   "word": "the",
+   "start": 45.14,
+   "end": 45.26
+  },
+  {
+   "word": "planet,",
+   "start": 45.26,
+   "end": 45.52
+  },
+  {
+   "word": "earning",
+   "start": 46.08,
+   "end": 46.26
+  },
+  {
+   "word": "around",
+   "start": 46.26,
+   "end": 46.56
+  },
+  {
+   "word": "4",
+   "start": 46.56,
+   "end": 46.92
+  },
+  {
+   "word": "-5",
+   "start": 46.92,
+   "end": 47.26
+  },
+  {
+   "word": "%",
+   "start": 47.26,
+   "end": 47.62
+  },
+  {
+   "word": "a",
+   "start": 47.62,
+   "end": 47.8
+  },
+  {
+   "word": "year.",
+   "start": 47.8,
+   "end": 48.02
+  },
+  {
+   "word": "And",
+   "start": 48.46,
+   "end": 48.64
+  },
+  {
+   "word": "how",
+   "start": 48.64,
+   "end": 48.8
+  },
+  {
+   "word": "much",
+   "start": 48.8,
+   "end": 48.98
+  },
+  {
+   "word": "of",
+   "start": 48.98,
+   "end": 49.12
+  },
+  {
+   "word": "that",
+   "start": 49.12,
+   "end": 49.26
+  },
+  {
+   "word": "interest",
+   "start": 49.26,
+   "end": 49.52
+  },
+  {
+   "word": "do",
+   "start": 49.52,
+   "end": 49.68
+  },
+  {
+   "word": "they",
+   "start": 49.68,
+   "end": 49.82
+  },
+  {
+   "word": "pass",
+   "start": 49.82,
+   "end": 50.0
+  },
+  {
+   "word": "back",
+   "start": 50.0,
+   "end": 50.26
+  },
+  {
+   "word": "to",
+   "start": 50.26,
+   "end": 50.44
+  },
+  {
+   "word": "you?",
+   "start": 50.44,
+   "end": 50.64
+  },
+  {
+   "word": "The",
+   "start": 50.98,
+   "end": 51.14
+  },
+  {
+   "word": "token",
+   "start": 51.14,
+   "end": 51.42
+  },
+  {
+   "word": "holder?",
+   "start": 51.42,
+   "end": 51.68
+  },
+  {
+   "word": "Zero.",
+   "start": 52.12,
+   "end": 52.44
+  },
+  {
+   "word": "You're",
+   "start": 52.78,
+   "end": 52.92
+  },
+  {
+   "word": "holding",
+   "start": 52.92,
+   "end": 53.1
+  },
+  {
+   "word": "a",
+   "start": 53.1,
+   "end": 53.28
+  },
+  {
+   "word": "dollar",
+   "start": 53.28,
+   "end": 53.46
+  },
+  {
+   "word": "that",
+   "start": 53.46,
+   "end": 53.64
+  },
+  {
+   "word": "pays",
+   "start": 53.64,
+   "end": 53.82
+  },
+  {
+   "word": "you",
+   "start": 53.82,
+   "end": 54.02
+  },
+  {
+   "word": "nothing,",
+   "start": 54.02,
+   "end": 54.24
+  },
+  {
+   "word": "and",
+   "start": 54.54,
+   "end": 54.7
+  },
+  {
+   "word": "Tether",
+   "start": 54.7,
+   "end": 54.92
+  },
+  {
+   "word": "keeps",
+   "start": 54.92,
+   "end": 55.16
+  },
+  {
+   "word": "every",
+   "start": 55.16,
+   "end": 55.62
+  },
+  {
+   "word": "cent",
+   "start": 55.62,
+   "end": 55.84
+  },
+  {
+   "word": "of",
+   "start": 55.84,
+   "end": 55.98
+  },
+  {
+   "word": "the",
+   "start": 55.98,
+   "end": 56.1
+  },
+  {
+   "word": "yield.",
+   "start": 56.1,
+   "end": 56.3
+  },
+  {
+   "word": "Now",
+   "start": 56.72,
+   "end": 56.88
+  },
+  {
+   "word": "multiply",
+   "start": 56.88,
+   "end": 57.26
+  },
+  {
+   "word": "it.",
+   "start": 57.26,
+   "end": 57.6
+  },
+  {
+   "word": "There's",
+   "start": 57.6,
+   "end": 58.16
+  },
+  {
+   "word": "well",
+   "start": 58.16,
+   "end": 58.4
+  },
+  {
+   "word": "over",
+   "start": 58.4,
+   "end": 58.68
+  },
+  {
+   "word": "$100",
+   "start": 58.68,
+   "end": 59.12
+  },
+  {
+   "word": "billion",
+   "start": 59.12,
+   "end": 59.36
+  },
+  {
+   "word": "of",
+   "start": 59.36,
+   "end": 59.86
+  },
+  {
+   "word": "USDT",
+   "start": 59.86,
+   "end": 60.54
+  },
+  {
+   "word": "out",
+   "start": 60.54,
+   "end": 60.7
+  },
+  {
+   "word": "there,",
+   "start": 60.7,
+   "end": 61.02
+  },
+  {
+   "word": "which",
+   "start": 61.26,
+   "end": 61.42
+  },
+  {
+   "word": "means",
+   "start": 61.42,
+   "end": 61.62
+  },
+  {
+   "word": "well",
+   "start": 61.62,
+   "end": 61.88
+  },
+  {
+   "word": "over",
+   "start": 61.88,
+   "end": 62.12
+  },
+  {
+   "word": "$100",
+   "start": 62.12,
+   "end": 62.46
+  },
+  {
+   "word": "billion",
+   "start": 62.46,
+   "end": 62.68
+  },
+  {
+   "word": "of",
+   "start": 62.68,
+   "end": 62.82
+  },
+  {
+   "word": "other",
+   "start": 62.82,
+   "end": 63.0
+  },
+  {
+   "word": "people's",
+   "start": 63.0,
+   "end": 63.38
+  },
+  {
+   "word": "money",
+   "start": 63.38,
+   "end": 63.5
+  },
+  {
+   "word": "working",
+   "start": 63.5,
+   "end": 63.86
+  },
+  {
+   "word": "for",
+   "start": 63.86,
+   "end": 64.12
+  },
+  {
+   "word": "Tether,",
+   "start": 64.12,
+   "end": 64.38
+  },
+  {
+   "word": "for",
+   "start": 64.78,
+   "end": 64.98
+  },
+  {
+   "word": "free.",
+   "start": 64.98,
+   "end": 65.28
+  },
+  {
+   "word": "And",
+   "start": 65.74,
+   "end": 65.92
+  },
+  {
+   "word": "normally,",
+   "start": 65.92,
+   "end": 66.26
+  },
+  {
+   "word": "getting",
+   "start": 66.34,
+   "end": 66.52
+  },
+  {
+   "word": "capital",
+   "start": 66.52,
+   "end": 66.9
+  },
+  {
+   "word": "is",
+   "start": 66.9,
+   "end": 67.1
+  },
+  {
+   "word": "expensive.",
+   "start": 67.1,
+   "end": 67.48
+  },
+  {
+   "word": "A",
+   "start": 67.74,
+   "end": 67.88
+  },
+  {
+   "word": "bank",
+   "start": 67.88,
+   "end": 68.06
+  },
+  {
+   "word": "pays",
+   "start": 68.06,
+   "end": 68.32
+  },
+  {
+   "word": "interest",
+   "start": 68.32,
+   "end": 68.64
+  },
+  {
+   "word": "to",
+   "start": 68.64,
+   "end": 68.84
+  },
+  {
+   "word": "its",
+   "start": 68.84,
+   "end": 68.98
+  },
+  {
+   "word": "depositors,",
+   "start": 68.98,
+   "end": 69.54
+  },
+  {
+   "word": "a",
+   "start": 69.98,
+   "end": 70.14
+  },
+  {
+   "word": "company",
+   "start": 70.14,
+   "end": 70.34
+  },
+  {
+   "word": "pays",
+   "start": 70.34,
+   "end": 70.66
+  },
+  {
+   "word": "interest",
+   "start": 70.66,
+   "end": 70.92
+  },
+  {
+   "word": "on",
+   "start": 70.92,
+   "end": 71.1
+  },
+  {
+   "word": "its",
+   "start": 71.1,
+   "end": 71.26
+  },
+  {
+   "word": "bonds,",
+   "start": 71.26,
+   "end": 71.52
+  },
+  {
+   "word": "everyone",
+   "start": 72.1,
+   "end": 72.42
+  },
+  {
+   "word": "pays",
+   "start": 72.42,
+   "end": 72.66
+  },
+  {
+   "word": "for",
+   "start": 72.66,
+   "end": 72.86
+  },
+  {
+   "word": "money.",
+   "start": 72.86,
+   "end": 73.12
+  },
+  {
+   "word": "Tether's",
+   "start": 73.58,
+   "end": 74.0
+  },
+  {
+   "word": "cost?",
+   "start": 74.0,
+   "end": 74.18
+  },
+  {
+   "word": "Nothing.",
+   "start": 74.62,
+   "end": 74.78
+  },
+  {
+   "word": "It's",
+   "start": 75.14,
+   "end": 75.28
+  },
+  {
+   "word": "an",
+   "start": 75.28,
+   "end": 75.4
+  },
+  {
+   "word": "interest",
+   "start": 75.4,
+   "end": 75.68
+  },
+  {
+   "word": "-free",
+   "start": 75.68,
+   "end": 75.9
+  },
+  {
+   "word": "loan",
+   "start": 75.9,
+   "end": 76.06
+  },
+  {
+   "word": "from",
+   "start": 76.06,
+   "end": 76.32
+  },
+  {
+   "word": "millions",
+   "start": 76.32,
+   "end": 76.54
+  },
+  {
+   "word": "of",
+   "start": 76.54,
+   "end": 76.8
+  },
+  {
+   "word": "users,",
+   "start": 76.8,
+   "end": 77.1
+  },
+  {
+   "word": "and",
+   "start": 77.62,
+   "end": 77.74
+  },
+  {
+   "word": "it",
+   "start": 77.74,
+   "end": 77.86
+  },
+  {
+   "word": "keeps",
+   "start": 77.86,
+   "end": 78.06
+  },
+  {
+   "word": "100",
+   "start": 78.06,
+   "end": 78.5
+  },
+  {
+   "word": "%",
+   "start": 78.5,
+   "end": 78.8
+  },
+  {
+   "word": "of",
+   "start": 78.8,
+   "end": 78.96
+  },
+  {
+   "word": "the",
+   "start": 78.96,
+   "end": 79.04
+  },
+  {
+   "word": "return.",
+   "start": 79.04,
+   "end": 79.4
+  },
+  {
+   "word": "In",
+   "start": 79.9,
+   "end": 80.12
+  },
+  {
+   "word": "2024,",
+   "start": 80.12,
+   "end": 80.8
+  },
+  {
+   "word": "the",
+   "start": 81.3,
+   "end": 81.42
+  },
+  {
+   "word": "company",
+   "start": 81.42,
+   "end": 81.62
+  },
+  {
+   "word": "reported",
+   "start": 81.62,
+   "end": 82.02
+  },
+  {
+   "word": "around",
+   "start": 82.02,
+   "end": 82.3
+  },
+  {
+   "word": "$13",
+   "start": 82.3,
+   "end": 82.76
+  },
+  {
+   "word": "billion",
+   "start": 82.76,
+   "end": 83.04
+  },
+  {
+   "word": "in",
+   "start": 83.04,
+   "end": 83.54
+  },
+  {
+   "word": "profit,",
+   "start": 83.54,
+   "end": 83.86
+  },
+  {
+   "word": "with",
+   "start": 84.06,
+   "end": 84.4
+  },
+  {
+   "word": "a",
+   "start": 84.4,
+   "end": 84.54
+  },
+  {
+   "word": "team",
+   "start": 84.54,
+   "end": 84.7
+  },
+  {
+   "word": "you",
+   "start": 84.7,
+   "end": 84.88
+  },
+  {
+   "word": "could",
+   "start": 84.88,
+   "end": 85.0
+  },
+  {
+   "word": "fit",
+   "start": 85.0,
+   "end": 85.16
+  },
+  {
+   "word": "in",
+   "start": 85.16,
+   "end": 85.3
+  },
+  {
+   "word": "a",
+   "start": 85.3,
+   "end": 85.42
+  },
+  {
+   "word": "single",
+   "start": 85.42,
+   "end": 85.6
+  },
+  {
+   "word": "room.",
+   "start": 85.6,
+   "end": 85.88
+  },
+  {
+   "word": "So",
+   "start": 85.88,
+   "end": 86.48
+  },
+  {
+   "word": "what's",
+   "start": 86.48,
+   "end": 86.76
+  },
+  {
+   "word": "the",
+   "start": 86.76,
+   "end": 86.9
+  },
+  {
+   "word": "catch?",
+   "start": 86.9,
+   "end": 87.16
+  },
+  {
+   "word": "Trust,",
+   "start": 88.1,
+   "end": 88.26
+  },
+  {
+   "word": "the",
+   "start": 88.68,
+   "end": 88.7
+  },
+  {
+   "word": "whole",
+   "start": 88.7,
+   "end": 88.9
+  },
+  {
+   "word": "thing",
+   "start": 88.9,
+   "end": 89.12
+  },
+  {
+   "word": "holds",
+   "start": 89.12,
+   "end": 89.32
+  },
+  {
+   "word": "up",
+   "start": 89.32,
+   "end": 89.48
+  },
+  {
+   "word": "only",
+   "start": 89.48,
+   "end": 89.74
+  },
+  {
+   "word": "as",
+   "start": 89.74,
+   "end": 89.96
+  },
+  {
+   "word": "long",
+   "start": 89.96,
+   "end": 90.12
+  },
+  {
+   "word": "as",
+   "start": 90.12,
+   "end": 90.32
+  },
+  {
+   "word": "people",
+   "start": 90.32,
+   "end": 90.52
+  },
+  {
+   "word": "believe",
+   "start": 90.52,
+   "end": 90.86
+  },
+  {
+   "word": "every",
+   "start": 90.86,
+   "end": 91.24
+  },
+  {
+   "word": "token",
+   "start": 91.24,
+   "end": 91.54
+  },
+  {
+   "word": "is",
+   "start": 91.54,
+   "end": 91.7
+  },
+  {
+   "word": "really",
+   "start": 91.7,
+   "end": 91.92
+  },
+  {
+   "word": "backed",
+   "start": 91.92,
+   "end": 92.16
+  },
+  {
+   "word": "by",
+   "start": 92.16,
+   "end": 92.32
+  },
+  {
+   "word": "a",
+   "start": 92.32,
+   "end": 92.42
+  },
+  {
+   "word": "real",
+   "start": 92.42,
+   "end": 92.64
+  },
+  {
+   "word": "dollar,",
+   "start": 92.64,
+   "end": 92.92
+  },
+  {
+   "word": "and",
+   "start": 93.32,
+   "end": 93.54
+  },
+  {
+   "word": "don't",
+   "start": 93.54,
+   "end": 93.74
+  },
+  {
+   "word": "all",
+   "start": 93.74,
+   "end": 93.88
+  },
+  {
+   "word": "rush",
+   "start": 93.88,
+   "end": 94.08
+  },
+  {
+   "word": "to",
+   "start": 94.08,
+   "end": 94.26
+  },
+  {
+   "word": "cash",
+   "start": 94.26,
+   "end": 94.46
+  },
+  {
+   "word": "out",
+   "start": 94.46,
+   "end": 94.7
+  },
+  {
+   "word": "at",
+   "start": 94.7,
+   "end": 94.84
+  },
+  {
+   "word": "once.",
+   "start": 94.84,
+   "end": 95.14
+  },
+  {
+   "word": "Tether",
+   "start": 95.82,
+   "end": 95.98
+  },
+  {
+   "word": "has",
+   "start": 95.98,
+   "end": 96.16
+  },
+  {
+   "word": "been",
+   "start": 96.16,
+   "end": 96.32
+  },
+  {
+   "word": "fine",
+   "start": 96.32,
+   "end": 96.62
+  },
+  {
+   "word": "before",
+   "start": 96.62,
+   "end": 96.96
+  },
+  {
+   "word": "for",
+   "start": 96.96,
+   "end": 97.2
+  },
+  {
+   "word": "overstating",
+   "start": 97.2,
+   "end": 97.74
+  },
+  {
+   "word": "what",
+   "start": 97.74,
+   "end": 97.92
+  },
+  {
+   "word": "was",
+   "start": 97.92,
+   "end": 98.1
+  },
+  {
+   "word": "actually",
+   "start": 98.1,
+   "end": 98.58
+  },
+  {
+   "word": "in",
+   "start": 98.58,
+   "end": 98.76
+  },
+  {
+   "word": "its",
+   "start": 98.76,
+   "end": 98.92
+  },
+  {
+   "word": "reserves,",
+   "start": 98.92,
+   "end": 99.28
+  },
+  {
+   "word": "and",
+   "start": 99.78,
+   "end": 99.82
+  },
+  {
+   "word": "it",
+   "start": 99.82,
+   "end": 99.96
+  },
+  {
+   "word": "publishes",
+   "start": 99.96,
+   "end": 100.3
+  },
+  {
+   "word": "out",
+   "start": 100.3,
+   "end": 100.52
+  },
+  {
+   "word": "of",
+   "start": 100.52,
+   "end": 100.68
+  },
+  {
+   "word": "stations.",
+   "start": 100.68,
+   "end": 101.0
+  },
+  {
+   "word": "Not",
+   "start": 101.48,
+   "end": 101.66
+  },
+  {
+   "word": "full",
+   "start": 101.66,
+   "end": 101.96
+  },
+  {
+   "word": "independent",
+   "start": 101.96,
+   "end": 102.42
+  },
+  {
+   "word": "audits.",
+   "start": 102.42,
+   "end": 102.84
+  },
+  {
+   "word": "The",
+   "start": 103.18,
+   "end": 103.38
+  },
+  {
+   "word": "model",
+   "start": 103.38,
+   "end": 103.6
+  },
+  {
+   "word": "is",
+   "start": 103.6,
+   "end": 103.88
+  },
+  {
+   "word": "brilliant,",
+   "start": 103.88,
+   "end": 104.22
+  },
+  {
+   "word": "but",
+   "start": 104.62,
+   "end": 104.82
+  },
+  {
+   "word": "it",
+   "start": 104.82,
+   "end": 104.9
+  },
+  {
+   "word": "runs",
+   "start": 104.9,
+   "end": 105.08
+  },
+  {
+   "word": "entirely",
+   "start": 105.08,
+   "end": 105.5
+  },
+  {
+   "word": "on",
+   "start": 105.5,
+   "end": 105.86
+  },
+  {
+   "word": "confidence.",
+   "start": 105.86,
+   "end": 106.24
+  },
+  {
+   "word": "Still,",
+   "start": 106.78,
+   "end": 107.04
+  },
+  {
+   "word": "it",
+   "start": 107.36,
+   "end": 107.5
+  },
+  {
+   "word": "cracks",
+   "start": 107.5,
+   "end": 107.72
+  },
+  {
+   "word": "something",
+   "start": 107.72,
+   "end": 108.08
+  },
+  {
+   "word": "most",
+   "start": 108.08,
+   "end": 108.32
+  },
+  {
+   "word": "people",
+   "start": 108.32,
+   "end": 108.54
+  },
+  {
+   "word": "never",
+   "start": 108.54,
+   "end": 108.82
+  },
+  {
+   "word": "even",
+   "start": 108.82,
+   "end": 109.1
+  },
+  {
+   "word": "see.",
+   "start": 109.1,
+   "end": 109.4
+  },
+  {
+   "word": "The",
+   "start": 109.88,
+   "end": 110.16
+  },
+  {
+   "word": "most",
+   "start": 110.16,
+   "end": 110.32
+  },
+  {
+   "word": "profitable",
+   "start": 110.32,
+   "end": 110.8
+  },
+  {
+   "word": "trade",
+   "start": 110.8,
+   "end": 111.12
+  },
+  {
+   "word": "in",
+   "start": 111.12,
+   "end": 111.28
+  },
+  {
+   "word": "finance",
+   "start": 111.28,
+   "end": 111.6
+  },
+  {
+   "word": "wasn't",
+   "start": 111.6,
+   "end": 111.94
+  },
+  {
+   "word": "picking",
+   "start": 111.94,
+   "end": 112.16
+  },
+  {
+   "word": "the",
+   "start": 112.16,
+   "end": 112.32
+  },
+  {
+   "word": "right",
+   "start": 112.32,
+   "end": 112.44
+  },
+  {
+   "word": "stock,",
+   "start": 112.44,
+   "end": 112.76
+  },
+  {
+   "word": "or",
+   "start": 112.96,
+   "end": 113.08
+  },
+  {
+   "word": "the",
+   "start": 113.08,
+   "end": 113.2
+  },
+  {
+   "word": "right",
+   "start": 113.2,
+   "end": 113.4
+  },
+  {
+   "word": "coin.",
+   "start": 113.4,
+   "end": 113.64
+  },
+  {
+   "word": "It",
+   "start": 113.64,
+   "end": 113.94
+  },
+  {
+   "word": "was",
+   "start": 113.94,
+   "end": 114.06
+  },
+  {
+   "word": "realizing",
+   "start": 114.06,
+   "end": 114.34
+  },
+  {
+   "word": "that",
+   "start": 114.34,
+   "end": 114.54
+  },
+  {
+   "word": "if",
+   "start": 114.54,
+   "end": 114.8
+  },
+  {
+   "word": "you",
+   "start": 114.8,
+   "end": 114.96
+  },
+  {
+   "word": "get",
+   "start": 114.96,
+   "end": 115.1
+  },
+  {
+   "word": "to",
+   "start": 115.1,
+   "end": 115.24
+  },
+  {
+   "word": "issue",
+   "start": 115.24,
+   "end": 115.44
+  },
+  {
+   "word": "the",
+   "start": 115.44,
+   "end": 115.62
+  },
+  {
+   "word": "dollar,",
+   "start": 115.62,
+   "end": 115.88
+  },
+  {
+   "word": "you",
+   "start": 116.48,
+   "end": 116.52
+  },
+  {
+   "word": "get",
+   "start": 116.52,
+   "end": 116.62
+  },
+  {
+   "word": "to",
+   "start": 116.62,
+   "end": 116.82
+  },
+  {
+   "word": "keep",
+   "start": 116.82,
+   "end": 116.98
+  },
+  {
+   "word": "the",
+   "start": 116.98,
+   "end": 117.16
+  },
+  {
+   "word": "interest.",
+   "start": 117.16,
+   "end": 117.48
+  },
+  {
+   "word": "Discover",
+   "start": 118.14,
+   "end": 118.32
+  },
+  {
+   "word": "millions",
+   "start": 118.32,
+   "end": 118.64
+  },
+  {
+   "word": "of",
+   "start": 118.64,
+   "end": 118.86
+  },
+  {
+   "word": "ideas,",
+   "start": 118.86,
+   "end": 119.22
+  },
+  {
+   "word": "exercises,",
+   "start": 119.56,
+   "end": 119.92
+  },
+  {
+   "word": "and",
+   "start": 120.22,
+   "end": 120.22
+  },
+  {
+   "word": "more",
+   "start": 120.22,
+   "end": 120.38
+  },
+  {
+   "word": "learning",
+   "start": 120.38,
+   "end": 120.62
+  },
+  {
+   "word": "content",
+   "start": 120.62,
+   "end": 120.94
+  },
+  {
+   "word": "on",
+   "start": 120.94,
+   "end": 121.1
+  },
+  {
+   "word": "stacktags",
+   "start": 121.1,
+   "end": 121.68
+  },
+  {
+   "word": ".io.",
+   "start": 121.68,
+   "end": 122.14
+  }
+ ],
+ "segments": [
+  {
+   "start": 0.0,
+   "end": 3.32,
+   "text": " There's a company that makes more money per employee than almost anyone on earth,"
+  },
+  {
+   "start": 3.78,
+   "end": 8.4,
+   "text": " around 100 staff, billions in annual profit, and the entire business model is this."
+  },
+  {
+   "start": 8.84,
+   "end": 12.76,
+   "text": " You give them a dollar, they hand you a token, and they keep the dollar, that's Tether,"
+  },
+  {
+   "start": 12.98,
+   "end": 14.08,
+   "text": " and it's completely legal."
+  },
+  {
+   "start": 14.58,
+   "end": 17.46,
+   "text": " Here's why it might be the most genius business model ever invented."
+  },
+  {
+   "start": 17.86,
+   "end": 20.06,
+   "text": " Tether runs USDT, a stablecoin."
+  },
+  {
+   "start": 20.54,
+   "end": 23.44,
+   "text": " One USDT is always meant to equal one US dollar."
+  },
+  {
+   "start": 23.94,
+   "end": 27.38,
+   "text": " Crypto traders love it, it's a dollar that lives on the blockchain so they can"
+  },
+  {
+   "start": 27.38,
+   "end": 29.0,
+   "text": " jump in and out of trades instantly."
+  },
+  {
+   "start": 29.72,
+   "end": 32.96,
+   "text": " To get one, you hand Tether a real dollar and they mint you a token."
+  },
+  {
+   "start": 33.36,
+   "end": 36.98,
+   "text": " Simple, but the magic isn't the token, it's what happens to your dollar."
+  },
+  {
+   "start": 37.4,
+   "end": 39.64,
+   "text": " Because Tether doesn't just let your dollar sit in a drawer,"
+  },
+  {
+   "start": 40.02,
+   "end": 43.34,
+   "text": " it takes all those billions in parks, the mostly in US treasury bills."
+  },
+  {
+   "start": 43.86,
+   "end": 48.02,
+   "text": " Basically the safest loan on the planet, earning around 4-5% a year."
+  },
+  {
+   "start": 48.46,
+   "end": 50.64,
+   "text": " And how much of that interest do they pass back to you?"
+  },
+  {
+   "start": 50.98,
+   "end": 51.68,
+   "text": " The token holder?"
+  },
+  {
+   "start": 52.12,
+   "end": 52.44,
+   "text": " Zero."
+  },
+  {
+   "start": 52.78,
+   "end": 55.98,
+   "text": " You're holding a dollar that pays you nothing, and Tether keeps every cent of"
+  },
+  {
+   "start": 55.98,
+   "end": 56.3,
+   "text": " the yield."
+  },
+  {
+   "start": 56.72,
+   "end": 57.6,
+   "text": " Now multiply it."
+  },
+  {
+   "start": 57.6,
+   "end": 62.12,
+   "text": " There's well over $100 billion of USDT out there, which means well over"
+  },
+  {
+   "start": 62.12,
+   "end": 65.28,
+   "text": " $100 billion of other people's money working for Tether, for free."
+  },
+  {
+   "start": 65.74,
+   "end": 67.48,
+   "text": " And normally, getting capital is expensive."
+  },
+  {
+   "start": 67.74,
+   "end": 71.52,
+   "text": " A bank pays interest to its depositors, a company pays interest on its bonds,"
+  },
+  {
+   "start": 72.1,
+   "end": 73.12,
+   "text": " everyone pays for money."
+  },
+  {
+   "start": 73.58,
+   "end": 74.18,
+   "text": " Tether's cost?"
+  },
+  {
+   "start": 74.62,
+   "end": 74.78,
+   "text": " Nothing."
+  },
+  {
+   "start": 75.14,
+   "end": 77.74,
+   "text": " It's an interest-free loan from millions of users, and"
+  },
+  {
+   "start": 77.74,
+   "end": 79.4,
+   "text": " it keeps 100% of the return."
+  },
+  {
+   "start": 79.9,
+   "end": 83.86,
+   "text": " In 2024, the company reported around $13 billion in profit,"
+  },
+  {
+   "start": 84.06,
+   "end": 85.88,
+   "text": " with a team you could fit in a single room."
+  },
+  {
+   "start": 85.88,
+   "end": 87.16,
+   "text": " So what's the catch?"
+  },
+  {
+   "start": 88.1,
+   "end": 91.7,
+   "text": " Trust, the whole thing holds up only as long as people believe every token is"
+  },
+  {
+   "start": 91.7,
+   "end": 95.14,
+   "text": " really backed by a real dollar, and don't all rush to cash out at once."
+  },
+  {
+   "start": 95.82,
+   "end": 98.92,
+   "text": " Tether has been fine before for overstating what was actually in its"
+  },
+  {
+   "start": 98.92,
+   "end": 101.0,
+   "text": " reserves, and it publishes out of stations."
+  },
+  {
+   "start": 101.48,
+   "end": 102.84,
+   "text": " Not full independent audits."
+  },
+  {
+   "start": 103.18,
+   "end": 106.24,
+   "text": " The model is brilliant, but it runs entirely on confidence."
+  },
+  {
+   "start": 106.78,
+   "end": 109.4,
+   "text": " Still, it cracks something most people never even see."
+  },
+  {
+   "start": 109.88,
+   "end": 113.08,
+   "text": " The most profitable trade in finance wasn't picking the right stock, or"
+  },
+  {
+   "start": 113.08,
+   "end": 113.64,
+   "text": " the right coin."
+  },
+  {
+   "start": 113.64,
+   "end": 117.48,
+   "text": " It was realizing that if you get to issue the dollar, you get to keep the interest."
+  },
+  {
+   "start": 118.14,
+   "end": 122.14,
+   "text": " Discover millions of ideas, exercises, and more learning content on stacktags.io."
+  }
+ ]
+}

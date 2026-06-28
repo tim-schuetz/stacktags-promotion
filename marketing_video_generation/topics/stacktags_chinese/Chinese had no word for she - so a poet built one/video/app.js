@@ -107,33 +107,11 @@
   function bulbIcon() { const c = '#232B33', t = '#35A292'; return `<svg viewBox="0 0 150 200" width="150" height="200"><path d="M75,16 a54,54 0 0 1 32,97 q-9,7 -9,21 l-46,0 q0,-14 -9,-21 a54,54 0 0 1 32,-97 Z" fill="#fff" stroke="${c}" stroke-width="6"/><path d="M58,70 q17,-20 34,0 q-9,26 0,44" fill="none" stroke="${t}" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/><rect x="52" y="150" width="46" height="13" rx="4" fill="${c}"/><rect x="56" y="167" width="38" height="11" rx="4" fill="${c}"/></svg>`; }
 
   $('#pu-bulb').innerHTML = bulbIcon();
-  document.documentElement.style.setProperty('--liu', "url('assets/img/liu_dashed.png')");
-  document.documentElement.style.setProperty('--woman', "url('assets/img/woman_dashed.png')");
-
-  // ============================================================
-  // PRESSURE — recreated Western novel page (faux text + 2 quotes)
-  // ============================================================
-  (function buildNovel() {
-    $('#pr-novel .novel-head').textContent = 'CHAPTER VII';
-    const host = $('#pr-lines');
-    const rows = [
-      { t: 'line' }, { t: 'line short' },
-      { t: 'quote', tag: 'he', label: '“…,” he said.' },
-      { t: 'line' },
-      { t: 'quote', tag: 'she', label: '“…,” she said.' },
-      { t: 'line short' }, { t: 'line' },
-    ];
-    rows.forEach((r) => {
-      if (r.t === 'quote') {
-        const q = document.createElement('div'); q.className = 'nv-quote';
-        const bar = document.createElement('div'); bar.className = 'qbar';
-        const tag = document.createElement('div'); tag.className = 'nv-tag ' + r.tag; tag.id = 'nv-' + r.tag; tag.textContent = r.label;
-        q.appendChild(bar); q.appendChild(tag); host.appendChild(q);
-      } else {
-        const l = document.createElement('div'); l.className = 'nv-line' + (r.t.includes('short') ? ' short' : ''); host.appendChild(l);
-      }
-    });
-  })();
+  const IMG = (n) => "url('assets/img/" + n + "_dashed.png')";
+  document.documentElement.style.setProperty('--liu', IMG('liu'));
+  document.documentElement.style.setProperty('--woman', IMG('woman'));
+  document.documentElement.style.setProperty('--man', IMG('man'));
+  document.documentElement.style.setProperty('--cat', IMG('cat'));
 
   // ============================================================
   // INVENTION — the radical swap mechanic
@@ -253,101 +231,98 @@
   }
   const SUBS = [
     [0.0, 'Just a hundred years ago,'],
-    [1.18, 'Chinese had <b>no word for “she.”</b>'],
-    [2.96, 'A single word covered <b>he, she, and it</b>.'],
-    [5.38, 'Then a poet sat down and <b>built a new one</b>.'],
-    [8.02, 'For most of its history, Chinese got by'],
-    [9.6, 'with <b>one</b> pronoun — <b>tā</b> —'],
-    [11.3, 'for he, she, and it.'],
-    [13.1, 'And spoken, it doesn’t matter:'],
-    [14.7, '<b>tā</b> is <b>tā</b>, no matter who you mean.'],
-    [17.04, 'In writing, that one character did the whole job.'],
-    [19.52, 'Nobody felt anything was <b>missing</b>.'],
-    [21.42, 'Then, in the early twentieth century,'],
-    [23.68, 'Chinese writers started translating'],
-    [25.08, 'a <b>flood of Western books</b> —'],
-    [26.3, 'full of “<b>he said</b>,” “<b>she said</b>.”'],
-    [28.34, 'And suddenly, that catch-all pronoun'],
-    [30.34, 'was a <b>problem</b>.'],
-    [31.74, 'To translate faithfully, they needed a way'],
-    [33.62, 'to tell <b>“he”</b> and <b>“she”</b> apart on the page.'],
-    [36.78, 'So, around <b>1920</b>, a poet and linguist'],
-    [39.36, 'named <b>Liu Bannong</b> did something elegant.'],
-    [41.16, 'He took the existing character for “he” —'],
-    [43.22, 'built with a little <b>“person” piece</b> on the left.'],
-    [45.9, 'And he simply <b>swapped that piece out</b>,'],
-    [47.7, 'replacing the “person” part'],
-    [49.0, 'with the character for <b>“woman.”</b>'],
-    [50.4, 'The result was a <b>brand-new character</b>,'],
-    [52.26, 'meaning <b>“she.”</b>'],
-    [53.22, 'And that shows how Chinese actually works.'],
-    [55.72, '<b>Characters are built from parts</b> —'],
-    [57.86, 'so you can engineer a whole new word'],
-    [59.18, 'just by changing <b>one component</b>.'],
-    [61.44, '<b>Person</b>, plus the rest, equals “he.”'],
-    [64.32, '<b>Woman</b>, plus the rest, equals “she.”'],
-    [67.46, '<b>Same sound</b>, new meaning,'],
-    [69.06, '<b>built like Lego</b>.'],
-    [70.46, 'It wasn’t loved by everyone —'],
-    [71.94, 'some argued that giving women a separate pronoun,'],
-    [73.84, 'while men kept the original <b>“default”</b> one,'],
-    [76.08, 'was itself a statement.'],
-    [77.48, 'But it <b>stuck</b>.'],
-    [78.62, 'Today, <b>she is everywhere</b>.'],
-    [80.26, 'So the Chinese word for “she”'],
-    [81.92, 'is <b>younger than the lightbulb</b> —'],
-    [82.86, 'and unlike almost every other word,'],
-    [85.02, '<b>it has an author</b>.'],
-    [86.22, 'Wanna actually start learning <b>Chinese</b>?'],
-    [88.14, 'Discover thousands of <b>free</b> exercises'],
-    [90.02, 'and more learning content on <b>stacktags.io</b>.'],
+    [1.28, 'Chinese had <b>no word for “she.”</b>'],
+    [3.14, 'A single word covered <b>he, she, and it</b>.'],
+    [5.98, 'Then a poet sat down and <b>built a new one</b>.'],
+    [8.84, 'For most of its history, Chinese got by'],
+    [10.68, 'with <b>one</b> pronoun — <b>tā</b> —'],
+    [12.28, 'for he, she, and it.'],
+    [14.22, 'Nobody felt anything was <b>missing</b>.'],
+    [16.36, 'Then, in the early twentieth century,'],
+    [18.22, 'Chinese writers started translating'],
+    [19.48, 'a <b>flood of Western books</b> —'],
+    [20.74, 'full of “<b>he said</b>,” “<b>she said</b>.”'],
+    [23.82, 'And suddenly, that catch-all pronoun'],
+    [25.4, 'was a <b>problem</b>.'],
+    [26.04, 'To translate faithfully, they needed a way'],
+    [28.3, 'to tell <b>“he”</b> and <b>“she”</b> apart on the page.'],
+    [31.46, 'So, around <b>1920</b>, a poet and linguist'],
+    [34.0, 'named <b>Liu Bannong</b> did something elegant.'],
+    [36.6, 'He took the existing character for “he” —'],
+    [38.78, 'built with a little <b>“person” piece</b> on the left.'],
+    [42.6, 'And he simply <b>swapped that piece out</b>,'],
+    [44.36, 'replacing the “person” part'],
+    [45.72, 'with the character for <b>“woman.”</b>'],
+    [47.38, 'The result was a <b>brand-new character</b>,'],
+    [49.2, 'meaning <b>“she.”</b>'],
+    [50.36, 'And that shows how Chinese actually works.'],
+    [53.1, '<b>Characters are built from parts</b> —'],
+    [55.52, 'so you can engineer a whole new word'],
+    [57.16, 'just by changing <b>one component</b>.'],
+    [59.64, '<b>Person</b>, plus the rest, equals “he.”'],
+    [62.34, '<b>Woman</b>, plus the rest, equals “she.”'],
+    [65.34, '<b>Same sound</b>, new meaning,'],
+    [67.06, '<b>built like Lego</b>.'],
+    [68.38, 'It wasn’t loved by everyone —'],
+    [69.82, 'some argued that giving women a separate pronoun,'],
+    [71.74, 'while men kept the original <b>“default”</b> one,'],
+    [73.96, 'was itself a statement.'],
+    [75.56, 'But it <b>stuck</b>.'],
+    [76.74, 'Today, <b>she is everywhere</b>.'],
+    [78.34, 'So the Chinese word for “she”'],
+    [79.42, 'is <b>younger than the lightbulb</b> —'],
+    [80.96, 'and unlike almost every other word,'],
+    [82.88, '<b>it has an author</b>.'],
+    [84.14, 'Wanna actually start learning <b>Chinese</b>?'],
+    [86.22, 'Discover thousands of <b>free</b> exercises'],
+    [87.8, 'and more learning content on <b>stacktags.io</b>.'],
   ];
 
   // ============================================================
   // CUES — keyed to whisper word timings
   // ============================================================
   const CUES = [
-    // ---- INTRO (hook + old way) — a real "she" who could only be written 他 ----
-    [0.0, (i) => { enter('#sc-intro', 'fade', 650, i); $('#in-woman').classList.add('in'); invInHe(i); }],
-    [1.18, (i) => { $('#in-conn').classList.add('in'); }],                               // to write her, you wrote 他
-    [1.76, (i) => { $('#in-newcell').classList.add('in'); }],                            // her own word: still missing (?)
-    [5.38, (i) => { brushWrite('#in-brush', i); }],                                      // a poet will build one
-    [8.02, (i) => { $('#in-brush').classList.remove('in', 'write'); $('#in-py').classList.add('in'); }], // teach the sound tā
-    [10.8, (i) => { pulse('#in-py'); if (!i) setTimeout(() => $('#in-py').classList.remove('pulse'), 650); }],
-    [14.7, (i) => { $('#in-say').classList.add('in'); pulse('#in-py'); if (!i) setTimeout(() => $('#in-py').classList.remove('pulse'), 650); }], // spoken, she's just "tā"
-    [19.52, (i) => { $('#in-say').classList.remove('in'); }],                            // ...but in writing, 他 did it all
+    // ---- INTRO — empty → 他 flies in (top) → poet (left) → he/she/it = man/woman/cat ----
+    [0.0, (i) => { enter('#sc-intro', 'fade', 650, i); }],                               // empty screen for the first 3s
+    [3.14, (i) => { $('#in-cell').classList.add('in'); inHe.full(); }],                  // 他 flies in from the top, stays up
+    [5.98, (i) => { $('#in-poet').classList.add('in'); }],                               // the poet flies in, to the left of 他
+    [11.5, (i) => { $('#in-py').classList.add('in'); }],                                 // teach the sound: tā
+    [12.48, (i) => { $('#ti-man').classList.add('in'); $('#ta-man').classList.add('in'); }],     // he → a man
+    [12.98, (i) => { $('#ti-woman').classList.add('in'); $('#ta-woman').classList.add('in'); }], // she → a woman
+    [13.62, (i) => { $('#ti-cat').classList.add('in'); $('#ta-cat').classList.add('in'); }],     // it → a cat
 
-    // ---- PRESSURE ----
-    [21.42, (i) => { enter('#sc-pressure', 'zoom-out', 1100, i); $('#pr-novel').classList.add('in'); }],
-    [26.3, (i) => { $('#nv-he').classList.add('lit'); $('#nv-she').classList.add('lit'); }],   // highlight he said / she said
-    [28.34, (i) => { $('#pr-cell').classList.add('in'); $('#pl-he').classList.add('in'); $('#pl-she').classList.add('in'); prHe.writeOn({ instant: i, stagger: 70 }); $('#pr-clash').classList.add('in'); gridKick(i); }], // both land on 他
-    [33.62, (i) => { $('#pr-newcell').classList.add('in'); }],                           // the needed "she" cell, still empty
+    // ---- PRESSURE — Western books → the same books, Chinese covers ; he/she → 他 ----
+    [16.36, (i) => { enter('#sc-pressure', 'zoom-out', 1100, i); $$('#pr-western .book').forEach((b, k) => { if (i) b.classList.add('in'); else setTimeout(() => b.classList.add('in'), k * 130); }); }],
+    [19.48, (i) => { $('#pr-trans').classList.add('in'); $$('#pr-chinese .book').forEach((b, k) => { if (i) b.classList.add('in'); else setTimeout(() => b.classList.add('in'), k * 130); }); }], // ...translated into Chinese
+    [20.74, (i) => { $('#pr-he-tag').classList.add('in'); $('#pr-she-tag').classList.add('in'); $('#pr-cell').classList.add('in'); prHe.full(); }], // "he said" / "she said" + the one 他
+    [21.9, (i) => { $('#pl-he').classList.add('in'); }],
+    [22.96, (i) => { $('#pl-she').classList.add('in'); }],
+    [23.82, (i) => { $('#pr-clash').classList.add('in'); gridKick(i); }],                // both collide on the SAME 他 = the problem
 
     // ---- INVENTION ----
-    [36.78, (i) => { enter('#sc-invent', 'zoom-in', 1050, i, () => invWriteHe(i)); }],
-    [39.36, (i) => { $('#iv-liu').classList.add('in'); }],                               // Liu Bannong
-    [41.16, (i) => { $('#iv-liu').classList.add('dock'); }],
-    [43.22, (i) => invPersonHi(i)],                                                      // highlight the 亻 "person" block
-    [45.9, (i) => { invSwapOut(i); gridKick(i); }],                                      // lift it out
-    [47.7, (i) => invWoman(i)],                                                          // slot in 女
-    [50.4, (i) => invResult(i)],                                                         // → a clean 她
-    // teaching: the slot equation
-    [55.72, (i) => eqRow1(i)],                                                           // 亻 + 也 = 他
-    [61.44, (i) => { pulse('#eq-py1'); if (!i) setTimeout(() => $('#eq-py1').classList.remove('pulse'), 650); }],
-    [64.32, (i) => eqRow2(i)],                                                           // 女 + 也 = 她
-    [67.46, (i) => eqSameSound(i)],                                                      // same sound (both tā)
+    [31.46, (i) => { enter('#sc-invent', 'zoom-in', 1050, i, () => invWriteHe(i)); }],
+    [34.0, (i) => { $('#iv-liu').classList.add('in'); }],                                // named Liu Bannong
+    [36.6, (i) => { $('#iv-liu').classList.add('dock'); }],
+    [39.96, (i) => invPersonHi(i)],                                                      // highlight the 亻 "person" block
+    [43.12, (i) => { invSwapOut(i); gridKick(i); }],                                     // lift it out
+    [44.36, (i) => invWoman(i)],                                                         // slot in 女
+    [47.38, (i) => invResult(i)],                                                        // → a clean 她
+    [53.1, (i) => eqRow1(i)],                                                            // 亻 + 也 = 他
+    [59.64, (i) => { pulse('#eq-py1'); if (!i) setTimeout(() => $('#eq-py1').classList.remove('pulse'), 650); }],
+    [62.34, (i) => eqRow2(i)],                                                           // 女 + 也 = 她
+    [65.34, (i) => eqSameSound(i)],                                                      // same sound (both tā)
 
     // ---- PUNCH 1 ----
-    [70.46, (i) => { enter('#sc-punch1', 'zoom-out', 1100, i); $$('#pu-vs .vs-item').forEach((v) => v.classList.add('in')); puHe.writeOn({ instant: i, stagger: 70 }); puShe.writeOn({ instant: i, stagger: 70 }); }],
-    [78.62, (i) => { everywhereGo(i); }],                                                // 她 is everywhere
+    [68.38, (i) => { enter('#sc-punch1', 'zoom-out', 1100, i); $$('#pu-vs .vs-item').forEach((v) => v.classList.add('in')); puHe.writeOn({ instant: i, stagger: 70 }); puShe.writeOn({ instant: i, stagger: 70 }); }],
+    [76.74, (i) => { everywhereGo(i); }],                                                // 她 is everywhere
 
     // ---- PUNCH 2 ----
-    [80.26, (i) => { enter('#sc-punch2', 'zoom-in', 1050, i); puShe2.writeOn({ instant: i, stagger: 70 }); }],
-    [81.0, (i) => { $('#pu-young').classList.add('in'); $$('#pu-young .yo-item').forEach((it) => it.classList.add('in')); }],
-    [85.02, (i) => { $('#pu-young').classList.remove('in'); $$('#pu-young .yo-item').forEach((it) => it.classList.remove('in')); $('#pu-by').classList.add('in'); puShe3.writeOn({ instant: i, stagger: 70 }); gridKick(i); }], // fade the lightbulb compare, bring up the author byline
+    [78.34, (i) => { enter('#sc-punch2', 'zoom-in', 1050, i); puShe2.writeOn({ instant: i, stagger: 70 }); }],
+    [79.42, (i) => { $('#pu-young').classList.add('in'); $$('#pu-young .yo-item').forEach((it) => it.classList.add('in')); }],
+    [82.88, (i) => { $('#pu-young').classList.remove('in'); $$('#pu-young .yo-item').forEach((it) => it.classList.remove('in')); $('#pu-by').classList.add('in'); puShe3.writeOn({ instant: i, stagger: 70 }); gridKick(i); }], // fade the lightbulb compare, bring up the author byline
 
     // ---- OUTRO ----
-    [86.22, (i) => { enter('#sc-outro', 'zoom-out', 1100, i); outroAssemble(); }],
+    [84.14, (i) => { enter('#sc-outro', 'zoom-out', 1100, i); outroAssemble(); }],
   ];
 
   // ============================================================
@@ -355,29 +330,28 @@
   //       pop per word/object click)
   // ============================================================
   const SFX = [
-    [1.76, 'pop', 0.45],
-    [5.38, 'pop', 0.4],
-    [8.02, 'pop', 0.45],
-    [14.7, 'pop', 0.45],
-    [21.42, 'swoosh', 0.5],
-    [26.3, 'pop', 0.45], [26.45, 'pop', 0.45],
-    [28.34, 'swoosh', 0.5],
-    [33.62, 'pop', 0.45],
-    [36.78, 'swoosh', 0.5],
-    [39.36, 'pop', 0.5],
-    [43.22, 'pop', 0.45],
-    [45.9, 'swoosh', 0.5],
-    [47.7, 'pop', 0.5],
-    [50.4, 'pop', 0.55],
-    [55.72, 'pop', 0.45],
-    [64.32, 'pop', 0.45],
-    [67.46, 'pop', 0.4],
-    [70.46, 'swoosh', 0.5],
-    [71.94, 'pop', 0.45],
-    [78.62, 'pop', 0.4], [78.9, 'pop', 0.4], [79.2, 'pop', 0.4],
-    [80.26, 'swoosh', 0.5],
-    [85.02, 'pop', 0.5],
-    [86.22, 'swoosh', 0.55],
+    [3.14, 'pop', 0.5],
+    [5.98, 'pop', 0.5],
+    [12.48, 'pop', 0.45], [12.98, 'pop', 0.45], [13.62, 'pop', 0.45],
+    [16.36, 'swoosh', 0.5],
+    [16.5, 'pop', 0.4], [16.63, 'pop', 0.4], [16.76, 'pop', 0.4],
+    [19.48, 'pop', 0.42], [19.61, 'pop', 0.42], [19.74, 'pop', 0.42],
+    [20.74, 'pop', 0.45],
+    [23.82, 'swoosh', 0.5],
+    [31.46, 'swoosh', 0.5],
+    [34.0, 'pop', 0.5],
+    [39.96, 'pop', 0.45],
+    [43.12, 'swoosh', 0.5],
+    [44.36, 'pop', 0.5],
+    [47.38, 'pop', 0.55],
+    [53.1, 'pop', 0.45],
+    [62.34, 'pop', 0.45],
+    [65.34, 'pop', 0.4],
+    [68.38, 'swoosh', 0.5],
+    [76.74, 'pop', 0.4], [77.0, 'pop', 0.4], [77.3, 'pop', 0.4],
+    [78.34, 'swoosh', 0.5],
+    [82.88, 'pop', 0.5],
+    [84.14, 'swoosh', 0.55],
   ];
   window.SFX = SFX;
   const SND = { swoosh: 'assets/sound/swoosh.ogg', pop: 'assets/sound/pop.wav', ticking: 'assets/sound/tickingtimeline.mp3' };
@@ -399,13 +373,15 @@
     ALLG.forEach((g) => g.reset());
     TEALG.forEach((g) => g.teal(true));
     // intro
-    $('#in-woman').classList.remove('in'); $('#in-conn').classList.remove('in'); $('#in-say').classList.remove('in');
-    $('#in-newcell').classList.remove('in'); $('#in-brush').classList.remove('in', 'write');
-    $('#in-py').classList.remove('in', 'pulse');
+    $('#in-cell').classList.remove('in'); $('#in-poet').classList.remove('in'); $('#in-py').classList.remove('in', 'pulse');
+    $$('#in-trio .ti').forEach((t) => t.classList.remove('in'));
+    $$('#in-arrows .ta').forEach((a) => a.classList.remove('in'));
     // pressure
-    $('#pr-novel').classList.remove('in'); $('#pr-cell').classList.remove('in'); $('#pr-newcell').classList.remove('in');
-    $('#pr-clash').classList.remove('in'); $('#pl-he').classList.remove('in'); $('#pl-she').classList.remove('in');
-    $('#nv-he').classList.remove('lit'); $('#nv-she').classList.remove('lit');
+    $$('#pr-western .book, #pr-chinese .book').forEach((b) => b.classList.remove('in'));
+    $('#pr-trans').classList.remove('in');
+    $('#pr-he-tag').classList.remove('in'); $('#pr-she-tag').classList.remove('in');
+    $('#pr-cell').classList.remove('in'); $('#pr-clash').classList.remove('in');
+    $('#pl-he').classList.remove('in'); $('#pl-she').classList.remove('in');
     // invention
     $('#iv-liu').classList.remove('in', 'dock'); $('#iv-box').classList.remove('in', 'lift');
     $('#iv-lbl-woman').classList.remove('in');

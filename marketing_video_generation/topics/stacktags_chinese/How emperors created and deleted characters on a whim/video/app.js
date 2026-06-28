@@ -132,9 +132,6 @@
   // ---- glyph instances ----
   const hkDel = makeHanzi('#hk-del', '字', { size: 260 });   // hook: a character, deleted
   const hkNew = makeHanzi('#hk-new', '日', { size: 260 });   // hook: a new character, minted
-  const hkT1a = makeHanzi('#hk-t1g', '觀', { size: 118 });   // teaser: 觀音 (goddess)
-  const hkT1b = makeHanzi('#hk-t1g', '音', { size: 118 });
-  hkT1a.teal(true); hkT1b.teal(true);
   const ruleWord = wordHanzi([['#rule-w0', '避'], ['#rule-w1', '讳']], 150);
   const ruleSample = makeHanzi('#rule-sample', '字', { size: 190 });
   const coEmp = wordHanzi([['#co-e0', '李'], ['#co-e1', '世'], ['#co-e2', '民']], 130);   // emperor's name (keeps 世)
@@ -143,8 +140,7 @@
   const zhSun = makeHanzi('#zh-sun', '日', { size: 150 });
   const zhMoon = makeHanzi('#zh-moon', '月', { size: 150 });
   const zhSky = makeHanzi('#zh-sky', '空', { size: 150 });
-  const puDel = makeHanzi('#pu-delg', '世', { size: 170 });
-  const puGy = wordHanzi([['#pu-gy0', '觀'], ['#pu-gy1', '音']], 130); puGy.teal(true);
+  const puGy = wordHanzi([['#pu-gy0', '觀'], ['#pu-gy1', '音']], 140); puGy.teal(true);
 
   // ---- OUTRO ----
   const outroLogo = $('#outro-logo');
@@ -230,117 +226,104 @@
   }
   const SUBS = [
     [0.0, 'In imperial China, a ruler could <b>delete</b> a word from the language —'],
-    [3.64, 'or <b>invent</b> a brand-new one — just by <b>decree</b>.'],
-    [6.98, "One emperor's name quietly <b>renamed</b> China's most beloved <b>goddess</b> forever."],
-    [10.78, 'And an <b>empress</b> designed a character for herself that still exists today.'],
-    [14.56, 'For centuries, there was a strict rule called the <b>naming taboo</b> —'],
-    [18.28, '<b>避讳</b>, bìhuì.'],
-    [18.96, 'You were not allowed to write the characters'],
-    [20.58, "that appeared in the emperor's <b>personal name</b>."],
-    [22.68, 'Out of respect, they had to be <b>avoided</b>, <b>swapped</b>,'],
-    [25.38, 'or left with a <b>missing stroke</b>.'],
-    [26.58, "The emperor's name literally <b>edited the language</b>."],
-    [30.0, 'Take the most famous case.'],
-    [31.64, 'The Tang emperor <b>Taizong</b> was named Li Shimin — <b>李世民</b> —'],
-    [34.1, 'and his name contained the character <b>世</b>, shì.'],
-    [36.18, 'Now, there was a hugely beloved figure of Buddhist <b>mercy</b>,'],
-    [39.8, 'called <b>觀世音</b> — Guanshiyin.'],
-    [41.16, 'But her name contained that <b>forbidden 世</b>.'],
-    [43.6, 'So it was <b>dropped</b>.'],
-    [45.04, '觀世音 became <b>觀音</b> — Guanyin.'],
-    [47.06, 'And the shortened name <b>stuck</b>.'],
-    [48.98, 'To this day, the goddess of mercy worshipped across China'],
-    [51.94, 'is called <b>Guanyin</b> —'],
-    [53.58, "renamed, essentially, by an emperor's name,"],
-    [55.94, 'over a <b>thousand years</b> ago.'],
-    [57.74, 'And it ran the <b>other way</b>, too —'],
-    [59.4, 'rulers could <b>invent</b> characters.'],
-    [60.98, 'The boldest case: <b>Wu Zetian</b>,'],
-    [63.16, 'the only woman ever to rule China as <b>emperor</b> in her own right.'],
-    [66.26, 'She created a whole set of <b>brand-new characters</b>.'],
-    [68.72, 'The most famous was her own name:'],
-    [70.54, '<b>曌</b>, zhào —'],
-    [71.34, 'built from the characters for <b>sun</b> and <b>moon</b>,'],
-    [73.42, 'shining over the <b>sky</b>.'],
-    [75.02, '"Sun and moon in the <b>heavens</b>."'],
-    [76.44, 'A character she designed, <b>for herself</b>.'],
-    [78.92, 'Most of her inventions <b>vanished</b> after she died —'],
-    [81.34, 'but the idea behind them was very <b>real</b>:'],
-    [83.3, "the writing itself was the <b>ruler's to shape</b>."],
-    [86.2, 'We tend to think a language <b>belongs to its people</b>.'],
-    [88.74, 'For much of Chinese history, it also belonged'],
-    [90.62, 'to whoever sat on the <b>throne</b> —'],
-    [92.48, 'someone who could <b>erase</b> a character,'],
-    [94.22, 'or <b>mint</b> one, with a word.'],
-    [96.6, 'And sometimes, like with <b>Guanyin</b>,'],
-    [98.78, "that royal edit is still on everyone's <b>lips</b>,"],
-    [101.22, 'a <b>thousand years</b> later.'],
-    [102.76, 'Wanna actually start learning <b>Chinese</b>?'],
-    [104.74, 'Discover thousands of <b>free</b> exercises'],
-    [106.86, 'and more learning content on <b>stacktags.io</b>.'],
+    [3.2, 'or <b>invent</b> a brand-new one — just by <b>decree</b>.'],
+    [5.96, 'For centuries, there was a strict rule called the <b>naming taboo</b> —'],
+    [8.84, '<b>避讳</b>, bìhuì.'],
+    [9.74, 'You were not allowed to write the characters'],
+    [11.74, "that appeared in the emperor's <b>personal name</b>."],
+    [13.56, 'Out of respect, they had to be <b>avoided</b>, <b>swapped</b>,'],
+    [16.1, 'or left with a <b>missing stroke</b>.'],
+    [17.78, "The emperor's name literally <b>edited the language</b>."],
+    [20.14, 'Take the most famous case.'],
+    [21.78, 'The Tang emperor <b>Taizong</b> was named Li Shimin — <b>李世民</b> —'],
+    [24.34, 'and his name contained the character <b>世</b>, shì.'],
+    [26.66, 'Now, there was a hugely beloved figure of Buddhist <b>mercy</b>,'],
+    [29.3, 'called <b>觀世音</b> — Guanshiyin.'],
+    [30.5, 'But her name contained that <b>forbidden 世</b>.'],
+    [32.38, 'So it was <b>dropped</b>.'],
+    [33.62, '觀世音 became <b>觀音</b> — Guanyin.'],
+    [35.44, 'And the shortened name <b>stuck</b>.'],
+    [37.5, 'To this day, the goddess of mercy worshipped across China'],
+    [40.54, 'is called <b>Guanyin</b> —'],
+    [41.54, "renamed, essentially, by an emperor's name,"],
+    [43.74, 'over a <b>thousand years</b> ago.'],
+    [45.16, 'And it ran the <b>other way</b>, too —'],
+    [46.98, 'rulers could <b>invent</b> characters.'],
+    [48.58, 'You might wonder: there was a <b>female emperor</b>?'],
+    [50.62, "Yes — and it was the only one in China's"],
+    [52.56, '<b>five-thousand-year</b> history of dynasties:'],
+    [54.74, '<b>Wu Zetian</b>.'],
+    [55.94, 'And as women are creative in design,'],
+    [57.68, 'she used her powers to invent a <b>whole set of new characters</b>.'],
+    [60.48, 'The most famous was her own name:'],
+    [62.44, '<b>曌</b>, zhào —'],
+    [62.94, 'built from the characters for <b>sun</b> and <b>moon</b>,'],
+    [65.5, 'shining over the <b>sky</b>.'],
+    [67.1, '"Sun and moon in the <b>heavens</b>."'],
+    [68.6, 'A character she designed, <b>for herself</b>.'],
+    [71.14, 'Most of her inventions <b>vanished</b> after she died —'],
+    [73.36, 'but the idea behind them was very <b>real</b>:'],
+    [75.54, "the writing itself was the <b>ruler's to shape</b>."],
+    [77.68, 'And sometimes, like with <b>Guanyin</b>,'],
+    [79.78, "that royal edit is still on everyone's <b>lips</b>,"],
+    [82.04, 'a <b>thousand years</b> later.'],
+    [83.06, 'Wanna actually start learning <b>Chinese</b>?'],
+    [85.58, 'Discover thousands of <b>free</b> exercises'],
+    [87.56, 'and more learning content on <b>stacktags.io</b>.'],
   ];
 
   // ============================================================
   // CUES — keyed to whisper word timings
   // ============================================================
   const CUES = [
-    // ---- HOOK: seal deletes 字, then mints 日; two teasers ----
+    // ---- HOOK: seal deletes 字, then mints 日 ----
     [0.0, (i) => { enter('#sc-hook', 'fade', 650, i); $('#hk-seal').classList.add('in'); if (i) hkDel.full(); else hkDel.writeOn({ stagger: 60, delay: 200 }); }],
-    [1.84, (i) => { sealJab('#hk-seal', i); gridKick(i); if (i) hkDel.shedAll({ instant: true }); else onImpact(i, () => hkDel.shedAll({ stagger: 60 })); }],
-    [3.96, (i) => { sealJab('#hk-seal', i); if (i) hkNew.full(); else onImpact(i, () => hkNew.writeOn({ stagger: 80 })); }],
-    [6.98, (i) => { $('#hk-t1').classList.add('in'); hkT1a.full(); hkT1b.full(); $('#hk-cell').classList.add('out'); $('#hk-seal').classList.remove('in'); }],
-    [10.78, (i) => { $('#hk-t2').classList.add('in'); }],
+    [1.68, (i) => { sealJab('#hk-seal', i); gridKick(i); if (i) hkDel.shedAll({ instant: true }); else onImpact(i, () => hkDel.shedAll({ stagger: 60 })); }],
+    [3.34, (i) => { sealJab('#hk-seal', i); if (i) hkNew.full(); else onImpact(i, () => hkNew.writeOn({ stagger: 80 })); }],
 
     // ---- RULE: 避讳 + the missing-stroke demo ----
-    [14.56, (i) => { enter('#sc-rule', 'zoom-out', 1100, i); }],
-    [16.72, (i) => { $('#rule-word').classList.add('in'); ruleWord.writeOn({ instant: i, perGlyph: 240, stagger: 60 }); }],
-    [17.06, (i) => { $('#rule-gloss').classList.add('in'); }],
-    [18.28, (i) => { $('#rule-py').classList.add('in'); }],
-    [18.96, (i) => { $('#rule-cell').classList.add('in'); $('#rule-seal').classList.add('in'); ruleSample.writeOn({ instant: i, stagger: 55 }); }],
-    [26.2, (i) => { sealJab('#rule-seal', i); gridKick(i); if (i) ruleSample.shed([ruleSample.N - 1], { instant: true }); else onImpact(i, () => ruleSample.shed([ruleSample.N - 1])); }],
-    [27.2, (i) => { sealJab('#rule-seal', i); gridKick(i); }],
+    [5.96, (i) => { enter('#sc-rule', 'zoom-out', 1100, i); }],
+    [7.72, (i) => { $('#rule-word').classList.add('in'); ruleWord.writeOn({ instant: i, perGlyph: 240, stagger: 60 }); $('#rule-gloss').classList.add('in'); }],
+    [8.84, (i) => { $('#rule-py').classList.add('in'); }],
+    [9.74, (i) => { $('#rule-cell').classList.add('in'); $('#rule-seal').classList.add('in'); ruleSample.writeOn({ instant: i, stagger: 55 }); }],
+    [16.9, (i) => { sealJab('#rule-seal', i); gridKick(i); if (i) ruleSample.shed([ruleSample.N - 1], { instant: true }); else onImpact(i, () => ruleSample.shed([ruleSample.N - 1])); }],
+    [17.78, (i) => { sealJab('#rule-seal', i); gridKick(i); }],
 
-    // ---- COLLISION: emperor (top) & goddess (bottom) share 世; his claim
-    //      travels down the link and forces her 世 out → 觀音 ----
-    [30.0, (i) => { enter('#sc-collide', 'drop', 1050, i); $('#co-emp').classList.add('in'); }],
-    [31.64, (i) => { $('#co-empcap').classList.add('in'); }],
-    [33.0, (i) => { $('#co-empname').classList.add('in'); coEmp.writeOn({ instant: i, perGlyph: 215, stagger: 60 }); }],
-    [35.06, (i) => { coEmp.glyphs[1].teal(true); }],   // his 世 — claimed by the throne
-    [36.18, (i) => { $('#co-god').classList.add('in'); }],
-    [39.86, (i) => { $('#co-godname').classList.add('in'); coGod.writeOn({ instant: i, perGlyph: 215, stagger: 60 }); $('#co-py').classList.add('in'); $('#co-gloss').classList.add('in'); }],
-    [40.9, (i) => { $('#co-link').classList.add('in'); coGod.glyphs[1].teal(true); }],   // the SAME 世 in both names → link
-    [42.32, (i) => { const l = $('#co-link'); l.classList.add('charge'); if (!i) { l.classList.remove('charge'); void l.offsetWidth; l.classList.add('charge'); } gridKick(i); }],
-    [44.14, (i) => { coGod.glyphs[1].shedAll({ instant: i, stagger: 45 }); $('#co-link').classList.remove('in', 'charge'); gridKick(i); }],
-    [45.7, (i) => { $('#co-g1s').classList.add('collapsed'); }],
-    [46.12, (i) => { $('#co-py').textContent = 'Guānyīn'; }],
-    [50.1, (i) => { $('#co-god').classList.add('big'); }],   // the statue — still worshipped today
+    // ---- TAIZONG + example words; 觀世音→觀音 is the LAST example ----
+    [20.14, (i) => { enter('#sc-collide', 'drop', 1050, i); $('#co-emp').classList.add('in'); }],
+    [21.78, (i) => { $('#co-empcap').classList.add('in'); }],
+    [23.44, (i) => { $('#co-empname').classList.add('in'); coEmp.writeOn({ instant: i, perGlyph: 215, stagger: 60 }); }],
+    [24.34, (i) => { ['#co-ex0', '#co-ex1', '#co-ex2'].forEach((s, k) => { const e = $(s); if (i) e.classList.add('in'); else setTimeout(() => e.classList.add('in'), k * 230); }); }],
+    [25.66, (i) => { coEmp.glyphs[1].teal(true); }],   // the 世 in the emperor's name lights up
+    [26.66, (i) => { $('#co-god').classList.add('in'); }],
+    [29.3, (i) => { $('#co-godname').classList.add('in'); coGod.writeOn({ instant: i, perGlyph: 215, stagger: 60 }); $('#co-py').classList.add('in'); $('#co-gloss').classList.add('in'); }],
+    [31.86, (i) => { coGod.glyphs[1].teal(true); gridKick(i); }],   // the forbidden 世
+    [32.76, (i) => { coGod.glyphs[1].shedAll({ instant: i, stagger: 45 }); gridKick(i); }],   // dropped
+    [34.16, (i) => { $('#co-g1s').classList.add('collapsed'); }],   // 觀 + 音 close up
+    [34.8, (i) => { $('#co-py').textContent = 'Guānyīn'; }],
+    [38.56, (i) => { $('#co-god').classList.add('big'); }],   // the statue — still worshipped today
 
-    // ---- WU ZETIAN: the empress who minted her own name (real portrait) ----
-    [57.74, (i) => { enter('#sc-wuzetian', 'pan-right', 1100, i); }],
-    [59.4, (i) => { gridKick(i); }],
-    [60.98, (i) => { $('#wz-fig').classList.add('in'); }],
-    [62.3, (i) => { $('#wz-name').classList.add('in'); wzName.writeOn({ instant: i, perGlyph: 220, stagger: 60 }); }],
+    // ---- WU ZETIAN: humour beat — the only female emperor (real portrait) ----
+    [45.16, (i) => { enter('#sc-wuzetian', 'pan-right', 1100, i); }],
+    [46.98, (i) => { $('#wz-fig').classList.add('in'); }],
+    [54.74, (i) => { $('#wz-name').classList.add('in'); wzName.writeOn({ instant: i, perGlyph: 220, stagger: 60 }); gridKick(i); }],
 
-    // ---- 曌 ASSEMBLY: 日 + 月 over 空 → 曌 ----
-    [68.72, (i) => { enter('#sc-zhao', 'zoom-in', 1050, i); }],
-    [72.08, (i) => { $('#zh-sun-wrap').classList.add('lit'); zhSun.writeOn({ instant: i, stagger: 70 }); }],
-    [72.66, (i) => { $('#zh-moon-wrap').classList.add('lit'); zhMoon.writeOn({ instant: i, stagger: 70 }); }],
-    [74.02, (i) => { $('#zh-sky-wrap').classList.add('lit'); zhSky.writeOn({ instant: i, stagger: 70 }); }],
-    [75.02, (i) => { $('#zh-asm').classList.add('merge'); $('#zh-final').classList.add('in'); $('#zh-py').classList.add('in'); $('#zh-gloss').classList.add('in'); gridKick(i); }],
-    [76.44, (i) => { sealJab('#zh-seal', i); gridKick(i); }],
-    [78.92, (i) => { ['#zo0', '#zo1', '#zo2'].forEach((s, k) => { const e = $(s); if (i) e.classList.add('in'); else setTimeout(() => e.classList.add('in'), k * 130); }); }],
-    [80.64, (i) => { ['#zo0', '#zo1', '#zo2'].forEach((s, k) => { const e = $(s); e.classList.add('in'); if (i) e.classList.add('gone'); else setTimeout(() => e.classList.add('gone'), k * 130); }); }],
+    // ---- 曌: her "whole set" pops up (top, stays), 曌 built below, then the set vanishes ----
+    [57.68, (i) => { enter('#sc-zhao', 'zoom-in', 1050, i); ['#ziv0', '#ziv1', '#ziv2', '#ziv3'].forEach((s, k) => { const e = $(s); if (i) e.classList.add('in'); else setTimeout(() => e.classList.add('in'), 350 + k * 190); }); }],
+    [64.12, (i) => { $('#zh-sun-wrap').classList.add('lit'); zhSun.writeOn({ instant: i, stagger: 70 }); }],
+    [64.68, (i) => { $('#zh-moon-wrap').classList.add('lit'); zhMoon.writeOn({ instant: i, stagger: 70 }); }],
+    [66.12, (i) => { $('#zh-sky-wrap').classList.add('lit'); zhSky.writeOn({ instant: i, stagger: 70 }); }],
+    [67.1, (i) => { $('#zh-asm').classList.add('merge'); $('#zh-final').classList.add('in'); $('#zh-py').classList.add('in'); $('#zh-gloss').classList.add('in'); gridKick(i); }],
+    [68.6, (i) => { sealJab('#zh-seal', i); gridKick(i); }],
+    [71.14, (i) => { ['#ziv0', '#ziv1', '#ziv2', '#ziv3'].forEach((s, k) => { const e = $(s); e.classList.add('in'); if (i) e.classList.add('gone'); else setTimeout(() => e.classList.add('gone'), k * 110); }); gridKick(i); }],
 
-    // ---- PUNCHLINE: throne erases (世) / mints (曌); Guanyin endures ----
-    [86.2, (i) => { enter('#sc-punchline', 'zoom-out', 1100, i); $('#pu-seal').classList.add('in'); }],
-    [88.74, (i) => { $('#pu-del').classList.add('in'); puDel.writeOn({ instant: i, stagger: 55 }); $('#pu-mint').classList.add('in'); }],
-    [93.12, (i) => { $('#pu-del').classList.add('erased'); if (!i) puDel.shedAll({ stagger: 50 }); else puDel.shedAll({ instant: true }); gridKick(i); }],
-    [94.4, (i) => { $('#pu-mint').classList.add('minted'); }],
-    [97.92, (i) => { $('#pu-statue').classList.add('in'); $('#pu-guanyin').classList.add('in'); puGy.writeOn({ instant: i, perGlyph: 200, stagger: 55 }); $('#pu-py').classList.add('in'); $('#pu-seal').classList.add('hide'); $('#pu-mint').classList.add('hide'); $('#pu-del').classList.add('hide'); if (!i) { const g = $('#pu-guanyin'); g.classList.remove('pulse'); void g.offsetWidth; g.classList.add('pulse'); } }],
-    [101.22, (i) => { if (!i) { const g = $('#pu-guanyin'); g.classList.remove('pulse'); void g.offsetWidth; g.classList.add('pulse'); } }],
+    // ---- PUNCHLINE: the enduring Guanyin (statue + 觀音) ----
+    [77.68, (i) => { enter('#sc-punchline', 'zoom-out', 1100, i); $('#pu-statue').classList.add('in'); }],
+    [78.92, (i) => { $('#pu-guanyin').classList.add('in'); puGy.writeOn({ instant: i, perGlyph: 200, stagger: 55 }); $('#pu-py').classList.add('in'); }],
+    [79.78, (i) => { $('#pu-statue').classList.add('big'); if (!i) { const g = $('#pu-guanyin'); g.classList.remove('pulse'); void g.offsetWidth; g.classList.add('pulse'); } }],
 
     // ---- OUTRO ----
-    [102.76, (i) => { enter('#sc-outro', 'zoom-in', 1050, i); outroAssemble(); }],
+    [83.06, (i) => { enter('#sc-outro', 'zoom-in', 1050, i); outroAssemble(); }],
   ];
 
   // ============================================================
@@ -348,16 +331,14 @@
   //       pop per character/object appearing)
   // ============================================================
   const SFX = [
-    [1.84, 'swoosh', 0.5], [3.96, 'pop', 0.5],
-    [6.98, 'pop', 0.5], [10.78, 'pop', 0.5],
-    [14.56, 'swoosh', 0.5], [16.72, 'pop', 0.5], [26.2, 'pop', 0.45], [27.2, 'swoosh', 0.5],
-    [30.0, 'swoosh', 0.5], [33.0, 'pop', 0.5], [35.7, 'swoosh', 0.55],
-    [39.28, 'swoosh', 0.5], [39.86, 'pop', 0.5], [44.14, 'swoosh', 0.5], [46.12, 'pop', 0.45],
-    [57.74, 'swoosh', 0.5], [59.4, 'swoosh', 0.55], [62.3, 'pop', 0.5], [63.16, 'pop', 0.45],
-    [68.72, 'swoosh', 0.5], [72.08, 'pop', 0.5], [72.66, 'pop', 0.5], [74.02, 'pop', 0.5],
-    [75.02, 'swoosh', 0.55], [76.44, 'swoosh', 0.55], [78.92, 'pop', 0.45], [80.64, 'swoosh', 0.5],
-    [86.2, 'swoosh', 0.5], [93.12, 'swoosh', 0.5], [94.4, 'pop', 0.5], [97.92, 'pop', 0.5],
-    [102.76, 'swoosh', 0.55],
+    [1.68, 'swoosh', 0.5], [3.34, 'pop', 0.5],
+    [5.96, 'swoosh', 0.5], [7.72, 'pop', 0.5], [16.9, 'pop', 0.45], [17.78, 'swoosh', 0.5],
+    [20.14, 'swoosh', 0.5], [23.44, 'pop', 0.5], [24.34, 'pop', 0.4], [29.3, 'pop', 0.5], [32.76, 'swoosh', 0.5], [34.16, 'pop', 0.45],
+    [45.16, 'swoosh', 0.5], [46.98, 'pop', 0.45], [54.74, 'pop', 0.5],
+    [57.68, 'swoosh', 0.5], [58.05, 'pop', 0.4], [64.12, 'pop', 0.5], [64.68, 'pop', 0.5], [66.12, 'pop', 0.5],
+    [67.1, 'swoosh', 0.55], [68.6, 'swoosh', 0.55], [71.14, 'swoosh', 0.5],
+    [77.68, 'swoosh', 0.5], [78.92, 'pop', 0.5],
+    [83.06, 'swoosh', 0.55],
   ];
   window.SFX = SFX;
   const SND = { swoosh: 'assets/sound/swoosh.ogg', pop: 'assets/sound/pop.wav', ticking: 'assets/sound/tickingtimeline.mp3' };
@@ -373,26 +354,27 @@
     SCENES.forEach((el) => setPose(el, { tx: 0, ty: 0, s: 1, op: 0, blur: 0, z: 0 }));
     current = null;
     gcam.s = 1; gcam.x = 0; gcam.y = 0; gdisp.s = 1; gdisp.x = 0; gdisp.y = 0;
-    [hkDel, hkNew, hkT1a, hkT1b, ruleWord, ruleSample, coEmp, coGod, wzName, zhSun, zhMoon, zhSky, puDel, puGy].forEach((g) => g.reset());
-    hkT1a.teal(true); hkT1b.teal(true); puGy.teal(true);
+    [hkDel, hkNew, ruleWord, ruleSample, coEmp, coGod, wzName, zhSun, zhMoon, zhSky, puGy].forEach((g) => g.reset());
+    puGy.teal(true);
     // seals
     document.querySelectorAll('.seal').forEach((el) => el.classList.remove('in', 'jab', 'dim'));
     // hook
-    $('#hk-t1').classList.remove('in'); $('#hk-t2').classList.remove('in'); $('#hk-cell').classList.remove('out');
+    $('#hk-cell').classList.remove('out');
     // rule
     $('#rule-word').classList.remove('in'); $('#rule-py').classList.remove('in'); $('#rule-gloss').classList.remove('in'); $('#rule-cell').classList.remove('in');
-    // collision (emperor + goddess share 世)
+    // taizong + example words; 觀世音→觀音
     $('#co-emp').classList.remove('in'); $('#co-empname').classList.remove('in'); $('#co-empcap').classList.remove('in');
+    ['#co-ex0', '#co-ex1', '#co-ex2'].forEach((s) => $(s).classList.remove('in', 'fade'));
     $('#co-godname').classList.remove('in'); $('#co-py').classList.remove('in'); $('#co-py').textContent = 'Guānshìyīn'; $('#co-gloss').classList.remove('in');
-    $('#co-g1s').classList.remove('collapsed'); $('#co-god').classList.remove('in', 'big'); $('#co-link').classList.remove('in', 'charge');
+    $('#co-g1s').classList.remove('collapsed'); $('#co-god').classList.remove('in', 'big');
     // wu zetian
     $('#wz-fig').classList.remove('in'); $('#wz-name').classList.remove('in');
     // zhao
     $('#zh-asm').classList.remove('merge'); $('#zh-final').classList.remove('in'); $('#zh-py').classList.remove('in'); $('#zh-gloss').classList.remove('in');
     document.querySelectorAll('.asm-part').forEach((el) => el.classList.remove('lit'));
-    ['#zo0', '#zo1', '#zo2'].forEach((s) => $(s).classList.remove('in', 'gone'));
+    ['#ziv0', '#ziv1', '#ziv2', '#ziv3'].forEach((s) => $(s).classList.remove('in', 'gone'));
     // punchline
-    $('#pu-del').classList.remove('in', 'erased', 'hide'); $('#pu-mint').classList.remove('in', 'minted', 'dim', 'hide'); $('#pu-seal').classList.remove('hide'); $('#pu-statue').classList.remove('in'); $('#pu-guanyin').classList.remove('in', 'pulse'); $('#pu-py').classList.remove('in');
+    $('#pu-statue').classList.remove('in', 'big'); $('#pu-guanyin').classList.remove('in', 'pulse'); $('#pu-py').classList.remove('in');
     // outro
     $('#outro-ec').classList.remove('play');
     subsLine.classList.remove('in');

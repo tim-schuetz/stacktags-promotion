@@ -94,7 +94,7 @@
 
   // ---- DRIFT lines (frozen grey vs living teal) ----
   const dlLeft = $('#dl-left'), dlRight = $('#dl-right');
-  function linesDraw(instant) { [dlLeft, dlRight].forEach((L) => { L.style.transition = instant ? 'none' : 'transform 1.2s cubic-bezier(.4,0,.2,1)'; L.style.transform = 'scaleY(1)'; }); }
+  function drawLine(L, instant) { L.style.transition = instant ? 'none' : 'transform 1.2s cubic-bezier(.4,0,.2,1)'; L.style.transform = 'scaleY(1)'; }
   function linesReset() { [dlLeft, dlRight].forEach((L) => { L.style.transition = 'none'; L.style.transform = 'scaleY(0)'; }); }
   function pulse(sel) { const e = $(sel); if (!e) return; e.classList.remove('d-pulse'); void e.offsetWidth; e.classList.add('d-pulse'); }
 
@@ -182,50 +182,52 @@
     setTimeout(() => { subsLine.innerHTML = html; subsLine.classList.add('in'); }, 140);
   }
   const SUBS = [
-    [0.0, 'For most of its history, China wrote in a language that <b>nobody</b> actually spoke —'],
-    [4.0, "and hadn't spoken for well over a <b>thousand years</b>."],
-    [6.62, "You'd <b>speak</b> one kind of Chinese…"],
-    [8.42, 'and <b>write</b> a completely different one.'],
-    [10.32, 'Until about a century ago, written Chinese was <b>文言文</b> —'],
-    [13.78, 'Classical, or Literary, Chinese.'],
-    [16.22, 'It was based on the language of the ancient classics,'],
-    [18.36, 'from over <b>two thousand years</b> ago.'],
-    [20.1, 'And it basically <b>froze</b> there.'],
-    [22.0, 'Meanwhile, spoken Chinese kept <b>evolving</b>,'],
-    [24.74, 'century after century.'],
-    [26.0, 'So the written language and the spoken language'],
-    [27.82, '<b>drifted</b> further and further apart —'],
-    [30.0, 'until they were effectively <b>two different languages</b>.'],
-    [32.28, 'You spoke everyday Chinese — <b>白话</b>, "plain speech" —'],
-    [35.56, 'but to write, you had to use this ancient, compressed,'],
-    [38.6, '<b>classical</b> form almost no one actually spoke.'],
-    [41.72, 'Linguists have a name for this:'],
-    [43.28, '<b>diglossia</b> —'],
-    [44.38, 'one language for the <b>street</b>,'],
-    [45.9, 'another for the <b>page</b>.'],
-    [47.18, "And being literate didn't just mean knowing the characters."],
-    [50.54, 'It meant mastering a <b>near-dead language</b> on top of your own.'],
-    [53.5, 'Which made reading and writing <b>brutally hard</b>,'],
-    [55.8, 'and kept them <b>locked</b> to a small, scholarly <b>elite</b>.'],
-    [58.92, 'Everyday speech simply wasn\'t considered <b>"proper"</b> to write down.'],
-    [62.54, 'Then, starting around <b>1917</b>,'],
-    [64.96, 'a scholar named <b>Hu Shi</b> led a movement'],
-    [66.9, 'with a <b>radical idea</b>:'],
-    [68.16, 'write the way you actually <b>speak</b>.'],
-    [70.08, 'Use the living, spoken language — <b>baihua</b> —'],
-    [72.88, 'as the <b>written standard</b>.'],
-    [74.22, 'It caught on <b>fast</b>.'],
-    [75.68, 'Within about a <b>decade</b>, the vernacular had replaced'],
-    [77.46, 'classical Chinese in schools and <b>newspapers</b>.'],
-    [80.62, 'So for two thousand years, China wrote in a language'],
-    [82.92, 'that <b>time had left behind</b> —'],
-    [84.7, 'and it took a twentieth-century revolution'],
-    [87.1, 'just to let people <b>write the way they talk</b>.'],
-    [88.88, 'We take it for granted that we write our own language.'],
-    [90.78, "For most of Chinese history, that <b>wasn't even allowed</b>."],
-    [93.44, 'Wanna actually start learning <b>Chinese</b>?'],
-    [95.3, 'Discover thousands of <b>free</b> exercises'],
-    [96.88, 'and more learning content on <b>stacktags.io</b>.'],
+    [0.0, 'For most of its history, China wrote in a language that <b>almost nobody</b> actually spoke.'],
+    [4.94, "You'd <b>say</b> something out loud…"],
+    [6.58, 'and then <b>write</b> it down in a completely different language.'],
+    [9.08, 'Same meaning — but <b>different words</b>, and different grammar.'],
+    [11.92, "Here's how that happened."],
+    [13.38, 'The written language was called <b>文言文</b> — classical Chinese —'],
+    [16.76, 'based on the way people spoke <b>two thousand years ago</b>.'],
+    [20.1, 'Then it basically <b>froze</b>.'],
+    [21.98, 'Scholars kept writing in that same ancient style,'],
+    [23.84, 'century after century.'],
+    [25.36, 'But the <b>spoken</b> language never stopped changing.'],
+    [27.26, 'Take a simple, everyday word — like the word for <b>"you."</b>'],
+    [31.18, 'Over the centuries, the way people <b>said</b> it slowly shifted.'],
+    [34.06, 'But to write it, you still used the <b>ancient form</b>.'],
+    [37.3, 'Do that across the whole language,'],
+    [38.78, 'and the Chinese people spoke and the Chinese they wrote'],
+    [41.2, '<b>drifted</b> into two different worlds —'],
+    [43.3, 'one <b>alive</b> and changing, the other <b>frozen</b> in time.'],
+    [46.5, 'Linguists have a name for this:'],
+    [47.94, '<b>diglossia</b> —'],
+    [49.06, 'one language for <b>talking</b>, another for <b>writing</b>.'],
+    [51.72, 'And it made being literate <b>brutally hard</b>.'],
+    [54.04, "You didn't just have to learn the characters —"],
+    [56.62, 'you had to master a <b>near-dead language</b>'],
+    [58.66, 'on top of the one you already spoke.'],
+    [60.42, 'So reading and writing stayed <b>locked</b> to a small, educated <b>elite</b>.'],
+    [64.04, 'For everyone else, the way they actually talked'],
+    [65.98, "just wasn't considered <b>proper</b> to write down."],
+    [68.14, 'Then, around <b>1917</b>,'],
+    [69.76, 'a scholar named <b>Hu Shi</b> pushed a <b>radical idea</b>:'],
+    [72.48, 'simply <b>write the way you speak</b>.'],
+    [74.4, 'Use the living, spoken language — <b>baihua</b> —'],
+    [77.32, 'as the <b>written standard</b>.'],
+    [78.32, 'And it caught on <b>fast</b>.'],
+    [80.06, 'Within about a <b>decade</b>,'],
+    [81.26, 'schools and <b>newspapers</b> had traded classical Chinese'],
+    [83.88, 'for the language people <b>actually used</b>.'],
+    [85.86, 'So for two thousand years, China wrote in a language'],
+    [88.28, 'that <b>time had left behind</b> —'],
+    [89.88, 'and it took a twentieth-century revolution'],
+    [92.22, 'just to let people <b>write the way they talk</b>.'],
+    [94.12, 'We take it for granted that we write our own language.'],
+    [96.32, "For most of Chinese history, that <b>simply wasn't allowed</b>."],
+    [99.18, 'Wanna actually start learning <b>Chinese</b>?'],
+    [101.12, 'Discover thousands of <b>free</b> exercises'],
+    [103.24, 'and more learning content on <b>stacktags.io</b>.'],
   ];
 
   // ============================================================
@@ -234,67 +236,68 @@
   const CUES = [
     // ---- HOOK ----
     [0.0, (i) => { enter('#sc-hook', 'fade', 650, i); }],
-    [6.84, (i) => { $('#hk-bubble').classList.add('in'); $('#hk-say').classList.add('in'); }],
-    [8.6, (i) => { $('#hk-paper').classList.add('in'); $('#hk-write').classList.add('in'); brushWrite('#hk-brush', i); hkScroll.writeOn({ instant: i, perGlyph: 230, stagger: 70 }); }],
-    [9.5, (i) => { $('#hk-neq').classList.add('in'); gridKick(i); }],
+    [5.14, (i) => { $('#hk-bubble').classList.add('in'); $('#hk-say').classList.add('in'); }],
+    [6.58, (i) => { $('#hk-paper').classList.add('in'); $('#hk-write').classList.add('in'); brushWrite('#hk-brush', i); hkScroll.writeOn({ instant: i, perGlyph: 230, stagger: 70 }); }],
+    [9.88, (i) => { $('#hk-neq').classList.add('in'); gridKick(i); }],
 
-    // ---- DRIFT (one word: written frozen vs spoken evolving) ----
-    [10.32, (i) => { enter('#sc-drift', 'zoom-out', 1100, i); $('#dc-lt').classList.add('in'); $('.dl-left').classList.add('in'); dlt.writeOn({ instant: i, stagger: 70 }); }],
-    [14.5, (i) => { $('#dc-rt').classList.add('in'); $('.dl-right').classList.add('in'); drt.writeOn({ instant: i, stagger: 70 }); }],
-    [16.5, (i) => { linesDraw(i); }],
-    [22.7, (i) => { $('#dc-rm').classList.add('in'); drm.writeOn({ instant: i, stagger: 55 }); }],
-    [27.0, (i) => { $('#dc-rb').classList.add('in'); drb.writeOn({ instant: i, stagger: 60 }); }],
-    [30.3, (i) => { $('#dc-lb').classList.add('in'); dlbO.writeOn({ instant: i, stagger: 60 }); }],
-    [33.86, (i) => { if (!i) { pulse('#dc-rb'); } }],
-    [35.56, (i) => { if (!i) { pulse('#dc-lb'); } }],
+    // ---- DRIFT (one word "you": written frozen vs spoken evolving) ----
+    [11.92, (i) => { enter('#sc-drift', 'zoom-out', 1100, i); }],
+    [13.6, (i) => { $('#dc-lt').classList.add('in'); $('.dl-left').classList.add('in'); dlt.writeOn({ instant: i, stagger: 70 }); }],
+    [16.76, (i) => { $('#dc-rt').classList.add('in'); $('.dl-right').classList.add('in'); drt.writeOn({ instant: i, stagger: 70 }); }],
+    [25.36, (i) => { drawLine(dlLeft, i); drawLine(dlRight, i); }],
+    [31.4, (i) => { $('#dc-rm').classList.add('in'); drm.writeOn({ instant: i, stagger: 55 }); }],
+    [33.4, (i) => { $('#dc-rb').classList.add('in'); drb.writeOn({ instant: i, stagger: 60 }); }],
+    [34.6, (i) => { $('#dc-lb').classList.add('in'); dlbO.writeOn({ instant: i, stagger: 60 }); }],
+    [43.3, (i) => { if (!i) { pulse('#dc-rb'); } }],
+    [44.8, (i) => { if (!i) { pulse('#dc-lb'); } }],
 
     // ---- DIGLOSSIA (street 白话 vs page 文言文) ----
-    [41.72, (i) => { enter('#sc-dig', 'zoom-in', 1050, i); }],
-    [43.28, (i) => { $('#dig-term').classList.add('in'); }],
-    [44.38, (i) => { $('#dig-street').classList.add('in'); $('#dig-split').classList.add('in'); }],
-    [45.9, (i) => { $('#dig-page').classList.add('in'); }],
+    [46.5, (i) => { enter('#sc-dig', 'zoom-in', 1050, i); }],
+    [47.94, (i) => { $('#dig-term').classList.add('in'); }],
+    [49.06, (i) => { $('#dig-street').classList.add('in'); $('#dig-split').classList.add('in'); }],
+    [50.48, (i) => { $('#dig-page').classList.add('in'); }],
 
     // ---- ELITE (a tiny scholarly few above the many) ----
-    [55.8, (i) => { enter('#sc-elite', 'zoom-out', 1100, i); $('#el-top').classList.add('in'); $('#el-divide').classList.add('in'); }],
-    [57.4, (i) => { $('#el-bottom').classList.add('in'); }],
+    [56.62, (i) => { enter('#sc-elite', 'zoom-out', 1100, i); $('#el-top').classList.add('in'); $('#el-divide').classList.add('in'); }],
+    [64.04, (i) => { $('#el-bottom').classList.add('in'); }],
 
     // ---- HU SHI / 1917 ----
-    [62.54, (i) => { enter('#sc-huishi', 'drop', 1050, i); }],
-    [63.8, (i) => { $('#hs-year').classList.add('in'); gridKick(i); }],
-    [65.4, (i) => { $('#hs-name').classList.add('in'); }],
-    [68.16, (i) => { $('#hs-paper').classList.add('in'); brushWrite('#hs-brush', i); hsScroll.writeOn({ instant: i, perGlyph: 260, stagger: 75 }); }],
+    [68.14, (i) => { enter('#sc-huishi', 'drop', 1050, i); }],
+    [68.95, (i) => { $('#hs-year').classList.add('in'); gridKick(i); }],
+    [70.34, (i) => { $('#hs-name').classList.add('in'); }],
+    [72.48, (i) => { $('#hs-paper').classList.add('in'); brushWrite('#hs-brush', i); hsScroll.writeOn({ instant: i, perGlyph: 260, stagger: 75 }); }],
 
     // ---- RECONVERGE (written adopts the living word) ----
-    [72.88, (i) => { enter('#sc-drift', 'zoom-in', 1050, i, () => { dlbO.shedAll({ instant: i, stagger: 50 }); dlbN.writeOn({ instant: i, stagger: 60, delay: 200 }); $('#dlb-py').textContent = 'nǐ'; if (!i) { pulse('#dc-lb'); pulse('#dc-rb'); } }); }],
+    [77.3, (i) => { enter('#sc-drift', 'zoom-in', 1050, i, () => { dlbO.shedAll({ instant: i, stagger: 50 }); dlbN.writeOn({ instant: i, stagger: 60, delay: 200 }); $('#dlb-py').textContent = 'nǐ'; if (!i) { pulse('#dc-lb'); pulse('#dc-rb'); } }); }],
 
     // ---- NEWS: within a decade ----
-    [75.68, (i) => { enter('#sc-news', 'zoom-out', 1100, i); $('#news-decade').classList.add('in'); decadeCount(i); }],
-    [76.84, (i) => { $('#newspaper').classList.add('in'); }],
-    [79.22, (i) => { $('#newspaper').classList.add('modern'); }],
+    [80.06, (i) => { enter('#sc-news', 'zoom-out', 1100, i); $('#news-decade').classList.add('in'); decadeCount(i); }],
+    [81.26, (i) => { $('#newspaper').classList.add('in'); }],
+    [83.6, (i) => { $('#newspaper').classList.add('modern'); }],
 
     // ---- PAYOFF: ≠ → = ----
-    [80.62, (i) => { enter('#sc-payoff', 'zoom-in', 1050, i); $('#pay-bubble').classList.add('in'); $('#pay-paper').classList.add('in'); payOld.writeOn({ instant: true }); $('#pay-rel').textContent = '≠'; $('#pay-rel').classList.add('in'); }],
-    [84.7, (i) => { payOld.shedAll({ instant: i, stagger: 50 }); payNew.writeOn({ instant: i, perGlyph: 200, stagger: 65, delay: 200 }); }],
-    [86.2, (i) => { const r = $('#pay-rel'); r.textContent = '='; r.classList.remove('eq'); if (!i) { void r.offsetWidth; } r.classList.add('eq'); gridKick(i); }],
+    [85.86, (i) => { enter('#sc-payoff', 'zoom-in', 1050, i); $('#pay-bubble').classList.add('in'); $('#pay-paper').classList.add('in'); payOld.writeOn({ instant: true }); $('#pay-rel').textContent = '≠'; $('#pay-rel').classList.add('in'); }],
+    [90.46, (i) => { payOld.shedAll({ instant: i, stagger: 50 }); payNew.writeOn({ instant: i, perGlyph: 200, stagger: 65, delay: 200 }); }],
+    [92.6, (i) => { const r = $('#pay-rel'); r.textContent = '='; r.classList.remove('eq'); if (!i) { void r.offsetWidth; } r.classList.add('eq'); gridKick(i); }],
 
     // ---- OUTRO ----
-    [93.44, (i) => { enter('#sc-outro', 'zoom-out', 1100, i); outroAssemble(); }],
+    [99.18, (i) => { enter('#sc-outro', 'zoom-out', 1100, i); outroAssemble(); }],
   ];
 
   // ============================================================
   // SFX
   // ============================================================
   const SFX = [
-    [6.84, 'pop', 0.5], [8.6, 'pop', 0.4], [9.5, 'swoosh', 0.5],
-    [10.32, 'swoosh', 0.5], [10.5, 'pop', 0.4], [14.5, 'pop', 0.4],
-    [22.7, 'pop', 0.45], [27.0, 'pop', 0.5], [30.3, 'pop', 0.45],
-    [41.72, 'swoosh', 0.5], [43.28, 'pop', 0.5], [44.38, 'pop', 0.45], [45.9, 'pop', 0.45],
-    [55.8, 'swoosh', 0.5], [57.4, 'pop', 0.45],
-    [62.54, 'swoosh', 0.5], [63.8, 'swoosh', 0.55], [65.4, 'pop', 0.45], [68.16, 'pop', 0.45],
-    [72.88, 'swoosh', 0.55],
-    [75.68, 'swoosh', 0.5], [75.78, 'ticking', 0.45], [76.84, 'pop', 0.45], [79.22, 'pop', 0.5],
-    [80.62, 'swoosh', 0.5], [84.7, 'pop', 0.45], [86.2, 'swoosh', 0.55],
-    [93.44, 'swoosh', 0.55],
+    [5.14, 'pop', 0.5], [6.58, 'pop', 0.4], [9.88, 'swoosh', 0.5],
+    [11.92, 'swoosh', 0.5], [13.6, 'pop', 0.45], [16.76, 'pop', 0.45],
+    [31.4, 'pop', 0.45], [33.4, 'pop', 0.5], [34.6, 'pop', 0.45],
+    [46.5, 'swoosh', 0.5], [47.94, 'pop', 0.5], [49.06, 'pop', 0.45], [50.48, 'pop', 0.45],
+    [56.62, 'swoosh', 0.5], [64.04, 'pop', 0.45],
+    [68.14, 'swoosh', 0.5], [68.95, 'swoosh', 0.55], [70.34, 'pop', 0.45], [72.48, 'pop', 0.45],
+    [77.3, 'swoosh', 0.55],
+    [80.06, 'swoosh', 0.5], [80.16, 'ticking', 0.45], [81.26, 'pop', 0.45], [83.6, 'pop', 0.5],
+    [85.86, 'swoosh', 0.5], [90.46, 'pop', 0.45], [92.6, 'swoosh', 0.55],
+    [99.18, 'swoosh', 0.55],
   ];
   window.SFX = SFX;
   const SND = { swoosh: 'assets/sound/swoosh.ogg', pop: 'assets/sound/pop.wav', ticking: 'assets/sound/tickingtimeline.mp3' };

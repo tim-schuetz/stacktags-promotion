@@ -32,43 +32,33 @@ SCRIPT
 
 --- HOOK (0:00–0:12) — the payoff up front ---
 
-[SCENE 1 — the writing cell appears centred on the white grid; 他 writes itself in
-stroke by stroke (makeHanzi writeOn). Three small inline-SVG icons fade in around it —
-a man, a woman, a cat (the "thing") — each with a thin leader line pointing back to the
-SAME single 他.]
+[SCENE 1 — EMPTY white grid for the first ~3s (let the hook land on audio alone). At
+~0:03, on "A single word covered…", the 他 writing-cell FLIES IN from the top and stays
+parked at the top. At ~0:06, on "Then a poet…", a generated period portrait of the poet
+(cut-out, dashed outline) FLIES IN from the top-left and parks to the LEFT of 他.]
 Just a hundred years ago, Chinese had no word for "she." A single word covered he,
-[On "no word for 'she'": the WOMAN icon's leader line ends in an EMPTY cell with a
-blinking turquoise "?" — there is literally no character for her. The man + cat lines
-still land on 他.]
 she, and it. Then a poet sat down and literally built a new one.
-[On "built a new one": a brush nib slides in from the right and just touches the empty
-cell (teaser) — then we transition (grid zoom). swoosh on the camera move.]
 
---- THE OLD WAY (≈0:12–0:36) ---
+--- THE OLD WAY (≈0:09–0:16) ---
 
-[SCENE 2 — 他 centred large, pinyin "tā" appears below it (teach the word). The three
-icons (man / woman / cat) line up in a row beneath, each connected to the one 他.]
+[SCENE 2 — 他 + poet stay at the top; pinyin "tā" appears below 他 (teach the word). On
+"he, she, and it", BELOW them three GENERATED photos pop up in a row — a man (he), the
+woman (she), a cat (it) — each with an ARROW from the one 他 pointing down to it. (Man
+and cat are newly generated; the woman reuses the existing portrait.)]
 For most of its history, Chinese got by with one pronoun — 他, tā — for he, she, and
-it. And spoken, it doesn't matter: tā is tā, no matter who you mean.
-In writing, that one character did the whole job. Nobody felt anything was missing.
-[On "in writing … did the whole job": the speech bubbles fade, leaving only the written
-cell. On "nothing missing": a calm small ✓ next to the cell; it sits content.]
+it. Nobody felt anything was missing.
 
---- THE PRESSURE (≈0:36–0:58) ---
+--- THE PRESSURE (≈0:16–0:31) ---
 
-[SCENE 3 — an HTML-recreated open Western novel page slides in (paper card, soft shadow,
-real English-looking lines) with "he said" and "she said" highlighted — NOT a generic
-book pile.]
+[SCENE 3 — on "translating a flood of Western books", three WESTERN books pop up in a
+row (white covers, horizontal Latin title bars). On the translation, a row BELOW pops
+up with the SAME three books but CHINESE covers (vertical CJK title bars).]
 Then, in the early twentieth century, Chinese writers started translating a flood of
 Western books — full of "he said," "she said."
-[On "he said / she said": two arrows leave those phrases — one from "he said", one from
-"she said" — and BOTH collide on the same single 他 (teal clash / knot, no red). The
-empty "she" cell from the hook returns beside it, still blank.]
+[On "he said / she said": a "…," he said. chip and a "…," she said. chip appear and two
+arrows leave them and BOTH collide on the same single 他 (teal clash, no red).]
 And suddenly, that one catch-all pronoun was a problem. To translate faithfully, they
 needed a way to tell "he" and "she" apart on the page.
-[On "a problem": a small translator figure gives a frustrated shrug at the two-into-one
-collision (light humour). On "tell he and she apart": the blank "she" cell pulses —
-urgently needed now. Transition to the invention (grid zoom, swoosh).]
 
 --- THE INVENTION (≈0:58–1:24) ---
 

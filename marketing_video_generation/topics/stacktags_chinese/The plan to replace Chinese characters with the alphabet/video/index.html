@@ -63,32 +63,34 @@
       </div>
 
       <!-- ============================================================
-           ZHOU YOUGUANG — the father of Pinyin (real portrait).
+           ZHOU + REFORMERS + REFORM WALL — Zhou Youguang appears (the father
+           of pinyin), then the other reformers (incl. Mao) slide up from below
+           while Zhou rises a little but stays visible; the characters then
+           appear ABOVE the people and pinyin tries to replace them.
            ============================================================ -->
-      <div class="scene" id="sc-zhou">
-        <div class="zhou-stage" id="zhou-stage">
-          <div class="zhou-photo"><img src="assets/photos/zhou.png" alt=""></div>
-          <div class="zhou-card">
+      <div class="scene" id="sc-reform">
+        <div class="reform-stage" id="reform-stage">
+          <!-- the reformers' committee: Zhou (centre) + 5 reformers (incl. a Mao-suit figure) -->
+          <div class="reformers" id="reformers">
+            <div class="person"><img src="assets/photos/reformer2.png" alt=""></div>
+            <div class="person"><img src="assets/photos/reformer1.png" alt=""></div>
+            <div class="person zhou" id="p-zhou"><img src="assets/photos/zhou.png" alt=""></div>
+            <div class="person"><img src="assets/photos/reformer4.png" alt=""></div>
+            <div class="person"><img src="assets/photos/reformer5.png" alt=""></div>
+            <div class="person"><img src="assets/photos/reformer3.png" alt=""></div>
+          </div>
+          <!-- Zhou's intro name card (only while he's solo) -->
+          <div class="zhou-card" id="zhou-card">
             <div class="zh cjk">周有光</div>
             <div class="rom">Zhōu Yǒuguāng</div>
             <div class="en">father of Pinyin · 1950s committee</div>
           </div>
-        </div>
-      </div>
-
-      <!-- ============================================================
-           REFORM WALL — pinyin tries to REPLACE a row of characters
-           (文字书语言), a "too hard" gag, a LAW stamp that never falls,
-           the plan is buried, the characters restore, and pinyin ends up
-           tucked under them as a helper. Cells built by app.js.
-           ============================================================ -->
-      <div class="scene" id="sc-reform">
-        <div class="reform-stage" id="reform-stage">
+          <!-- the character wall, above the people (built by app.js) -->
           <div class="charrow" id="charrow"></div>
           <div class="toohard" id="toohard">
             <div class="th-char cjk">龘</div>
             <div class="th-learner" id="th-learner"></div>
-            <div class="th-cap">too many strokes</div>
+            <div class="th-cap">48 strokes</div>
           </div>
           <div class="lawstamp" id="lawstamp"><div class="stampface"><span class="zh cjk">法</span><span class="en">make it law</span></div></div>
         </div>
@@ -101,21 +103,27 @@
       <div class="scene" id="sc-modern">
         <div class="modern-stage" id="modern-stage">
           <div class="skyline" id="skyline">
-            <div class="tower t1"><img src="assets/photos/tower2.png" alt=""></div>
-            <div class="tower t2"><img src="assets/photos/tower1.png" alt=""></div>
-            <div class="tower t3"><img src="assets/photos/tower3.png" alt=""></div>
+            <div class="tower t1"><img src="assets/photos/sh_jinmao.png" alt=""></div>
+            <div class="tower t2"><img src="assets/photos/sh_tower.png" alt=""></div>
+            <div class="tower t3"><img src="assets/photos/sh_swfc.png" alt=""></div>
           </div>
           <div class="litchart" id="litchart">
             <div class="lc-title">China · literacy rate</div>
-            <svg class="lc-svg" viewBox="0 0 680 380" preserveAspectRatio="xMidYMid meet">
-              <line class="lc-axis" x1="64" y1="330" x2="650" y2="330"/>
-              <line class="lc-axis" x1="64" y1="40" x2="64" y2="330"/>
-              <path class="lc-area" id="lc-area" d="M64 300 L196 276 L330 214 L470 120 L632 58 L632 330 L64 330 Z"/>
-              <path class="lc-line" id="lc-line" d="M64 300 L196 276 L330 214 L470 120 L632 58"/>
-              <circle class="lc-dot" id="lc-dot" cx="632" cy="58" r="11"/>
+            <svg class="lc-svg" viewBox="0 0 940 600" preserveAspectRatio="xMidYMid meet">
+              <g class="lc-grid">
+                <line x1="130" y1="399" x2="880" y2="399"/><text x="116" y="409">30%</text>
+                <line x1="130" y1="305" x2="880" y2="305"/><text x="116" y="315">50%</text>
+                <line x1="130" y1="211" x2="880" y2="211"/><text x="116" y="221">70%</text>
+                <line x1="130" y1="117" x2="880" y2="117"/><text x="116" y="127">90%</text>
+              </g>
+              <line class="lc-axis" x1="130" y1="540" x2="880" y2="540"/>
+              <path class="lc-area" id="lc-area" d="M130 446 L320 415 L510 310 L700 165 L880 90 L880 540 L130 540 Z"/>
+              <path class="lc-line" id="lc-line" d="M130 446 L320 415 L510 310 L700 165 L880 90"/>
+              <circle class="lc-dot" id="lc-dot" cx="880" cy="90" r="13"/>
+              <text class="lc-xlab" x="130" y="584">1950</text>
+              <text class="lc-xlab" x="880" y="584" text-anchor="end">today</text>
             </svg>
             <div class="lc-val"><span id="lc-num">20</span>%</div>
-            <div class="lc-years"><span>1950</span><span>today</span></div>
           </div>
         </div>
       </div>

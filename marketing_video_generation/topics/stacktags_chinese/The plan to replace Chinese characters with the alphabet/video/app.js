@@ -17,8 +17,7 @@
   // ---- scene parts ----
   const duo = $('#duo'), duoChar = $('#duo-char'), duoAlpha = $('#duo-alpha');
   const VROWS = ['vrow-rice', 'vrow-sauce', 'vrow-poo'];
-  const zhouStage = $('#zhou-stage');
-  const charrow = $('#charrow'), toohard = $('#toohard'), lawstamp = $('#lawstamp');
+  const reformStage = $('#reform-stage'), charrow = $('#charrow'), toohard = $('#toohard'), lawstamp = $('#lawstamp');
   const litchart = $('#litchart'), skyline = $('#skyline'), lcNum = $('#lc-num');
   const imeBox = $('#ime'), imeField = $('#ime-field'), imeCands = $('#ime-cands'), imeKeys = $('#ime-keys');
 
@@ -157,28 +156,35 @@
   function vocabReset() { VROWS.forEach((id) => $('#' + id).classList.remove('in')); }
   function vocabRow(id) { $('#' + id).classList.add('in'); }
 
-  // ZHOU
-  function zhouReset() { zhouStage.classList.remove('in'); }
-  function zhouIn() { zhouStage.classList.add('in'); }
-
-  // REFORM WALL
+  // REFORM (Zhou + reformers + the character wall)
   function reformReset() {
+    reformStage.className = 'reform-stage';
     cells().forEach((c) => { c.className = 'cell'; });
-    charrow.classList.remove('helper', 'gag');
+    charrow.classList.remove('helper', 'gag', 'show');
     toohard.classList.remove('in');
     lawstamp.classList.remove('in');
   }
-  function reformIntro() { /* the row stands: char + pinyin sitting politely below */ }
+  function zhouSolo() { reformStage.className = 'reform-stage solo'; charrow.classList.remove('show', 'gag', 'helper'); }
+  function reformCrowd() { reformStage.className = 'reform-stage crowd'; }   // reformers slide up, Zhou rises
+  function reformCharsIn() { charrow.classList.add('show'); }                // the characters appear above the people
   function reformConvert(instant) {            // "gradually replace them": pinyin overtakes the WHOLE row, wave L→R
+    charrow.classList.add('show');
     [0, 1, 2, 3, 4].forEach((i, k) => { if (instant) cells()[i].classList.add('taken'); else setTimeout(() => cells()[i].classList.add('taken'), k * 180); });
   }
   function reformTooHard(on) { cls(toohard, 'in', on); cls(charrow, 'gag', on); }
   function reformGagOff() { toohard.classList.remove('in'); charrow.classList.remove('gag'); }
   function reformFreeze() { lawstamp.classList.add('in'); }   // the LAW stamp hovers but never falls
   function reformBuried() { lawstamp.classList.remove('in'); cells().forEach((c) => { if (c.classList.contains('taken')) c.classList.add('buried'); }); }
-  function reformRestore() { cells().forEach((c) => c.classList.remove('taken', 'buried')); }
-  function reformHelper() { charrow.classList.add('helper'); }   // pinyin glows as the helper under each character
-  function reformPayoff() { cells().forEach((c) => { c.className = 'cell'; }); charrow.classList.add('helper'); toohard.classList.remove('in'); lawstamp.classList.remove('in'); }
+  function reformBackHelper() {   // back from the chart: characters restored, pinyin now the glowing helper, people still there
+    reformStage.className = 'reform-stage crowd';
+    cells().forEach((c) => c.classList.remove('taken', 'buried'));
+    charrow.classList.add('show', 'helper'); toohard.classList.remove('in'); lawstamp.classList.remove('in');
+  }
+  function reformPayoff() {
+    reformStage.className = 'reform-stage crowd';
+    cells().forEach((c) => { c.className = 'cell'; });
+    charrow.classList.add('show', 'helper'); toohard.classList.remove('in'); lawstamp.classList.remove('in');
+  }
 
   // MODERN (literacy rate chart + skyscrapers)
   let countRAF = 0;
@@ -292,16 +298,15 @@
     [11.96, () => { glyphHook(); gridPush(); }],
 
     // ---- VOCAB (3 object words, shown not spoken) ----
-    [14.14, (i) => enter($('#sc-vocab'), 'zoom-in', 950, i, vocabReset)],
+    [14.14, (i) => { vocabReset(); enter($('#sc-vocab'), 'zoom-in', 950, i); }],
     [15.00, () => vocabRow('vrow-rice')],
     [16.00, () => vocabRow('vrow-sauce')],
     [17.00, () => vocabRow('vrow-poo')],
 
-    // ---- ZHOU YOUGUANG ----
-    [18.54, (i) => enter($('#sc-zhou'), 'zoom-out', 1000, i, zhouIn)],
-
-    // ---- REFORM WALL ----
-    [25.04, (i) => enter($('#sc-reform'), 'zoom-in', 1050, i, () => { reformReset(); reformIntro(); })],
+    // ---- ZHOU + REFORMERS + REFORM WALL ----
+    [18.54, (i) => { zhouSolo(); enter($('#sc-reform'), 'zoom-out', 1000, i); }],   // Zhou solo (father of pinyin)
+    [25.04, () => reformCrowd()],                // reformers (incl. Mao) slide up; Zhou rises a bit, stays visible
+    [28.90, () => reformCharsIn()],              // the characters appear above the people
     [32.16, (i) => reformConvert(i)],            // "gradually replace them" — the WHOLE row is taken over
     [35.36, () => reformTooHard(true)],          // "too hard" — 龘 + overwhelmed learner
     [38.28, () => reformGagOff()],               // gag ends, the all-pinyin row returns
@@ -310,7 +315,7 @@
 
     // ---- MODERN (literacy chart + skyscrapers) ----
     [50.32, (i) => enter($('#sc-modern'), 'zoom-out', 1050, i, () => modernIn(i))],
-    [56.06, (i) => { enter($('#sc-reform'), 'zoom-out', 1000, i, () => {}); reformRestore(); reformHelper(); }],  // back to the wall: characters restored, pinyin now the helper
+    [56.06, (i) => { reformBackHelper(); enter($('#sc-reform'), 'zoom-out', 1000, i); }],  // back: characters restored, pinyin the helper, reformers still there
 
     // ---- PHONE IME ----
     [62.64, (i) => enter($('#sc-phone'), 'zoom-in', 1000, i, imeReset)],
@@ -327,7 +332,7 @@
     // ---- PUNCHLINE / OUTRO ----
     [77.48, (i) => enter($('#sc-glyph'), 'zoom-in', 1000, i, () => { duo.className = 'duo'; setDuo('字', 'zì'); })],
     [81.60, () => glyphPulse()],
-    [83.78, (i) => enter($('#sc-reform'), 'zoom-out', 1050, i, reformPayoff)],
+    [83.78, (i) => { reformPayoff(); enter($('#sc-reform'), 'zoom-out', 1050, i); }],
     [87.42, (i) => { enter($('#sc-outro'), 'lift', 1100, i); outroAssemble(); }],
   ];
 
@@ -342,6 +347,7 @@
     [15.00, 'pop', 0.45], [16.00, 'pop', 0.45], [17.00, 'pop', 0.45],
     [18.54, 'swoosh', 0.5],
     [25.04, 'swoosh', 0.5],
+    [28.90, 'pop', 0.45],
     [32.16, 'pop', 0.42], [32.34, 'pop', 0.4], [32.52, 'pop', 0.4], [32.70, 'pop', 0.38], [32.88, 'pop', 0.36],
     [35.36, 'pop', 0.5],
     [44.86, 'pop', 0.45],
@@ -365,7 +371,7 @@
   // ============================================================
   const firedScene = new Set(), firedSub = new Set(), firedSfx = new Set();
   let lastT = 0;
-  function resetScenes() { glyphHook(); vocabReset(); zhouReset(); reformReset(); modernReset(); imeReset(); outroReset(); }
+  function resetScenes() { glyphHook(); vocabReset(); reformReset(); modernReset(); imeReset(); outroReset(); }
   function hardReset() {
     firedScene.clear(); firedSub.clear(); firedSfx.clear();
     SCENES.forEach((elx) => setPose(elx, { tx: 0, ty: 0, s: 1, op: 0, blur: 0, z: 0 }));
