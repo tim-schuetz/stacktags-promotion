@@ -10,6 +10,9 @@ node_modules/
 *.bak
 *.tmp
 
+# Office lock/owner temp files (e.g. Word "~$document.docx")
+~$*
+
 # secrets - never commit
 .env
 **/.env
