@@ -16,13 +16,20 @@
   // ============================================================
   // SCENE BUILDERS (authentic Dungan content)
   // ============================================================
-  // HOOK: staged vocab reveal — 再見 (hanzi) → zàijiàn (pinyin) → зэ җян (the
-  // real Dungan spelling). Same word, shown in three layers.
+  // HOOK: staged vocab reveal — hanzi → pinyin·english → зэ җян (real Dungan),
+  // then a SECOND example (吃) repeats the same structure one row below.
   $('#sc-hook').innerHTML =
     `<div class="hook-wrap">
-       <div class="hk-han cjk" id="hk-han">再見</div>
-       <div class="hk-py" id="hk-py">zàijiàn &middot; <b>goodbye</b></div>
-       <div class="hk-cyr" id="hk-cyr">зэ җян</div>
+       <div class="hk-block" id="hk-b1">
+         <div class="hk-han cjk" id="hk-han1">再見</div>
+         <div class="hk-py" id="hk-py1">zàijiàn &middot; <b>goodbye</b></div>
+         <div class="hk-cyr" id="hk-cyr1">зэ җян</div>
+       </div>
+       <div class="hk-block" id="hk-b2">
+         <div class="hk-han cjk" id="hk-han2">吃</div>
+         <div class="hk-py" id="hk-py2">chī &middot; <b>eat</b></div>
+         <div class="hk-cyr" id="hk-cyr2">чы</div>
+       </div>
      </div>`;
 
   // TWIST: a wall of hanzi fades away → a complete authentic Dungan sentence in
@@ -40,47 +47,26 @@
        <div class="dungan-gloss" id="dungan-gloss">“he came to the third daughter’s house” — in <b>letters</b></div>
      </div>`;
 
-  // HOMOPHONE: the classic objection (妈/马/骂 all sound like "ma") → the proof
-  // (Dungan marks the tone with a letter: ма / маъ / маь).
-  const HOMO = [
-    { zh: '妈', py: 'mā', cyr: 'ма', en: 'mother' },
-    { zh: '马', py: 'mǎ', cyr: 'ма<b>ъ</b>', en: 'horse' },
-    { zh: '骂', py: 'mà', cyr: 'ма<b>ь</b>', en: 'scold' },
-  ];
+  // HOMOPHONE: the classic objection — 妈/马/骂 all sound like "ma" — shown with
+  // three REAL images scattered + the character; then pinyin; then the images
+  // fade, the words slide to a left column and the Dungan (ма/маъ/маь, tone
+  // marked) lines up on the right. Later a Dungan family slides up from below
+  // ("…doing exactly that for generations"). This scene also carries the
+  // "characters and the language aren't the same thing" beat (no separate scene).
   $('#sc-homophone').innerHTML =
-    `<div class="homo-wrap" id="homo-wrap">
-       <div class="homo-row">
-         ${HOMO.map((h) => `<div class="homo-item">
-            <div class="hi-zh">${h.zh}</div>
-            <div class="hi-py">${h.py}</div>
-            <div class="hi-cyr">${h.cyr}</div>
-            <div class="hi-en">${h.en}</div>
-          </div>`).join('')}
-       </div>
-       <div class="homo-note" id="homo-note"><span class="q">same sound — </span><span class="a">the letter marks the tone</span></div>
+    `<div class="homo2" id="homo2">
+       <img class="ho-img i0" src="assets/photos/ho_mother_cut.png" alt="" onerror="this.style.display='none'">
+       <img class="ho-img i1" src="assets/photos/ho_horse_cut.png" alt="" onerror="this.style.display='none'">
+       <img class="ho-img i2" src="assets/photos/ho_scold_cut.png" alt="" onerror="this.style.display='none'">
+       <div class="ho-char c0"><span class="ho-zh cjk">妈</span><span class="ho-py">mā</span></div>
+       <div class="ho-char c1"><span class="ho-zh cjk">马</span><span class="ho-py">mǎ</span></div>
+       <div class="ho-char c2"><span class="ho-zh cjk">骂</span><span class="ho-py">mà</span></div>
+       <div class="ho-eq q0">→</div><div class="ho-eq q1">→</div><div class="ho-eq q2">→</div>
+       <div class="ho-du u0">ма<small>mother</small></div>
+       <div class="ho-du u1">ма<b>ъ</b><small>horse</small></div>
+       <div class="ho-du u2">ма<b>ь</b><small>scold</small></div>
+       <img class="ho-family" id="ho-family" src="assets/photos/dungan_family_cut.png" alt="" onerror="this.style.display='none'">
      </div>`;
-
-  // BIGGER IDEA: one spoken language → two writing systems (汉字 / Кириллица).
-  $('#sc-idea').innerHTML =
-    `<div class="idea-wrap" id="idea-wrap">
-       <div class="idea-source">
-         <div class="idea-wave" id="idea-wave"></div>
-         <div class="idea-src-label">one spoken <span class="cjk">中文</span></div>
-       </div>
-       <div class="idea-branch">
-         <svg viewBox="0 0 560 150"><path d="M280 6 V44 M280 44 C280 90 120 70 120 140 M280 44 C280 90 440 70 440 140"/></svg>
-       </div>
-       <div class="idea-split">
-         <div class="idea-out left"><span class="cjk">汉字</span><span class="lab">characters</span></div>
-         <div class="idea-out right">Кириллица<span class="lab">letters</span></div>
-       </div>
-     </div>`;
-  // soundwave bars
-  (function () {
-    const w = $('#idea-wave'); if (!w) return;
-    const H = [42, 70, 96, 64, 110, 50, 84, 60, 38];
-    w.innerHTML = H.map((h, i) => `<i style="height:${h}px;animation-delay:${(i * 0.09).toFixed(2)}s"></i>`).join('');
-  })();
 
   // PUNCHLINE: the Cyrillic, glowing (callback to the hook).
   $('#sc-punch').innerHTML =
@@ -217,7 +203,10 @@
   // ============================================================
   // IN-SCENE HELPERS
   // ============================================================
-  function hookAll() { $('#hk-han').classList.add('in'); $('#hk-py').classList.add('in'); $('#hk-cyr').classList.add('in', 'glow'); }
+  function hookAll() {
+    ['#hk-han1', '#hk-py1', '#hk-cyr1', '#hk-han2', '#hk-py2', '#hk-cyr2'].forEach((s) => $(s).classList.add('in'));
+    $('#hk-cyr1').classList.add('glow'); $('#hk-cyr2').classList.add('glow');
+  }
 
   function peopleIn() { $('#dperson-l').classList.add('in'); $('#dperson-r').classList.add('in'); }
 
@@ -232,15 +221,10 @@
   function twistLineIn(i) { $('#dungan-line').classList.add('in'); }
   function twistGlossIn(i) { $('#dungan-gloss').classList.add('in'); }
 
-  function homoItemsIn(i) {
-    const items = document.querySelectorAll('#homo-wrap .homo-item');
-    items.forEach((it, k) => { if (i) it.classList.add('in'); else setTimeout(() => it.classList.add('in'), 120 + k * 230); });
-    $('#homo-wrap').classList.add('objection');
-  }
-  function homoProof(i) { const w = $('#homo-wrap'); w.classList.remove('objection'); w.classList.add('proof'); }
-
-  function ideaIn(i) { $('#idea-wrap').classList.add('in'); }
-  function ideaSplit(i) { $('#idea-wrap').classList.add('split'); }
+  function homoImgs() { $('#homo2').classList.add('imgs'); }
+  function homoPy() { $('#homo2').classList.add('py'); }
+  function homoCompare() { $('#homo2').classList.add('compare'); }
+  function homoFamily() { $('#homo2').classList.add('family'); }
 
   // ============================================================
   // SUBTITLES (verbatim mirror; grey, key words turquoise)
@@ -295,11 +279,14 @@
   // CUES — scene actions on the narration timeline
   // ============================================================
   const CUES = [
-    // HOOK — 再見 → zàijiàn (pinyin) → зэ җян (Cyrillic), staged
-    [0.0,  (i) => enter($('#sc-hook'), 'fade', 650, i, () => { if (i) hookAll(); else $('#hk-han').classList.add('in'); })],
-    [1.40, (i) => { if (!i) $('#hk-py').classList.add('in'); }],    // pinyin appears underneath
-    [3.20, (i) => { if (!i) $('#hk-cyr').classList.add('in'); }],   // Cyrillic appears ("same alphabet as Russian")
-    [4.20, (i) => { if (!i) $('#hk-cyr').classList.add('glow'); }],
+    // HOOK — block 1 (再見 → pinyin → зэ җян, Cyrillic a bit faster), then a
+    // second example (吃) repeats the same structure one row below.
+    [0.0,  (i) => enter($('#sc-hook'), 'fade', 650, i, () => { if (i) hookAll(); else $('#hk-han1').classList.add('in'); })],
+    [1.30, (i) => { if (!i) $('#hk-py1').classList.add('in'); }],
+    [2.60, (i) => { if (!i) $('#hk-cyr1').classList.add('in', 'glow'); }],   // Russian word — a bit faster
+    [5.00, (i) => { if (!i) $('#hk-han2').classList.add('in'); }],           // 2nd example below
+    [6.00, (i) => { if (!i) $('#hk-py2').classList.add('in'); }],
+    [7.10, (i) => { if (!i) $('#hk-cyr2').classList.add('in', 'glow'); }],
 
     // MIGRATION — pre-warm the globe behind the hook so it's painted on arrival
     [9.1, (i) => { if (!i && globeCtrl) { globeCtrl.resume(); globeCtrl.reveal(); } }],
@@ -322,13 +309,15 @@
     [31.90, (i) => { if (!i) twistLineIn(i); }],   // sentence builds in over the breath, before "written in Cyrillic"
     [34.60, (i) => { if (!i) twistGlossIn(i); }],
 
-    // HOMOPHONE — objection → tone-letter proof
-    [40.90, (i) => enter($('#sc-homophone'), 'drop', 1050, i, () => homoItemsIn(i))],
-    [45.16, (i) => homoProof(i)],
+    // HOMOPHONE — three real images (妈/马/骂 all "ma") + character; then pinyin;
+    // then images fade, words slide left, Dungan (tone-marked) lines up on the right.
+    [40.90, (i) => { enter($('#sc-homophone'), 'drop', 1050, i); homoImgs(); if (i) { homoPy(); homoCompare(); } }],
+    [43.00, (i) => { if (!i) homoPy(); }],            // pinyin appears
+    [45.16, (i) => { if (!i) homoCompare(); }],       // images out → words slide left, Dungan right
 
-    // BIGGER IDEA — one language → two writing systems
-    [51.84, (i) => enter($('#sc-idea'), 'zoom-out', 1150, i, () => { ideaIn(i); if (i) ideaSplit(i); })],
-    [54.84, (i) => { if (!i) ideaSplit(i); }],
+    // BIGGER IDEA — no separate scene: the same comparison stays on screen.
+    // A new Dungan family slides up from below ("…doing exactly that for generations").
+    [60.40, (i) => homoFamily()],
 
     // PUNCHLINE — the Cyrillic glowing
     [64.10, (i) => enter($('#sc-punch'), 'rise', 1050, i, () => { if (globeCtrl) globeCtrl.halt(); })],
@@ -342,8 +331,8 @@
   // element animates (globe / outro); pop for words appearing.
   // ============================================================
   const SFX = [
-    // hook — зэ җян letters pop in
-    [3.25, 'pop', 0.5], [3.5, 'pop', 0.5], [3.8, 'pop', 0.5], [4.05, 'pop', 0.5], [4.3, 'pop', 0.5],
+    // hook — the two Cyrillic words pop in
+    [2.60, 'pop', 0.55], [7.10, 'pop', 0.55],
     [10.48, 'swoosh', 0.5],                          // migration scene (grid moves)
     [13.90, 'swoosh', 0.45],                         // route reveals on the globe
     [17.10, 'swoosh', 0.5],                          // globe dives into Karakol (default element)
@@ -354,10 +343,10 @@
     [30.40, 'swoosh', 0.45],                         // hanzi wall whooshes away
     [31.90, 'swoosh', 0.45],                         // Dungan sentence builds in
     [40.90, 'swoosh', 0.5],                          // homophone scene (drop)
-    [41.3, 'pop', 0.45], [41.6, 'pop', 0.45], [41.9, 'pop', 0.45],  // 妈 马 骂
-    [45.5, 'pop', 0.5], [45.8, 'pop', 0.5], [46.1, 'pop', 0.5],     // tone letters reveal
-    [51.84, 'swoosh', 0.5],                          // idea scene
-    [55.1, 'pop', 0.5], [55.4, 'pop', 0.5],          // two writing-system outputs
+    [41.4, 'pop', 0.45], [41.8, 'pop', 0.45], [42.2, 'pop', 0.45],  // three images appear
+    [45.16, 'swoosh', 0.45],                         // words slide left
+    [45.6, 'pop', 0.5], [45.9, 'pop', 0.5], [46.2, 'pop', 0.5],     // Dungan reveal
+    [60.40, 'pop', 0.5],                             // Dungan family slides up
     [64.10, 'swoosh', 0.5],                          // punchline scene
     [75.30, 'swoosh', 0.6],                          // outro assembles
   ];
@@ -376,17 +365,15 @@
     current = null;
     gcam.s = 1; gcam.x = 0; gcam.y = 0; gdisp.s = 1; gdisp.x = 0; gdisp.y = 0;
     // hook
-    $('#hk-han').classList.remove('in'); $('#hk-py').classList.remove('in'); $('#hk-cyr').classList.remove('in', 'glow');
+    ['#hk-han1', '#hk-py1', '#hk-cyr1', '#hk-han2', '#hk-py2', '#hk-cyr2'].forEach((s) => $(s).classList.remove('in', 'glow'));
     // migration + Dungan people
     globeHost.classList.remove('gone'); $('#mosque-photo').classList.remove('in'); $('#mosque-cap').classList.remove('in'); $('#mig-origin').classList.remove('in'); caravan.classList.remove('in');
     $('#dperson-l').classList.remove('in'); $('#dperson-r').classList.remove('in'); $('#dbub-l').classList.remove('in'); $('#dbub-r').classList.remove('in');
     if (globeCtrl) globeCtrl.halt();
     // twist
     $('#hanzi-wall').classList.remove('gone'); $('#dungan-line').classList.remove('in'); $('#dungan-gloss').classList.remove('in');
-    // homophone
-    $('#homo-wrap').classList.remove('objection', 'proof'); document.querySelectorAll('#homo-wrap .homo-item').forEach((it) => it.classList.remove('in'));
-    // idea
-    $('#idea-wrap').classList.remove('in', 'split');
+    // homophone (+ the merged "bigger idea" comparison)
+    $('#homo2').classList.remove('imgs', 'py', 'compare', 'family');
     // outro
     outroReset();
     subsLine.classList.remove('in');

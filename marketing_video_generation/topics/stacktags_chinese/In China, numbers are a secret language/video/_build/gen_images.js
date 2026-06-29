@@ -18,11 +18,17 @@ const SHOTS = [
   // Optional gift context for "...or even put on a gift" (a red lucky-money envelope).
   { key: 'hongbao', ar: '1:1',
     prompt: 'A single closed bright-red Chinese lucky money envelope (hongbao) standing slightly angled, plain clean front, a subtle gold foil emblem, soft sheen, gentle front three-quarter view.' },
+  // Real-world phenomenon for the 5/20 romance day: couples really rush to register
+  // marriage on May 20. Shown as a "shared photo" inside the chat (rectangular, not cut).
+  { key: 'couple', ar: '4:3', person: 'allow_adult',
+    style: 'Candid realistic photograph, warm golden-hour light, ordinary amateur phone-photo look, shallow depth of field, absolutely no text, no captions, no letters, no watermark, no logos.',
+    prompt: 'A happy young Chinese couple — a man and a woman together in one frame — laughing and looking at each other, the woman holding a single red rose, standing close, soft blurred city park behind them.' },
 ];
 
 async function gen(shot, attempt = 1) {
   const url = `https://generativelanguage.googleapis.com/v1beta/models/imagen-4.0-generate-001:predict?key=${KEY}`;
-  const body = { instances: [{ prompt: `${shot.prompt} ${STYLE}` }], parameters: { sampleCount: 1, aspectRatio: shot.ar || '1:1', personGeneration: 'dont_allow' } };
+  const promptText = `${shot.prompt} ${shot.style != null ? shot.style : STYLE}`;
+  const body = { instances: [{ prompt: promptText }], parameters: { sampleCount: 1, aspectRatio: shot.ar || '1:1', personGeneration: shot.person || 'dont_allow' } };
   const r = await fetch(url, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(body) });
   if (!r.ok) { const t = await r.text(); if (attempt < 3) { await new Promise(s => setTimeout(s, 1500)); return gen(shot, attempt + 1); } throw new Error(`${shot.key} ${r.status} ${t.slice(0, 300)}`); }
   const j = await r.json();

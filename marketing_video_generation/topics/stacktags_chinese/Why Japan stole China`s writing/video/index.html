@@ -14,7 +14,6 @@
 <!-- the dynamic depth-grid look (we reuse its grid styling) -->
 <link rel="stylesheet" href="elements/depth-transitions.css">
 <!-- default elements used as components -->
-<link rel="stylesheet" href="elements/figure.css">
 <link rel="stylesheet" href="elements/text-popup.css">
 <!-- this video's own scene styling -->
 <link rel="stylesheet" href="styles.css?v=1">
@@ -39,10 +38,7 @@
       <!-- ~1,500 yrs ago: figure talks beside a blank scroll → the scroll fills with characters -->
       <div class="scene" id="sc-scroll"></div>
 
-      <!-- IMPORT: 2D East-Asia map, characters sail a dashed route China → Japan -->
-      <div class="scene" id="sc-import"></div>
-
-      <!-- UNRELATED: two figures read the SAME character 字 in garbled, different ways (figure element) -->
+      <!-- UNRELATED: two figures read the SAME character 字 in garbled, different ways -->
       <div class="scene" id="sc-unrelated"></div>
 
       <!-- ENGLISH: writing English with only kanji → a piece that won't fit -->
@@ -89,14 +85,14 @@
 <!-- HUD (hidden in clean/capture mode) -->
 <div id="hud">
   <button id="btn-play">▶ Play</button>
-  <input id="seek" type="range" min="0" max="94.6" step="0.01" value="0" />
+  <input id="seek" type="range" min="0" max="98.3" step="0.01" value="0" />
   <span id="tcode">0.0</span>
 </div>
 
 <audio id="vo" src="../script_voice.mp3" preload="auto"></audio>
 
 <!-- default elements (used as components) -->
-<script src="elements/people.js"></script>
+<script src="elements/country-paths.js"></script>
 <script src="elements/text-popup.js"></script>
 <script src="elements/outro.js"></script>
 

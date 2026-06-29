@@ -139,24 +139,16 @@
   // ============================================================
   // DYNAMIC CONTENT BUILDERS
   // ============================================================
-  function buildCrowd() {   // a rain of real (₮) USDT coins that fall and STACK at varying heights
-    const host = $('#sc-crowd'); host.innerHTML = '';
-    for (let k = 0; k < 22; k++) {
-      const u = document.createElement('div'); u.className = 'u usdt';
-      u.innerHTML = '<span class="tk">₮</span>';
-      u.style.left = rnd(20, 1000) + 'px';
-      u.style.setProperty('--dur', rnd(1.7, 2.6).toFixed(2) + 's');
-      u.style.setProperty('--endy', Math.round(rnd(1160, 1760)) + 'px');
-      u.dataset.delay = Math.floor(rnd(0, 2600));
-      host.appendChild(u);
-    }
+  // ---- 3D token rain (Blender rigid-body sim → transparent webm) ----
+  const tokfall = $('#tokfall');
+  function playTokfall(instant) {
+    if (!tokfall) return;
+    try {
+      if (instant) { tokfall.pause(); tokfall.currentTime = (tokfall.duration && isFinite(tokfall.duration)) ? tokfall.duration : 3.99; }
+      else { tokfall.currentTime = 0; const p = tokfall.play(); if (p) p.catch(() => {}); }
+    } catch (e) {}
   }
-  function streamCrowd(instant) {
-    const us = $('#sc-crowd').querySelectorAll('.u');
-    if (instant) { us.forEach((u) => { u.classList.remove('go'); u.style.opacity = '0'; }); return; }
-    us.forEach((u) => { u.classList.remove('go'); u.style.opacity = ''; });
-    us.forEach((u) => setTimeout(() => u.classList.add('go'), +u.dataset.delay));
-  }
+  function resetTokfall() { if (tokfall) { try { tokfall.pause(); tokfall.currentTime = 0; } catch (e) {} } }
   function buildTower() {
     const host = $('#tw-tbills'); host.innerHTML = '';
     ['T-BILLS', 'RESERVES', 'OTHER ASSETS'].forEach((l) => {
@@ -178,24 +170,14 @@
     });
   }
   function resetThrone() { $('#th-stack').querySelectorAll('.tb').forEach((d) => { d.style.transition = 'none'; d.style.width = '0'; }); }
-  function buildRoom() {
-    const team = $('#room-team'); team.innerHTML = '';
-    for (let k = 0; k < 100; k++) {
-      const d = document.createElement('i');
-      d.style.left = ((k % 20) * 14) + 'px';
-      d.style.bottom = (Math.floor(k / 20) * 22) + 'px';
-      team.appendChild(d);
-    }
-    const lbl = document.createElement('div'); lbl.className = 'lbl'; lbl.textContent = '~100 people'; team.appendChild(lbl);
-    const stack = $('#room-stack');
-    if (!stack.querySelector('.bar')) { const bar = document.createElement('div'); bar.className = 'bar'; stack.insertBefore(bar, stack.firstChild); }
+  function growRoom(instant) {   // grow each profit bar to its data-h
+    $$('#room .rfill').forEach((f) => {
+      const h = f.dataset.h + 'px';
+      if (instant) { f.style.transition = 'none'; f.style.height = h; }
+      else { f.style.transition = ''; requestAnimationFrame(() => { f.style.height = h; }); }
+    });
   }
-  function growRoom(instant) {
-    const bar = $('#room-stack .bar'); if (!bar) return;
-    if (instant) { bar.style.transition = 'none'; bar.style.height = '1200px'; }
-    else { bar.style.transition = 'height 1.5s cubic-bezier(.2,.8,.2,1)'; requestAnimationFrame(() => { bar.style.height = '1200px'; }); }
-  }
-  function resetRoom() { const bar = $('#room-stack .bar'); if (bar) { bar.style.transition = 'none'; bar.style.height = '0'; } }
+  function resetRoom() { $$('#room .rfill').forEach((f) => { f.style.transition = 'none'; f.style.height = '0'; }); }
   function buildPunchNoise() {   // the "obvious trades", a tidy centred list
     const host = $('#pu-noise'); host.innerHTML = '';
     ['STOCKS', 'CRYPTO', 'ALTCOINS', 'NFTs', 'BONDS', 'GOLD'].forEach((txt) => {
@@ -203,28 +185,22 @@
     });
   }
 
-  // ---- count-up ($100B): LINEAR so it climbs evenly from 0 (no jump) ----
-  function runOdometer(instant) {
-    const el = $('#odo'); const TARGET = 104000000000;
-    if (instant) { el.textContent = '$' + TARGET.toLocaleString('en-US'); return; }
-    const t0 = performance.now(), dur = 3000;
-    (function step(now) {
-      const e = clamp01((now - t0) / dur);   // linear
-      const v = Math.floor(lerp(0, TARGET, e) / 1e6) * 1e6;
-      el.textContent = '$' + v.toLocaleString('en-US');
-      if (e < 1) requestAnimationFrame(step);
-      else el.textContent = '$' + TARGET.toLocaleString('en-US');
-    })(performance.now());
+  // ---- $100B odometer: driven by audio time in the tick loop (linear, never jumps) ----
+  const ODO_T0 = 57.96, ODO_DUR = 3.0, ODO_MAX = 104000000000;
+  function updateOdometer(t) {
+    const el = $('#odo'); if (!el) return;
+    const e = clamp((t - ODO_T0) / ODO_DUR, 0, 1);
+    el.textContent = '$' + (Math.floor(ODO_MAX * e / 1e6) * 1e6).toLocaleString('en-US');
   }
-  // ---- attestation scene: dashed dollars rain onto the cash pile ----
+  // ---- attestation scene: dashed dollars rain ONTO the money heap ----
   function buildAudit() {
     const host = $('#au-rain'); if (!host) return; host.innerHTML = '';
-    for (let k = 0; k < 7; k++) {
+    for (let k = 0; k < 8; k++) {
       const im = document.createElement('img'); im.src = 'assets/photos/dollar_dashed.png';
-      im.style.left = rnd(8, 76) + '%';
-      im.style.setProperty('--dy', Math.round(rnd(380, 560)) + 'px');
+      im.style.left = rnd(14, 72) + '%';
+      im.style.setProperty('--dy', Math.round(rnd(360, 520)) + 'px');
       im.style.setProperty('--r', Math.round(rnd(-18, 18)) + 'deg');
-      im.dataset.delay = Math.floor(rnd(0, 1700));
+      im.dataset.delay = Math.floor(rnd(0, 1800));
       host.appendChild(im);
     }
   }
@@ -242,7 +218,7 @@
   function outroPlay() { const ec = $('#outro-ec'); if (ec) ec.classList.add('play'); }
   function outroReset() { const ec = $('#outro-ec'); if (ec) ec.classList.remove('play'); }
 
-  buildCrowd(); buildTower(); buildThrone(); buildRoom(); buildPunchNoise(); buildAudit();
+  buildTower(); buildThrone(); buildPunchNoise(); buildAudit();
 
   // ---- per-scene class helpers ----
   const cls = (sel, c) => { const el = $(sel); if (el) el.classList.add(c); };
@@ -321,6 +297,7 @@
     // ---- 2 · MECHANIC (dollar appears+flies right; token appears+flies left, each in one motion) ----
     [8.86, (i) => enter($('#sc-mechanic'), 'zoom-out', 1100, i, () => {
       const m = $('#mech');
+      m.classList.add('labels');   // "You" over the figure, "Tether" over the vault
       if (i) { m.classList.add('token-go'); return; }   // end-state: token at person, bill already in vault
     })],
     // "you give them a dollar" → bill appears at the person and flies right into the vault
@@ -331,29 +308,30 @@
     // ---- 3 · WHAT IT IS (peg + trader + Tether/BTC cycle + swap pops) ----
     [17.88,(i) => enter($('#sc-usdt'), 'lift', 1000, i, () => {
       const w = $('#usdtwrap');
-      if (i) { w.classList.add('peg-in', 'peg-locked', 'trader-in', 'swap-bill', 'swap-token'); return; }
+      if (i) { w.classList.add('peg-in', 'peg-locked', 'trader-in'); return; }
       setTimeout(() => w.classList.add('peg-in'), 250);
     })],
     [20.54,(i) => { if (!i) cls('#usdtwrap', 'peg-locked'); }],
     [23.94,(i) => { if (!i) cls('#usdtwrap', 'trader-in'); }],
-    // "so they can jump in and out" → Tether<->BTC cycle: spin (swap), then spin back
+    // "so they can jump in and out" → Tether<->BTC cycle spins (swap) then back
     [27.38,(i) => { if (!i) { const w = $('#usdtwrap'); w.classList.add('cycle-in');
       setTimeout(() => w.classList.add('cyc-spin'), 450);
-      setTimeout(() => w.classList.remove('cyc-spin'), 1450);
-      setTimeout(() => w.classList.remove('cycle-in'), 2900); } }],
-    // "you hand Tether a real dollar" → dollar pops
-    [30.6, (i) => { if (!i) cls('#usdtwrap', 'swap-bill'); }],
-    // "and they mint you a token" → token pops (the dollar gives way)
-    [32.0, (i) => { if (!i) cls('#usdtwrap', 'swap-token'); }],
+      setTimeout(() => w.classList.remove('cyc-spin'), 1500);
+      setTimeout(() => w.classList.remove('cycle-in'), 3000); } }],
+    // "to get one, you..." → the dollar (peg) scales up
+    [29.6, (i) => { if (!i) { const w = $('#usdtwrap'); w.classList.add('swap-bill'); setTimeout(() => w.classList.remove('swap-bill'), 700); } }],
+    // "and they mint you a token" → the token (peg) scales up
+    [32.0, (i) => { if (!i) { const w = $('#usdtwrap'); w.classList.add('swap-token'); setTimeout(() => w.classList.remove('swap-token'), 700); } }],
 
     // ---- 4 · THE TRICK (vault + T-bill, cash arc back to vault, holder gets 0%) ----
     [37.4, (i) => enter($('#sc-trick'), 'zoom-out', 1100, i, () => {
       const t = $('#trick');
-      if (i) { t.classList.add('tbill-in', 'cash', 'holder-in', 'zero'); return; }
-      setTimeout(() => t.classList.add('tbill-in'), 500);
+      if (i) { t.classList.add('tbill-in', 'cash', 'holder-in', 'zero'); return; }   // end-state; live = vault only at first
     })],
-    // "earning 4-5%" → cash flows in an arc from the T-bill back into the vault
-    [43.84,(i) => { if (!i) cls('#trick', 'cash'); }],
+    // "in US Treasury bills" → vault shifts left + the T-bill appears
+    [42.1, (i) => { if (!i) cls('#trick', 'tbill-in'); }],
+    // "earning around 4-5%" → cash flows in an arc back into the vault (+ 4–5% label)
+    [46.0, (i) => { if (!i) cls('#trick', 'cash'); }],
     // "how much do they pass back to you, the holder?" → holder flies in below the vault
     [48.46,(i) => { if (!i) cls('#trick', 'holder-in'); }],
     // "Zero." → the 0% arrow stamps on
@@ -362,9 +340,9 @@
     // ---- 6 · SCALE ($100B odometer + crowd) ----
     [56.3, (i) => enter($('#sc-scale'), 'zoom-out', 1100, i, () => {
       const s = $('#scale');
-      if (i) { s.classList.add('sub-in'); runOdometer(true); streamCrowd(true); return; }
+      if (i) { s.classList.add('sub-in'); playTokfall(true); return; }
     })],
-    [57.96,(i) => { if (!i) { cls('#scale', 'sub-in'); runOdometer(false); streamCrowd(false); } }],
+    [57.96,(i) => { if (!i) { cls('#scale', 'sub-in'); playTokfall(false); } }],
 
     // ---- 7 · COST OF CAPITAL ----
     [65.76,(i) => enter($('#sc-cost'), 'rise', 1050, i, () => {
@@ -424,7 +402,7 @@
     [17.88, 'swoosh', 0.5],
     [20.7, 'pop', 0.5],
     [27.38, 'swoosh', 0.42],
-    [30.6, 'pop', 0.5],
+    [29.6, 'pop', 0.5],
     [32.0, 'pop', 0.5],
     [37.4, 'swoosh', 0.5],
     [48.46, 'swoosh', 0.42],
@@ -457,7 +435,7 @@
   let lastT = 0;
 
   const STATE = {
-    '#mech': ['bill-go', 'token-go', 'clink'],
+    '#mech': ['bill-go', 'token-go', 'clink', 'labels'],
     '#usdtwrap': ['peg-in', 'peg-locked', 'trader-in', 'cycle-in', 'cyc-spin', 'swap-bill', 'swap-token'],
     '#trick': ['tbill-in', 'cash', 'holder-in', 'zero'],
     '#scale': ['sub-in'],
@@ -477,7 +455,7 @@
     $$('.cost-row').forEach((r) => r.classList.remove('in'));
     $$('#pu-noise .chip').forEach((c) => c.classList.remove('show'));
     $('#odo').textContent = '$0';
-    resetThrone(); resetRoom(); streamCrowd(true); resetAudit();
+    resetThrone(); resetRoom(); resetTokfall(); resetAudit();
     outroReset();
     subsLine.classList.remove('in');
   }
@@ -496,8 +474,9 @@
     gdisp.x += (gcam.x - gdisp.x) * 0.07;
     gdisp.y += (gcam.y - gdisp.y) * 0.07;
     applyGrid();
+    updateOdometer(t);   // $100B counter driven by audio time (linear, never jumps)
     if (!vo.paused) {
-      if (t < lastT - 0.3) applyUpTo(t);
+      if (t < lastT - 1.0) applyUpTo(t);   // only on real backward seeks, not capture jitter (avoids 1-frame reset flashes)
       for (let k = 0; k < SUBS.length; k++) if (!firedSub.has(k) && t >= SUBS[k][0]) { firedSub.add(k); setSub(SUBS[k][1], false); }
       for (let k = 0; k < CUES.length; k++) if (!firedScene.has(k) && t >= CUES[k][0]) { firedScene.add(k); CUES[k][1](false); }
       for (let k = 0; k < SFX.length; k++) if (!firedSfx.has(k) && t >= SFX[k][0]) { firedSfx.add(k); playSfx(SFX[k]); }

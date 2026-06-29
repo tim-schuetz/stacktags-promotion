@@ -9,14 +9,13 @@ NOTE ON STORYBOARD CUES: Every line in [square brackets] is a visual direction, 
 spoken. Strip all [...] before generating the TTS — the narration text between the
 brackets is the only thing read aloud.
 
-VISUAL SPINE (persistent hero device): a clean, brand-styled phone CHAT on the white
-grid (white bg, turquoise outgoing bubbles = --stk-teal, soft grey incoming bubbles,
-no borders, soft shadows, Inter + Noto Sans SC). The codes LIVE here — they arrive as
-messages and morph. Core reusable MORPH ENGINE, reused for every code:
+VISUAL SPINE: the phone CHAT frame is used ONLY for the HOOK (turquoise outgoing bubbles
+= --stk-teal, soft grey incoming bubbles, no borders). From "Why does that work?" on, the
+phone frame DISSOLVES and every element lives directly on the open white grid (channel
+style — NO bounding box around scenes). Reusable MORPH ENGINE for codes:
 digits → pinyin-under-each-digit → "sounds like" bridge → Chinese characters (pop in
-one by one) → meaning. Icons are inline SVG (heart / waving hand / flame / grumpy),
-never OS emoji. Camera: depth zoom between the big beats (swoosh ONLY when the grid
-moves); gentle pans inside the chat (no swoosh).
+one by one) → meaning. Real cut-out images / crude hand-drawn doodles, never OS emoji.
+Camera: depth zoom between big beats (swoosh ONLY when the grid moves).
 
 ==================================================================
 THE CORE IDEA
@@ -56,15 +55,18 @@ turquoise, as if "decoding". The chat title "secret code" underlines.]
 --- WHY IT WORKS (≈0:12–0:32) ---
 
 Why does that work? Because Chinese is full of words that sound almost exactly like numbers.
-[A compact HOMOPHONE STRIP on the chat: three digits each ghost into a near-homophone
-character, popping one by one (pop sfx each): 4 → 死 sǐ "death", 8 → 发 fā "wealth",
-9 → 久 jiǔ "lasting". Small wink on 4=death.]
+[NO box / no phone frame — everything floats on the open white grid. Three crudely
+hand-drawn stick-figure doodles pop in one by one (the BAD drawing is the joke), each
+with its digit + character set slightly offset beside it: 4 = a sprawled DEAD stick figure
+(X eyes) → 死 sǐ "death"; 8 = a stick figure grinning with a money bag → 发 fā "wealth";
+9 = a crude stick-figure WEDDING COUPLE holding hands → 久 jiǔ "lasting".]
 
 So people started using strings of numbers as code — something you can text, comment,
 or even put on a gift.
-[The SAME little code (e.g. 1314) appears in three quick contexts, swapping in place:
-(1) a chat bubble (text), (2) a social COMMENT under a video, (3) engraved on a small
-gift / red envelope. Reinforces it's really used, not literal narration.]
+[Each doodle gets USED in a real context: "text" → a 2nd standing stick figure appears
+LEFT of the dead figure with an arrow pointing at it, all wrapped in a speech BUBBLE;
+"comment" → the wealth doodle similarly inside a speech bubble; "gift" → the wedding-
+couple doodle gets slapped onto a GIFT BOX. Crude, funny, real usage.]
 
 A few digits standing in for a whole phrase.
 [The digits collapse/snap together into one phrase chip. Settle, then DEPTH pan into
@@ -95,14 +97,7 @@ But the same trick cuts the other way.
 swoosh).]
 
 Call someone a 250 — èr bǎi wǔ — and you've called them a fool.
-[Grey bubble "250" → pinyin "èr bǎi wǔ" → 二百五 "a fool" + grumpy-face SVG.]
-
-The story goes it comes from an old expression about half a string of coins — being
-"not quite all there."
-[SHOW THE REASON (real cropped photo, dashed outline): a string of old round
-square-holed bronze coins, only HALF strung — label 半吊子 "half-strung · not all
-there". Small "the story goes" tag to stay honest. (full string 1000 → 半吊子 500 →
-250 = half of that).]
+[Grey bubble "250" → pinyin "èr bǎi wǔ" → 二百五 "a fool" (cooled-down tone).]
 
 And there's more: 88 sounds like "bye-bye."
 [Chat: "88" → pinyin "bā bā" → 拜拜 (bàibài) "bye-bye" + a small waving-hand SVG; the
@@ -136,3 +131,12 @@ turquoise chevrons, "stacktags" wordmark, grey stacktags.io line) — swoosh.]
 
 Wanna actually start learning Chinese?
 Discover thousands of free exercises and more learning content on stacktags.io.
+
+==================================================================
+FUTURE (longer video) — NOT in this cut
+==================================================================
+[For a later, longer version, also cover 4 and 8 in Hong Kong:
+ - 4 (sì ≈ 死 sǐ "death") → buildings that SKIP the 4th floor (and 14, 24, 34…) out of
+   tetraphobia; show a lift panel / floor numbers with 4 missing.
+ - 8 (bā ≈ 发 fā "get rich / wealth") → lucky "8" car licence plates auctioned for
+   MILLIONS; show a number plate with lots of 8s and a sky-high auction price.]

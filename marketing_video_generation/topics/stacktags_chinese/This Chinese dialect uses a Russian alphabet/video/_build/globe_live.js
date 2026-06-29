@@ -4,7 +4,7 @@ const fs = require('fs'); const path = require('path');
 const CHROME = ['C:/Users/tjsch/AppData/Local/ms-playwright/chromium-1217/chrome-win64/chrome.exe',
   'C:/Users/tjsch/AppData/Local/ms-playwright/chromium-1200/chrome-win64/chrome.exe'].find(p => fs.existsSync(p));
 const OUT = path.resolve(__dirname, 'qa'); fs.mkdirSync(OUT, { recursive: true });
-const GRABS = [11.5, 16.5, 18.6];   // zoomed-out globe (origin visible), route+dive, mosque after dive-in
+const GRABS = [42.5, 44.0, 61.5];   // homophone scatter+chars, +pinyin, Dungan family slide-up
 (async () => {
   const browser = await chromium.launch({ executablePath: CHROME, headless: true, args: ['--autoplay-policy=no-user-gesture-required', '--ignore-gpu-blocklist', '--enable-gpu-rasterization', '--force-device-scale-factor=1', '--mute-audio'] });
   const ctx = await browser.newContext({ viewport: { width: 1080, height: 1920 }, deviceScaleFactor: 1 });

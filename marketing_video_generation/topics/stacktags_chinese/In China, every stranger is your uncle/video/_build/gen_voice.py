@@ -10,15 +10,11 @@ MODEL = "eleven_multilingual_v2"
 
 NARRATION = """In China, the man at the shop, the bus driver, your neighbor — they're all your "uncle" or "aunty." But here's the irony: there's no single Chinese word for "uncle" at all. There are at least eight. Let me explain.
 
-English has one lazy word — "uncle" — for a whole crowd of different people. Chinese refuses to be that vague. It needs to know exactly who you mean. Is he your father's brother, or your mother's? Is he older than your parent, or younger? Is he blood, or married in? Every combination is a different word. Father's older brother, father's younger brother, mother's brother, the husband of your father's sister — all completely separate terms. There's no neutral "uncle" to fall back on. The word itself tells you the exact relationship.
-
-It's because family structure mattered so much that the language baked it right in — which side, which generation, which order of birth. You don't just say "uncle." You say precisely where he sits in the family.
+English has one lazy word — "uncle" — for a whole crowd of different people. Chinese refuses to be that vague. It needs to know exactly who you mean. Is he your father's brother, or your mother's? Is he older than your parent, or younger? Is he blood, or married in? Every combination is a different word. Father's older brother, father's younger brother, mother's brother, the husband of your father's sister, you get the idea. There's no neutral "uncle" to fall back on. The word itself tells you the exact relationship.
 
 And yet — Chinese uses these very same family words for total strangers. You call an older man "uncle," an older woman "aunty," a young woman "big sister" — as a sign of warmth and respect. Everyone gets slotted into the family.
 
-So Chinese can't translate "uncle" with a single word — it has a whole map of them. But it'll happily call a stranger on the street your uncle. A language incredibly precise about family... that treats the entire world like one.
-
-Wanna actually start learning Chinese? Discover thousands of free exercises and more learning content on stacktags.io."""
+A language incredibly precise about family... that treats the entire world like one. Wanna actually start learning Chinese? Discover thousands of free exercises and more learning content on stacktags.io."""
 
 OUT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", "script_voice.mp3"))
 

@@ -1,0 +1,30 @@
+<!doctype html>
+<html><head><meta charset="utf-8"/>
+<link rel="stylesheet" href="../elements/theme.css">
+<style>
+  html,body{margin:0;height:100%;}
+  .stage{position:relative;width:1080px;height:1920px;background:#fff;}
+  svg{position:absolute;}
+  .china path{fill:var(--stk-teal-soft);stroke:var(--stk-teal);stroke-width:5;stroke-linejoin:round;}
+  .japan path{fill:#e6ebe9;stroke:#9fb3ad;stroke-width:6;stroke-linejoin:round;}
+  .china{left:60px;top:720px;width:520px;}
+  .japan{left:640px;top:560px;width:300px;}
+  .cap{position:absolute;top:1360px;left:0;right:0;text-align:center;font-family:Inter;color:#8a949d;}
+</style></head>
+<body>
+<div class="stage stk-grid-bg">
+  <svg class="china" id="cn"></svg>
+  <svg class="japan" id="jp"></svg>
+  <div class="cap">China + Japan baked silhouettes</div>
+</div>
+<script src="../elements/country-paths.js"></script>
+<script>
+  const C = window.COUNTRY_PATHS;
+  const cn = document.getElementById('cn'); cn.setAttribute('viewBox', C.china.viewBox);
+  cn.style.height = (520 * parseFloat(C.china.viewBox.split(' ')[3]) / parseFloat(C.china.viewBox.split(' ')[2])) + 'px';
+  cn.innerHTML = '<path d="' + C.china.path + '"/>';
+  const jp = document.getElementById('jp'); jp.setAttribute('viewBox', C.japan.viewBox);
+  jp.style.height = (300 * parseFloat(C.japan.viewBox.split(' ')[3]) / parseFloat(C.japan.viewBox.split(' ')[2])) + 'px';
+  jp.innerHTML = '<path d="' + C.japan.path + '"/>';
+</script>
+</body></html>

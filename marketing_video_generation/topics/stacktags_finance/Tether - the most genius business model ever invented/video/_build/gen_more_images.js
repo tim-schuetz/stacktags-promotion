@@ -27,6 +27,8 @@ const SHOTS = [
     prompt: 'A modern corporate office skyscraper tower, sleek and simple, iconic. ' + FLAT },
   { key: 'depositors', dir: OUT, ar: '1:1', people: 'allow_adult',
     prompt: 'A small friendly group of three ordinary everyday people standing together (bank customers / depositors), simple. ' + FLAT },
+  { key: 'moneyheap', dir: OUT, ar: '4:3', people: 'dont_allow',
+    prompt: 'A big messy heap/pile of US dollar cash — many loose banknotes and a few banded bundles piled up into a mound. ' + REAL },
   { key: 'bonds', dir: OUT, ar: '1:1', people: 'dont_allow',
     prompt: 'A rolled diploma-style certificate scroll tied with a red ribbon next to a gold wax seal, warm cream-and-gold colored paper, iconic. ' + FLAT },
   { key: 'founder_list_grin', dir: OUTF, ar: '3:4', people: 'allow_adult',

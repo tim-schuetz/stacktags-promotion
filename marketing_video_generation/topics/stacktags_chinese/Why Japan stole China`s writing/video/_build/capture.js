@@ -11,7 +11,7 @@ const exe = CHROME_CANDIDATES.find(p => fs.existsSync(p));
 const OUTDIR = path.resolve(__dirname, 'capture');
 fs.mkdirSync(OUTDIR, { recursive: true });
 
-const END = 94.6;   // narration length (script_voice.mp3 ≈ 94.64s)
+const END = 98.3;   // narration length (script_voice.mp3 ≈ 98.31s)
 
 (async () => {
   const browser = await chromium.launch({
@@ -37,7 +37,7 @@ const END = 94.6;   // narration length (script_voice.mp3 ≈ 94.64s)
   const tRec = Date.now();   // recording starts ~when the page is created
   page.on('console', m => { if (m.type() === 'error') console.log('  [page error]', m.text()); });
 
-  await page.goto('http://localhost:8871/video/index.html', { waitUntil: 'domcontentloaded' });
+  await page.goto('http://localhost:8903/video/index.html', { waitUntil: 'domcontentloaded' });
   await page.evaluate(async () => { try { await document.fonts.ready; } catch {} });
   // dump the page's declared SFX bed so the audio step can rebuild it
   // deterministically (headless can't record Web Audio).

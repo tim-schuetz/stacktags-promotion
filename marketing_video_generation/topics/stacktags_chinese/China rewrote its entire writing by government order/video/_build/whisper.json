@@ -1,1326 +1,1166 @@
 {
- "duration": 86.192,
+ "duration": 78.669,
  "words": [
   {
-   "word": " In",
+   "word": " Is",
    "start": 0.0,
    "end": 0.16
   },
   {
-   "word": " the",
+   "word": " it",
    "start": 0.16,
-   "end": 0.28
-  },
-  {
-   "word": " 20th",
-   "start": 0.28,
-   "end": 0.72
-  },
-  {
-   "word": " century,",
-   "start": 0.72,
-   "end": 1.02
-  },
-  {
-   "word": " China",
-   "start": 1.32,
-   "end": 1.44
-  },
-  {
-   "word": " did",
-   "start": 1.44,
-   "end": 1.6
-  },
-  {
-   "word": " something",
-   "start": 1.6,
-   "end": 1.94
-  },
-  {
-   "word": " almost",
-   "start": 1.94,
-   "end": 2.28
-  },
-  {
-   "word": " no",
-   "start": 2.28,
-   "end": 2.58
-  },
-  {
-   "word": " country",
-   "start": 2.58,
-   "end": 2.9
-  },
-  {
-   "word": " ever",
-   "start": 2.9,
-   "end": 3.12
-  },
-  {
-   "word": " does.",
-   "start": 3.12,
-   "end": 3.54
-  },
-  {
-   "word": " It",
-   "start": 3.94,
-   "end": 4.12
-  },
-  {
-   "word": " rewrote",
-   "start": 4.12,
-   "end": 4.46
-  },
-  {
-   "word": " its",
-   "start": 4.46,
-   "end": 4.6
-  },
-  {
-   "word": " own",
-   "start": 4.6,
-   "end": 4.84
-  },
-  {
-   "word": " writing,",
-   "start": 4.84,
-   "end": 5.14
-  },
-  {
-   "word": " and",
-   "start": 5.36,
-   "end": 5.46
-  },
-  {
-   "word": " by",
-   "start": 5.46,
-   "end": 5.56
-  },
-  {
-   "word": " government",
-   "start": 5.56,
-   "end": 5.92
-  },
-  {
-   "word": " order.",
-   "start": 5.92,
-   "end": 6.28
-  },
-  {
-   "word": " The",
-   "start": 6.78,
-   "end": 6.96
-  },
-  {
-   "word": " first",
-   "start": 6.96,
-   "end": 7.2
-  },
-  {
-   "word": " time,",
-   "start": 7.2,
-   "end": 7.52
-  },
-  {
-   "word": " it",
-   "start": 7.6,
-   "end": 7.78
-  },
-  {
-   "word": " stuck.",
-   "start": 7.78,
-   "end": 8.08
-  },
-  {
-   "word": " The",
-   "start": 8.52,
-   "end": 8.72
-  },
-  {
-   "word": " second",
-   "start": 8.72,
-   "end": 8.94
-  },
-  {
-   "word": " time,",
-   "start": 8.94,
-   "end": 9.26
-  },
-  {
-   "word": " it",
-   "start": 9.4,
-   "end": 9.5
-  },
-  {
-   "word": " was",
-   "start": 9.5,
-   "end": 9.6
-  },
-  {
-   "word": " such",
-   "start": 9.6,
-   "end": 9.82
-  },
-  {
-   "word": " a",
-   "start": 9.82,
-   "end": 9.98
-  },
-  {
-   "word": " disaster",
-   "start": 9.98,
-   "end": 10.34
-  },
-  {
-   "word": " they",
-   "start": 10.34,
-   "end": 10.64
-  },
-  {
-   "word": " had",
-   "start": 10.64,
-   "end": 10.78
-  },
-  {
-   "word": " to",
-   "start": 10.78,
-   "end": 10.94
-  },
-  {
-   "word": " cancel",
-   "start": 10.94,
-   "end": 11.18
-  },
-  {
-   "word": " it.",
-   "start": 11.18,
-   "end": 11.48
-  },
-  {
-   "word": " Here's",
-   "start": 11.96,
-   "end": 12.22
-  },
-  {
-   "word": " the",
-   "start": 12.22,
-   "end": 12.4
-  },
-  {
-   "word": " story",
-   "start": 12.4,
-   "end": 12.6
-  },
-  {
-   "word": " of",
-   "start": 12.6,
-   "end": 12.84
-  },
-  {
-   "word": " how",
-   "start": 12.84,
-   "end": 12.96
-  },
-  {
-   "word": " you",
-   "start": 12.96,
-   "end": 13.14
-  },
-  {
-   "word": " redesign",
-   "start": 13.14,
-   "end": 13.48
-  },
-  {
-   "word": " a",
-   "start": 13.48,
-   "end": 13.76
-  },
-  {
-   "word": " language,",
-   "start": 13.76,
-   "end": 14.02
-  },
-  {
-   "word": " and",
-   "start": 14.38,
-   "end": 14.58
-  },
-  {
-   "word": " how",
-   "start": 14.58,
-   "end": 14.72
-  },
-  {
-   "word": " it",
-   "start": 14.72,
-   "end": 14.84
-  },
-  {
-   "word": " can",
-   "start": 14.84,
-   "end": 15.0
-  },
-  {
-   "word": " backfire.",
-   "start": 15.0,
-   "end": 15.48
-  },
-  {
-   "word": " Back",
-   "start": 16.02,
-   "end": 16.18
-  },
-  {
-   "word": " in",
-   "start": 16.18,
-   "end": 16.32
-  },
-  {
-   "word": " the",
-   "start": 16.32,
-   "end": 16.4
-  },
-  {
-   "word": " mid",
-   "start": 16.4,
-   "end": 16.54
-  },
-  {
-   "word": " 1900s,",
-   "start": 16.54,
-   "end": 17.24
-  },
-  {
-   "word": " most",
-   "start": 17.32,
-   "end": 17.48
-  },
-  {
-   "word": " people",
-   "start": 17.48,
-   "end": 17.7
-  },
-  {
-   "word": " in",
-   "start": 17.7,
-   "end": 17.86
-  },
-  {
-   "word": " China",
-   "start": 17.86,
-   "end": 18.08
-  },
-  {
-   "word": " couldn't",
-   "start": 18.08,
-   "end": 18.42
-  },
-  {
-   "word": " read.",
-   "start": 18.42,
-   "end": 18.62
-  },
-  {
-   "word": " The",
-   "start": 19.1,
-   "end": 19.24
-  },
-  {
-   "word": " characters",
-   "start": 19.24,
-   "end": 19.5
-  },
-  {
-   "word": " were",
-   "start": 19.5,
-   "end": 19.78
-  },
-  {
-   "word": " beautiful,",
-   "start": 19.78,
-   "end": 20.1
-  },
-  {
-   "word": " but",
-   "start": 20.4,
-   "end": 20.52
-  },
-  {
-   "word": " complex,",
-   "start": 20.52,
-   "end": 20.96
-  },
-  {
-   "word": " often",
-   "start": 21.28,
-   "end": 21.46
-  },
-  {
-   "word": " with",
-   "start": 21.46,
-   "end": 21.68
-  },
-  {
-   "word": " dozens",
-   "start": 21.68,
-   "end": 21.9
-  },
-  {
-   "word": " of",
-   "start": 21.9,
-   "end": 22.14
-  },
-  {
-   "word": " strokes",
-   "start": 22.14,
-   "end": 22.32
-  },
-  {
-   "word": " each.",
-   "start": 22.32,
-   "end": 22.62
-  },
-  {
-   "word": " So",
-   "start": 22.96,
-   "end": 23.16
-  },
-  {
-   "word": " to",
-   "start": 23.16,
-   "end": 23.26
-  },
-  {
-   "word": " lift",
-   "start": 23.26,
-   "end": 23.44
-  },
-  {
-   "word": " literacy,",
-   "start": 23.44,
-   "end": 23.84
-  },
-  {
-   "word": " the",
-   "start": 24.06,
-   "end": 24.18
-  },
-  {
-   "word": " government",
-   "start": 24.18,
-   "end": 24.38
-  },
-  {
-   "word": " decided",
-   "start": 24.38,
-   "end": 24.74
-  },
-  {
-   "word": " to",
-   "start": 24.74,
-   "end": 25.02
-  },
-  {
-   "word": " simplify",
-   "start": 25.02,
-   "end": 25.36
-  },
-  {
-   "word": " the",
-   "start": 25.36,
-   "end": 25.6
-  },
-  {
-   "word": " writing",
-   "start": 25.6,
-   "end": 25.82
-  },
-  {
-   "word": " itself,",
-   "start": 25.82,
-   "end": 26.2
-  },
-  {
-   "word": " officially",
-   "start": 26.58,
-   "end": 26.82
-  },
-  {
-   "word": " cutting",
-   "start": 26.82,
-   "end": 27.2
-  },
-  {
-   "word": " strokes",
-   "start": 27.2,
-   "end": 27.5
-  },
-  {
-   "word": " and",
-   "start": 27.5,
-   "end": 27.72
-  },
-  {
-   "word": " streamlining",
-   "start": 27.72,
-   "end": 28.14
-  },
-  {
-   "word": " thousands",
-   "start": 28.14,
-   "end": 28.6
-  },
-  {
-   "word": " of",
-   "start": 28.6,
-   "end": 28.96
-  },
-  {
-   "word": " characters.",
-   "start": 28.96,
-   "end": 29.34
-  },
-  {
-   "word": " That",
-   "start": 29.88,
-   "end": 30.02
-  },
-  {
-   "word": " first",
-   "start": 30.02,
-   "end": 30.26
-  },
-  {
-   "word": " simplification",
-   "start": 30.26,
-   "end": 30.96
-  },
-  {
-   "word": " through",
-   "start": 30.96,
-   "end": 31.28
-  },
-  {
-   "word": " the",
-   "start": 31.28,
-   "end": 31.46
-  },
-  {
-   "word": " 1950s",
-   "start": 31.46,
-   "end": 32.18
-  },
-  {
-   "word": " and",
-   "start": 32.18,
-   "end": 32.28
-  },
-  {
-   "word": " 60s",
-   "start": 32.28,
-   "end": 33.0
-  },
-  {
-   "word": " largely",
-   "start": 33.0,
-   "end": 33.4
-  },
-  {
-   "word": " worked.",
-   "start": 33.4,
-   "end": 33.8
-  },
-  {
-   "word": " Characters",
-   "start": 34.64,
-   "end": 34.64
-  },
-  {
-   "word": " got",
-   "start": 34.64,
-   "end": 34.8
-  },
-  {
-   "word": " faster",
-   "start": 34.8,
-   "end": 35.2
-  },
-  {
-   "word": " to",
-   "start": 35.2,
-   "end": 35.38
-  },
-  {
-   "word": " write,",
-   "start": 35.38,
-   "end": 35.58
-  },
-  {
-   "word": " literacy",
-   "start": 36.06,
-   "end": 36.34
-  },
-  {
-   "word": " climbed,",
-   "start": 36.34,
-   "end": 36.76
-  },
-  {
-   "word": " and",
-   "start": 37.32,
-   "end": 37.38
-  },
-  {
-   "word": " simplified",
-   "start": 37.38,
-   "end": 37.92
-  },
-  {
-   "word": " Chinese",
-   "start": 37.92,
-   "end": 38.36
-  },
-  {
-   "word": " is",
-   "start": 38.36,
-   "end": 38.62
-  },
-  {
-   "word": " still",
-   "start": 38.62,
-   "end": 38.8
-  },
-  {
-   "word": " what",
-   "start": 38.8,
-   "end": 38.94
-  },
-  {
-   "word": " the",
-   "start": 38.94,
-   "end": 39.06
-  },
-  {
-   "word": " mainland",
-   "start": 39.06,
-   "end": 39.32
-  },
-  {
-   "word": " uses",
-   "start": 39.32,
-   "end": 39.64
-  },
-  {
-   "word": " today,",
-   "start": 39.64,
-   "end": 40.04
-  },
-  {
-   "word": " while",
-   "start": 40.36,
-   "end": 40.56
-  },
-  {
-   "word": " Taiwan",
-   "start": 40.56,
-   "end": 40.96
-  },
-  {
-   "word": " and",
-   "start": 40.96,
-   "end": 41.14
-  },
-  {
-   "word": " Hong",
-   "start": 41.14,
-   "end": 41.34
-  },
-  {
-   "word": " Kong",
-   "start": 41.34,
-   "end": 41.56
-  },
-  {
-   "word": " kept",
-   "start": 41.56,
-   "end": 41.76
-  },
-  {
-   "word": " the",
-   "start": 41.76,
-   "end": 41.92
-  },
-  {
-   "word": " original",
-   "start": 41.92,
-   "end": 42.28
-  },
-  {
-   "word": " traditional",
-   "start": 42.28,
-   "end": 42.82
-  },
-  {
-   "word": " forms.",
-   "start": 42.82,
-   "end": 43.22
-  },
-  {
-   "word": " So",
-   "start": 43.66,
-   "end": 43.9
-  },
-  {
-   "word": " far,",
-   "start": 43.9,
-   "end": 44.22
-  },
-  {
-   "word": " a",
-   "start": 44.4,
-   "end": 44.48
-  },
-  {
-   "word": " rare",
-   "start": 44.48,
-   "end": 44.66
-  },
-  {
-   "word": " success",
-   "start": 44.66,
-   "end": 45.06
-  },
-  {
-   "word": " in",
-   "start": 45.06,
-   "end": 45.3
-  },
-  {
-   "word": " engineering",
-   "start": 45.3,
-   "end": 45.68
-  },
-  {
-   "word": " a",
-   "start": 45.68,
-   "end": 45.88
-  },
-  {
-   "word": " language.",
-   "start": 45.88,
-   "end": 46.2
-  },
-  {
-   "word": " Then",
-   "start": 46.64,
-   "end": 46.84
-  },
-  {
-   "word": " they",
-   "start": 46.84,
-   "end": 46.98
-  },
-  {
-   "word": " pushed",
-   "start": 46.98,
-   "end": 47.2
-  },
-  {
-   "word": " their",
-   "start": 47.2,
-   "end": 47.42
-  },
-  {
-   "word": " luck.",
-   "start": 47.42,
-   "end": 47.68
-  },
-  {
-   "word": " In",
-   "start": 48.1,
-   "end": 48.26
-  },
-  {
-   "word": " 1977",
-   "start": 48.26,
-   "end": 48.9
-  },
-  {
-   "word": " came",
-   "start": 48.9,
-   "end": 49.36
-  },
-  {
-   "word": " a",
-   "start": 49.36,
-   "end": 49.54
-  },
-  {
-   "word": " second",
-   "start": 49.54,
-   "end": 49.76
-  },
-  {
-   "word": " round,",
-   "start": 49.76,
-   "end": 50.04
-  },
-  {
-   "word": " simplifying",
-   "start": 50.3,
-   "end": 50.72
-  },
-  {
-   "word": " characters",
-   "start": 50.72,
-   "end": 51.12
-  },
-  {
-   "word": " even",
-   "start": 51.12,
-   "end": 51.48
-  },
-  {
-   "word": " further,",
-   "start": 51.48,
-   "end": 51.82
-  },
-  {
-   "word": " but",
-   "start": 52.1,
-   "end": 52.24
-  },
-  {
-   "word": " this",
-   "start": 52.24,
-   "end": 52.44
-  },
-  {
-   "word": " one",
-   "start": 52.44,
-   "end": 52.6
-  },
-  {
-   "word": " went",
-   "start": 52.6,
-   "end": 52.8
-  },
-  {
-   "word": " too",
-   "start": 52.8,
-   "end": 53.04
-  },
-  {
-   "word": " far.",
-   "start": 53.04,
-   "end": 53.4
-  },
-  {
-   "word": " The",
-   "start": 53.4,
-   "end": 54.0
-  },
-  {
-   "word": " new",
-   "start": 54.0,
-   "end": 54.16
-  },
-  {
-   "word": " forms",
-   "start": 54.16,
-   "end": 54.42
-  },
-  {
-   "word": " were",
-   "start": 54.42,
-   "end": 54.62
-  },
-  {
-   "word": " confusing,",
-   "start": 54.62,
-   "end": 55.1
-  },
-  {
-   "word": " stripped",
-   "start": 55.46,
-   "end": 55.54
-  },
-  {
-   "word": " of",
-   "start": 55.54,
-   "end": 55.7
-  },
-  {
-   "word": " so",
-   "start": 55.7,
-   "end": 55.98
-  },
-  {
-   "word": " much",
-   "start": 55.98,
-   "end": 56.2
-  },
-  {
-   "word": " that",
-   "start": 56.2,
-   "end": 56.44
-  },
-  {
-   "word": " they",
-   "start": 56.44,
-   "end": 56.58
-  },
-  {
-   "word": " lost",
-   "start": 56.58,
-   "end": 56.8
-  },
-  {
-   "word": " their",
-   "start": 56.8,
-   "end": 57.02
-  },
-  {
-   "word": " clarity,",
-   "start": 57.02,
-   "end": 57.34
-  },
-  {
-   "word": " and",
-   "start": 57.7,
-   "end": 57.88
-  },
-  {
-   "word": " people",
-   "start": 57.88,
-   "end": 58.14
-  },
-  {
-   "word": " hated",
-   "start": 58.14,
-   "end": 58.38
-  },
-  {
-   "word": " them.",
-   "start": 58.38,
-   "end": 58.7
-  },
-  {
-   "word": " It",
-   "start": 59.22,
-   "end": 59.32
-  },
-  {
-   "word": " was",
-   "start": 59.32,
-   "end": 59.44
-  },
-  {
-   "word": " so",
-   "start": 59.44,
-   "end": 59.72
-  },
-  {
-   "word": " unpopular",
-   "start": 59.72,
-   "end": 60.18
-  },
-  {
-   "word": " that",
-   "start": 60.18,
-   "end": 60.44
-  },
-  {
-   "word": " in",
-   "start": 60.44,
-   "end": 60.56
-  },
-  {
-   "word": " 1986,",
-   "start": 60.56,
-   "end": 61.18
-  },
-  {
-   "word": " the",
-   "start": 61.62,
-   "end": 61.64
-  },
-  {
-   "word": " government",
-   "start": 61.64,
-   "end": 61.9
-  },
-  {
-   "word": " officially",
-   "start": 61.9,
-   "end": 62.36
-  },
-  {
-   "word": " scrapped",
-   "start": 62.36,
-   "end": 62.74
-  },
-  {
-   "word": " the",
-   "start": 62.74,
-   "end": 62.92
-  },
-  {
-   "word": " entire",
-   "start": 62.92,
-   "end": 63.28
-  },
-  {
-   "word": " second",
-   "start": 63.28,
-   "end": 63.62
-  },
-  {
-   "word": " round,",
-   "start": 63.62,
-   "end": 63.94
-  },
-  {
-   "word": " a",
-   "start": 64.36,
-   "end": 64.58
-  },
-  {
-   "word": " rare",
-   "start": 64.58,
-   "end": 64.82
-  },
-  {
-   "word": " public",
-   "start": 64.82,
-   "end": 65.3
-  },
-  {
-   "word": " admission",
-   "start": 65.3,
-   "end": 65.76
-  },
-  {
-   "word": " that",
-   "start": 65.76,
-   "end": 66.28
-  },
-  {
-   "word": " a",
-   "start": 66.28,
-   "end": 66.38
-  },
-  {
-   "word": " language",
-   "start": 66.38,
-   "end": 66.6
-  },
-  {
-   "word": " reform",
-   "start": 66.6,
-   "end": 66.98
-  },
-  {
-   "word": " had",
-   "start": 66.98,
-   "end": 67.18
-  },
-  {
-   "word": " simply",
-   "start": 67.18,
-   "end": 67.52
-  },
-  {
-   "word": " failed.",
-   "start": 67.52,
-   "end": 67.9
-  },
-  {
-   "word": " Most",
-   "start": 68.46,
-   "end": 68.68
-  },
-  {
-   "word": " languages",
-   "start": 68.68,
-   "end": 68.96
-  },
-  {
-   "word": " drift",
-   "start": 68.96,
-   "end": 69.32
-  },
-  {
-   "word": " and",
-   "start": 69.32,
-   "end": 69.54
-  },
-  {
-   "word": " evolve",
-   "start": 69.54,
-   "end": 69.84
-  },
-  {
-   "word": " slowly",
-   "start": 69.84,
-   "end": 70.26
-  },
-  {
-   "word": " on",
-   "start": 70.26,
-   "end": 70.64
-  },
-  {
-   "word": " their",
-   "start": 70.64,
-   "end": 70.78
-  },
-  {
-   "word": " own.",
-   "start": 70.78,
-   "end": 71.04
-  },
-  {
-   "word": " China",
-   "start": 71.58,
-   "end": 71.86
-  },
-  {
-   "word": " engineered",
-   "start": 71.86,
-   "end": 72.26
-  },
-  {
-   "word": " its",
-   "start": 72.26,
-   "end": 72.44
-  },
-  {
-   "word": " writing",
-   "start": 72.44,
-   "end": 72.68
-  },
-  {
-   "word": " by",
-   "start": 72.68,
-   "end": 72.86
-  },
-  {
-   "word": " decree,",
-   "start": 72.86,
-   "end": 73.18
-  },
-  {
-   "word": " proving",
-   "start": 73.48,
-   "end": 73.62
-  },
-  {
-   "word": " you",
-   "start": 73.62,
-   "end": 73.84
-  },
-  {
-   "word": " really",
-   "start": 73.84,
-   "end": 74.08
-  },
-  {
-   "word": " can",
-   "start": 74.08,
-   "end": 74.34
-  },
-  {
-   "word": " redesign",
-   "start": 74.34,
-   "end": 74.74
-  },
-  {
-   "word": " a",
-   "start": 74.74,
-   "end": 74.9
-  },
-  {
-   "word": " language",
-   "start": 74.9,
-   "end": 75.08
-  },
-  {
-   "word": " from",
-   "start": 75.08,
-   "end": 75.28
-  },
-  {
-   "word": " the",
-   "start": 75.28,
-   "end": 75.46
-  },
-  {
-   "word": " top",
-   "start": 75.46,
-   "end": 75.64
-  },
-  {
-   "word": " down,",
-   "start": 75.64,
-   "end": 76.0
-  },
-  {
-   "word": " but",
-   "start": 76.5,
-   "end": 76.64
-  },
-  {
-   "word": " only",
-   "start": 76.64,
-   "end": 76.8
-  },
-  {
-   "word": " up",
-   "start": 76.8,
-   "end": 76.94
-  },
-  {
-   "word": " to",
-   "start": 76.94,
-   "end": 77.06
-  },
-  {
-   "word": " the",
-   "start": 77.06,
-   "end": 77.18
-  },
-  {
-   "word": " point",
-   "start": 77.18,
-   "end": 77.34
-  },
-  {
-   "word": " where",
-   "start": 77.34,
-   "end": 77.5
-  },
-  {
-   "word": " the",
-   "start": 77.5,
-   "end": 77.62
-  },
-  {
-   "word": " people",
-   "start": 77.62,
-   "end": 77.88
-  },
-  {
-   "word": " writing",
-   "start": 77.88,
-   "end": 78.18
-  },
-  {
-   "word": " it",
-   "start": 78.18,
-   "end": 78.36
-  },
-  {
-   "word": " push",
-   "start": 78.36,
-   "end": 78.52
-  },
-  {
-   "word": " back",
-   "start": 78.52,
-   "end": 78.9
-  },
-  {
-   "word": " want",
-   "start": 78.9,
-   "end": 79.48
-  },
-  {
-   "word": " to",
-   "start": 79.48,
-   "end": 79.6
+   "end": 0.26
   },
   {
    "word": " actually",
-   "start": 79.6,
-   "end": 79.88
+   "start": 0.26,
+   "end": 0.64
   },
   {
-   "word": " start",
-   "start": 79.88,
-   "end": 80.2
+   "word": " possible",
+   "start": 0.64,
+   "end": 1.02
   },
   {
-   "word": " learning",
-   "start": 80.2,
-   "end": 80.5
+   "word": " to",
+   "start": 1.02,
+   "end": 1.22
   },
   {
-   "word": " Chinese,",
-   "start": 80.5,
-   "end": 80.92
+   "word": " rewrite",
+   "start": 1.22,
+   "end": 1.5
   },
   {
-   "word": " discover",
-   "start": 81.66,
-   "end": 81.88
+   "word": " an",
+   "start": 1.5,
+   "end": 1.64
   },
   {
-   "word": " thousands",
-   "start": 81.88,
-   "end": 82.4
+   "word": " entire",
+   "start": 1.64,
+   "end": 2.06
   },
   {
-   "word": " of",
-   "start": 82.4,
-   "end": 82.62
+   "word": " language",
+   "start": 2.06,
+   "end": 2.5
   },
   {
-   "word": " free",
-   "start": 82.62,
-   "end": 82.78
+   "word": " by",
+   "start": 2.5,
+   "end": 3.1
   },
   {
-   "word": " exercises",
-   "start": 82.78,
-   "end": 83.26
+   "word": " government",
+   "start": 3.1,
+   "end": 3.46
+  },
+  {
+   "word": " order?",
+   "start": 3.46,
+   "end": 3.82
+  },
+  {
+   "word": " Yes,",
+   "start": 4.38,
+   "end": 4.68
+  },
+  {
+   "word": " it",
+   "start": 5.02,
+   "end": 5.1
+  },
+  {
+   "word": " is,",
+   "start": 5.1,
+   "end": 5.34
   },
   {
    "word": " and",
-   "start": 83.26,
-   "end": 83.66
+   "start": 5.52,
+   "end": 5.68
   },
   {
-   "word": " more",
-   "start": 83.66,
-   "end": 83.84
+   "word": " yes,",
+   "start": 5.68,
+   "end": 5.94
+  },
+  {
+   "word": " it",
+   "start": 6.22,
+   "end": 6.34
+  },
+  {
+   "word": " can",
+   "start": 6.34,
+   "end": 6.6
+  },
+  {
+   "word": " fail.",
+   "start": 6.6,
+   "end": 6.92
+  },
+  {
+   "word": " China",
+   "start": 7.72,
+   "end": 7.88
+  },
+  {
+   "word": " is",
+   "start": 7.88,
+   "end": 8.1
+  },
+  {
+   "word": " proof",
+   "start": 8.1,
+   "end": 8.38
+  },
+  {
+   "word": " of",
+   "start": 8.38,
+   "end": 8.62
+  },
+  {
+   "word": " both.",
+   "start": 8.62,
+   "end": 8.88
+  },
+  {
+   "word": " In",
+   "start": 9.28,
+   "end": 9.4
+  },
+  {
+   "word": " the",
+   "start": 9.4,
+   "end": 9.52
+  },
+  {
+   "word": " mid",
+   "start": 9.52,
+   "end": 9.68
+  },
+  {
+   "word": " 1900s,",
+   "start": 9.68,
+   "end": 10.68
+  },
+  {
+   "word": " most",
+   "start": 10.82,
+   "end": 11.08
+  },
+  {
+   "word": " people",
+   "start": 11.08,
+   "end": 11.3
+  },
+  {
+   "word": " in",
+   "start": 11.3,
+   "end": 11.46
+  },
+  {
+   "word": " China",
+   "start": 11.46,
+   "end": 11.7
+  },
+  {
+   "word": " couldn't",
+   "start": 11.7,
+   "end": 12.06
+  },
+  {
+   "word": " read.",
+   "start": 12.06,
+   "end": 12.32
+  },
+  {
+   "word": " The",
+   "start": 12.78,
+   "end": 12.96
+  },
+  {
+   "word": " characters",
+   "start": 12.96,
+   "end": 13.26
+  },
+  {
+   "word": " were",
+   "start": 13.26,
+   "end": 13.52
+  },
+  {
+   "word": " beautiful,",
+   "start": 13.52,
+   "end": 13.92
+  },
+  {
+   "word": " but",
+   "start": 14.2,
+   "end": 14.38
+  },
+  {
+   "word": " brutally",
+   "start": 14.38,
+   "end": 14.74
+  },
+  {
+   "word": " complex,",
+   "start": 14.74,
+   "end": 15.26
+  },
+  {
+   "word": " often",
+   "start": 15.56,
+   "end": 15.8
+  },
+  {
+   "word": " dozens",
+   "start": 15.8,
+   "end": 16.08
+  },
+  {
+   "word": " of",
+   "start": 16.08,
+   "end": 16.34
+  },
+  {
+   "word": " strokes",
+   "start": 16.34,
+   "end": 16.54
+  },
+  {
+   "word": " each.",
+   "start": 16.54,
+   "end": 16.82
+  },
+  {
+   "word": " So",
+   "start": 17.12,
+   "end": 17.32
+  },
+  {
+   "word": " to",
+   "start": 17.32,
+   "end": 17.42
+  },
+  {
+   "word": " lift",
+   "start": 17.42,
+   "end": 17.62
+  },
+  {
+   "word": " literacy,",
+   "start": 17.62,
+   "end": 18.04
+  },
+  {
+   "word": " the",
+   "start": 18.16,
+   "end": 18.28
+  },
+  {
+   "word": " government",
+   "start": 18.28,
+   "end": 18.48
+  },
+  {
+   "word": " did",
+   "start": 18.48,
+   "end": 18.72
+  },
+  {
+   "word": " something",
+   "start": 18.72,
+   "end": 18.98
+  },
+  {
+   "word": " almost",
+   "start": 18.98,
+   "end": 19.38
+  },
+  {
+   "word": " no",
+   "start": 19.38,
+   "end": 19.72
+  },
+  {
+   "word": " country",
+   "start": 19.72,
+   "end": 20.02
+  },
+  {
+   "word": " ever",
+   "start": 20.02,
+   "end": 20.24
+  },
+  {
+   "word": " does.",
+   "start": 20.24,
+   "end": 20.66
+  },
+  {
+   "word": " It",
+   "start": 20.98,
+   "end": 21.22
+  },
+  {
+   "word": " simplified",
+   "start": 21.22,
+   "end": 21.58
+  },
+  {
+   "word": " the",
+   "start": 21.58,
+   "end": 21.86
+  },
+  {
+   "word": " writing",
+   "start": 21.86,
+   "end": 22.12
+  },
+  {
+   "word": " itself",
+   "start": 22.12,
+   "end": 22.5
+  },
+  {
+   "word": " up",
+   "start": 22.5,
+   "end": 22.74
+  },
+  {
+   "word": " by",
+   "start": 22.74,
+   "end": 23.02
+  },
+  {
+   "word": " decree.",
+   "start": 23.02,
+   "end": 23.36
+  },
+  {
+   "word": " Take",
+   "start": 23.94,
+   "end": 24.12
+  },
+  {
+   "word": " a",
+   "start": 24.12,
+   "end": 24.24
+  },
+  {
+   "word": " few",
+   "start": 24.24,
+   "end": 24.46
+  },
+  {
+   "word": " everyday",
+   "start": 24.46,
+   "end": 24.74
+  },
+  {
+   "word": " characters.",
+   "start": 24.74,
+   "end": 25.26
+  },
+  {
+   "word": " In",
+   "start": 25.26,
+   "end": 25.84
+  },
+  {
+   "word": " the",
+   "start": 25.84,
+   "end": 25.96
+  },
+  {
+   "word": " 1950s,",
+   "start": 25.96,
+   "end": 26.76
+  },
+  {
+   "word": " the",
+   "start": 26.88,
+   "end": 26.92
+  },
+  {
+   "word": " first",
+   "start": 26.92,
+   "end": 27.12
+  },
+  {
+   "word": " reform",
+   "start": 27.12,
+   "end": 27.42
+  },
+  {
+   "word": " cut",
+   "start": 27.42,
+   "end": 27.68
+  },
+  {
+   "word": " them",
+   "start": 27.68,
+   "end": 27.9
+  },
+  {
+   "word": " down,",
+   "start": 27.9,
+   "end": 28.16
+  },
+  {
+   "word": " fewer",
+   "start": 28.46,
+   "end": 28.64
+  },
+  {
+   "word": " strokes",
+   "start": 28.64,
+   "end": 28.98
+  },
+  {
+   "word": " faster",
+   "start": 28.98,
+   "end": 29.38
+  },
+  {
+   "word": " to",
+   "start": 29.38,
+   "end": 29.66
+  },
+  {
+   "word": " write,",
+   "start": 29.66,
+   "end": 29.88
+  },
+  {
+   "word": " and",
+   "start": 30.22,
+   "end": 30.38
+  },
+  {
+   "word": " it",
+   "start": 30.38,
+   "end": 30.52
+  },
+  {
+   "word": " worked.",
+   "start": 30.52,
+   "end": 30.82
+  },
+  {
+   "word": " Literacy",
+   "start": 31.32,
+   "end": 31.58
+  },
+  {
+   "word": " climbed,",
+   "start": 31.58,
+   "end": 31.94
+  },
+  {
+   "word": " from",
+   "start": 32.32,
+   "end": 32.52
+  },
+  {
+   "word": " around",
+   "start": 32.52,
+   "end": 32.82
+  },
+  {
+   "word": " one",
+   "start": 32.82,
+   "end": 33.16
+  },
+  {
+   "word": " in",
+   "start": 33.16,
+   "end": 33.4
+  },
+  {
+   "word": " five",
+   "start": 33.4,
+   "end": 33.66
+  },
+  {
+   "word": " adults",
+   "start": 33.66,
+   "end": 34.04
+  },
+  {
+   "word": " who",
+   "start": 34.04,
+   "end": 34.2
+  },
+  {
+   "word": " could",
+   "start": 34.2,
+   "end": 34.32
+  },
+  {
+   "word": " read",
+   "start": 34.32,
+   "end": 34.54
+  },
+  {
+   "word": " to",
+   "start": 34.54,
+   "end": 35.04
+  },
+  {
+   "word": " most",
+   "start": 35.04,
+   "end": 35.26
+  },
+  {
+   "word": " of",
+   "start": 35.26,
+   "end": 35.44
+  },
+  {
+   "word": " the",
+   "start": 35.44,
+   "end": 35.56
+  },
+  {
+   "word": " country.",
+   "start": 35.56,
+   "end": 35.88
+  },
+  {
+   "word": " So",
+   "start": 36.3,
+   "end": 36.5
+  },
+  {
+   "word": " in",
+   "start": 36.5,
+   "end": 36.62
+  },
+  {
+   "word": " 1977,",
+   "start": 36.62,
+   "end": 37.26
+  },
+  {
+   "word": " they",
+   "start": 37.68,
+   "end": 37.78
+  },
+  {
+   "word": " pushed",
+   "start": 37.78,
+   "end": 37.98
+  },
+  {
+   "word": " their",
+   "start": 37.98,
+   "end": 38.2
+  },
+  {
+   "word": " luck.",
+   "start": 38.2,
+   "end": 38.46
+  },
+  {
+   "word": " A",
+   "start": 38.84,
+   "end": 39.02
+  },
+  {
+   "word": " second",
+   "start": 39.02,
+   "end": 39.28
+  },
+  {
+   "word": " round,",
+   "start": 39.28,
+   "end": 39.56
+  },
+  {
+   "word": " simplifying",
+   "start": 39.96,
+   "end": 40.44
+  },
+  {
+   "word": " even",
+   "start": 40.44,
+   "end": 40.72
+  },
+  {
+   "word": " further.",
+   "start": 40.72,
+   "end": 41.04
+  },
+  {
+   "word": " But",
+   "start": 41.52,
+   "end": 41.7
+  },
+  {
+   "word": " this",
+   "start": 41.7,
+   "end": 41.9
+  },
+  {
+   "word": " time,",
+   "start": 41.9,
+   "end": 42.14
+  },
+  {
+   "word": " they",
+   "start": 42.3,
+   "end": 42.4
+  },
+  {
+   "word": " went",
+   "start": 42.4,
+   "end": 42.56
+  },
+  {
+   "word": " too",
+   "start": 42.56,
+   "end": 42.78
+  },
+  {
+   "word": " far.",
+   "start": 42.78,
+   "end": 43.16
+  },
+  {
+   "word": " The",
+   "start": 43.56,
+   "end": 43.68
+  },
+  {
+   "word": " new",
+   "start": 43.68,
+   "end": 43.84
+  },
+  {
+   "word": " forms",
+   "start": 43.84,
+   "end": 44.1
+  },
+  {
+   "word": " were",
+   "start": 44.1,
+   "end": 44.3
+  },
+  {
+   "word": " stripped",
+   "start": 44.3,
+   "end": 44.54
+  },
+  {
+   "word": " down",
+   "start": 44.54,
+   "end": 44.76
+  },
+  {
+   "word": " so",
+   "start": 44.76,
+   "end": 45.06
+  },
+  {
+   "word": " much",
+   "start": 45.06,
+   "end": 45.24
+  },
+  {
+   "word": " they",
+   "start": 45.24,
+   "end": 45.44
+  },
+  {
+   "word": " lost",
+   "start": 45.44,
+   "end": 45.64
+  },
+  {
+   "word": " their",
+   "start": 45.64,
+   "end": 45.84
+  },
+  {
+   "word": " meaning,",
+   "start": 45.84,
+   "end": 46.14
+  },
+  {
+   "word": " confusing",
+   "start": 46.64,
+   "end": 47.0
+  },
+  {
+   "word": " and",
+   "start": 47.0,
+   "end": 47.38
+  },
+  {
+   "word": " unpopular.",
+   "start": 47.38,
+   "end": 47.82
+  },
+  {
+   "word": " People",
+   "start": 48.36,
+   "end": 48.62
+  },
+  {
+   "word": " just",
+   "start": 48.62,
+   "end": 48.84
+  },
+  {
+   "word": " refused",
+   "start": 48.84,
+   "end": 49.22
+  },
+  {
+   "word": " to",
+   "start": 49.22,
+   "end": 49.46
+  },
+  {
+   "word": " use",
+   "start": 49.46,
+   "end": 49.66
+  },
+  {
+   "word": " them.",
+   "start": 49.66,
+   "end": 49.88
+  },
+  {
+   "word": " So",
+   "start": 50.22,
+   "end": 50.38
+  },
+  {
+   "word": " in",
+   "start": 50.38,
+   "end": 50.48
+  },
+  {
+   "word": " 1986,",
+   "start": 50.48,
+   "end": 51.06
+  },
+  {
+   "word": " the",
+   "start": 51.34,
+   "end": 51.52
+  },
+  {
+   "word": " government",
+   "start": 51.52,
+   "end": 51.7
+  },
+  {
+   "word": " did",
+   "start": 51.7,
+   "end": 51.96
+  },
+  {
+   "word": " something",
+   "start": 51.96,
+   "end": 52.24
+  },
+  {
+   "word": " rare.",
+   "start": 52.24,
+   "end": 52.56
+  },
+  {
+   "word": " It",
+   "start": 52.56,
+   "end": 52.86
+  },
+  {
+   "word": " admitted",
+   "start": 52.86,
+   "end": 53.2
+  },
+  {
+   "word": " the",
+   "start": 53.2,
+   "end": 53.4
+  },
+  {
+   "word": " reform",
+   "start": 53.4,
+   "end": 53.7
+  },
+  {
+   "word": " had",
+   "start": 53.7,
+   "end": 53.9
+  },
+  {
+   "word": " failed",
+   "start": 53.9,
+   "end": 54.18
+  },
+  {
+   "word": " and",
+   "start": 54.18,
+   "end": 54.42
+  },
+  {
+   "word": " scrapped",
+   "start": 54.42,
+   "end": 54.68
+  },
+  {
+   "word": " the",
+   "start": 54.68,
+   "end": 54.86
+  },
+  {
+   "word": " entire",
+   "start": 54.86,
+   "end": 55.18
+  },
+  {
+   "word": " second",
+   "start": 55.18,
+   "end": 55.52
+  },
+  {
+   "word": " round.",
+   "start": 55.52,
+   "end": 55.88
+  },
+  {
+   "word": " Today,",
+   "start": 56.56,
+   "end": 56.7
+  },
+  {
+   "word": " that",
+   "start": 56.92,
+   "end": 57.04
+  },
+  {
+   "word": " first",
+   "start": 57.04,
+   "end": 57.3
+  },
+  {
+   "word": " simplification",
+   "start": 57.3,
+   "end": 58.0
+  },
+  {
+   "word": " is",
+   "start": 58.0,
+   "end": 58.24
+  },
+  {
+   "word": " what",
+   "start": 58.24,
+   "end": 58.4
+  },
+  {
+   "word": " the",
+   "start": 58.4,
+   "end": 58.54
+  },
+  {
+   "word": " mainland",
+   "start": 58.54,
+   "end": 58.78
+  },
+  {
+   "word": " writes.",
+   "start": 58.78,
+   "end": 59.2
+  },
+  {
+   "word": " Jianti.",
+   "start": 59.7,
+   "end": 60.12
+  },
+  {
+   "word": " Simplified.",
+   "start": 60.56,
+   "end": 61.08
+  },
+  {
+   "word": " But",
+   "start": 61.62,
+   "end": 61.8
+  },
+  {
+   "word": " Taiwan",
+   "start": 61.8,
+   "end": 62.2
+  },
+  {
+   "word": " and",
+   "start": 62.2,
+   "end": 62.38
+  },
+  {
+   "word": " Hong",
+   "start": 62.38,
+   "end": 62.56
+  },
+  {
+   "word": " Kong",
+   "start": 62.56,
+   "end": 62.78
+  },
+  {
+   "word": " never",
+   "start": 62.78,
+   "end": 63.08
+  },
+  {
+   "word": " adopted",
+   "start": 63.08,
+   "end": 63.5
+  },
+  {
+   "word": " it.",
+   "start": 63.5,
+   "end": 63.7
+  },
+  {
+   "word": " They",
+   "start": 63.98,
+   "end": 64.08
+  },
+  {
+   "word": " kept",
+   "start": 64.08,
+   "end": 64.24
+  },
+  {
+   "word": " the",
+   "start": 64.24,
+   "end": 64.38
+  },
+  {
+   "word": " original",
+   "start": 64.38,
+   "end": 64.62
+  },
+  {
+   "word": " fan",
+   "start": 64.62,
+   "end": 64.98
+  },
+  {
+   "word": " tie.",
+   "start": 64.98,
+   "end": 65.28
+  },
+  {
+   "word": " Traditional.",
+   "start": 65.9,
+   "end": 66.12
+  },
+  {
+   "word": " One",
+   "start": 66.78,
+   "end": 67.12
+  },
+  {
+   "word": " language,",
+   "start": 67.12,
+   "end": 67.42
+  },
+  {
+   "word": " two",
+   "start": 67.72,
+   "end": 67.88
+  },
+  {
+   "word": " ways",
+   "start": 67.88,
+   "end": 68.0
+  },
+  {
+   "word": " to",
+   "start": 68.0,
+   "end": 68.2
+  },
+  {
+   "word": " write",
+   "start": 68.2,
+   "end": 68.4
+  },
+  {
+   "word": " it.",
+   "start": 68.4,
+   "end": 68.58
+  },
+  {
+   "word": " Redesigned",
+   "start": 68.82,
+   "end": 69.22
+  },
+  {
+   "word": " from",
+   "start": 69.22,
+   "end": 69.42
+  },
+  {
+   "word": " the",
+   "start": 69.42,
+   "end": 69.56
+  },
+  {
+   "word": " top",
+   "start": 69.56,
+   "end": 69.76
+  },
+  {
+   "word": " down,",
+   "start": 69.76,
+   "end": 70.1
+  },
+  {
+   "word": " but",
+   "start": 70.44,
+   "end": 70.58
+  },
+  {
+   "word": " only",
+   "start": 70.58,
+   "end": 70.72
+  },
+  {
+   "word": " as",
+   "start": 70.72,
+   "end": 70.9
+  },
+  {
+   "word": " far",
+   "start": 70.9,
+   "end": 71.04
+  },
+  {
+   "word": " as",
+   "start": 71.04,
+   "end": 71.16
+  },
+  {
+   "word": " the",
+   "start": 71.16,
+   "end": 71.26
+  },
+  {
+   "word": " people",
+   "start": 71.26,
+   "end": 71.46
+  },
+  {
+   "word": " would",
+   "start": 71.46,
+   "end": 71.64
+  },
+  {
+   "word": " allow.",
+   "start": 71.64,
+   "end": 71.92
+  },
+  {
+   "word": " Want",
+   "start": 72.34,
+   "end": 72.54
+  },
+  {
+   "word": " to",
+   "start": 72.54,
+   "end": 72.64
+  },
+  {
+   "word": " actually",
+   "start": 72.64,
+   "end": 72.92
+  },
+  {
+   "word": " start",
+   "start": 72.92,
+   "end": 73.18
   },
   {
    "word": " learning",
-   "start": 83.84,
-   "end": 84.1
+   "start": 73.18,
+   "end": 73.44
+  },
+  {
+   "word": " Chinese?",
+   "start": 73.44,
+   "end": 73.76
+  },
+  {
+   "word": " Discover",
+   "start": 74.34,
+   "end": 74.56
+  },
+  {
+   "word": " thousands",
+   "start": 74.56,
+   "end": 74.98
+  },
+  {
+   "word": " of",
+   "start": 74.98,
+   "end": 75.22
+  },
+  {
+   "word": " free",
+   "start": 75.22,
+   "end": 75.4
+  },
+  {
+   "word": " exercises",
+   "start": 75.4,
+   "end": 75.88
+  },
+  {
+   "word": " and",
+   "start": 75.88,
+   "end": 76.24
+  },
+  {
+   "word": " more",
+   "start": 76.24,
+   "end": 76.4
+  },
+  {
+   "word": " learning",
+   "start": 76.4,
+   "end": 76.66
   },
   {
    "word": " content",
-   "start": 84.1,
-   "end": 84.5
+   "start": 76.66,
+   "end": 77.0
   },
   {
    "word": " on",
-   "start": 84.5,
-   "end": 84.7
+   "start": 77.0,
+   "end": 77.2
   },
   {
    "word": " stacktags",
-   "start": 84.7,
-   "end": 85.26
+   "start": 77.2,
+   "end": 77.7
   },
   {
-   "word": ".io",
-   "start": 85.26,
-   "end": 85.76
+   "word": ".io.",
+   "start": 77.7,
+   "end": 78.22
   }
  ],
- "text": "In the 20th century, China did something almost no country ever does. It rewrote its own writing, and by government order. The first time, it stuck. The second time, it was such a disaster they had to cancel it. Here's the story of how you redesign a language, and how it can backfire. Back in the mid 1900s, most people in China couldn't read. The characters were beautiful, but complex, often with dozens of strokes each. So to lift literacy, the government decided to simplify the writing itself, officially cutting strokes and streamlining thousands of characters. That first simplification through the 1950s and 60s largely worked. Characters got faster to write, literacy climbed, and simplified Chinese is still what the mainland uses today, while Taiwan and Hong Kong kept the original traditional forms. So far, a rare success in engineering a language. Then they pushed their luck. In 1977 came a second round, simplifying characters even further, but this one went too far. The new forms were confusing, stripped of so much that they lost their clarity, and people hated them. It was so unpopular that in 1986, the government officially scrapped the entire second round, a rare public admission that a language reform had simply failed. Most languages drift and evolve slowly on their own. China engineered its writing by decree, proving you really can redesign a language from the top down, but only up to the point where the people writing it push back want to actually start learning Chinese, discover thousands of free exercises and more learning content on stacktags.io"
+ "text": "Is it actually possible to rewrite an entire language by government order? Yes, it is, and yes, it can fail. China is proof of both. In the mid 1900s, most people in China couldn't read. The characters were beautiful, but brutally complex, often dozens of strokes each. So to lift literacy, the government did something almost no country ever does. It simplified the writing itself up by decree. Take a few everyday characters. In the 1950s, the first reform cut them down, fewer strokes faster to write, and it worked. Literacy climbed, from around one in five adults who could read to most of the country. So in 1977, they pushed their luck. A second round, simplifying even further. But this time, they went too far. The new forms were stripped down so much they lost their meaning, confusing and unpopular. People just refused to use them. So in 1986, the government did something rare. It admitted the reform had failed and scrapped the entire second round. Today, that first simplification is what the mainland writes. Jianti. Simplified. But Taiwan and Hong Kong never adopted it. They kept the original fan tie. Traditional. One language, two ways to write it. Redesigned from the top down, but only as far as the people would allow. Want to actually start learning Chinese? Discover thousands of free exercises and more learning content on stacktags.io."
 }

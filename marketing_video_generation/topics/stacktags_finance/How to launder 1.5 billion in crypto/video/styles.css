@@ -521,16 +521,46 @@ body.clean #hud{ display:none; }
 .ring-arc{ position:absolute; inset:0; z-index:0; pointer-events:none; }
 .ring-arc circle{ fill:none; stroke:#bcd9d0; stroke-width:5; stroke-dasharray:11 13; opacity:0; transition:opacity .4s ease; }
 .snet.mode-hop .ring-arc circle{ opacity:1; }
-/* mixer drum on the network */
-.snet-mixer{ position:absolute; left:540px; top:1200px; width:300px; height:300px; transform:translate(-50%,-50%) scale(.5); opacity:0;
-  border-radius:44px; background:linear-gradient(160deg,#e7f4ef,#cfe9e1);
-  box-shadow:inset 0 0 56px rgba(53,162,146,.30), 0 26px 60px rgba(16,50,40,.16);
-  display:flex; align-items:center; justify-content:center; overflow:hidden; z-index:5;
+/* mixer — generated tumbler image on the network */
+.snet-mixer{ position:absolute; left:540px; top:1200px; transform:translate(-50%,-50%) scale(.5); opacity:0; z-index:5;
   transition:opacity .5s ease, transform .55s cubic-bezier(.34,1.5,.5,1); }
 .snet.mode-mix .snet-mixer{ opacity:1; transform:translate(-50%,-50%) scale(1); }
-.snet-blades{ width:250px; height:250px; border-radius:50%;
-  background:conic-gradient(from 0deg, rgba(53,162,146,.22), rgba(53,162,146,.02) 25%, rgba(53,162,146,.22) 50%, rgba(53,162,146,.02) 75%, rgba(53,162,146,.22)); }
-.snet.mode-mix .snet-blades{ animation:spin 1.1s linear infinite; }
+.snet-mixer img{ width:360px; display:block; filter:drop-shadow(0 24px 50px rgba(16,40,33,.2)); }
+.snet.mode-mix .snet-mixer img{ animation:mxwobble 2.4s ease-in-out infinite; }
+@keyframes mxwobble{ 0%,100%{ transform:rotate(-2.5deg);} 50%{ transform:rotate(2.5deg);} }
+
+/* ============================================================
+   HOOK — generated images: Bybit → coins → Lazarus, $1.5B
+   ============================================================ */
+.hook2{ position:absolute; inset:0; overflow:hidden; }
+.hk-flag{ position:absolute; right:-150px; top:560px; width:900px; opacity:0; filter:saturate(1.05); pointer-events:none;
+  transition:opacity .8s ease .3s; }
+.hook2.go .hk-flag{ opacity:.16; }
+.hk-lazarus{ position:absolute; right:-44px; bottom:0; height:910px; opacity:0; transform:translateX(150px);
+  filter:drop-shadow(0 30px 60px rgba(16,40,33,.34)); transition:opacity .7s ease .15s, transform .8s cubic-bezier(.2,.8,.2,1) .15s; }
+.hook2.go .hk-lazarus{ opacity:1; transform:none; }
+.hk-bybit{ position:absolute; left:96px; bottom:175px; text-align:center; opacity:0; transform:translateY(90px);
+  transition:opacity .6s ease .1s, transform .7s cubic-bezier(.2,.8,.2,1) .1s; }
+.hook2.go .hk-bybit{ opacity:1; transform:none; }
+.hk-bybit img{ height:590px; display:block; filter:drop-shadow(0 24px 50px rgba(16,40,33,.22)); }
+.hk-bybit-lbl{ font-family:'Nunito',sans-serif; font-weight:900; font-size:52px; color:#F7A600; margin-top:10px; letter-spacing:-1px; }
+.hk-amount{ position:absolute; left:0; right:0; top:135px; text-align:center; font-family:'Nunito',sans-serif; font-weight:900;
+  line-height:.82; letter-spacing:-4px; transform:scale(.6); opacity:0; z-index:6; }
+.hook2.go .hk-amount{ animation:hkAmt .6s cubic-bezier(.34,1.6,.5,1) .5s forwards; }
+.hk-amount .big{ font-size:214px; color:var(--stk-teal-d); text-shadow:0 0 60px rgba(53,162,146,.34); display:block; }
+.hk-amount .sub{ font-size:112px; color:var(--stk-ink); display:block; letter-spacing:2px; }
+@keyframes hkAmt{ to{ transform:scale(1); opacity:1; } }
+.hk-coin{ position:absolute; left:210px; top:790px; width:86px; height:86px; opacity:0;
+  animation:hookfly 2.4s cubic-bezier(.45,0,.55,1) infinite paused; }
+.hook2.go .hk-coin{ animation-play-state:running; }
+.hk-coin img{ width:100%; display:block; filter:drop-shadow(0 7px 16px rgba(0,0,0,.3)); }
+@keyframes hookfly{
+  0%{ transform:translate(0,0) scale(.5); opacity:0; }
+  16%{ opacity:1; }
+  52%{ transform:translate(300px,-95px) scale(1); }
+  84%{ opacity:1; }
+  100%{ transform:translate(545px,300px) scale(.85); opacity:0; }
+}
 
 /* ============================================================
    MIXER v2 — 3 users throw real tokens in; turquoise coins out

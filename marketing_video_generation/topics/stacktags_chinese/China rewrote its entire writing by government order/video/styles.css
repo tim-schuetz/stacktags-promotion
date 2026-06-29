@@ -1,30 +1,21 @@
 /* ============================================================
-   "China rewrote its entire writing by government order" — scenes
-   Spine: ONE 田字格 practice cell, centre stage, carries the whole
-   video. Real characters (makemeahanzi stroke data) are written into
-   it and reshaped BY DECREE — they shed strokes (round one works),
-   shed too many (round two breaks), then get reverted. A top-down
-   turquoise seal = "by government order"; at the end the people push
-   back from below. White + turquoise, Inter, CJK = stroke data /
-   Noto Sans SC. No hard borders.
+   "China rewrote its entire writing by government order" — v2
+   Spine: a question answered on one hero character (龍→龙), then ONE
+   consistent TABLE that fills over the whole video (object · 繁体 ·
+   1956 简体 · 1977 二简), a real literacy chart, and a 繁体/简体 ending.
+   White + turquoise, Inter, CJK = stroke data / Noto Sans SC. No borders.
    ============================================================ */
 * { box-sizing: border-box; }
 html, body { margin: 0; height: 100%; background: #0b0e12; }
 .wrap { position: fixed; inset: 0; display: flex; align-items: center; justify-content: center; }
-.stage {
-  position: relative; width: 1080px; height: 1920px; overflow: hidden;
-  transform-origin: center center; font-family: var(--stk-font);
-}
+.stage { position: relative; width: 1080px; height: 1920px; overflow: hidden;
+  transform-origin: center center; font-family: var(--stk-font); }
 #grid { z-index: 0; }
 .scenes { position: absolute; inset: 0; z-index: 1; }
-.scene {
-  position: absolute; inset: 0; opacity: 0;
-  transform-origin: 50% 50%;
+.scene { position: absolute; inset: 0; opacity: 0; transform-origin: 50% 50%;
   transform: translate(var(--tx,0px), var(--ty,0px)) scale(var(--s,1));
-  will-change: transform, opacity, filter;
-}
+  will-change: transform, opacity, filter; }
 
-/* HUD */
 #hud { position: fixed; left: 50%; bottom: 16px; transform: translateX(-50%);
   display: flex; gap: 12px; align-items: center; background: #11161b; color: #cfe6dd;
   padding: 8px 14px; border-radius: 12px; font: 600 14px Inter; z-index: 99; }
@@ -32,236 +23,152 @@ html, body { margin: 0; height: 100%; background: #0b0e12; }
 #hud input[type=range] { width: 360px; }
 body.clean #hud { display: none; }
 
-/* ============================================================
-   田字格 practice cell + hero glyphs (stroke-data SVG)
-   ============================================================ */
-.cell { position: absolute; left: 50%; top: 43%; width: 660px; height: 660px;
-  transform: translate(-50%, -50%); }
-.tzg { position: absolute; inset: 0;
-  box-shadow: inset 0 0 0 4px rgba(35,43,51,.16); border-radius: 8px;
-  background: rgba(255,255,255,.40); }
-.tzg.sm { box-shadow: inset 0 0 0 4px rgba(35,43,51,.14); }
+/* ---- 田字格 cell + hero glyphs (hook / complex) ---- */
+.cell { position: absolute; left: 50%; top: 43%; width: 660px; height: 660px; transform: translate(-50%, -50%); }
+.tzg { position: absolute; inset: 0; box-shadow: inset 0 0 0 4px rgba(35,43,51,.16); border-radius: 8px; background: rgba(255,255,255,.40); }
 .tzg-h { position: absolute; left: 6%; right: 6%; top: 50%; height: 3px; transform: translateY(-50%);
   background: repeating-linear-gradient(to right, rgba(35,43,51,.16) 0 14px, transparent 14px 26px); }
 .tzg-v { position: absolute; top: 6%; bottom: 6%; left: 50%; width: 3px; transform: translateX(-50%);
   background: repeating-linear-gradient(to bottom, rgba(35,43,51,.16) 0 14px, transparent 14px 26px); }
-
 .glyph { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); }
 .hz { display: block; overflow: visible; }
-.hz-ghost path { fill: var(--stk-ink); opacity: 0; }            /* ghost off by default */
+.hz-ghost path { fill: var(--stk-ink); opacity: 0; }
 .hz.ghosted .hz-ghost path { opacity: .09; }
-.hz-ink path {
-  fill: var(--stk-ink); opacity: 0;
-  transform-box: fill-box; transform-origin: 50% 50%;
-  transition: opacity .42s ease, transform .6s cubic-bezier(.4, 0, .7, 1), fill .35s ease;
-}
+.hz-ink path { fill: var(--stk-ink); opacity: 0; transform-box: fill-box; transform-origin: 50% 50%;
+  transition: opacity .42s ease, transform .6s cubic-bezier(.4, 0, .7, 1), fill .35s ease; }
 .hz.teal .hz-ink path { fill: var(--stk-teal-d); }
+.glyph.skel { opacity: 0; }
 
-/* the small heart (心) that lifts out of 愛 */
-.glyph.heart { opacity: 0; transition: opacity .4s ease, transform .7s cubic-bezier(.4,0,.7,1); }
-.glyph.heart .hz-ink path { fill: var(--stk-teal-d); opacity: 1; transition: none; }
-.glyph.heart.show { opacity: 1; transform: translate(-50%, -50%) scale(1.15); }
-.glyph.heart.lift { opacity: 0; transform: translate(-50%, calc(-50% - 280px)) scale(.7); }
-
-/* punchline glyph: slow organic drift, then a springy snap-back */
-.glyph#pn-char.drift { animation: pnDrift 4s ease-in-out infinite; }
-@keyframes pnDrift {
-  0%,100% { transform: translate(-50%, -50%) rotate(-2.2deg); }
-  50% { transform: translate(-50%, calc(-50% - 16px)) rotate(2.2deg); }
-}
-.glyph#pn-char.spring { animation: pnSpring .6s cubic-bezier(.34,1.56,.64,1); }
-@keyframes pnSpring {
-  0% { transform: translate(-50%, -50%) scale(.82); }
-  60% { transform: translate(-50%, -50%) scale(1.12); }
-  100% { transform: translate(-50%, -50%) scale(1); }
-}
-
-/* ============================================================
-   DECREE — a turquoise official seal that presses down from above
-   ============================================================ */
+/* ---- decree seal (presses from above) ---- */
 .decree { position: absolute; left: 50%; top: 50%; width: 176px; height: 176px;
   transform: translate(-50%, -640px) scale(.7); opacity: 0;
   transition: transform .42s cubic-bezier(.5,1.7,.5,1), opacity .3s ease; pointer-events: none; z-index: 6; }
-.decree .seal { position: absolute; inset: 0; border-radius: 28px;
-  background: var(--stk-teal); box-shadow: 0 24px 50px rgba(17,146,113,.32);
-  display: block; }
-.decree .seal::before { content: ''; position: absolute; inset: 22px; border-radius: 16px;
-  box-shadow: inset 0 0 0 7px rgba(255,255,255,.85); }
+.decree .seal { position: absolute; inset: 0; border-radius: 28px; background: var(--stk-teal); box-shadow: 0 24px 50px rgba(17,146,113,.32); display: block; }
+.decree .seal::before { content: ''; position: absolute; inset: 22px; border-radius: 16px; box-shadow: inset 0 0 0 7px rgba(255,255,255,.85); }
 .decree .seal::after { content: ''; position: absolute; left: 50%; top: 50%; width: 96px; height: 96px;
-  transform: translate(-50%,-50%) rotate(45deg); border-radius: 14px;
-  box-shadow: inset 0 0 0 7px rgba(255,255,255,.85); }
+  transform: translate(-50%,-50%) rotate(45deg); border-radius: 14px; box-shadow: inset 0 0 0 7px rgba(255,255,255,.85); }
 .decree.press { transform: translate(-50%, -430px) scale(1); opacity: 1; }
-.decree.reverse .seal { background: var(--stk-teal-d); }
 
-/* year stamp */
-.yearstamp { position: absolute; left: 50%; top: 50%; transform: translate(280px, 230px) rotate(-7deg) scale(.6);
+/* ---- year stamp / tick / strike (hook) ---- */
+.yearstamp { position: absolute; left: 50%; top: 50%; transform: translate(300px, 300px) rotate(-7deg) scale(.6);
   font: 900 70px Inter; letter-spacing: -1px; color: var(--stk-teal-d); opacity: 0;
   transition: opacity .4s ease, transform .5s cubic-bezier(.34,1.56,.64,1); }
-.yearstamp.in { opacity: .92; transform: translate(280px, 230px) rotate(-7deg) scale(1); }
-
-/* small green tick + a strike-through stub */
+.yearstamp.in { opacity: .92; transform: translate(300px, 300px) rotate(-7deg) scale(1); }
 .tick { position: absolute; left: 50%; top: 50%; transform: translate(220px, -210px) scale(.3);
-  font: 900 96px Inter; color: var(--stk-teal); opacity: 0;
-  transition: opacity .3s ease, transform .45s cubic-bezier(.34,1.56,.64,1); }
+  font: 900 96px Inter; color: var(--stk-teal); opacity: 0; transition: opacity .3s ease, transform .45s cubic-bezier(.34,1.56,.64,1); }
 .tick.in { opacity: 1; transform: translate(220px, -210px) scale(1); }
-.strike { position: absolute; left: 12%; right: 12%; top: 50%; height: 16px; border-radius: 9px;
-  background: var(--stk-red); transform: translateY(-50%) scaleX(0); transform-origin: 0 50%; opacity: .9;
-  transition: transform .32s cubic-bezier(.5,0,.3,1); }
+.strike { position: absolute; left: 12%; right: 12%; top: 50%; height: 16px; border-radius: 9px; background: var(--stk-red);
+  transform: translateY(-50%) scaleX(0); transform-origin: 0 50%; opacity: .9; transition: transform .32s cubic-bezier(.5,0,.3,1); }
 .strike.in { transform: translateY(-50%) scaleX(1); }
-.strike.big { height: 22px; }
 
-/* the skeletal "disaster" stub in the hook */
-.glyph.skel { opacity: 0; }
-
-/* ============================================================
-   WALL — a dense block of traditional characters (the barrier)
-   ============================================================ */
+/* ---- WHY: wall barrier + the people photo ---- */
 .wall { position: absolute; left: 50%; top: 29%; transform: translate(-50%, -50%);
-  width: 860px; display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px 10px;
-  justify-items: center; }
+  width: 860px; display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px 10px; justify-items: center; }
 .wc { font-family: 'Noto Sans SC', var(--stk-font); font-weight: 500; font-size: 78px; line-height: 1;
   color: var(--stk-ink); opacity: 0; transform: translateY(10px) scale(.9);
   transition: opacity .4s ease, transform .5s cubic-bezier(.34,1.56,.64,1), color .45s ease; }
 .wall.show .wc { opacity: .82; transform: none; }
-.wall.lit .wc { color: var(--stk-teal-d); opacity: 1; }      /* literacy callback: now legible */
-
-/* the recurring "the people" archival photo (1950s literacy drive) */
 .photocard { position: absolute; left: 50%; bottom: 332px; transform: translate(-50%, 40px) scale(.96);
   width: 690px; opacity: 0; transition: opacity .55s ease, transform .65s cubic-bezier(.2,.8,.2,1);
-  padding: 16px 16px 14px; background: #fff; border-radius: 10px;
-  box-shadow: 0 26px 60px rgba(20,40,33,.26); z-index: 6; }
-.photocard img { display: block; width: 100%; height: auto; border-radius: 4px;
-  filter: grayscale(1) contrast(1.05) brightness(.9); transition: filter .7s ease; }
-.photocard .pc-cap { display: block; text-align: center; font: 700 26px Inter; letter-spacing: .3px;
-  color: var(--stk-muted); margin-top: 12px; }
+  padding: 16px 16px 14px; background: #fff; border-radius: 10px; box-shadow: 0 26px 60px rgba(20,40,33,.26); z-index: 6; }
+.photocard img { display: block; width: 100%; height: auto; border-radius: 4px; filter: grayscale(1) contrast(1.05) brightness(.9); transition: filter .7s ease; }
+.photocard .pc-cap { display: block; text-align: center; font: 700 26px Inter; letter-spacing: .3px; color: var(--stk-muted); margin-top: 12px; }
 .photocard.in { opacity: 1; transform: translate(-50%, 0) scale(1); }
 .photocard.bright img { filter: grayscale(0) contrast(1.02) brightness(1.02); }
 
-.bub { position: absolute; font-family: var(--stk-font); font-weight: 900; font-size: 96px;
-  color: var(--stk-ink); background: #fff; border-radius: 38px; padding: 6px 40px; white-space: nowrap;
-  box-shadow: 0 14px 32px rgba(20,40,33,.16); opacity: 0; transform: scale(.4); transform-origin: 50% 130%;
+/* ---- complex stroke counter ---- */
+.counter { position: absolute; left: 50%; top: 50%; transform: translate(300px, -250px);
+  display: flex; flex-direction: column; align-items: center; opacity: 0; transition: opacity .4s ease; }
+.counter.in { opacity: 1; }
+.cnum { font: 900 116px Inter; letter-spacing: -3px; color: var(--stk-teal-d); line-height: .9; font-variant-numeric: tabular-nums; }
+.clab { font: 700 34px Inter; color: var(--stk-muted); letter-spacing: 1px; margin-top: 6px; }
+
+/* ---- comic reaction bubble (?!) ---- */
+.bub { position: absolute; font-family: var(--stk-font); font-weight: 900; font-size: 92px; color: var(--stk-ink);
+  background: #fff; border-radius: 38px; padding: 6px 40px; white-space: nowrap; opacity: 0; transform: scale(.4); transform-origin: 50% 130%;
   box-shadow: inset 0 0 0 7px var(--stk-ink), 0 14px 32px rgba(20,40,33,.14);
-  transition: opacity .3s ease, transform .45s cubic-bezier(.34,1.56,.64,1); z-index: 7; }
+  transition: opacity .3s ease, transform .45s cubic-bezier(.34,1.56,.64,1); z-index: 9; }
 .bub::after { content:''; position:absolute; bottom:-22px; left:50%; transform:translateX(-50%);
   width:0; height:0; border-top:26px solid var(--stk-ink); border-left:18px solid transparent; border-right:18px solid transparent; }
 .bub.in { opacity: 1; transform: scale(1); }
-#conf-bub { left: 50%; top: 20%; transform: translateX(-50%) scale(.4); }
-#conf-bub.in { transform: translateX(-50%) scale(1); }
 
 /* ============================================================
-   COMPLEX — stroke counter beside the cell
+   THE TABLE — object · 繁体 · 1956 简体 · 1977 二简
    ============================================================ */
-.counter { position: absolute; left: 50%; top: 50%; transform: translate(300px, -250px);
-  display: flex; flex-direction: column; align-items: center; opacity: 0;
-  transition: opacity .4s ease; }
-.counter.in { opacity: 1; }
-.cnum { font: 900 116px Inter; letter-spacing: -3px; color: var(--stk-teal-d); line-height: .9;
-  font-variant-numeric: tabular-nums; }
-.clab { font: 700 34px Inter; color: var(--stk-muted); letter-spacing: 1px; margin-top: 6px; }
+.rtable { position: absolute; left: 50%; top: 45%; transform: translate(-50%, -50%); width: 968px; }
+.rt-head { display: grid; grid-template-columns: 196px 1fr 1fr 1fr; align-items: end; gap: 0 14px; padding: 0 10px 18px; }
+.rt-h { text-align: center; opacity: 0; transition: opacity .4s ease; }
+.rt-h.obj { opacity: 1; }
+.rt-h .cjk { display: block; font-family: 'Noto Sans SC', var(--stk-font); font-weight: 900; font-size: 50px; line-height: 1; color: var(--stk-ink); }
+.rt-h .yr { display: block; font: 800 25px Inter; letter-spacing: 1px; color: var(--stk-muted); margin-top: 4px; }
+.rt-h.col-trad { opacity: 1; }
+.rt-h.col-simp.show, .rt-h.col-er.show { opacity: 1; }
+.rt-h.col-simp .cjk { color: var(--stk-teal-d); }
+.rt-body { display: flex; flex-direction: column; gap: 14px; }
+.rt-row { display: grid; grid-template-columns: 196px 1fr 1fr 1fr; align-items: center; gap: 0 14px;
+  background: rgba(255,255,255,.55); border-radius: 16px; padding: 8px 10px; box-shadow: 0 10px 26px rgba(20,40,33,.07);
+  opacity: 0; transform: translateY(16px); transition: opacity .4s ease, transform .5s cubic-bezier(.34,1.56,.64,1); }
+.rt-row.in { opacity: 1; transform: none; }
+.rt-c { display: flex; align-items: center; justify-content: center; height: 156px; }
+.rt-c.obj img { max-height: 138px; max-width: 178px; object-fit: contain; filter: drop-shadow(0 8px 16px rgba(20,40,33,.16)); }
+.rt-c .ch { font-family: 'Noto Sans SC', var(--stk-font); font-weight: 700; font-size: 108px; line-height: 1; color: var(--stk-ink); }
+.rt-c.simp, .rt-c.er { opacity: 0; transform: scale(.55); transition: opacity .35s ease, transform .45s cubic-bezier(.34,1.56,.64,1); }
+.rt-c.simp.show, .rt-c.er.show { opacity: 1; transform: none; }
+.rt-c.simp.chg .ch { color: var(--stk-teal-d); }
+.rt-c.simp.same .ch { color: var(--stk-muted); }
+.rt-c.er.chg .ch { color: var(--stk-ink); }
+.rt-c.er.same .ch { color: var(--stk-muted); }
+/* second-round column struck out + removed at "scrapped 1986" */
+.rt-strike { position: absolute; top: 0; bottom: 88px; width: 16px; border-radius: 9px; background: var(--stk-red);
+  left: 50%; transform: translateX(330px) scaleY(0); transform-origin: 50% 0; opacity: .92; transition: transform .35s cubic-bezier(.5,0,.3,1); z-index: 8; }
+.rtable.struck .rt-strike { transform: translateX(330px) scaleY(1); }
+.rtable.scrapped .rt-c.er, .rtable.scrapped .rt-h.col-er { opacity: 0 !important; transform: translateY(26px) scale(.8); transition: opacity .45s ease, transform .5s ease; }
+.rtable.scrapped .rt-strike { opacity: 0; transition: opacity .4s ease .15s; }
+/* ending: highlight the two surviving systems */
+.rtable.hl-simp .rt-c.simp { background: var(--stk-teal-soft); border-radius: 12px; }
+.rtable.hl-trad .rt-c.trad { background: rgba(35,43,51,.05); border-radius: 12px; }
+.rt-collabel { position: absolute; left: 50%; bottom: 250px; text-align: center; opacity: 0;
+  transform: translateX(var(--lx,0)) translateY(14px); transition: opacity .4s ease, transform .5s cubic-bezier(.34,1.56,.64,1); }
+.rt-collabel .cjk { display: block; font-family: 'Noto Sans SC', var(--stk-font); font-weight: 900; font-size: 56px; line-height: 1; }
+.rt-collabel .en { display: block; font: 800 28px Inter; color: var(--stk-muted); margin-top: 6px; white-space: nowrap; }
+.rt-collabel.simp { --lx: 252px; } .rt-collabel.simp .cjk { color: var(--stk-teal-d); }
+.rt-collabel.trad { --lx: -10px; } .rt-collabel.trad .cjk { color: var(--stk-ink); }
+.rt-collabel.in { opacity: 1; transform: translateX(var(--lx,0)) translateY(0); }
+
+/* table-scene year stamp / tick (reuse look, repositioned for the table) */
+#sc-table .yearstamp { transform: translate(330px, 470px) rotate(-7deg) scale(.6); }
+#sc-table .yearstamp.in { transform: translate(330px, 470px) rotate(-7deg) scale(1); }
+#sc-table .tick { transform: translate(250px, -470px) scale(.3); }
+#sc-table .tick.in { transform: translate(250px, -470px) scale(1); }
+#tb-bub { left: 50%; top: 16%; transform: translateX(180px) scale(.4); }
+#tb-bub.in { transform: translateX(180px) scale(1); }
 
 /* ============================================================
-   SCHEME — the recreated 1956 official simplification document
+   LITERACY CHART
    ============================================================ */
-.doc { position: absolute; left: 50%; top: 43%; transform: translate(-50%, -50%);
-  width: 770px; padding: 34px 56px 150px; background: #fbf7ec; border-radius: 7px;
-  box-shadow: 0 30px 72px rgba(20,40,33,.24); }
-.doc::before { content: ''; position: absolute; left: 0; right: 0; top: 0; height: 14px;
-  background: var(--stk-teal-d); border-radius: 7px 7px 0 0; }
-.doc-band { text-align: center; font: 800 27px Inter; letter-spacing: 3px; color: var(--stk-muted); margin-top: 18px; }
-.doc-title { text-align: center; font-family: 'Noto Sans SC', var(--stk-font); font-weight: 900;
-  font-size: 100px; letter-spacing: 4px; color: var(--stk-ink); margin: 10px 0 2px; }
-.doc-sub { text-align: center; font: 600 30px Inter; color: var(--stk-muted); margin-bottom: 34px; }
-.doc-rows { display: grid; grid-template-columns: 1fr 1fr; gap: 20px 44px; }
-.drow { display: flex; align-items: center; justify-content: center; gap: 18px;
-  opacity: 0; transform: translateY(12px); transition: opacity .35s ease, transform .45s cubic-bezier(.34,1.56,.64,1); }
-.drow.in { opacity: 1; transform: none; }
-.drow .dt { font-family: 'Noto Sans SC', var(--stk-font); font-weight: 700; font-size: 72px; color: var(--stk-ink-2); }
-.drow .da { font: 800 36px Inter; color: var(--stk-teal); }
-.drow .ds { font-family: 'Noto Sans SC', var(--stk-font); font-weight: 900; font-size: 72px; color: var(--stk-teal-d); }
-.doc-seal { position: absolute; left: 50%; bottom: 22px; width: 124px; height: 124px;
-  display: flex; align-items: center; justify-content: center; transform: translateX(-50%) rotate(-9deg) scale(.3); opacity: 0;
-  transition: opacity .25s ease, transform .4s cubic-bezier(.5,1.7,.5,1); }
-.doc-seal::before { content: ''; position: absolute; inset: 0; border-radius: 16px;
-  background: var(--stk-red); box-shadow: inset 0 0 0 6px rgba(255,255,255,.82); }
-.doc-seal span { position: relative; font-family: 'Noto Sans SC', var(--stk-font); font-weight: 900;
-  font-size: 68px; color: #fff; }
-.doc.sealed .doc-seal { opacity: .96; transform: translateX(-50%) rotate(-9deg) scale(1); }
+.chart { position: absolute; inset: 0; }
+.chart svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+.ch-axis { stroke: rgba(35,43,51,.22); stroke-width: 4; stroke-linecap: round; }
+.ch-grid { stroke: rgba(35,43,51,.08); stroke-width: 2; }
+.ch-line { fill: none; stroke: var(--stk-teal-d); stroke-width: 12; stroke-linecap: round; stroke-linejoin: round; filter: drop-shadow(0 6px 10px rgba(17,146,113,.28)); }
+.ch-line-w { fill: none; stroke: #fff; stroke-width: 22; stroke-linecap: round; stroke-linejoin: round; }
+.ch-dot { fill: #fff; stroke: var(--stk-teal-d); stroke-width: 6; }
+.ch-ylab { font: 800 30px Inter; fill: var(--stk-muted); }
+.ch-xlab { font: 800 32px Inter; fill: var(--stk-ink); text-anchor: middle; }
+.ch-pct { font: 900 64px Inter; fill: var(--stk-teal-d); }
+.ch-title { font: 800 34px Inter; fill: var(--stk-ink); letter-spacing: .5px; }
 
-/* ============================================================
-   FASTER — two mini cells side by side + a racing pen
-   ============================================================ */
-.duo { position: absolute; left: 50%; top: 43%; transform: translate(-50%, -50%);
-  display: flex; align-items: center; gap: 70px; }
-.duo-cell { position: relative; width: 400px; height: 400px; }
-.duo-cell .tzg { position: absolute; inset: 0; }
-.duo-arrow { font: 300 120px Inter; color: var(--stk-muted); margin-top: -10px; }
-.pen { position: absolute; left: 50%; top: 50%; width: 50px; height: 320px;
-  transform: translate(120px, -300px) rotate(34deg); transform-origin: 50% 100%; opacity: 0;
-  transition: opacity .3s ease, transform .5s cubic-bezier(.2,.8,.2,1); z-index: 5; }
-.pen-body { position: absolute; left: 50%; top: 0; width: 28px; height: 270px; transform: translateX(-50%);
-  border-radius: 15px; background: linear-gradient(180deg, #2c343c, #424c56); }
-.pen-nib { position: absolute; left: 50%; bottom: 0; width: 0; height: 0; transform: translateX(-50%);
-  border-left: 14px solid transparent; border-right: 14px solid transparent; border-top: 40px solid var(--stk-teal-d); }
-.pen.write { opacity: 1; animation: penScribble 1.1s ease-in-out; }
-@keyframes penScribble {
-  0% { transform: translate(120px,-300px) rotate(34deg); }
-  25% { transform: translate(-40px,-120px) rotate(30deg); }
-  50% { transform: translate(60px,40px) rotate(36deg); }
-  75% { transform: translate(-30px,-40px) rotate(31deg); }
-  100% { transform: translate(120px,80px) rotate(34deg); opacity: 0; }
-}
-
-/* ============================================================
-   MAP — mainland (simplified) + Taiwan/HK pins (traditional)
-   ============================================================ */
-.map-host { position: absolute; left: 50%; top: 46%; transform: translate(-50%, -50%);
-  width: 980px; height: 1180px; }
-.cn-map-svg { width: 100%; height: 100%; display: block; overflow: visible; }
-.cn-map-fill { fill: var(--stk-teal); opacity: .16; }
-.cn-map-line { fill: none; stroke: var(--stk-teal-d); stroke-width: 3; stroke-linejoin: round; stroke-linecap: round; }
-.mlabel { position: absolute; transform: translate(-50%, -50%) scale(.9); opacity: 0;
-  transition: opacity .45s ease, transform .5s cubic-bezier(.34,1.56,.64,1);
-  background: rgba(255,255,255,.93); border-radius: 26px; padding: 16px 30px;
-  box-shadow: 0 14px 34px rgba(20,40,33,.18); display: flex; flex-direction: column; align-items: center; }
-.mlabel.in { opacity: 1; transform: translate(-50%, -50%) scale(1); }
-.mlabel .mch { font-family: 'Noto Sans SC', var(--stk-font); font-weight: 900; line-height: 1; }
-.mlabel.main .mch { font-size: 118px; color: var(--stk-teal-d); }
-.mlabel.trad .mch { font-size: 92px; color: var(--stk-ink); }
-.mlabel .mtag { font: 800 30px Inter; letter-spacing: .4px; color: var(--stk-muted); margin-top: 8px; white-space: nowrap; }
-.mpin { position: absolute; transform: translate(-50%, -100%) scale(.6); opacity: 0;
-  transition: opacity .4s ease, transform .5s cubic-bezier(.34,1.56,.64,1); }
-.mpin.in { opacity: 1; transform: translate(-50%, -100%) scale(1); }
-.mpin .dot { width: 30px; height: 30px; border-radius: 50% 50% 50% 0; background: var(--stk-red);
-  transform: rotate(-45deg); margin: 0 auto; box-shadow: 0 6px 14px rgba(216,68,59,.4); }
-
-/* ============================================================
-   CONFUSION — two cells; 彩 sheds its 彡 and becomes 采 (= 采)
-   ============================================================ */
-.conf { position: absolute; left: 50%; top: 42%; transform: translate(-50%, -50%);
-  display: flex; gap: 90px; }
-.conf-cell { position: relative; width: 420px; height: 420px; }
-.conf-cell .tzg { position: absolute; inset: 0; }
-.conf-gloss { position: absolute; left: 0; right: 0; bottom: -78px; text-align: center;
-  font: 700 44px Inter; color: var(--stk-muted); }
-#sc-confusion.collide .conf-cell .tzg { box-shadow: inset 0 0 0 4px rgba(53,162,146,.55); }
-
-/* ============================================================
-   PUNCHLINE — hands pushing up from below
-   ============================================================ */
 /* ============================================================
    OUTRO endcard
    ============================================================ */
 .ec { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); text-align: center; }
 .ec #outro-logo svg { display: block; margin: 0 auto; }
-.ec .lyr { opacity: 0; transform: translateY(28px) scale(.92);
-  transition: opacity .5s ease, transform .6s cubic-bezier(.34,1.56,.64,1); transition-delay: var(--d, 0s); }
+.ec .lyr { opacity: 0; transform: translateY(28px) scale(.92); transition: opacity .5s ease, transform .6s cubic-bezier(.34,1.56,.64,1); transition-delay: var(--d, 0s); }
 .ec.play .lyr { opacity: 1; transform: none; }
 .ec .chev { opacity: 0; transition: opacity .5s ease .42s; }
 .ec.play .chev { opacity: 1; }
-.ec .wm { margin-top: 18px; font: 900 96px Inter; letter-spacing: -3px;
-  opacity: 0; transform: translateY(20px); transition: opacity .5s ease .5s, transform .5s ease .5s; }
+.ec .wm { margin-top: 18px; font: 900 96px Inter; letter-spacing: -3px; opacity: 0; transform: translateY(20px); transition: opacity .5s ease .5s, transform .5s ease .5s; }
 .ec .wm .s { color: var(--stk-ink); } .ec .wm .t { color: var(--stk-teal); }
 .ec.play .wm { opacity: 1; transform: none; }
-.ec .url { margin-top: 14px; font: 600 42px Inter; color: var(--stk-muted);
-  opacity: 0; transition: opacity .5s ease .66s; }
+.ec .url { margin-top: 14px; font: 600 42px Inter; color: var(--stk-muted); opacity: 0; transition: opacity .5s ease .66s; }
 .ec.play .url { opacity: 1; }

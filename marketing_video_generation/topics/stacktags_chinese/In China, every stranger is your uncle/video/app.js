@@ -21,7 +21,6 @@
   const P = { shop: $('#p-shop'), bus: $('#p-bus'), young: $('#p-young'), old: $('#p-old') };
   const CH = { shop: $('#chip-shop'), bus: $('#chip-bus'), young: $('#chip-young'), old: $('#chip-old') };
   const N = { bobo: $('#n-bobo'), shushu: $('#n-shushu'), gufu: $('#n-gufu'), jiujiu: $('#n-jiujiu'), yifu: $('#n-yifu') };
-  const AX = { side: $('#ax-side'), gen: $('#ax-gen'), order: $('#ax-order') };
   const uncP = $('#uncbox-people'), uncM = $('#uncbox-map');
 
   // outro endcard
@@ -137,18 +136,13 @@
 
   function mapEnter() {                          // arrive on the map: just the lumped word
     cls(uncM, 'in', true);
-    cls(map, 'crowded', false); cls(map, 'opened', false); cls(map, 'neutralx', false); cls(map, 'why', false);
+    cls(map, 'crowded', false); cls(map, 'opened', false); cls(map, 'neutralx', false);
     ['bobo', 'shushu', 'gufu', 'jiujiu', 'yifu'].forEach((k) => cls(N[k], 'lit', false));
-    cls(N.shushu, 'pulse', false);
-    Object.values(AX).forEach((a) => cls(a, 'in', false));
   }
   function mapCrowd() { cls(map, 'crowded', true); }
   function mapOpen() { cls(map, 'crowded', false); cls(map, 'opened', true); gridPush(); }  // crack open → the tree
   const lite = (k) => cls(N[k], 'lit', true);
   function neutralX() { cls(map, 'neutralx', true); }
-  function mapWhy() { cls(map, 'why', true); }
-  const axisIn = (k) => cls(AX[k], 'in', true);
-  function pulseShushu() { cls(N.shushu, 'pulse', true); }
 
   // ============================================================
   // SUBTITLES (verbatim, grey; key words turquoise)
@@ -160,50 +154,39 @@
   }
   const SUBS = [
     [0.0, 'In China, the man at the shop,'],
-    [1.7, 'the bus driver, your neighbor —'],
-    [3.16, 'they’re all your <b>“uncle”</b> or <b>“aunty.”</b>'],
-    [5.94, 'But here’s the <b>irony</b>:'],
-    [6.84, 'there’s no single Chinese word'],
-    [8.02, 'for <b>“uncle”</b> at all.'],
-    [9.26, 'There are at least <b>eight</b>.'],
+    [1.64, 'the bus driver, your neighbor —'],
+    [3.2, 'they’re all your <b>“uncle”</b> or <b>“aunty.”</b>'],
+    [5.22, 'But here’s the <b>irony</b>:'],
+    [6.24, 'there’s no single Chinese word'],
+    [7.48, 'for <b>“uncle”</b> at all.'],
+    [9.0, 'There are at least <b>eight</b>.'],
     [10.38, 'Let me explain.'],
-    [11.76, 'English has one <b>lazy</b> word — “uncle” —'],
-    [13.76, 'for a whole <b>crowd</b> of different people.'],
-    [16.12, 'Chinese <b>refuses</b> to be that vague.'],
-    [17.92, 'It needs to know exactly who you mean.'],
-    [20.0, 'Is he your <b>father’s</b> brother, or your <b>mother’s</b>?'],
-    [22.16, 'Is he <b>older</b> than your parent, or <b>younger</b>?'],
-    [24.56, 'Is he <b>blood</b>, or <b>married in</b>?'],
-    [26.5, 'Every combination is a <b>different word</b>.'],
-    [28.86, 'Father’s older brother, father’s younger brother,'],
-    [30.94, 'mother’s brother, the husband of your father’s sister —'],
-    [34.0, 'all completely <b>separate terms</b>.'],
-    [36.32, 'There’s no <b>neutral</b> “uncle” to fall back on.'],
-    [38.72, 'The word itself tells you the <b>exact relationship</b>.'],
-    [41.24, 'Family structure mattered so much,'],
-    [43.28, 'the language <b>baked it right in</b> —'],
-    [45.6, 'which side, which generation,'],
-    [47.38, 'which order of birth.'],
-    [48.58, 'You don’t just say “uncle.”'],
-    [50.02, 'You say <b>where he sits</b> in the family.'],
-    [52.16, 'And yet —'],
-    [53.02, 'Chinese uses these very same family words'],
-    [54.92, 'for <b>total strangers</b>.'],
-    [56.3, 'You call an older man <b>“uncle,”</b>'],
-    [57.84, 'an older woman <b>“aunty,”</b>'],
-    [59.32, 'a young woman <b>“big sister”</b> —'],
-    [61.12, 'as a sign of <b>warmth and respect</b>.'],
-    [63.38, 'Everyone gets <b>slotted into the family</b>.'],
-    [65.08, 'So Chinese can’t translate “uncle”'],
-    [66.46, 'with a <b>single word</b>.'],
-    [67.66, 'It has a whole <b>map</b> of them.'],
-    [68.78, 'But it’ll happily call a stranger'],
-    [70.16, 'on the street your <b>uncle</b>.'],
-    [71.56, 'A language incredibly <b>precise about family</b>…'],
-    [73.54, 'that treats the <b>entire world</b> like one.'],
-    [76.02, 'Wanna actually start learning <b>Chinese</b>?'],
-    [77.9, 'Discover thousands of free exercises'],
-    [79.72, 'and more learning content on <b>stacktags.io</b>.'],
+    [11.6, 'English has one <b>lazy</b> word — “uncle” —'],
+    [13.96, 'for a whole <b>crowd</b> of different people.'],
+    [16.6, 'Chinese <b>refuses</b> to be that vague.'],
+    [18.3, 'It needs to know exactly who you mean.'],
+    [20.24, 'Is he your <b>father’s</b> brother, or your <b>mother’s</b>?'],
+    [22.36, 'Is he <b>older</b> than your parent, or <b>younger</b>?'],
+    [24.26, 'Is he <b>blood</b>, or <b>married in</b>?'],
+    [26.08, 'Every combination is a <b>different word</b>.'],
+    [28.44, 'Father’s older brother, father’s younger brother,'],
+    [30.6, 'mother’s brother, the husband of your father’s sister,'],
+    [32.94, 'you get the idea.'],
+    [34.3, 'There’s no <b>neutral</b> “uncle” to fall back on.'],
+    [36.78, 'The word itself tells you the <b>exact relationship</b>.'],
+    [39.46, 'And yet —'],
+    [40.38, 'Chinese uses these very same family words'],
+    [42.32, 'for <b>total strangers</b>.'],
+    [43.86, 'You call an older man <b>“uncle,”</b>'],
+    [45.56, 'an older woman <b>“aunty,”</b>'],
+    [46.88, 'a young woman <b>“big sister”</b> —'],
+    [48.44, 'as a sign of <b>warmth and respect</b>.'],
+    [50.42, 'Everyone gets <b>slotted into the family</b>.'],
+    [52.3, 'A language incredibly <b>precise about family</b>…'],
+    [54.86, 'that treats the <b>entire world</b> like one.'],
+    [56.66, 'Wanna actually start learning <b>Chinese</b>?'],
+    [59.06, 'Discover thousands of free exercises'],
+    [60.6, 'and more learning content on <b>stacktags.io</b>.'],
   ];
 
   // ============================================================
@@ -213,37 +196,30 @@
   const CUES = [
     // ---- HOOK (people) ----
     [0.0, (i) => { peopleHook(); enter($('#sc-people'), 'fade', 600, i); }],
-    [1.18, () => cls(CH.shop, 'in', true)],      // shopkeeper → 叔叔
-    [1.92, () => cls(CH.bus, 'in', true)],       // bus driver → 叔叔
-    [2.6, () => cls(CH.old, 'in', true)],        // neighbor   → 阿姨
-    [6.84, () => fuse()],                        // all three titles fuse into one "uncle?"
-    [10.38, (i) => { mapEnter(); enter($('#sc-map'), 'zoom-out', 1100, i); }],
+    [1.14, () => cls(CH.shop, 'in', true)],      // shopkeeper → 叔叔
+    [1.86, () => cls(CH.bus, 'in', true)],       // bus driver → 叔叔
+    [2.52, () => cls(CH.old, 'in', true)],       // neighbor   → 阿姨
+    [6.24, () => fuse()],                        // all three titles fuse into one "uncle?"
+    [10.5, (i) => { mapEnter(); enter($('#sc-map'), 'zoom-out', 1100, i); }],
 
     // ---- THE PROBLEM (map) ----
-    [12.0, () => mapCrowd()],                    // a whole crowd crammed in one word
-    [16.12, () => mapOpen()],                    // it cracks open into the tree
-    [28.86, () => lite('bobo')],                 // 伯伯 father's older brother
-    [29.88, () => lite('shushu')],               // 叔叔 father's younger brother
-    [30.94, () => lite('jiujiu')],               // 舅舅 mother's brother
-    [32.12, () => lite('gufu')],                 // 姑父 husband of father's sister
-    [36.5, () => neutralX()],                    // no neutral "uncle" in the centre
-
-    // ---- WHY (map) ----
-    [41.24, () => mapWhy()],
-    [45.6, () => axisIn('side')],                // 哪边 which side
-    [46.38, () => axisIn('gen')],                // 哪辈 which generation
-    [47.38, () => axisIn('order')],              // 排行 birth order
-    [50.38, () => pulseShushu()],                // his exact seat
+    [11.6, () => mapCrowd()],                    // a whole crowd crammed in one word
+    [16.6, () => mapOpen()],                     // it cracks open into the tree
+    [28.44, () => lite('bobo')],                 // 伯伯 father's older brother
+    [29.54, () => lite('shushu')],               // 叔叔 father's younger brother
+    [30.6, () => lite('jiujiu')],                // 舅舅 mother's brother
+    [31.9, () => lite('gufu')],                  // 姑父 husband of father's sister
+    [34.5, () => neutralX()],                    // no neutral "uncle" in the centre
 
     // ---- THE FLIP SIDE (people return) ----
-    [52.0, (i) => { peopleFlip(); enter($('#sc-people'), 'zoom-in', 1050, i); }],
-    [57.0, () => cls(CH.shop, 'in', true)],      // older man   → 叔叔 (same word as the map!)
-    [58.2, () => cls(CH.old, 'in', true)],       // older woman → 阿姨
-    [59.8, () => cls(CH.young, 'in', true)],     // young woman → 大姐
-    [63.38, () => treeWrap()],                   // branches sketch them into the family
+    [39.5, (i) => { peopleFlip(); enter($('#sc-people'), 'zoom-in', 1050, i); }],
+    [44.5, () => cls(CH.shop, 'in', true)],      // older man   → 叔叔 (same word as the map!)
+    [45.9, () => cls(CH.old, 'in', true)],       // older woman → 阿姨
+    [47.4, () => cls(CH.young, 'in', true)],     // young woman → 大姐
+    [50.42, () => treeWrap()],                   // branches sketch them into the family
 
     // ---- OUTRO ----
-    [76.02, (i) => { enter($('#sc-outro'), 'lift', 1100, i); outroAssemble(); }],
+    [56.66, (i) => { enter($('#sc-outro'), 'lift', 1100, i); outroAssemble(); }],
   ];
 
   // ============================================================
@@ -251,17 +227,16 @@
   // pop for word & node pop-ins. [t, name, vol]
   // ============================================================
   const SFX = [
-    [1.18, 'pop', 0.5], [1.92, 'pop', 0.5], [2.6, 'pop', 0.5],
-    [6.84, 'pop', 0.55],                        // titles fuse
-    [10.38, 'swoosh', 0.5],                     // zoom-out to the map (grid moves)
-    [12.0, 'pop', 0.4],                         // crowd appears
-    [16.12, 'swoosh', 0.45],                    // crack open (grid push)
-    [28.86, 'pop', 0.5], [29.88, 'pop', 0.5], [30.94, 'pop', 0.5], [32.12, 'pop', 0.5],
-    [36.5, 'pop', 0.45],                        // neutral ✕
-    [45.6, 'pop', 0.32], [46.38, 'pop', 0.32], [47.38, 'pop', 0.32],
-    [52.0, 'swoosh', 0.5],                      // zoom back to the strangers (grid moves)
-    [57.0, 'pop', 0.5], [58.2, 'pop', 0.5], [59.8, 'pop', 0.5],
-    [76.02, 'swoosh', 0.55],                    // outro lift
+    [1.14, 'pop', 0.5], [1.86, 'pop', 0.5], [2.52, 'pop', 0.5],
+    [6.24, 'pop', 0.55],                        // titles fuse
+    [10.5, 'swoosh', 0.5],                      // zoom-out to the map (grid moves)
+    [11.6, 'pop', 0.4],                         // crowd appears
+    [16.6, 'swoosh', 0.45],                     // crack open (grid push)
+    [28.44, 'pop', 0.5], [29.54, 'pop', 0.5], [30.6, 'pop', 0.5], [31.9, 'pop', 0.5],
+    [34.5, 'pop', 0.45],                        // neutral ✕
+    [39.5, 'swoosh', 0.5],                      // zoom back to the strangers (grid moves)
+    [44.5, 'pop', 0.5], [45.9, 'pop', 0.5], [47.4, 'pop', 0.5],
+    [56.66, 'swoosh', 0.55],                    // outro lift
   ];
   window.SFX = SFX;
   const SND = { swoosh: 'assets/sound/swoosh.ogg', pop: 'assets/sound/pop.wav', tick: 'assets/sound/tick.wav' };
@@ -276,10 +251,8 @@
     cls(people, 'show', false); cls(people, 'fused', false); cls(people, 'tree', false);
     ['shop', 'bus', 'young', 'old'].forEach((k) => { showPerson(P[k], false); cls(CH[k], 'in', false); });
     cls(uncP, 'in', false); cls(uncM, 'in', false);
-    cls(map, 'crowded', false); cls(map, 'opened', false); cls(map, 'neutralx', false); cls(map, 'why', false);
+    cls(map, 'crowded', false); cls(map, 'opened', false); cls(map, 'neutralx', false);
     ['bobo', 'shushu', 'gufu', 'jiujiu', 'yifu'].forEach((k) => cls(N[k], 'lit', false));
-    cls(N.shushu, 'pulse', false);
-    Object.values(AX).forEach((a) => cls(a, 'in', false));
     outroReset();
   }
   function hardReset() {

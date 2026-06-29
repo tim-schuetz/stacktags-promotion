@@ -126,9 +126,9 @@ body.clean .wrap{ background:#fff; }
 .ss-tag{ position:absolute; left:50%; top:150px; transform:translateX(-50%) translateY(-20px);
   opacity:0; transition:opacity .5s ease, transform .5s ease; }
 .scroll-scene.show .ss-tag{ opacity:1; transform:translateX(-50%); }
-.ss-fig{ position:absolute; left:40px; bottom:230px; height:560px; width:auto;
-  filter:drop-shadow(0 18px 30px rgba(20,40,33,.20)); opacity:0; transform:translateY(40px);
+.ss-fig{ position:absolute; left:26px; bottom:250px; height:560px; opacity:0; transform:translateY(40px);
   transition:opacity .5s ease, transform .6s cubic-bezier(.2,.8,.2,1); }
+.ss-fig.talk{ animation:bwTalk .55s cubic-bezier(.34,1.5,.5,1); }
 .scroll-scene.show .ss-fig{ opacity:1; transform:none; }
 .ss-bub{ position:absolute; left:150px; bottom:840px; z-index:6; font-weight:900; font-size:54px; color:var(--stk-ink);
   background:#fff; border-radius:38px; padding:16px 32px; box-shadow:0 14px 32px rgba(20,40,33,.16);
@@ -142,13 +142,23 @@ body.clean .wrap{ background:#fff; }
 .ss-scroll::before, .ss-scroll::after{ content:''; position:absolute; left:-14px; right:-14px; height:40px;
   background:#e7d9b4; border-radius:22px; box-shadow:0 6px 16px rgba(20,40,33,.18); }
 .ss-scroll::before{ top:-20px; } .ss-scroll::after{ bottom:-20px; }
+.ss-col{ display:flex; flex-direction:column; gap:30px; align-items:center; transition:opacity .4s ease; }
+.scroll-scene.flood .ss-col{ opacity:0; }
 .ss-char{ display:flex; align-items:center; gap:30px; opacity:0; transform:translateY(20px) scale(.85);
   transition:opacity .4s ease, transform .5s cubic-bezier(.34,1.56,.64,1); }
 .scroll-scene.filled .ss-char{ opacity:1; transform:none; }
-.scroll-scene.filled .ss-char:nth-child(2){ transition-delay:.22s; }
-.scroll-scene.filled .ss-char:nth-child(3){ transition-delay:.44s; }
+.scroll-scene.filled .ss-col .ss-char:nth-child(2){ transition-delay:.22s; }
+.scroll-scene.filled .ss-col .ss-char:nth-child(3){ transition-delay:.44s; }
 .ss-char .glyph{ font-size:130px; font-weight:900; color:var(--stk-ink); line-height:1; }
 .ss-char .doodle{ width:120px; height:120px; }
+/* wholesale flood — the scroll fills up with imported characters */
+.ss-flood{ position:absolute; inset:54px; display:grid; grid-template-columns:repeat(4,1fr);
+  gap:6px 8px; align-content:center; justify-items:center; opacity:0; pointer-events:none; }
+.scroll-scene.flood .ss-flood{ opacity:1; }
+.ss-flood span{ font-family:'Noto Sans JP',sans-serif; font-size:84px; font-weight:700; color:var(--stk-ink);
+  line-height:1; opacity:0; transform:scale(.5); }
+.scroll-scene.flood .ss-flood span{ animation:floodIn .45s cubic-bezier(.34,1.56,.64,1) forwards; }
+@keyframes floodIn{ to{ opacity:1; transform:none; } }
 /* when shown as the "now-full" callback (beauty scene), make it small + centered */
 .ss-scroll.mini{ position:absolute; left:50%; bottom:auto; top:50%; transform:translate(-50%,-50%) scale(.72); right:auto; }
 .ss-scroll.mini .ss-char{ opacity:1; transform:none; }
@@ -192,14 +202,34 @@ body.clean .wrap{ background:#fff; }
 .map-chip.c2{ transform:translate(-66px,66px); } .map-chip.c3{ transform:translate(66px,66px); }
 
 /* ============================================================
-   UNRELATED — figure element overrides (tiny country tags)
+   UNRELATED — a Chinese + a Japanese figure read 字 in garbled ways
    ============================================================ */
-#unrel-scene .fig-parch{ top:60px; }
-.fig-flag{ position:absolute; bottom:20px; z-index:6; width:84px; height:84px; border-radius:50%;
+.unrel{ position:relative; width:1080px; height:1400px; }
+.ur-parch{ position:absolute; left:50%; top:150px; transform:translateX(-50%); width:250px;
+  filter:drop-shadow(0 18px 30px rgba(20,40,33,.18)); opacity:0; transition:opacity .5s ease; }
+.unrel.speak .ur-parch{ opacity:1; }
+.ur-fig{ position:absolute; bottom:130px; height:600px; opacity:0; transform:translateY(44px);
+  transition:opacity .5s ease, transform .6s cubic-bezier(.2,.8,.2,1); }
+.unrel.speak .ur-fig{ opacity:1; transform:none; }
+.ur-fig.l{ left:40px; } .ur-fig.r{ right:40px; transition-delay:.1s; }
+.ur-fig.talk{ animation:bwTalk .55s cubic-bezier(.34,1.5,.5,1); }
+.ur-bub{ position:absolute; font-weight:900; font-size:56px; color:var(--stk-ink); background:#fff;
+  border:7px solid var(--stk-ink); border-radius:40px; padding:14px 30px; letter-spacing:3px; white-space:nowrap;
+  box-shadow:0 14px 32px rgba(20,40,33,.16); opacity:0; transform:scale(.4); transform-origin:50% 130%;
+  transition:opacity .35s ease, transform .5s cubic-bezier(.34,1.56,.64,1); z-index:5; }
+.unrel.speak .ur-bub{ opacity:1; transform:scale(1); }
+.ur-bub.l{ left:170px; top:380px; } .ur-bub.r{ right:160px; top:452px; transition-delay:.18s; }
+.ur-bub::before{ content:''; position:absolute; bottom:-38px; width:0; height:0; border-top:38px solid var(--stk-ink); }
+.ur-bub::after{ content:''; position:absolute; bottom:-22px; width:0; height:0; border-top:26px solid #fff; }
+.ur-bub.l::before{ left:42px; border-right:28px solid transparent; }
+.ur-bub.l::after{ left:49px; border-right:18px solid transparent; }
+.ur-bub.r::before{ right:42px; border-left:28px solid transparent; }
+.ur-bub.r::after{ right:49px; border-left:18px solid transparent; }
+.ur-flag{ position:absolute; bottom:120px; z-index:6; width:84px; height:84px; border-radius:50%;
   background:#fff; box-shadow:0 12px 26px rgba(16,50,40,.16); display:flex; align-items:center; justify-content:center;
   font-size:46px; font-weight:900; color:var(--stk-teal-d); opacity:0; transition:opacity .4s ease .3s; }
-.fig-scene.speak .fig-flag{ opacity:1; }
-.fig-flag.l{ left:120px; } .fig-flag.r{ right:120px; }
+.unrel.speak .ur-flag{ opacity:1; }
+.ur-flag.l{ left:258px; } .ur-flag.r{ right:258px; }
 
 /* ============================================================
    ENGLISH — writing English with kanji → a piece that won't fit
@@ -355,41 +385,51 @@ body.clean .wrap{ background:#fff; }
    BORROW — China & Japan side by side; speech-bubble handoff + drift
    ============================================================ */
 .borrow{ position:relative; width:1080px; height:1920px; }
-.bw-map{ position:absolute; inset:0; width:1080px; height:1920px; }
-.bw-land{ fill:#eef2f1; stroke:#d4dbd8; stroke-width:3; }
-.bw-land.china{ fill:var(--stk-teal-soft); stroke:var(--stk-teal); }
-.bw-land.japan{ fill:#eef3f1; stroke:#d4dbd8; }
+.bw-land{ position:absolute; }
+.bw-land path{ stroke-width:5; stroke-linejoin:round; }
+.bw-land.china{ left:104px; top:946px; } .bw-land.china path{ fill:var(--stk-teal-soft); stroke:var(--stk-teal); }
+.bw-land.japan{ left:664px; top:862px; } .bw-land.japan path{ fill:#e7ecea; stroke:#9fb3ad; }
+.bw-era{ position:absolute; left:50%; top:452px; transform:translateX(-50%) translateY(-12px);
+  opacity:0; transition:opacity .5s ease, transform .5s ease; }
+.borrow.show .bw-era{ opacity:1; transform:translateX(-50%); }
 .bw-label{ position:absolute; font-weight:800; font-size:40px; color:var(--stk-ink); text-align:center;
-  opacity:0; transition:opacity .5s ease .2s; }
+  opacity:0; transition:opacity .5s ease .25s; }
 .borrow.show .bw-label{ opacity:1; }
 .bw-label small{ display:block; font-size:25px; color:var(--stk-muted); font-weight:700; }
-.bw-label.cn{ left:175px; top:1300px; } .bw-label.jp{ left:760px; top:1336px; }
+.bw-label.cn{ left:248px; top:1306px; } .bw-label.jp{ left:738px; top:1306px; }
 
 .bw-fig{ position:absolute; opacity:0; transform:translateY(46px);
   transition:opacity .5s ease, transform .6s cubic-bezier(.2,.8,.2,1); }
 .borrow.show .bw-fig{ opacity:1; transform:none; }
-.bw-fig.cnf{ left:130px; top:840px; }
-.bw-fig.j1{ left:585px; top:905px; transition-delay:.12s; }
-.bw-fig.j2{ left:735px; top:920px; transition-delay:.20s; }
-.bw-fig.j3{ left:882px; top:935px; transition-delay:.28s; }
-.bw-fig .person{ display:block; }
+.bw-fig.cnf{ left:170px; top:766px; height:476px; }
+.bw-fig.j1{ left:602px; top:822px; height:420px; transition-delay:.12s; }
+.bw-fig.j2{ left:742px; top:830px; height:412px; transition-delay:.20s; }
+.bw-fig.j3{ left:878px; top:836px; height:404px; transition-delay:.28s; }
 .bw-fig.talk{ animation:bwTalk .55s cubic-bezier(.34,1.5,.5,1); }
-@keyframes bwTalk{ 0%,100%{ transform:translateY(0); } 42%{ transform:translateY(-18px); } }
+@keyframes bwTalk{ 0%,100%{ transform:translateY(0); } 42%{ transform:translateY(-16px); } }
+/* generated figure cutouts — NO filter drop-shadow (it drifts the headless capture) */
+.figimg{ display:block; height:100%; width:auto; user-select:none; -webkit-user-drag:none; }
 
 .bw-bub{ position:absolute; display:flex; align-items:center; justify-content:center;
-  min-width:172px; height:172px; padding:0 26px; background:#fff; border:6px solid var(--stk-ink);
+  min-width:168px; height:168px; padding:0 26px; background:#fff; border:6px solid var(--stk-ink);
   border-radius:40px; box-shadow:0 16px 34px rgba(20,40,33,.16); z-index:6;
   opacity:0; transform:scale(.4); transform-origin:50% 120%;
   transition:opacity .3s ease, transform .5s cubic-bezier(.34,1.56,.64,1), border-color .45s ease; }
 .bw-bub.in{ opacity:1; transform:scale(1); }
-.bw-bub .bw-char{ font-size:116px; font-weight:900; color:var(--stk-ink); line-height:1; }
+.bw-bub .bw-char{ font-size:112px; font-weight:900; color:var(--stk-ink); line-height:1; }
 .bw-bub.jp{ border-color:var(--stk-teal); }
 .bw-bub.jp .bw-char{ color:var(--stk-teal-d); }
-.bw-bub.shared{ left:398px; top:636px; }
+.bw-bub.shared{ left:392px; top:632px; }
 .bw-bub.shared.flip{ border-color:var(--stk-teal); }
 .bw-bub.shared.flip .bw-char{ color:var(--stk-teal-d); }
-.bw-bub.j2b{ left:722px; top:560px; }
-.bw-bub.j3b{ left:880px; top:628px; }
+/* Japan: empty (dashed, no writing) → has speech (sound waves) */
+.bw-bub.jpb{ left:742px; top:606px; min-width:150px; height:150px; border-style:dashed; }
+.bw-bub.jpb.sound{ border-style:solid; border-color:var(--stk-teal); }
+.bw-waves{ width:86px; height:64px; opacity:0; transition:opacity .3s ease; }
+.bw-bub.jpb.sound .bw-waves{ opacity:1; }
+.bw-waves path{ fill:none; stroke:var(--stk-teal-d); stroke-width:6; stroke-linecap:round; }
+.bw-bub.j2b{ left:726px; top:580px; }
+.bw-bub.j3b{ left:884px; top:632px; }
 /* outlined tail (ink edge + white fill); shared tail flips left→right on handoff */
 .bw-bub .tail{ position:absolute; bottom:-30px; left:36px; width:0; height:0;
   transition:left .5s cubic-bezier(.5,0,.5,1), transform .5s ease; }
@@ -398,6 +438,7 @@ body.clean .wrap{ background:#fff; }
 .bw-bub .tail::after{ content:''; position:absolute; left:6px; top:-3px;
   border-top:26px solid #fff; border-right:18px solid transparent; }
 .bw-bub.jp .tail::before{ border-top-color:var(--stk-teal); }
+.bw-bub.jpb.sound .tail::before{ border-top-color:var(--stk-teal); }
 .bw-bub .tail.c{ left:50%; margin-left:-13px; }
 .bw-bub.shared.flip .tail{ left:150px; transform:scaleX(-1); }
 .bw-bub.shared.flip .tail::before{ border-top-color:var(--stk-teal); }

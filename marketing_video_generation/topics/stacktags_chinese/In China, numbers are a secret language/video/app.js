@@ -1,11 +1,10 @@
 /* ============================================================
-   "In China, numbers are a secret language" — choreography.
-   ONE persistent phone chat carries the whole story; beat groups
-   inside the thread are shown one at a time and the codes morph
-   (digits → pinyin → "sounds like" → hanzi → meaning). Audio-synced
-   cue engine (vo.currentTime) + verbatim subtitles + a declared SFX
-   bed. Camera grammar: grid nudges + a phone "punch" on each beat;
-   swoosh ONLY when the grid moves; lift to the outro at the end.
+   "In China, numbers are a secret language" — choreography (rework 3).
+   Phone CHAT for the HOOK only; from "why does that work?" on, the phone
+   dissolves and every beat lives on the open white grid (no box). WHY =
+   crude stick-figure doodles (death/wealth/lasting) that then get USED
+   (speech bubble / gift box). Audio-synced cue engine, verbatim subtitles,
+   declared SFX bed (swoosh only when the grid moves). 250 etymology cut.
    ============================================================ */
 (function () {
   'use strict';
@@ -13,46 +12,29 @@
   const $$ = (s) => Array.from(document.querySelectorAll(s));
 
   const stage = $('#stage'), grid = $('#grid'), vo = $('#vo'), subsLine = $('#subs-line');
-  const pcam = $('#phone-cam'), phone = $('#phone');
+  const pcam = $('#phone-cam');
   function fit() { const s = Math.min(innerWidth / 1080, innerHeight / 1920); stage.style.transform = 'scale(' + s + ')'; }
   addEventListener('resize', fit); fit();
 
-  // outro endcard logo
   const outroLogo = $('#outro-logo');
   if (outroLogo && window.makeStacktagsLogo) {
     outroLogo.innerHTML = window.makeStacktagsLogo({ size: 560 });
     outroLogo.querySelectorAll('svg > g').forEach((g) => { if (!g.classList.contains('chev')) g.classList.add('lyr'); });
   }
 
-  // build the calendar grid + the 666 comment flood once
-  function buildCal() {
-    const g = $('#calgrid'); if (!g) return;
-    ['S', 'M', 'T', 'W', 'T', 'F', 'S'].forEach((h) => { const d = document.createElement('div'); d.className = 'd dim'; d.textContent = h; g.appendChild(d); });
-    for (let i = 0; i < 2; i++) { const d = document.createElement('div'); d.className = 'd dim'; g.appendChild(d); }
-    for (let n = 1; n <= 31; n++) {
-      const d = document.createElement('div');
-      if (n === 20) { d.className = 'd twenty'; d.innerHTML = '<span class="cal-mark" id="cal-mark"></span><span class="dn">20</span>'; }
-      else { d.className = 'd'; d.textContent = n; }
-      g.appendChild(d);
-    }
-  }
   function buildFlood() {
     const f = $('#flood'); if (!f) return;
     const lefts = [40, 300, 470, 110, 520, 250, 410, 170];
     for (let i = 1; i <= 8; i++) {
-      const c = document.createElement('div'); c.className = 'cm c' + i;
-      c.style.left = lefts[i - 1] + 'px';
-      c.innerHTML = '<span class="dot"></span>666';
-      f.appendChild(c);
+      const c = document.createElement('div'); c.className = 'cm c' + i; c.style.left = lefts[i - 1] + 'px';
+      c.innerHTML = '<span class="dot"></span>666'; f.appendChild(c);
     }
   }
-  buildCal(); buildFlood();
+  buildFlood();
 
   window.__ready = true;
 
-  // ============================================================
-  // GRID CAMERA (persistent, with gentle idle life) — from the reference engine
-  // ============================================================
+  // ---- GRID CAMERA ----
   const gcam = { s: 1, x: 0, y: 0 }, gdisp = { s: 1, x: 0, y: 0 };
   let jolt = 0;
   const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
@@ -69,16 +51,13 @@
   let pushTimer = 0;
   function gridPush() { gcam.s = 1.12; gcam.x += 26; clearTimeout(pushTimer); pushTimer = setTimeout(() => { gcam.s = 1; gcam.x = 0; }, 900); }
 
-  // phone "punch" — a quick subtle camera dip that settles (sells depth on a beat)
   let ppTimer = 0;
   function setPZ(z) { pcam.style.setProperty('--pz', z); }
   function phonePunch() { setPZ(0.955); clearTimeout(ppTimer); ppTimer = setTimeout(() => setPZ(1), 500); }
   setPZ(1);
 
-  // ============================================================
-  // SCENES & GROUPS
-  // ============================================================
-  function setScene(id, instant) {
+  // ---- SCENES & GROUPS ----
+  function setScene(id) {
     $('#sc-chat').style.opacity = id === 'sc-chat' ? 1 : 0;
     $('#sc-chat').classList.toggle('lift', id !== 'sc-chat');
     $('#sc-outro').style.opacity = id === 'sc-outro' ? 1 : 0;
@@ -87,25 +66,20 @@
   let curGrp = null;
   function showGroup(id, instant) {
     const next = $('#' + id);
-    if (!instant && curGrp && curGrp !== next) {
-      const c = curGrp; c.classList.add('out');
-      setTimeout(() => c.classList.remove('out'), 600);
-    }
+    if (!instant && curGrp && curGrp !== next) { const c = curGrp; c.classList.add('out'); setTimeout(() => c.classList.remove('out'), 600); }
     $$('.grp').forEach((g) => { if (g !== next) g.classList.remove('on'); });
     next.classList.remove('out'); next.classList.add('on');
+    pcam.style.opacity = (id === 'g-hook') ? '1' : '0';   // phone is for the hook only
     curGrp = next;
   }
-  // group change + the camera move that justifies a swoosh
   function go(id, instant) { showGroup(id, instant); if (!instant) { gridPush(); phonePunch(); } }
 
-  const S = (id) => { const e = $('#' + id); if (e) e.classList.add('show'); };   // reveal
-  const P = (id) => { const e = $('#' + id); if (e) e.classList.add('pop'); };    // pop in
-  const cool = (on) => phone.classList.toggle('cool', !!on);
+  const S = (id) => { const e = $('#' + id); if (e) e.classList.add('show'); };
+  const P = (id) => { const e = $('#' + id); if (e) e.classList.add('pop'); };
+  const ctx = (id) => { const e = $('#' + id); if (e) e.classList.add('ctx'); };
   const startFlood = () => { const f = $('#flood'); if (f) f.classList.add('show'); };
 
-  // ============================================================
-  // SUBTITLES (verbatim; grey, key words turquoise)
-  // ============================================================
+  // ---- SUBTITLES ----
   function setSub(html, instant) {
     if (instant) { subsLine.innerHTML = html; subsLine.classList.add('in'); return; }
     subsLine.classList.remove('in');
@@ -113,165 +87,144 @@
   }
   const SUBS = [
     [0.0, 'In China, <b>520</b> means “I love you.”'],
-    [3.2, 'But <b>250</b> means “you idiot.”'],
-    [5.9, 'Numbers there aren’t just numbers —'],
-    [7.3, 'they’re a whole <b>secret language</b>.'],
-    [8.8, 'Here’s how to read it.'],
-    [9.8, 'It works because Chinese is full of words'],
-    [11.7, 'that sound almost exactly like <b>numbers</b>.'],
-    [13.8, 'So people started using strings of numbers as <b>code</b> —'],
-    [16.2, 'something you can text, comment,'],
-    [18.0, 'or even put on a <b>gift</b>.'],
-    [19.3, 'A few digits standing in for a whole phrase.'],
-    [21.6, 'Say <b>520</b> fast — wǔ èr líng —'],
-    [24.7, 'and it sounds like wǒ ài nǐ:'],
-    [26.4, '“<b>I love you</b>.”'],
-    [27.0, 'It’s so well known that May 20th —'],
-    [28.7, 'written 5/20 —'],
-    [29.6, 'has become an unofficial <b>romance day</b>,'],
-    [31.5, 'like a second Valentine’s.'],
-    [33.3, 'Add <b>1314</b> — which sounds like'],
-    [35.1, '“forever, a lifetime” —'],
-    [36.8, 'so <b>520 1314</b> means “I’ll love you forever.”'],
-    [40.5, 'But the same trick cuts the other way.'],
-    [42.6, 'Call someone a <b>250</b> — èr bǎi wǔ —'],
-    [45.2, 'and you’ve called them a <b>fool</b>.'],
-    [46.7, 'The story goes it comes from an old expression'],
-    [48.5, 'about half a string of coins —'],
-    [50.0, 'being “not quite all there.”'],
-    [51.9, 'And there’s more:'],
-    [52.9, '<b>88</b> sounds like “bye-bye.”'],
-    [54.3, '<b>666</b> means you’re a legend, seriously skilled.'],
-    [58.4, 'A few digits can carry an entire <b>mood</b>.'],
-    [60.6, 'So a string of numbers in a Chinese chat'],
-    [62.7, 'might be a maths problem…'],
-    [64.2, 'or a love letter…'],
-    [65.5, 'or an insult.'],
-    [66.5, 'One block of numbers —'],
-    [67.9, 'two completely <b>different worlds</b>.'],
-    [69.7, 'Wanna actually start learning <b>Chinese</b>?'],
-    [71.6, 'Discover thousands of free exercises'],
-    [73.7, 'and more learning content on <b>stacktags.io</b>.'],
+    [3.4, 'But <b>250</b> means “you idiot.”'],
+    [6.0, 'And there’s a lot more <b>hidden</b> in the language.'],
+    [8.0, 'Why does that work?'],
+    [9.1, 'Because Chinese is full of words'],
+    [10.7, 'that sound almost exactly like <b>numbers</b>.'],
+    [12.7, 'So people started using strings of numbers as <b>code</b> —'],
+    [15.4, 'something you can text, comment,'],
+    [17.2, 'or even put on a <b>gift</b>.'],
+    [18.6, 'A few digits standing in for a whole phrase.'],
+    [20.9, 'Say <b>520</b> fast — wǔ èr líng —'],
+    [24.3, 'and it sounds like wǒ ài nǐ:'],
+    [26.6, '“<b>I love you</b>.”'],
+    [27.2, 'It’s so well known that May 20th —'],
+    [29.6, 'written 5/20 —'],
+    [30.4, 'has become an unofficial <b>romance day</b>,'],
+    [32.1, 'like a second Valentine’s.'],
+    [33.6, 'Add <b>1314</b> — which sounds like'],
+    [35.9, '“forever, a lifetime” —'],
+    [37.8, 'so <b>520 1314</b> means “I’ll love you forever.”'],
+    [41.6, 'But the same trick cuts the other way.'],
+    [43.7, 'Call someone a <b>250</b> — èr bǎi wǔ —'],
+    [46.4, 'and you’ve called them a <b>fool</b>.'],
+    [47.8, 'And there’s more:'],
+    [48.8, '<b>88</b> sounds like “bye-bye.”'],
+    [50.7, '<b>666</b> means you’re a legend, seriously skilled.'],
+    [53.7, 'A few digits can carry an entire <b>mood</b>.'],
+    [56.0, 'So a string of numbers in a Chinese chat'],
+    [58.1, 'might be a maths problem…'],
+    [59.2, 'or a love letter…'],
+    [60.1, 'or an insult.'],
+    [60.9, 'One block of numbers —'],
+    [62.0, 'two completely <b>different worlds</b>.'],
+    [63.9, 'Wanna actually start learning <b>Chinese</b>?'],
+    [65.7, 'Discover thousands of free exercises'],
+    [67.7, 'and more learning content on <b>stacktags.io</b>.'],
   ];
 
-  // ============================================================
-  // CUES  [t, fn(instant)]
-  // ============================================================
+  // ---- CUES ----
   const CUES = [
-    // ---- HOOK ----
-    [0.0, (i) => { setScene('sc-chat', i); showGroup('g-hook', i); }],
-    [1.0, () => S('hk-b1')],
-    [2.4, () => { S('hk-r1'); S('hk-h'); }],
-    [3.4, () => S('hk-b2')],
-    [4.9, () => S('hk-r2')],
-    [5.9, () => { gridPush(); }],                       // "aren't just numbers" — small grid move
+    // HOOK (phone)
+    [0.0, (i) => { setScene('sc-chat'); showGroup('g-hook', i); }],
+    [0.9, () => S('hk-b1')],
+    [2.5, () => { S('hk-r1'); S('hk-h'); }],
+    [3.6, () => S('hk-b2')],
+    [5.1, () => S('hk-r2')],
+    [6.0, () => { S('hkm1'); S('hkm2'); S('hkm3'); gridPush(); }],
+    [6.6, () => { S('hkm4'); S('hkm5'); S('hkm6'); }],
 
-    // ---- WHY IT WORKS ----
-    [9.8, (i) => go('g-mech', i)],
-    [10.4, () => P('mq4')],
-    [11.4, () => P('mq8')],
-    [12.3, () => P('mq9')],
-    [16.8, () => P('cx-text')],
-    [17.7, () => P('cx-comment')],
-    [18.3, () => P('cx-gift')],
+    // WHY — crude doodles on the open grid
+    [8.0, (i) => go('g-why', i)],
+    [9.4, () => S('dd-death')],
+    [10.7, () => S('dd-wealth')],
+    [12.1, () => S('dd-lasting')],
+    [15.9, () => ctx('dd-death')],     // text  → speech bubble + 2nd figure + arrow
+    [16.6, () => ctx('dd-wealth')],    // comment → speech bubble
+    [17.3, () => ctx('dd-lasting')],   // gift  → slapped on a gift box
 
-    // ---- LOVE: hero morph 520 → 我爱你 ----
-    [21.6, (i) => go('g-love', i)],
-    [23.6, () => S('lv-py')],
-    [24.7, () => S('lv-bridge')],
-    [25.3, () => S('lv-py2')],
-    [26.3, () => P('lv-z1')],
-    [26.5, () => P('lv-z2')],
-    [26.78, () => { P('lv-z3'); S('lv-h'); S('lv-en'); }],
+    // LOVE — hero morph
+    [20.9, (i) => go('g-love', i)],
+    [23.1, () => S('lv-py')],
+    [24.3, () => S('lv-bridge')],
+    [25.5, () => S('lv-py2')],
+    [26.5, () => P('lv-z1')],
+    [26.7, () => P('lv-z2')],
+    [26.9, () => { P('lv-z3'); S('lv-h'); S('lv-en'); }],
 
-    // ---- CALENDAR: May 20 ----
-    [27.6, (i) => go('g-cal', i)],
-    [29.2, () => S('cal-mark')],
-    [30.6, () => S('cal-tag')],
+    // ROMANCE — couple photo
+    [27.7, (i) => { go('g-romance', i); S('rom-photo'); }],
+    [30.4, () => S('rom-cap')],
 
-    // ---- 1314 → 一生一世 → combined on a gift ----
-    [33.3, (i) => go('g-1314', i)],
-    [35.0, () => P('t4-z1')],
-    [35.2, () => P('t4-z2')],
-    [35.4, () => P('t4-z3')],
-    [35.6, () => { P('t4-z4'); S('t4-en'); }],
-    [37.0, () => { S('t4-gift'); gridPush(); }],
+    // 1314 → gift (cross-fade)
+    [33.6, (i) => go('g-1314', i)],
+    [35.9, () => P('t4-z1')],
+    [36.1, () => P('t4-z2')],
+    [36.4, () => P('t4-z3')],
+    [36.9, () => { P('t4-z4'); S('t4-en'); }],
+    [38.0, () => { $('#g-1314').classList.add('gifton'); gridPush(); }],
 
-    // ---- INSULT: tone flips, 250 → 二百五 ----
-    [40.5, () => { cool(true); gridPush(); phonePunch(); }],
-    [42.6, (i) => go('g-250', i)],
-    [44.3, () => S('in-py')],
-    [46.0, () => { P('in-z1'); P('in-z2'); P('in-z3'); S('in-ic'); S('in-en'); }],
+    // INSULT 250
+    [41.6, () => { gridPush(); }],
+    [43.7, (i) => go('g-250', i)],
+    [45.6, () => S('in-py')],
+    [47.0, () => { P('in-z1'); P('in-z2'); P('in-z3'); S('in-en'); }],
 
-    // ---- COINS etymology: 半吊子 ----
-    [46.9, (i) => { go('g-coins', i); S('coins-img'); }],
-    [49.2, () => { S('coins-zh'); S('coins-py'); }],
-    [50.2, () => S('coins-mean')],
-    [50.9, () => S('coins-story')],
+    // 88
+    [48.0, (i) => { go('g-88', i); S('b88-bubble'); }],
+    [49.8, () => { S('b88-zh'); S('b88-en'); }],
 
-    // ---- 88 → 拜拜 ----
-    [52.6, (i) => { go('g-88', i); cool(false); S('b88-bubble'); }],
-    [53.7, () => { S('b88-zh'); S('b88-en'); }],
+    // 666
+    [50.7, (i) => { go('g-666', i); startFlood(); }],
+    [52.0, () => { S('c666-zh'); S('c666-en'); }],
 
-    // ---- 666 → flood → 溜 / 厉害 ----
-    [54.4, (i) => { go('g-666', i); startFlood(); }],
-    [56.3, () => { S('c666-zh'); S('c666-en'); }],
+    // PUNCHLINE
+    [53.7, (i) => { go('g-punch', i); S('punch-block'); }],
+    [58.1, () => S('read-math')],
+    [59.2, () => S('read-love')],
+    [60.1, () => S('read-insult')],
+    [60.9, () => { gridPush(); }],
 
-    // ---- PUNCHLINE: one block, three readings ----
-    [58.4, (i) => { go('g-punch', i); S('punch-mood'); }],
-    [60.6, () => { S('punch-block'); gridPush(); phonePunch(); }],
-    [62.7, () => S('read-math')],
-    [64.2, () => S('read-love')],
-    [65.5, () => S('read-insult')],
-    [66.6, () => { gridPush(); }],                      // "two completely different worlds"
-
-    // ---- OUTRO ----
-    [69.7, (i) => { setScene('sc-outro', i); if (!i) gridPush(); }],
+    // OUTRO
+    [63.9, (i) => { setScene('sc-outro'); if (!i) gridPush(); }],
   ];
 
-  // ============================================================
-  // SFX — swoosh only when the grid moves; pop for bubbles/words; tick for flood.
-  // [t, name, vol]
-  // ============================================================
+  // ---- SFX (swoosh only when the grid moves) ----
   const SFX = [
-    [1.0, 'pop', 0.5], [2.4, 'pop', 0.5], [3.4, 'pop', 0.5], [4.9, 'pop', 0.5],
-    [5.9, 'swoosh', 0.4],
-    [9.8, 'swoosh', 0.5],
-    [10.4, 'pop', 0.5], [11.4, 'pop', 0.5], [12.3, 'pop', 0.5],
-    [16.8, 'pop', 0.45], [17.7, 'pop', 0.45], [18.3, 'pop', 0.45],
-    [21.6, 'swoosh', 0.48],
-    [26.3, 'pop', 0.5], [26.5, 'pop', 0.5], [26.78, 'pop', 0.55],
-    [27.6, 'swoosh', 0.5],
-    [30.6, 'pop', 0.45],
-    [33.3, 'swoosh', 0.48],
-    [35.0, 'pop', 0.5], [35.2, 'pop', 0.5], [35.4, 'pop', 0.5], [35.6, 'pop', 0.55],
-    [37.0, 'swoosh', 0.4],
-    [40.5, 'swoosh', 0.45],
-    [42.6, 'pop', 0.5],
-    [46.0, 'pop', 0.5],
-    [46.9, 'swoosh', 0.5],
-    [52.6, 'swoosh', 0.48], [52.6, 'pop', 0.5],
-    [54.4, 'swoosh', 0.42], [54.7, 'tick', 0.4], [55.1, 'tick', 0.4], [55.5, 'tick', 0.4],
-    [58.4, 'swoosh', 0.45], [58.5, 'pop', 0.5],
-    [60.6, 'swoosh', 0.45],
-    [62.7, 'pop', 0.5], [64.2, 'pop', 0.5], [65.5, 'pop', 0.5],
-    [66.6, 'swoosh', 0.4],
-    [69.7, 'swoosh', 0.55],
+    [0.9, 'pop', 0.5], [2.5, 'pop', 0.5], [3.6, 'pop', 0.5], [5.1, 'pop', 0.5],
+    [6.0, 'swoosh', 0.4], [6.1, 'pop', 0.42], [6.3, 'pop', 0.42], [6.6, 'pop', 0.4],
+    [8.0, 'swoosh', 0.5],
+    [9.4, 'pop', 0.5], [10.7, 'pop', 0.5], [12.1, 'pop', 0.5],
+    [15.9, 'pop', 0.5], [16.6, 'pop', 0.5], [17.3, 'pop', 0.5],
+    [20.9, 'swoosh', 0.48],
+    [26.5, 'pop', 0.5], [26.7, 'pop', 0.5], [26.9, 'pop', 0.55],
+    [27.7, 'swoosh', 0.5], [30.4, 'pop', 0.45],
+    [33.6, 'swoosh', 0.48],
+    [35.9, 'pop', 0.5], [36.1, 'pop', 0.5], [36.4, 'pop', 0.5], [36.9, 'pop', 0.55],
+    [38.0, 'swoosh', 0.4],
+    [41.6, 'swoosh', 0.45],
+    [43.7, 'pop', 0.5],
+    [47.0, 'pop', 0.5],
+    [48.0, 'swoosh', 0.48], [48.0, 'pop', 0.5],
+    [50.7, 'swoosh', 0.42], [51.0, 'tick', 0.4], [51.3, 'tick', 0.4], [51.6, 'tick', 0.4],
+    [53.7, 'swoosh', 0.45],
+    [58.1, 'pop', 0.5], [59.2, 'pop', 0.5], [60.1, 'pop', 0.5],
+    [60.9, 'swoosh', 0.4],
+    [63.9, 'swoosh', 0.55],
   ];
   window.SFX = SFX;
   const SND = { swoosh: 'assets/sound/swoosh.ogg', pop: 'assets/sound/pop.wav', tick: 'assets/sound/tick.wav' };
   function playSfx(entry) { try { const a = new Audio(SND[entry[1]]); a.volume = entry[2] != null ? entry[2] : 0.6; a.play().catch(() => {}); } catch (e) {} }
 
-  // ============================================================
-  // CUE ENGINE
-  // ============================================================
+  // ---- CUE ENGINE ----
   const firedScene = new Set(), firedSub = new Set(), firedSfx = new Set();
   let lastT = 0;
   function resetScenes() {
-    $$('.grp *').forEach((e) => e.classList.remove('show', 'pop', 'out'));
-    $$('.grp').forEach((g) => g.classList.remove('on', 'out'));
+    $$('.grp *').forEach((e) => e.classList.remove('show', 'pop', 'out', 'ctx'));
+    $$('.grp').forEach((g) => g.classList.remove('on', 'out', 'gifton'));
     const f = $('#flood'); if (f) f.classList.remove('show');
-    cool(false); curGrp = null;
+    pcam.style.opacity = '1'; curGrp = null;
     $('#sc-chat').classList.remove('lift'); $('#sc-chat').style.opacity = 1;
     $('#sc-outro').classList.remove('go'); $('#sc-outro').style.opacity = 0;
   }
@@ -305,9 +258,7 @@
   }
   requestAnimationFrame(tick);
 
-  // ============================================================
-  // PLAYBACK CONTROL
-  // ============================================================
+  // ---- PLAYBACK ----
   function play() { hardReset(); vo.currentTime = 0; lastT = 0; vo.play().catch(() => {}); }
   window.__play = play;
   window.__seek = (t) => { vo.pause(); vo.currentTime = t; lastT = t; applyUpTo(t); };

@@ -25,7 +25,7 @@ const args = [
   '-c:a', 'aac', '-b:a', '192k',
   // pad the narration with silence so the outro brand card finishes assembling
   // and holds for a beat after the last spoken word.
-  '-af', 'apad', '-t', '84.8',
+  '-af', 'apad', '-t', '66.0',
   '-movflags', '+faststart',
   out,
 ];

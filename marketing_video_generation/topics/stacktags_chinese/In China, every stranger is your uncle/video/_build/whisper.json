@@ -1,5 +1,5 @@
 {
- "duration": 82.199,
+ "duration": 63.437,
  "words": [
   {
    "w": "In",
@@ -9,1473 +9,1103 @@
   {
    "w": "China,",
    "start": 0.16,
-   "end": 0.4
+   "end": 0.42
   },
   {
    "w": "the",
-   "start": 0.74,
-   "end": 0.76
+   "start": 0.7,
+   "end": 0.74
   },
   {
    "w": "man",
-   "start": 0.76,
-   "end": 0.9
+   "start": 0.74,
+   "end": 0.86
   },
   {
    "w": "at",
-   "start": 0.9,
-   "end": 1.06
+   "start": 0.86,
+   "end": 1.02
   },
   {
    "w": "the",
-   "start": 1.06,
-   "end": 1.18
+   "start": 1.02,
+   "end": 1.14
   },
   {
    "w": "shop,",
-   "start": 1.18,
-   "end": 1.44
+   "start": 1.14,
+   "end": 1.4
   },
   {
    "w": "the",
-   "start": 1.7,
-   "end": 1.74
+   "start": 1.64,
+   "end": 1.66
   },
   {
    "w": "bus",
-   "start": 1.74,
-   "end": 1.92
+   "start": 1.66,
+   "end": 1.86
   },
   {
    "w": "driver,",
-   "start": 1.92,
-   "end": 2.18
+   "start": 1.86,
+   "end": 2.1
   },
   {
    "w": "your",
-   "start": 2.5,
-   "end": 2.6
+   "start": 2.42,
+   "end": 2.52
   },
   {
    "w": "neighbor,",
-   "start": 2.6,
-   "end": 2.8
+   "start": 2.52,
+   "end": 2.76
   },
   {
    "w": "they're",
-   "start": 3.16,
-   "end": 3.32
+   "start": 3.2,
+   "end": 3.38
   },
   {
    "w": "all",
-   "start": 3.32,
-   "end": 3.5
-  },
-  {
-   "w": "de",
-   "start": 3.5,
-   "end": 3.92
-  },
-  {
-   "w": "-",
-   "start": 3.92,
-   "end": 4.14
+   "start": 3.38,
+   "end": 3.52
   },
   {
    "w": "your",
-   "start": 4.14,
-   "end": 4.4
+   "start": 3.52,
+   "end": 3.7
   },
   {
    "w": "uncle",
-   "start": 4.4,
-   "end": 4.66
+   "start": 3.7,
+   "end": 3.94
   },
   {
    "w": "or",
-   "start": 4.66,
-   "end": 5.08
+   "start": 3.94,
+   "end": 4.34
   },
   {
    "w": "auntie.",
-   "start": 5.08,
-   "end": 5.64
+   "start": 4.34,
+   "end": 4.92
   },
   {
    "w": "But",
-   "start": 5.94,
-   "end": 6.02
+   "start": 5.22,
+   "end": 5.34
   },
   {
    "w": "here's",
-   "start": 6.02,
-   "end": 6.24
+   "start": 5.34,
+   "end": 5.58
   },
   {
    "w": "the",
-   "start": 6.24,
-   "end": 6.36
+   "start": 5.58,
+   "end": 5.7
   },
   {
    "w": "irony,",
-   "start": 6.36,
-   "end": 6.6
+   "start": 5.7,
+   "end": 5.96
   },
   {
    "w": "there's",
-   "start": 6.84,
-   "end": 7.02
+   "start": 6.24,
+   "end": 6.46
   },
   {
    "w": "no",
-   "start": 7.02,
-   "end": 7.12
+   "start": 6.46,
+   "end": 6.62
   },
   {
    "w": "single",
-   "start": 7.12,
+   "start": 6.62,
+   "end": 6.92
+  },
+  {
+   "w": "Chinese",
+   "start": 6.92,
+   "end": 7.18
+  },
+  {
+   "w": "word",
+   "start": 7.18,
    "end": 7.48
   },
   {
-   "w": "Chinese",
-   "start": 7.48,
-   "end": 7.76
-  },
-  {
-   "w": "word",
-   "start": 7.76,
-   "end": 8.02
-  },
-  {
    "w": "for",
-   "start": 8.02,
-   "end": 8.2
+   "start": 7.48,
+   "end": 7.68
   },
   {
    "w": "uncle",
-   "start": 8.2,
-   "end": 8.42
+   "start": 7.68,
+   "end": 8.0
   },
   {
    "w": "at",
-   "start": 8.42,
-   "end": 8.66
+   "start": 8.0,
+   "end": 8.36
   },
   {
    "w": "all.",
-   "start": 8.66,
-   "end": 8.86
+   "start": 8.36,
+   "end": 8.62
   },
   {
    "w": "There",
-   "start": 9.26,
+   "start": 9.0,
+   "end": 9.16
+  },
+  {
+   "w": "are,",
+   "start": 9.16,
    "end": 9.38
   },
   {
-   "w": "are",
-   "start": 9.38,
-   "end": 9.56
-  },
-  {
    "w": "at",
-   "start": 9.56,
-   "end": 9.68
+   "start": 9.5,
+   "end": 9.62
   },
   {
    "w": "least",
-   "start": 9.68,
-   "end": 9.86
+   "start": 9.62,
+   "end": 9.82
   },
   {
-   "w": "8.",
-   "start": 9.86,
-   "end": 10.12
+   "w": "eight,",
+   "start": 9.82,
+   "end": 10.1
   },
   {
-   "w": "Let",
+   "w": "let",
    "start": 10.38,
-   "end": 10.52
+   "end": 10.46
   },
   {
    "w": "me",
-   "start": 10.52,
-   "end": 10.62
+   "start": 10.46,
+   "end": 10.6
   },
   {
    "w": "explain.",
-   "start": 10.62,
-   "end": 10.98
+   "start": 10.6,
+   "end": 10.92
   },
   {
    "w": "English",
-   "start": 11.76,
-   "end": 11.76
+   "start": 11.6,
+   "end": 11.84
   },
   {
    "w": "has",
-   "start": 11.76,
-   "end": 11.96
+   "start": 11.84,
+   "end": 12.04
   },
   {
    "w": "one",
-   "start": 11.96,
-   "end": 12.28
+   "start": 12.04,
+   "end": 12.32
   },
   {
    "w": "lazy",
-   "start": 12.28,
-   "end": 12.52
+   "start": 12.32,
+   "end": 12.56
   },
   {
-   "w": "word,",
-   "start": 12.52,
-   "end": 12.88
+   "w": "word.",
+   "start": 12.56,
+   "end": 12.98
   },
   {
-   "w": "uncle,",
-   "start": 13.18,
-   "end": 13.36
+   "w": "Uncle",
+   "start": 13.96,
+   "end": 13.96
   },
   {
    "w": "for",
-   "start": 13.76,
-   "end": 13.94
+   "start": 13.96,
+   "end": 14.46
   },
   {
    "w": "a",
-   "start": 13.94,
-   "end": 14.06
-  },
-  {
-   "w": "whole",
-   "start": 14.06,
-   "end": 14.32
-  },
-  {
-   "w": "crowd",
-   "start": 14.32,
+   "start": 14.46,
    "end": 14.58
   },
   {
-   "w": "of",
+   "w": "whole",
    "start": 14.58,
-   "end": 14.78
+   "end": 14.84
+  },
+  {
+   "w": "crowd",
+   "start": 14.84,
+   "end": 15.08
+  },
+  {
+   "w": "of",
+   "start": 15.08,
+   "end": 15.26
   },
   {
    "w": "different",
-   "start": 14.78,
-   "end": 15.02
+   "start": 15.26,
+   "end": 15.52
   },
   {
    "w": "people.",
-   "start": 15.02,
-   "end": 15.38
+   "start": 15.52,
+   "end": 15.88
   },
   {
    "w": "Chinese",
-   "start": 16.12,
-   "end": 16.4
+   "start": 16.6,
+   "end": 16.84
   },
   {
    "w": "refuses",
-   "start": 16.4,
-   "end": 16.9
+   "start": 16.84,
+   "end": 17.24
   },
   {
    "w": "to",
-   "start": 16.9,
-   "end": 17.12
+   "start": 17.24,
+   "end": 17.48
   },
   {
    "w": "be",
-   "start": 17.12,
-   "end": 17.26
+   "start": 17.48,
+   "end": 17.6
   },
   {
    "w": "that",
-   "start": 17.26,
-   "end": 17.42
+   "start": 17.6,
+   "end": 17.76
   },
   {
    "w": "vague,",
-   "start": 17.42,
-   "end": 17.72
+   "start": 17.76,
+   "end": 18.06
   },
   {
    "w": "it",
-   "start": 17.92,
-   "end": 18.04
+   "start": 18.3,
+   "end": 18.4
   },
   {
    "w": "needs",
-   "start": 18.04,
-   "end": 18.18
+   "start": 18.4,
+   "end": 18.56
   },
   {
    "w": "to",
-   "start": 18.18,
-   "end": 18.36
+   "start": 18.56,
+   "end": 18.72
   },
   {
    "w": "know",
-   "start": 18.36,
-   "end": 18.5
+   "start": 18.72,
+   "end": 18.82
   },
   {
    "w": "exactly",
-   "start": 18.5,
-   "end": 18.8
+   "start": 18.82,
+   "end": 19.12
   },
   {
    "w": "who",
-   "start": 18.8,
-   "end": 19.08
+   "start": 19.12,
+   "end": 19.38
   },
   {
    "w": "you",
-   "start": 19.08,
-   "end": 19.2
+   "start": 19.38,
+   "end": 19.5
   },
   {
    "w": "mean.",
-   "start": 19.2,
-   "end": 19.48
+   "start": 19.5,
+   "end": 19.76
   },
   {
    "w": "Is",
-   "start": 20.0,
-   "end": 20.1
+   "start": 20.24,
+   "end": 20.3
   },
   {
    "w": "he",
-   "start": 20.1,
-   "end": 20.22
+   "start": 20.3,
+   "end": 20.44
   },
   {
    "w": "your",
-   "start": 20.22,
-   "end": 20.34
+   "start": 20.44,
+   "end": 20.54
   },
   {
    "w": "father's",
-   "start": 20.34,
-   "end": 20.72
+   "start": 20.54,
+   "end": 20.92
   },
   {
    "w": "brother",
-   "start": 20.72,
-   "end": 20.88
+   "start": 20.92,
+   "end": 21.08
   },
   {
    "w": "or",
-   "start": 20.88,
-   "end": 21.28
+   "start": 21.08,
+   "end": 21.42
   },
   {
    "w": "your",
-   "start": 21.28,
-   "end": 21.44
+   "start": 21.42,
+   "end": 21.6
   },
   {
    "w": "mother's?",
-   "start": 21.44,
-   "end": 21.92
+   "start": 21.6,
+   "end": 22.12
   },
   {
    "w": "Is",
-   "start": 22.16,
-   "end": 22.36
+   "start": 22.36,
+   "end": 22.54
   },
   {
    "w": "he",
-   "start": 22.36,
-   "end": 22.48
-  },
-  {
-   "w": "older",
-   "start": 22.48,
+   "start": 22.54,
    "end": 22.68
   },
   {
-   "w": "than",
+   "w": "older",
    "start": 22.68,
-   "end": 22.9
+   "end": 22.86
+  },
+  {
+   "w": "than",
+   "start": 22.86,
+   "end": 23.06
   },
   {
    "w": "your",
-   "start": 22.9,
-   "end": 23.04
+   "start": 23.06,
+   "end": 23.18
   },
   {
    "w": "parent",
-   "start": 23.04,
-   "end": 23.3
+   "start": 23.18,
+   "end": 23.44
   },
   {
    "w": "or",
-   "start": 23.3,
-   "end": 23.7
+   "start": 23.44,
+   "end": 23.64
   },
   {
    "w": "younger?",
-   "start": 23.7,
-   "end": 23.96
+   "start": 23.64,
+   "end": 23.92
   },
   {
    "w": "Is",
-   "start": 24.56,
-   "end": 24.74
+   "start": 24.26,
+   "end": 24.36
   },
   {
    "w": "he",
-   "start": 24.74,
-   "end": 24.88
+   "start": 24.36,
+   "end": 24.5
   },
   {
    "w": "blood",
-   "start": 24.88,
-   "end": 25.12
+   "start": 24.5,
+   "end": 24.74
   },
   {
    "w": "or",
-   "start": 25.12,
-   "end": 25.52
+   "start": 24.74,
+   "end": 25.1
   },
   {
    "w": "married",
-   "start": 25.52,
-   "end": 25.82
+   "start": 25.1,
+   "end": 25.4
   },
   {
    "w": "in?",
-   "start": 25.82,
-   "end": 26.04
+   "start": 25.4,
+   "end": 25.66
   },
   {
    "w": "Every",
-   "start": 26.5,
-   "end": 26.78
+   "start": 26.08,
+   "end": 26.46
   },
   {
    "w": "combination",
-   "start": 26.78,
-   "end": 27.2
+   "start": 26.46,
+   "end": 26.82
   },
   {
    "w": "is",
-   "start": 27.2,
-   "end": 27.56
+   "start": 26.82,
+   "end": 27.12
   },
   {
    "w": "a",
-   "start": 27.56,
-   "end": 27.7
+   "start": 27.12,
+   "end": 27.26
   },
   {
    "w": "different",
-   "start": 27.7,
-   "end": 27.94
+   "start": 27.26,
+   "end": 27.48
   },
   {
    "w": "word.",
-   "start": 27.94,
-   "end": 28.22
+   "start": 27.48,
+   "end": 27.78
   },
   {
    "w": "Father's",
-   "start": 28.86,
-   "end": 29.04
+   "start": 28.44,
+   "end": 28.7
   },
   {
    "w": "older",
-   "start": 29.04,
-   "end": 29.22
+   "start": 28.7,
+   "end": 28.86
   },
   {
    "w": "brother,",
-   "start": 29.22,
-   "end": 29.48
+   "start": 28.86,
+   "end": 29.14
   },
   {
    "w": "father's",
-   "start": 29.88,
-   "end": 30.18
+   "start": 29.54,
+   "end": 29.88
   },
   {
    "w": "younger",
-   "start": 30.18,
-   "end": 30.34
+   "start": 29.88,
+   "end": 30.02
   },
   {
    "w": "brother,",
-   "start": 30.34,
-   "end": 30.7
+   "start": 30.02,
+   "end": 30.36
   },
   {
    "w": "mother's",
-   "start": 30.94,
-   "end": 31.26
+   "start": 30.6,
+   "end": 30.9
   },
   {
    "w": "brother,",
-   "start": 31.26,
-   "end": 31.48
+   "start": 30.9,
+   "end": 31.12
   },
   {
    "w": "the",
-   "start": 31.8,
-   "end": 31.88
+   "start": 31.38,
+   "end": 31.46
   },
   {
    "w": "husband",
-   "start": 31.88,
-   "end": 32.12
+   "start": 31.46,
+   "end": 31.66
   },
   {
    "w": "of",
-   "start": 32.12,
-   "end": 32.34
+   "start": 31.66,
+   "end": 31.9
   },
   {
    "w": "your",
-   "start": 32.34,
-   "end": 32.46
+   "start": 31.9,
+   "end": 32.02
   },
   {
    "w": "father's",
-   "start": 32.46,
-   "end": 32.86
+   "start": 32.02,
+   "end": 32.44
   },
   {
    "w": "sister,",
-   "start": 32.86,
-   "end": 33.14
-  },
-  {
-   "w": "maaang",
-   "start": 33.56,
-   "end": 34.28
-  },
-  {
-   "w": "all",
-   "start": 34.28,
-   "end": 34.56
-  },
-  {
-   "w": "completely",
-   "start": 34.56,
-   "end": 35.06
-  },
-  {
-   "w": "separate",
-   "start": 35.06,
-   "end": 35.46
-  },
-  {
-   "w": "terms.",
-   "start": 35.46,
-   "end": 35.84
-  },
-  {
-   "w": "There's",
-   "start": 36.32,
-   "end": 36.5
-  },
-  {
-   "w": "no",
-   "start": 36.5,
-   "end": 36.66
-  },
-  {
-   "w": "neutral",
-   "start": 36.66,
-   "end": 37.0
-  },
-  {
-   "w": "uncle",
-   "start": 37.0,
-   "end": 37.3
-  },
-  {
-   "w": "to",
-   "start": 37.3,
-   "end": 37.6
-  },
-  {
-   "w": "fall",
-   "start": 37.6,
-   "end": 37.8
-  },
-  {
-   "w": "back",
-   "start": 37.8,
-   "end": 38.06
-  },
-  {
-   "w": "on.",
-   "start": 38.06,
-   "end": 38.34
-  },
-  {
-   "w": "The",
-   "start": 38.72,
-   "end": 38.9
-  },
-  {
-   "w": "word",
-   "start": 38.9,
-   "end": 39.08
-  },
-  {
-   "w": "itself",
-   "start": 39.08,
-   "end": 39.42
-  },
-  {
-   "w": "tells",
-   "start": 39.42,
-   "end": 39.68
+   "start": 32.44,
+   "end": 32.68
   },
   {
    "w": "you",
-   "start": 39.68,
-   "end": 39.88
+   "start": 32.94,
+   "end": 33.08
+  },
+  {
+   "w": "get",
+   "start": 33.08,
+   "end": 33.24
   },
   {
    "w": "the",
-   "start": 39.88,
-   "end": 40.0
+   "start": 33.24,
+   "end": 33.38
   },
   {
-   "w": "exact",
-   "start": 40.0,
-   "end": 40.36
+   "w": "idea.",
+   "start": 33.38,
+   "end": 33.72
   },
   {
-   "w": "relationship.",
-   "start": 40.36,
-   "end": 40.9
+   "w": "There's",
+   "start": 34.3,
+   "end": 34.52
   },
   {
-   "w": "It's",
-   "start": 41.24,
-   "end": 41.4
+   "w": "no",
+   "start": 34.52,
+   "end": 34.66
   },
   {
-   "w": "because",
-   "start": 41.4,
-   "end": 41.68
-  },
-  {
-   "w": "family",
-   "start": 41.68,
-   "end": 42.06
-  },
-  {
-   "w": "structure",
-   "start": 42.06,
-   "end": 42.4
-  },
-  {
-   "w": "mattered",
-   "start": 42.4,
-   "end": 42.66
-  },
-  {
-   "w": "so",
-   "start": 42.66,
-   "end": 43.0
-  },
-  {
-   "w": "much",
-   "start": 43.0,
-   "end": 43.28
-  },
-  {
-   "w": "that",
-   "start": 43.28,
-   "end": 43.78
-  },
-  {
-   "w": "the",
-   "start": 43.78,
-   "end": 43.92
-  },
-  {
-   "w": "language",
-   "start": 43.92,
-   "end": 44.2
-  },
-  {
-   "w": "baked",
-   "start": 44.2,
-   "end": 44.46
-  },
-  {
-   "w": "it",
-   "start": 44.46,
-   "end": 44.62
-  },
-  {
-   "w": "right",
-   "start": 44.62,
-   "end": 44.86
-  },
-  {
-   "w": "in.",
-   "start": 44.86,
-   "end": 45.14
-  },
-  {
-   "w": "Which",
-   "start": 45.6,
-   "end": 45.76
-  },
-  {
-   "w": "side?",
-   "start": 45.76,
-   "end": 46.1
-  },
-  {
-   "w": "Which",
-   "start": 46.38,
-   "end": 46.54
-  },
-  {
-   "w": "generation?",
-   "start": 46.54,
-   "end": 46.94
-  },
-  {
-   "w": "Which",
-   "start": 47.38,
-   "end": 47.5
-  },
-  {
-   "w": "order",
-   "start": 47.5,
-   "end": 47.68
-  },
-  {
-   "w": "of",
-   "start": 47.68,
-   "end": 47.9
-  },
-  {
-   "w": "birth?",
-   "start": 47.9,
-   "end": 48.1
-  },
-  {
-   "w": "You",
-   "start": 48.58,
-   "end": 48.82
-  },
-  {
-   "w": "don't",
-   "start": 48.82,
-   "end": 48.94
-  },
-  {
-   "w": "just",
-   "start": 48.94,
-   "end": 49.14
-  },
-  {
-   "w": "say",
-   "start": 49.14,
-   "end": 49.3
-  },
-  {
-   "w": "uncle.",
-   "start": 49.3,
-   "end": 49.54
-  },
-  {
-   "w": "You",
-   "start": 50.02,
-   "end": 50.2
-  },
-  {
-   "w": "say",
-   "start": 50.2,
-   "end": 50.38
-  },
-  {
-   "w": "precisely",
-   "start": 50.38,
-   "end": 50.7
-  },
-  {
-   "w": "where",
-   "start": 50.7,
-   "end": 51.02
-  },
-  {
-   "w": "he",
-   "start": 51.02,
-   "end": 51.14
-  },
-  {
-   "w": "sits",
-   "start": 51.14,
-   "end": 51.3
-  },
-  {
-   "w": "in",
-   "start": 51.3,
-   "end": 51.46
-  },
-  {
-   "w": "the",
-   "start": 51.46,
-   "end": 51.54
-  },
-  {
-   "w": "family",
-   "start": 51.54,
-   "end": 51.84
-  },
-  {
-   "w": "and",
-   "start": 51.84,
-   "end": 52.16
-  },
-  {
-   "w": "yet,",
-   "start": 52.16,
-   "end": 52.4
-  },
-  {
-   "w": "Chinese",
-   "start": 53.02,
-   "end": 53.22
-  },
-  {
-   "w": "uses",
-   "start": 53.22,
-   "end": 53.6
-  },
-  {
-   "w": "these",
-   "start": 53.6,
-   "end": 53.92
-  },
-  {
-   "w": "very",
-   "start": 53.92,
-   "end": 54.16
-  },
-  {
-   "w": "same",
-   "start": 54.16,
-   "end": 54.44
-  },
-  {
-   "w": "family",
-   "start": 54.44,
-   "end": 54.74
-  },
-  {
-   "w": "words",
-   "start": 54.74,
-   "end": 54.92
-  },
-  {
-   "w": "for",
-   "start": 54.92,
-   "end": 55.16
-  },
-  {
-   "w": "total",
-   "start": 55.16,
-   "end": 55.38
-  },
-  {
-   "w": "strangers.",
-   "start": 55.38,
-   "end": 55.76
-  },
-  {
-   "w": "You",
-   "start": 56.3,
-   "end": 56.38
-  },
-  {
-   "w": "call",
-   "start": 56.38,
-   "end": 56.56
-  },
-  {
-   "w": "an",
-   "start": 56.56,
-   "end": 56.66
-  },
-  {
-   "w": "older",
-   "start": 56.66,
-   "end": 56.86
-  },
-  {
-   "w": "man,",
-   "start": 56.86,
-   "end": 57.12
-  },
-  {
-   "w": "uncle,",
-   "start": 57.22,
-   "end": 57.42
-  },
-  {
-   "w": "an",
-   "start": 57.84,
-   "end": 57.9
-  },
-  {
-   "w": "older",
-   "start": 57.9,
-   "end": 58.16
-  },
-  {
-   "w": "woman,",
-   "start": 58.16,
-   "end": 58.38
-  },
-  {
-   "w": "auntie,",
-   "start": 58.5,
-   "end": 58.9
-  },
-  {
-   "w": "a",
-   "start": 59.32,
-   "end": 59.42
-  },
-  {
-   "w": "young",
-   "start": 59.42,
-   "end": 59.6
-  },
-  {
-   "w": "woman,",
-   "start": 59.6,
-   "end": 59.86
-  },
-  {
-   "w": "big",
-   "start": 60.2,
-   "end": 60.36
-  },
-  {
-   "w": "sister,",
-   "start": 60.36,
-   "end": 60.76
-  },
-  {
-   "w": "as",
-   "start": 61.12,
-   "end": 61.4
-  },
-  {
-   "w": "a",
-   "start": 61.4,
-   "end": 61.52
-  },
-  {
-   "w": "sign",
-   "start": 61.52,
-   "end": 61.7
-  },
-  {
-   "w": "of",
-   "start": 61.7,
-   "end": 61.86
-  },
-  {
-   "w": "warmth",
-   "start": 61.86,
-   "end": 62.08
-  },
-  {
-   "w": "and",
-   "start": 62.08,
-   "end": 62.26
-  },
-  {
-   "w": "respect.",
-   "start": 62.26,
-   "end": 62.62
-  },
-  {
-   "w": "Everyone",
-   "start": 63.38,
-   "end": 63.68
-  },
-  {
-   "w": "gets",
-   "start": 63.68,
-   "end": 63.92
-  },
-  {
-   "w": "slotted",
-   "start": 63.92,
-   "end": 64.26
-  },
-  {
-   "w": "into",
-   "start": 64.26,
-   "end": 64.5
-  },
-  {
-   "w": "the",
-   "start": 64.5,
-   "end": 64.68
-  },
-  {
-   "w": "family,",
-   "start": 64.68,
-   "end": 64.9
-  },
-  {
-   "w": "so",
-   "start": 65.08,
-   "end": 65.22
-  },
-  {
-   "w": "Chinese",
-   "start": 65.22,
-   "end": 65.5
-  },
-  {
-   "w": "can't",
-   "start": 65.5,
-   "end": 65.88
-  },
-  {
-   "w": "translate",
-   "start": 65.88,
-   "end": 66.2
+   "w": "neutral",
+   "start": 34.66,
+   "end": 35.08
   },
   {
    "w": "uncle",
-   "start": 66.2,
-   "end": 66.46
-  },
-  {
-   "w": "with",
-   "start": 66.46,
-   "end": 66.76
-  },
-  {
-   "w": "a",
-   "start": 66.76,
-   "end": 66.9
-  },
-  {
-   "w": "single",
-   "start": 66.9,
-   "end": 67.08
-  },
-  {
-   "w": "word.",
-   "start": 67.08,
-   "end": 67.4
-  },
-  {
-   "w": "It",
-   "start": 67.66,
-   "end": 67.7
-  },
-  {
-   "w": "has",
-   "start": 67.7,
-   "end": 67.82
-  },
-  {
-   "w": "a",
-   "start": 67.82,
-   "end": 67.94
-  },
-  {
-   "w": "whole",
-   "start": 67.94,
-   "end": 68.1
-  },
-  {
-   "w": "map",
-   "start": 68.1,
-   "end": 68.3
-  },
-  {
-   "w": "of",
-   "start": 68.3,
-   "end": 68.46
-  },
-  {
-   "w": "them,",
-   "start": 68.46,
-   "end": 68.64
-  },
-  {
-   "w": "but",
-   "start": 68.78,
-   "end": 69.14
-  },
-  {
-   "w": "it'll",
-   "start": 69.14,
-   "end": 69.3
-  },
-  {
-   "w": "happily",
-   "start": 69.3,
-   "end": 69.54
-  },
-  {
-   "w": "call",
-   "start": 69.54,
-   "end": 69.8
-  },
-  {
-   "w": "a",
-   "start": 69.8,
-   "end": 69.94
-  },
-  {
-   "w": "stranger",
-   "start": 69.94,
-   "end": 70.16
-  },
-  {
-   "w": "on",
-   "start": 70.16,
-   "end": 70.34
-  },
-  {
-   "w": "the",
-   "start": 70.34,
-   "end": 70.42
-  },
-  {
-   "w": "street",
-   "start": 70.42,
-   "end": 70.6
-  },
-  {
-   "w": "your",
-   "start": 70.6,
-   "end": 70.76
-  },
-  {
-   "w": "uncle.",
-   "start": 70.76,
-   "end": 70.96
-  },
-  {
-   "w": "A",
-   "start": 71.56,
-   "end": 71.74
-  },
-  {
-   "w": "language",
-   "start": 71.74,
-   "end": 71.92
-  },
-  {
-   "w": "incredibly",
-   "start": 71.92,
-   "end": 72.44
-  },
-  {
-   "w": "precise",
-   "start": 72.44,
-   "end": 72.86
-  },
-  {
-   "w": "about",
-   "start": 72.86,
-   "end": 73.14
-  },
-  {
-   "w": "family",
-   "start": 73.14,
-   "end": 73.54
-  },
-  {
-   "w": "that",
-   "start": 73.54,
-   "end": 74.06
-  },
-  {
-   "w": "treats",
-   "start": 74.06,
-   "end": 74.24
-  },
-  {
-   "w": "the",
-   "start": 74.24,
-   "end": 74.42
-  },
-  {
-   "w": "entire",
-   "start": 74.42,
-   "end": 74.74
-  },
-  {
-   "w": "world",
-   "start": 74.74,
-   "end": 75.02
-  },
-  {
-   "w": "like",
-   "start": 75.02,
-   "end": 75.22
-  },
-  {
-   "w": "one.",
-   "start": 75.22,
-   "end": 75.5
-  },
-  {
-   "w": "Want",
-   "start": 76.02,
-   "end": 76.18
+   "start": 35.08,
+   "end": 35.36
   },
   {
    "w": "to",
-   "start": 76.18,
-   "end": 76.26
+   "start": 35.36,
+   "end": 35.66
   },
   {
-   "w": "actually",
-   "start": 76.26,
-   "end": 76.54
+   "w": "fall",
+   "start": 35.66,
+   "end": 35.84
   },
   {
-   "w": "start",
-   "start": 76.54,
-   "end": 76.76
+   "w": "back",
+   "start": 35.84,
+   "end": 36.12
   },
   {
-   "w": "learning",
-   "start": 76.76,
-   "end": 77.0
+   "w": "on.",
+   "start": 36.12,
+   "end": 36.38
   },
   {
-   "w": "Chinese?",
-   "start": 77.0,
-   "end": 77.4
+   "w": "The",
+   "start": 36.78,
+   "end": 36.94
   },
   {
-   "w": "Discover",
-   "start": 77.9,
-   "end": 78.14
+   "w": "word",
+   "start": 36.94,
+   "end": 37.14
   },
   {
-   "w": "thousands",
-   "start": 78.14,
-   "end": 78.56
+   "w": "itself",
+   "start": 37.14,
+   "end": 37.42
   },
   {
-   "w": "of",
-   "start": 78.56,
-   "end": 78.78
+   "w": "tells",
+   "start": 37.42,
+   "end": 37.7
   },
   {
-   "w": "free",
-   "start": 78.78,
-   "end": 78.92
+   "w": "you",
+   "start": 37.7,
+   "end": 37.94
   },
   {
-   "w": "exercises",
-   "start": 78.92,
-   "end": 79.34
+   "w": "the",
+   "start": 37.94,
+   "end": 38.06
+  },
+  {
+   "w": "exact",
+   "start": 38.06,
+   "end": 38.46
+  },
+  {
+   "w": "relationship,",
+   "start": 38.46,
+   "end": 39.08
   },
   {
    "w": "and",
-   "start": 79.34,
-   "end": 79.72
+   "start": 39.46,
+   "end": 39.62
   },
   {
-   "w": "more",
-   "start": 79.72,
-   "end": 79.88
+   "w": "yet,",
+   "start": 39.62,
+   "end": 39.8
+  },
+  {
+   "w": "Chinese",
+   "start": 40.38,
+   "end": 40.38
+  },
+  {
+   "w": "uses",
+   "start": 40.38,
+   "end": 40.86
+  },
+  {
+   "w": "these",
+   "start": 40.86,
+   "end": 41.12
+  },
+  {
+   "w": "very",
+   "start": 41.12,
+   "end": 41.46
+  },
+  {
+   "w": "same",
+   "start": 41.46,
+   "end": 41.76
+  },
+  {
+   "w": "family",
+   "start": 41.76,
+   "end": 42.08
+  },
+  {
+   "w": "words",
+   "start": 42.08,
+   "end": 42.32
+  },
+  {
+   "w": "for",
+   "start": 42.32,
+   "end": 42.58
+  },
+  {
+   "w": "total",
+   "start": 42.58,
+   "end": 42.88
+  },
+  {
+   "w": "strangers.",
+   "start": 42.88,
+   "end": 43.32
+  },
+  {
+   "w": "You",
+   "start": 43.86,
+   "end": 43.96
+  },
+  {
+   "w": "call",
+   "start": 43.96,
+   "end": 44.18
+  },
+  {
+   "w": "an",
+   "start": 44.18,
+   "end": 44.32
+  },
+  {
+   "w": "older",
+   "start": 44.32,
+   "end": 44.54
+  },
+  {
+   "w": "man",
+   "start": 44.54,
+   "end": 44.8
+  },
+  {
+   "w": "uncle,",
+   "start": 44.8,
+   "end": 45.14
+  },
+  {
+   "w": "an",
+   "start": 45.56,
+   "end": 45.66
+  },
+  {
+   "w": "older",
+   "start": 45.66,
+   "end": 45.9
+  },
+  {
+   "w": "woman",
+   "start": 45.9,
+   "end": 46.14
+  },
+  {
+   "w": "auntie,",
+   "start": 46.14,
+   "end": 46.7
+  },
+  {
+   "w": "a",
+   "start": 46.88,
+   "end": 46.96
+  },
+  {
+   "w": "young",
+   "start": 46.96,
+   "end": 47.14
+  },
+  {
+   "w": "woman",
+   "start": 47.14,
+   "end": 47.4
+  },
+  {
+   "w": "big",
+   "start": 47.4,
+   "end": 47.68
+  },
+  {
+   "w": "sister,",
+   "start": 47.68,
+   "end": 48.1
+  },
+  {
+   "w": "as",
+   "start": 48.44,
+   "end": 48.72
+  },
+  {
+   "w": "a",
+   "start": 48.72,
+   "end": 48.9
+  },
+  {
+   "w": "sign",
+   "start": 48.9,
+   "end": 49.08
+  },
+  {
+   "w": "of",
+   "start": 49.08,
+   "end": 49.24
+  },
+  {
+   "w": "warmth",
+   "start": 49.24,
+   "end": 49.48
+  },
+  {
+   "w": "and",
+   "start": 49.48,
+   "end": 49.66
+  },
+  {
+   "w": "respect.",
+   "start": 49.66,
+   "end": 50.02
+  },
+  {
+   "w": "Everyone",
+   "start": 50.42,
+   "end": 50.72
+  },
+  {
+   "w": "gets",
+   "start": 50.72,
+   "end": 50.94
+  },
+  {
+   "w": "slotted",
+   "start": 50.94,
+   "end": 51.28
+  },
+  {
+   "w": "into",
+   "start": 51.28,
+   "end": 51.62
+  },
+  {
+   "w": "the",
+   "start": 51.62,
+   "end": 51.82
+  },
+  {
+   "w": "family,",
+   "start": 51.82,
+   "end": 52.08
+  },
+  {
+   "w": "a",
+   "start": 52.3,
+   "end": 52.42
+  },
+  {
+   "w": "language",
+   "start": 52.42,
+   "end": 52.66
+  },
+  {
+   "w": "incredibly",
+   "start": 52.66,
+   "end": 53.36
+  },
+  {
+   "w": "precise",
+   "start": 53.36,
+   "end": 53.88
+  },
+  {
+   "w": "about",
+   "start": 53.88,
+   "end": 54.18
+  },
+  {
+   "w": "family,",
+   "start": 54.18,
+   "end": 54.58
+  },
+  {
+   "w": "that",
+   "start": 54.86,
+   "end": 55.18
+  },
+  {
+   "w": "treats",
+   "start": 55.18,
+   "end": 55.38
+  },
+  {
+   "w": "the",
+   "start": 55.38,
+   "end": 55.56
+  },
+  {
+   "w": "entire",
+   "start": 55.56,
+   "end": 55.88
+  },
+  {
+   "w": "world",
+   "start": 55.88,
+   "end": 56.16
+  },
+  {
+   "w": "like",
+   "start": 56.16,
+   "end": 56.4
+  },
+  {
+   "w": "one.",
+   "start": 56.4,
+   "end": 56.66
+  },
+  {
+   "w": "Want",
+   "start": 56.66,
+   "end": 57.24
+  },
+  {
+   "w": "to",
+   "start": 57.24,
+   "end": 57.34
+  },
+  {
+   "w": "actually",
+   "start": 57.34,
+   "end": 57.6
+  },
+  {
+   "w": "start",
+   "start": 57.6,
+   "end": 57.82
   },
   {
    "w": "learning",
-   "start": 79.88,
-   "end": 80.18
+   "start": 57.82,
+   "end": 58.06
+  },
+  {
+   "w": "Chinese?",
+   "start": 58.06,
+   "end": 58.42
+  },
+  {
+   "w": "Discover",
+   "start": 59.06,
+   "end": 59.28
+  },
+  {
+   "w": "thousands",
+   "start": 59.28,
+   "end": 59.72
+  },
+  {
+   "w": "of",
+   "start": 59.72,
+   "end": 59.94
+  },
+  {
+   "w": "free",
+   "start": 59.94,
+   "end": 60.12
+  },
+  {
+   "w": "exercises",
+   "start": 60.12,
+   "end": 60.6
+  },
+  {
+   "w": "and",
+   "start": 60.6,
+   "end": 61.0
+  },
+  {
+   "w": "more",
+   "start": 61.0,
+   "end": 61.16
+  },
+  {
+   "w": "learning",
+   "start": 61.16,
+   "end": 61.42
   },
   {
    "w": "content",
-   "start": 80.18,
-   "end": 80.5
+   "start": 61.42,
+   "end": 61.8
   },
   {
    "w": "on",
-   "start": 80.5,
-   "end": 80.68
+   "start": 61.8,
+   "end": 61.96
   },
   {
    "w": "stacktags",
-   "start": 80.68,
-   "end": 81.2
+   "start": 61.96,
+   "end": 62.54
   },
   {
    "w": ".io.",
-   "start": 81.2,
-   "end": 81.74
+   "start": 62.54,
+   "end": 63.02
   }
  ],
  "segments": [
   {
    "start": 0.0,
-   "end": 4.66,
-   "text": "In China, the man at the shop, the bus driver, your neighbor, they're all de- your uncle"
+   "end": 4.34,
+   "text": "In China, the man at the shop, the bus driver, your neighbor, they're all your uncle or"
   },
   {
-   "start": 4.66,
-   "end": 5.64,
-   "text": "or auntie."
+   "start": 4.34,
+   "end": 4.92,
+   "text": "auntie."
   },
   {
-   "start": 5.94,
-   "end": 8.86,
+   "start": 5.22,
+   "end": 8.62,
    "text": "But here's the irony, there's no single Chinese word for uncle at all."
   },
   {
-   "start": 9.26,
-   "end": 10.12,
-   "text": "There are at least 8."
+   "start": 9.0,
+   "end": 10.92,
+   "text": "There are, at least eight, let me explain."
   },
   {
-   "start": 10.38,
-   "end": 10.98,
-   "text": "Let me explain."
+   "start": 11.6,
+   "end": 12.98,
+   "text": "English has one lazy word."
   },
   {
-   "start": 11.76,
-   "end": 15.38,
-   "text": "English has one lazy word, uncle, for a whole crowd of different people."
+   "start": 13.96,
+   "end": 15.88,
+   "text": "Uncle for a whole crowd of different people."
   },
   {
-   "start": 16.12,
-   "end": 19.48,
+   "start": 16.6,
+   "end": 19.76,
    "text": "Chinese refuses to be that vague, it needs to know exactly who you mean."
   },
   {
-   "start": 20.0,
-   "end": 21.92,
+   "start": 20.24,
+   "end": 22.12,
    "text": "Is he your father's brother or your mother's?"
   },
   {
-   "start": 22.16,
-   "end": 23.96,
+   "start": 22.36,
+   "end": 23.92,
    "text": "Is he older than your parent or younger?"
   },
   {
-   "start": 24.56,
-   "end": 26.04,
+   "start": 24.26,
+   "end": 25.66,
    "text": "Is he blood or married in?"
   },
   {
-   "start": 26.76,
-   "end": 28.22,
+   "start": 26.08,
+   "end": 27.78,
    "text": "Every combination is a different word."
   },
   {
-   "start": 28.86,
-   "end": 32.34,
-   "text": "Father's older brother, father's younger brother, mother's brother, the husband of"
+   "start": 28.6,
+   "end": 32.44,
+   "text": "Father's older brother, father's younger brother, mother's brother, the husband of your father's"
   },
   {
-   "start": 32.34,
-   "end": 35.84,
-   "text": "your father's sister, maaang all completely separate terms."
+   "start": 32.44,
+   "end": 33.72,
+   "text": "sister, you get the idea."
   },
   {
-   "start": 36.32,
-   "end": 38.34,
+   "start": 34.3,
+   "end": 36.38,
    "text": "There's no neutral uncle to fall back on."
   },
   {
-   "start": 38.72,
-   "end": 40.9,
-   "text": "The word itself tells you the exact relationship."
+   "start": 36.78,
+   "end": 42.08,
+   "text": "The word itself tells you the exact relationship, and yet, Chinese uses these very same family"
   },
   {
-   "start": 41.24,
-   "end": 45.14,
-   "text": "It's because family structure mattered so much that the language baked it right in."
-  },
-  {
-   "start": 45.6,
-   "end": 46.1,
-   "text": "Which side?"
-  },
-  {
-   "start": 46.38,
-   "end": 46.94,
-   "text": "Which generation?"
-  },
-  {
-   "start": 47.38,
-   "end": 48.1,
-   "text": "Which order of birth?"
-  },
-  {
-   "start": 48.58,
-   "end": 49.54,
-   "text": "You don't just say uncle."
-  },
-  {
-   "start": 50.02,
-   "end": 54.74,
-   "text": "You say precisely where he sits in the family and yet, Chinese uses these very same family"
-  },
-  {
-   "start": 54.74,
-   "end": 55.76,
+   "start": 42.08,
+   "end": 43.32,
    "text": "words for total strangers."
   },
   {
-   "start": 56.3,
-   "end": 61.7,
-   "text": "You call an older man, uncle, an older woman, auntie, a young woman, big sister, as a sign"
+   "start": 43.86,
+   "end": 49.08,
+   "text": "You call an older man uncle, an older woman auntie, a young woman big sister, as a sign"
   },
   {
-   "start": 61.7,
-   "end": 62.62,
+   "start": 49.08,
+   "end": 50.02,
    "text": "of warmth and respect."
   },
   {
-   "start": 63.38,
-   "end": 67.08,
-   "text": "Everyone gets slotted into the family, so Chinese can't translate uncle with a single"
+   "start": 50.42,
+   "end": 55.18,
+   "text": "Everyone gets slotted into the family, a language incredibly precise about family, that"
   },
   {
-   "start": 67.08,
-   "end": 67.4,
-   "text": "word."
+   "start": 55.18,
+   "end": 56.66,
+   "text": "treats the entire world like one."
   },
   {
-   "start": 67.66,
-   "end": 70.96,
-   "text": "It has a whole map of them, but it'll happily call a stranger on the street your uncle."
-  },
-  {
-   "start": 71.56,
-   "end": 75.5,
-   "text": "A language incredibly precise about family that treats the entire world like one."
-  },
-  {
-   "start": 76.02,
-   "end": 77.4,
+   "start": 56.66,
+   "end": 58.42,
    "text": "Want to actually start learning Chinese?"
   },
   {
-   "start": 77.9,
-   "end": 81.74,
+   "start": 59.06,
+   "end": 63.02,
    "text": "Discover thousands of free exercises and more learning content on stacktags.io."
   }
  ]

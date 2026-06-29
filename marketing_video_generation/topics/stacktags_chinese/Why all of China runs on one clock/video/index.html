@@ -38,23 +38,12 @@
         </div>
       </div>
 
-      <!-- S4+S5 — globe zoom-out China→USA, then US (4) vs China (5); then US leaves, the 5 clocks merge -->
-      <div class="scene" id="sc-compare">
-        <div class="globe-host" id="compare-globe"></div>
-        <div class="compare" id="compare-stage">
-          <div class="cmp-row" id="cmp-us">
-            <div class="cmp-map" id="us-map"></div>
-          </div>
-          <div class="cmp-china-wrap" id="cmp-china-wrap">
-            <div class="cmp-map" id="cn-map"></div>
-            <div class="year-tick" id="merge-year">1949</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- S6 — globe: a dot at Beijing, a line west to Xinjiang, a dot at Xinjiang -->
-      <div class="scene" id="sc-globe6">
-        <div class="globe-host" id="route-globe"></div>
+      <!-- S4–S6 — ONE globe: China→USA (USA colours in) → 4+1 clocks circle → merge → USA→China
+           → Beijing→Xinjiang route + building → dive into Xinjiang -->
+      <div class="scene" id="sc-globe-main">
+        <div class="globe-host" id="main-globe"></div>
+        <div class="clock-circle" id="clock-circle"></div>
+        <img class="xj-building" id="xj-building" src="assets/photos/house3.png" alt="">
       </div>
 
       <!-- S7 — unofficial local time: greyed Beijing clock + bright local clock + real cut-out objects -->

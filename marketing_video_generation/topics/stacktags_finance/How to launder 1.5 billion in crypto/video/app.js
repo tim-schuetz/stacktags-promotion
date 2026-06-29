@@ -28,19 +28,17 @@
   }
 
   // ============================================================
-  // HOOK — recreated Bybit-hack news headlines
+  // HOOK — generated images: Bybit → coins → Lazarus, $1.5 BILLION
   // ============================================================
-  const NEWS = [
-    { ol: 'Reuters', lg: 'R', bg: '#f47b20', date: 'Feb 21, 2025', rot: -3, top: 70, head: 'Bybit hit by record <b>$1.5 billion</b> crypto hack', live: true },
-    { ol: 'Bloomberg', lg: 'B', bg: '#111418', date: 'Feb 22, 2025', rot: 2.4, top: 470, head: "North Korea's <b>Lazarus Group</b> blamed for largest-ever theft" },
-    { ol: 'CoinDesk', lg: 'C', bg: '#1652f0', date: 'Feb 24, 2025', rot: -1.8, top: 845, head: 'Investigators trace the stolen funds <b>across the blockchain</b>' },
-  ];
-  $('#sc-news').innerHTML = `<div class="news-wrap">${NEWS.map((n, i) => `
-      <div class="news-card" id="news-${i}" style="--rot:${n.rot}deg; top:${n.top}px;">
-        <div class="news-top"><div class="news-logo" style="background:${n.bg};">${n.lg}</div><div class="news-outlet">${n.ol}</div><div class="news-meta">${n.date}</div></div>
-        <div class="news-head">${n.head}</div>${n.live ? '<div class="news-live">BREAKING</div>' : ''}
-      </div>`).join('')}</div>`;
-  const newsCards = NEWS.map((_, i) => $('#news-' + i));
+  $('#sc-news').innerHTML =
+    `<div class="hook2" id="hook2">
+       <img class="hk-flag" src="assets/nkflag.png" alt="">
+       <img class="hk-lazarus" src="assets/lazarus_cut.png" alt="">
+       <div class="hk-bybit"><img src="assets/bybit_cut.png" alt=""><div class="hk-bybit-lbl">Bybit</div></div>
+       <div class="hk-amount"><span class="big">$1.5</span><span class="sub">BILLION</span></div>
+       ${[0, 1, 2, 3, 4, 5].map((i) => `<div class="hk-coin" style="animation-delay:${(i * 0.4).toFixed(2)}s"><img src="assets/coin_cut.png" alt=""></div>`).join('')}
+     </div>`;
+  const hook2 = $('#hook2');
 
   // ============================================================
   // SERVER NETWORK — the persistent canvas
@@ -82,7 +80,7 @@
     const ringNodes = RING.map((r) => `<div class="ring-node" style="left:${r.dx}px;top:${r.dy}px;">${tokenHTML(r.t)}<div class="ci-name">${r.n}</div></div>`).join('');
     root.innerHTML = '<div class="snet-grp">' + lines + servers + '</div>'
       + ringArc + '<div class="snet-ring">' + ringNodes + '</div>'
-      + '<div class="snet-mixer"><div class="snet-blades"></div></div>'
+      + '<div class="snet-mixer"><img src="assets/mixer_dash.png" alt=""></div>'
       + '<div class="snet-fx"></div>';
     scene.appendChild(root);
     const srvs = Array.from(root.querySelectorAll('.srv'));
@@ -99,6 +97,9 @@
     return {
       root, srvs,
       serversIn(instant) { srvs.forEach((s, i) => { if (instant) s.classList.add('in'); else setTimeout(() => s.classList.add('in'), 100 + i * 110); }); },
+      serverIn(idx) { srvs[idx].classList.add('in'); },
+      serversInRest(except, instant) { srvs.forEach((s, i) => { if (i === except) return; if (instant) s.classList.add('in'); else setTimeout(() => s.classList.add('in'), 60 + i * 90); }); },
+      unfreeze(idx) { srvs[idx].classList.remove('frozen', 'tagged'); const t = srvs[idx].querySelector('.srv-tag'); if (t) t.textContent = ''; },
       linesIn() { root.classList.add('lines-in'); },
       tx(from, to, o) { o = o || {}; const A = pos(from), B = pos(to); return flyCoin(A[0], A[1], B[0], B[1], { html: tokenHTML(o.token || 'btc'), dur: o.dur || 1.0, onArrive: o.onArrive }); },
       hash(idx, slot) { srvs[idx].classList.add('show-h' + slot); },
@@ -122,7 +123,7 @@
       doSplitting() {
         clearFx();
         setTimeout(() => {
-          const L = pos(LAZARUS); const targets = [0, 1, 2, 3, 4, 5, 7, 8, 9];
+          const L = pos(LAZARUS); const targets = [0, 1, 2, 4, 5, 7, 8, 9];  // exclude Bybit (3) + Lazarus (6)
           const onward = (idx) => { const others = targets.filter((x) => x !== idx); const t2 = others[(Math.random() * others.length) | 0]; const P = pos(idx), Q = pos(t2); flyCoin(P[0], P[1], Q[0], Q[1], { cls: 'teal sm', dur: 0.7 }); };
           targets.forEach((idx, k) => { const P = pos(idx); setTimeout(() => flyCoin(L[0], L[1], P[0], P[1], { cls: 'teal sm', dur: 0.7, onArrive: () => onward(idx) }), k * 95); });
           setTimeout(() => targets.forEach((idx, k) => setTimeout(() => onward(idx), k * 80)), 2300);
@@ -260,13 +261,14 @@
   // CUES — all on the persistent network
   // ============================================================
   const CUES = [
-    [0.0,  (i) => enter($('#sc-news'), 'fade', 600, i, () => { if (i) newsCards.forEach((c) => c.classList.add('in')); else newsCards[0].classList.add('in'); })],
-    [1.1,  () => newsCards[1].classList.add('in')],
-    [2.2,  () => newsCards[2].classList.add('in')],
+    [0.0,  (i) => enter($('#sc-news'), 'fade', 700, i)],
+    [0.1,  () => hook2.classList.add('go')],
 
-    // network: servers first, then lines
-    [10.82,(i) => enter($('#sc-network'), 'zoom-out', 1150, i, () => net.serversIn(i))],
-    [13.6, () => net.linesIn()],
+    // network: ONE ledger appears on "the ledger isn't kept in one place",
+    // the copies on "an identical copy…", then the lines between them
+    [18.0, (i) => enter($('#sc-network'), 'zoom-out', 1150, i, () => { net.serverIn(LAZARUS); if (i) { net.serversInRest(LAZARUS, true); net.linesIn(); } })],
+    [20.82,(i) => net.serversInRest(LAZARUS, i)],
+    [22.60,() => net.linesIn()],
 
     // "every single transaction": coin Bybit→Lazarus, both hash, then all
     [24.76,(i) => { if (!i) net.tx(BYBIT, LAZARUS, { token: 'btc' }); }],
@@ -277,11 +279,15 @@
     [30.18,(i) => { if (!i) net.tx(BYBIT, LAZARUS, { token: 'btc' }); }],
     [32.38,() => { net.hash(BYBIT, 2); net.hash(LAZARUS, 2); }],
     [33.40,(i) => net.hashAll(2, i)],
-    [34.60,() => { net.tag(BYBIT, 'BYBIT'); net.tag(LAZARUS, 'LAZARUS'); }],
+    // red Bybit / Lazarus identification when Lazarus is first named
+    [36.94,() => { net.tag(BYBIT, 'BYBIT'); net.tag(LAZARUS, 'LAZARUS'); }],
 
     // "because the moment…": Lazarus → exchange server, which freezes it
     [45.86,(i) => { if (!i) net.tx(LAZARUS, EXCHANGE, { token: 'btc', dur: 1.4 }); }],
     [48.26,() => net.freeze(EXCHANGE)],
+
+    // "They do it three ways" — clear the exchange's frozen state
+    [53.10,() => net.unfreeze(EXCHANGE)],
 
     // THE THREE MOVES — on the network
     [54.94,(i) => { net.setLift(true); net.mode('hop'); if (!i) net.doHopping(); }],
@@ -290,16 +296,17 @@
     [70.38,(i) => { if (!i) net.mixerOut(); }],
     [72.50,(i) => { net.setLift(false); net.mode(''); if (!i) net.doSplitting(); }],
 
-    // OUTRO
-    [94.60,(i) => { enter($('#sc-outro'), 'lift', 1100, i); outroAssemble(); }],
+    // OUTRO — fade (clean cut from the avatar window, no scene slide-out flash)
+    [94.60,(i) => { enter($('#sc-outro'), 'fade', 700, i); outroAssemble(); }],
   ];
 
   // ============================================================
   // SFX
   // ============================================================
   const SFX = [
-    [10.82,'swoosh', 0.50],
-    [26.00,'pop', 0.40], [32.38,'pop', 0.40], [34.60,'pop', 0.45],
+    [0.80,'pop', 0.40],
+    [18.0,'swoosh', 0.50], [20.82,'pop', 0.38],
+    [26.00,'pop', 0.40], [32.38,'pop', 0.40], [36.94,'pop', 0.45],
     [48.26,'pop', 0.45],
     [54.94,'swoosh', 0.50],
     [61.76,'swoosh', 0.42], [63.68,'pop', 0.38], [64.00,'pop', 0.38],
@@ -321,7 +328,7 @@
     SCENES.forEach((el) => setPose(el, { tx: 0, ty: 0, s: 1, op: 0, blur: 0, z: 0 }));
     current = null;
     gcam.s = 1; gcam.x = 0; gcam.y = 0; gdisp.s = 1; gdisp.x = 0; gdisp.y = 0;
-    newsCards.forEach((c) => c.classList.remove('in'));
+    if (hook2) hook2.classList.remove('go');
     net.reset();
     outroReset();
     subsLine.classList.remove('in');

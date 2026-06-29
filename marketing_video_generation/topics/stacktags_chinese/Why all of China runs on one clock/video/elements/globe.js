@@ -115,6 +115,8 @@
     let routeMesh = null, routeTotal = 0, routePts3 = null, routeProg = 0;  // a turquoise DASHED route ON the surface
     let shipEl3 = null;                              // a DOM ship driven to ride the route's tip
     const route = { active: false, t0: 0, dur: 3100 };
+    let idleK = 0.045;                               // idle slew speed (lower = slower travel)
+    const pins = [];                                 // DOM elements pinned to lat/lon on the surface
 
     function size() {
       // Use the layout (unscaled) size — the stage is CSS-transform scaled to
@@ -427,6 +429,22 @@
           (function pop(t) { const p = Math.min(1, Math.max(0, (t - s0) / 380)); const e = p <= 0 ? 0.0001 : (p < 1 ? 1 + (2.7 * Math.pow(p - 1, 3) + 1.7 * Math.pow(p - 1, 2)) : 1); dot.scale.setScalar(Math.max(0.0001, e)); if (p < 1) requestAnimationFrame(pop); })(performance.now());
           return dot;
         },
+        // idle travel speed (lower = slower); restore with no arg
+        setSlew(k) { idleK = (k != null ? k : 0.045); },
+        // fill another country turquoise on the fly (e.g. colour the USA after travelling)
+        async addHighlight(name, dur) {
+          let world; try { world = await loadWorldGeo(); } catch (e) { return null; }
+          const hl = buildHighlight(world, name);
+          const mats = [];
+          hl.traverse((o) => { if (o.material) { mats.push({ m: o.material, target: o.material.opacity }); o.material.opacity = 0; } });
+          globe.add(hl);
+          if (halted) { halted = false; animate(performance.now()); }
+          const t0 = performance.now();
+          (function fade(t) { const p = Math.min(1, (t - t0) / (dur || 900)); const e = 1 - Math.pow(1 - p, 3); mats.forEach(({ m, target }) => { m.opacity = target * e; }); if (p < 1) requestAnimationFrame(fade); })(performance.now());
+          return hl;
+        },
+        // pin a DOM element to a lat/lon on the surface (kept on screen each frame, hidden on the far side)
+        pinElement(elm, lat, lon) { pins.push({ elm, p: latLonToVec3(lat, lon, GLOBE_RADIUS * 1.012) }); },
       };
       if (opts.onReady) opts.onReady(el.__globeCtrl);
 
@@ -450,9 +468,9 @@
         if (!zoom.arrived && p >= 0.96) { zoom.arrived = true; if (zoom.onArrive) zoom.onArrive(); }
         if (p >= 1) zoom.active = false;
       } else {
-        state.lat = lerp(state.lat, state.tLat, 0.045);
-        state.lon = lerp(state.lon, state.tLon, 0.045);
-        state.camDist = lerp(state.camDist, state.tCam, 0.045);
+        state.lat = lerp(state.lat, state.tLat, idleK);
+        state.lon = lerp(state.lon, state.tLon, idleK);
+        state.camDist = lerp(state.camDist, state.tCam, idleK);
       }
       if (globe) {
         globe.rotation.y = -Math.PI / 2 - state.lon * Math.PI / 180;
@@ -488,6 +506,15 @@
           shipEl3.style.left = (el.offsetLeft + (w.x * 0.5 + 0.5) * HW) + 'px';
           shipEl3.style.top = (el.offsetTop + (-w.y * 0.5 + 0.5) * HH) + 'px';
         }
+      }
+      if (pins.length) {
+        const HW = el.offsetWidth || 1080, HH = el.offsetHeight || 1920;
+        pins.forEach((pin) => {
+          const w = pin.p.clone(); globe.localToWorld(w); const front = w.z > 0; w.project(camera);
+          pin.elm.style.left = (el.offsetLeft + (w.x * 0.5 + 0.5) * HW) + 'px';
+          pin.elm.style.top = (el.offsetTop + (-w.y * 0.5 + 0.5) * HH) + 'px';
+          pin.elm.style.visibility = front ? 'visible' : 'hidden';
+        });
       }
       camera.position.set(0, 0, state.camDist);
       camera.lookAt(0, 0, 0);

@@ -37,6 +37,8 @@
       <!-- ===== 2 · MECHANIC: $1 → USDT → vault (recurring motif) ===== -->
       <div class="scene" id="sc-mechanic">
         <div class="mech" id="mech">
+          <div class="mech-lbl m-you">You</div>
+          <div class="mech-lbl m-tether">Tether</div>
           <img class="mech-figure" src="assets/figures/trader_cut.png" alt="">
           <img class="mech-vault" src="assets/photos/vault_dashed.png" alt="" onerror="this.style.display='none'">
           <img class="mech-bill" src="assets/photos/dollar_dashed.png" alt="">
@@ -56,22 +58,19 @@
           </div>
           <!-- trader -->
           <img class="ux-trader" src="assets/figures/trader_cut.png" alt="">
-          <!-- Tether <-> BTC swap cycle (right of the trader) -->
+          <!-- Tether <-> BTC swap cycle (right of the trader): thin black arrows that rotate with -->
           <div class="ux-cycle" id="ux-cycle">
-            <svg class="cyc-arrows" viewBox="0 0 240 240" fill="none">
-              <path d="M44 150 A 80 80 0 0 1 172 68" stroke="#35A292" stroke-width="11" stroke-linecap="round"/>
-              <path d="M172 68 l 6 -33 l -31 13 z" fill="#35A292"/>
-              <path d="M196 90 A 80 80 0 0 1 68 172" stroke="#35A292" stroke-width="11" stroke-linecap="round"/>
-              <path d="M68 172 l -6 33 l 31 -13 z" fill="#35A292"/>
-            </svg>
             <div class="cyc-rot" id="cyc-rot">
+              <svg class="cyc-arrows" viewBox="0 0 240 240" fill="none">
+                <defs><marker id="ah" markerWidth="4.5" markerHeight="4.5" refX="1.3" refY="2.25" orient="auto">
+                  <path d="M0 0 L4.5 2.25 L0 4.5 z" fill="#1b1f23"/></marker></defs>
+                <path d="M62 170 A 66 66 0 0 1 158 62" stroke="#1b1f23" stroke-width="6" marker-end="url(#ah)"/>
+                <path d="M178 70 A 66 66 0 0 1 82 178" stroke="#1b1f23" stroke-width="6" marker-end="url(#ah)"/>
+              </svg>
               <div class="cyc-coin usdt c-left"><span class="tk">₮</span></div>
-              <div class="cyc-coin btc c-right"><span class="tk">₿</span></div>
+              <div class="cyc-coin usdt btc c-right"><span class="tk">₿</span></div>
             </div>
           </div>
-          <!-- swap pops: hand a dollar, get a minted token -->
-          <img class="ux-swapbill" src="assets/photos/dollar_dashed.png" alt="">
-          <div class="usdt ux-swaptoken"><span class="tk">₮</span></div>
         </div>
       </div>
 
@@ -81,6 +80,7 @@
           <img class="tr-vault" src="assets/photos/vault_dashed.png" alt="">
           <img class="tr-tbill" src="assets/photos/tbill_real_dashed.png" alt="">
           <img class="tr-cash" src="assets/photos/cash_cut.png" alt="">
+          <div class="tr-rate">4–5%</div>
           <!-- the holder gets 0% (flies in below the vault) -->
           <div class="tr-holder" id="tr-holder">
             <img class="tr-person" src="assets/figures/trader_cut.png" alt="">
@@ -92,9 +92,11 @@
       <!-- ===== 6 · SCALE: $100B odometer + crowd ===== -->
       <div class="scene" id="sc-scale">
         <div class="scale" id="scale">
+          <video class="sc-tokfall" id="tokfall" muted playsinline preload="auto">
+            <source src="assets/tokenfall.webm" type="video/webm">
+          </video>
           <div class="sc-odo" id="odo">$0</div>
           <div class="sc-sub">of other people's money — working for free</div>
-          <div class="sc-crowd" id="sc-crowd"></div>
         </div>
       </div>
 
@@ -114,7 +116,7 @@
           <div class="cost-row r-tether">
             <div class="cost-ent"><img class="cost-fig" src="assets/figures/founder_cut.png" alt=""><div class="cost-lab">Tether</div></div>
             <div class="cost-arrow none"><div class="cost-x">✕</div></div>
-            <div class="cost-ent"><div class="cost-nothing"></div></div>
+            <div class="cost-ent"><img class="cost-fig dst" src="assets/figures/trader_cut.png" alt=""><div class="cost-lab sub">you</div></div>
           </div>
         </div>
       </div>
@@ -123,10 +125,22 @@
       <div class="scene" id="sc-room">
         <div class="room" id="room">
           <div class="room-floor"></div>
-          <div class="room-team" id="room-team"></div>
-          <div class="room-stack" id="room-stack">
-            <div class="room-amt">$13B</div>
-            <div class="room-amt-sub">2024 profit</div>
+          <div class="rbars">
+            <div class="rbar r-vw">
+              <div class="remp">~679,000<span>employees</span></div>
+              <div class="rfill" data-h="900"><div class="rprof">~$12B</div></div>
+              <div class="rname">Volkswagen</div>
+            </div>
+            <div class="rbar r-te">
+              <div class="remp hi">~100<span>employees</span></div>
+              <div class="rfill" data-h="980"><div class="rprof">~$13B</div></div>
+              <div class="rname">Tether</div>
+            </div>
+            <div class="rbar r-db">
+              <div class="remp">~90,000<span>employees</span></div>
+              <div class="rfill" data-h="390"><div class="rprof">~$5B</div></div>
+              <div class="rname">Deutsche Bank</div>
+            </div>
           </div>
         </div>
       </div>
@@ -148,7 +162,7 @@
       <div class="scene" id="sc-audit">
         <div class="audit" id="audit">
           <img class="au-founder" src="assets/figures/founder_list_grin_cut.png" alt="">
-          <img class="au-cash" src="assets/photos/cash_cut.png" alt="">
+          <img class="au-cash" src="assets/photos/moneyheap_cut.png" alt="">
           <div class="au-rain" id="au-rain"></div>
         </div>
       </div>

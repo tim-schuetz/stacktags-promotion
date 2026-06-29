@@ -19,8 +19,9 @@
   // CONTROLLERS
   // ============================================================
   let cnHook, hookBands, hookCaliper, bjClock;
-  let westGlobeCtrl, route6Ctrl, compareGlobeCtrl;
-  let usCmp, cnCmp, usBands, cnBands;
+  let westGlobeCtrl, mainGlobeCtrl;
+  let circleClocks = [];
+  let usHl = false, xjPinned = false;
   let lifeEls = [];
   let cnPunch, punchClk, punchSun, punchGhost;
 
@@ -46,20 +47,21 @@
     $('#hook-stage').appendChild(bjClock.el);
   }
 
-  async function buildCompare() {
-    const FIXED = 14;   // a touch larger now that the country labels are gone
-    usCmp = await window.mountCountryMap($('#us-map'), { country: 'United States of America', mainlandOnly: true, fixedScale: FIXED, width: 880, height: 500, pad: 30 });
-    cnCmp = await window.mountCountryMap($('#cn-map'), { country: 'China', fixedScale: FIXED, width: 880, height: 660, pad: 30 });
-    $('#us-map').style.width = usCmp.W + 'px'; $('#us-map').style.height = usCmp.H + 'px';
-    $('#cn-map').style.width = cnCmp.W + 'px'; $('#cn-map').style.height = cnCmp.H + 'px';
-    usCmp.showInstant(); cnCmp.showInstant();
-    usBands = window.makeTimeZoneBands(usCmp, { ghost: true, clockSize: 62, bands: [
-      { lon0: -125, lon1: -115, h: 9 }, { lon0: -115, lon1: -101, h: 10 }, { lon0: -101, lon1: -87, h: 11 }, { lon0: -87, lon1: -66, h: 12 },
-    ] });
-    cnBands = window.makeTimeZoneBands(cnCmp, { ghost: true, clockSize: 64, bands: [
-      { lon0: 73, lon1: 82.5, h: 9 }, { lon0: 82.5, lon1: 97.5, h: 10 }, { lon0: 97.5, lon1: 112.5, h: 11 }, { lon0: 112.5, lon1: 127.5, h: 12 }, { lon0: 127.5, lon1: 135.5, h: 13 },
-    ] });
-    $('#us-map').appendChild(usBands.host); $('#cn-map').appendChild(cnBands.host);
+  // 5 clocks arranged in a circle (foreground over the globe), pop 4+1, then merge to one
+  function buildClockCircle() {
+    const host = $('#clock-circle');
+    const hrs = [9, 10, 11, 12, 13];
+    const angles = [-90, -18, 54, 126, 198];   // 5 positions, 72° apart, starting at the top
+    circleClocks = angles.map((a, i) => {
+      const rad = a * Math.PI / 180;
+      const x = 540 + 290 * Math.cos(rad), y = 800 + 290 * Math.sin(rad);
+      const c = window.makeAnalogClock({ size: 150, h: hrs[i], theme: 'official' });
+      c.el.classList.add('circle-clk');
+      c.el.dataset.hx = x; c.el.dataset.hy = y;
+      c.el.style.left = x + 'px'; c.el.style.top = y + 'px';
+      host.appendChild(c.el);
+      return c;
+    });
   }
 
   function buildWest() {
@@ -114,22 +116,18 @@
       window.mountStacktagsGlobe($('#west-globe'), { focus: { lat: 38, lon: 90, cam: 4.0 }, startCam: 4.0, startLat: 20, startLon: 104, highlight: 'China', marker: { lat: 39.47, lon: 75.99 }, autoReveal: false, onReady: (c) => { westGlobeCtrl = c; c.halt(); } });
     } catch (e) {}
     try {
-      // zoomed out enough that the full round globe fits the portrait frame (no side clipping)
-      window.mountStacktagsGlobe($('#route-globe'), { focus: { lat: 36, lon: 100, cam: 4.5 }, startCam: 4.7, startLat: 18, startLon: 104, highlight: 'China', autoReveal: false, onReady: (c) => { route6Ctrl = c; c.halt(); } });
-    } catch (e) {}
-    try {
-      // S4 intro: starts zoomed on the western point of China, then zooms out and travels to the USA
-      window.mountStacktagsGlobe($('#compare-globe'), { focus: { lat: 39.47, lon: 75.99, cam: 1.18 }, startCam: 1.18, startLat: 39.47, startLon: 75.99, highlight: 'China', marker: { lat: 39.47, lon: 75.99 }, autoReveal: false, onReady: (c) => { compareGlobeCtrl = c; c.halt(); } });
+      // main globe (S4–S6): sits at China, travels to the USA and back, then runs the route; full round globe (no side clip)
+      window.mountStacktagsGlobe($('#main-globe'), { focus: { lat: 36, lon: 100, cam: 4.5 }, startCam: 4.5, startLat: 36, startLon: 100, highlight: 'China', autoReveal: false, onReady: (c) => { mainGlobeCtrl = c; c.halt(); } });
     } catch (e) {}
   }
 
   // ============================================================
   // INIT
   // ============================================================
-  buildWest(); buildLocal(); mountGlobes();
+  buildWest(); buildLocal(); buildClockCircle(); mountGlobes();
   (async function init() {
     try {
-      await buildHook(); await buildCompare(); await buildPunch();
+      await buildHook(); await buildPunch();
       window.__ready = true; if (vo.paused) applyUpTo(vo.currentTime || 0);
     } catch (e) { console.log('init failed:', e.message); }
   })();
@@ -229,32 +227,51 @@
     else { t.style.transition = 'opacity .55s ease .35s, transform .55s cubic-bezier(.34,1.5,.5,1) .35s'; t.classList.add('in'); }
   }
 
-  // S5 — US leaves upward, China-wrap slides to centre, 1949 flicks
-  function compareTo1949(instant) {
-    const us = $('#cmp-us'), cw = $('#cmp-china-wrap'), yt = $('#merge-year');
-    us.style.transition = instant ? 'none' : 'opacity .55s ease, transform .7s cubic-bezier(.4,0,.2,1)';
-    us.style.opacity = '0'; us.style.transform = 'translateY(-360px)';
-    cw.style.transition = instant ? 'none' : 'transform .8s cubic-bezier(.3,.85,.3,1)';
-    cw.classList.add('centred');
-    if (!instant) { yt.classList.remove('in'); void yt.offsetWidth; }
-    yt.classList.add('in');
+  // S4/S5 — clock-circle (over the globe): pop clocks [from,to), then merge to one, then fade
+  function circleReveal(from, to, instant) {
+    for (let i = from; i < to; i++) {
+      const c = circleClocks[i]; if (!c) continue;
+      const apply = () => {
+        c.el.style.transition = instant ? 'none' : 'transform .5s cubic-bezier(.34,1.56,.64,1), opacity .35s ease';
+        c.el.style.transform = 'translate(-50%,-50%) scale(1)'; c.el.style.opacity = '1';
+      };
+      if (instant) apply(); else setTimeout(apply, (i - from) * 170);
+    }
   }
-  // S5 — the 5 China clocks converge to the map centre and merge into one
-  function compareMerge(instant) {
-    if (!cnBands) return;
-    cnBands.host.classList.add('flush');
-    cnBands.bands.forEach((b) => b.classList.add('one'));
-    cnBands.clocks.forEach((c, i) => {
-      if (i === 2) {                       // middle clock survives + grows
-        c.setTheme('official'); c.el.style.zIndex = 6;
-        c.el.style.transition = instant ? 'none' : 'left .7s cubic-bezier(.3,.9,.3,1), top .7s cubic-bezier(.3,.9,.3,1), transform .8s cubic-bezier(.34,1.35,.5,1)';
-        c.el.style.left = '50%'; c.el.style.top = '50%'; c.el.style.transform = 'translate(-50%,-50%) scale(3.2)';
-        c.snap(12, 0);
+  function circleMerge(instant) {
+    circleClocks.forEach((c, i) => {
+      if (i === 3) {                       // the noon clock survives + grows
+        c.el.style.zIndex = 6;
+        c.el.style.transition = instant ? 'none' : 'left .8s cubic-bezier(.3,.9,.3,1), top .8s cubic-bezier(.3,.9,.3,1), transform .9s cubic-bezier(.34,1.3,.5,1)';
+        c.el.style.left = '540px'; c.el.style.top = '800px'; c.el.style.transform = 'translate(-50%,-50%) scale(2.4)';
       } else {
-        c.el.style.transition = instant ? 'none' : 'left .6s ease, top .6s ease, opacity .5s ease';
-        c.el.style.left = '50%'; c.el.style.top = '50%'; c.el.style.opacity = '0';
+        c.el.style.transition = instant ? 'none' : 'left .7s ease, top .7s ease, opacity .5s ease';
+        c.el.style.left = '540px'; c.el.style.top = '800px'; c.el.style.opacity = '0';
       }
     });
+  }
+  function circleFade(instant) {
+    const c = circleClocks[3]; if (!c) return;
+    c.el.style.transition = instant ? 'none' : 'opacity .55s ease';
+    c.el.style.opacity = '0';
+  }
+  // S4 — colour the USA once the globe has travelled there
+  function colourUSA() { if (mainGlobeCtrl && !usHl) { usHl = true; mainGlobeCtrl.addHighlight('United States of America', 1000); } }
+  // S6 — a building pops at the Xinjiang point on the globe
+  function popXjBuilding(instant) {
+    const b = $('#xj-building'); if (!b || !mainGlobeCtrl) return;
+    if (!xjPinned) { mainGlobeCtrl.pinElement(b, 43.8, 87.6); xjPinned = true; }
+    b.style.transition = instant ? 'none' : 'transform .5s cubic-bezier(.34,1.5,.5,1), opacity .4s ease';
+    b.style.transform = 'translate(-50%,-90%) scale(1)'; b.style.opacity = '1';
+  }
+  // S6→S7 — dive into the Xinjiang point (building scales up, globe zooms in)
+  function diveXinjiang(instant) {
+    if (!mainGlobeCtrl) return;
+    const b = $('#xj-building');
+    if (instant) { mainGlobeCtrl.setFocus(43.8, 87.6, 1.2); if (b) { b.style.transition = 'none'; b.style.transform = 'translate(-50%,-90%) scale(3.6)'; } return; }
+    if (b) { b.style.transition = 'transform 1.3s cubic-bezier(.4,.05,.3,1)'; b.style.transform = 'translate(-50%,-90%) scale(3.6)'; }
+    mainGlobeCtrl.setSlew(0.045);
+    mainGlobeCtrl.zoomToMarker({ lat: 43.8, lon: 87.6, cam: 1.2, duration: 1400 });
   }
 
   function punchCrest(instant) {
@@ -334,33 +351,34 @@
       } }), 360);
     })],
 
-    // S4 — globe zooms out from west China and travels to the USA, then the flat comparison
-    [13.4, (i) => enter($('#sc-compare'), 'fade', 500, i, () => {
-      const cs = $('#compare-stage'), cg = $('#compare-globe');
-      if (i) { cg.classList.add('gone'); cs.classList.add('in'); if (usBands) usBands.showInstant(); return; }
-      cs.classList.remove('in'); cg.classList.remove('gone');
-      if (!compareGlobeCtrl) { cs.classList.add('in'); if (usBands) usBands.wipeIn({ stagger: 120 }); return; }
-      compareGlobeCtrl.resume(); compareGlobeCtrl.reveal();
-      setTimeout(() => compareGlobeCtrl.setFocus(38, 262, 4.5), 220);          // zoom out (full globe, no side clip) + travel east to the USA
-      setTimeout(() => { cg.classList.add('gone'); cs.classList.add('in'); if (usBands) usBands.wipeIn({ stagger: 120 }); setTimeout(() => compareGlobeCtrl && compareGlobeCtrl.halt(), 450); }, 2500);
+    // S4–S5 — one globe: China→USA (slow), colour the USA, then 4+1 clocks pop in a circle and merge to one
+    [13.4, (i) => enter($('#sc-globe-main'), 'fade', 500, i, () => {
+      if (!mainGlobeCtrl) return;
+      mainGlobeCtrl.resume(); mainGlobeCtrl.reveal();
+      if (i) { mainGlobeCtrl.setFocus(38, 262, 4.5); colourUSA(); return; }
+      mainGlobeCtrl.setSlew(0.02);                                          // a bit slower
+      setTimeout(() => mainGlobeCtrl.setFocus(38, 262, 4.5), 200);          // China → USA
+      setTimeout(colourUSA, 2600);                                          // colour the USA on arrival
     })],
-    [18.6, (i) => { if (cnBands) (i ? cnBands.showInstant() : cnBands.wipeIn({ stagger: 110 })); }],
-    // S5 — continuous: US leaves, China stays & repositions, then the clocks merge
-    [20.1, (i) => compareTo1949(i)],
-    [24.5, (i) => compareMerge(i)],
+    [16.6, (i) => circleReveal(0, 4, i)],                                   // 4 clocks pop in a circle
+    [18.6, (i) => circleReveal(4, 5, i)],                                   // 5th clock pops
+    [24.5, (i) => circleMerge(i)],                                          // converge to one big clock
+    [29.9, (i) => { circleFade(i); if (mainGlobeCtrl) { if (!i) mainGlobeCtrl.setSlew(0.03); mainGlobeCtrl.setFocus(36, 100, 4.5); } }],   // clock fades + globe USA→China
 
-    // S6 — globe: Beijing dot → line west → Xinjiang dot
-    [29.9, (i) => enter($('#sc-globe6'), 'zoom-out', 1000, i, () => {
-      if (!route6Ctrl) return;
-      route6Ctrl.resume(); route6Ctrl.reveal();
-      if (i) { route6Ctrl.addDot(39.9, 116.4); route6Ctrl.setRoute([[39.9, 116.4], [43.8, 87.6]]); route6Ctrl.revealRoute(1); route6Ctrl.addDot(43.8, 87.6); return; }
-      setTimeout(() => route6Ctrl.addDot(39.9, 116.4), 450);          // Beijing
-    })],
-    [32.2, (i) => { if (!i && route6Ctrl) { route6Ctrl.setRoute([[39.9, 116.4], [43.8, 87.6]]); route6Ctrl.revealRoute(2200); setTimeout(() => route6Ctrl.addDot(43.8, 87.6), 2000); } }],
+    // S6 — Beijing dot → route west to Xinjiang → dot + building
+    [31.9, (i) => {
+      if (!mainGlobeCtrl) return;
+      if (i) { mainGlobeCtrl.resume(); mainGlobeCtrl.reveal(); mainGlobeCtrl.setFocus(36, 100, 4.5); mainGlobeCtrl.addDot(39.9, 116.4); mainGlobeCtrl.setRoute([[39.9, 116.4], [43.8, 87.6]]); mainGlobeCtrl.revealRoute(1); mainGlobeCtrl.addDot(43.8, 87.6); popXjBuilding(true); return; }
+      mainGlobeCtrl.addDot(39.9, 116.4);                                    // Beijing
+    }],
+    [33.0, (i) => { if (!i && mainGlobeCtrl) { mainGlobeCtrl.setRoute([[39.9, 116.4], [43.8, 87.6]]); mainGlobeCtrl.revealRoute(2200); setTimeout(() => { mainGlobeCtrl.addDot(43.8, 87.6); popXjBuilding(false); }, 2000); } }],
 
-    // S7 — unofficial local time + real cut-out objects (stays through the "ask the time" line)
-    [42.4, (i) => enter($('#sc-local'), 'rise', 1000, i, () => {
-      if (route6Ctrl) route6Ctrl.halt();
+    // S6→S7 — dive into the Xinjiang point
+    [40.3, (i) => diveXinjiang(i)],
+
+    // S7 — unofficial local time + real cut-out objects
+    [42.4, (i) => enter($('#sc-local'), 'fade', 500, i, () => {
+      if (mainGlobeCtrl) mainGlobeCtrl.halt();
       const dc = $('#dclocks'); if (dc) { dc.classList.add('in'); if (i) dc.classList.add('in2'); else setTimeout(() => dc.classList.add('in2'), 1700); }
       if (i) lifeEls.forEach((l) => l.classList.add('in'));
     })],
@@ -376,8 +394,8 @@
     })],
     [59.2, (i) => { if (!i) punchCrest(false); }],
 
-    // S11 — outro
-    [65.3, (i) => { enter($('#sc-outro'), 'lift', 1100, i); outroAssemble(); }],
+    // S11 — outro (the assemble plays AFTER the lift + after the presenter leaves the foreground)
+    [65.3, (i) => { enter($('#sc-outro'), 'lift', 1100, i); if (i) outroAssemble(); else setTimeout(outroAssemble, 1600); }],
   ];
 
   // ============================================================
@@ -388,11 +406,14 @@
     [3.55, 'pop', 0.5], [3.78, 'pop', 0.5], [4.0, 'pop', 0.5], [4.22, 'pop', 0.5], [4.44, 'pop', 0.5],   // 5 ghost clocks
     [7.35, 'swoosh', 0.45], [7.7, 'tick', 0.7],                          // clock grows to centre + 北京时间
     [8.5, 'swoosh', 0.5], [9.9, 'swoosh', 0.5],                          // globe scene + dive-in
-    [13.4, 'swoosh', 0.5],                                               // zoom to compare
-    [20.1, 'swoosh', 0.5], [20.8, 'pop', 0.45],                         // US leaves + 1949 tick
-    [24.5, 'swoosh', 0.42], [27.7, 'tick', 0.7],                        // clocks converge + merge snap
-    [29.9, 'swoosh', 0.5], [32.3, 'swoosh', 0.4],                       // globe route in + line draws
-    [42.4, 'swoosh', 0.5], [45.0, 'tick', 0.6],                         // rise to local + local clock
+    [13.4, 'swoosh', 0.5],                                              // globe travel China→USA
+    [16.6, 'pop', 0.5], [16.85, 'pop', 0.5], [17.1, 'pop', 0.5], [17.35, 'pop', 0.5],   // 4 clocks pop in a circle
+    [18.7, 'pop', 0.5],                                                 // 5th clock
+    [24.5, 'swoosh', 0.42], [27.7, 'tick', 0.7],                        // clocks converge + merge
+    [29.9, 'swoosh', 0.5],                                              // clock fades + globe USA→China
+    [31.9, 'pop', 0.4], [33.1, 'swoosh', 0.4], [35.2, 'pop', 0.5],      // Beijing dot + route + Xinjiang building
+    [40.3, 'swoosh', 0.55],                                             // dive into Xinjiang
+    [42.4, 'swoosh', 0.4], [45.0, 'tick', 0.6],                         // land in local scene + local clock
     [48.9, 'pop', 0.5], [49.6, 'pop', 0.5], [50.8, 'pop', 0.5],         // 3 cut-out objects
     [55.8, 'swoosh', 0.5],                                              // zoom-out to punch
     [59.2, 'swoosh', 0.5],                                              // sun crest
@@ -419,15 +440,9 @@
     const bt = $('#bj-title'); if (bt) { bt.classList.remove('in'); bt.style.transition = 'none'; }
     $('#west-globe').classList.remove('gone'); $('#west-city').classList.remove('in');
     if (westGlobeCtrl) westGlobeCtrl.halt();
-    const cstg = $('#compare-stage'); if (cstg) cstg.classList.remove('in');
-    const cglb = $('#compare-globe'); if (cglb) cglb.classList.remove('gone'); if (compareGlobeCtrl) compareGlobeCtrl.halt();
-    if (usBands) usBands.bands.forEach((b) => b.classList.remove('in')); if (cnBands) cnBands.bands.forEach((b) => b.classList.remove('in', 'one'));
-    if (cnBands) { cnBands.host.classList.remove('flush'); cnBands.clocks.forEach((c, i) => { c.el.style.transition = 'none'; c.el.style.opacity = ''; c.el.style.transform = 'translate(-50%,-50%) scale(.4)'; c.el.style.left = c.el.dataset.ol || ''; c.el.style.top = c.el.dataset.ot || ''; c.el.style.zIndex = ''; c.setTheme('ghost'); c.snap([9, 10, 11, 12, 13][i], 0); c.el.classList.remove('in'); }); }
-    const us = $('#cmp-us'), cw = $('#cmp-china-wrap'), yt = $('#merge-year');
-    if (us) { us.style.transition = 'none'; us.style.opacity = ''; us.style.transform = ''; }
-    if (cw) { cw.style.transition = 'none'; cw.classList.remove('centred'); }
-    if (yt) yt.classList.remove('in');
-    if (route6Ctrl) route6Ctrl.halt();
+    if (mainGlobeCtrl) mainGlobeCtrl.halt();
+    circleClocks.forEach((c) => { c.el.classList.remove('in'); c.el.style.transition = 'none'; c.el.style.opacity = ''; c.el.style.zIndex = ''; c.el.style.left = c.el.dataset.hx + 'px'; c.el.style.top = c.el.dataset.hy + 'px'; c.el.style.transform = 'translate(-50%,-50%) scale(.3)'; });
+    const xb = $('#xj-building'); if (xb) { xb.style.transition = 'none'; xb.style.transform = 'translate(-50%,-90%) scale(.3)'; xb.style.opacity = '0'; }
     const dcl = $('#dclocks'); if (dcl) dcl.classList.remove('in', 'in2');
     lifeEls.forEach((l) => l.classList.remove('in'));
     if (cnPunch) { cnPunch.line.style.opacity = '0'; cnPunch.fill.style.opacity = '0'; } if (punchClk) punchClk.snap(12, 0);

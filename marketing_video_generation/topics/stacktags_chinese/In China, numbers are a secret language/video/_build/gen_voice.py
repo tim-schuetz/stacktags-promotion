@@ -12,13 +12,13 @@ MODEL = "eleven_multilingual_v2"
 # Numbers are spelled as words to force a digit-by-digit read ("five two zero", not
 # "five hundred twenty"). Pinyin keeps tone marks — eleven_multilingual_v2 code-switches;
 # if it reads them oddly, respell phonetically (woo ar ling / waw eye nee / ar bye woo).
-NARRATION = """In China, "five two zero" means "I love you." But "two five zero" means "you idiot." Numbers there aren't just numbers — they're a whole secret language. Here's how to read it.
+NARRATION = """In China, "five two zero" means "I love you." But "two five zero" means "you idiot." And there's a lot more hidden in the language.
 
-It works because Chinese is full of words that sound almost exactly like numbers. So people started using strings of numbers as code — something you can text, comment, or even put on a gift. A few digits standing in for a whole phrase.
+Why does that work? Because Chinese is full of words that sound almost exactly like numbers. So people started using strings of numbers as code — something you can text, comment, or even put on a gift. A few digits standing in for a whole phrase.
 
 Say five two zero fast — wǔ èr líng — and it sounds like wǒ ài nǐ: "I love you." It's so well known that May twentieth — written five twenty — has become an unofficial romance day, like a second Valentine's. Add "one three one four" — which sounds like "forever, a lifetime" — and "five two zero, one three one four" means "I'll love you forever."
 
-But the same trick cuts the other way. Call someone a "two five zero" — èr bǎi wǔ — and you've called them a fool. The story goes it comes from an old expression about half a string of coins — being "not quite all there." And there's more: "eight eight" sounds like "bye-bye." "Six six six" means you're a legend, seriously skilled. A few digits can carry an entire mood.
+But the same trick cuts the other way. Call someone a "two five zero" — èr bǎi wǔ — and you've called them a fool. And there's more: "eight eight" sounds like "bye-bye." "Six six six" means you're a legend, seriously skilled. A few digits can carry an entire mood.
 
 So a string of numbers in a Chinese chat might be a maths problem... or a love letter... or an insult. One block of numbers — two completely different worlds.
 

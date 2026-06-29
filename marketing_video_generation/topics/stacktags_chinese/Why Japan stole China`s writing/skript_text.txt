@@ -26,86 +26,74 @@ SCRIPT
 (Visual directions are on their own [bracketed] lines between the spoken narration;
 they are stripped before the text goes to TTS.)
 
---- HOOK (0:00–0:14) — "three hidden scripts" ---
+--- INTRO (0:00–0:15) — the explainer cold-open ---
 
-[HOOK / cold open. A single real, everyday Japanese sentence fades up dead-centre on
-the grid: 私はテレビを見る (“I watch TV”). It is colour-coded by script from the start —
-kanji in ink (#232B33), hiragana in turquoise (#35A292), katakana in deep-teal
-(#119271). No English label yet — just the intriguing mixed string.]
+[COLD OPEN. Zoom out to CHINA and JAPAN side by side as real, geo-accurate silhouettes
+(China tinted teal, labelled 中国; Japan grey, 日本) with a small "≈ 500 AD" era pill. A
+Chinese scholar figure stands on China and speaks a character — 氣 (the Chinese form of
+"spirit/energy") — in a speech bubble whose tail points down-LEFT to him. Three distinct,
+slightly-realistic Japanese figures stand on Japan.]
 
-Japan doesn't use Chinese characters because the two languages are related — they're
-not, at all.
+Around the year 500, the Japanese copied the Chinese writing system. Why? Because they
+didn't have one.
 
-[On “they're not, at all”: the sentence SPLITS — its characters glide apart into three
-neat columns by script, each column getting a tiny quiet label that pops in: 漢字
-(kanji) · ひらがな (hiragana) · カタカナ (katakana). Beat. Then a small turquoise
-underline/whoosh sweeps under the two kana columns only, with a 2-word stamp “Japan
-invented” — the reveal that two of the three scripts are home-grown. Grid does a gentle
-zoom-out as the columns separate (swoosh).]
+[On "didn't have one": an EMPTY dashed speech bubble pops over the Japanese (no writing).
+On "had a language": that bubble turns solid turquoise and fills with SOUND WAVES — they
+speak, they just can't write.]
 
-Japan borrowed China's writing for a language it simply didn't fit — and then spent
-centuries duct-taping it together. Here's how.
+But they very well had a language — so what they did was take the Chinese writing, and bend
+it for their own.
 
-[On “Japan borrowed China's writing”: zoom-out to CHINA and JAPAN as two landmasses side
-by side on the grid (China tinted teal, labelled 中国; Japan grey, 日本). A Chinese figure
-stands on China and speaks a character in a speech bubble: 氣 (the Chinese form of
-“spirit/energy”), the bubble's tail pointing down-LEFT to him. Three distinct Japanese
-figures stand on Japan. On “for a language it simply didn't fit” the NEAREST Japanese
-figure takes the bubble over — the bubble does NOT move, only its tail flips from down-left
-to down-RIGHT and the outline turns turquoise (Japan now owns it). Then, on “duct-taping it
-together”, the two figures to the right pop their own bubbles a beat apart, looking almost
-the same but slightly modified into the Japanese form 気 (the inner 米 simplified to メ) —
-氣 → 気 → 気, the character visibly drifting as it crosses into Japan. On “Here's how” →
-depth transition into the story.]
+[On "take the Chinese writing": the NEAREST Japanese figure takes the 氣 bubble over — the
+bubble does NOT move, only its tail flips down-left → down-RIGHT and the outline turns
+turquoise (Japan now owns it). On "bend it for their own": the two figures to the right pop
+their own bubbles a beat apart, almost the same but slightly modified into the Japanese form
+気 (inner 米 → メ): 氣 → 気 → 気, the character visibly drifting as it crosses into Japan.]
 
---- THE BORROWING (≈0:14–0:38) ---
+And the result is the most complex writing system in the world. Let me explain.
 
-[Quick depth pull-back to a single faint timeline tick sliding in: “~1,500 years ago”.
-Understated — no busy timeline, just one marker on the grid. (swoosh on the grid move.)]
+[On "the most complex writing system": depth zoom-out to a single real Japanese sentence
+私はテレビを見る, which SPLITS into its three scripts — labelled columns 漢字 (kanji, ink) ·
+ひらがな (hiragana, turquoise) · カタカナ (katakana, deep-teal). Three systems in one
+sentence. "Let me explain" → into the story.]
 
-Rewind about 1,500 years. Japan had a spoken language — but no writing at all.
+--- THE BORROWING (≈0:15–0:34) ---
 
-[A lone comic figure (reuse the figure element art, NO dashed outline) on the left with a
-speech bubble of sound only — small kana-ish squiggles “ぺらぺら” / sound waves — talking
-happily. On the right: a totally BLANK scroll/sheet (plain, hand-drawn). The contrast =
-they speak but cannot write. Hold the empty scroll; it is the callback target for the
-ending.]
+Back then, Japan had a spoken language — but no writing at all.
+
+[A Japanese figure on the left talks (a "ぺらぺら…" speech bubble) beside a totally BLANK
+scroll on the right — they speak but cannot write. The empty scroll is the callback target
+for the ending.]
 
 The most advanced writing nearby was Chinese.
 
-[The blank scroll fills with a few bold Chinese characters that double as PICTURES — the
-approved humor device: 山 beside a crude doodled mountain, 木 beside a doodled tree, 川
-beside a doodled river. Each doodle morphs/aligns into its character (pop per reveal).
-Characters look authoritative, “advanced”.]
+[The blank scroll fills with bold Chinese characters that double as PICTURES (the humour
+device): 山 beside a crude doodled mountain, 木 beside a tree, 川 beside a river (pop per
+reveal). Characters look authoritative, "advanced".]
 
 So Japan imported it wholesale — characters and all.
 
-[GLOBE — globe-with-track default element: highlight China, a dashed sea route arcs from
-China to the Japanese islands and the characters (山 木 川 …) physically travel along the
-track across the water to Japan. (swoosh on the dive/track since a default element
-animates.)]
+[On "wholesale": the scroll FLOODS — the three pictographs give way to a dense grid of
+imported characters filling the whole scroll. Imported en masse.]
 
 One problem. Chinese and Japanese are completely unrelated — different grammar, different
 sounds.
 
-[FIGURE element: a Chinese figure (left) and a Japanese figure (right) both look UP at the
-same single character 字 floating between them — but each reads it in a totally different,
-garbled comic bubble (Chinese: %$#! · Japanese: #@¿!). Same symbol, unrelated tongues.
-Figures pop in (swoosh), bubbles pop.]
+[A Chinese figure (中) and a Japanese figure (日) both gesture UP at the same single
+character 字 on a parchment between them — but each reads it in a totally different, garbled
+comic bubble (%$#! · #@¿!). Same symbol, unrelated tongues.]
 
 It's a bit like trying to write English using only Chinese characters.
 
-[Humor beat: the English word “HELLO” sits above five character-boxes; Chinese characters
-get jammed in one per box by SOUND, clearly forced/awkward, a couple not fitting their box
-(slight overflow/tilt). Conveys “forcing a system onto the wrong language”.]
+[Humour beat: the English word "HELLO" over five character-boxes; Chinese characters jammed
+in one per box by SOUND (哈 楼 罗 呜 欧), clearly forced, a couple overflowing/tilted.]
 
 The pieces didn't line up.
 
-[The forced character from the box becomes a PUZZLE PIECE shaped like a kanji that will not
-seat into a Japanese-shaped hole — it nudges in, bounces back, won't click. (small clunk;
-ties back to the duct-tape misfit.)]
+[One box becomes a kanji-shaped PUZZLE PIECE that won't seat into a Japanese-shaped slot —
+it nudges in, bounces back, won't click.]
 
---- FIX 1: TWO JOBS PER CHARACTER (≈0:38–1:05) ---
+--- FIX 1: TWO JOBS PER CHARACTER (≈0:34–0:57) ---
 
 So the Japanese got creative. They used each character two different ways: sometimes for
 its meaning, and sometimes purely for its sound — to spell out native Japanese words.
@@ -131,7 +119,7 @@ readings popping outward around it (せい sei · しょう shō · なま nama 
 · う u …), each popping in (pop SFX each, rapid). The sheer number sells “one of the hardest
 parts” — humor + real fact. Camera slightly pushes in on the crowded swarm.]
 
---- FIX 2: INVENTING ALPHABETS (≈1:05–1:28) ---
+--- FIX 2: INVENTING ALPHABETS (≈0:57–1:15) ---
 
 Then they went further. They took certain characters and simplified them down into two sets
 of small phonetic symbols — hiragana and katakana —
@@ -156,14 +144,14 @@ three colour-coded scripts together — kanji (meaning, ink) carrying the load w
 (turquoise) + katakana (deep-teal) woven around. The viewer now SEES the three systems they
 were shown blind at the start. Satisfying full-circle.]
 
---- PUNCHLINE / OUTRO (≈1:28–1:42) ---
+--- PUNCHLINE / OUTRO (≈1:15–1:38) ---
 
 Japan took a writing system built for a totally different language — and bent it, patched it,
 and rebuilt it until it fit.
 
-[The misfit kanji + duct-tape from the hook returns, and this time the kana pieces snap
-cleanly into the empty slots around it — the patched, mismatched thing resolves into ONE
-clean, whole, elegant composition (the duct-tape peels away). The “patch” metaphor pays off.]
+[A kanji wedged askew in a Japan-shaped slot with cartoon duct-tape across it; the tape
+peels and the kana pieces snap cleanly into the empty slots around it — the patched,
+mismatched thing resolves into ONE clean, whole composition. The "patch" metaphor pays off.]
 
 The result is one of the most beautiful — and most complicated — writing systems in the world.
 

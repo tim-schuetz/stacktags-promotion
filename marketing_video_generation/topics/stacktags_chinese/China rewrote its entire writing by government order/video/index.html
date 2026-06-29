@@ -7,31 +7,20 @@
 <link rel="icon" href="data:," />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<!-- Inter (full latin) for all UI/English text -->
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-<!-- Noto Sans SC, subsetted to the CJK glyphs we show as static TEXT (wall + labels) -->
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@500;700;900&text=龍龙鬱郁書书學学藝艺鐵铁聲声廳厅灣湾黨党憂忧豐丰豔艳籠笼羅罗關关難难繼继續续舊旧歲岁衛卫醫医嚴严屬属廣广麗丽龜龟國国彩采蛋旦餐歺心愛爱馬马門门汉字简化方案&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@500;700;900&text=龍龙鬱郁書书學学藝艺鐵铁聲声廳厅灣湾黨党憂忧豐丰豔艳籠笼羅罗關关難难繼继續续舊旧歲岁衛卫醫医嚴严屬属廣广麗丽龜龟馬马門门蛋旦餐歺繁体简二&display=swap" rel="stylesheet">
 
-<!-- shared theme tokens + grid + subtitles (the design system) -->
 <link rel="stylesheet" href="elements/theme.css">
-<!-- the dynamic depth-grid look (reuse its grid styling) -->
 <link rel="stylesheet" href="elements/depth-transitions.css">
-<!-- default element: text-popup (cascade words) -->
-<link rel="stylesheet" href="elements/text-popup.css">
-<!-- this video's own scene styling -->
-<link rel="stylesheet" href="styles.css?v=1">
+<link rel="stylesheet" href="styles.css?v=2">
 </head>
 <body>
 <div class="wrap">
   <div class="stage stk-grid-bg" id="stage">
-
-    <!-- persistent dynamic grid: the camera (zoom/pan) lives here -->
     <div class="stk-depth2-grid" id="grid"></div>
-
-    <!-- all scene layers stack here -->
     <div class="scenes" id="scenes">
 
-      <!-- ===== HOOK — the hero character is rewritten by decree ===== -->
+      <!-- ===== HOOK — the question, and both answers, on one hero character ===== -->
       <div class="scene" id="sc-hook">
         <div class="cell">
           <div class="tzg"><span class="tzg-h"></span><span class="tzg-v"></span></div>
@@ -41,8 +30,6 @@
           <div class="strike" id="hk-strike"></div>
           <div class="tick" id="hk-tick">✓</div>
         </div>
-        <div class="decree" id="hk-decree"><span class="seal"></span></div>
-        <div class="yearstamp" id="hk-year">1956</div>
       </div>
 
       <!-- ===== WHY — writing as a barrier looming over the people who can't read it ===== -->
@@ -58,91 +45,30 @@
           <div class="glyph" id="cx-char"></div>
         </div>
         <div class="counter" id="cx-counter"><span class="cnum" id="cx-num">0</span><span class="clab">strokes</span></div>
+        <div class="decree" id="cx-decree"><span class="seal"></span></div>
       </div>
 
-      <!-- ===== CUT — 愛 loses its heart → 爱, then a cascade of pairs ===== -->
-      <div class="scene" id="sc-cut">
-        <div class="cell">
-          <div class="tzg"><span class="tzg-h"></span><span class="tzg-v"></span></div>
-          <div class="glyph" id="cut-trad"></div>
-          <div class="glyph" id="cut-simp"></div>
-          <div class="glyph heart" id="cut-heart"></div>
-        </div>
-      </div>
-
-      <!-- ===== SCHEME — the official 1956 simplification document (the mass act) ===== -->
-      <div class="scene" id="sc-doc">
-        <div class="doc" id="doc">
-          <div class="doc-band">STATE COUNCIL OF THE P.R.C. · 1956</div>
-          <div class="doc-title">汉字简化方案</div>
-          <div class="doc-sub">the character simplification scheme</div>
-          <div class="doc-rows" id="doc-rows"></div>
-          <div class="doc-seal" id="doc-seal"><span>简</span></div>
-        </div>
-      </div>
-
-      <!-- ===== FASTER — slow many-stroke vs fast few-stroke (a racing pen) ===== -->
-      <div class="scene" id="sc-faster">
-        <div class="duo">
-          <div class="duo-cell left"><div class="tzg sm"><span class="tzg-h"></span><span class="tzg-v"></span></div><div class="glyph" id="fast-trad"></div></div>
-          <div class="duo-arrow">›</div>
-          <div class="duo-cell right"><div class="tzg sm"><span class="tzg-h"></span><span class="tzg-v"></span></div><div class="glyph" id="fast-simp"></div><div class="pen" id="fast-pen"><div class="pen-body"></div><div class="pen-nib"></div></div></div>
-        </div>
-      </div>
-
-      <!-- ===== MAP — mainland (simplified) vs Taiwan/HK (traditional) ===== -->
-      <div class="scene" id="sc-map">
-        <div class="map-host" id="map-host"></div>
-      </div>
-
-      <!-- ===== ROUND TWO — simplified again, too far (1977) ===== -->
-      <div class="scene" id="sc-round2">
-        <div class="cell">
-          <div class="tzg"><span class="tzg-h"></span><span class="tzg-v"></span></div>
-          <div class="glyph" id="r2-trad"></div>
-          <div class="glyph" id="r2-simp"></div>
-        </div>
-        <div class="decree" id="r2-decree"><span class="seal"></span></div>
-        <div class="yearstamp" id="r2-year">1977</div>
-      </div>
-
-      <!-- ===== CONFUSION — two different words collapse to one shape ===== -->
-      <div class="scene" id="sc-confusion">
-        <div class="conf">
-          <div class="conf-cell" id="conf-a">
-            <div class="tzg sm"><span class="tzg-h"></span><span class="tzg-v"></span></div>
-            <div class="glyph" id="cf-color"></div>
-            <div class="conf-gloss">“colour”</div>
+      <!-- ===== TABLE — the spine: one table that fills over the whole video ===== -->
+      <div class="scene" id="sc-table">
+        <div class="rtable" id="rtable">
+          <div class="rt-head">
+            <div class="rt-h obj"></div>
+            <div class="rt-h col-trad"><span class="cjk">繁体</span><span class="yr">traditional</span></div>
+            <div class="rt-h col-simp"><span class="cjk">简体</span><span class="yr">1956</span></div>
+            <div class="rt-h col-er"><span class="cjk">二简</span><span class="yr">1977</span></div>
           </div>
-          <div class="conf-cell" id="conf-b">
-            <div class="tzg sm"><span class="tzg-h"></span><span class="tzg-v"></span></div>
-            <div class="glyph" id="cf-pick"></div>
-            <div class="conf-gloss">“pick”</div>
-          </div>
+          <div class="rt-body" id="rt-body"></div>
         </div>
-        <div class="bub bub-q" id="conf-bub">?!</div>
+        <div class="yearstamp" id="tb-year">1956</div>
+        <div class="tick" id="tb-tick">✓</div>
+        <div class="bub bub-q" id="tb-bub">?!</div>
+        <div class="rt-collabel simp" id="lab-simp"><span class="cjk">简体</span><span class="en">Mainland</span></div>
+        <div class="rt-collabel trad" id="lab-trad"><span class="cjk">繁体</span><span class="en">Taiwan · Hong Kong</span></div>
       </div>
 
-      <!-- ===== SCRAP — 1986, the second round is struck out and reverted ===== -->
-      <div class="scene" id="sc-scrap">
-        <div class="cell">
-          <div class="tzg"><span class="tzg-h"></span><span class="tzg-v"></span></div>
-          <div class="glyph" id="sp-simp"></div>
-          <div class="glyph" id="sp-trad"></div>
-          <div class="strike big" id="sp-strike"></div>
-        </div>
-        <div class="decree reverse" id="sp-decree"><span class="seal"></span></div>
-        <div class="yearstamp" id="sp-year">1986</div>
-      </div>
-
-      <!-- ===== PUNCHLINE — the people who write it set the limit ===== -->
-      <div class="scene" id="sc-punch">
-        <div class="cell">
-          <div class="tzg"><span class="tzg-h"></span><span class="tzg-v"></span></div>
-          <div class="glyph" id="pn-char"></div>
-        </div>
-        <div class="decree" id="pn-decree"><span class="seal"></span></div>
-        <div class="photocard" id="pn-people"><img src="assets/img/people.png" alt="" /></div>
+      <!-- ===== CHART — real literacy rates rising over the years ===== -->
+      <div class="scene" id="sc-chart">
+        <div class="chart" id="chart"></div>
       </div>
 
       <!-- ===== OUTRO ===== -->
@@ -155,34 +81,20 @@
       </div>
 
     </div><!-- /scenes -->
-
-    <!-- subtitles mirror the narration -->
     <div class="stk-subs" id="subs"><span class="stk-subs-line" id="subs-line"></span></div>
-
   </div><!-- /stage -->
 </div>
 
-<!-- HUD (hidden in clean/capture mode) -->
 <div id="hud">
   <button id="btn-play">&#9654; Play</button>
-  <input id="seek" type="range" min="0" max="90" step="0.01" value="0" />
+  <input id="seek" type="range" min="0" max="82" step="0.01" value="0" />
   <span id="tcode">0.0</span>
 </div>
 
 <audio id="vo" src="../script_voice.mp3" preload="auto"></audio>
 
-<!-- topojson (for the china map) -->
-<script src="https://cdn.jsdelivr.net/npm/topojson-client@3.1.0/dist/topojson-client.min.js"></script>
-
-<!-- default elements (used as components) -->
-<script src="elements/text-popup.js"></script>
-<script src="elements/china-map.js"></script>
 <script src="elements/outro.js"></script>
-
-<!-- vendored stroke data for every animated character: window.HANZI -->
 <script src="assets/hanzi/hanzi.js"></script>
-
-<!-- this video's choreography -->
-<script src="app.js?v=1"></script>
+<script src="app.js?v=2"></script>
 </body>
 </html>

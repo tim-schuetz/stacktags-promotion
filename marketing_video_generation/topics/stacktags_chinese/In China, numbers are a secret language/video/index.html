@@ -8,32 +8,28 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@500;700;900&display=swap" rel="stylesheet">
-
-<!-- shared design system: tokens + grid + subtitles -->
 <link rel="stylesheet" href="elements/theme.css">
-<!-- dynamic depth-grid look (the camera grid styling reused by app.js) -->
 <link rel="stylesheet" href="elements/depth-transitions.css">
-<!-- this video's own scene styling -->
-<link rel="stylesheet" href="styles.css?v=1">
+<link rel="stylesheet" href="styles.css?v=3">
 </head>
 <body>
 <div class="wrap">
   <div class="stage stk-grid-bg" id="stage">
 
-    <!-- persistent dynamic grid: the camera (zoom/pan) lives here -->
     <div class="stk-depth2-grid" id="grid"></div>
 
     <div class="scenes" id="scenes">
 
       <!-- ============================================================
-           THE PHONE — one persistent chat carries the whole story.
-           Beat groups inside .thread are shown one at a time and slide
-           like new messages; the codes morph in place.
+           MAIN SCENE — the phone CHAT carries ONLY the hook; from
+           "why does that work?" on, the phone dissolves and everything
+           lives directly on the open white grid (#open).
            ============================================================ -->
       <div class="scene" id="sc-chat">
+
+        <!-- the phone, used for the HOOK only -->
         <div class="phone-cam" id="phone-cam">
           <div class="phone" id="phone">
-
             <div class="phone-top">
               <span class="back"></span>
               <span class="avatar cjk">密</span>
@@ -42,143 +38,168 @@
                 <span class="st">online</span>
               </span>
             </div>
-
             <div class="thread" id="thread">
-
-              <!-- ---------- HOOK: love vs insult, up front ---------- -->
               <div class="grp" id="g-hook">
                 <div class="row out"><div class="bubble out-b r" id="hk-b1">520</div></div>
-                <div class="row out"><div class="hk-res r" id="hk-r1"><span class="cjk">我爱你</span><span class="heart-pop show" id="hk-h"><svg viewBox="0 0 32 29"><path fill="#35A292" d="M16 28C16 28 2.5 19.5 2.5 9.8 2.5 5.3 6 1.8 10.3 1.8 12.8 1.8 15 3.2 16 5 17 3.2 19.2 1.8 21.7 1.8 26 1.8 29.5 5.3 29.5 9.8 29.5 19.5 16 28 16 28Z"/></svg></span><span class="hk-en">“I love you”</span></div></div>
+                <div class="row out"><div class="hk-res r" id="hk-r1"><span class="cjk">我爱你</span><span class="heart-pop" id="hk-h"><svg viewBox="0 0 32 29"><path fill="#35A292" d="M16 28C16 28 2.5 19.5 2.5 9.8 2.5 5.3 6 1.8 10.3 1.8 12.8 1.8 15 3.2 16 5 17 3.2 19.2 1.8 21.7 1.8 26 1.8 29.5 5.3 29.5 9.8 29.5 19.5 16 28 16 28Z"/></svg></span><span class="hk-en">“I love you”</span></div></div>
                 <div class="row in"><div class="bubble in-b r" id="hk-b2">250</div></div>
-                <div class="row in"><div class="hk-res grey r" id="hk-r2"><span class="cjk">二百五</span><span class="ic ix"><svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="27" fill="none" stroke="#8a949d" stroke-width="5"/><circle cx="23" cy="28" r="3.6" fill="#8a949d"/><circle cx="41" cy="28" r="3.6" fill="#8a949d"/><path d="M22 45 Q32 37 42 45" fill="none" stroke="#8a949d" stroke-width="5" stroke-linecap="round"/></svg></span><span class="hk-en">“you idiot”</span></div></div>
-              </div>
-
-              <!-- ---------- WHY IT WORKS: homophones + 3 contexts ---------- -->
-              <div class="grp center" id="g-mech">
-                <div class="hstrip-title">Words that sound like numbers</div>
-                <div class="hstrip">
-                  <div class="hchip" id="mq4"><div class="n">4</div><div class="arr2"></div><div class="ch cjk">死</div><div class="lab">sǐ · <b>death</b></div></div>
-                  <div class="hchip" id="mq8"><div class="n">8</div><div class="arr2"></div><div class="ch cjk">发</div><div class="lab">fā · <b>wealth</b></div></div>
-                  <div class="hchip" id="mq9"><div class="n">9</div><div class="arr2"></div><div class="ch cjk">久</div><div class="lab">jiǔ · <b>lasting</b></div></div>
-                </div>
-                <div class="ctx">
-                  <div class="cc" id="cx-text"><div class="ico"><svg viewBox="0 0 24 24"><path fill="#35A292" d="M4 4h16a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H9l-5 4v-4H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/></svg></div><div class="num">1314</div><div class="cap">text</div></div>
-                  <div class="cc" id="cx-comment"><div class="ico"><svg viewBox="0 0 24 24"><path fill="#35A292" d="M12 2C6.5 2 2 5.8 2 10.5c0 2.6 1.4 5 3.6 6.5L5 22l5-2.4c.6.1 1.3.2 2 .2 5.5 0 10-3.8 10-8.5S17.5 2 12 2z"/></svg></div><div class="num">1314</div><div class="cap">comment</div></div>
-                  <div class="cc" id="cx-gift"><div class="ico"><svg viewBox="0 0 24 24"><path fill="#35A292" d="M20 7h-2.2a3 3 0 0 0-4.8-3.5A3 3 0 0 0 6.2 7H4a1 1 0 0 0-1 1v3h9V8h0v3h9V8a1 1 0 0 0-1-1zM4 13v7a1 1 0 0 0 1 1h6v-8H4zm9 8h6a1 1 0 0 0 1-1v-7h-7v8z"/></svg></div><div class="num">1314</div><div class="cap">a gift</div></div>
+                <div class="row in"><div class="hk-res grey r" id="hk-r2"><span class="cjk">二百五</span><span class="hk-en">“you idiot”</span></div></div>
+                <div class="hk-more" id="hk-more">
+                  <span class="codechip r" id="hkm1">1314</span><span class="codechip r" id="hkm2">88</span><span class="codechip r" id="hkm3">666</span>
+                  <span class="codechip r" id="hkm4">521</span><span class="codechip r" id="hkm5">995</span><span class="codechip r" id="hkm6">748</span>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
 
-              <!-- ---------- LOVE: the hero morph 520 → 我爱你 ---------- -->
-              <div class="grp center" id="g-love">
-                <div class="morph outgoing" id="love-morph">
-                  <div class="digits" id="lv-dg"><span>5</span><span>2</span><span>0</span></div>
-                  <div class="py r" id="lv-py"><span class="s">wǔ</span><span class="s">èr</span><span class="s">líng</span></div>
-                  <div class="bridge r" id="lv-bridge"><span class="arr"></span><span class="lbl">sounds like</span></div>
-                  <div class="py2 r" id="lv-py2"><span class="s">wǒ</span><span class="s">ài</span><span class="s">nǐ</span></div>
-                  <div class="zh cjk" id="lv-zh"><span class="c" id="lv-z1">我</span><span class="c" id="lv-z2">爱</span><span class="c" id="lv-z3">你</span><span class="heart-pop" id="lv-h"><svg viewBox="0 0 32 29"><path fill="#35A292" d="M16 28C16 28 2.5 19.5 2.5 9.8 2.5 5.3 6 1.8 10.3 1.8 12.8 1.8 15 3.2 16 5 17 3.2 19.2 1.8 21.7 1.8 26 1.8 29.5 5.3 29.5 9.8 29.5 19.5 16 28 16 28Z"/></svg></span></div>
-                  <div class="en r" id="lv-en">“<span class="key">I love you</span>”</div>
+        <!-- everything after the hook lives here, on the open grid (no box) -->
+        <div class="open" id="open">
+
+          <!-- ---------- WHY: crude stick-figure doodles (the bad drawing is the joke) ---------- -->
+          <div class="grp center" id="g-why">
+            <div class="doodles">
+
+              <!-- 4 → 死 death : a sprawled dead figure; on context → text speech bubble -->
+              <div class="doodle" id="dd-death">
+                <div class="figbox">
+                  <svg class="speech" viewBox="0 0 320 230" preserveAspectRatio="none"><path d="M34 18 q-18 0 -18 42 l0 92 q0 30 30 30 l92 0 q6 24 34 32 q-8 -18 2 -32 l92 0 q30 0 30 -30 l0 -92 q0 -42 -22 -42 z" fill="#fff" stroke="#232B33" stroke-width="4" stroke-linejoin="round"/></svg>
+                  <svg class="fig2" viewBox="0 0 150 200" fill="none" stroke="#232B33" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="40" cy="40" r="22"/><circle cx="33" cy="37" r="2.6" fill="#232B33"/><circle cx="47" cy="37" r="2.6" fill="#232B33"/>
+                    <path d="M40 62 v66"/><path d="M40 80 l-26 26"/><path d="M40 80 l30 14"/><path d="M40 128 l-22 44"/><path d="M40 128 l22 44"/>
+                    <path d="M78 96 l54 8" stroke="#119271" stroke-width="6"/><path d="M120 90 l16 14 -18 10" stroke="#119271" stroke-width="6" fill="none"/>
+                  </svg>
+                  <svg class="figm" viewBox="0 0 250 160" fill="none" stroke="#232B33" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="52" cy="92" r="24"/>
+                    <path d="M42 84 l12 12 M54 84 l-12 12"/><path d="M64 86 l12 12 M76 86 l-12 12"/>
+                    <path d="M78 100 q44 8 86 2"/>
+                    <path d="M104 100 l-14 -34"/><path d="M120 101 l16 -30"/>
+                    <path d="M150 102 l46 -18"/><path d="M152 102 l40 26"/>
+                  </svg>
                 </div>
+                <div class="dlab"><span class="dnum">4</span><span class="dchar cjk">死</span><span class="dgloss">sǐ · death</span></div>
               </div>
 
-              <!-- ---------- CALENDAR: May 20 = romance day ---------- -->
-              <div class="grp center" id="g-cal">
-                <div class="cal-syscap">shared a date</div>
-                <div class="calcard">
-                  <div class="cal-h">MAY</div>
-                  <div class="calgrid" id="calgrid"></div>
-                  <div class="cal-tag r" id="cal-tag">
-                    <div class="ctl1"><span class="ic"><svg viewBox="0 0 32 29"><path fill="#119271" d="M16 28C16 28 2.5 19.5 2.5 9.8 2.5 5.3 6 1.8 10.3 1.8 12.8 1.8 15 3.2 16 5 17 3.2 19.2 1.8 21.7 1.8 26 1.8 29.5 5.3 29.5 9.8 29.5 19.5 16 28 16 28Z"/></svg></span> online romance day</div>
-                    <div class="ctl2">5·20 · 网络情人节</div>
-                  </div>
+              <!-- 8 → 发 wealth : grinning figure with a money bag; on context → comment bubble -->
+              <div class="doodle" id="dd-wealth">
+                <div class="figbox">
+                  <svg class="speech" viewBox="0 0 320 230" preserveAspectRatio="none"><path d="M34 18 q-18 0 -18 42 l0 92 q0 30 30 30 l92 0 q6 24 34 32 q-8 -18 2 -32 l92 0 q30 0 30 -30 l0 -92 q0 -42 -22 -42 z" fill="#fff" stroke="#232B33" stroke-width="4" stroke-linejoin="round"/></svg>
+                  <svg class="figm" viewBox="0 0 220 200" fill="none" stroke="#232B33" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="78" cy="44" r="24"/><circle cx="70" cy="40" r="2.8" fill="#232B33"/><circle cx="86" cy="40" r="2.8" fill="#232B33"/><path d="M68 50 q10 11 20 0"/>
+                    <path d="M78 68 v66"/><path d="M78 86 l-30 26"/><path d="M78 82 l44 -16"/><path d="M78 134 l-24 44"/><path d="M78 134 l24 44"/>
+                    <path d="M120 60 q22 -2 22 24 q0 26 -22 26 q-22 0 -22 -26 q0 -26 22 -24z" fill="#e7f4ef" stroke="#119271"/>
+                    <text x="120" y="96" font-size="26" fill="#119271" stroke="none" text-anchor="middle" font-family="Inter" font-weight="900">¥</text>
+                  </svg>
                 </div>
+                <div class="dlab"><span class="dnum">8</span><span class="dchar cjk">发</span><span class="dgloss">fā · wealth</span></div>
               </div>
 
-              <!-- ---------- 1314 → 一生一世, then combined on a gift ---------- -->
-              <div class="grp center" id="g-1314">
-                <div class="morph outgoing" id="t4-morph">
-                  <div class="digits" id="t4-dg"><span>1</span><span>3</span><span>1</span><span>4</span></div>
-                  <div class="zh cjk" id="t4-zh"><span class="c" id="t4-z1">一</span><span class="c" id="t4-z2">生</span><span class="c" id="t4-z3">一</span><span class="c" id="t4-z4">世</span></div>
-                  <div class="en r" id="t4-en">“forever · <span class="key">a lifetime</span>”</div>
+              <!-- 9 → 久 lasting : a crude wedding couple; on context → slapped on a gift box -->
+              <div class="doodle" id="dd-lasting">
+                <div class="figbox">
+                  <svg class="giftbox" viewBox="0 0 260 210" fill="none" stroke="#232B33" stroke-width="5" stroke-linejoin="round">
+                    <rect x="34" y="92" width="192" height="104" rx="8" fill="#e7f4ef"/>
+                    <rect x="22" y="66" width="216" height="32" rx="8" fill="#fff"/>
+                    <path d="M130 66 v130"/>
+                    <path d="M130 66 q-32 -36 -54 -18 q-16 14 54 18 q70 -4 54 -18 q-22 -18 -54 18z" fill="#35A292" stroke="#119271"/>
+                  </svg>
+                  <svg class="figm" viewBox="0 0 280 200" fill="none" stroke="#232B33" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M140 18 q-12 -16 -26 -4 q-12 11 26 34 q38 -23 26 -34 q-14 -12 -26 4z" fill="#35A292" stroke="none"/>
+                    <circle cx="92" cy="74" r="22"/><path d="M92 96 v54"/><path d="M92 150 l-22 42"/><path d="M92 150 l10 42"/><path d="M92 112 l-26 18"/>
+                    <circle cx="190" cy="74" r="22"/><path d="M168 70 q22 -28 44 0"/>
+                    <path d="M190 96 l-28 70 h56 z" fill="#e7f4ef"/><path d="M190 112 l26 18"/>
+                    <path d="M92 112 l54 18"/><path d="M190 112 l-54 18"/>
+                  </svg>
                 </div>
-                <div class="gift r" id="t4-gift">
-                  <div class="pic"><img src="assets/photos/hongbao_dash.png" alt=""></div>
-                  <div class="engrave">5201314</div>
-                  <div class="zh cjk">我爱你一生一世</div>
-                  <div class="en">“I’ll love you forever”</div>
-                </div>
+                <div class="dlab"><span class="dnum">9</span><span class="dchar cjk">久</span><span class="dgloss">jiǔ · lasting</span></div>
               </div>
 
-              <!-- ---------- INSULT: 250 → 二百五 ---------- -->
-              <div class="grp center" id="g-250">
-                <div class="morph" id="in-morph">
-                  <div class="digits" id="in-dg" style="color:var(--stk-muted)"><span>2</span><span>5</span><span>0</span></div>
-                  <div class="py r" id="in-py"><span class="s">èr</span><span class="s">bǎi</span><span class="s">wǔ</span></div>
-                  <div class="zh cjk" id="in-zh"><span class="c" id="in-z1">二</span><span class="c" id="in-z2">百</span><span class="c" id="in-z3">五</span>
-                    <span class="ic ix r" id="in-ic" style="margin-left:18px"><svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="27" fill="none" stroke="#8a949d" stroke-width="5"/><circle cx="23" cy="28" r="3.6" fill="#8a949d"/><circle cx="41" cy="28" r="3.6" fill="#8a949d"/><path d="M22 45 Q32 37 42 45" fill="none" stroke="#8a949d" stroke-width="5" stroke-linecap="round"/></svg></span>
-                  </div>
-                  <div class="en r" id="in-en">“a <span style="color:var(--stk-ink-2)">fool</span>”</div>
-                </div>
-              </div>
+            </div>
+          </div>
 
-              <!-- ---------- COINS etymology: 半吊子 ---------- -->
-              <div class="grp center" id="g-coins">
-                <div class="coincard">
-                  <div class="syscap">why “250”?</div>
-                  <div class="pic r" id="coins-img"><img src="assets/photos/coins_dash.png" alt=""></div>
-                  <div class="clabel cjk r" id="coins-zh">半吊子</div>
-                  <div class="cpy r" id="coins-py">bàndiàozi</div>
-                  <div class="cmean r" id="coins-mean">half a string of coins · “not quite all there”</div>
-                  <div class="story r" id="coins-story">…the story goes</div>
-                </div>
-              </div>
+          <!-- ---------- LOVE: hero morph 520 → 我爱你 ---------- -->
+          <div class="grp center" id="g-love">
+            <div class="morph outgoing" id="love-morph">
+              <div class="digits" id="lv-dg"><span>5</span><span>2</span><span>0</span></div>
+              <div class="py r" id="lv-py"><span class="s">wǔ</span><span class="s">èr</span><span class="s">líng</span></div>
+              <div class="bridge r" id="lv-bridge"><span class="arr"></span><span class="lbl">sounds like</span></div>
+              <div class="py2 r" id="lv-py2"><span class="s">wǒ</span><span class="s">ài</span><span class="s">nǐ</span></div>
+              <div class="zh cjk" id="lv-zh"><span class="c" id="lv-z1">我</span><span class="c" id="lv-z2">爱</span><span class="c" id="lv-z3">你</span><span class="heart-pop" id="lv-h"><svg viewBox="0 0 32 29"><path fill="#35A292" d="M16 28C16 28 2.5 19.5 2.5 9.8 2.5 5.3 6 1.8 10.3 1.8 12.8 1.8 15 3.2 16 5 17 3.2 19.2 1.8 21.7 1.8 26 1.8 29.5 5.3 29.5 9.8 29.5 19.5 16 28 16 28Z"/></svg></span></div>
+              <div class="en r" id="lv-en">“<span class="key">I love you</span>”</div>
+            </div>
+          </div>
 
-              <!-- ---------- 88 → 拜拜 ---------- -->
-              <div class="grp center" id="g-88">
-                <div class="morph outgoing" id="b88-morph">
-                  <div class="row out" style="margin:0"><div class="bubble out-b wave-out r" id="b88-bubble">88</div></div>
-                  <div class="zh cjk r" id="b88-zh" style="margin-top:30px">拜拜
-                    <span class="ic" style="margin-left:18px"><svg viewBox="0 0 48 50"><g fill="#35A292"><rect x="13" y="13" width="6.5" height="23" rx="3.2"/><rect x="20.5" y="9" width="6.5" height="27" rx="3.2"/><rect x="28" y="11" width="6.5" height="25" rx="3.2"/><rect x="35.5" y="15" width="6.5" height="21" rx="3.2"/><path d="M13 27 l-6-6 a3.2 3.2 0 0 1 4.5-4.5 l6 6z"/><path d="M12 29 h31 v3 a11 11 0 0 1 -11 11 h-9 a11 11 0 0 1 -11 -11z"/></g></svg></span>
-                  </div>
-                  <div class="en r" id="b88-en">“bye-bye”</div>
-                </div>
-              </div>
+          <!-- ---------- ROMANCE DAY: real 5/20 phenomenon (shared photo) ---------- -->
+          <div class="grp center" id="g-romance">
+            <div class="photocard r" id="rom-photo">
+              <img src="assets/raw/couple.png" alt="">
+              <span class="date-sticker">5 · 20</span>
+            </div>
+            <div class="rom-cap r" id="rom-cap">
+              <span class="ic"><svg viewBox="0 0 32 29"><path fill="#119271" d="M16 28C16 28 2.5 19.5 2.5 9.8 2.5 5.3 6 1.8 10.3 1.8 12.8 1.8 15 3.2 16 5 17 3.2 19.2 1.8 21.7 1.8 26 1.8 29.5 5.3 29.5 9.8 29.5 19.5 16 28 16 28Z"/></svg></span>
+              <span><b class="cjk">网络情人节</b> · an online romance day</span>
+            </div>
+          </div>
 
-              <!-- ---------- 666 → comment flood → 溜/厉害 ---------- -->
-              <div class="grp" id="g-666">
-                <div class="flood" id="flood"></div>
-                <div class="topmorph morph" id="c666-top" style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%)">
-                  <div class="zh cjk r" id="c666-zh">溜 · 厉害
-                    <span class="ic" style="margin-left:14px"><svg viewBox="0 0 24 32"><path fill="#119271" d="M12 1C9 7 4 9 4 18c0 6 4 12 8 12s8-6 8-12c0-4-2-7-5-9 1 3 0 5-2 6 1-4-1-8-1-14z"/></svg></span>
-                  </div>
-                  <div class="en r" id="c666-en">“a legend · <span class="key">seriously skilled</span>”</div>
-                </div>
-              </div>
+          <!-- ---------- 1314 → 一生一世, then on a gift ---------- -->
+          <div class="grp center" id="g-1314">
+            <div class="morph outgoing" id="t4-morph">
+              <div class="digits" id="t4-dg"><span>1</span><span>3</span><span>1</span><span>4</span></div>
+              <div class="zh cjk" id="t4-zh"><span class="c" id="t4-z1">一</span><span class="c" id="t4-z2">生</span><span class="c" id="t4-z3">一</span><span class="c" id="t4-z4">世</span></div>
+              <div class="en r" id="t4-en">“forever · <span class="key">a lifetime</span>”</div>
+            </div>
+            <div class="gift" id="t4-gift">
+              <div class="pic"><img src="assets/photos/hongbao_dash.png" alt=""></div>
+              <div class="engrave">5201314</div>
+              <div class="zh cjk">我爱你一生一世</div>
+              <div class="en">“I’ll love you forever”</div>
+            </div>
+          </div>
 
-              <!-- ---------- PUNCHLINE: one block, three readings ---------- -->
-              <div class="grp center" id="g-punch">
-                <div class="punch">
-                  <div class="moodrow r" id="punch-mood">
-                    <span class="mchip"><svg viewBox="0 0 32 29"><path fill="#35A292" d="M16 28C16 28 2.5 19.5 2.5 9.8 2.5 5.3 6 1.8 10.3 1.8 12.8 1.8 15 3.2 16 5 17 3.2 19.2 1.8 21.7 1.8 26 1.8 29.5 5.3 29.5 9.8 29.5 19.5 16 28 16 28Z"/></svg></span>
-                    <span class="mchip"><svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="27" fill="none" stroke="#8a949d" stroke-width="5"/><circle cx="23" cy="28" r="3.6" fill="#8a949d"/><circle cx="41" cy="28" r="3.6" fill="#8a949d"/><path d="M22 45 Q32 37 42 45" fill="none" stroke="#8a949d" stroke-width="5" stroke-linecap="round"/></svg></span>
-                    <span class="mchip"><svg viewBox="0 0 24 32"><path fill="#119271" d="M12 1C9 7 4 9 4 18c0 6 4 12 8 12s8-6 8-12c0-4-2-7-5-9 1 3 0 5-2 6 1-4-1-8-1-14z"/></svg></span>
-                  </div>
-                  <div class="block r" id="punch-block">520 · 1314 · 250</div>
-                  <div class="reads">
-                    <div class="read math r" id="read-math">＋ − × =&nbsp; a maths problem</div>
-                    <div class="read love r" id="read-love"><span class="ic"><svg viewBox="0 0 32 29"><path fill="#119271" d="M16 28C16 28 2.5 19.5 2.5 9.8 2.5 5.3 6 1.8 10.3 1.8 12.8 1.8 15 3.2 16 5 17 3.2 19.2 1.8 21.7 1.8 26 1.8 29.5 5.3 29.5 9.8 29.5 19.5 16 28 16 28Z"/></svg></span> a love letter</div>
-                    <div class="read insult r" id="read-insult"><span class="cjk">二百五</span> &nbsp;an insult</div>
-                  </div>
-                </div>
-              </div>
+          <!-- ---------- INSULT: 250 → 二百五 ---------- -->
+          <div class="grp center" id="g-250">
+            <div class="morph" id="in-morph">
+              <div class="digits" id="in-dg" style="color:var(--stk-muted)"><span>2</span><span>5</span><span>0</span></div>
+              <div class="py r" id="in-py"><span class="s">èr</span><span class="s">bǎi</span><span class="s">wǔ</span></div>
+              <div class="zh cjk" id="in-zh"><span class="c" id="in-z1">二</span><span class="c" id="in-z2">百</span><span class="c" id="in-z3">五</span></div>
+              <div class="en r" id="in-en">“a <span style="color:var(--stk-ink-2)">fool</span>”</div>
+            </div>
+          </div>
 
-            </div><!-- /thread -->
-          </div><!-- /phone -->
-        </div><!-- /phone-cam -->
+          <!-- ---------- 88 → 拜拜 ---------- -->
+          <div class="grp center" id="g-88">
+            <div class="morph outgoing" id="b88-morph">
+              <div class="row out" style="margin:0"><div class="bubble out-b wave-out r" id="b88-bubble">88</div></div>
+              <div class="zh cjk r" id="b88-zh" style="margin-top:30px">拜拜</div>
+              <div class="en r" id="b88-en">“bye-bye”</div>
+            </div>
+          </div>
+
+          <!-- ---------- 666 → comment flood → 溜/厉害 ---------- -->
+          <div class="grp" id="g-666">
+            <div class="flood" id="flood"></div>
+            <div class="topmorph morph" id="c666-top" style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%)">
+              <div class="zh cjk r" id="c666-zh">溜 · 厉害</div>
+              <div class="en r" id="c666-en">“a legend · <span class="key">seriously skilled</span>”</div>
+            </div>
+          </div>
+
+          <!-- ---------- PUNCHLINE: one block, three readings ---------- -->
+          <div class="grp center" id="g-punch">
+            <div class="punch">
+              <div class="block r" id="punch-block">520 · 1314 · 250</div>
+              <div class="reads">
+                <div class="read math r" id="read-math">＋ − × =&nbsp; a maths problem</div>
+                <div class="read love r" id="read-love"><span class="ic"><svg viewBox="0 0 32 29"><path fill="#119271" d="M16 28C16 28 2.5 19.5 2.5 9.8 2.5 5.3 6 1.8 10.3 1.8 12.8 1.8 15 3.2 16 5 17 3.2 19.2 1.8 21.7 1.8 26 1.8 29.5 5.3 29.5 9.8 29.5 19.5 16 28 16 28Z"/></svg></span> a love letter</div>
+                <div class="read insult r" id="read-insult"><span class="cjk">二百五</span> &nbsp;an insult</div>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- /open -->
       </div><!-- /sc-chat -->
 
-      <!-- ============================================================
-           OUTRO endcard
-           ============================================================ -->
+      <!-- ============================================================ OUTRO ============================================================ -->
       <div class="scene" id="sc-outro">
         <div class="ec" id="outro-ec">
           <div id="outro-logo"></div>
@@ -189,25 +210,20 @@
 
     </div><!-- /scenes -->
 
-    <!-- subtitles mirror the narration (grey; key words turquoise) -->
     <div class="stk-subs" id="subs"><span class="stk-subs-line" id="subs-line"></span></div>
 
   </div><!-- /stage -->
 </div>
 
-<!-- HUD (hidden in clean/capture mode) -->
 <div id="hud">
   <button id="btn-play">▶ Play</button>
-  <input id="seek" type="range" min="0" max="79" step="0.01" value="0" />
+  <input id="seek" type="range" min="0" max="73" step="0.01" value="0" />
   <span id="tcode">0.0</span>
 </div>
 
 <audio id="vo" src="../script_voice.mp3" preload="auto"></audio>
 
-<!-- elements -->
 <script src="elements/outro.js"></script>
-
-<!-- this video's choreography -->
-<script src="app.js?v=1"></script>
+<script src="app.js?v=3"></script>
 </body>
 </html>

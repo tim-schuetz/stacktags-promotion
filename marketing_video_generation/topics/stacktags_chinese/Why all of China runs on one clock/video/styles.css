@@ -188,10 +188,20 @@ body.clean { background: #fff; }
 
 .globe-host { position: absolute; inset: 0; z-index: 1; transition: opacity .4s ease; }
 .globe-host.gone { opacity: 0; }
-/* S3 — a city at dusk on the (slightly darkened) white grid background */
+/* S3 — a city in the dark: a much darker grid (light-grey lines, lighter than the dark background) */
 .west-city { position: absolute; inset: 0; z-index: 2; overflow: hidden; opacity: 0; transition: opacity .5s ease;
-  background: rgba(33, 43, 51, 0.12); }   /* dims the white grid behind without hiding it */
+  background-color: #161c23;
+  background-image: linear-gradient(to right,  rgba(206,214,224,.11) 4px, transparent 4px),
+                    linear-gradient(to bottom, rgba(206,214,224,.11) 4px, transparent 4px);
+  background-size: 120px 120px; background-position: center center; }
 .west-city.in { opacity: 1; }
+/* clock circle (S4/S5) + Xinjiang building (S6) overlaid on the globe */
+.clock-circle { position: absolute; inset: 0; z-index: 2; pointer-events: none; }
+.circle-clk { position: absolute; width: 150px; height: 150px; transform: translate(-50%, -50%) scale(.3); opacity: 0;
+  transition: transform .5s cubic-bezier(.34,1.56,.64,1), opacity .35s ease; }
+.circle-clk.in { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+.xj-building { position: absolute; width: 140px; height: auto; z-index: 3; transform: translate(-50%, -90%) scale(.3); opacity: 0;
+  transition: transform .5s cubic-bezier(.34,1.5,.5,1), opacity .4s ease; filter: drop-shadow(0 8px 16px rgba(10,16,22,.5)); pointer-events: none; }
 .wc-moon { position: absolute; right: 150px; top: 150px; width: 130px; height: 130px;
   filter: drop-shadow(0 0 22px rgba(201, 169, 78, 0.55)); }
 .wc-moon path { fill: #c7a548; }

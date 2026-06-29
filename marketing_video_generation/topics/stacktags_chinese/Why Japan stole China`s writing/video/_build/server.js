@@ -15,4 +15,4 @@ http.createServer((req, res) => {
     res.writeHead(200, { 'content-type': TYPES[path.extname(fp)] || 'application/octet-stream', 'cache-control':'no-store' });
     res.end(buf);
   });
-}).listen(8871, () => console.log('serving on http://localhost:8871'));
+}).listen(8903, () => console.log('serving on http://localhost:8903'));

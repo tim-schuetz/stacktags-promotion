@@ -48,16 +48,9 @@
   .chip.a { transform: translate(0, 0) scale(1.12); z-index: 5;
     box-shadow: 0 24px 46px rgba(20,40,33,.18); }
 
-  /* the stranger being greeted (flat cartoon, reused from the video) */
-  .fig-wrap { position: absolute; left: 50%; bottom: 18px; transform: translateX(-50%); width: 320px; }
-  .fig { width: 100%; height: auto; display: block; overflow: visible;
-    filter: drop-shadow(0 22px 30px rgba(20,40,33,.16)); }
-  .fig .sh    { fill: rgba(20,40,33,.10); }
-  .fig .body  { fill: var(--stk-teal); }
-  .fig .head  { fill: #fff; stroke: var(--stk-ink); stroke-width: 6; }
-  .fig .eye   { fill: var(--stk-ink); }
-  .fig .smile { fill: none; stroke: var(--stk-ink); stroke-width: 5; stroke-linecap: round; }
-  .fig .hairGrey { fill: #aeb7bf; }
+  /* the stranger being greeted (real generated cut-out, reused from the video) */
+  .fig-wrap { position: absolute; left: 50%; bottom: 6px; transform: translateX(-50%); width: 268px; }
+  .fig { width: 100%; height: auto; display: block; filter: drop-shadow(0 18px 26px rgba(20,40,33,.16)); }
 </style>
 </head>
 <body>
@@ -80,14 +73,7 @@
         <div class="chip a"><span class="zh">叔叔</span><span class="py">shūshu</span></div>
       </div>
       <div class="fig-wrap">
-        <svg class="fig" viewBox="0 0 200 300" aria-hidden="true">
-          <ellipse class="sh" cx="100" cy="290" rx="66" ry="13"/>
-          <path class="body" d="M44 300 V214 q0-56 56-56 t56 56 V300 Z"/>
-          <circle class="head" cx="100" cy="120" r="46"/>
-          <path class="hairGrey" d="M55 116 q-4-58 45-58 t45 58 q-12-26-45-26 t-45 26 Z"/>
-          <circle class="eye" cx="84" cy="120" r="5"/><circle class="eye" cx="116" cy="120" r="5"/>
-          <path class="smile" d="M82 140 q18 16 36 0"/>
-        </svg>
+        <img class="fig" src="../video/assets/photos/man_shop_dash.png" alt="">
       </div>
     </div>
   </div>
