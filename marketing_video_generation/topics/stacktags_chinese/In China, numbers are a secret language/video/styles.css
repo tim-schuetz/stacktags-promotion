@@ -92,6 +92,10 @@ body.clean #hud { display: none; } body.clean { background: #fff; }
 .figbox .giftbox { left: 50%; top: 52%; width: 270px; height: auto; transform: translate(-50%,-50%) scale(.9); z-index: 1; }
 .doodle.ctx .speech { opacity: 1; transform: scale(1); }
 .doodle.ctx .fig2 { opacity: 1; }
+/* death "text": the speech bubble wraps EVERYTHING — the 2nd standing figure,
+   the arrow, and the dead figure all sit inside it. */
+#dd-death .speech { left: -168px; width: calc(100% + 220px); }
+#dd-death .fig2 { left: -126px; bottom: 14px; }
 .doodle.ctx .giftbox { opacity: 1; transform: translate(-50%,-50%) scale(1); }
 /* the couple sits ON the gift box on context */
 .doodle#dd-lasting.ctx .figm { transform: translateY(-26px) scale(.86); transition: transform .5s cubic-bezier(.34,1.6,.5,1); }

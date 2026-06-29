@@ -127,12 +127,12 @@ body.clean #hud { display: none; }
 /* ending: highlight the two surviving systems */
 .rtable.hl-simp .rt-c.simp { background: var(--stk-teal-soft); border-radius: 12px; }
 .rtable.hl-trad .rt-c.trad { background: rgba(35,43,51,.05); border-radius: 12px; }
-.rt-collabel { position: absolute; left: 50%; bottom: 250px; text-align: center; opacity: 0;
+.rt-collabel { position: absolute; left: 50%; bottom: 332px; text-align: center; opacity: 0;
   transform: translateX(var(--lx,0)) translateY(14px); transition: opacity .4s ease, transform .5s cubic-bezier(.34,1.56,.64,1); }
-.rt-collabel .cjk { display: block; font-family: 'Noto Sans SC', var(--stk-font); font-weight: 900; font-size: 56px; line-height: 1; }
-.rt-collabel .en { display: block; font: 800 28px Inter; color: var(--stk-muted); margin-top: 6px; white-space: nowrap; }
-.rt-collabel.simp { --lx: 252px; } .rt-collabel.simp .cjk { color: var(--stk-teal-d); }
-.rt-collabel.trad { --lx: -10px; } .rt-collabel.trad .cjk { color: var(--stk-ink); }
+.rt-collabel .cjk { display: block; font-family: 'Noto Sans SC', var(--stk-font); font-weight: 900; font-size: 54px; line-height: 1; }
+.rt-collabel .en { display: block; font: 800 25px Inter; color: var(--stk-muted); margin-top: 6px; white-space: nowrap; }
+.rt-collabel.simp { --lx: 145px; } .rt-collabel.simp .cjk { color: var(--stk-teal-d); }
+.rt-collabel.trad { --lx: -165px; } .rt-collabel.trad .cjk { color: var(--stk-ink); }
 .rt-collabel.in { opacity: 1; transform: translateX(var(--lx,0)) translateY(0); }
 
 /* table-scene year stamp / tick (reuse look, repositioned for the table) */

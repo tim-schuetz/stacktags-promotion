@@ -7,7 +7,7 @@ const exe = ['C:/Users/tjsch/AppData/Local/ms-playwright/chromium-1217/chrome-wi
 const OUT = path.resolve(__dirname, 'capture');
 fs.mkdirSync(OUT, { recursive: true });
 const TIMES = (process.argv.slice(2).map(Number).filter(n => !isNaN(n)));
-const DEF = [2.5, 5.0, 6.5, 9.0, 11.2, 17.5, 20.5, 24.0, 27.5, 31.0, 35.2, 36.6, 39.5, 42.0, 49.0, 51.0, 56.5, 60.5, 63.5, 70.0, 73.5, 78.6, 81.0];
+const DEF = [3.0, 5.0, 6.9, 11.5, 15.0, 22.5, 28.5, 34.0, 40.0, 45.5, 49.5, 56.0, 60.0, 66.5, 70.0, 75.5];
 const times = TIMES.length ? TIMES : DEF;
 
 (async () => {
