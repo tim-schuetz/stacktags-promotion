@@ -88,12 +88,19 @@
            ============================================================ -->
       <div class="scene" id="sc-twist">
         <div class="twist-stage" id="twist-stage">
+          <!-- the crowd of identical doodle dragon-babies (one Gemini line-drawing, replicated) -->
           <div class="crowd" id="crowd"></div>
+          <!-- the one realistic dragon-baby that opens the beat, then shrinks into the crowd -->
           <div class="twist-hero" id="twist-hero">
-            <div class="th-kid" id="th-kid"></div>
-            <div class="th-label"><div class="kl-zh cjk">龙宝宝</div><div class="kl-py">lóng bǎobao</div><div class="kl-en">“dragon baby”</div></div>
+            <img class="th-baby" id="th-baby" src="assets/photos/baby_real_dash.png" alt="">
+            <div class="th-label" id="th-label"><div class="kl-zh cjk">龙宝宝</div><div class="kl-py">lóng bǎobao</div><div class="kl-en">“dragon baby”</div></div>
           </div>
-          <div class="seat" id="seat"><div class="seat-ic"><svg viewBox="0 0 64 64"><path d="M18 14v20M46 14v20M14 34h36v6a6 6 0 0 1-6 6H20a6 6 0 0 1-6-6z M22 46v8M42 46v8" fill="none" stroke="#119271" stroke-width="5" stroke-linecap="round"/></svg></div><div class="seat-lab">one spot</div></div>
+          <!-- life stages they'll compete over: school → university → office -->
+          <div class="stages" id="stages">
+            <div class="stage-card" id="st-school"><img src="assets/photos/school_dash.png" alt=""></div>
+            <div class="stage-card" id="st-uni"><img src="assets/photos/university_dash.png" alt=""></div>
+            <div class="stage-card" id="st-office"><img src="assets/photos/office_dash.png" alt=""></div>
+          </div>
         </div>
       </div><!-- /sc-twist -->
 

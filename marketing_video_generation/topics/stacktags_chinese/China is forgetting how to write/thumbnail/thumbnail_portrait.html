@@ -8,50 +8,31 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600;700;800;900&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@700;900&text=%E6%8F%90%E7%AC%94%E5%BF%98%E5%AD%97&display=swap" rel="stylesheet">
 <style>
-  :root{ --teal:#35A292; --teal-d:#119271; --turq:#16A892; --ink:#232B33; --muted:#8a949d; }
+  :root{ --teal:#35A292; --teal-d:#119271; --turq:#16A892; --ink:#232B33; --muted:#7c8893; }
   *{margin:0;padding:0;box-sizing:border-box;}
   html,body{height:100%;background:#1b1f23;}
-  #thumb{position:relative;width:1080px;height:1920px;overflow:hidden;
-    font-family:'Inter',system-ui,sans-serif;-webkit-font-smoothing:antialiased;
-    background:#fbfdfc;}
-  /* whiteboard surface + faint eraser ghosting */
-  .board{position:absolute;inset:0;background:
-      radial-gradient(120% 60% at 30% 14%, rgba(53,162,146,.05), transparent 60%),
-      linear-gradient(115deg, rgba(35,43,51,.035) 0%, transparent 22%),
-      linear-gradient(-100deg, rgba(35,43,51,.03) 0%, transparent 30%),
-      #ffffff;}
-  /* aluminium frame */
-  .board::before{content:'';position:absolute;inset:0;
-    border:26px solid #d3dadf;border-radius:12px;
-    box-shadow:inset 0 0 0 4px #bcc5cc, inset 0 0 44px rgba(35,43,51,.05);}
-  /* marker tray */
-  .tray{position:absolute;left:80px;right:80px;bottom:60px;height:30px;border-radius:0 0 10px 10px;
-    background:linear-gradient(#c4ccd2,#aab4bc);box-shadow:0 10px 18px rgba(35,43,51,.18);z-index:2;}
-  .tray .pen{position:absolute;top:9px;height:16px;border-radius:9px;}
-  .tray .pen.a{left:130px;width:180px;background:#119271;}
-  .tray .pen.b{left:336px;width:130px;background:#e0654b;}
+  #thumb{position:relative;width:1080px;height:1920px;overflow:hidden;background:#dfe5e9;
+    font-family:'Inter',system-ui,sans-serif;-webkit-font-smoothing:antialiased;}
+  /* realistic whiteboard photo (zoom in a touch to drop the ceiling, enlarge the board) */
+  .board{position:absolute;inset:0;z-index:0;
+    background:url('../video/assets/img/wb_port_1.png') center 42%/118% no-repeat;}
 
-  /* the idiom, big 2x2 grid */
-  .cjk{position:absolute;top:300px;left:70px;right:70px;z-index:3;
+  /* the idiom, big 2x2 grid, turquoise marker on the board (a bit smaller than before) */
+  .cjk{position:absolute;top:300px;left:96px;right:96px;z-index:3;
     display:grid;grid-template-columns:1fr 1fr;justify-items:center;align-items:center;
-    row-gap:8px;column-gap:30px;
-    font-family:'Noto Sans SC',sans-serif;font-weight:900;font-size:420px;line-height:.92;
-    color:var(--turq);}
+    row-gap:6px;column-gap:26px;
+    font-family:'Noto Sans SC',sans-serif;font-weight:900;font-size:336px;line-height:.92;
+    color:var(--turq);text-shadow:0 3px 0 rgba(22,168,146,.12);}
   /* teal marker underline */
-  .ul{position:absolute;top:1150px;left:50%;transform:translateX(-50%) rotate(-.5deg);z-index:3;
-    width:820px;height:18px;border-radius:11px;
-    background:linear-gradient(90deg,rgba(17,146,113,0),rgba(17,146,113,.85) 12%,rgba(17,146,113,.9) 88%,rgba(17,146,113,0));}
-  .sub{position:absolute;top:1196px;left:0;right:360px;text-align:center;z-index:3;white-space:nowrap;
-    font-weight:800;font-size:60px;letter-spacing:9px;color:var(--muted);text-transform:uppercase;}
+  .ul{position:absolute;top:1030px;left:50%;transform:translateX(-50%) rotate(-.5deg);z-index:3;
+    width:760px;height:16px;border-radius:10px;
+    background:linear-gradient(90deg,rgba(22,168,146,0),rgba(22,168,146,.85) 10%,rgba(22,168,146,.9) 90%,rgba(22,168,146,0));}
+  .sub{position:absolute;top:1074px;left:0;right:0;text-align:center;z-index:3;white-space:nowrap;
+    font-weight:800;font-size:52px;letter-spacing:9px;color:var(--muted);text-transform:uppercase;}
 
-  /* the student, rising from the bottom — head + torso only (legs fall off-frame), gesturing up at the board */
-  .student{position:absolute;right:4px;bottom:-480px;height:1120px;width:auto;z-index:4;
-    filter:drop-shadow(0 18px 28px rgba(20,40,33,.18));}
-
-  /* brand wordmark */
-  .brand{position:absolute;left:96px;bottom:96px;z-index:5;}
-  .brand .wm{font-weight:900;font-size:84px;letter-spacing:-2px;}
-  .brand .wm .s{color:var(--ink);} .brand .wm .t{color:var(--teal);}
+  /* graduation student, scratching his head, in front of the board (bottom-right) */
+  .student{position:absolute;right:8px;bottom:-360px;height:1140px;width:auto;z-index:4;
+    filter:drop-shadow(0 16px 28px rgba(20,40,33,.24));}
 </style>
 </head>
 <body>
@@ -60,12 +41,10 @@
   <div class="cjk"><span>提</span><span>笔</span><span>忘</span><span>字</span></div>
   <div class="ul"></div>
   <div class="sub">character amnesia</div>
-  <img class="student" src="../video/assets/img/student_cut.png" alt="">
-  <div class="tray"><span class="pen a"></span><span class="pen b"></span></div>
-  <div class="brand"><span class="wm"><span class="s">stack</span><span class="t">tags</span></span></div>
+  <img class="student" src="../video/assets/img/grad_cut.png" alt="">
 </div>
 <script>
-  (async () => { try { await document.fonts.ready; } catch (e) {} setTimeout(() => { window.__ready = true; }, 200); })();
+  (async () => { try { await document.fonts.ready; } catch (e) {} setTimeout(() => { window.__ready = true; }, 250); })();
 </script>
 </body>
 </html>

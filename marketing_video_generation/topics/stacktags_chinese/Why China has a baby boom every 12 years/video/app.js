@@ -94,8 +94,7 @@
   // BUILD: parents (belief)
   // ============================================================
   $('#parents').innerHTML =
-    `<div class="parent">${parentSVG(false)}</div>` +
-    `<div class="parent">${parentSVG(true)}</div>` +
+    `<img class="couple-img" src="assets/photos/couple_dash.png" alt="">` +
     `<div class="pthought"><span class="cjk">龙</span></div>`;
 
   // ============================================================
@@ -192,31 +191,34 @@
       hotAll() { bands.forEach(b => b.classList.add('hot')); ticks.forEach(t => t.classList.add('show')); },
     };
   }
-  const CHINA_VALS = [55, 53, 50, 58, 48, 47, 46, 45, 44, 53, 46, 44, 40, 34, 30, 36];
-  const SHARP_VALS = [40, 41, 39, 70, 24, 41, 40, 41, 40, 78, 22, 41, 40, 41, 39, 72];
+  // Shapes grounded in real data: China shows a clear bump ONLY at 2012 (2000 was
+  // NOT notable; 2024 a slight uptick) over a long decline. Taiwan/HK/Singapore show
+  // sharp dragon-year spikes (2000, 2012) then a dip the next year; 2024 is waning.
+  const CHINA_VALS = [64, 61, 57, 51, 48, 46, 45, 45, 43, 53, 44, 42, 38, 30, 25, 30];
+  const SHARP_VALS = [50, 49, 46, 74, 40, 46, 45, 44, 42, 70, 36, 41, 38, 35, 34, 52];
   const births = makeBirthsChart($('#births-host'));
 
   // ============================================================
   // BUILD: twist crowd (dragon-kids)
   // ============================================================
-  const CROWD_N = 30;
+  const CROWD_N = 35;          // 7 cols × 5 rows
+  const HOLE = 17;             // centre cell reserved for the realistic hero baby
   (function buildCrowd() {
     const c = $('#crowd');
     for (let i = 0; i < CROWD_N; i++) {
       const k = document.createElement('div');
-      k.className = 'kid';
-      k.innerHTML = kidSVG(false);
+      k.className = 'bdoodle' + (i === HOLE ? ' hole' : '');
+      k.innerHTML = `<img src="assets/photos/baby_stick.png" alt="">`;
       c.appendChild(k);
     }
-    $('#th-kid').innerHTML = kidSVG(true);
   })();
-  const kids = () => $$('#crowd .kid');
+  const doodles = () => $$('#crowd .bdoodle');
   // reveal in a spread-out (coprime-stride) order so the crowd fills in scattered, not left-to-right
   const REVEAL_ORDER = (() => {
-    const n = CROWD_N; let stride = 13; const gcd = (a, b) => b ? gcd(b, a % b) : a; while (gcd(stride, n) !== 1) stride++;
+    const n = CROWD_N; let stride = 16; const gcd = (a, b) => b ? gcd(b, a % b) : a; while (gcd(stride, n) !== 1) stride++;
     return Array.from({ length: n }, (_, k) => (k * stride) % n);
   })();
-  function crowdReveal(n) { const ks = kids(); for (let i = 0; i < n && i < ks.length; i++) ks[REVEAL_ORDER[i]].classList.add('in'); }
+  function crowdReveal(n) { const ks = doodles(); for (let i = 0; i < n && i < ks.length; i++) ks[REVEAL_ORDER[i]].classList.add('in'); }
 
   // ============================================================
   // BUILD: punchline — china backdrop + clock wheel + pulse line
@@ -378,7 +380,7 @@
     // ---------- BELIEF ----------
     [11.04, (i) => { if (!i) wheel.sweep({ stagger: 200, hold: 240 }); wheel.hub(hubLabel('生肖', 'shēngxiào', 'the zodiac'), i); wheel.dragonGlow(false); }],
     [14.30, (i) => { wheel.gray(true); wheel.dragonGlow(true); wheel.hub(hubHero('龙', 'lóng', 'dragon'), i); }],
-    [19.10, (i) => { wheel.hub(hubHero('龙', 'lóng bǎobao · “dragon baby”', '', true), i); }],
+    [19.10, (i) => { wheel.hub(hubLabel('龙宝宝', 'lóng bǎobao', '“dragon baby”'), i); }],
     [21.94, () => { addC('parents', 'on'); }],
     [23.10, () => { addC('parents', 'think'); }],
 
@@ -396,20 +398,20 @@
     [41.38, () => { births.hotBand(1, true); }],
     [43.60, () => { births.hotBand(1, false); }],
     [45.54, (i) => {
+      // the sharp TW/HK/SG curve IS the repeating fingerprint — keep it, light all bands
       $('#data-title').innerHTML = 'a 12-year <span class="dt-zh">rhythm</span>';
-      if (i) births.showAll(CHINA_VALS); else births.morphTo(CHINA_VALS, { duration: 900 });
       births.hotAll();
     }],
     [47.00, () => { addC('data-cap', 'show'); $('#data-cap').textContent = 'every 12 years'; }],
 
     // ---------- TWIST ----------
     [49.18, (i) => { setScene('sc-twist'); if (!i) gridPush(); addC('twist-hero', 'show'); }],
-    [51.62, (i) => { addC('twist-hero', 'gone'); crowdReveal(12); if (!i) gridPush(); }],
-    [53.94, () => { crowdReveal(20); }],
-    [56.30, () => { crowdReveal(26); }],
-    [57.14, () => { crowdReveal(30); }],
+    [51.62, (i) => { addC('twist-hero', 'small'); crowdReveal(16); if (!i) gridPush(); }],
+    [53.94, () => { addC('st-school', 'in'); crowdReveal(24); }],
+    [56.30, () => { addC('st-uni', 'in'); crowdReveal(30); }],
+    [57.14, () => { addC('st-office', 'in'); crowdReveal(35); }],
     [58.88, () => { addC('crowd', 'shine'); }],
-    [60.32, (i) => { addC('seat', 'show'); addC('crowd', 'lean'); if (!i) gridPush(); }],
+    [60.32, (i) => { if (!i) gridPush(); }],
 
     // ---------- PUNCHLINE ----------
     [61.94, (i) => {
@@ -474,7 +476,8 @@
     wheelIn(false); wheel.reset();
     rmC('parents', 'on'); rmC('parents', 'think');
     rmC('data-title', 'show'); rmC('news-card', 'show'); rmC('data-cap', 'show'); births.reset();
-    kids().forEach((k) => k.classList.remove('in')); rmC('twist-hero', 'show'); rmC('twist-hero', 'gone'); rmC('crowd', 'lean'); rmC('crowd', 'shine'); rmC('seat', 'show');
+    doodles().forEach((k) => k.classList.remove('in')); rmC('twist-hero', 'show'); rmC('twist-hero', 'small'); rmC('crowd', 'shine');
+    ['st-school', 'st-uni', 'st-office'].forEach((id) => rmC(id, 'in'));
     rmC('china-bg', 'show'); rmC('pulse-line', 'show'); setPulse(0); clockWheel.reset();
   }
   function hardReset() {

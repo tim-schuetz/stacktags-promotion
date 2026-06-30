@@ -129,7 +129,7 @@ body.clean #hud { display: none; }
 .dict-row { display: flex; align-items: center; gap: 34px; opacity: .34; }
 .dr-ch { font-family: 'Noto Sans SC', var(--stk-font); font-weight: 700; font-size: 76px; color: var(--stk-ink); }
 .dr-py { font: 600 42px Inter; color: var(--stk-ink-2); }
-.dict-none { margin: 46px 8px 0; font: 800 56px Inter; color: var(--stk-muted); text-align: center;
+.dict-none { margin: 30px 8px 0; font: 400 150px Inter; color: var(--stk-muted); text-align: center; line-height: 1;
   opacity: 0; transform: scale(.9); transition: opacity .35s ease, transform .4s cubic-bezier(.34,1.56,.64,1); }
 .dict-none.in { opacity: 1; transform: none; }
 .dict.shake { animation: dShake .4s ease; }
@@ -187,13 +187,20 @@ body.clean #hud { display: none; }
 .ml-name { display: flex; align-items: center; gap: 12px; }
 .ml-price { color: var(--stk-ink-2); font-weight: 600; }
 
-.paste { position: absolute; top: 392px; left: 96px; width: 150px; height: 150px; transform: rotate(-7deg);
-  background: #fff; padding: 14px; box-shadow: 0 12px 26px rgba(20,40,33,.18);
-  opacity: 0; transition: opacity .35s ease, transform .4s cubic-bezier(.34,1.56,.64,1); }
-.paste img { width: 100%; height: 100%; object-fit: contain; display: block; }
-.paste::before { content: ''; position: absolute; top: -12px; left: 50%; width: 80px; height: 26px; transform: translateX(-50%) rotate(3deg);
-  background: rgba(53,162,146,.28); border-radius: 3px; }
-.paste.in { opacity: 1; }
+/* the real-world workaround: a printed menu card (generated photo) with the dish
+   photo + the biáng glyph drawn by hand into the blank name box */
+.menucard { position: absolute; left: 50%; top: 50%; width: 720px; transform: translate(-50%, -50%) scale(.86);
+  opacity: 0; z-index: 8; transition: opacity .5s ease, transform .6s cubic-bezier(.2,.8,.2,1); }
+.menucard.in { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+.menucard .mc-photo { width: 100%; height: auto; display: block; border-radius: 12px; box-shadow: 0 44px 90px rgba(20,40,33,.34); }
+/* clean name strip that covers the auto-generated gibberish caption */
+.menucard .mc-name { position: absolute; left: 13%; right: 13%; top: 49.8%; height: 8.8%;
+  display: flex; align-items: center; justify-content: center; gap: 22px; transform: rotate(-1.5deg);
+  background: #efe7d8; border-radius: 7px; font: 800 36px Inter; color: #2c2218; box-shadow: 0 4px 12px rgba(20,40,33,.12); }
+.menucard .mc-name span { color: #b08334; font-weight: 700; }
+/* the biáng glyph, hand-drawn into the blank red name box */
+.menucard .mc-glyph { position: absolute; left: 50%; top: 72.4%; transform: translate(-50%, -50%);
+  width: 168px; height: auto; }
 
 .stamp { position: absolute; left: 50%; top: 300px; transform: translate(-50%, -50%) scale(2.4) rotate(-12deg);
   display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 22px 40px; border-radius: 18px;

@@ -1,0 +1,110 @@
+VIDEO SCRIPT
+Title: Why you can't order "three beers" in China
+Topic: Learn Chinese
+Target length: ~70 seconds (fits the 30s–3min window)
+Language of narration: English
+Format: Spoken voiceover narration + [bracketed] storyboard / on-screen direction.
+        The [bracket] lines are visual cues only — they are STRIPPED before TTS; the
+        spoken voiceover is every non-bracketed narration line, verbatim.
+
+==================================================================
+THE CORE IDEA
+==================================================================
+In Chinese you can't put a number directly on a noun — you need a "measure word"
+(classifier): "three beers" → 三瓶啤酒 (three bottles-of beer). There are 150+ measure
+words tied to an object's shape/type, but the general one 个 (gè) covers ~94% of cases.
+Punchline: in Chinese you must know WHAT KIND of thing you're counting before you can
+count it.
+
+==================================================================
+VISUAL CONCEPT — "THE COUNTING GAP" (persistent hero)
+==================================================================
+One equation lives in the centre of the frame the whole video:  [ 三 ] [ □ ] [ 啤酒 ].
+The empty measure-word SLOT (□) is the hero. We fill it, multiply it, and re-fill it
+through every section. White grid background, turquoise accents, Inter + Noto Sans SC,
+grey subtitles with turquoise keywords. Three real cut-out beer bottles (dashed outline)
+are the noun 啤酒. Camera = faux-3D grid push/zoom; swoosh only when the grid moves,
+pop on tiles/vocab.
+
+==================================================================
+SCRIPT
+==================================================================
+
+--- HOOK (0:00–0:09) — curiosity, not grammar-talk ---
+
+[OPEN on the centre equation: a number tile 三 (sān) and the noun 啤酒 with THREE real
+cut-out beer bottles (dashed outline). The 三 lunges toward 啤酒 but RECOILS — they refuse
+to touch; the gap between them flashes as an empty dashed SLOT □ pulsing turquoise.]
+In China, you can't order "three beer."
+[On "nothing to do with alcohol": the three bottles get a quick GREY ✗ and dim — not the
+culprit. On "grammar": the bottles brighten again and the empty SLOT □ flares turquoise —
+THAT little gap is the real reason. Grid push-in (swoosh) to settle the clean equation.]
+And the reason has nothing to do with alcohol — but with grammar.
+
+--- THE RULE (≈0:09–0:32) ---
+
+[The equation is centred and steady: 三  [ □ ]  啤酒. The 三 and 啤酒 lean toward each
+other across the empty slot, repelling like same-pole magnets.]
+In Chinese, you can't put a number straight onto a noun.
+[Three quick attempts pop in a vertical stack above the equation, each with an empty slot
+and a grey strike-through (NO red): "三 □ 啤酒"… "二 □ 狗 (dog)"… "五 □ 书 (book)". They
+all read as broken — the slot is empty.]
+No "three beer," no "two dog," no "five book."
+[The stack fades; back to the hero equation. The empty slot □ pulses and a label
+"量词 / measure word · classifier" rises under it, an arrow pointing up into the slot.]
+Between the number and the thing, you need a "measure word" — a classifier.
+[瓶 (píng) drops from the top INTO the slot (pop). The slot snaps shut around it; the line
+locks: 三 瓶 啤酒. Soft turquoise ✓.]
+So "three beers" becomes, literally, "three bottles beer" — 三瓶啤酒.
+[Zoom the middle tile: 瓶 enlarges; a vocab chip pops — 瓶 / píng / "bottle (measure
+word)".]
+That little 瓶, "bottle," is the measure word.
+[Pull 瓶 back OUT of the slot — the slot goes empty again, the line breaks apart and the
+bottles dim. "broken Chinese" = grey, lifeless. Then 瓶 slots back in; line re-locks.]
+Leave it out, and it's broken Chinese.
+
+--- IT GETS TRICKIER (≈0:32–0:50) — the wall of 150 ---
+
+[Camera ZOOMS OUT of the single slot (swoosh) into a WALL that FILLS the whole screen with
+dozens of distinct measure-word tiles (本 只 张 台 条 瓶 辆 件 杯 把 双 支 块 颗 棵 头 …),
+a big "150+" counter. The wall is taller than the frame.]
+And it goes deeper. There are over 150 of these measure words —
+[The camera SCROLLS DOWN through the packed wall (so many they run off-screen), and lands
+on a final shelf of the most important ones, enlarged with an inline-SVG icon of the KIND
+each counts: 本→book, 只→animal, 张→flat sheet, 台→machine, 条→long/fish.]
+and which one you use depends on the shape or type of thing.
+[The key tiles light one by one as their category is named.]
+Flat things, long things, animals, books, machines — almost everything has its own.
+
+--- THE SHORTCUT (≈0:50–1:05) ---
+
+[Relief beat: the wall recedes; zoom back in to the clean hero equation. Calm.]
+But here's the relief.
+[One big 个 (gè) glides up the centre and drops into the slot (pop). It glows turquoise.]
+One general measure word — 个 — works for the huge majority of cases.
+[A subtle "≈94%" stamp slams in (no bar chart).]
+By some counts, around 94% of the time.
+[个 stays in the slot while the NOUN rapidly swaps through REAL generated cut-out photos —
+a dog (狗), a book (书), an apple (苹果) — each getting a quick turquoise ✓. (Real images,
+not drawn icons.)]
+So if you blank on the exact one, 个 will usually save you.
+[A faint "good enough" half-tick — honest nuance.]
+Not always perfect — but understood.
+
+--- PUNCHLINE / OUTRO (≈1:05–1:15) ---
+
+[The slot DISSOLVES; the number (shown as the digit "3" here, the English framing) snaps
+straight onto noun after noun — beer, dog, book — freely, no slot needed.]
+In English, "three" just works on everything.
+[The slot SLAMS back in between number and 啤酒, pulsing with a "?" — you must choose the
+KIND before you can count.]
+In Chinese, you have to know what kind of thing you're counting before you can count it.
+[Return to the hero line 三 瓶 啤酒 with the three bottles. A wordless grammar-exam badge
+(clipboard + ✓) slams in over the order.]
+Which is why ordering three beers is secretly a grammar exam.
+[Lift transition (swoosh) into the OUTRO default element.]
+
+[OUTRO default element: stacktags stacked-cube logo between two turquoise chevrons,
+"stacktags" wordmark, grey "stacktags.io" line.]
+Wanna actually start learning Chinese?
+Discover thousands of free exercises and more learning content on stacktags.io.

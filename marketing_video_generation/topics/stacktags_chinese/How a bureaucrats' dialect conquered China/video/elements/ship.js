@@ -22,15 +22,22 @@
         + `<img class="ship-img" src="assets/photos/caravel_cut.png" alt="">`
         + `<img class="ship-building" src="assets/photos/portuguese_building_cut.png" alt="">`
         + `</div>`
-        + `<div class="ship-mandarin"><span class="mand-word">MANDARIN</span></div>`;
+        + `<div class="ship-mandarin"><span class="mand-word">MANDARIN</span></div>`
+        // school · radio · TV pop in beside MANDARIN once the globe has gone
+        + `<div class="ship-media">`
+        + `<img class="media-img m1" src="assets/photos/school_cut.png" alt="" style="--mx:-78px;--my:-300px">`
+        + `<img class="media-img m2" src="assets/photos/radio_cut.png"  alt="" style="--mx:90px;--my:-6px">`
+        + `<img class="media-img m3" src="assets/photos/tv_cut.png"     alt="" style="--mx:-46px;--my:290px">`
+        + `</div>`;
       (this.host || document.body).appendChild(this.el);
     }
-    show() { this.el.classList.remove('sail', 'arrived', 'mandarin'); void this.el.offsetWidth; this.el.classList.add('in'); }
+    show() { this.el.classList.remove('sail', 'arrived', 'mandarin', 'formalize'); void this.el.offsetWidth; this.el.classList.add('in'); }
     sail() { this.el.classList.add('sail'); }
     arrive() { this.el.classList.add('arrived'); }    // ship shrinks + vanishes, building rises at China
     mandarin() { this.el.classList.add('mandarin'); } // globe stage slides down, MANDARIN drops from top
+    formalize() { this.el.classList.add('formalize'); } // globe stage fades away, MANDARIN stays
     showArrived() { this.el.classList.add('in', 'sail', 'arrived'); }
-    reset() { this.el.classList.remove('in', 'sail', 'arrived', 'mandarin'); }
+    reset() { this.el.classList.remove('in', 'sail', 'arrived', 'mandarin', 'formalize'); this.el.querySelectorAll('.media-img').forEach((e) => e.classList.remove('pop')); }
   }
   global.StacktagsShip = StacktagsShip;
 })(window);

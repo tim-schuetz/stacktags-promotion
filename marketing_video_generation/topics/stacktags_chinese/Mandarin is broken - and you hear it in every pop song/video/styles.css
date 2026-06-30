@@ -178,6 +178,15 @@ html, body { margin: 0; height: 100%; overflow: hidden; background: #0b0e0d; }
 .pk::after { content: ''; position: absolute; left: -6px; right: -6px; top: 52%; height: 11px; background: var(--teal); border-radius: 6px; transform: scaleX(0); transform-origin: center; transition: transform .3s cubic-bezier(.34,1.56,.64,1); }
 .pk.struck { color: var(--muted); }
 .pk.struck::after { transform: scaleX(1); }
+/* in-scene syllable count-down (1200 → 400), sits BELOW the struck p t k m */
+.trio-count { margin-top: 10px; display: flex; flex-direction: column; align-items: center; gap: 2px;
+              opacity: 0; transform: translateY(18px); transition: opacity .5s ease, transform .55s cubic-bezier(.2,.8,.2,1); }
+.trio-beat.count-in .trio-count { opacity: 1; transform: none; }
+.tc-val { font-weight: 900; font-size: 132px; letter-spacing: -5px; line-height: .92; color: var(--teal-d); }
+.tc-lbl { font-weight: 700; font-size: 32px; letter-spacing: -.3px; color: var(--muted); margin-top: 2px; }
+
+/* spotlighted final consonant (enumeration) stays in ink, not white */
+.se2-tile.glyphtile.active .se2-tile-top span.glyph { color: var(--ink); }
 
 /* ============================================================
    SINGER beat — pop singer cut-out + flying vowel pills

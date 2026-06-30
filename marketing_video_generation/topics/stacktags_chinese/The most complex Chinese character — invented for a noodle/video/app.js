@@ -183,12 +183,12 @@
   // ============================================================
   function msgShow() { $('#msg').classList.add('in'); }
   function menuShow() { $('#menu').classList.add('in'); }
-  function pasteShow() { $('#paste').classList.add('in'); }
+  function menuCardShow() { $('#menucard').classList.add('in'); $('#phone').style.opacity = '0'; }
+  function menuCardHide() { $('#menucard').classList.remove('in'); $('#phone').style.opacity = ''; }
   function stampShow() { $('#stamp').classList.add('in'); }
   function resolveScreen() {
     $('#msg-tofu').classList.add('resolved');
     $('#menu-tofu').classList.add('resolved');
-    $('#paste').classList.remove('in');
   }
 
   // ---- OUTRO ----
@@ -356,14 +356,15 @@
     // SCREEN — □ everywhere, then 2020 resolves it
     [50.26, (i) => enter($('#sc-screen'), 'pan-right', 1050, i, () => msgShow())],
     [52.7, () => menuShow()],
-    [53.92, () => pasteShow()],
+    [53.92, () => menuCardShow()],   // real printed menu: dish photo + biáng drawn by hand
+    [56.78, () => menuCardHide()],   // … then back to the digital side for the 2020 fix
     [57.22, (i) => stampShow()],
     [58.74, () => resolveScreen()],
     // FINAL — glyph + bowl, then the emoji size-gag
     [59.4, (i) => enter($('#sc-hero'), 'zoom-out', 1100, i, () => finalShot())],
     [66.96, () => showEmoji()],
-    // OUTRO
-    [72.14, (i) => { enter($('#sc-outro'), 'lift', 1100, i); outroAssemble(); }],
+    // OUTRO — comes in a touch early so it's there as "Want to actually…" lands
+    [71.4, (i) => { enter($('#sc-outro'), 'lift', 1000, i); outroAssemble(); }],
   ];
 
   // ============================================================
@@ -388,7 +389,7 @@
     [58.74, 'pop', 0.45],
     [59.4, 'swoosh', 0.50],
     [66.96, 'pop', 0.45],
-    [72.14, 'swoosh', 0.55],
+    [71.4, 'swoosh', 0.55],
   ];
   window.SFX = SFX;
   const SND = { swoosh: 'assets/sound/swoosh.ogg', pop: 'assets/sound/pop.wav', ticking: 'assets/sound/tickingtimeline.mp3' };
@@ -416,7 +417,8 @@
     $('#slap-word').classList.remove('in');
     const ul = $('#uni-list'); if (ul) ul.classList.remove('in');
     const g = $('#uni-list .gap'); if (g) g.classList.remove('pulse');
-    $('#msg').classList.remove('in'); $('#menu').classList.remove('in'); $('#paste').classList.remove('in'); $('#stamp').classList.remove('in');
+    $('#msg').classList.remove('in'); $('#menu').classList.remove('in'); $('#menucard').classList.remove('in'); $('#stamp').classList.remove('in');
+    $('#phone').style.opacity = '';
     $('#msg-tofu').classList.remove('resolved'); $('#menu-tofu').classList.remove('resolved');
     outroReset();
     subsLine.classList.remove('in');

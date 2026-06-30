@@ -182,6 +182,7 @@ html, body { margin: 0; height: 100%; background: #0b0e0d; overflow: hidden; }
   position: absolute; font-family: 'Inter', 'Noto Sans SC', sans-serif; font-weight: 900; font-size: 54px;
   color: var(--stk-ink); background: #fff; border: 7px solid var(--stk-ink); border-radius: 40px;
   padding: 14px 30px; letter-spacing: 2px; white-space: nowrap; box-shadow: 0 14px 32px rgba(20,40,33,.16);
+  opacity: 0; transform: scale(.4);   /* hidden until they pop in (one after another) */
 }
 .speech-compo .sp-bub::before { content: ''; position: absolute; bottom: -40px; width: 0; height: 0; border-top: 40px solid var(--stk-ink); border-right: 30px solid transparent; }
 .speech-compo .sp-bub::after  { content: ''; position: absolute; bottom: -24px; width: 0; height: 0; border-top: 28px solid #fff; border-right: 20px solid transparent; }
@@ -190,12 +191,13 @@ html, body { margin: 0; height: 100%; background: #0b0e0d; overflow: hidden; }
 .speech-compo .sp-bub-r { right: 64px; top: 92px; }
 .speech-compo .sp-bub-r::before { right: 38px; border-right: 0; border-left: 30px solid transparent; }
 .speech-compo .sp-bub-r::after  { right: 45px; border-right: 0; border-left: 20px solid transparent; }
-/* brief pulses: 字 at "wrote alike", the bubbles at "but spoke languages" */
+/* brief pulse: 字 at "wrote alike" */
 @keyframes sp-pulse-parch { 0% { transform: translateX(-50%) scale(1); } 38% { transform: translateX(-50%) scale(1.24); } 100% { transform: translateX(-50%) scale(1); } }
-@keyframes sp-pulse-bub { 0% { transform: scale(1); } 38% { transform: scale(1.26); } 100% { transform: scale(1); } }
 .speech-compo .sp-parch.pulse { animation: sp-pulse-parch .9s cubic-bezier(.34,1.56,.5,1); }
 .speech-compo .sp-bub { transform-origin: center; }
-.speech-compo .sp-bub.pulse { animation: sp-pulse-bub .85s cubic-bezier(.34,1.56,.5,1); }
+/* the two gibberish bubbles start hidden and POP in one after another at "but spoke languages" */
+.speech-compo .sp-bub.show { animation: sp-bub-pop .5s cubic-bezier(.34,1.6,.5,1) forwards; }
+@keyframes sp-bub-pop { 0% { opacity: 0; transform: scale(.4); } 60% { opacity: 1; transform: scale(1.12); } 100% { opacity: 1; transform: scale(1); } }
 
 /* ============ SHIP → CHINA scene (cut-out caravel sails over the LIVE globe) ============ */
 .ship-host { position: absolute; inset: 0; }
@@ -245,6 +247,17 @@ html, body { margin: 0; height: 100%; background: #0b0e0d; overflow: hidden; }
 .ship-scene.mandarin .ship-mandarin { opacity: 1; transform: translateY(0); }
 .ship-mandarin .mand-word { display: block; font-weight: 900; font-size: 138px; letter-spacing: -4px; color: var(--stk-ink); }
 
+/* "then, last century": ONLY the globe stage fades away — MANDARIN stays put,
+   and school·radio·TV pop in beside it (one after another, each scales up). */
+.ship-scene.formalize .ship-stage { opacity: 0; transition: opacity .65s ease; }
+.ship-media { position: absolute; left: 50%; top: 560px; width: 540px; height: 880px; transform: translateX(-50%); z-index: 6; }
+.ship-media .media-img {
+  position: absolute; left: 50%; top: 50%; width: 250px; height: 250px; object-fit: contain;
+  transform: translate(-50%, -50%) translate(var(--mx, 0), var(--my, 0)) scale(.3);
+  opacity: 0; filter: drop-shadow(0 18px 30px rgba(20,40,33,.18));
+}
+.ship-media .media-img.pop { animation: media-pop .6s cubic-bezier(.34,1.7,.5,1) forwards; }
+
 /* ============ OUTRO — default endcard element (logo builds, wordmark, url) ============ */
 .scene-outro .ec { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 34px; }
 .scene-outro .ec-logo { display: flex; }
@@ -282,6 +295,11 @@ html, body { margin: 0; height: 100%; background: #0b0e0d; overflow: hidden; }
 .stk-depth2-text .gloss { display: block; font-size: 34px; font-weight: 600; color: var(--stk-muted); margin-top: 10px; }
 .stk-depth2-text .west { font-size: 132px; letter-spacing: -3px; }
 .stk-depth2-text .big-num { font-size: 200px; letter-spacing: -6px; color: var(--stk-teal-d); line-height: .95; display: block; }
+
+/* 汉 beat: a Han-dynasty ruler stands beside the character */
+.stk-depth2-text .han-compo { display: flex; align-items: center; justify-content: center; gap: 64px; }
+.stk-depth2-text .han-compo .han-fig { width: 300px; height: auto; object-fit: contain; flex: none; filter: drop-shadow(0 18px 30px rgba(20,40,33,.22)); }
+.stk-depth2-text .han-compo .han-text { display: flex; flex-direction: column; align-items: center; }
 
 /* ============ subtitles (positioned a touch higher to clear the hud area) ============ */
 .stk-subs { bottom: 150px; }

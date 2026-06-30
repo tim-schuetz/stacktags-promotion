@@ -21,7 +21,7 @@ const TIMES = process.argv.slice(2).length
   const context = await browser.newContext({ viewport: { width: 1080, height: 1920 }, deviceScaleFactor: 1 });
   const page = await context.newPage();
   page.on('console', m => { if (m.type() === 'error') console.log('  [page error]', m.text()); });
-  await page.goto('http://localhost:8861/video/index.html', { waitUntil: 'domcontentloaded' });
+  await page.goto('http://localhost:8911/video/index.html', { waitUntil: 'domcontentloaded' });
   await page.evaluate(async () => { try { await document.fonts.ready; } catch {} });
   await page.evaluate(() => { document.body.classList.add('clean'); window.dispatchEvent(new Event('resize')); });
   await page.waitForTimeout(1800); // let maps + globe mount

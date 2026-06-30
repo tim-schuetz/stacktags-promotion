@@ -20,6 +20,8 @@ const SHOTS = [
     prompt: 'One single shiny gold physical Bitcoin coin facing the camera, the Bitcoin "B" symbol embossed on its face, glossy reflective metallic gold, centered, isolated on a ' },
   { key: 'mixer', ar: '1:1', person: 'dont_allow',
     prompt: 'A single shiny metallic rotating drum tumbler machine, like an industrial mixing barrel or a lottery ball tumbler on a stand, chrome steel with soft turquoise glow inside, glossy 3d product render, centered, isolated on a ' },
+  { key: 'dubai', ar: '16:9', person: 'dont_allow',
+    prompt: 'A row of several modern Dubai skyscrapers of varied heights standing side by side, a dense futuristic glass-and-steel city skyline at daytime, distinct separate towers, full buildings standing upright on a flat base, photorealistic, isolated on a ' },
 ];
 
 async function gen(shot, attempt = 1) {

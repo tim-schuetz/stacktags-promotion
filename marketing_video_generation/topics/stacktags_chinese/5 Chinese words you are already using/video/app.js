@@ -89,10 +89,10 @@ const BEATS = [
   /* 2 */ { cls:'beat-gag', via:'lift', text:
     `<div class="gag">
        <img class="gag-helmet-back"  src="assets/photos/helmet_back.png"  alt="" onerror="this.style.display='none'">
-       <img class="gag-person"   src="assets/photos/englishman.png" alt="" onerror="this.style.display='none'">
+       <img class="gag-person"   src="assets/photos/englishman_body.png" alt="" onerror="this.style.display='none'">
        <img class="gag-helmet-front" src="assets/photos/helmet_front.png" alt="" onerror="this.style.display='none'">
        <img class="gag-baguette" src="assets/photos/baguette.png" alt="" onerror="this.style.display='none'">
-       <div class="gag-table"><img class="gag-rice" src="assets/photos/rice_table.png" alt="" onerror="this.style.display='none'"><div class="gag-table-top"><i class="leg leg-l"></i><i class="leg leg-r"></i></div></div>
+       <img class="gag-bowl" src="assets/photos/rice_table.png" alt="" onerror="this.style.display='none'">
      </div>` },
 
   /* 3 — TYPHOON intro (real photo, circular) */ { cls:'beat-photo beat-ty-intro', text:

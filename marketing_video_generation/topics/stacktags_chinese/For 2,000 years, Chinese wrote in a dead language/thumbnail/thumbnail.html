@@ -6,7 +6,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600;700;800;900&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@500;700;900&text=我不知道吾&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@500;700;900&text=%E6%88%91%E4%B8%8D%E7%9F%A5%E9%81%93&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&text=%E5%90%BE%E4%B8%8D%E7%9F%A5&display=swap" rel="stylesheet">
 <style>
   :root{
     --ink:#232B33; --ink2:#4a5560; --muted:#8a949d;
@@ -27,62 +28,51 @@
   .blob.b{width:560px;height:560px;right:-200px;bottom:-160px;background:#d7efe8;}
 
   /* corner texts */
-  .speak{position:absolute;left:74px;top:60px;z-index:5;
-    font-weight:900;font-size:100px;letter-spacing:-0.035em;line-height:.9;color:var(--ink);}
-  .write{position:absolute;right:78px;bottom:74px;z-index:5;text-align:right;
-    font-weight:900;font-size:100px;letter-spacing:-0.035em;line-height:.9;color:var(--turq);}
+  .speak{position:absolute;left:74px;top:64px;z-index:5;white-space:nowrap;
+    font-weight:900;font-size:104px;letter-spacing:-0.04em;line-height:.9;color:var(--ink);}
+  .write{position:absolute;right:78px;bottom:64px;z-index:5;text-align:right;
+    font-weight:900;font-size:104px;letter-spacing:-0.04em;line-height:.9;color:var(--turq);}
 
-  /* the four villagers, bottom-left */
+  /* the four villagers */
   .people{position:absolute;left:18px;bottom:-14px;width:660px;height:482px;z-index:3;
     background:url('../video/assets/img/crowd_cut.png') left bottom/contain no-repeat;
     filter:drop-shadow(0 22px 26px rgba(20,40,33,.16));}
 
-  /* speech bubble, top-right, tail pointing down-left toward the people */
-  .bubble{position:absolute;right:120px;top:120px;z-index:4;background:#fff;border-radius:40px;
-    padding:30px 56px;box-shadow:inset 0 0 0 9px var(--ink),0 26px 52px rgba(20,40,33,.18);}
-  .bubble .tag{font-weight:800;font-size:26px;letter-spacing:4px;color:var(--muted);
-    text-transform:uppercase;text-align:center;margin-bottom:6px;}
-  .bubble .zh{font-family:'Noto Sans SC',sans-serif;font-weight:700;font-size:96px;line-height:1;
-    color:var(--ink);white-space:nowrap;}
-  /* tail: thick ink-outlined triangle pointing down-left toward the villagers */
-  .bubble .tail{position:absolute;left:70px;top:100%;width:0;height:0;}
-  .bubble .tail::before{content:'';position:absolute;top:-3px;left:-32px;
-    border-left:24px solid transparent;border-right:40px solid transparent;border-top:62px solid var(--ink);}
-  .bubble .tail::after{content:'';position:absolute;top:-14px;left:-19px;
-    border-left:13px solid transparent;border-right:25px solid transparent;border-top:40px solid #fff;}
+  /* speech bubble (spoken), top-right, tail angled down-left toward the people */
+  .bubble{position:absolute;right:96px;top:92px;width:520px;height:196px;z-index:6;}
+  .bubble svg{position:absolute;left:0;top:0;width:520px;height:196px;overflow:visible;
+    filter:drop-shadow(0 22px 40px rgba(20,40,33,.16));}
+  .bubble .zh{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+    font-family:'Noto Sans SC',sans-serif;font-weight:700;font-size:98px;color:var(--ink);}
 
-  /* the written form, a small scroll near 'Write another.' */
-  .paper{position:absolute;right:96px;bottom:250px;z-index:4;background:#fff;border-radius:14px;
-    padding:18px 34px;box-shadow:0 20px 42px rgba(20,40,33,.16),inset 0 0 0 3px rgba(35,43,51,.10);}
-  .paper .tag{font-weight:800;font-size:22px;letter-spacing:4px;color:var(--muted);
-    text-transform:uppercase;text-align:center;margin-bottom:4px;}
-  .paper .zh{font-family:'Noto Sans SC',sans-serif;font-weight:700;font-size:62px;line-height:1;
-    color:var(--ink);white-space:nowrap;letter-spacing:6px;}
+  /* the written form, handwritten brush, directly under the bubble */
+  .written{position:absolute;right:150px;top:300px;z-index:6;
+    font-family:'Ma Shan Zheng',cursive;font-size:124px;line-height:1;color:var(--ink);
+    transform:rotate(-3deg);}
 </style>
 </head>
 <body>
 <div id="thumb">
   <div class="blob a"></div><div class="blob b"></div>
 
-  <div class="speak">Speak<br>one.</div>
+  <div class="speak">Speak one.</div>
 
   <div class="people"></div>
 
   <div class="bubble">
-    <div class="tag">spoken</div>
+    <svg viewBox="0 0 520 196" xmlns="http://www.w3.org/2000/svg">
+      <path d="M40,0 H480 Q520,0 520,40 V156 Q520,196 480,196 H150 L24,268 L74,196 H40 Q0,196 0,156 V40 Q0,0 40,0 Z"
+            fill="#ffffff" stroke="#232B33" stroke-width="9" stroke-linejoin="round"></path>
+    </svg>
     <div class="zh">我不知道</div>
-    <div class="tail"></div>
   </div>
 
-  <div class="paper">
-    <div class="tag">written</div>
-    <div class="zh">吾不知</div>
-  </div>
+  <div class="written">吾不知</div>
 
   <div class="write">Write<br>another.</div>
 </div>
 <script>
-  (async () => { try { await document.fonts.ready; } catch (e) {} setTimeout(() => { window.__ready = true; }, 200); })();
+  (async () => { try { await document.fonts.ready; } catch (e) {} setTimeout(() => { window.__ready = true; }, 250); })();
 </script>
 </body>
 </html>

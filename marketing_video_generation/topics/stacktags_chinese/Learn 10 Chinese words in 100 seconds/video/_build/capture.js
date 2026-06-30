@@ -48,7 +48,7 @@ fs.mkdirSync(OUTDIR, { recursive: true });
   let last = 0, stalls = 0;
   while (Date.now() < deadline) {
     const t = await page.evaluate(() => window.__t());
-    if (t >= 150.2) { console.log('reached end at', t.toFixed(2)); break; }
+    if (t >= 146.5) { console.log('reached end at', t.toFixed(2)); break; }
     if (Math.abs(t - last) < 0.05) { stalls++; if (stalls > 20) { console.log('stalled at', t.toFixed(2)); break; } }
     else stalls = 0;
     last = t;

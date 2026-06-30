@@ -8,6 +8,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Noto+Sans+SC:wght@700;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../video/elements/theme.css">
 <style>
+  /* house türkis: recolor all emphasis (was #119271) */
+  :root { --stk-teal-d: #16A892; }
   html, body { margin: 0; height: 100%; background: #20262b; }
   .wrap { display: grid; place-items: center; height: 100%; }
   .thumb { position: relative; width: 1280px; height: 720px; overflow: hidden; background: #fff;
@@ -21,10 +23,9 @@
     background: radial-gradient(circle, rgba(53,162,146,.12) 0%, rgba(53,162,146,0) 68%); }
 
   /* headline (left) */
-  .hl-wrap { position: absolute; left: 84px; top: 96px; width: 690px; }
-  .kicker { font-weight: 800; font-size: 25px; letter-spacing: 4px; color: var(--stk-muted); margin-bottom: 24px; white-space: nowrap; }
+  .hl-wrap { position: absolute; left: 84px; top: 150px; width: 690px; }
   .hl { margin: 0; font-weight: 900; font-size: 92px; line-height: .98; letter-spacing: -3.5px; color: var(--stk-ink); }
-  .hl .accent { color: var(--stk-teal); }
+  .hl .accent { color: var(--stk-teal-d); }
   .sub { margin-top: 36px; font-weight: 700; font-size: 32px; color: var(--stk-ink-2); letter-spacing: -.3px; line-height: 1.2; }
   .sub .zh { font-family: 'Noto Sans SC', sans-serif; font-weight: 900; color: var(--stk-ink); }
   .sub .k { color: var(--stk-teal-d); }
@@ -37,7 +38,7 @@
     display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; }
   .t-char { font-family: 'Noto Sans SC', sans-serif; font-weight: 900; font-size: 244px; line-height: 1; color: var(--stk-ink); margin-top: -8px; }
   .t-pulse { width: 348px; height: 72px; display: block; }
-  .t-pulse path { fill: none; stroke: var(--stk-teal); stroke-width: 9; stroke-linecap: round; stroke-linejoin: round; }
+  .t-pulse path { fill: none; stroke: var(--stk-teal-d); stroke-width: 9; stroke-linecap: round; stroke-linejoin: round; }
   .t-py { display: flex; align-items: baseline; gap: 16px; }
   .t-py .zh { font-family: 'Noto Sans SC', sans-serif; font-weight: 900; font-size: 66px; color: var(--stk-teal-d); letter-spacing: 2px; }
   .t-py .rom { font-weight: 800; font-size: 40px; color: var(--stk-muted); }
@@ -48,7 +49,6 @@
   <div class="thumb stk-grid-bg" id="thumb">
     <div class="bg-glow"></div>
     <div class="hl-wrap">
-      <div class="kicker">LEARN CHINESE · PINYIN</div>
       <h1 class="hl">Built to kill</h1>
       <h1 class="hl">the characters.</h1>
       <h1 class="hl"><span class="accent">It saved them.</span></h1>

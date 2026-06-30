@@ -34,9 +34,14 @@
     `<div class="hook2" id="hook2">
        <img class="hk-flag" src="assets/nkflag.png" alt="">
        <img class="hk-lazarus" src="assets/lazarus_cut.png" alt="">
-       <div class="hk-bybit"><img src="assets/bybit_cut.png" alt=""><div class="hk-bybit-lbl">Bybit</div></div>
+       <div class="hk-laz-label">Lazarus</div>
        <div class="hk-amount"><span class="big">$1.5</span><span class="sub">BILLION</span></div>
-       ${[0, 1, 2, 3, 4, 5].map((i) => `<div class="hk-coin" style="animation-delay:${(i * 0.4).toFixed(2)}s"><img src="assets/coin_cut.png" alt=""></div>`).join('')}
+       <img class="hk-skyline" src="assets/dubai_cut.png" alt="">
+       <div class="hk-bybit"><div class="hk-bybit-lbl">Bybit</div><img src="assets/bybit_cut.png" alt=""></div>
+       <svg class="hk-arrow" viewBox="0 0 1080 1920" preserveAspectRatio="none">
+         <path class="hk-arrow-line" pathLength="1000" d="M540 1340 C 900 1130, 900 690, 662 690"/>
+         <polygon class="hk-arrow-head" points="636,690 686,664 686,716"/>
+       </svg>
      </div>`;
   const hook2 = $('#hook2');
 

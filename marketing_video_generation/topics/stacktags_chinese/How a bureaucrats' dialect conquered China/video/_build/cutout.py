@@ -13,6 +13,7 @@ JOBS = [
     (os.path.join(PHOTOS, 'speaker_north.png'), 'speaker_north_cut.png'),
     (os.path.join(PHOTOS, 'speaker_south.png'), 'speaker_south_cut.png'),
     (os.path.join(RAW, 'official_cartoon.png'), 'official_cut.png'),
+    (os.path.join(RAW, 'han_emperor.png'),       'han_emperor_cut.png'),
     (os.path.join(RAW, 'dynasty_vessel.png'),   'dynasty_vessel_cut.png'),
     (os.path.join(RAW, 'bronze_tools.png'),      'bronze_tools_cut.png'),
     (os.path.join(RAW, 'ancient_money.png'),     'ancient_money_cut.png'),

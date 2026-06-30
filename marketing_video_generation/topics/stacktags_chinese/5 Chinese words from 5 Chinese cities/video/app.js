@@ -158,8 +158,8 @@
     { text: '南 south',   x: -210, y: -20,  size: 80 },
     { text: '岛 island',  x: 270,  y: 160,  key: true, size: 80 },
     { text: '港 harbor',  x: -250, y: 330,  size: 80 },
-    { text: '西 west',    x: 220,  y: 470,  pill: true, size: 60 },
-    { text: '东 east',    x: -150, y: 560,  pill: true, size: 60 },
+    { text: '西 west',    x: 220,  y: 470,  size: 60 },
+    { text: '东 east',    x: -150, y: 560,  size: 60 },
   ];
   let recapPop = null, recapWordEls = [];
   try {
@@ -191,7 +191,6 @@
   const globeHost = $('#globe-host');
   const globePhoto = $('#globe-photo');
   const globeHost2 = $('#globe-host2');
-  const gv2PhotoA = $('#gv2-photoA');
   const gv2PhotoB = $('#gv2-photoB');
   (function mountGlobe1() {
     if (!(window.THREE && window.earcut && window.topojson)) { setTimeout(mountGlobe1, 80); return; }
@@ -420,7 +419,7 @@
     [13.6, 'every one is a tiny <b>description</b>.'],
     [15.5, 'A map you can actually <b>read</b>.'],
     [17.06,'Learn five characters from five cities —'],
-    [19.7, 'you’ll never read a map the same way.'],
+    [19.7, 'you’ll never read a map the same way again.'],
     [21.88,'We start on the coast — Shànghǎi.'],
     [23.94,'shàng means “on,” hǎi means “<b>sea</b>.”'],
     [27.7, 'Literally “on the sea” — at the edge of the Pacific.'],
@@ -529,22 +528,42 @@
     [74.96, (i) => enter($('#sc-qingdao'), 'pan-right', 1050, i, () => { if (i) { lightCity('qingdao'); $('#card-qingdao').classList.add('bottle-in'); } })],
     [80.0,  () => lightCity('qingdao')],
     [84.5,  () => $('#card-qingdao').classList.add('bottle-in')],   // Tsingtao bottle flies in (when "Tsingtao" is said)
-    [86.5,  (i) => { if (!i) mountGlobe2(); }],   // pre-warm the 2nd globe
+    [85.5,  (i) => { if (!i) mountGlobe2(); }],   // pre-warm the 2nd globe (ready before the pull-back)
 
-    // ---- QINGDAO → HONG KONG (default zoom-out → dive-in element) ----
+    // ---- QINGDAO → HONG KONG: zoom straight out of the Qingdao view ----
+    // No separate fullscreen Qingdao photo: the 4/5 breakdown card itself irises
+    // down into the globe's Qingdao dot while the globe (already zoomed in there)
+    // pulls back, glides across and dives into Hong Kong.
     [88.54, (i) => {
-      enter($('#sc-globe2'), 'fade', 700, i);
+      const qcard = $('#sc-qingdao');
       const burst = () => { globeHost2.classList.add('gone'); gv2PhotoB.classList.add('in'); };
-      if (i) { gv2PhotoA.classList.add('out'); burst(); return; }
-      // Qingdao photo shrinks back into its dot, then one continuous out→across→dive-in arc to Hong Kong
-      setTimeout(() => gv2PhotoA.classList.add('out'), 180);
+      // reveal the globe directly BEHIND the still-visible Qingdao card
+      setPose($('#sc-globe2'), { tx: 0, ty: 0, s: 1, op: 1, blur: 0, z: 2 });
+      current = $('#sc-globe2');
+      if (i) {                                   // seek end-state: arrived at Hong Kong
+        if (qcard) { qcard.style.clipPath = 'circle(0% at 50% 47%)'; setPose(qcard, { op: 0, z: 0 }); }
+        burst();
+        return;
+      }
+      // iris the card into the globe dot (same shrink the photo used to do)
+      if (qcard) {
+        qcard.style.zIndex = 7;
+        qcard.style.transition = 'none';
+        qcard.style.clipPath = 'circle(150% at 50% 47%)';
+        void qcard.offsetWidth;
+        qcard.style.transition = 'clip-path 1000ms cubic-bezier(.5,0,.4,1), filter 820ms ease';
+        qcard.style.clipPath = 'circle(0% at 50% 47%)';
+        qcard.style.filter = 'blur(3px)';
+        setTimeout(() => setPose(qcard, { op: 0, z: 0 }), 1100);
+      }
+      // start the globe pull-back as the iris opens, so the reveal is already moving
       setTimeout(() => {
         if (!globe2Ctrl) { burst(); return; }
         globe2Ctrl.outIn(
           { total: 2500 },
           { onArrive: () => { burst(); setTimeout(() => globe2Ctrl && globe2Ctrl.stop(), 350); } }
         );
-      }, 1000);
+      }, 300);
     }],
 
     // ---- HONG KONG card ----
@@ -614,8 +633,9 @@
     if (enumEl) enumEl.reset();
     globeHost.classList.remove('gone'); globePhoto.classList.remove('in');
     globeHost2.classList.remove('gone');
-    if (gv2PhotoA) gv2PhotoA.classList.remove('out');
     if (gv2PhotoB) gv2PhotoB.classList.remove('in');
+    const qc = $('#sc-qingdao');   // clear the iris-out applied during the globe2 transition
+    if (qc) { qc.style.clipPath = ''; qc.style.filter = ''; qc.style.transition = ''; qc.style.zIndex = ''; }
     document.querySelectorAll('.char').forEach((c) => c.classList.remove('lit', 'dim'));
     document.querySelectorAll('.card').forEach((c) => c.classList.remove('reveal', 'note-in', 'bottle-in'));
     const w = $('#cmp-w'), e2 = $('#cmp-e');

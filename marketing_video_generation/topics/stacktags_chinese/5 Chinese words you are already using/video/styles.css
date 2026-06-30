@@ -89,7 +89,7 @@ b { color: var(--stk-teal-d); }
   height: 700px; width: auto; object-fit: contain; filter: drop-shadow(0 26px 40px rgba(20,40,33,.20)); z-index: 2; }
 /* SPLIT Roman helmet: golden shell IN FRONT of the face, dark interior BEHIND the head,
    so his face shows in the opening. Both halves slide down onto the head together (Latin). */
-.gag-helmet-back, .gag-helmet-front { position: absolute; left: 50%; top: 94px; width: 212px;
+.gag-helmet-back, .gag-helmet-front { position: absolute; left: calc(50% - 22px); top: 94px; width: 212px;
   transform: translate(-50%, -700px); opacity: 0;
   transition: transform .62s cubic-bezier(.5,.08,.2,1), opacity .25s ease; }
 .gag-helmet-back  { z-index: 1; }
@@ -102,18 +102,14 @@ b { color: var(--stk-teal-d); }
   transition: transform .55s cubic-bezier(.34,1.4,.5,1), opacity .25s ease;
   filter: drop-shadow(0 16px 22px rgba(20,40,33,.2)); z-index: 4; }
 .beat-gag.baguette-in .gag-baguette { transform: translateY(0) rotate(-30deg); opacity: 1; }
-/* a small table (top + legs) with a bowl of rice slides up from below (the other side of the world) */
-.gag-table { position: absolute; left: 50%; bottom: 240px; transform: translate(-50%, 470px); opacity: 0;
-  display: flex; flex-direction: column; align-items: center;
-  transition: transform .6s cubic-bezier(.4,1.15,.4,1), opacity .3s ease; z-index: 5; }
-.beat-gag.rice-in .gag-table { transform: translate(-50%, 0); opacity: 1; }
-.gag-rice { width: 204px; margin-bottom: -26px; position: relative; z-index: 1; filter: drop-shadow(0 10px 14px rgba(20,40,33,.16)); }
-.gag-table-top { position: relative; width: 388px; height: 23px; border-radius: 8px;
-  background: linear-gradient(#d8af77, #bb8553); box-shadow: 0 16px 28px rgba(20,40,33,.20); }
-.gag-table-top .leg { position: absolute; top: 100%; width: 20px; height: 120px;
-  background: linear-gradient(#bb8553, #8a5f38); border-radius: 0 0 6px 6px; }
-.gag-table-top .leg-l { left: 36px; }
-.gag-table-top .leg-r { right: 36px; }
+/* a bowl of rice flies up INTO the open left hand (the other side of the world) — it lands
+   where the Englishman's teacup used to sit (the cup was split off englishman.png). Mirrors
+   the baguette flying into the right hand. Flipped so the chopsticks point into open space. */
+.gag-bowl { position: absolute; left: 206px; top: 300px; width: 168px;
+  transform: translate(-50%, 560px) scaleX(-1); opacity: 0; transform-origin: 50% 100%;
+  transition: transform .55s cubic-bezier(.34,1.4,.5,1), opacity .25s ease;
+  filter: drop-shadow(0 14px 18px rgba(20,40,33,.2)); z-index: 4; }
+.beat-gag.rice-in .gag-bowl { transform: translate(-50%, 0) scaleX(-1); opacity: 1; }
 
 /* ---------------- PHOTO / ART INTRO (.ph) ---------------- */
 .ph { text-align: center; display: flex; flex-direction: column; align-items: center; gap: 34px; }

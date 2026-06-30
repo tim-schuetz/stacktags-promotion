@@ -117,12 +117,7 @@ body{ font-family:var(--stk-font); color:var(--stk-ink); }
 #sc-globe2 .gphoto::after{ content:''; position:absolute; inset:0;
   background:linear-gradient(to top, rgba(6,32,24,.82) 0%, rgba(6,32,24,.05) 44%, transparent 68%); }
 #sc-globe2 .gphoto .photo-cap{ position:absolute; left:0; right:0; bottom:300px; text-align:center; padding:0 70px; z-index:2; }
-/* A: visible at start, shrinks back into the marker dot */
-#sc-globe2 .gphoto.a{ clip-path:circle(150% at 50% 47%); transform:scale(1); filter:blur(0);
-  transition:clip-path .72s cubic-bezier(.5,.1,.7,.4), transform .85s cubic-bezier(.6,.05,.7,.5), filter .5s ease; }
-#sc-globe2 .gphoto.a.out{ clip-path:circle(0% at 50% 47%); transform:scale(1.18); filter:blur(3px); }
-#sc-globe2 .gphoto.a .photo-cap{ transition:opacity .4s ease, transform .5s ease; }
-#sc-globe2 .gphoto.a.out .photo-cap{ opacity:0; transform:translateY(-16px); }
+/* the Qingdao "origin" is now the 4/5 card itself (it irises into the dot — see app.js) */
 /* B: collapsed at start, bursts out of the dot */
 #sc-globe2 .gphoto.b{ clip-path:circle(0% at 50% 47%); transform:scale(1.16); filter:blur(3px);
   transition:clip-path .72s cubic-bezier(.45,.65,.28,1), transform .85s cubic-bezier(.3,.7,.25,1), filter .5s ease; }

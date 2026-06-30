@@ -57,6 +57,7 @@ const BEATS = [
          <div class="trio-row" data-k="heart"><span class="t-gloss">heart · 心</span><span class="t-old">SA<span class="drop">M</span></span><span class="t-arr">→</span><span class="t-new">XĪN</span></div>
        </div>
        <div class="trio-ptkm"><span class="pk">p</span><span class="pk">t</span><span class="pk">k</span><span class="pk">m</span></div>
+       <div class="trio-count" id="trio-count"><span class="tc-val" id="tc-val">1200</span><span class="tc-lbl">syllables</span></div>
      </div>` },
   // 5 — RESULT: turquoise dots fill in from the bottom-left, row by row going up,
   //     then the view scrolls up fast (easing in + out) over a huge field of more
@@ -117,7 +118,7 @@ let globeCtrl = null;
 
 function mountAll() {
   enumEl = new StacktagsEnumerationDetail($('#enum-host'), {
-    title: 'Every word ended <b>hard</b>',
+    title: '',
     items: [
       { glyph: 'p', label: 'final ‑p', sub: 'lips snap shut' },
       { glyph: 't', label: 'final ‑t', sub: 'tongue stops it' },
@@ -302,6 +303,25 @@ const sylSub = t => { $('#syl-sub').textContent = t; };
 const sylCls = (c, on = true) => $('#syl').classList.toggle(c, on);
 
 /* ============================================================
+   TRIO — in-scene syllable count-down (1200 → 400), shown BELOW
+   the struck p t k m. Replaces the old top HUD counter.
+   ============================================================ */
+let tcTween = 0;
+function runTrioCount(instant) {
+  const el = $('#tc-val'); if (!el) return;
+  if (tcTween) { cancelAnimationFrame(tcTween); tcTween = 0; }
+  if (instant) { el.textContent = '400'; return; }
+  const from = 1200, to = 400, dur = 1100, t0 = performance.now();
+  (function step(now) {
+    const p = Math.min(1, (now - t0) / dur);
+    const e = 1 - Math.pow(1 - p, 3);
+    el.textContent = Math.round(from + (to - from) * e);
+    if (p < 1) tcTween = requestAnimationFrame(step); else { tcTween = 0; el.textContent = '400'; }
+  })(t0);
+}
+window.__tc = runTrioCount;   // debug hook: drive the trio count-down in isolation
+
+/* ============================================================
    HUD — subtitles (mirror the spoken line, VERBATIM) + watermark
    ============================================================ */
 let subTimer = 0;
@@ -338,7 +358,7 @@ const CUES = [
   { t: 3.88, fn: () => { goTo(1, 'lift'); wm(true); setSub("It wasn't always this way."); if (tlEl) { if (INSTANT) tlEl.showEnd(); else tlEl.run({ duration: 2200 }); } } },
   { t: 5.41, fn: () => { setSub('Rewind to the <b>Tang dynasty</b> —'); } },
   { t: 7.00, fn: () => { addC('tang-beat', 'poet-in'); setSub("China's golden age of poetry."); } },
-  { t: 9.10, fn: () => { setSyl(1200, 0); sylSub('Tang-era syllables'); sylCls('big', false); sylCls('hero', false); sylCls('hero-low', false); sylCls('ghost-on', false); sylCls('in', true); setSub('Back then the language had roughly three to four times'); } },
+  { t: 9.10, fn: () => { setSub('Back then the language had roughly three to four times'); } },
   { t: 11.95, fn: () => { setSub('as many distinct syllables as Mandarin does now.'); } },
 
   // ---------- THE FOUR HARD ENDINGS (enumeration) ----------
@@ -346,7 +366,7 @@ const CUES = [
   { t: 17.04, fn: () => { setSub('p, t, k, and m.'); if (enumEl) enumEl.revealUpTo(0); } },
   { t: 17.26, fn: () => { if (enumEl) enumEl.revealUpTo(1); } },
   { t: 17.53, fn: () => { if (enumEl) enumEl.revealUpTo(2); } },
-  { t: 18.40, fn: () => { if (enumEl) enumEl.revealUpTo(3); } },
+  { t: 18.10, fn: () => { if (enumEl) enumEl.revealUpTo(3); } },
   { t: 18.55, fn: () => { if (enumEl) enumEl.spotlight(1); } },
 
   // ---------- MOON 月 ----------
@@ -373,7 +393,7 @@ const CUES = [
   { t: 44.83, fn: () => { $$('.pk')[1].classList.add('struck'); } },
   { t: 45.15, fn: () => { $$('.pk')[2].classList.add('struck'); } },
   { t: 45.35, fn: () => { $$('.pk')[3].classList.add('struck'); } },
-  { t: 45.65, fn: () => { setSub('vanished from Mandarin completely.'); setSyl(400, 1000); } },
+  { t: 45.65, fn: () => { setSub('vanished from Mandarin completely.'); addC('trio-beat', 'count-in'); runTrioCount(INSTANT); } },
 
   // ---------- THE RESULT — dots fill + scroll up → framed "400 syllables" box ----------
   { t: 49.25, fn: () => { goTo(5, 'lift'); runResult(INSTANT); sylCls('in', false); setSub('The result: a language of 1.4 billion people,'); } },
@@ -524,6 +544,8 @@ function hardReset() {
   $('#singer-beat') && ($('#singer-beat').className = 'singer-beat');
   const mb = $('#moon-beat'); if (mb) mb.className = 'moon-beat';
   const tb = $('#trio-beat'); if (tb) tb.className = 'trio-beat';
+  if (tcTween) { cancelAnimationFrame(tcTween); tcTween = 0; }
+  const tcv = $('#tc-val'); if (tcv) tcv.textContent = '1200';
   const sb = $('#south-beat'); if (sb) sb.className = 'south-beat';
   const pb = $('#poem-beat'); if (pb) pb.className = 'poem-beat';
   const pu = $('#punch-beat'); if (pu) pu.className = 'punch-beat';

@@ -160,27 +160,26 @@ body.clean { background: #fff; }
    SCENE 1 — BELIEF: the parents who plan around it
    =========================================================================== */
 .parents {
-  position: absolute; left: 50%; bottom: 232px; transform: translateX(-50%);
-  display: flex; align-items: flex-end; gap: 26px;
+  position: absolute; left: 50%; bottom: 236px; transform: translateX(-50%);
   opacity: 0; transition: opacity .5s ease;
 }
 .parents.on { opacity: 1; }
-.parent { width: 150px; opacity: 0; transform: translateY(54px);
-  transition: opacity .45s ease, transform .6s cubic-bezier(.2, .8, .2, 1); }
-.parents.on .parent { opacity: 1; transform: none; }
-.parent:nth-child(2) { transition-delay: .1s; }
-.parent svg { width: 100%; height: auto; display: block; filter: drop-shadow(0 14px 24px rgba(20, 40, 33, .16)); }
+.couple-img { display: block; height: 312px; width: auto;
+  opacity: 0; transform: translateY(46px);
+  transition: opacity .5s ease, transform .6s cubic-bezier(.2, .8, .2, 1); }
+.parents.on .couple-img { opacity: 1; transform: none; }
+/* the dragon they're hoping for — a thought bubble above the couple */
 .pthought {
-  position: absolute; left: 50%; bottom: 250px; transform: translateX(-50%) scale(.4);
-  width: 150px; height: 150px; border-radius: 50%; background: #fff;
+  position: absolute; left: 64%; bottom: 296px; transform: scale(.4);
+  width: 142px; height: 142px; border-radius: 50%; background: #fff;
   box-shadow: 0 16px 34px rgba(20, 40, 33, .16); display: grid; place-items: center;
   opacity: 0; transition: opacity .3s ease, transform .5s cubic-bezier(.34, 1.7, .5, 1);
 }
-.parents.think .pthought { opacity: 1; transform: translateX(-50%) scale(1); }
-.pthought .cjk { font: 900 92px/1 'Noto Sans SC'; color: var(--stk-teal-d); }
-.pthought::before, .pthought::after { content: ''; position: absolute; bottom: -22px; left: 30px;
-  width: 34px; height: 34px; border-radius: 50%; background: #fff; box-shadow: 0 8px 16px rgba(20, 40, 33, .12); }
-.pthought::after { bottom: -46px; left: 12px; width: 20px; height: 20px; }
+.parents.think .pthought { opacity: 1; transform: scale(1); }
+.pthought .cjk { font: 900 88px/1 'Noto Sans SC'; color: var(--stk-teal-d); }
+.pthought::before, .pthought::after { content: ''; position: absolute; bottom: -22px; left: 28px;
+  width: 32px; height: 32px; border-radius: 50%; background: #fff; box-shadow: 0 8px 16px rgba(20, 40, 33, .12); }
+.pthought::after { bottom: -44px; left: 10px; width: 19px; height: 19px; }
 
 /* ===========================================================================
    SCENE 2 — DATA: births chart + recreated news clipping
@@ -230,37 +229,42 @@ body.clean { background: #fff; }
    SCENE 3 — TWIST: one dragon-baby multiplies into a crowd
    =========================================================================== */
 .twist-stage { position: absolute; inset: 0; }
-.crowd { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
-  display: grid; grid-template-columns: repeat(6, 116px); gap: 8px 6px; justify-content: center; align-content: center;
-  transition: transform .6s cubic-bezier(.2, .8, .2, 1); }
-.crowd.lean { transform: translate(-50%, -54%) scale(1.03); }
-.kid { width: 116px; opacity: 0; transform: translateY(26px) scale(.5);
-  transition: opacity .3s ease, transform .5s cubic-bezier(.34, 1.6, .5, 1); }
-.kid.in { opacity: 1; transform: none; }
-.kid svg { width: 100%; height: auto; display: block; }
-.crowd.shine .kid svg { filter: drop-shadow(0 0 12px rgba(53, 162, 146, .55)); }
 
-/* the single hero dragon-baby that opens the twist, then multiplies */
-.twist-hero { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
-  display: flex; flex-direction: column; align-items: center; gap: 18px;
-  opacity: 0; transition: opacity .4s ease, transform .5s cubic-bezier(.34, 1.6, .5, 1); }
+/* crowd of identical doodle dragon-babies (one line-drawing, replicated). The
+   centre cell is kept empty (.hole) so the realistic hero baby sits inside it. */
+.crowd { position: absolute; left: 50%; top: 45%; transform: translate(-50%, -50%);
+  display: grid; grid-template-columns: repeat(7, 84px); gap: 12px 12px;
+  justify-content: center; align-content: center; }
+.bdoodle { width: 84px; opacity: 0; transform: translateY(20px) scale(.5);
+  transition: opacity .3s ease, transform .5s cubic-bezier(.34, 1.6, .5, 1); }
+.bdoodle.in { opacity: 1; transform: none; }
+.bdoodle img { width: 100%; height: auto; display: block; }
+.bdoodle.hole { visibility: hidden; }
+.crowd.shine .bdoodle img { filter: drop-shadow(0 0 10px rgba(53, 162, 146, .5)); }
+
+/* the one realistic dragon-baby: big with its vocab, then shrinks into the centre */
+.twist-hero { position: absolute; left: 50%; top: 45%; transform: translate(-50%, -50%);
+  display: flex; flex-direction: column; align-items: center; gap: 16px; z-index: 3;
+  opacity: 0; transition: opacity .4s ease; }
 .twist-hero.show { opacity: 1; }
-.twist-hero.gone { opacity: 0; transform: translate(-50%, -50%) scale(.6); }
-.th-kid { width: 220px; }
-.th-kid svg { width: 100%; height: auto; display: block; filter: drop-shadow(0 18px 30px rgba(20, 40, 33, .18)); }
-.th-label { display: flex; flex-direction: column; align-items: center; gap: 4px; text-align: center; }
+.th-baby { width: 232px; transition: width .6s cubic-bezier(.2, .8, .2, 1);
+  filter: drop-shadow(0 16px 26px rgba(20, 40, 33, .18)); }
+.twist-hero.small .th-baby { width: 120px; }
+.th-label { display: flex; flex-direction: column; align-items: center; gap: 4px; text-align: center;
+  overflow: hidden; transition: opacity .35s ease, max-height .5s ease; max-height: 220px; }
+.twist-hero.small .th-label { opacity: 0; max-height: 0; }
 .th-label .kl-zh { font: 900 78px/1 'Noto Sans SC', 'Inter'; color: var(--stk-teal-d); }
 .th-label .kl-py { font: 700 38px/1 'Inter'; color: var(--stk-teal-d); }
 .th-label .kl-en { font: 600 34px/1 'Inter'; color: var(--stk-muted); }
 
-.seat { position: absolute; left: 50%; bottom: 250px; transform: translateX(-50%) translateY(30px);
-  display: flex; flex-direction: column; align-items: center; gap: 10px;
-  opacity: 0; transition: opacity .4s ease, transform .5s cubic-bezier(.34, 1.6, .5, 1); }
-.seat.show { opacity: 1; transform: translateX(-50%); }
-.seat-ic { width: 140px; height: 140px; border-radius: 34px; background: var(--stk-teal-soft);
-  display: grid; place-items: center; }
-.seat-ic svg { width: 86px; height: 86px; }
-.seat-lab { font: 800 38px/1 'Inter'; color: var(--stk-teal-d); }
+/* life-stage images (school → university → office) that pop up below */
+.stages { position: absolute; left: 50%; bottom: 286px; transform: translateX(-50%);
+  display: flex; align-items: flex-end; gap: 40px; }
+.stage-card { width: 300px; height: 230px; display: flex; align-items: flex-end; justify-content: center;
+  opacity: 0; transform: translateY(42px) scale(.85);
+  transition: opacity .4s ease, transform .55s cubic-bezier(.34, 1.6, .5, 1); }
+.stage-card.in { opacity: 1; transform: none; }
+.stage-card img { max-width: 100%; max-height: 100%; object-fit: contain; display: block; }
 
 /* ===========================================================================
    SCENE 4 — PUNCHLINE: wheel-as-clock over China, line pulses

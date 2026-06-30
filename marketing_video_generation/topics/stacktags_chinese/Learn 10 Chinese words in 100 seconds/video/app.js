@@ -34,11 +34,13 @@ const TWIST_ROWS = [
   { a:'人', apy:'rén',  b:'木', bpy:'mù',  res:'休', rpy:'xiū',  label:'rest' },
   { a:'田', apy:'tián', b:'力', bpy:'lì',  res:'男', rpy:'nán',  label:'man' },
 ];
-// when each row is revealed (matched to the narration, script_audio.mp3 ≈150.6s)
-const TWIST_ROW_T = [107.9, 111, 114.6, 121.5, 125];
+// when each row is revealed (word-aligned to the spliced narration, ≈146.8s)
+const TWIST_ROW_T = [103.98, 107.62, 111.00, 117.72, 123.28];
 
-/* a pool of visually busy characters for the "impossible wall" */
-const WALL_POOL = '矗鬱龘籲钁鱻爨馕鑫齉黼黻齇饕餮鼟鸞鬮麤靐厵纞虋讟鱷鸘鼺鸐鑾鬛鸍矚顴鸊鼹鬣鑱龥灝爩戇鸙觀讓屬聲嚴顧鑰廳灣體覺機識艷釁鬢鑣黌鼴齲齷齪';
+/* visually busy REAL characters for the "impossible wall" — every one has local
+   stroke data (elements/wall-data.js), so they are DRAWN stroke-by-stroke in the
+   exact same turquoise style as the hero 人 (not flat font glyphs). */
+const WALL_CHARS = ['鬱','矗','靈','鷹','鑫','觀','廳','灣','鑰','釁','鑲','響','體','顯','變','戀','驚','鱗','鬢','讓'];
 
 /* ============================================================
    CONTENT BUILDERS (beat HTML)
@@ -71,10 +73,10 @@ const POP_CHARS = Array.from({ length: SCRIBBLE_COUNT }, (_, i) => {
   const col = i % COLS, row = Math.floor(i / COLS);
   const cw = (2 * FX) / COLS, ch = (2 * FY) / ROWS;
   return {
-    text: WALL_POOL[(i * 7 + 3) % WALL_POOL.length],
+    text: WALL_CHARS[i % WALL_CHARS.length],
     x: Math.round(-FX + cw * (col + 0.5) + (rnd() * 2 - 1) * cw * 0.32),
     y: Math.round(-FY + ch * (row + 0.5) + (rnd() * 2 - 1) * ch * 0.32),
-    size: 190 + Math.floor(rnd() * 100),     // 190–290px (the hero 人 is 320)
+    size: 190 + Math.floor(rnd() * 100),     // 190–290px (the hero 人 is 420)
   };
 });
 // randomized spawn order (Fisher–Yates) so they appear scattered, not top-to-bottom
@@ -105,23 +107,25 @@ function recapHtml() {
    ============================================================ */
 const BEAT = [
   { t:0,     kind:'text',  via:null,       text:`In the next <b>100 seconds</b><br>you'll learn 10 characters` },
-  { t:3,     kind:'text',  via:'lift',     text:`…without <b>memorizing</b><br>a single one.` },
-  // "impossible / random scribbles" → characters spawn all over (big→small+blur), then 人 spawns centred
-  { t:5,     kind:'popup', via:'zoom-out', html:`<div class="popfield"></div>` },
-  { t:19,    kind:'word', wi:0, via:'zoom-in' },
-  { t:27,    kind:'word', wi:1, via:'pan-right' },
-  { t:34,    kind:'word', wi:2, via:'lift' },
-  { t:41.7,  kind:'word', wi:3, via:'zoom-in' },
-  { t:49,    kind:'word', wi:4, via:'pan-left' },
-  { t:56.5,  kind:'word', wi:5, via:'zoom-out' },
-  { t:68.5,  kind:'word', wi:6, via:'zoom-in' },
-  { t:74,    kind:'word', wi:7, via:'pan-right' },
-  { t:81,    kind:'word', wi:8, via:'lift' },
-  { t:95,    kind:'word', wi:9, via:'zoom-in' },
-  { t:103.3, kind:'text', via:'zoom-out', text:`Stack the pictures —<br>they <b>build new words</b>.` },
+  // "without memorizing" RISES IN FROM THE BOTTOM (liftb = mirror of lift)
+  { t:3.08,  kind:'text',  via:'liftb',    text:`…without <b>memorizing</b><br>a single one.` },
+  // "impossible / random scribbles" → complex chars are DRAWN all over then recede
+  // into the background; the hero 人 draws, recedes WITH them, then surges back out.
+  { t:5.46,  kind:'popup', via:'zoom-out', html:`<div class="popfield"></div>` },
+  { t:19.42, kind:'word', wi:0, via:'zoom-in' },
+  { t:27.52, kind:'word', wi:1, via:'pan-right' },
+  { t:34.64, kind:'word', wi:2, via:'lift' },
+  { t:42.08, kind:'word', wi:3, via:'zoom-in' },
+  { t:49.18, kind:'word', wi:4, via:'pan-left' },
+  { t:55.88, kind:'word', wi:5, via:'zoom-out' },
+  { t:67.80, kind:'word', wi:6, via:'zoom-in' },
+  { t:74.08, kind:'word', wi:7, via:'pan-right' },
+  { t:81.56, kind:'word', wi:8, via:'lift' },
+  { t:92.20, kind:'word', wi:9, via:'zoom-in' },
+  { t:99.56, kind:'text', via:'zoom-out', text:`Stack the pictures —<br>they <b>build new words</b>.` },
   // ONE beat: the equations stack up one below another (earlier ones stay)
-  { t:107.9, kind:'combostack', via:'zoom-in', html:comboStackHtml() },
-  { t:134.5, kind:'recap', via:'zoom-out', html:recapHtml() },
+  { t:103.98, kind:'combostack', via:'zoom-in', html:comboStackHtml() },
+  { t:130.80, kind:'recap', via:'zoom-out', html:recapHtml() },
 ];
 // fill word html now that builders exist
 BEAT.forEach(b => {
@@ -135,48 +139,48 @@ const COMBO_BEAT = BEAT.findIndex(b => b.kind === 'combostack');
    the closing CTAs are carried by the outro card itself).
    ============================================================ */
 const SUBS = [
-  { t:0,     html:`In the next 100 seconds, you'll learn <b>10 Chinese characters</b>` },
-  { t:3,     html:`…without <b>memorizing</b> a single one.` },
-  { t:5,     html:`Most people think Chinese is <b>impossible</b>:` },
-  { t:7,     html:`thousands that look like <b>random scribbles</b>.` },
-  { t:12,    html:`They're tiny <b>drawings</b> of what they mean.` },
-  { t:14,    html:`See it once, and you <b>can't unsee it</b>. Watch.` },
-  { t:17,    html:`Start with <b>you</b>.` },
-  { t:19,    html:`<b>rén</b> — "person."` },
-  { t:21,    html:`A body and two legs, mid-stride. One human, <b>two strokes</b>.` },
-  { t:25,    html:`Give them a <b>fire</b> to gather around.` },
-  { t:27,    html:`<b>huǒ</b> — "fire."` },
-  { t:30,    html:`A flame in the middle, two sparks off the sides. A <b>campfire</b>.` },
-  { t:34,    html:`<b>shuǐ</b> — "water."` },
-  { t:36,    html:`A stream down the middle, droplets each side. A <b>river</b>.` },
-  { t:41.7,  html:`<b>shān</b> — "mountain."` },
-  { t:44,    html:`Three peaks — one tall, two short. The mountain a <b>kid would draw</b>.` },
-  { t:49,    html:`<b>mù</b> — "tree" or "wood."` },
-  { t:52.5,  html:`Trunk, branches up, roots down. A <b>whole tree</b>.` },
-  { t:56.5,  html:`<b>rì</b> — "sun," and also "day."` },
-  { t:60,    html:`A circle with a dot, squared off. So it also means <b>"day."</b>` },
-  { t:68.5,  html:`<b>yuè</b> — "moon," and also "month."` },
-  { t:72,    html:`A crescent on its side. One moon cycle is a <b>month</b>.` },
-  { t:74,    html:`<b>kǒu</b> — "mouth."` },
-  { t:78,    html:`An open mouth — a square opening. The hole you <b>eat and talk</b> with.` },
-  { t:81,    html:`<b>yǔ</b> — "rain."` },
-  { t:88.4,  html:`Sky, a cloud, four <b>raindrops</b> falling inside.` },
-  { t:93,    html:`And it has to <b>land somewhere</b>.` },
-  { t:95,    html:`<b>tián</b> — "field."` },
-  { t:97.5,  html:`Farmland from above, split into four plots. A <b>rice field</b>.` },
-  { t:103.3, html:`Stack the pictures and they <b>build new words</b>.` },
-  { t:107.9, html:`Two trees…` },
-  { t:108.6, html:`木 + 木 makes <b>林</b>, a wood. A third makes <b>森</b>, a dense forest.` },
-  { t:114.6, html:`Sun plus moon…` },
-  { t:116,   html:`日 + 月 makes <b>明</b>, "bright."` },
-  { t:121.5, html:`A person by a tree…` },
-  { t:122.8, html:`人 + 木 makes <b>休</b>, "rest."` },
-  { t:125,   html:`力 means <b>"strength."</b>` },
-  { t:129,   html:`Strength in a field — 田 + 力 — makes <b>男</b>, "man."` },
-  { t:134.5, html:`Chinese isn't random symbols — it's a small set of <b>pictures</b>.` },
-  { t:141,   html:`You just read <b>10 characters</b> — no memorizing.` },
-  { t:143.5, html:`Wanna actually <b>start learning Chinese?</b>` },
-  { t:145.5, html:`Discover thousands of free exercises on <b>stacktags.io</b>.` },
+  { t:0,      html:`In the next 100 seconds, you'll learn <b>10 Chinese characters</b>` },
+  { t:3.08,   html:`…without <b>memorizing</b> a single one.` },
+  { t:5.46,   html:`Most people think Chinese is <b>impossible</b>:` },
+  { t:7.76,   html:`thousands that look like <b>random scribbles</b>.` },
+  { t:12.88,  html:`They're tiny <b>drawings</b> of what they mean.` },
+  { t:15.04,  html:`See it once, and you <b>can't unsee it</b>. Watch.` },
+  { t:17.92,  html:`Start with <b>you</b>.` },
+  { t:19.42,  html:`<b>rén</b> — "person."` },
+  { t:21.60,  html:`A body and two legs, mid-stride. One human, <b>two strokes</b>.` },
+  { t:25.76,  html:`Give them a <b>fire</b> to gather around.` },
+  { t:27.52,  html:`<b>huǒ</b> — "fire."` },
+  { t:30.40,  html:`A flame in the middle, two sparks off the sides. A <b>campfire</b>.` },
+  { t:34.64,  html:`<b>shuǐ</b> — "water."` },
+  { t:36.94,  html:`A stream down the middle, droplets each side. A <b>river</b>.` },
+  { t:42.08,  html:`<b>shān</b> — "mountain."` },
+  { t:44.54,  html:`Three peaks — one tall, two short. The mountain a <b>kid would draw</b>.` },
+  { t:49.18,  html:`<b>mù</b> — "tree" or "wood."` },
+  { t:52.94,  html:`Trunk, branches up, roots down. A <b>whole tree</b>.` },
+  { t:55.88,  html:`<b>rì</b> — "sun," and also "day."` },
+  { t:60.40,  html:`A circle with a dot, squared off. So it also means <b>"day."</b>` },
+  { t:67.80,  html:`<b>yuè</b> — "moon," and also "month."` },
+  { t:72.16,  html:`A crescent on its side.` },
+  { t:74.08,  html:`<b>kǒu</b> — "mouth."` },
+  { t:77.02,  html:`An open mouth — a square opening. The hole you <b>eat and talk</b> with.` },
+  { t:81.56,  html:`<b>yǔ</b> — "rain."` },
+  { t:85.14,  html:`Sky, a cloud, four <b>raindrops</b> falling inside.` },
+  { t:89.68,  html:`And it has to <b>land somewhere</b>.` },
+  { t:92.20,  html:`<b>tián</b> — "field."` },
+  { t:94.24,  html:`Farmland from above, split into four plots. A <b>rice field</b>.` },
+  { t:99.56,  html:`Stack the pictures and they <b>build new words</b>.` },
+  { t:103.98, html:`Two trees…` },
+  { t:105.06, html:`木 + 木 makes <b>林</b>, a wood. A third makes <b>森</b>, a dense forest.` },
+  { t:111.00, html:`Sun plus moon…` },
+  { t:112.60, html:`日 + 月 makes <b>明</b>, "bright."` },
+  { t:117.72, html:`A person by a tree…` },
+  { t:119.20, html:`人 + 木 makes <b>休</b>, "rest."` },
+  { t:123.28, html:`力 means <b>"strength."</b>` },
+  { t:125.16, html:`Strength in a field — 田 + 力 — makes <b>男</b>, "man."` },
+  { t:130.80, html:`Chinese isn't random symbols — it's a small set of <b>pictures</b>.` },
+  { t:136.96, html:`You just read <b>10 characters</b> — no memorizing.` },
+  { t:139.74, html:`Wanna actually <b>start learning Chinese?</b>` },
+  { t:141.40, html:`Discover thousands of free exercises on <b>stacktags.io</b>.` },
 ];
 
 /* ============================================================
@@ -216,9 +220,10 @@ function onBeatEnter(i) {
       later(() => morph.classList.add('faded'), 3800);                // character fades 1s later
     }
   } else if (b.kind === 'popup') {
-    // scribbles flash in at random spots (first half now, rest @7); hero 人 @13
+    // complex chars DRAW on then recede (first wave now, rest @7.76); the hero 人
+    // draws @12.9, recedes @15.0, surges back out @17.1 (see the CUES below).
     if (INSTANT) popFieldShowAll();
-    else popScribbles(0, HALF - 1, 95);
+    else popScribbles(0, HALF - 1, 240);
   } else if (b.kind === 'combostack') {
     // equations stack up; row 0 now, the rest on their own cues (kept visible)
     if (INSTANT) $$('.crow', layer).forEach(r => r.classList.add('in'));
@@ -235,32 +240,69 @@ function revealTwistRow(k) {
   if (rows[k]) rows[k].classList.add('in');
 }
 
-/* ---- opening pop-field (custom): scribbles flash big+sharp then shrink+blur;
-   the hero 人 pops centred and stays big+sharp ---- */
-let pfEls = [], pfHero = null;
+/* ---- opening pop-field (custom): a wall of complex characters, each DRAWN
+   stroke-by-stroke in the SAME turquoise style as the hero 人, then receding
+   (shrink + blur + dim) into the background. The hero 人 draws, recedes WITH
+   the wall, then surges back out to the front. All via HanziWriter. ---- */
+const HW_OPTS = {
+  charDataLoader: (c, done) => done(window.HANZI_DATA[c]),
+  strokeColor: TEAL, drawingColor: TEAL, outlineColor: '#cfe6dd',
+  showOutline: true, showCharacter: false,
+};
+let pfEls = [], pfWriters = [], pfHero = null, pfHeroWriter = null;
 function buildPopField(host) {
-  pfEls = [];
+  pfEls = []; pfWriters = [];
   POP_CHARS.forEach((c) => {
     const el = document.createElement('div');
-    el.className = 'pf-char scribble cjk';
-    el.textContent = c.text;
+    el.className = 'pf-host';
     el.style.setProperty('--x', c.x + 'px');
     el.style.setProperty('--y', c.y + 'px');
-    el.style.fontSize = c.size + 'px';
+    el.style.width = c.size + 'px';
+    el.style.height = c.size + 'px';
     host.appendChild(el);
     pfEls.push(el);
+    pfWriters.push(HanziWriter.create(el, c.text, Object.assign({
+      width: c.size, height: c.size, padding: 2,
+      strokeAnimationSpeed: 3, delayBetweenStrokes: 8,
+    }, HW_OPTS)));
   });
   pfHero = document.createElement('div');
-  pfHero.className = 'pf-char hero cjk';
-  pfHero.textContent = '人';
+  pfHero.className = 'pf-host pf-hero';
+  pfHero.style.setProperty('--x', '0px');
+  pfHero.style.setProperty('--y', '0px');
+  pfHero.style.width = '420px';
+  pfHero.style.height = '420px';
   host.appendChild(pfHero);
+  pfHeroWriter = HanziWriter.create(pfHero, '人', Object.assign({
+    width: 420, height: 420, padding: 4,
+    strokeAnimationSpeed: 1.15, delayBetweenStrokes: 110,
+  }, HW_OPTS));
 }
-function popScribbles(a, b, stagger) {     // pop POP_ORDER[a..b] (randomized order)
-  for (let k = a; k <= b; k++) { const el = pfEls[POP_ORDER[k]]; later(() => el && el.classList.add('in'), (k - a) * stagger); }
+// draw POP_ORDER[a..b] (randomized order); each char is revealed + drawn, then
+// recedes into the background the moment its strokes finish.
+function popScribbles(a, b, stagger) {
+  for (let k = a; k <= b; k++) {
+    const idx = POP_ORDER[k];
+    later(() => {
+      const el = pfEls[idx], w = pfWriters[idx];
+      if (!el) return;
+      el.classList.add('draw');
+      try { w.animateCharacter({ onComplete: () => later(() => el.classList.add('recede'), 200) }); }
+      catch { el.classList.add('recede'); }
+    }, (k - a) * stagger);
+  }
 }
-function popHero() { if (pfHero) pfHero.classList.add('in'); }
-function popFieldShowAll() { pfEls.forEach(el => el.classList.add('in')); popHero(); }
-function popFieldReset() { pfEls.forEach(el => el.classList.remove('in')); if (pfHero) pfHero.classList.remove('in'); }
+function popHeroDraw()   { if (!pfHero) return; pfHero.classList.remove('recede', 'front'); pfHero.classList.add('draw'); try { pfHeroWriter.animateCharacter(); } catch {} }
+function popHeroRecede() { if (pfHero) pfHero.classList.add('recede'); }
+function popHeroFront()  { if (pfHero) { pfHero.classList.remove('recede'); pfHero.classList.add('front'); } }
+function popFieldShowAll() {
+  pfEls.forEach((el, i) => { el.classList.add('draw', 'recede'); try { pfWriters[i].showCharacter({ duration: 0 }); } catch {} });
+  if (pfHero) { pfHero.classList.remove('recede'); pfHero.classList.add('draw', 'front'); try { pfHeroWriter.showCharacter({ duration: 0 }); } catch {} }
+}
+function popFieldReset() {
+  pfEls.forEach((el, i) => { el.classList.remove('draw', 'recede'); try { pfWriters[i].hideCharacter({ duration: 0 }); } catch {} });
+  if (pfHero) { pfHero.classList.remove('draw', 'recede', 'front'); try { pfHeroWriter.hideCharacter({ duration: 0 }); } catch {} }
+}
 
 /* ---- subtitles ---- */
 function setSub(html) {
@@ -286,11 +328,13 @@ function showOutro() {
 const CUES = [];
 BEAT.forEach((b, i) => CUES.push({ t: b.t, kind: 'beat', i, via: b.via }));
 SUBS.forEach(s => CUES.push({ t: s.t, kind: 'sub', html: s.html }));
-CUES.push({ t: 7,     kind: 'fn', fn: () => popScribbles(HALF, SCRIBBLE_COUNT - 1, 95) });  // rest of the scribbles
-CUES.push({ t: 12,    kind: 'fn', fn: popHero });                                           // 人 spawns (centred, stays sharp)
+CUES.push({ t: 7.76,  kind: 'fn', fn: () => popScribbles(HALF, SCRIBBLE_COUNT - 1, 240) });  // wall floods on "random scribbles"
+CUES.push({ t: 12.88, kind: 'fn', fn: popHeroDraw });    // 人 draws ("tiny drawings of what they mean")
+CUES.push({ t: 15.04, kind: 'fn', fn: popHeroRecede });  // 人 recedes into the wall ("see it once…")
+CUES.push({ t: 17.28, kind: 'fn', fn: popHeroFront });   // 人 surges back out ("Watch.")
 // the twist equations stack up one below another (row 0 fires with the beat @101.2)
 TWIST_ROW_T.slice(1).forEach((t, k) => CUES.push({ t, kind: 'fn', fn: () => revealTwistRow(k + 1) }));
-CUES.push({ t: 143.5, kind: 'fn', fn: showOutro });   // logo → wordmark → url assemble (staggered)
+CUES.push({ t: 139.74, kind: 'fn', fn: showOutro });   // logo → wordmark → url assemble (staggered)
 CUES.sort((a, b) => a.t - b.t);     // stable: beats keep priority over subs at equal t
 let fired = new Array(CUES.length).fill(false);
 
@@ -316,7 +360,7 @@ function tick() {
     }
     lastT = t;
   }
-  $('#vprogress').style.width = (100 * t / (audio.duration || 150.65)) + '%';
+  $('#vprogress').style.width = (100 * t / (audio.duration || 146.77)) + '%';
   $('#info').textContent = t.toFixed(1) + 's';
   raf = requestAnimationFrame(tick);
 }
@@ -332,7 +376,7 @@ function applyUpTo(t) {
   let sub = '';
   SUBS.forEach(s => { if (s.t <= t + 1e-3) sub = s.html; });
   setSub(sub);
-  if (t >= 143.5) showOutro();
+  if (t >= 139.74) showOutro();
   INSTANT = false;
   fired = CUES.map(c => c.t <= t + 1e-3);
   lastT = t;

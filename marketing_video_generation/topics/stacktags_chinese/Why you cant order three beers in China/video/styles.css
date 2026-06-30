@@ -1,0 +1,229 @@
+/* ===========================================================================
+   "Why you can't order three beers in China" — scene styling.
+   White + turquoise, Inter (CJK in Noto Sans SC), thin grey grid, no borders.
+   ONE persistent hero equation — [ 三 ] [ slot ] [ 啤酒 ] — carries the whole
+   story; the empty measure-word SLOT is the star and is filled / re-filled.
+   =========================================================================== */
+
+/* ---- stage / camera base (mirrors the reference engine) ---- */
+* { box-sizing: border-box; }
+html, body { margin: 0; height: 100%; background: #0c0f12; overflow: hidden; }
+.wrap { position: fixed; inset: 0; display: grid; place-items: center; }
+.stage {
+  position: relative; width: 1080px; height: 1920px; overflow: hidden;
+  transform-origin: center center; background: #fff;
+}
+#grid { z-index: 0; }
+.scenes { position: absolute; inset: 0; z-index: 1; }
+.scene {
+  position: absolute; inset: 0; opacity: 0;
+  display: flex; align-items: center; justify-content: center;
+  transform: translate(var(--tx, 0px), var(--ty, 0px)) scale(var(--s, 1));
+  transform-origin: center center;
+  will-change: transform, opacity, filter;
+}
+.cjk { font-family: 'Noto Sans SC', 'Inter', sans-serif; }
+
+/* ---- HUD ---- */
+#hud {
+  position: fixed; left: 50%; bottom: 18px; transform: translateX(-50%);
+  display: flex; align-items: center; gap: 12px; z-index: 99;
+  background: #11171d; color: #cfe; padding: 8px 14px; border-radius: 12px;
+  font: 600 14px/1 'Inter', sans-serif;
+}
+#hud button { background: var(--stk-teal); color: #fff; border: 0; border-radius: 8px; padding: 8px 12px; font-weight: 800; cursor: pointer; }
+#hud input[type=range] { width: 520px; }
+body.clean #hud { display: none; }
+body.clean { background: #fff; }
+
+/* ===========================================================================
+   EQUATION SCENE  — [ 三 ] [ slot ] [ 啤酒 ]
+   =========================================================================== */
+.eq-inner { position: absolute; inset: 0; }
+
+.eq-row {
+  position: absolute; left: 50%; top: 880px; transform: translate(-50%, -50%);
+  display: flex; align-items: center; gap: 40px; z-index: 3;
+}
+
+/* --- the number tile (三 sān ; digit "3" only on the English-freedom beat) --- */
+.tile.num {
+  position: relative; width: 206px; height: 206px; border-radius: 36px;
+  background: var(--stk-teal-soft);
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  box-shadow: 0 20px 44px rgba(16, 50, 40, .10);
+  transition: transform .55s cubic-bezier(.34, 1.5, .5, 1);
+}
+.num-face { font: 900 132px/1 'Inter', 'Noto Sans SC', sans-serif; color: var(--stk-ink); letter-spacing: -2px; transition: transform .16s ease; }
+.num-face.cjk-num { font-family: 'Noto Sans SC', 'Inter', sans-serif; font-size: 124px; }
+.num-face.swap { transform: scaleY(0); }
+.num-py { margin-top: 8px; min-height: 30px; font: 800 30px/1 'Inter', sans-serif; color: var(--stk-muted); letter-spacing: .5px; }
+.tile.num.lunge { transform: translateX(86px); }     /* lunges at the noun… */
+.tile.num.recoil { transform: translateX(-26px) rotate(-3deg); }  /* …and bounces off */
+.tile.num.free { transform: translateX(150px); }     /* punchline: snaps straight on */
+
+/* --- the measure-word SLOT (the hero) --- */
+.slot {
+  position: relative; width: 196px; height: 196px; border-radius: 32px;
+  display: flex; align-items: center; justify-content: center;
+  transition: background .4s ease, transform .5s cubic-bezier(.34, 1.5, .5, 1), opacity .4s ease;
+}
+.slot-ring { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; transition: opacity .4s ease; }
+.slot-ring rect { fill: none; stroke: var(--stk-teal); stroke-width: 4; stroke-dasharray: 3 16; stroke-linecap: round; }
+.slot-q { position: absolute; font: 900 104px/1 'Inter', sans-serif; color: var(--stk-teal); opacity: .9; }
+.slot-mw { position: absolute; display: flex; flex-direction: column; align-items: center; opacity: 0; transition: opacity .3s ease; }
+.slot-mw .mw-zh { font: 900 112px/1 'Noto Sans SC', sans-serif; color: var(--stk-teal-d); letter-spacing: 2px; }
+.slot-mw .mw-py { margin-top: 6px; font: 800 28px/1 'Inter', sans-serif; color: var(--stk-muted); }
+.slot.filled { background: var(--stk-teal-soft); }
+.slot.filled .slot-ring { opacity: 0; }
+.slot.filled .slot-q { opacity: 0; }
+.slot.filled .slot-mw { opacity: 1; }
+.slot.empty .slot-q { animation: qPulse 1.5s ease-in-out infinite; }
+.slot.empty .slot-ring { animation: ringPulse 1.5s ease-in-out infinite; }
+@keyframes qPulse { 0%, 100% { transform: scale(1); opacity: .55; } 50% { transform: scale(1.14); opacity: 1; } }
+@keyframes ringPulse { 0%, 100% { opacity: .55; } 50% { opacity: 1; } }
+.slot.demand { animation: slotDemand .7s cubic-bezier(.34, 1.56, .5, 1) 1; }
+@keyframes slotDemand { 0% { transform: scale(1); } 35% { transform: scale(1.18); } 100% { transform: scale(1); } }
+.slot.gone { opacity: 0; transform: scale(.4); }
+
+/* --- the noun: three real beer bottles (the thing); swaps to real photos --- */
+.tile.noun { display: flex; flex-direction: column; align-items: center; transition: transform .5s cubic-bezier(.2, .8, .2, 1), opacity .4s ease, filter .4s ease; }
+.tile.noun.dim { opacity: .36; filter: grayscale(.55); }
+.noun-swap { height: 312px; display: flex; align-items: flex-end; justify-content: center; }
+.beers { display: flex; align-items: flex-end; }
+.beers img { height: 282px; width: auto; display: block; filter: drop-shadow(0 22px 26px rgba(20, 40, 33, .16)); }
+.beers img:nth-child(2) { height: 300px; margin: 0 -26px; }
+.noun-photo { max-height: 282px; max-width: 250px; width: auto; height: auto; display: block; filter: drop-shadow(0 22px 26px rgba(20, 40, 33, .18)); }
+.noun-label { margin-top: 14px; text-align: center; }
+.noun-label .nl-zh { font: 900 54px/1 'Noto Sans SC', sans-serif; color: var(--stk-teal-d); letter-spacing: 2px; }
+.noun-label .nl-py { display: block; margin-top: 4px; font: 700 26px/1 'Inter', sans-serif; color: var(--stk-muted); }
+
+/* a small turquoise tick that confirms a correct lock-up */
+.eq-row .lock-ok {
+  position: absolute; left: 50%; top: -96px; transform: translateX(-50%) scale(.4);
+  font: 900 84px/1 'Inter', sans-serif; color: var(--stk-teal); opacity: 0;
+  transition: opacity .3s ease, transform .5s cubic-bezier(.34, 1.7, .5, 1);
+}
+.eq-row.ok .lock-ok { opacity: 1; transform: translateX(-50%) scale(1); }
+.eq-row.half .lock-ok { opacity: .5; transform: translateX(-50%) scale(.78); }
+
+/* --- the label that names the gap (量词) --- */
+.eq-label {
+  position: absolute; left: 50%; top: 1086px; transform: translate(-50%, 12px);
+  text-align: center; opacity: 0; transition: opacity .4s ease, transform .5s cubic-bezier(.2, .8, .2, 1); z-index: 4;
+}
+.eq-label .el-zh { display: block; font: 900 50px/1 'Noto Sans SC', sans-serif; color: var(--stk-teal-d); letter-spacing: 2px; }
+.eq-label .el-en { display: block; margin-top: 8px; font: 700 30px/1 'Inter', sans-serif; color: var(--stk-muted); letter-spacing: .5px; }
+.eq-label::before { content: '↑'; display: block; margin-bottom: 4px; font: 800 40px/1 'Inter', sans-serif; color: var(--stk-teal); }
+.eq-label.in { opacity: 1; transform: translate(-50%, 0); }
+
+/* --- vocab chip for the dropped measure word (瓶) --- */
+.vocab {
+  position: absolute; left: 50%; top: 540px; transform: translate(-50%, 8px) scale(.5);
+  transform-origin: 50% 100%; text-align: center; z-index: 6;
+  opacity: 0; transition: opacity .3s ease, transform .55s cubic-bezier(.34, 1.7, .5, 1);
+}
+.vocab.in { opacity: 1; transform: translate(-50%, 0) scale(1); }
+.vocab .zh { font: 900 92px/1 'Noto Sans SC', sans-serif; color: var(--stk-teal-d); letter-spacing: 3px; }
+.vocab .py { margin-top: 8px; font: 800 40px/1 'Inter', sans-serif; color: var(--stk-muted); }
+.vocab .en { margin-top: 4px; font: 700 26px/1 'Inter', sans-serif; color: var(--stk-muted); opacity: .8; }
+
+/* --- "≈94%" stamp (no chart) --- */
+.stamp94 {
+  position: absolute; left: 50%; top: 560px; transform: translate(-50%, -50%) scale(1.7) rotate(-8deg);
+  text-align: center; z-index: 7; opacity: 0;
+}
+.stamp94.in { animation: stampSlam .5s cubic-bezier(.3, 1.4, .5, 1) forwards; }
+@keyframes stampSlam {
+  0% { opacity: 0; transform: translate(-50%, -50%) scale(1.7) rotate(-8deg); }
+  60% { opacity: 1; transform: translate(-50%, -50%) scale(.92) rotate(-8deg); }
+  100% { opacity: 1; transform: translate(-50%, -50%) scale(1) rotate(-8deg); }
+}
+.stamp94 b { display: block; font: 900 134px/1 'Inter', sans-serif; color: var(--stk-teal-d); letter-spacing: -4px; }
+
+/* --- wordless grammar-exam badge for the punchline (a graded test) --- */
+.exam {
+  position: absolute; left: 50%; top: 556px; transform: translate(-50%, -50%) scale(.5) rotate(-7deg);
+  display: flex; align-items: center; justify-content: center; z-index: 7; opacity: 0;
+  background: var(--stk-teal-soft); width: 152px; height: 152px; border-radius: 32px;
+  transition: opacity .3s ease, transform .5s cubic-bezier(.34, 1.6, .5, 1);
+}
+.exam.in { opacity: 1; transform: translate(-50%, -50%) scale(1) rotate(-7deg); }
+.exam .exam-ico { width: 96px; height: 96px; color: var(--stk-teal-d); }
+.exam .exam-ico svg { width: 100%; height: 100%; }
+
+/* --- attempts stack: "no three beer / two dog / five book" (hanzi) --- */
+.attempts { position: absolute; left: 50%; top: 420px; transform: translateX(-50%); display: flex; flex-direction: column; gap: 22px; z-index: 5; }
+.att {
+  position: relative; display: flex; align-items: center; gap: 22px; opacity: 0; transform: translateY(18px);
+  transition: opacity .35s ease, transform .45s cubic-bezier(.2, .8, .2, 1);
+}
+.attempts.in .att { opacity: 1; transform: none; }
+.attempts.in .att[data-i="1"] { transition-delay: .12s; }
+.attempts.in .att[data-i="2"] { transition-delay: .24s; }
+.att-n { font: 900 60px/1 'Noto Sans SC', 'Inter', sans-serif; color: var(--stk-ink-2); width: 70px; text-align: center; }
+.att-slot { width: 60px; height: 60px; border-radius: 14px; background:
+  repeating-linear-gradient(135deg, rgba(53,162,146,.18) 0 8px, transparent 8px 16px); }
+.att .at-zh { font: 800 56px/1 'Noto Sans SC', sans-serif; color: var(--stk-ink); }
+/* grey strike-through that sweeps across each broken phrase (no red) */
+.att::after {
+  content: ''; position: absolute; left: -10px; right: -10px; top: 50%; height: 5px; border-radius: 3px;
+  background: var(--stk-muted); transform: scaleX(0); transform-origin: left center;
+  transition: transform .4s ease .15s; opacity: .65;
+}
+.attempts.struck .att::after { transform: scaleX(1); }
+
+/* ===========================================================================
+   THE WALL — a screen-full of 150+ classifiers that the camera scrolls DOWN
+   through, landing on the key ones (本只张台条) each ↔ the KIND it counts.
+   =========================================================================== */
+.wall-vp { position: absolute; inset: 0; overflow: hidden; }
+.wall-inner {
+  position: absolute; left: 0; right: 0; top: 0;
+  display: flex; flex-direction: column; align-items: center;
+  transform: translateY(0); transition: transform 5s linear; will-change: transform;
+}
+.wall-inner.scrolled { transform: translateY(-1120px); }
+
+.wall-head { margin-top: 92px; display: flex; flex-direction: column; align-items: center; }
+.wall-head b { font: 900 154px/1 'Inter', sans-serif; color: var(--stk-teal-d); letter-spacing: -5px; }
+.wall-head b::after { content: '+'; font-size: 96px; }
+.wall-head i { margin-top: 8px; font: 800 38px/1 'Inter', sans-serif; font-style: normal; color: var(--stk-muted); letter-spacing: 1px; }
+
+.wall-field { margin-top: 44px; width: 920px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px 22px; }
+.wf-chip {
+  background: #fff; border-radius: 20px; box-shadow: 0 10px 24px rgba(16, 50, 40, .07);
+  padding: 16px 8px; display: flex; flex-direction: column; align-items: center;
+}
+.wf-chip .z { font: 900 58px/1 'Noto Sans SC', sans-serif; color: var(--stk-teal-d); }
+.wf-chip .p { margin-top: 4px; font: 700 22px/1 'Inter', sans-serif; color: var(--stk-muted); }
+
+.wall-keys { margin-top: 56px; width: 780px; display: flex; flex-direction: column; gap: 22px; padding-bottom: 150px; }
+.mw-tile {
+  display: flex; align-items: center; gap: 24px; background: #fff; border-radius: 26px;
+  padding: 20px 30px; box-shadow: 0 14px 32px rgba(16, 50, 40, .09);
+  transition: background .3s ease, transform .3s ease;
+}
+.mw-tile .t-zh { font: 900 80px/1 'Noto Sans SC', sans-serif; color: var(--stk-teal-d); }
+.mw-tile .t-mid { display: flex; flex-direction: column; }
+.mw-tile .t-py { font: 800 28px/1 'Inter', sans-serif; color: var(--stk-muted); }
+.mw-tile .t-gloss { margin-top: 2px; font: 600 27px/1 'Inter', sans-serif; color: var(--stk-ink-2); }
+.mw-tile .t-ico { margin-left: auto; width: 68px; height: 68px; color: var(--stk-ink-2); }
+.mw-tile .t-ico svg { width: 100%; height: 100%; }
+.mw-tile.hot { background: var(--stk-teal-soft); transform: scale(1.05); }
+.mw-tile.hot .t-ico { color: var(--stk-teal-d); }
+
+/* ===========================================================================
+   OUTRO endcard
+   =========================================================================== */
+.ec { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); text-align: center; }
+.ec #outro-logo svg { display: block; margin: 0 auto; }
+.ec .lyr { opacity: 0; transform: translateY(-46px) scale(.8); transition: transform .56s cubic-bezier(.34, 1.56, .5, 1) var(--d, 0s), opacity .4s ease var(--d, 0s); }
+.ec .chev { opacity: 0; transition: opacity .5s ease .3s; }
+.ec.play .lyr { opacity: 1; transform: none; }
+.ec.play .chev { opacity: 1; }
+.ec .wm { margin-top: 18px; font: 900 150px/1 'Inter', sans-serif; letter-spacing: -4px; opacity: 0; transform: translateY(20px); transition: opacity .5s ease .35s, transform .5s ease .35s; }
+.ec .wm .s { color: var(--stk-ink); } .ec .wm .t { color: var(--stk-teal); }
+.ec.play .wm { opacity: 1; transform: none; }
+.ec .url { margin-top: 14px; font: 700 44px/1 'Inter', sans-serif; color: var(--stk-muted); opacity: 0; transition: opacity .5s ease .55s; }
+.ec.play .url { opacity: 1; }

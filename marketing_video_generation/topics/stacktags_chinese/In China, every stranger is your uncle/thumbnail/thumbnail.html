@@ -8,6 +8,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Noto+Sans+SC:wght@700;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../video/elements/theme.css">
 <style>
+  /* emphasis tone → house türkis (override the shared theme's greener deep-teal) */
+  :root { --stk-teal-d: #16A892; }
   html, body { margin: 0; height: 100%; background: #20262b; }
   .wrap { display: grid; place-items: center; height: 100%; }
   .thumb { position: relative; width: 1280px; height: 720px; overflow: hidden; background: #fff;
@@ -21,8 +23,7 @@
     background: radial-gradient(circle, rgba(53,162,146,.13) 0%, rgba(53,162,146,0) 68%); }
 
   /* headline (left) */
-  .hl-wrap { position: absolute; left: 84px; top: 120px; width: 600px; }
-  .kicker { font-weight: 800; font-size: 25px; letter-spacing: 4px; color: var(--stk-muted); margin-bottom: 22px; white-space: nowrap; }
+  .hl-wrap { position: absolute; left: 84px; top: 132px; width: 600px; }
   .hl { margin: 0; font-weight: 900; font-size: 100px; line-height: .96; letter-spacing: -4px; color: var(--stk-ink); }
   .hl .accent { color: var(--stk-teal); }
   .hl .accent-d { color: var(--stk-teal-d); }
@@ -58,7 +59,6 @@
   <div class="thumb stk-grid-bg" id="thumb">
     <div class="bg-glow"></div>
     <div class="hl-wrap">
-      <div class="kicker">LEARN CHINESE · FAMILY</div>
       <h1 class="hl">8 words</h1>
       <h1 class="hl">for one</h1>
       <h1 class="hl"><span class="accent">“uncle.”</span></h1>

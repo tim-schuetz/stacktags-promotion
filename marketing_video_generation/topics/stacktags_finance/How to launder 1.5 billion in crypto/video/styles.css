@@ -533,34 +533,44 @@ body.clean #hud{ display:none; }
    HOOK — generated images: Bybit → coins → Lazarus, $1.5B
    ============================================================ */
 .hook2{ position:absolute; inset:0; overflow:hidden; }
-.hk-flag{ position:absolute; right:-150px; top:560px; width:900px; opacity:0; filter:saturate(1.05); pointer-events:none;
-  transition:opacity .8s ease .3s; }
-.hook2.go .hk-flag{ opacity:.16; }
-.hk-lazarus{ position:absolute; right:-44px; bottom:0; height:910px; opacity:0; transform:translateX(150px);
-  filter:drop-shadow(0 30px 60px rgba(16,40,33,.34)); transition:opacity .7s ease .15s, transform .8s cubic-bezier(.2,.8,.2,1) .15s; }
-.hook2.go .hk-lazarus{ opacity:1; transform:none; }
-.hk-bybit{ position:absolute; left:96px; bottom:175px; text-align:center; opacity:0; transform:translateY(90px);
-  transition:opacity .6s ease .1s, transform .7s cubic-bezier(.2,.8,.2,1) .1s; }
-.hook2.go .hk-bybit{ opacity:1; transform:none; }
-.hk-bybit img{ height:590px; display:block; filter:drop-shadow(0 24px 50px rgba(16,40,33,.22)); }
-.hk-bybit-lbl{ font-family:'Nunito',sans-serif; font-weight:900; font-size:52px; color:#F7A600; margin-top:10px; letter-spacing:-1px; }
-.hk-amount{ position:absolute; left:0; right:0; top:135px; text-align:center; font-family:'Nunito',sans-serif; font-weight:900;
-  line-height:.82; letter-spacing:-4px; transform:scale(.6); opacity:0; z-index:6; }
+/* big NK flag backdrop, top */
+.hk-flag{ position:absolute; left:50%; top:-30px; width:1150px; transform:translateX(-50%); opacity:0; z-index:0;
+  filter:saturate(1.05); transition:opacity .8s ease .15s; }
+.hook2.go .hk-flag{ opacity:.82; }
+/* Lazarus at top, in front of the flag */
+.hk-lazarus{ position:absolute; left:38%; top:150px; height:600px; transform:translateX(-50%) translateY(-55px); opacity:0; z-index:4;
+  filter:drop-shadow(0 22px 48px rgba(16,40,33,.45)); transition:opacity .6s ease .15s, transform .7s cubic-bezier(.2,.8,.2,1) .15s; }
+.hook2.go .hk-lazarus{ opacity:1; transform:translateX(-50%) translateY(0); }
+.hk-laz-label{ position:absolute; left:38%; top:762px; transform:translateX(-50%) translateY(14px); opacity:0; z-index:5;
+  font-family:'Nunito',sans-serif; font-weight:900; font-size:62px; letter-spacing:-1px; color:var(--stk-ink);
+  text-shadow:0 2px 16px rgba(255,255,255,.85); transition:opacity .5s ease .55s, transform .5s ease .55s; }
+.hook2.go .hk-laz-label{ opacity:1; transform:translateX(-50%) translateY(0); }
+/* $1.5 BILLION — middle */
+.hk-amount{ position:absolute; right:80px; top:380px; text-align:right; font-family:'Nunito',sans-serif; font-weight:900;
+  line-height:.82; letter-spacing:-4px; transform:scale(.6); transform-origin:100% 50%; opacity:0; z-index:6; }
 .hook2.go .hk-amount{ animation:hkAmt .6s cubic-bezier(.34,1.6,.5,1) .5s forwards; }
-.hk-amount .big{ font-size:214px; color:var(--stk-teal-d); text-shadow:0 0 60px rgba(53,162,146,.34); display:block; }
-.hk-amount .sub{ font-size:112px; color:var(--stk-ink); display:block; letter-spacing:2px; }
+.hk-amount .big{ font-size:206px; color:var(--stk-teal-d); display:block;
+  text-shadow:0 0 22px #fff, 0 0 11px #fff, 0 4px 18px rgba(53,162,146,.45); }
+.hk-amount .sub{ font-size:108px; color:var(--stk-ink); display:block; letter-spacing:2px;
+  text-shadow:0 0 20px #fff, 0 0 10px #fff; }
 @keyframes hkAmt{ to{ transform:scale(1); opacity:1; } }
-.hk-coin{ position:absolute; left:210px; top:790px; width:86px; height:86px; opacity:0;
-  animation:hookfly 2.4s cubic-bezier(.45,0,.55,1) infinite paused; }
-.hook2.go .hk-coin{ animation-play-state:running; }
-.hk-coin img{ width:100%; display:block; filter:drop-shadow(0 7px 16px rgba(0,0,0,.3)); }
-@keyframes hookfly{
-  0%{ transform:translate(0,0) scale(.5); opacity:0; }
-  16%{ opacity:1; }
-  52%{ transform:translate(300px,-95px) scale(1); }
-  84%{ opacity:1; }
-  100%{ transform:translate(545px,300px) scale(.85); opacity:0; }
-}
+/* Dubai skyline (behind) + Bybit HQ (front) docked at the bottom */
+.hk-skyline{ position:absolute; left:50%; bottom:0; width:1010px; transform:translateX(-50%) translateY(95px); opacity:0; z-index:1;
+  filter:saturate(.92) drop-shadow(0 10px 26px rgba(16,40,33,.14)); transition:opacity .6s ease .25s, transform .7s cubic-bezier(.2,.8,.2,1) .25s; }
+.hook2.go .hk-skyline{ opacity:1; transform:translateX(-50%) translateY(0); }
+.hk-bybit{ position:absolute; left:50%; bottom:0; transform:translateX(-50%) translateY(95px); opacity:0; z-index:2; text-align:center;
+  transition:opacity .6s ease .35s, transform .7s cubic-bezier(.2,.8,.2,1) .35s; }
+.hook2.go .hk-bybit{ opacity:1; transform:translateX(-50%) translateY(0); }
+.hk-bybit img{ height:560px; display:block; margin:0 auto; filter:drop-shadow(0 16px 36px rgba(16,40,33,.32)); }
+.hk-bybit-lbl{ font-family:'Nunito',sans-serif; font-weight:900; font-size:56px; color:#F7A600; letter-spacing:-1px;
+  text-shadow:0 2px 12px rgba(0,0,0,.28); margin-bottom:6px; }
+/* drawn arrow: Bybit → Lazarus */
+.hk-arrow{ position:absolute; inset:0; width:1080px; height:1920px; z-index:3; pointer-events:none; }
+.hk-arrow-line{ fill:none; stroke:var(--stk-teal-d); stroke-width:16; stroke-linecap:round;
+  stroke-dasharray:1000; stroke-dashoffset:1000; transition:stroke-dashoffset 1.6s cubic-bezier(.4,0,.4,1) 1.0s; }
+.hook2.go .hk-arrow-line{ stroke-dashoffset:0; }
+.hk-arrow-head{ fill:var(--stk-teal-d); opacity:0; transition:opacity .3s ease 2.45s, transform .3s ease 2.45s; transform:scale(.4); transform-origin:655px 690px; }
+.hook2.go .hk-arrow-head{ opacity:1; transform:scale(1); }
 
 /* ============================================================
    MIXER v2 — 3 users throw real tokens in; turquoise coins out

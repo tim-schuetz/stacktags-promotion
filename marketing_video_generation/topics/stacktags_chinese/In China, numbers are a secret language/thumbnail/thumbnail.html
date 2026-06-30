@@ -8,6 +8,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Noto+Sans+SC:wght@700;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../video/elements/theme.css">
 <style>
+  /* emphasis color → house türkis (override theme deep-teal #119271) */
+  :root { --stk-teal-d: #16A892; }
   html, body { margin: 0; height: 100%; background: #20262b; }
   .wrap { display: grid; place-items: center; height: 100%; }
   .thumb { position: relative; width: 1280px; height: 720px; overflow: hidden; background: #fff;
@@ -21,8 +23,7 @@
     background: radial-gradient(circle, rgba(53,162,146,.14) 0%, rgba(53,162,146,0) 68%); }
 
   /* headline (left) */
-  .hl-wrap { position: absolute; left: 82px; top: 118px; width: 660px; }
-  .kicker { font-weight: 800; font-size: 26px; letter-spacing: 4px; color: var(--stk-muted); margin-bottom: 30px; white-space: nowrap; }
+  .hl-wrap { position: absolute; left: 82px; top: 160px; width: 660px; }
   .hl { margin: 0; font-weight: 900; font-size: 112px; line-height: .98; letter-spacing: -4px; color: var(--stk-ink); display: flex; align-items: baseline; gap: 24px; }
   .hl .num { font-size: 124px; }
   .hl .num.love { color: var(--stk-teal); }
@@ -55,7 +56,6 @@
     <div class="bg-glow"></div>
 
     <div class="hl-wrap">
-      <div class="kicker">LEARN CHINESE · NUMBER SLANG</div>
       <h1 class="hl"><span class="num love">520</span><span class="eq">=</span><span class="word love">love</span></h1>
       <h1 class="hl two"><span class="num bad">250</span><span class="eq">=</span><span class="word">idiot</span></h1>
       <div class="sub">A whole <b>secret language</b>,<br>written in numbers.</div>

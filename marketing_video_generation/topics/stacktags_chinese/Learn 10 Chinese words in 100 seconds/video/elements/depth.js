@@ -179,19 +179,22 @@
         const t0 = performance.now();
         const tick = (now) => {
           const e = easeInOut(clamp01((now - t0) / duration));
-          if (mode === 'lift') {
-            // unified camera: EVERYTHING on screen moves down + scales up together
-            // (so the zoom illusion holds) while the new text drops in from the top.
-            const z = lerp(1, 1.3, e), dy = 1450 * e;
+          if (mode === 'lift' || mode === 'liftb') {
+            // unified camera: EVERYTHING on screen moves together + scales up (so the
+            // zoom illusion holds) while the new text enters from one edge.
+            //   lift  : camera lifts UP   → old slides DOWN/out, new drops in from TOP.
+            //   liftb : camera sinks DOWN → old slides UP/out,   new rises in from BOTTOM.
+            const up = mode === 'liftb' ? -1 : 1;
+            const z = lerp(1, 1.3, e), dy = 1450 * e * up;
             if (fromEl) this._set(fromEl, { tx: fromRest.x * z, ty: fromRest.y * z + dy, s: fromRest.s * z, op: 1, blur: 0, z: 4 });
             extraOuts.forEach(o => { const kp = o.pose || { tx: 0, ty: 0, s: 1, op: 1 }; this._set(o.el, { tx: (kp.tx || 0) * z, ty: kp.ty * z + dy, s: kp.s * z, op: kp.op, blur: 0, z: 3 }); });
-            if (toEl) this._set(toEl, { tx: toRest.x * e, ty: lerp(-700, 0, e) + toRest.y * e, s: lerp(1.3, 1, e) * lerp(1, toRest.s, e), op: clamp01(e / 0.4), blur: 6 * (1 - e), z: 2 });
+            if (toEl) this._set(toEl, { tx: toRest.x * e, ty: lerp(-700 * up, 0, e) + toRest.y * e, s: lerp(1.3, 1, e) * lerp(1, toRest.s, e), op: clamp01(e / 0.4), blur: 6 * (1 - e), z: 2 });
             this._setGrid(gs0 * z, gx0, gy0 + dy * 0.7);
             if ((now - t0) < duration) { this._raf = requestAnimationFrame(tick); return; }
             if (fromEl) this._set(fromEl, { op: 0 });
             extraOuts.forEach(o => this._set(o.el, { op: 0 }));
             this._set(toEl, { tx: toRest.x, ty: toRest.y, s: toRest.s, op: 1, blur: 0, z: 2 });
-            this._setGrid(gs0 * 1.3, gx0, gy0 + 1450 * 0.7);
+            this._setGrid(gs0 * 1.3, gx0, gy0 + 1450 * 0.7 * up);
             resolve(); return;
           }
           const ps = this._poses(mode, e);

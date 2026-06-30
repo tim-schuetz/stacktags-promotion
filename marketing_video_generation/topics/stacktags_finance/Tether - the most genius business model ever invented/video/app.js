@@ -149,6 +149,16 @@
     } catch (e) {}
   }
   function resetTokfall() { if (tokfall) { try { tokfall.pause(); tokfall.currentTime = 0; } catch (e) {} } }
+  // ---- HeyGen Avatar IV founder clip (attestation scene) ----
+  const auVid = $('#au-vid');
+  function playFounderVid(instant) {
+    if (!auVid) return;
+    try {
+      if (instant) { auVid.pause(); auVid.currentTime = (auVid.duration && isFinite(auVid.duration)) ? auVid.duration : 4; }
+      else { auVid.currentTime = 0; const p = auVid.play(); if (p) p.catch(() => {}); }
+    } catch (e) {}
+  }
+  function resetFounderVid() { if (auVid) { try { auVid.pause(); auVid.currentTime = 0; } catch (e) {} } }
   function buildTower() {
     const host = $('#tw-tbills'); host.innerHTML = '';
     ['T-BILLS', 'RESERVES', 'OTHER ASSETS'].forEach((l) => {
@@ -371,11 +381,10 @@
     // ---- 10 · ATTESTATIONS (grinning founder w/ list, cash pile, dashed dollars rain, glee) ----
     [95.88,(i) => enter($('#sc-audit'), 'zoom-in', 1050, i, () => {
       const a = $('#audit');
-      if (i) { a.classList.add('in'); rainAudit(true); return; }
-      a.classList.add('in');
+      a.classList.add('in'); playFounderVid(i);   // animated HeyGen founder presents his checklist + grins
+      if (i) { rainAudit(true); return; }
       setTimeout(() => rainAudit(false), 1600);
     })],
-    [102.5,(i) => { if (!i) { const a = $('#audit'); a.classList.add('glee'); setTimeout(() => a.classList.remove('glee'), 800); } }],
 
     // ---- 11 · PUNCHLINE (obvious trades struck through → slide up → coin rises) ----
     [106.78,(i) => enter($('#sc-punch'), 'zoom-out', 1100, i, () => {
@@ -441,7 +450,7 @@
     '#scale': ['sub-in'],
     '#room': ['bar-in', 'team-in'],
     '#catch': ['build', 'wobble'],
-    '#audit': ['in', 'glee'],
+    '#audit': ['in'],
     '#punch': ['strike', 'lift', 'crown'],
   };
 
@@ -455,7 +464,7 @@
     $$('.cost-row').forEach((r) => r.classList.remove('in'));
     $$('#pu-noise .chip').forEach((c) => c.classList.remove('show'));
     $('#odo').textContent = '$0';
-    resetThrone(); resetRoom(); resetTokfall(); resetAudit();
+    resetThrone(); resetRoom(); resetTokfall(); resetFounderVid(); resetAudit();
     outroReset();
     subsLine.classList.remove('in');
   }

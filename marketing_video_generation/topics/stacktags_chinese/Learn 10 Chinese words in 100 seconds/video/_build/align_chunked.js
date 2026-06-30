@@ -38,7 +38,7 @@ const LINES = [
   "A circle with a dot, later squared off to write it faster. The sun marks a day, so it also means day.",
   "Next is",
   "7) moon, and also month.",
-  "A crescent on its side. One moon cycle is a month, so it means month too.",
+  "A crescent on its side.",
   "8) mouth.",
   "An open mouth, just a square opening. The hole you eat and talk with.",
   "9) rain.",

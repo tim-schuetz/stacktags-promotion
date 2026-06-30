@@ -39,7 +39,10 @@
     + '<div class="pth-common">“common speech”</div></div>';
   const STEPS = [
     { svg: I.script },                                                       // 0 the writing standardized
-    { text: cjk('汉', 'Hàn', '“the Han”') },                                 // 1 the dynasty
+    { text: '<div class="han-compo">'                                        // 1 the dynasty (汉 + a Han ruler)
+        + '<img class="han-fig" src="assets/photos/han_emperor_cut.png" alt="">'
+        + '<div class="han-text">' + cjk('汉', 'Hàn', '“the Han”') + '</div>'
+        + '</div>' },
     { text: cjk('汉语', 'Hànyǔ', '“the language of Han”') },                 // 2
     { svg: I.speech },                                                       // 3 same writing, different speech (one beat)
     { svg: I.official },                                                     // 4 official drops in from the top
@@ -56,7 +59,8 @@
     { i: 3,  t: 51.9,  mode: 'pan-left' },   // speech ("but here's the catch")
     { i: 4,  t: 63.1,  mode: 'drop'     },   // official drops in ("the officials settled")
     { i: 5,  t: 68.7,  mode: 'drop'     },   // 官话 slides in from the top, official slides down
-    { i: 6,  t: 88.0,  mode: 'pan-left' },   // media ("formalized, taught in schools") — back from the ship scene, held through "1.4 billion"
+    // (media — beat 6 — now lives in the SHIP scene beside MANDARIN, so it is no
+    //  longer a depth beat; the depth layer for it stays unused/hidden.)
     { i: 7,  t: 99.8,  mode: 'zoom-in'  },   // 普通话 ("putonghua")
   ];
   const TL_START = 9.3;            // timeline scene
@@ -64,7 +68,8 @@
   const DEPTH_START = 33.4;        // depth fly-through (writing standardized onward)
   const SHIP_START = 73.8;         // Portuguese ship → China scene (incl. the MANDARIN reveal)
   const MANDARIN_T = 81.6;         // MANDARIN slides in from the top, globe slides down
-  const SHIP_END = 88.0;           // back to the depth spine for media
+  const LASTCENTURY_T = 85.36;     // "then, last century": globe stage slides away, MANDARIN stays
+  const SHIP_END = 99.65;          // ship scene holds MANDARIN + media until 普通话 takes over
   const OUTRO_START = 111.6;       // outro scene (CTA ending)
 
   // ---- subtitles: VERBATIM, mirroring exactly what is spoken (script_audio.mp3) --
@@ -150,14 +155,16 @@
     [40.7,  'swoosh',  0.50],  // 汉  (pan-right)
     [48.9,  'swoosh',  0.50],  // 汉语 (zoom-out)
     [51.9,  'swoosh',  0.50],  // speech (pan-left)
+    [60.4,  'pop',     0.45],  // first gibberish speech bubble pops in
+    [61.2,  'pop',     0.45],  // second gibberish speech bubble pops in
     [63.1,  'swoosh',  0.50],  // official drops in
     [68.7,  'swoosh',  0.50],  // 官话 slides in over the official
     [73.8,  'swoosh',  0.50],  // → ship scene
     [75.3,  'swoosh',  0.45],  // the caravel sets sail
     [78.4,  'swoosh',  0.50],  // ship arrives → Portuguese building rises
     [81.6,  'swoosh',  0.50],  // MANDARIN drops in from the top
-    [88.0,  'swoosh',  0.50],  // media (pan-left)
-    [89.6,  'pop',     0.55],  // school pops in
+    [85.36, 'swoosh',  0.45],  // "then, last century" — the globe stage slides away (MANDARIN stays)
+    [89.6,  'pop',     0.55],  // school pops in (beside MANDARIN)
     [91.2,  'pop',     0.55],  // radio pops in
     [92.0,  'pop',     0.55],  // TV pops in
     [99.8,  'swoosh',  0.50],  // 普通话 (zoom-in)
@@ -272,24 +279,30 @@
     BEATS.forEach((b) => C.push({ t: b.t, do: () => { depth.transitionTo(b.i, b.mode, 1050); } }));
     // brief pulses inside the speech scene
     C.push({ t: 57.5, do: () => { const p = $('#depth-host .sp-parch'); if (p) { p.classList.remove('pulse'); void p.offsetWidth; p.classList.add('pulse'); } } }); // "wrote alike" → 字
-    C.push({ t: 60.5, do: () => { document.querySelectorAll('#depth-host .sp-bub').forEach((b) => { b.classList.remove('pulse'); void b.offsetWidth; b.classList.add('pulse'); }); } }); // "but spoke languages"
+    // "but spoke languages…": the two gibberish bubbles pop in one after another
+    C.push({ t: 60.4, do: () => { const e = $('#depth-host .sp-bub-l'); if (e) e.classList.add('show'); } });
+    C.push({ t: 61.2, do: () => { const e = $('#depth-host .sp-bub-r'); if (e) e.classList.add('show'); } });
     // when 官话 slides in over the official, clear the lingering speech beat (3)
     // so it's a clean two-layer stack (官话 over official), not a faded triple.
     C.push({ t: 68.85, do: () => { if (depth && depth.layers[3]) { depth.layers[3].style.transition = 'opacity .5s ease'; depth.layers[3].style.opacity = '0'; if (depth._kept) depth._kept = depth._kept.filter((k) => k !== 3); } } });
-    // media: school · radio · TV pop in one-by-one (each scales up) on their words
-    C.push({ t: 89.6, do: () => { const e = $('#depth-host .media-img.m1'); if (e) e.classList.add('pop'); } }); // "taught in every school"
-    C.push({ t: 91.2, do: () => { const e = $('#depth-host .media-img.m2'); if (e) e.classList.add('pop'); } }); // "radio"
-    C.push({ t: 92.0, do: () => { const e = $('#depth-host .media-img.m3'); if (e) e.classList.add('pop'); } }); // "and TV"
+    // media (in the SHIP scene, beside the still-visible MANDARIN): school · radio ·
+    // TV pop in one-by-one (each scales up) on their words
+    C.push({ t: 89.6, do: () => { const e = $('#ship-host .media-img.m1'); if (e) e.classList.add('pop'); } }); // "taught in every school"
+    C.push({ t: 91.2, do: () => { const e = $('#ship-host .media-img.m2'); if (e) e.classList.add('pop'); } }); // "radio"
+    C.push({ t: 92.0, do: () => { const e = $('#ship-host .media-img.m3'); if (e) e.classList.add('pop'); } }); // "and TV"
     // "common speech" gloss slides up under 普通话 (普通话 stays)
     C.push({ t: 103.14, do: () => { const e = $('#depth-host .pth-compo'); if (e) e.classList.add('reveal'); } });
-    // -- Portuguese ship → China (overlays the depth spine, then hands back) --
+    // -- Portuguese ship → China → MANDARIN; then the globe goes but MANDARIN stays
+    //    while school·radio·TV pop in beside it; finally hands off to 普通话 --
     C.push({ t: SHIP_START, do: () => { setScene('ship'); shipEl.reset(); shipEl.show(); if (shipGlobeCtrl) { shipGlobeCtrl.resume(); shipGlobeCtrl.reveal(); } } });
     C.push({ t: 75.3, do: () => { shipEl.sail(); if (shipGlobeCtrl) { shipGlobeCtrl.setFocus(24, 113); shipGlobeCtrl.revealRoute(3100); } } }); // sail + rotate India→South China + draw the route on the globe
     C.push({ t: 78.6, do: () => { shipEl.arrive(); } });             // ship has reached land → shrinks away; building rises (delayed) at China
     C.push({ t: MANDARIN_T, do: () => { shipEl.mandarin(); } });      // MANDARIN slides from top, globe slides down
-    // back to the spine for media — reset the depth scene first so the official/官话
-    // don't briefly flash again before media slides in.
-    C.push({ t: SHIP_END - 0.1, do: () => { if (depth) depth.reset(); setScene('depth'); if (shipGlobeCtrl) shipGlobeCtrl.halt(); } });
+    // "then, last century": ONLY the globe stage slides away — MANDARIN stays put.
+    C.push({ t: LASTCENTURY_T, do: () => { shipEl.formalize(); } });
+    C.push({ t: 86.3, do: () => { if (shipGlobeCtrl) shipGlobeCtrl.halt(); } }); // free CPU once the globe has faded out
+    // hand off to the depth spine for 普通话 (MANDARIN + media clear as it zooms in)
+    C.push({ t: SHIP_END, do: () => { if (depth) depth.reset(); setScene('depth'); } });
     // -- outro -- (default endcard animation, then the folder reference slides in)
     C.push({ t: OUTRO_START, do: () => { setScene('outro'); $('#scene-outro').classList.add('play'); } });
     // subtitles
@@ -323,6 +336,8 @@
     if (shipEl) shipEl.reset();
     if (shipGlobeCtrl) shipGlobeCtrl.halt();   // ship globe stays frozen until its scene
     if (depth) depth.reset();
+    document.querySelectorAll('#depth-host .sp-bub').forEach((b) => b.classList.remove('show')); // gibberish bubbles hidden again
+    const pth = $('#depth-host .pth-compo'); if (pth) pth.classList.remove('reveal');
     $('#scene-outro').classList.remove('play');
     const s = $('#sub'); s.classList.remove('in'); s.innerHTML = '';
     $('#vprogress').style.width = '0%';
@@ -370,14 +385,23 @@
       }
     } else if (t >= SHIP_START && t < SHIP_END) {
       setScene('ship');
+      shipEl.reset();
       if (shipGlobeCtrl) { shipGlobeCtrl.resume(); shipGlobeCtrl.reveal(); shipGlobeCtrl.setFocus(t >= 75.3 ? 24 : 20, t >= 75.3 ? 113 : 78); }
       shipEl.show(); if (t >= 75.3) shipEl.sail(); if (t >= 78.4) shipEl.arrive();
       if (t >= MANDARIN_T) shipEl.mandarin();
+      if (t >= LASTCENTURY_T) shipEl.formalize();        // globe gone, MANDARIN stays
+      if (t >= 89.6) { const e = $('#ship-host .media-img.m1'); if (e) e.classList.add('pop'); }
+      if (t >= 91.2) { const e = $('#ship-host .media-img.m2'); if (e) e.classList.add('pop'); }
+      if (t >= 92.0) { const e = $('#ship-host .media-img.m3'); if (e) e.classList.add('pop'); }
     } else if (t < OUTRO_START) {
       setScene('depth');
       // which beat is current at time t?
       let bi = 0; for (const b of BEATS) if (b.t <= t) bi = b.i;
       depth.reset(); depth._showFirst(bi);
+      // the gibberish bubbles only pop in late inside the speech beat
+      const bl = $('#depth-host .sp-bub-l'), br = $('#depth-host .sp-bub-r');
+      if (bl) bl.classList.toggle('show', bi === 3 && t >= 60.4);
+      if (br) br.classList.toggle('show', bi === 3 && t >= 61.2);
       if (t >= 103.14) { const e = $('#depth-host .pth-compo'); if (e) e.classList.add('reveal'); }
     } else {
       setScene('outro');

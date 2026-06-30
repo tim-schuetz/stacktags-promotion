@@ -1,0 +1,2040 @@
+{
+ "duration": 150.6481875,
+ "segments": [
+  {
+   "start": 0.0,
+   "end": 4.6,
+   "text": " In the next 100 seconds, you'll learn 10 Chinese characters without memorizing a single",
+   "words": [
+    {
+     "word": " In",
+     "start": 0.0,
+     "end": 0.18
+    },
+    {
+     "word": " the",
+     "start": 0.18,
+     "end": 0.3
+    },
+    {
+     "word": " next",
+     "start": 0.3,
+     "end": 0.52
+    },
+    {
+     "word": " 100",
+     "start": 0.52,
+     "end": 1.0
+    },
+    {
+     "word": " seconds,",
+     "start": 1.0,
+     "end": 1.38
+    },
+    {
+     "word": " you'll",
+     "start": 1.6,
+     "end": 1.7
+    },
+    {
+     "word": " learn",
+     "start": 1.7,
+     "end": 1.86
+    },
+    {
+     "word": " 10",
+     "start": 1.86,
+     "end": 2.22
+    },
+    {
+     "word": " Chinese",
+     "start": 2.22,
+     "end": 2.64
+    },
+    {
+     "word": " characters",
+     "start": 2.64,
+     "end": 3.08
+    },
+    {
+     "word": " without",
+     "start": 3.08,
+     "end": 3.72
+    },
+    {
+     "word": " memorizing",
+     "start": 3.72,
+     "end": 4.22
+    },
+    {
+     "word": " a",
+     "start": 4.22,
+     "end": 4.4
+    },
+    {
+     "word": " single",
+     "start": 4.4,
+     "end": 4.6
+    }
+   ]
+  },
+  {
+   "start": 4.6,
+   "end": 4.96,
+   "text": " one.",
+   "words": [
+    {
+     "word": " one.",
+     "start": 4.6,
+     "end": 4.96
+    }
+   ]
+  },
+  {
+   "start": 5.48,
+   "end": 9.96,
+   "text": " Most people think Chinese is impossible, thousands of characters that look like random scribbles,",
+   "words": [
+    {
+     "word": " Most",
+     "start": 5.48,
+     "end": 5.62
+    },
+    {
+     "word": " people",
+     "start": 5.62,
+     "end": 5.8
+    },
+    {
+     "word": " think",
+     "start": 5.8,
+     "end": 6.1
+    },
+    {
+     "word": " Chinese",
+     "start": 6.1,
+     "end": 6.36
+    },
+    {
+     "word": " is",
+     "start": 6.36,
+     "end": 6.58
+    },
+    {
+     "word": " impossible,",
+     "start": 6.58,
+     "end": 7.08
+    },
+    {
+     "word": " thousands",
+     "start": 7.76,
+     "end": 7.96
+    },
+    {
+     "word": " of",
+     "start": 7.96,
+     "end": 8.26
+    },
+    {
+     "word": " characters",
+     "start": 8.26,
+     "end": 8.58
+    },
+    {
+     "word": " that",
+     "start": 8.58,
+     "end": 8.8
+    },
+    {
+     "word": " look",
+     "start": 8.8,
+     "end": 8.92
+    },
+    {
+     "word": " like",
+     "start": 8.92,
+     "end": 9.1
+    },
+    {
+     "word": " random",
+     "start": 9.1,
+     "end": 9.48
+    },
+    {
+     "word": " scribbles,",
+     "start": 9.48,
+     "end": 9.96
+    }
+   ]
+  },
+  {
+   "start": 10.34,
+   "end": 14.5,
+   "text": " but the oldest, most common ones aren't random, they're tiny drawings of what they mean.",
+   "words": [
+    {
+     "word": " but",
+     "start": 10.34,
+     "end": 10.56
+    },
+    {
+     "word": " the",
+     "start": 10.56,
+     "end": 10.72
+    },
+    {
+     "word": " oldest,",
+     "start": 10.72,
+     "end": 11.06
+    },
+    {
+     "word": " most",
+     "start": 11.38,
+     "end": 11.52
+    },
+    {
+     "word": " common",
+     "start": 11.52,
+     "end": 11.82
+    },
+    {
+     "word": " ones",
+     "start": 11.82,
+     "end": 12.06
+    },
+    {
+     "word": " aren't",
+     "start": 12.06,
+     "end": 12.34
+    },
+    {
+     "word": " random,",
+     "start": 12.34,
+     "end": 12.66
+    },
+    {
+     "word": " they're",
+     "start": 12.9,
+     "end": 13.1
+    },
+    {
+     "word": " tiny",
+     "start": 13.1,
+     "end": 13.4
+    },
+    {
+     "word": " drawings",
+     "start": 13.4,
+     "end": 13.8
+    },
+    {
+     "word": " of",
+     "start": 13.8,
+     "end": 13.98
+    },
+    {
+     "word": " what",
+     "start": 13.98,
+     "end": 14.1
+    },
+    {
+     "word": " they",
+     "start": 14.1,
+     "end": 14.22
+    },
+    {
+     "word": " mean.",
+     "start": 14.22,
+     "end": 14.5
+    }
+   ]
+  },
+  {
+   "start": 15.04,
+   "end": 18.56,
+   "text": " See it once and you can't unsee it, watch, start with you.",
+   "words": [
+    {
+     "word": " See",
+     "start": 15.04,
+     "end": 15.18
+    },
+    {
+     "word": " it",
+     "start": 15.18,
+     "end": 15.3
+    },
+    {
+     "word": " once",
+     "start": 15.3,
+     "end": 15.52
+    },
+    {
+     "word": " and",
+     "start": 15.52,
+     "end": 15.88
+    },
+    {
+     "word": " you",
+     "start": 15.88,
+     "end": 16.0
+    },
+    {
+     "word": " can't",
+     "start": 16.0,
+     "end": 16.32
+    },
+    {
+     "word": " unsee",
+     "start": 16.32,
+     "end": 16.6
+    },
+    {
+     "word": " it,",
+     "start": 16.6,
+     "end": 16.84
+    },
+    {
+     "word": " watch,",
+     "start": 17.14,
+     "end": 17.48
+    },
+    {
+     "word": " start",
+     "start": 17.9,
+     "end": 18.08
+    },
+    {
+     "word": " with",
+     "start": 18.08,
+     "end": 18.24
+    },
+    {
+     "word": " you.",
+     "start": 18.24,
+     "end": 18.56
+    }
+   ]
+  },
+  {
+   "start": 19.4,
+   "end": 19.54,
+   "text": " 1.",
+   "words": [
+    {
+     "word": " 1.",
+     "start": 19.4,
+     "end": 19.54
+    }
+   ]
+  },
+  {
+   "start": 20.36,
+   "end": 26.38,
+   "text": " Rin, person, a body and two legs, mid stride, one human, two strokes, give them a fire",
+   "words": [
+    {
+     "word": " Rin,",
+     "start": 20.36,
+     "end": 20.36
+    },
+    {
+     "word": " person,",
+     "start": 20.88,
+     "end": 21.26
+    },
+    {
+     "word": " a",
+     "start": 21.6,
+     "end": 21.7
+    },
+    {
+     "word": " body",
+     "start": 21.7,
+     "end": 21.92
+    },
+    {
+     "word": " and",
+     "start": 21.92,
+     "end": 22.26
+    },
+    {
+     "word": " two",
+     "start": 22.26,
+     "end": 22.48
+    },
+    {
+     "word": " legs,",
+     "start": 22.48,
+     "end": 22.78
+    },
+    {
+     "word": " mid",
+     "start": 23.3,
+     "end": 23.38
+    },
+    {
+     "word": " stride,",
+     "start": 23.38,
+     "end": 23.72
+    },
+    {
+     "word": " one",
+     "start": 24.14,
+     "end": 24.24
+    },
+    {
+     "word": " human,",
+     "start": 24.24,
+     "end": 24.48
+    },
+    {
+     "word": " two",
+     "start": 24.78,
+     "end": 24.9
+    },
+    {
+     "word": " strokes,",
+     "start": 24.9,
+     "end": 25.28
+    },
+    {
+     "word": " give",
+     "start": 25.76,
+     "end": 25.86
+    },
+    {
+     "word": " them",
+     "start": 25.86,
+     "end": 26.0
+    },
+    {
+     "word": " a",
+     "start": 26.0,
+     "end": 26.16
+    },
+    {
+     "word": " fire",
+     "start": 26.16,
+     "end": 26.38
+    }
+   ]
+  },
+  {
+   "start": 26.38,
+   "end": 33.46,
+   "text": " to gather around, 2, huo, fire, a flame in the middle, two sparks flying off the sides,",
+   "words": [
+    {
+     "word": " to",
+     "start": 26.38,
+     "end": 26.54
+    },
+    {
+     "word": " gather",
+     "start": 26.54,
+     "end": 26.74
+    },
+    {
+     "word": " around,",
+     "start": 26.74,
+     "end": 27.12
+    },
+    {
+     "word": " 2,",
+     "start": 27.74,
+     "end": 27.84
+    },
+    {
+     "word": " huo,",
+     "start": 28.5,
+     "end": 28.6
+    },
+    {
+     "word": " fire,",
+     "start": 29.16,
+     "end": 29.7
+    },
+    {
+     "word": " a",
+     "start": 30.48,
+     "end": 30.58
+    },
+    {
+     "word": " flame",
+     "start": 30.58,
+     "end": 30.88
+    },
+    {
+     "word": " in",
+     "start": 30.88,
+     "end": 31.08
+    },
+    {
+     "word": " the",
+     "start": 31.08,
+     "end": 31.22
+    },
+    {
+     "word": " middle,",
+     "start": 31.22,
+     "end": 31.48
+    },
+    {
+     "word": " two",
+     "start": 31.88,
+     "end": 32.0
+    },
+    {
+     "word": " sparks",
+     "start": 32.0,
+     "end": 32.34
+    },
+    {
+     "word": " flying",
+     "start": 32.34,
+     "end": 32.7
+    },
+    {
+     "word": " off",
+     "start": 32.7,
+     "end": 32.94
+    },
+    {
+     "word": " the",
+     "start": 32.94,
+     "end": 33.12
+    },
+    {
+     "word": " sides,",
+     "start": 33.12,
+     "end": 33.46
+    }
+   ]
+  },
+  {
+   "start": 33.76,
+   "end": 40.0,
+   "text": " a campfire, 3, shui, water, a stream down the middle, droplets splashing off both sides,",
+   "words": [
+    {
+     "word": " a",
+     "start": 33.76,
+     "end": 33.86
+    },
+    {
+     "word": " campfire,",
+     "start": 33.86,
+     "end": 34.4
+    },
+    {
+     "word": " 3,",
+     "start": 34.64,
+     "end": 34.96
+    },
+    {
+     "word": " shui,",
+     "start": 35.6,
+     "end": 35.76
+    },
+    {
+     "word": " water,",
+     "start": 36.14,
+     "end": 36.4
+    },
+    {
+     "word": " a",
+     "start": 36.96,
+     "end": 37.12
+    },
+    {
+     "word": " stream",
+     "start": 37.12,
+     "end": 37.42
+    },
+    {
+     "word": " down",
+     "start": 37.42,
+     "end": 37.8
+    },
+    {
+     "word": " the",
+     "start": 37.8,
+     "end": 37.96
+    },
+    {
+     "word": " middle,",
+     "start": 37.96,
+     "end": 38.2
+    },
+    {
+     "word": " droplets",
+     "start": 38.48,
+     "end": 38.74
+    },
+    {
+     "word": " splashing",
+     "start": 38.74,
+     "end": 39.18
+    },
+    {
+     "word": " off",
+     "start": 39.18,
+     "end": 39.38
+    },
+    {
+     "word": " both",
+     "start": 39.38,
+     "end": 39.58
+    },
+    {
+     "word": " sides,",
+     "start": 39.58,
+     "end": 40.0
+    }
+   ]
+  },
+  {
+   "start": 40.42,
+   "end": 47.8,
+   "text": " a river in three strokes, 4, shan, mountain, three peaks, one tall, two short, the mountain",
+   "words": [
+    {
+     "word": " a",
+     "start": 40.42,
+     "end": 40.54
+    },
+    {
+     "word": " river",
+     "start": 40.54,
+     "end": 40.74
+    },
+    {
+     "word": " in",
+     "start": 40.74,
+     "end": 40.96
+    },
+    {
+     "word": " three",
+     "start": 40.96,
+     "end": 41.16
+    },
+    {
+     "word": " strokes,",
+     "start": 41.16,
+     "end": 41.54
+    },
+    {
+     "word": " 4,",
+     "start": 41.98,
+     "end": 42.36
+    },
+    {
+     "word": " shan,",
+     "start": 43.16,
+     "end": 43.28
+    },
+    {
+     "word": " mountain,",
+     "start": 43.82,
+     "end": 43.94
+    },
+    {
+     "word": " three",
+     "start": 44.48,
+     "end": 44.82
+    },
+    {
+     "word": " peaks,",
+     "start": 44.82,
+     "end": 45.14
+    },
+    {
+     "word": " one",
+     "start": 45.64,
+     "end": 45.8
+    },
+    {
+     "word": " tall,",
+     "start": 45.8,
+     "end": 46.12
+    },
+    {
+     "word": " two",
+     "start": 46.44,
+     "end": 46.62
+    },
+    {
+     "word": " short,",
+     "start": 46.62,
+     "end": 46.94
+    },
+    {
+     "word": " the",
+     "start": 47.34,
+     "end": 47.52
+    },
+    {
+     "word": " mountain",
+     "start": 47.52,
+     "end": 47.8
+    }
+   ]
+  },
+  {
+   "start": 47.8,
+   "end": 55.32,
+   "text": " a kid would draw, 5, mu, tree or wood, trunk, branches reaching up, roots spreading down,",
+   "words": [
+    {
+     "word": " a",
+     "start": 47.8,
+     "end": 48.02
+    },
+    {
+     "word": " kid",
+     "start": 48.02,
+     "end": 48.14
+    },
+    {
+     "word": " would",
+     "start": 48.14,
+     "end": 48.32
+    },
+    {
+     "word": " draw,",
+     "start": 48.32,
+     "end": 48.62
+    },
+    {
+     "word": " 5,",
+     "start": 49.1,
+     "end": 49.62
+    },
+    {
+     "word": " mu,",
+     "start": 50.3,
+     "end": 50.3
+    },
+    {
+     "word": " tree",
+     "start": 50.98,
+     "end": 51.42
+    },
+    {
+     "word": " or",
+     "start": 51.42,
+     "end": 51.86
+    },
+    {
+     "word": " wood,",
+     "start": 51.86,
+     "end": 52.16
+    },
+    {
+     "word": " trunk,",
+     "start": 52.72,
+     "end": 53.02
+    },
+    {
+     "word": " branches",
+     "start": 53.28,
+     "end": 53.58
+    },
+    {
+     "word": " reaching",
+     "start": 53.58,
+     "end": 53.84
+    },
+    {
+     "word": " up,",
+     "start": 53.84,
+     "end": 54.18
+    },
+    {
+     "word": " roots",
+     "start": 54.52,
+     "end": 54.62
+    },
+    {
+     "word": " spreading",
+     "start": 54.62,
+     "end": 54.92
+    },
+    {
+     "word": " down,",
+     "start": 54.92,
+     "end": 55.32
+    }
+   ]
+  },
+  {
+   "start": 55.88,
+   "end": 64.06,
+   "text": " 6, rai, sun, and also day, a circle with a dot later squared off to write it faster, the",
+   "words": [
+    {
+     "word": " 6,",
+     "start": 55.809999999999995,
+     "end": 56.12
+    },
+    {
+     "word": " rai,",
+     "start": 56.98,
+     "end": 57.18
+    },
+    {
+     "word": " sun,",
+     "start": 57.6,
+     "end": 58.02
+    },
+    {
+     "word": " and",
+     "start": 58.6,
+     "end": 58.64
+    },
+    {
+     "word": " also",
+     "start": 58.64,
+     "end": 59.02
+    },
+    {
+     "word": " day,",
+     "start": 59.02,
+     "end": 59.74
+    },
+    {
+     "word": " a",
+     "start": 60.38,
+     "end": 60.58
+    },
+    {
+     "word": " circle",
+     "start": 60.58,
+     "end": 60.82
+    },
+    {
+     "word": " with",
+     "start": 60.82,
+     "end": 61.06
+    },
+    {
+     "word": " a",
+     "start": 61.06,
+     "end": 61.22
+    },
+    {
+     "word": " dot",
+     "start": 61.22,
+     "end": 61.46
+    },
+    {
+     "word": " later",
+     "start": 61.46,
+     "end": 61.94
+    },
+    {
+     "word": " squared",
+     "start": 61.94,
+     "end": 62.24
+    },
+    {
+     "word": " off",
+     "start": 62.24,
+     "end": 62.46
+    },
+    {
+     "word": " to",
+     "start": 62.46,
+     "end": 62.64
+    },
+    {
+     "word": " write",
+     "start": 62.64,
+     "end": 62.78
+    },
+    {
+     "word": " it",
+     "start": 62.78,
+     "end": 62.94
+    },
+    {
+     "word": " faster,",
+     "start": 62.94,
+     "end": 63.36
+    },
+    {
+     "word": " the",
+     "start": 63.74,
+     "end": 64.06
+    }
+   ]
+  },
+  {
+   "start": 64.06,
+   "end": 72.64,
+   "text": " sun marks a day so it also means day, next is 7, yue, moon, and also month, a crescent",
+   "words": [
+    {
+     "word": " sun",
+     "start": 64.06,
+     "end": 64.26
+    },
+    {
+     "word": " marks",
+     "start": 64.26,
+     "end": 64.52
+    },
+    {
+     "word": " a",
+     "start": 64.52,
+     "end": 64.68
+    },
+    {
+     "word": " day",
+     "start": 64.68,
+     "end": 64.88
+    },
+    {
+     "word": " so",
+     "start": 64.88,
+     "end": 65.34
+    },
+    {
+     "word": " it",
+     "start": 65.34,
+     "end": 65.44
+    },
+    {
+     "word": " also",
+     "start": 65.44,
+     "end": 65.74
+    },
+    {
+     "word": " means",
+     "start": 65.74,
+     "end": 66.06
+    },
+    {
+     "word": " day,",
+     "start": 66.06,
+     "end": 66.64
+    },
+    {
+     "word": " next",
+     "start": 67.26,
+     "end": 67.6
+    },
+    {
+     "word": " is",
+     "start": 67.6,
+     "end": 67.8
+    },
+    {
+     "word": " 7,",
+     "start": 67.8,
+     "end": 68.16
+    },
+    {
+     "word": " yue,",
+     "start": 68.76,
+     "end": 69.16
+    },
+    {
+     "word": " moon,",
+     "start": 69.68,
+     "end": 70.06
+    },
+    {
+     "word": " and",
+     "start": 70.44,
+     "end": 70.48
+    },
+    {
+     "word": " also",
+     "start": 70.48,
+     "end": 70.88
+    },
+    {
+     "word": " month,",
+     "start": 70.88,
+     "end": 71.48
+    },
+    {
+     "word": " a",
+     "start": 72.08,
+     "end": 72.34
+    },
+    {
+     "word": " crescent",
+     "start": 72.34,
+     "end": 72.64
+    }
+   ]
+  },
+  {
+   "start": 72.64,
+   "end": 81.38,
+   "text": " on its side, one moon cycle is a month so it means month 2, 8, kao, mouth, an open",
+   "words": [
+    {
+     "word": " on",
+     "start": 72.64,
+     "end": 72.84
+    },
+    {
+     "word": " its",
+     "start": 72.84,
+     "end": 73.0
+    },
+    {
+     "word": " side,",
+     "start": 73.0,
+     "end": 73.36
+    },
+    {
+     "word": " one",
+     "start": 74.0,
+     "end": 74.26
+    },
+    {
+     "word": " moon",
+     "start": 74.26,
+     "end": 74.42
+    },
+    {
+     "word": " cycle",
+     "start": 74.42,
+     "end": 74.72
+    },
+    {
+     "word": " is",
+     "start": 74.72,
+     "end": 74.94
+    },
+    {
+     "word": " a",
+     "start": 74.94,
+     "end": 75.08
+    },
+    {
+     "word": " month",
+     "start": 75.08,
+     "end": 75.28
+    },
+    {
+     "word": " so",
+     "start": 75.28,
+     "end": 75.66
+    },
+    {
+     "word": " it",
+     "start": 75.66,
+     "end": 75.78
+    },
+    {
+     "word": " means",
+     "start": 75.78,
+     "end": 76.06
+    },
+    {
+     "word": " month",
+     "start": 76.06,
+     "end": 76.62
+    },
+    {
+     "word": " 2,",
+     "start": 76.62,
+     "end": 77.24
+    },
+    {
+     "word": " 8,",
+     "start": 77.92,
+     "end": 78.22
+    },
+    {
+     "word": " kao,",
+     "start": 79.1,
+     "end": 79.24
+    },
+    {
+     "word": " mouth,",
+     "start": 79.86,
+     "end": 80.26
+    },
+    {
+     "word": " an",
+     "start": 80.86,
+     "end": 81.08
+    },
+    {
+     "word": " open",
+     "start": 81.08,
+     "end": 81.38
+    }
+   ]
+  },
+  {
+   "start": 81.38,
+   "end": 89.68,
+   "text": " mouth, just a square opening, the hole you eat and talk with, ju, yue, rain, sky on top,",
+   "words": [
+    {
+     "word": " mouth,",
+     "start": 81.38,
+     "end": 81.6
+    },
+    {
+     "word": " just",
+     "start": 82.04,
+     "end": 82.14
+    },
+    {
+     "word": " a",
+     "start": 82.14,
+     "end": 82.32
+    },
+    {
+     "word": " square",
+     "start": 82.32,
+     "end": 82.54
+    },
+    {
+     "word": " opening,",
+     "start": 82.54,
+     "end": 82.92
+    },
+    {
+     "word": " the",
+     "start": 83.38,
+     "end": 83.5
+    },
+    {
+     "word": " hole",
+     "start": 83.5,
+     "end": 83.7
+    },
+    {
+     "word": " you",
+     "start": 83.7,
+     "end": 83.9
+    },
+    {
+     "word": " eat",
+     "start": 83.9,
+     "end": 84.08
+    },
+    {
+     "word": " and",
+     "start": 84.08,
+     "end": 84.28
+    },
+    {
+     "word": " talk",
+     "start": 84.28,
+     "end": 84.52
+    },
+    {
+     "word": " with,",
+     "start": 84.52,
+     "end": 84.82
+    },
+    {
+     "word": " ju,",
+     "start": 85.64,
+     "end": 85.64
+    },
+    {
+     "word": " yue,",
+     "start": 86.28,
+     "end": 87.14
+    },
+    {
+     "word": " rain,",
+     "start": 87.74,
+     "end": 88.18
+    },
+    {
+     "word": " sky",
+     "start": 88.8,
+     "end": 89.18
+    },
+    {
+     "word": " on",
+     "start": 89.18,
+     "end": 89.4
+    },
+    {
+     "word": " top,",
+     "start": 89.4,
+     "end": 89.68
+    }
+   ]
+  },
+  {
+   "start": 89.96,
+   "end": 96.54,
+   "text": " a cloud, 4 raindrops falling inside, rain drawn out and it has to land somewhere, ten, tian,",
+   "words": [
+    {
+     "word": " a",
+     "start": 89.96,
+     "end": 90.0
+    },
+    {
+     "word": " cloud,",
+     "start": 90.0,
+     "end": 90.32
+    },
+    {
+     "word": " 4",
+     "start": 90.74,
+     "end": 90.88
+    },
+    {
+     "word": " raindrops",
+     "start": 90.88,
+     "end": 91.32
+    },
+    {
+     "word": " falling",
+     "start": 91.32,
+     "end": 91.64
+    },
+    {
+     "word": " inside,",
+     "start": 91.64,
+     "end": 92.06
+    },
+    {
+     "word": " rain",
+     "start": 92.66,
+     "end": 92.84
+    },
+    {
+     "word": " drawn",
+     "start": 92.84,
+     "end": 93.06
+    },
+    {
+     "word": " out",
+     "start": 93.06,
+     "end": 93.32
+    },
+    {
+     "word": " and",
+     "start": 93.32,
+     "end": 93.58
+    },
+    {
+     "word": " it",
+     "start": 93.58,
+     "end": 93.68
+    },
+    {
+     "word": " has",
+     "start": 93.68,
+     "end": 93.86
+    },
+    {
+     "word": " to",
+     "start": 93.86,
+     "end": 94.04
+    },
+    {
+     "word": " land",
+     "start": 94.04,
+     "end": 94.24
+    },
+    {
+     "word": " somewhere,",
+     "start": 94.24,
+     "end": 94.66
+    },
+    {
+     "word": " ten,",
+     "start": 95.52,
+     "end": 95.58
+    },
+    {
+     "word": " tian,",
+     "start": 96.38,
+     "end": 96.54
+    }
+   ]
+  },
+  {
+   "start": 97.0,
+   "end": 104.06,
+   "text": " field, farmland from above split into 4 plots, a rice field, exactly like one, now the part",
+   "words": [
+    {
+     "word": " field,",
+     "start": 97.0,
+     "end": 97.48
+    },
+    {
+     "word": " farmland",
+     "start": 98.18,
+     "end": 98.42
+    },
+    {
+     "word": " from",
+     "start": 98.42,
+     "end": 98.76
+    },
+    {
+     "word": " above",
+     "start": 98.76,
+     "end": 99.12
+    },
+    {
+     "word": " split",
+     "start": 99.12,
+     "end": 99.64
+    },
+    {
+     "word": " into",
+     "start": 99.64,
+     "end": 99.86
+    },
+    {
+     "word": " 4",
+     "start": 99.86,
+     "end": 100.14
+    },
+    {
+     "word": " plots,",
+     "start": 100.14,
+     "end": 100.46
+    },
+    {
+     "word": " a",
+     "start": 100.78,
+     "end": 100.9
+    },
+    {
+     "word": " rice",
+     "start": 100.9,
+     "end": 101.18
+    },
+    {
+     "word": " field,",
+     "start": 101.18,
+     "end": 101.56
+    },
+    {
+     "word": " exactly",
+     "start": 101.84,
+     "end": 102.24
+    },
+    {
+     "word": " like",
+     "start": 102.24,
+     "end": 102.6
+    },
+    {
+     "word": " one,",
+     "start": 102.6,
+     "end": 102.9
+    },
+    {
+     "word": " now",
+     "start": 103.42,
+     "end": 103.74
+    },
+    {
+     "word": " the",
+     "start": 103.74,
+     "end": 103.88
+    },
+    {
+     "word": " part",
+     "start": 103.88,
+     "end": 104.06
+    }
+   ]
+  },
+  {
+   "start": 104.06,
+   "end": 109.4,
+   "text": " that makes chinese click, stack the pictures and they build new words, two trees, mu plus",
+   "words": [
+    {
+     "word": " that",
+     "start": 104.06,
+     "end": 104.2
+    },
+    {
+     "word": " makes",
+     "start": 104.2,
+     "end": 104.38
+    },
+    {
+     "word": " chinese",
+     "start": 104.38,
+     "end": 104.76
+    },
+    {
+     "word": " click,",
+     "start": 104.76,
+     "end": 105.1
+    },
+    {
+     "word": " stack",
+     "start": 105.36,
+     "end": 105.62
+    },
+    {
+     "word": " the",
+     "start": 105.62,
+     "end": 105.82
+    },
+    {
+     "word": " pictures",
+     "start": 105.82,
+     "end": 106.14
+    },
+    {
+     "word": " and",
+     "start": 106.14,
+     "end": 106.4
+    },
+    {
+     "word": " they",
+     "start": 106.4,
+     "end": 106.54
+    },
+    {
+     "word": " build",
+     "start": 106.54,
+     "end": 106.72
+    },
+    {
+     "word": " new",
+     "start": 106.72,
+     "end": 106.9
+    },
+    {
+     "word": " words,",
+     "start": 106.9,
+     "end": 107.26
+    },
+    {
+     "word": " two",
+     "start": 107.8,
+     "end": 108.04
+    },
+    {
+     "word": " trees,",
+     "start": 108.04,
+     "end": 108.44
+    },
+    {
+     "word": " mu",
+     "start": 108.94,
+     "end": 108.94
+    },
+    {
+     "word": " plus",
+     "start": 108.94,
+     "end": 109.4
+    }
+   ]
+  },
+  {
+   "start": 109.4,
+   "end": 116.76,
+   "text": " mu makes lin, a wood, add a third, and sin is a dense forest, sun plus moon, rai plus",
+   "words": [
+    {
+     "word": " mu",
+     "start": 109.4,
+     "end": 109.66
+    },
+    {
+     "word": " makes",
+     "start": 109.66,
+     "end": 109.92
+    },
+    {
+     "word": " lin,",
+     "start": 109.92,
+     "end": 110.22
+    },
+    {
+     "word": " a",
+     "start": 110.52,
+     "end": 110.66
+    },
+    {
+     "word": " wood,",
+     "start": 110.66,
+     "end": 110.92
+    },
+    {
+     "word": " add",
+     "start": 111.56,
+     "end": 111.78
+    },
+    {
+     "word": " a",
+     "start": 111.78,
+     "end": 111.96
+    },
+    {
+     "word": " third,",
+     "start": 111.96,
+     "end": 112.24
+    },
+    {
+     "word": " and",
+     "start": 112.6,
+     "end": 112.72
+    },
+    {
+     "word": " sin",
+     "start": 112.72,
+     "end": 112.98
+    },
+    {
+     "word": " is",
+     "start": 112.98,
+     "end": 113.32
+    },
+    {
+     "word": " a",
+     "start": 113.32,
+     "end": 113.5
+    },
+    {
+     "word": " dense",
+     "start": 113.5,
+     "end": 113.72
+    },
+    {
+     "word": " forest,",
+     "start": 113.72,
+     "end": 114.16
+    },
+    {
+     "word": " sun",
+     "start": 114.74,
+     "end": 115.04
+    },
+    {
+     "word": " plus",
+     "start": 115.04,
+     "end": 115.46
+    },
+    {
+     "word": " moon,",
+     "start": 115.46,
+     "end": 115.88
+    },
+    {
+     "word": " rai",
+     "start": 116.46,
+     "end": 116.56
+    },
+    {
+     "word": " plus",
+     "start": 116.56,
+     "end": 116.76
+    }
+   ]
+  },
+  {
+   "start": 116.76,
+   "end": 123.38,
+   "text": " yue makes ming, bright, the two brightest things in the sky, a person by a tree, ren plus",
+   "words": [
+    {
+     "word": " yue",
+     "start": 116.76,
+     "end": 117.08
+    },
+    {
+     "word": " makes",
+     "start": 117.08,
+     "end": 117.54
+    },
+    {
+     "word": " ming,",
+     "start": 117.54,
+     "end": 117.98
+    },
+    {
+     "word": " bright,",
+     "start": 118.42,
+     "end": 118.8
+    },
+    {
+     "word": " the",
+     "start": 119.56,
+     "end": 119.64
+    },
+    {
+     "word": " two",
+     "start": 119.64,
+     "end": 119.9
+    },
+    {
+     "word": " brightest",
+     "start": 119.9,
+     "end": 120.16
+    },
+    {
+     "word": " things",
+     "start": 120.16,
+     "end": 120.4
+    },
+    {
+     "word": " in",
+     "start": 120.4,
+     "end": 120.6
+    },
+    {
+     "word": " the",
+     "start": 120.6,
+     "end": 120.74
+    },
+    {
+     "word": " sky,",
+     "start": 120.74,
+     "end": 121.02
+    },
+    {
+     "word": " a",
+     "start": 121.54,
+     "end": 121.72
+    },
+    {
+     "word": " person",
+     "start": 121.72,
+     "end": 121.98
+    },
+    {
+     "word": " by",
+     "start": 121.98,
+     "end": 122.24
+    },
+    {
+     "word": " a",
+     "start": 122.24,
+     "end": 122.4
+    },
+    {
+     "word": " tree,",
+     "start": 122.4,
+     "end": 122.68
+    },
+    {
+     "word": " ren",
+     "start": 123.08,
+     "end": 123.12
+    },
+    {
+     "word": " plus",
+     "start": 123.12,
+     "end": 123.38
+    }
+   ]
+  },
+  {
+   "start": 123.38,
+   "end": 130.42,
+   "text": " mu makes shu, rest, and one extra for free, li means strength, strength in a field, tian",
+   "words": [
+    {
+     "word": " mu",
+     "start": 123.38,
+     "end": 123.66
+    },
+    {
+     "word": " makes",
+     "start": 123.66,
+     "end": 123.86
+    },
+    {
+     "word": " shu,",
+     "start": 123.86,
+     "end": 124.2
+    },
+    {
+     "word": " rest,",
+     "start": 124.56,
+     "end": 124.94
+    },
+    {
+     "word": " and",
+     "start": 125.44,
+     "end": 125.54
+    },
+    {
+     "word": " one",
+     "start": 125.54,
+     "end": 125.76
+    },
+    {
+     "word": " extra",
+     "start": 125.76,
+     "end": 126.02
+    },
+    {
+     "word": " for",
+     "start": 126.02,
+     "end": 126.28
+    },
+    {
+     "word": " free,",
+     "start": 126.28,
+     "end": 126.58
+    },
+    {
+     "word": " li",
+     "start": 127.14,
+     "end": 127.16
+    },
+    {
+     "word": " means",
+     "start": 127.16,
+     "end": 127.48
+    },
+    {
+     "word": " strength,",
+     "start": 127.48,
+     "end": 128.14
+    },
+    {
+     "word": " strength",
+     "start": 128.76,
+     "end": 129.14
+    },
+    {
+     "word": " in",
+     "start": 129.14,
+     "end": 129.34
+    },
+    {
+     "word": " a",
+     "start": 129.34,
+     "end": 129.46
+    },
+    {
+     "word": " field,",
+     "start": 129.46,
+     "end": 129.78
+    },
+    {
+     "word": " tian",
+     "start": 130.32,
+     "end": 130.42
+    }
+   ]
+  },
+  {
+   "start": 130.42,
+   "end": 136.4,
+   "text": " plus li makes nan, man, the one who works the field, that's the secret, chinese isn't",
+   "words": [
+    {
+     "word": " plus",
+     "start": 130.42,
+     "end": 130.64
+    },
+    {
+     "word": " li",
+     "start": 130.64,
+     "end": 130.96
+    },
+    {
+     "word": " makes",
+     "start": 130.96,
+     "end": 131.4
+    },
+    {
+     "word": " nan,",
+     "start": 131.4,
+     "end": 131.7
+    },
+    {
+     "word": " man,",
+     "start": 132.24,
+     "end": 132.52
+    },
+    {
+     "word": " the",
+     "start": 133.02,
+     "end": 133.08
+    },
+    {
+     "word": " one",
+     "start": 133.08,
+     "end": 133.26
+    },
+    {
+     "word": " who",
+     "start": 133.26,
+     "end": 133.44
+    },
+    {
+     "word": " works",
+     "start": 133.44,
+     "end": 133.62
+    },
+    {
+     "word": " the",
+     "start": 133.62,
+     "end": 133.84
+    },
+    {
+     "word": " field,",
+     "start": 133.84,
+     "end": 134.14
+    },
+    {
+     "word": " that's",
+     "start": 134.62,
+     "end": 134.92
+    },
+    {
+     "word": " the",
+     "start": 134.92,
+     "end": 135.08
+    },
+    {
+     "word": " secret,",
+     "start": 135.08,
+     "end": 135.4
+    },
+    {
+     "word": " chinese",
+     "start": 135.74,
+     "end": 136.06
+    },
+    {
+     "word": " isn't",
+     "start": 136.06,
+     "end": 136.4
+    }
+   ]
+  },
+  {
+   "start": 136.4,
+   "end": 141.14,
+   "text": " random symbols, it's a small set of pictures, combined in ways that make sense, you just",
+   "words": [
+    {
+     "word": " random",
+     "start": 136.4,
+     "end": 136.66
+    },
+    {
+     "word": " symbols,",
+     "start": 136.66,
+     "end": 137.12
+    },
+    {
+     "word": " it's",
+     "start": 137.4,
+     "end": 137.52
+    },
+    {
+     "word": " a",
+     "start": 137.52,
+     "end": 137.58
+    },
+    {
+     "word": " small",
+     "start": 137.58,
+     "end": 137.86
+    },
+    {
+     "word": " set",
+     "start": 137.86,
+     "end": 138.04
+    },
+    {
+     "word": " of",
+     "start": 138.04,
+     "end": 138.18
+    },
+    {
+     "word": " pictures,",
+     "start": 138.18,
+     "end": 138.54
+    },
+    {
+     "word": " combined",
+     "start": 139.06,
+     "end": 139.28
+    },
+    {
+     "word": " in",
+     "start": 139.28,
+     "end": 139.48
+    },
+    {
+     "word": " ways",
+     "start": 139.48,
+     "end": 139.66
+    },
+    {
+     "word": " that",
+     "start": 139.66,
+     "end": 139.86
+    },
+    {
+     "word": " make",
+     "start": 139.86,
+     "end": 140.02
+    },
+    {
+     "word": " sense,",
+     "start": 140.02,
+     "end": 140.34
+    },
+    {
+     "word": " you",
+     "start": 140.88,
+     "end": 140.98
+    },
+    {
+     "word": " just",
+     "start": 140.98,
+     "end": 141.14
+    }
+   ]
+  },
+  {
+   "start": 141.14,
+   "end": 146.88,
+   "text": " read ten pictures, no memorizing, want to actually start learning chinese, discover thousands of",
+   "words": [
+    {
+     "word": " read",
+     "start": 141.14,
+     "end": 141.34
+    },
+    {
+     "word": " ten",
+     "start": 141.34,
+     "end": 141.52
+    },
+    {
+     "word": " pictures,",
+     "start": 141.52,
+     "end": 141.9
+    },
+    {
+     "word": " no",
+     "start": 142.24,
+     "end": 142.42
+    },
+    {
+     "word": " memorizing,",
+     "start": 142.42,
+     "end": 143.0
+    },
+    {
+     "word": " want",
+     "start": 143.64,
+     "end": 143.86
+    },
+    {
+     "word": " to",
+     "start": 143.86,
+     "end": 143.98
+    },
+    {
+     "word": " actually",
+     "start": 143.98,
+     "end": 144.28
+    },
+    {
+     "word": " start",
+     "start": 144.28,
+     "end": 144.56
+    },
+    {
+     "word": " learning",
+     "start": 144.56,
+     "end": 144.82
+    },
+    {
+     "word": " chinese,",
+     "start": 144.82,
+     "end": 145.26
+    },
+    {
+     "word": " discover",
+     "start": 146.06,
+     "end": 146.14
+    },
+    {
+     "word": " thousands",
+     "start": 146.14,
+     "end": 146.58
+    },
+    {
+     "word": " of",
+     "start": 146.58,
+     "end": 146.88
+    }
+   ]
+  },
+  {
+   "start": 146.88,
+   "end": 150.1,
+   "text": " free exercises and more learning content on stacktags.io",
+   "words": [
+    {
+     "word": " free",
+     "start": 146.88,
+     "end": 147.04
+    },
+    {
+     "word": " exercises",
+     "start": 147.04,
+     "end": 147.54
+    },
+    {
+     "word": " and",
+     "start": 147.54,
+     "end": 147.94
+    },
+    {
+     "word": " more",
+     "start": 147.94,
+     "end": 148.12
+    },
+    {
+     "word": " learning",
+     "start": 148.12,
+     "end": 148.38
+    },
+    {
+     "word": " content",
+     "start": 148.38,
+     "end": 148.7
+    },
+    {
+     "word": " on",
+     "start": 148.7,
+     "end": 148.88
+    },
+    {
+     "word": " stacktags",
+     "start": 148.88,
+     "end": 149.46
+    },
+    {
+     "word": ".io",
+     "start": 149.46,
+     "end": 150.1
+    }
+   ]
+  }
+ ]
+}

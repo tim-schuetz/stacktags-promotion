@@ -316,13 +316,11 @@ body{ font-family:var(--stk-font); color:var(--stk-ink); }
 /* ============================================================
    10 · ATTESTATIONS — grinning Tether founder w/ list, cash pile, dashed dollars rain
    ============================================================ */
-.au-founder{ position:absolute; left:130px; bottom:300px; width:440px; z-index:4;
+.au-founder{ position:absolute; left:70px; bottom:210px; width:560px; height:560px; z-index:4; object-fit:contain; object-position:bottom;
   opacity:0; transform:translateY(70px) scale(.96);
   filter:drop-shadow(0 24px 32px rgba(16,50,40,.26));
   transition:opacity .5s ease, transform .6s cubic-bezier(.2,.8,.2,1); }
 .audit.in .au-founder{ opacity:1; transform:none; }
-.audit.glee .au-founder{ animation:glee .7s cubic-bezier(.34,1.6,.5,1); }
-@keyframes glee{ 0%,100%{ transform:translateY(0) scale(1); } 45%{ transform:translateY(-30px) scale(1.05); } }
 .au-cash{ position:absolute; right:100px; bottom:300px; width:490px; z-index:3;
   opacity:0; transform:translateY(40px); transition:opacity .5s ease, transform .6s ease;
   filter:drop-shadow(0 20px 28px rgba(16,50,40,.26)); }

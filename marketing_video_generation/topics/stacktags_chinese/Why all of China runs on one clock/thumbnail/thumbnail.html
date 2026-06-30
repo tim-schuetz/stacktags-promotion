@@ -8,6 +8,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Noto+Sans+SC:wght@700;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../video/elements/theme.css">
 <style>
+  /* house türkis emphasis override (thumbnail-scoped; leaves shared theme untouched) */
+  :root { --stk-teal-d: #16A892; }
   html, body { margin: 0; height: 100%; background: #20262b; }
   .wrap { display: grid; place-items: center; height: 100%; }
   .thumb { position: relative; width: 1280px; height: 720px; overflow: hidden; background: #fff;
@@ -22,7 +24,6 @@
 
   /* headline (left) */
   .hl-wrap { position: absolute; left: 84px; top: 132px; width: 660px; }
-  .kicker { font-weight: 800; font-size: 30px; letter-spacing: 6px; color: var(--stk-muted); margin-bottom: 18px; }
   .hl { margin: 0; font-weight: 900; font-size: 130px; line-height: .94; letter-spacing: -4px; color: var(--stk-ink); }
   .hl .accent { color: var(--stk-teal); }
   .hl .num { color: var(--stk-teal-d); }
@@ -59,7 +60,6 @@
   <div class="thumb stk-grid-bg" id="thumb">
     <div class="bg-sun"></div>
     <div class="hl-wrap">
-      <div class="kicker">ALL OF CHINA · ONE TIME ZONE</div>
       <h1 class="hl"><span class="num">5</span> time zones.</h1>
       <h1 class="hl"><span class="accent">1 clock.</span></h1>
       <div class="sub">5,000 km wide — but the sun doesn't<br>take orders from Beijing.</div>

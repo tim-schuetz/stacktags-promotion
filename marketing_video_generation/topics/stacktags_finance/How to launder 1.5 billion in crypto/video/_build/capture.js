@@ -37,7 +37,7 @@ const END = 100.8;   // narration ~101.3s
   const tRec = Date.now();   // recording starts ~when the page is created
   page.on('console', m => { if (m.type() === 'error') console.log('  [page error]', m.text()); });
 
-  await page.goto('http://localhost:8862/video/index.html', { waitUntil: 'domcontentloaded' });
+  await page.goto('http://localhost:8863/video/index.html', { waitUntil: 'domcontentloaded' });
   await page.evaluate(async () => { try { await document.fonts.ready; } catch {} });
   // dump the page's declared SFX bed so the audio step can rebuild it
   // deterministically (headless can't record Web Audio).

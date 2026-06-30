@@ -13,7 +13,7 @@
 (function () {
   const $ = (s) => document.querySelector(s);
   const vo = $('#vo');
-  const DUR = 68.680;
+  const DUR = 66.860;
 
   // ---- scene helpers -------------------------------------------------
   const SCENES = ['open', 'depth', 'outro'];
@@ -97,7 +97,9 @@
         <div class="tone"><span class="tw">shǐ</span>${toneSVG('dip')}</div>
         <div class="tone"><span class="tw">shì</span>${toneSVG('falling')}</div>
       </div><div class="b-cap">four flavors of a <b>single syllable</b></div></div>` },
-    // 6 — read it aloud: a busy waveform + the shi-blur
+    // 6 — UNUSED: read-aloud waveform beat (dropped — the spoken "shi shi shi shi shi"
+    //     was cut from the audio; the tones beat now goes straight to the listener).
+    //     Kept here only so the depth-layer indices below still line up.
     { text: `<div class="b-wave">${bars(27)}<div class="blur">shi shi shi shi…</div></div>` },
     // 7 — the baffled listener: the Mandarin speaker + a garbled #!/&%* bubble
     { text: `<div class="b-nonsense"><div class="nbubble">#!/&amp;%*</div><img class="nf" src="${cut}speaker_mandarin.png" alt=""/></div>` },
@@ -139,27 +141,32 @@
   const OP_PORTRAIT_T= 14.54;   // "written by the linguist" — portrait slides up, title stays
   const DEPTH_START  = 18.30;   // hand off to the tones beat at "and the only thing separating them…"
 
+  // NOTE: the spoken "shi shi shi shi shi" (read-aloud blur) was cut from the audio
+  // (combined mp3 trimmed 28.95–30.78s, −1.83s), so the read-aloud WAVEFORM beat (6)
+  // is dropped entirely — the tones beat (5, "the syllables") goes straight to the
+  // baffled-listener figure (7, "To your ears"). Every cue from beat 7 on is shifted
+  // −1.83s to match the shortened audio.
   const BEATS = [
-    { i: 6,  t: 29.38, mode: 'lift'      },   // the shi-blur (read aloud)
-    { i: 7,  t: 30.80, mode: 'zoom-in'   },   // to your ears (Mandarin speaker + #!/&%* bubble)
-    { i: 8,  t: 33.96, mode: 'rise'      },   // wall of sound RISES from below, the speaker stays + slides up (#3)
-    { i: 9,  t: 37.36, mode: 'zoom-out'  },   // look at it written down
-    { i: 10, t: 41.16, mode: 'zoom-in'   },   // a poet named Shi
-    { i: 11, t: 42.76, mode: 'rise'      },   // a lion rises from below (#5)
-    { i: 12, t: 44.34, mode: 'rise'      },   // nine more lions rise (#5)
-    { i: 13, t: 45.60, mode: 'zoom-in'   },   // poet rises up to the market (#6)
-    { i: 14, t: 50.30, mode: 'zoom-out'  },   // … ten STONE lions (reveal lands on "stone lions")
-    { i: 15, t: 52.16, mode: 'pan-left'  },   // every shi a different character
-    { i: 16, t: 55.08, mode: 'zoom-in'   },   // the poem (zero confusion / whole trick)
+    { i: 7,  t: 28.97, mode: 'zoom-in'   },   // to your ears (Mandarin speaker + #!/&%* bubble) — straight from the tones
+    { i: 8,  t: 32.13, mode: 'rise'      },   // wall of sound RISES from below, the speaker stays + slides up (#3)
+    { i: 9,  t: 35.53, mode: 'zoom-out'  },   // look at it written down
+    { i: 10, t: 39.33, mode: 'zoom-in'   },   // a poet named Shi
+    { i: 11, t: 40.93, mode: 'rise'      },   // a lion rises from below (#5)
+    { i: 12, t: 42.51, mode: 'rise'      },   // nine more lions rise (#5)
+    { i: 13, t: 43.77, mode: 'zoom-in'   },   // poet rises up to the market (#6)
+    { i: 14, t: 48.47, mode: 'zoom-out'  },   // … ten STONE lions (reveal lands on "stone lions")
+    { i: 15, t: 50.33, mode: 'pan-left'  },   // every shi a different character
+    { i: 16, t: 53.25, mode: 'zoom-in'   },   // the poem (zero confusion / whole trick)
   ];
-  const PINYIN_T = 58.96;   // "…by their shape, not their sound" — the "shi" pinyin slides in on beat 16
+  const PINYIN_T = 57.13;   // "…by their shape, not their sound" — the "shi" pinyin slides in on beat 16
   // #7 — the new (shortened) audio ends at "…not their sound" then goes straight to
   // the outro CTA. Outro endcard appears as "Want to actually start learning Chinese?" begins.
-  const OUTRO_START = 62.06;   // "Want…" @62.06 (right after "…not their sound" @61.48)
+  const OUTRO_START = 60.23;   // "Want…" @60.23 (right after "…not their sound" @59.65)
 
   // ---- subtitles — mirror the spoken line EXACTLY, one line at a time ----
-  // (NOTE: the audio still contains "So here's what it sounds like" and the whole
-  // post-"sound" tail; those subtitles stay until the new shortened audio lands.)
+  // (The spoken "shi shi shi shi shi" line was cut from the audio, so its subtitle
+  // is gone too; "four flavors of a single syllable" now hands straight to "To your
+  // ears". Everything from there on is shifted −1.83s.)
   const SUBS = [
     [0.00,  'What you see here is a poem.'],
     [1.68,  'It’s more than <b>90 characters</b> long'],
@@ -179,29 +186,28 @@
     [22.30, 'but I got some help from <b>Google Translate.</b>'],
     [23.92, 'shā · shí · shǐ · shì'],
     [26.98, 'four flavors of a <b>single syllable.</b>'],
-    [29.38, 'shi shi shi shi shi…'],
-    [30.80, 'To your ears — to anyone’s ears —'],
-    [32.60, 'it’s <b>pure nonsense.</b>'],
-    [33.96, 'A wall of the exact same sound.'],
-    [36.40, '<b>Nobody</b> could follow it.'],
-    [37.36, 'But now look at it <b>written down.</b>'],
-    [39.30, 'Suddenly it’s a crisp little <b>story</b>:'],
-    [41.16, 'a poet named Shi,'],
-    [42.32, 'who’s obsessed with eating <b>lions</b>,'],
-    [44.34, 'vows to eat <b>ten</b> of them.'],
-    [45.44, 'He goes to the <b>market</b>, finds ten lions,'],
-    [48.00, '<b>kills</b> them, hauls them <b>home</b>,'],
-    [49.02, 'and discovers they were actually'],
-    [50.74, 'ten <b>stone lions.</b>'],
-    [52.16, 'Every “shi” is a different character,'],
-    [54.02, 'with a different <b>meaning</b>.'],
-    [55.08, 'On paper, there’s <b>zero confusion</b>,'],
-    [57.44, 'and that’s the whole trick:'],
-    [58.96, 'Chinese characters carry meaning'],
-    [59.88, 'by their <b>shape</b>, not their <b>sound</b>.'],
-    [62.06, 'Wanna actually start <b>learning Chinese</b>?'],
-    [63.94, 'Discover thousands of <b>free exercises</b>'],
-    [65.58, 'and more learning content on <b>stacktags.io</b>.'],
+    [28.97, 'To your ears — to anyone’s ears —'],
+    [30.77, 'it’s <b>pure nonsense.</b>'],
+    [32.13, 'A wall of the exact same sound.'],
+    [34.57, '<b>Nobody</b> could follow it.'],
+    [35.53, 'But now look at it <b>written down.</b>'],
+    [37.47, 'Suddenly it’s a crisp little <b>story</b>:'],
+    [39.33, 'a poet named Shi,'],
+    [40.49, 'who’s obsessed with eating <b>lions</b>,'],
+    [42.51, 'vows to eat <b>ten</b> of them.'],
+    [43.61, 'He goes to the <b>market</b>, finds ten lions,'],
+    [46.17, '<b>kills</b> them, hauls them <b>home</b>,'],
+    [47.19, 'and discovers they were actually'],
+    [48.91, 'ten <b>stone lions.</b>'],
+    [50.33, 'Every “shi” is a different character,'],
+    [52.19, 'with a different <b>meaning</b>.'],
+    [53.25, 'On paper, there’s <b>zero confusion</b>,'],
+    [55.61, 'and that’s the whole trick:'],
+    [57.13, 'Chinese characters carry meaning'],
+    [58.05, 'by their <b>shape</b>, not their <b>sound</b>.'],
+    [60.23, 'Wanna actually start <b>learning Chinese</b>?'],
+    [62.11, 'Discover thousands of <b>free exercises</b>'],
+    [63.75, 'and more learning content on <b>stacktags.io</b>.'],
   ];
 
   function setSub(html) {
@@ -219,19 +225,18 @@
     [11.38, 'swoosh', 0.50],   // title morph
     [14.54, 'swoosh', 0.50],   // portrait slides up from below
     [18.30, 'swoosh', 0.50],   // → tones (depth handoff)
-    [29.38, 'swoosh', 0.50],   // → read-aloud waveform
-    [30.80, 'swoosh', 0.50],   // → listener (Mandarin speaker)
-    [33.96, 'swoosh', 0.50],   // → wall of sound
-    [37.36, 'swoosh', 0.50],   // → on paper
-    [41.16, 'swoosh', 0.50],   // → poet
-    [42.76, 'swoosh', 0.50],   // → lion rises
-    [44.34, 'swoosh', 0.50],   // → nine more lions rise
-    [45.60, 'swoosh', 0.50],   // → market (poet rises to meet it)
-    [50.30, 'swoosh', 0.50],   // → stone lion (twist)
-    [52.16, 'swoosh', 0.50],   // → fan-out
-    [55.08, 'swoosh', 0.50],   // → poem (zero confusion)
-    [58.96, 'swoosh', 0.50],   // → poem (shape, not sound)
-    [62.06, 'swoosh', 0.55],   // → outro assemble
+    [28.97, 'swoosh', 0.50],   // → listener (Mandarin speaker) — straight from the tones (waveform beat cut)
+    [32.13, 'swoosh', 0.50],   // → wall of sound
+    [35.53, 'swoosh', 0.50],   // → on paper
+    [39.33, 'swoosh', 0.50],   // → poet
+    [40.93, 'swoosh', 0.50],   // → lion rises
+    [42.51, 'swoosh', 0.50],   // → nine more lions rise
+    [43.77, 'swoosh', 0.50],   // → market (poet rises to meet it)
+    [48.47, 'swoosh', 0.50],   // → stone lion (twist)
+    [50.33, 'swoosh', 0.50],   // → fan-out
+    [53.25, 'swoosh', 0.50],   // → poem (zero confusion)
+    [57.13, 'swoosh', 0.50],   // → poem (shape, not sound)
+    [60.23, 'swoosh', 0.55],   // → outro assemble
     [8.25,  'pop',    0.55],   // cluster characters snap into the grid
     [12.10, 'pop',    0.55],   // title characters snap into place
     [18.80, 'pop',    0.55],   // the four tone chips pop in
