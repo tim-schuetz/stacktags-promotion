@@ -20,11 +20,16 @@ const SHOTS = [
     prompt: 'A single white chrysanthemum flower head with a short green stem, the traditional Chinese funeral / mourning flower, fresh, soft petals, gentle top-down three-quarter view.' },
   { key: 'lantern', ar: '1:1',
     prompt: 'A single pale cream-white lotus-shaped paper river lantern (a Ghost Festival floating water lantern), layered lotus petals, a soft warm glow from inside, calm and delicate.' },
+  // a full SCENE (not a cut-out object) — a respectful Chinese memorial, used as a
+  // desaturated bottom backdrop under the bowl/censer rhyme.
+  { key: 'funeral', ar: '16:9', personGeneration: 'allow_adult',
+    style: 'Photorealistic, cinematic, solemn and tasteful, soft dim indoor light, muted desaturated tones, shallow depth of field, no text, no letters, no captions, no watermark, no logos.',
+    prompt: 'A solemn, respectful traditional Chinese memorial ceremony seen from a calm distance: a low offering altar draped in white, white and yellow chrysanthemum wreaths, several incense sticks burning upright in a bronze censer with thin rising smoke, small white bowls of rice and fruit offered on the table, soft red candle light, a few mourners in dark muted clothing standing quietly with heads bowed in the background.' },
 ];
 
 async function gen(shot, attempt = 1) {
   const url = `https://generativelanguage.googleapis.com/v1beta/models/imagen-4.0-generate-001:predict?key=${KEY}`;
-  const body = { instances: [{ prompt: `${shot.prompt} ${STYLE}` }], parameters: { sampleCount: 1, aspectRatio: shot.ar || '1:1', personGeneration: 'dont_allow' } };
+  const body = { instances: [{ prompt: `${shot.prompt} ${shot.style || STYLE}` }], parameters: { sampleCount: 1, aspectRatio: shot.ar || '1:1', personGeneration: shot.personGeneration || 'dont_allow' } };
   const r = await fetch(url, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(body) });
   if (!r.ok) { const t = await r.text(); if (attempt < 3) { await new Promise(s => setTimeout(s, 1500)); return gen(shot, attempt + 1); } throw new Error(`${shot.key} ${r.status} ${t.slice(0, 300)}`); }
   const j = await r.json();

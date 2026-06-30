@@ -8,15 +8,13 @@ if not API_KEY:
 VOICE_ID = "VCgLBmBjldJmfphyB8sZ"   # Liam - Viral Short-Form Storyteller
 MODEL = "eleven_multilingual_v2"
 
-NARRATION = """There's one thing you must never do with chopsticks in China: stand them straight up in your bowl of rice. Do it, and you've just set a place... for the dead. Here's why this one looks so wrong.
+NARRATION = """There's one thing you must never do with chopsticks in China: stand them straight up in your bowl of rice. Do it, and you've just set a place... for the dead.
 
 It's one of the deepest dining taboos in Chinese culture. And the reason is what it resembles. At funerals and ancestor rituals, a bowl of rice with incense — or chopsticks — standing straight up is offered to the deceased. It's a gift for the dead. So at a normal dinner, chopsticks jammed upright look exactly like a death offering. It's read as an omen — almost like inviting death to the table.
 
 Instead, you lay your chopsticks flat — across the top of the bowl, or on a little rest. Tiny gesture, completely different meaning. And these death-related taboos get taken even more seriously during the seventh lunar month — "Ghost Month" — when spirits are said to roam, and people avoid anything that might invite bad luck.
 
-It's just two sticks and a bowl of rice. But stand them up, and you've turned dinner into a funeral — which is exactly why, in China, you simply never do it. Half of good manners, it turns out, is just very old beliefs frozen into etiquette.
-
-Wanna actually start learning Chinese? Discover thousands of free exercises and more learning content on stacktags.io."""
+It's just two sticks and a bowl of rice. But stand them up, and you've turned dinner into a funeral — which is exactly why"""
 
 OUT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", "script_voice.mp3"))
 

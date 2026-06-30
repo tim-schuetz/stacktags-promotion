@@ -3,8 +3,9 @@
    Reuses the reference engine (persistent grid camera + faux-3D depth
    transitions + an audio.currentTime cue engine + verbatim subtitles +
    a declared SFX bed). ONE hero bowl carries the whole story; the censer
-   is its visual rhyme. Camera grammar: ominous push on "wrong", pan into
-   the rhyme, zoom-out to Ghost Month, zoom back in for the punchline.
+   is its visual rhyme, grounded by a real (desaturated) memorial photo that
+   rises at the bottom during the rhyme. Ends on the upright chopsticks at
+   "which is exactly why" — NO outro — so a YouTube replay loops cleanly.
    ============================================================ */
 (function () {
   'use strict';
@@ -19,20 +20,11 @@
   const bowlGroup = $('#bowl-group'), sticks = $('#sticks');
   const rhymeSide = $('#rhyme-side'), smokeBowl = $('#smoke-bowl');
   const smokeCenser = rhymeSide.querySelector('.smoke-censer');
-  const ghostset = $('#ghostset'), vocabK = $('#vocab-kuaizi');
-  const ghostInner = $('#ghost-inner'), lantern = $('#lantern'), ghostWisps = $('#ghost-wisps'), vocabG = $('#vocab-guiyue');
+  const vocabK = $('#vocab-kuaizi');
+  const ghostInner = $('#ghost-inner'), vocabG = $('#vocab-guiyue');
 
   // the dotted connector between the two upright groups (rhyme layout coords)
   $('#rhyme-path').setAttribute('d', 'M340 604 Q545 552 732 582');
-
-  // outro endcard
-  const outroLogo = $('#outro-logo');
-  if (outroLogo && window.makeStacktagsLogo) {
-    outroLogo.innerHTML = window.makeStacktagsLogo({ size: 560 });
-    outroLogo.querySelectorAll('svg > g').forEach((g) => { if (!g.classList.contains('chev')) g.classList.add('lyr'); });
-  }
-  function outroAssemble() { $('#outro-ec').classList.add('play'); }
-  function outroReset() { $('#outro-ec').classList.remove('play'); }
 
   window.__ready = true;
 
@@ -124,11 +116,11 @@
     gcam.x = on ? 70 : 0;            // small camera pan justifies the swoosh
   }
   function tableHook() {            // bowl present, sticks not yet
-    rhymeOn(false); cls(smokeBowl, 'on', false); cls(ghostset, 'on', false);
+    rhymeOn(false); cls(tableInner, 'funeral', false); cls(smokeBowl, 'on', false);
   }
-  function tablePunch() {           // bare, respectful: centered bowl + flat sticks
-    rhymeOn(false);
-    cls(smokeBowl, 'on', false); cls(ghostset, 'on', false);
+  function tablePunch() {           // bare: centered bowl + flat sticks (calm beat)
+    rhymeOn(false); cls(tableInner, 'funeral', false);
+    cls(smokeBowl, 'on', false);
     cls(vocabK, 'in', false); setSticks('flat');
   }
 
@@ -141,45 +133,38 @@
     setTimeout(() => { subsLine.innerHTML = html; subsLine.classList.add('in'); }, 120);
   }
   const SUBS = [
-    [0.0, 'There’s one thing you must <b>never</b> do'],
-    [1.66, 'with chopsticks in China:'],
-    [3.0, 'stand them <b>straight up</b> in your bowl of rice.'],
-    [5.06, 'Do it, and you’ve just set a place…'],
-    [7.08, '…for the <b>dead</b>.'],
-    [8.14, 'Here’s why this one looks so <b>wrong</b>.'],
-    [10.1, 'It’s one of the deepest dining <b>taboos</b>.'],
-    [13.0, 'And the reason is what it <b>resembles</b>.'],
-    [14.92, 'At funerals and ancestor rituals,'],
-    [16.64, 'a bowl of rice with <b>incense</b> —'],
-    [18.42, 'or chopsticks — standing straight up'],
-    [20.72, 'is offered to the <b>deceased</b>.'],
-    [22.3, 'It’s a gift for the dead.'],
-    [23.62, 'So at a normal dinner,'],
-    [25.12, 'chopsticks jammed upright'],
-    [26.08, 'look exactly like a <b>death offering</b>.'],
-    [28.0, 'It’s read as an <b>omen</b> —'],
-    [29.46, 'almost like inviting death to the table.'],
-    [31.92, 'Instead, you lay your chopsticks <b>flat</b> —'],
-    [33.68, 'across the top of the bowl, or on a little rest.'],
-    [36.82, 'Tiny gesture, <b>completely different</b> meaning.'],
-    [38.92, 'And these death-related taboos'],
-    [41.0, 'get taken even more seriously'],
-    [42.68, 'during the seventh lunar month —'],
-    [44.54, '<b>“Ghost Month”</b> —'],
-    [45.38, 'when spirits are said to <b>roam</b>,'],
-    [46.64, 'and people avoid anything'],
-    [47.74, 'that might invite <b>bad luck</b>.'],
-    [49.88, 'It’s just two sticks and a bowl of rice.'],
-    [52.04, 'But <b>stand them up</b>,'],
-    [53.12, 'and you’ve turned dinner into a <b>funeral</b> —'],
-    [54.66, 'which is exactly why, in China,'],
-    [56.6, 'you simply <b>never</b> do it.'],
-    [57.64, 'Half of good manners, it turns out,'],
-    [59.8, 'is just very old beliefs'],
-    [60.78, 'frozen into <b>etiquette</b>.'],
-    [62.52, 'Wanna actually start learning <b>Chinese</b>?'],
-    [64.48, 'Discover thousands of free exercises'],
-    [66.48, 'and more learning content on <b>stacktags.io</b>.'],
+    [0.0,   'There’s one thing you must <b>never</b> do'],
+    [1.42,  'with chopsticks in China:'],
+    [2.94,  'stand them <b>straight up</b> in your bowl of rice.'],
+    [4.92,  'Do it, and you’ve just set a place…'],
+    [6.36,  '…for the <b>dead</b>.'],
+    [7.62,  'It’s one of the deepest dining <b>taboos</b>'],
+    [9.16,  'in Chinese culture.'],
+    [10.56, 'And the reason is what it <b>resembles</b>.'],
+    [12.56, 'At funerals and ancestor rituals,'],
+    [14.52, 'a bowl of rice with <b>incense</b> —'],
+    [15.96, 'or chopsticks — standing straight up'],
+    [17.7,  'is offered to the <b>deceased</b>.'],
+    [19.18, 'It’s a gift for the dead.'],
+    [20.58, 'So at a normal dinner,'],
+    [21.84, 'chopsticks jammed upright'],
+    [22.78, 'look exactly like a <b>death offering</b>.'],
+    [24.58, 'It’s read as an <b>omen</b> —'],
+    [25.74, 'almost like inviting death to the table.'],
+    [27.34, 'Instead, you lay your chopsticks <b>flat</b> —'],
+    [29.72, 'across the top of the bowl, or on a little rest.'],
+    [32.82, 'Tiny gesture, <b>completely different</b> meaning.'],
+    [35.06, 'And these death-related taboos'],
+    [36.42, 'get taken even more seriously'],
+    [37.84, 'during the seventh lunar month —'],
+    [39.8,  '<b>“Ghost Month”</b> —'],
+    [40.52, 'when spirits are said to <b>roam</b>,'],
+    [41.68, 'and people avoid anything'],
+    [42.96, 'that might invite <b>bad luck</b>.'],
+    [44.6,  'It’s just two sticks and a bowl of rice.'],
+    [46.8,  'But <b>stand them up</b>,'],
+    [47.86, 'and you’ve turned dinner into a <b>funeral</b> —'],
+    [49.36, 'which is exactly <b>why</b>'],
   ];
 
   // ============================================================
@@ -187,32 +172,26 @@
   // ============================================================
   const CUES = [
     // ---- HOOK ----
-    [0.0, (i) => enter($('#sc-table'), 'fade', 600, i, tableHook)],
-    [3.0, () => setSticks('up')],                                   // chopsticks slam upright
-    [3.7, () => cls(vocabK, 'in', true)],                           // 筷子 pops
-    [7.08, () => { cls(smokeBowl, 'on', true); }],  // "for the dead"
-    [8.14, () => { gridPush(); }],                                   // ominous push on "looks so wrong"
-    [9.6, () => cls(vocabK, 'in', false)],
+    [0.0,   (i) => enter($('#sc-table'), 'fade', 600, i, tableHook)],
+    [3.26,  () => setSticks('up')],                                 // chopsticks slam upright ("straight up")
+    [3.9,   () => cls(vocabK, 'in', true)],                         // 筷子 pops
+    [6.36,  () => { cls(vocabK, 'in', false); cls(smokeBowl, 'on', true); gridPush(); }],  // "for the dead": smoke + ominous push
 
-    // ---- WHY IT'S TABOO — the rhyme ----
-    [10.1, () => { cls(smokeBowl, 'on', true); setSticks('up'); }],
-    [14.92, () => { rhymeOn(true); cls(smokeBowl, 'on', true); }],   // censer slides in, camera pans
-    [28.0, () => { rhymeOn(false); cls(smokeBowl, 'on', true); }],   // omen: censer leaves, smoke keeps rising
+    // ---- WHY IT'S TABOO — the rhyme + the real funeral backdrop ----
+    [11.0,  () => { rhymeOn(true); cls(smokeBowl, 'on', true); }],  // censer slides in ("what it resembles")
+    [12.56, () => cls(tableInner, 'funeral', true)],               // real memorial photo rises at the bottom; bowls slide up
+    [24.58, () => { rhymeOn(false); cls(tableInner, 'funeral', false); cls(smokeBowl, 'on', true); }],  // omen: censer + backdrop leave
 
     // ---- THE FIX ----
-    [31.92, () => { setSticks('flat'); cls(smokeBowl, 'on', false); }],
+    [28.3,  () => { setSticks('flat'); cls(smokeBowl, 'on', false); }],
 
     // ---- GHOST MONTH ----
-    [41.0, (i) => enter($('#sc-ghost'), 'zoom-out', 1100, i, () => { cls(ghostInner, 'night', true); cls(ghostInner, 'lit', true); })],
-    [44.54, () => cls(vocabG, 'in', true)],                          // 鬼月 pops
+    [37.18, (i) => enter($('#sc-ghost'), 'zoom-out', 1050, i, () => { cls(ghostInner, 'night', true); cls(ghostInner, 'lit', true); })],
+    [39.8,  () => cls(vocabG, 'in', true)],                         // 鬼月 pops
 
-    // ---- PUNCHLINE ----
-    [49.88, (i) => enter($('#sc-table'), 'zoom-in', 1050, i, tablePunch)],
-    [52.04, () => { setSticks('up'); cls(smokeBowl, 'on', true); }],  // "stand them up"
-    [57.64, () => { setSticks('flat'); cls(smokeBowl, 'on', false); }],  // respectful settle
-
-    // ---- OUTRO ----
-    [62.52, (i) => { enter($('#sc-outro'), 'lift', 1100, i); outroAssemble(); }],
+    // ---- PUNCHLINE / LOOP (ends on the upright chopsticks — no outro) ----
+    [44.6,  (i) => enter($('#sc-table'), 'zoom-in', 1000, i, tablePunch)],
+    [46.96, () => { setSticks('up'); cls(smokeBowl, 'on', true); }],  // "stand them up"
   ];
 
   // ============================================================
@@ -220,16 +199,16 @@
   // pop for object & word pop-ins. [t, name, vol]
   // ============================================================
   const SFX = [
-    [3.0, 'pop', 0.5],                       // chopsticks slam
-    [3.7, 'pop', 0.5],                       // 筷子 pops
-    [8.14, 'swoosh', 0.45],                  // ominous camera push
-    [14.92, 'swoosh', 0.48],                 // pan into the rhyme (grid moves)
-    [28.0, 'swoosh', 0.42],                  // pan back out
-    [41.0, 'swoosh', 0.5],                   // zoom-out to Ghost Month
-    [44.54, 'pop', 0.5],                     // 鬼月 pops
-    [49.88, 'swoosh', 0.5],                  // zoom back in to the bowl
-    [52.04, 'pop', 0.45],                    // chopsticks snap up
-    [62.52, 'swoosh', 0.55],                 // outro lift
+    [3.26,  'pop', 0.5],                     // chopsticks slam
+    [3.9,   'pop', 0.5],                     // 筷子 pops
+    [6.36,  'swoosh', 0.42],                 // ominous camera push ("for the dead")
+    [11.0,  'swoosh', 0.48],                 // censer slides into the rhyme (grid pans)
+    [12.56, 'swoosh', 0.4],                  // funeral backdrop rises + bowls slide up
+    [24.58, 'swoosh', 0.42],                 // censer + backdrop leave
+    [37.18, 'swoosh', 0.5],                  // zoom-out to Ghost Month
+    [39.8,  'pop', 0.5],                     // 鬼月 pops
+    [44.6,  'swoosh', 0.5],                  // zoom back in to the bowl
+    [46.96, 'pop', 0.45],                    // chopsticks snap up
   ];
   window.SFX = SFX;
   const SND = { swoosh: 'assets/sound/swoosh.ogg', pop: 'assets/sound/pop.wav', tick: 'assets/sound/tick.wav' };
@@ -242,12 +221,10 @@
   let lastT = 0;
   function resetScenes() {
     setSticks('');
-    cls(tableInner, 'rhyme', false);
+    cls(tableInner, 'rhyme', false); cls(tableInner, 'funeral', false);
     cls(smokeBowl, 'on', false); cls(smokeCenser, 'on', false);
-    cls(ghostset, 'on', false);
     cls(vocabK, 'in', false); cls(vocabG, 'in', false);
     cls(ghostInner, 'night', false); cls(ghostInner, 'lit', false);
-    outroReset();
   }
   function hardReset() {
     firedScene.clear(); firedSub.clear(); firedSfx.clear();

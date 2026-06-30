@@ -38,7 +38,31 @@ body.clean { background: #fff; }
 /* ===========================================================================
    TABLE SCENE  (hook → taboo rhyme → fix → punchline)
    =========================================================================== */
+/* keep the grey subtitles crisp where they overlap the desaturated memorial photo
+   (a white halo — invisible on the plain white grid, only helps over the image) */
+.stk-subs-line { text-shadow: 0 1px 6px rgba(255, 255, 255, .9), 0 0 16px rgba(255, 255, 255, .75); }
+
 .table-inner { position: absolute; inset: 0; }
+
+/* the bowls + censer + connector live in one layer that slides UP together
+   when the real memorial photo rises at the bottom */
+.stage-objects { position: absolute; inset: 0; z-index: 2; transition: transform .85s cubic-bezier(.2, .8, .2, 1); }
+.table-inner.funeral .stage-objects { transform: translateY(-150px); }
+
+/* real (desaturated) Chinese memorial photo — bottom backdrop, grounds the rhyme */
+.funeral-bg {
+  position: absolute; left: 0; right: 0; bottom: 0; height: 560px; z-index: 1;
+  opacity: 0; transform: translateY(70px);
+  transition: opacity .85s ease, transform .9s cubic-bezier(.2, .8, .2, 1);
+  pointer-events: none;
+}
+.table-inner.funeral .funeral-bg { opacity: 1; transform: translateY(0); }
+.funeral-bg img {
+  width: 100%; height: 100%; object-fit: cover; object-position: center 34%; display: block;
+  filter: grayscale(.68) brightness(1.05) contrast(.96);
+  -webkit-mask-image: linear-gradient(to top, #000 0%, #000 60%, transparent 100%);
+  mask-image: linear-gradient(to top, #000 0%, #000 60%, transparent 100%);
+}
 
 /* --- the hero bowl group (bowl + chopsticks + its smoke + vocab) --- */
 #bowl-group {

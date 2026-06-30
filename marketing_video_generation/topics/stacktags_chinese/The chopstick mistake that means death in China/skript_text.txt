@@ -29,16 +29,14 @@ SCRIPT
 
 --- HOOK (0:00–0:12) — the payoff up front ---
 
-[HERO bowl of white rice, centered on the white grid; a small comic diner reaches in with a
-pair of chopsticks. Bottom subtitle only — no explanatory on-screen text.]
+[HERO bowl of white rice, centered on the white grid. Bottom subtitle only — no explanatory on-screen text.]
 There's one thing you must never do with chopsticks in China: stand them straight up
 in your bowl of rice.
 [On "stand them straight up": the two chopsticks SLAM upright into the rice (springy pop).
-The comic diner freezes mid-reach. Vocab 筷子 (kuàizi) pops in briefly via text-popup, then fades —
-the only on-screen word.]
+Vocab 筷子 (kuàizi) pops in briefly via text-popup, then fades — the only on-screen word.]
 Do it, and you've just set a place... for the dead.
-[On "for the dead": the comic diner desaturates/leans back uneasily; a single thin wisp of
-incense-smoke curls up behind the bowl; a faint, empty "second place setting" ghosts in opposite.]
+[On "for the dead": a single thin wisp of incense-smoke curls up behind the bowl; a slow ominous
+camera push-in (the grid converges).]
 [Slow ominous camera push-in — the grid converges (zoom-in), bowl recedes slightly. Swoosh.]
 
 --- WHY IT'S TABOO (≈0:12–0:42) ---
@@ -53,7 +51,9 @@ upright posture as the chopsticks — laid out as a mirrored pair.]
 At funerals and ancestor rituals, a bowl of rice with incense — or chopsticks —
 standing straight up is offered to the deceased. It's a gift for the dead.
 [A turquoise dashed line connects the two upright pairs (chopsticks ↔ incense), spelling out the
-visual rhyme. The censer side glows faintly.]
+visual rhyme. AND a desaturated/greyed photo of a REAL Chinese memorial ceremony (altar with
+upright incense in a censer, white rice bowls, chrysanthemums, mourners bowing) rises in along the
+BOTTOM edge; the bowl + censer slide up a little to make room — grounding the rhyme in the real thing.]
 So at a normal dinner, chopsticks jammed upright look exactly like a death offering.
 [Camera returns to the dinner bowl; for a beat the upright chopsticks cross-fade toward the
 incense look and back — they read as the SAME thing.]
@@ -75,18 +75,12 @@ Vocab 鬼月 (guǐyuè) pops in via text-popup — second and last on-screen wor
 when spirits are said to roam, and people avoid anything that might invite bad luck.
 [One or two pale wisps drift through; lantern sways. Kept restrained.]
 
---- PUNCHLINE / OUTRO (≈1:05–1:20) ---
+--- PUNCHLINE / LOOP (≈0:48–0:55) ---
 
 It's just two sticks and a bowl of rice.
 [Strip back to the bare hero: bowl + two chopsticks resting flat on the clean white grid. Quiet.]
-But stand them up, and you've turned dinner into a funeral —
-[On "stand them up": the chopsticks snap upright again; a quick callback of the smoke/chrysanthemum
-rhyme flickers over the bowl, then settles. The "dinner → funeral" flip in one beat.]
-which is exactly why, in China, you simply never do it.
-Half of good manners, it turns out, is just very old beliefs frozen into etiquette.
-[Calm settle on the bowl with chopsticks laid flat — the "correct", respectful state.]
-
-Wanna actually start learning Chinese?
-Discover thousands of free exercises and more learning content on stacktags.io.
-[Default OUTRO element: stacked-cube logo between turquoise chevrons, "stacktags" wordmark,
-grey "stacktags.io" line. Assemble swoosh.]
+But stand them up, and you've turned dinner into a funeral — which is exactly why
+[On "stand them up": the chopsticks snap upright again and smoke rises (the funeral state). The
+video ENDS here on the upright chopsticks — NO outro, no brand card — so on a YouTube replay it
+loops straight back into the first line: "…which is exactly why → there's one thing you must
+never do with chopsticks in China."]

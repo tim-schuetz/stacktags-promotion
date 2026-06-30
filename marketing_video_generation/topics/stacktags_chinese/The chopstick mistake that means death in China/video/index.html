@@ -33,43 +33,45 @@
       <div class="scene" id="sc-table">
         <div class="table-inner" id="table-inner">
 
-          <!-- the rhyme partner: a censer with upright incense (slides in right) -->
-          <div class="rhyme-side" id="rhyme-side">
-            <div class="smoke smoke-censer">
-              <span class="wisp w1"></span><span class="wisp w2"></span><span class="wisp w3"></span>
-            </div>
-            <div class="censer" id="censer"><img src="assets/photos/censer_dash.png" alt=""></div>
-            <div class="chrys" id="chrys"><img src="assets/photos/chrys_dash.png" alt=""></div>
-          </div>
+          <!-- real (desaturated) Chinese memorial photo — bottom backdrop under the rhyme -->
+          <div class="funeral-bg" id="funeral-bg"><img src="assets/photos/funeral.png" alt=""></div>
 
-          <!-- the dashed connector that spells out "these two are the same" -->
-          <svg class="rhyme-link" id="rhyme-link" viewBox="0 0 1080 1920" preserveAspectRatio="none">
-            <path id="rhyme-path" d="" pathLength="100"></path>
-          </svg>
+          <!-- bowls + censer + connector slide UP together when the backdrop rises -->
+          <div class="stage-objects" id="stage-objects">
 
-          <!-- the hero bowl + its chopsticks + its (ominous) smoke -->
-          <div class="bowl-group" id="bowl-group">
-            <div class="smoke smoke-bowl" id="smoke-bowl">
-              <span class="wisp w1"></span><span class="wisp w2"></span><span class="wisp w3"></span>
+            <!-- the rhyme partner: a censer with upright incense (slides in right) -->
+            <div class="rhyme-side" id="rhyme-side">
+              <div class="smoke smoke-censer">
+                <span class="wisp w1"></span><span class="wisp w2"></span><span class="wisp w3"></span>
+              </div>
+              <div class="censer" id="censer"><img src="assets/photos/censer_dash.png" alt=""></div>
+              <div class="chrys" id="chrys"><img src="assets/photos/chrys_dash.png" alt=""></div>
             </div>
-            <div class="bowl" id="bowl"><img src="assets/photos/bowl_dash.png" alt=""></div>
-            <div class="sticks" id="sticks">
-              <span class="stick s1"></span>
-              <span class="stick s2"></span>
-            </div>
-            <!-- vocab: 筷子 (the only on-screen word in the hook) -->
-            <div class="vocab" id="vocab-kuaizi">
-              <div class="zh cjk">筷子</div>
-              <div class="py">kuàizi</div>
-              <div class="en">chopsticks</div>
-            </div>
-          </div>
 
-          <!-- faint, empty "second place setting" opposite — the omen -->
-          <div class="ghostset" id="ghostset">
-            <div class="g-bowl"></div>
-            <div class="g-sticks"><i></i><i></i></div>
-          </div>
+            <!-- the dashed connector that spells out "these two are the same" -->
+            <svg class="rhyme-link" id="rhyme-link" viewBox="0 0 1080 1920" preserveAspectRatio="none">
+              <path id="rhyme-path" d="" pathLength="100"></path>
+            </svg>
+
+            <!-- the hero bowl + its chopsticks + its (ominous) smoke -->
+            <div class="bowl-group" id="bowl-group">
+              <div class="smoke smoke-bowl" id="smoke-bowl">
+                <span class="wisp w1"></span><span class="wisp w2"></span><span class="wisp w3"></span>
+              </div>
+              <div class="bowl" id="bowl"><img src="assets/photos/bowl_dash.png" alt=""></div>
+              <div class="sticks" id="sticks">
+                <span class="stick s1"></span>
+                <span class="stick s2"></span>
+              </div>
+              <!-- vocab: 筷子 (the only on-screen word in the hook) -->
+              <div class="vocab" id="vocab-kuaizi">
+                <div class="zh cjk">筷子</div>
+                <div class="py">kuàizi</div>
+                <div class="en">chopsticks</div>
+              </div>
+            </div>
+
+          </div><!-- /stage-objects -->
 
         </div>
       </div>
@@ -95,17 +97,6 @@
         </div>
       </div>
 
-      <!-- ============================================================
-           OUTRO endcard
-           ============================================================ -->
-      <div class="scene" id="sc-outro">
-        <div class="ec" id="outro-ec">
-          <div id="outro-logo"></div>
-          <div class="wm"><span class="s">stack</span><span class="t">tags</span></div>
-          <div class="url">stacktags.io</div>
-        </div>
-      </div>
-
     </div><!-- /scenes -->
 
     <!-- subtitles mirror the narration (grey; key words turquoise) -->
@@ -117,14 +108,11 @@
 <!-- HUD (hidden in clean/capture mode) -->
 <div id="hud">
   <button id="btn-play">▶ Play</button>
-  <input id="seek" type="range" min="0" max="72" step="0.01" value="0" />
+  <input id="seek" type="range" min="0" max="53" step="0.01" value="0" />
   <span id="tcode">0.0</span>
 </div>
 
 <audio id="vo" src="../script_voice.mp3" preload="auto"></audio>
-
-<!-- elements -->
-<script src="elements/outro.js"></script>
 
 <!-- this video's choreography -->
 <script src="app.js?v=1"></script>
