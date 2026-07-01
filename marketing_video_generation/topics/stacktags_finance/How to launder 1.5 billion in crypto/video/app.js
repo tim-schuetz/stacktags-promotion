@@ -38,10 +38,6 @@
        <div class="hk-amount"><span class="big">$1.5</span><span class="sub">BILLION</span></div>
        <img class="hk-skyline" src="assets/dubai_cut.png" alt="">
        <div class="hk-bybit"><div class="hk-bybit-lbl">Bybit</div><img src="assets/bybit_cut.png" alt=""></div>
-       <svg class="hk-arrow" viewBox="0 0 1080 1920" preserveAspectRatio="none">
-         <path class="hk-arrow-line" pathLength="1000" d="M540 1340 C 900 1130, 900 690, 662 690"/>
-         <polygon class="hk-arrow-head" points="636,690 686,664 686,716"/>
-       </svg>
      </div>`;
   const hook2 = $('#hook2');
 

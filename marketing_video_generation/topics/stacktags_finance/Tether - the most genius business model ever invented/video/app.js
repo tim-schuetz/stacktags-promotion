@@ -159,6 +159,16 @@
     } catch (e) {}
   }
   function resetFounderVid() { if (auVid) { try { auVid.pause(); auVid.currentTime = 0; } catch (e) {} } }
+  // ---- same HeyGen founder in the HOOK (0-8s) ----
+  const hookVid = $('#hook-vid');
+  function playHookVid(instant) {
+    if (!hookVid) return;
+    try {
+      if (instant) { hookVid.pause(); hookVid.currentTime = (hookVid.duration && isFinite(hookVid.duration)) ? hookVid.duration : 4; }
+      else { hookVid.currentTime = 0; const p = hookVid.play(); if (p) p.catch(() => {}); }
+    } catch (e) {}
+  }
+  function resetHookVid() { if (hookVid) { try { hookVid.pause(); hookVid.currentTime = 0; } catch (e) {} } }
   function buildTower() {
     const host = $('#tw-tbills'); host.innerHTML = '';
     ['T-BILLS', 'RESERVES', 'OTHER ASSETS'].forEach((l) => {
@@ -299,8 +309,9 @@
   const CUES = [
     // ---- 1 · HOOK (corner stats: 100 Employees, then 13B in 2024) ----
     [0.0, (i) => enter($('#sc-headlines'), 'fade', 650, i, () => {
+      playHookVid(i);   // animated HeyGen founder is visible; the numbers slam in from the top
       if (i) { cls('#stat-emp', 'in'); cls('#stat-prof', 'in'); return; }
-      setTimeout(() => cls('#stat-emp', 'in'), 300);
+      setTimeout(() => cls('#stat-emp', 'in'), 500);
       setTimeout(() => cls('#stat-prof', 'in'), 2300);
     })],
 
@@ -405,6 +416,7 @@
   // pop on objects appearing; ticking on count-ups. [t, sound, vol]
   // ============================================================
   const SFX = [
+    [0.55, 'swoosh', 0.45], [2.3, 'swoosh', 0.45],   // the two numbers slam in
     [8.86, 'swoosh', 0.5],
     [9.44, 'pop', 0.45],
     [10.52, 'pop', 0.5],
@@ -464,7 +476,7 @@
     $$('.cost-row').forEach((r) => r.classList.remove('in'));
     $$('#pu-noise .chip').forEach((c) => c.classList.remove('show'));
     $('#odo').textContent = '$0';
-    resetThrone(); resetRoom(); resetTokfall(); resetFounderVid(); resetAudit();
+    resetThrone(); resetRoom(); resetTokfall(); resetFounderVid(); resetHookVid(); resetAudit();
     outroReset();
     subsLine.classList.remove('in');
   }

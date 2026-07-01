@@ -93,11 +93,14 @@ body{ font-family:var(--stk-font); color:var(--stk-ink); }
    1 · HOOK — corner stat texts
    ============================================================ */
 .hook2{ position:absolute; inset:0; }
-.stat{ position:absolute; opacity:0; transform:translateY(-26px) scale(.92);
-  transition:opacity .5s ease, transform .55s cubic-bezier(.34,1.56,.5,1); }
-.stat.in{ opacity:1; transform:none; }
-.stat.tl{ left:96px; top:160px; }
-.stat.tr{ right:96px; top:160px; text-align:right; }
+.hook-founder{ position:absolute; left:50%; bottom:70px; transform:translateX(-50%); width:680px; height:680px; z-index:2;
+  object-fit:contain; object-position:bottom; filter:drop-shadow(0 24px 34px rgba(16,50,40,.28)); }
+/* the two numbers slam in from above the frame */
+.stat{ position:absolute; z-index:5; opacity:0; transform:translateY(-560px);
+  transition:opacity .3s ease, transform .6s cubic-bezier(.3,1.5,.55,1); }
+.stat.in{ opacity:1; transform:translateY(0); }
+.stat.tl{ left:96px; top:150px; }
+.stat.tr{ right:96px; top:150px; text-align:right; }
 .stat .s-big{ font-weight:900; font-size:250px; line-height:.84; letter-spacing:-12px; color:var(--stk-ink); }
 .stat.tr .s-big{ color:var(--stk-teal-d); }
 .stat .s-small{ font-weight:800; color:var(--stk-ink-2); }
